@@ -2,8 +2,9 @@ import json
 import os
 import re
 import time
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, parse_qs, unquote
 
 import requests
 from bs4 import BeautifulSoup
@@ -57,9 +58,13 @@ URLS_ALVO = [
     "https://cj.estrategia.com/portal/procuradoria/page/10/",
 ]
 
-GOOGLE_QUERY = "residencia jurídica estágio de pós graduação"
-GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
-GOOGLE_CX = os.environ.get("GOOGLE_CX", "")
+# Feed RSS do Google Alertas
+GOOGLE_ALERTAS_FEEDS = [
+    {
+        "url": "https://www.google.com/alerts/feeds/05883152892408713569/13784085206058947900",
+        "termo": "residencia jurídica estágio de pós graduação",
+    },
+]
 
 DATABASE_FILE = "database.json"
 OUTPUT_FILE = "novos_links.txt"
@@ -135,7 +140,21 @@ def normalizar(url: str) -> str:
     return parsed._replace(fragment="").geturl()
 
 
-# ─── Scraping ─────────────────────────────────────────────────────────────────
+def extrair_url_real(href: str) -> str:
+    """
+    Links do Google Alertas chegam encapsulados como:
+    https://www.google.com/url?rct=j&sa=t&url=https://site.com/artigo&...
+    Esta função extrai a URL real do parâmetro 'url'.
+    """
+    parsed = urlparse(href)
+    if "google.com" in parsed.netloc and parsed.path == "/url":
+        qs = parse_qs(parsed.query)
+        if "url" in qs:
+            return unquote(qs["url"][0])
+    return href
+
+
+# ─── Scraping das páginas-alvo ────────────────────────────────────────────────
 
 def coletar_links_pagina(url: str, sessao: requests.Session) -> set:
     try:
@@ -168,53 +187,65 @@ def coletar_todos_links() -> set:
     return todos
 
 
-# ─── Busca Google ─────────────────────────────────────────────────────────────
+# ─── Google Alertas RSS ───────────────────────────────────────────────────────
 
-def buscar_google() -> list:
+def ler_feed_alerta(feed_url: str, termo: str) -> list:
     """
-    Retorna até 20 resultados das últimas 24h, ordenados por data, com duplicações.
-    Cada item: {url, title, snippet}
+    Lê um feed RSS do Google Alertas e retorna lista de:
+    {url, title, snippet, termo}
     """
-    if not GOOGLE_API_KEY or not GOOGLE_CX:
-        print("  [AVISO] Credenciais Google ausentes. Pulando busca.")
+    try:
+        resp = requests.get(feed_url, timeout=15, headers=HEADERS)
+        resp.raise_for_status()
+    except Exception as e:
+        print(f"  [ERRO feed] {feed_url} → {e}")
         return []
 
-    endpoint = "https://www.googleapis.com/customsearch/v1"
     resultados = []
+    try:
+        root = ET.fromstring(resp.content)
+        ns = {"atom": "http://www.w3.org/2005/Atom"}
 
-    for start in [1, 11]:
-        params = {
-            "key": GOOGLE_API_KEY,
-            "cx": GOOGLE_CX,
-            "q": GOOGLE_QUERY,
-            "dateRestrict": "d1",
-            "sort": "date",
-            "filter": "0",
-            "num": 10,
-            "start": start,
-            "lr": "lang_pt",
-            "gl": "br",
-        }
-        try:
-            resp = requests.get(endpoint, params=params, timeout=15)
-            resp.raise_for_status()
-            data = resp.json()
-            items = data.get("items", [])
-            for item in items:
+        for entry in root.findall("atom:entry", ns):
+            # Título
+            title_el = entry.find("atom:title", ns)
+            title = title_el.text if title_el is not None else ""
+
+            # URL real (dentro do link encapsulado do Google)
+            link_el = entry.find("atom:link", ns)
+            href = link_el.attrib.get("href", "") if link_el is not None else ""
+            url_real = extrair_url_real(href)
+
+            # Trecho/resumo
+            summary_el = entry.find("atom:summary", ns)
+            snippet = ""
+            if summary_el is not None and summary_el.text:
+                # Remove tags HTML do snippet
+                soup = BeautifulSoup(summary_el.text, "html.parser")
+                snippet = soup.get_text(separator=" ").strip()
+
+            if url_real:
                 resultados.append({
-                    "url": item.get("link", ""),
-                    "title": item.get("title", ""),
-                    "snippet": item.get("snippet", ""),
+                    "url": url_real,
+                    "title": title,
+                    "snippet": snippet,
+                    "termo": termo,
                 })
-            print(f"  [Google] start={start} → {len(items)} resultados")
-            if len(items) < 10:
-                break
-        except Exception as e:
-            print(f"  [ERRO Google] start={start} → {e}")
-            break
-        time.sleep(1)
+
+        print(f"  [Alerta] '{termo}' → {len(resultados)} resultados")
+    except Exception as e:
+        print(f"  [ERRO parse] {feed_url} → {e}")
 
     return resultados
+
+
+def coletar_todos_alertas() -> list:
+    todos = []
+    for feed in GOOGLE_ALERTAS_FEEDS:
+        resultados = ler_feed_alerta(feed["url"], feed["termo"])
+        todos.extend(resultados)
+        time.sleep(1)
+    return todos
 
 
 # ─── Base de dados ────────────────────────────────────────────────────────────
@@ -244,12 +275,12 @@ def main():
     links_scraping = coletar_todos_links()
     print(f"Total scraping: {len(links_scraping)}\n")
 
-    print("Buscando no Google...")
-    resultados_google = buscar_google()
-    links_google = {r["url"] for r in resultados_google if r["url"]}
-    print(f"Total Google: {len(links_google)}\n")
+    print("Lendo Google Alertas...")
+    resultados_alertas = coletar_todos_alertas()
+    links_alertas = {r["url"] for r in resultados_alertas if r["url"]}
+    print(f"Total alertas: {len(links_alertas)}\n")
 
-    todos_links = links_scraping | links_google
+    todos_links = links_scraping | links_alertas
 
     if primeira_execucao:
         print("Primeira execução: populando a base de dados.")
@@ -258,14 +289,14 @@ def main():
                 "primeira_vez": agora,
                 "ultima_vez_visto": agora,
                 "ausencias_consecutivas": 0,
-                "fonte": "google" if url in links_google else "scraping",
+                "fonte": "alerta" if url in links_alertas else "scraping",
             }
         salvar_base(base)
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write(
                 f"Primeira execução em {agora}.\n"
                 f"Base criada com {len(base)} links "
-                f"({len(links_scraping)} scraping + {len(links_google)} Google).\n"
+                f"({len(links_scraping)} scraping + {len(links_alertas)} alertas).\n"
                 "Nenhum link 'novo' acusado (todos são a base inicial).\n"
             )
         print(f"Base criada com {len(base)} links.")
@@ -273,14 +304,14 @@ def main():
 
     # Verificação normal
     novos_scraping = []
-    novos_google = []
+    novos_alertas = []
 
     for url in todos_links:
-        fonte = "google" if url in links_google else "scraping"
+        fonte = "alerta" if url in links_alertas else "scraping"
         if url not in base:
-            if fonte == "google":
-                info = next((r for r in resultados_google if r["url"] == url), {})
-                novos_google.append(info if info else {"url": url, "title": "", "snippet": ""})
+            if fonte == "alerta":
+                info = next((r for r in resultados_alertas if r["url"] == url), {})
+                novos_alertas.append(info if info else {"url": url, "title": "", "snippet": "", "termo": ""})
             else:
                 novos_scraping.append(url)
             base[url] = {
@@ -303,12 +334,12 @@ def main():
 
     salvar_base(base)
 
-    total_novos = len(novos_scraping) + len(novos_google)
+    total_novos = len(novos_scraping) + len(novos_alertas)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(f"Verificação: {agora}\n")
         f.write(f"Links novos encontrados: {total_novos}\n")
         f.write(f"  Scraping: {len(novos_scraping)}\n")
-        f.write(f"  Google:   {len(novos_google)}\n")
+        f.write(f"  Alertas:  {len(novos_alertas)}\n")
         f.write(f"Removidos da base: {len(removidos)}\n")
         f.write(f"Total na base: {len(base)}\n")
         f.write("=" * 60 + "\n\n")
@@ -319,9 +350,10 @@ def main():
                 f.write(url + "\n")
             f.write("\n")
 
-        if novos_google:
-            f.write("── NOVOS (Google: residencia jurídica estágio pós-graduação) ──\n\n")
-            for item in novos_google:
+        if novos_alertas:
+            f.write("── NOVOS (Google Alertas) ──\n\n")
+            for item in novos_alertas:
+                f.write(f"Termo:   {item.get('termo', '')}\n")
                 f.write(f"Título:  {item.get('title', '')}\n")
                 f.write(f"URL:     {item.get('url', '')}\n")
                 f.write(f"Trecho:  {item.get('snippet', '')}\n\n")
@@ -330,7 +362,7 @@ def main():
             f.write("Nenhum link novo encontrado.\n")
 
     print(f"Novos scraping: {len(novos_scraping)}")
-    print(f"Novos Google:   {len(novos_google)}")
+    print(f"Novos alertas:  {len(novos_alertas)}")
     print(f"Removidos: {len(removidos)}")
     print(f"Total na base: {len(base)}")
     print(f"Salvo em '{OUTPUT_FILE}'.")
