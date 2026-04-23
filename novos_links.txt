@@ -1,3 +1,87 @@
-Primeira execução em 2026-04-23T16:52:23.568838+00:00.
-Base criada com 1028 links.
-Nenhum link 'novo' acusado (todos são a base inicial).
+Verificação: 2026-04-23T17:46:26.191102+00:00
+Links novos encontrados: 22
+  Scraping: 9
+  Alertas:  13
+Removidos da base: 0
+Total na base: 1050
+============================================================
+
+── NOVOS (scraping) ──
+
+https://cj.estrategia.com/portal/concurso-cartorios-ba/
+https://cj.estrategia.com/portal/concurso-dpe-sc-defensor-gabarito-preliminar-da-objetiva-sai-quando/
+https://cj.estrategia.com/portal/concurso-magistratura-ba/
+https://cj.estrategia.com/portal/concurso-mp-sp-promotor-registra-mais-de-14-mil-inscritos-saiba-tudo/
+https://cj.estrategia.com/portal/concurso-procurador-camara-caraguatatuba-sp/
+https://cj.estrategia.com/portal/dpe-sc-defensor-possiveis-recursos-contra-o-gabarito-da-prova-objetiva/
+https://cj.estrategia.com/portal/revisao-de-vespera-dpe-ma-defensoria/
+https://cj.estrategia.com/portal/revisao-de-vespera-dpe-sc-defensoria/
+https://www.acheconcursos.com.br/noticias/porto-alegre-rs-abre-concurso-publico-com-vagas-de-ate-r-9-mil-veja-edital-89644
+
+── NOVOS (Google Alertas) ──
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  TJAC convoca candidatos para <b>estágio de pós</b>-<b>graduação</b> em Direito - O Alto Acre
+URL:     https://oaltoacre.com/tjac-convoca-candidatos-para-estagio-de-pos-graduacao-em-direito/
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  Grupo de Apoio às Metas do CNJ divulga processo seletivo para <b>estagiário de pós</b> ... - TJRN
+URL:     https://www.tjrn.jus.br/noticias/27408-grupo-de-apoio-as-metas-do-cnj-divulga-processo-seletivo-para-estagiario-de-pos-graduacao-em-direito
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  PGE-SE abre inscrições para Programa de <b>Estágio de Pós</b>-<b>Graduação</b> em Direito - AJN1
+URL:     https://ajn1.com.br/urbano/pge-se-abre-inscricoes-para-programa-de-estagio-de-pos-graduacao-em-direito/
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  Curso de formação extensionista em migração e direitos humanos – PPGD - UFSM
+URL:     https://www.ufsm.br/cursos/pos-graduacao/santa-maria/ppgd/2026/04/22/curso-de-formacao-extensionista-em-migracao-e-direitos-humanos
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  Servidores destacam impacto da <b>pós</b>-<b>graduação</b> na rotina e na qualidade da Justiça
+URL:     https://www.folhamax.com/cidades/servidores-destacam-impacto-da-pos-graduacao-na-rotina-e-na-qualidade-da-justica/548587
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  Aviso n.º 9224/2026/2, de 23 de abril | DR
+URL:     https://diariodarepublica.pt/dr/detalhe/aviso/9224-2026-1088527150
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  <b>Residência Jurídica</b> MPMG abre 11 vagas com bolsa de R$ 4.863; confira cidades
+URL:     https://mdcconcursos.com.br/residencia-juridica-mpmg-2026-7/
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  Inscrições para o Programa de <b>Estágio</b> do TJBA seguem abertas até o dia 27 de abril
+URL:     https://bahianapolitica.com.br/inscricoes-para-o-programa-de-estagio-do-tjba-seguem-abertas-ate-o-dia-27-de-abril/
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  França abre bolsas para doutorandos da Amazônia Legal com <b>estágio</b> de pesquisa
+URL:     https://ac24horas.com/2026/04/23/franca-abre-bolsas-para-doutorandos-da-amazonia-legal-com-estagio-de-pesquisa/
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  5 cursos de especialização para quem quer ganhar mais em 2026 - Estado de Minas
+URL:     https://www.em.com.br/trends/2026/04/amp/7404198-5-cursos-de-especializacao-para-quem-quer-ganhar-mais-em-2026.html
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  PGE-SE abre <b>estágio</b> em Direito para <b>pós</b>-graduandos com bolsa de R$ 1.630 | Aracaju Magazine
+URL:     https://aracajumagazine.com.br/conteudo/tema-livre/pge-se-abre-estagio-em-direito-para-pos-graduandos-com-bolsa-de-r-1-630
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  <b>Estágio</b>: 2ª Vara de João Câmara divulga processo seletivo para <b>estagiário de pós</b> ... - Blog de Assis
+URL:     https://www.blogdeassis.com.br/2026/04/23/estagio-2a-vara-de-joao-camara-divulga-processo-seletivo-para-estagiario-de-pos-graduacao-em-direito/469711/
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  Acreditação internacional e metodologias ativas impulsionam egressos da Medicina da ...
+URL:     https://j.pucsp.br/noticia/acreditacao-internacional-e-metodologias-ativas-impulsionam-egressos-da-medicina-da-puc-sp-em-residencias-no-brasil-e-no-exterior
+Trecho:  
+
