@@ -66,13 +66,15 @@ GOOGLE_ALERTAS_FEEDS = [
 ]
 
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
+GEMINI_MODEL = "gemini-3.1-flash-lite"
+GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
 
 DATABASE_FILE = "database.json"
 OUTPUT_NOVOS = "novos_links.txt"
 OUTPUT_RELEVANTES = "novos_relevantes.txt"
 MAX_AUSENCIAS = 3
-MAX_CHARS_PAGINA = 6000  # limite de texto enviado ao Gemini por página
+MAX_CHARS_PAGINA = 6000
+PAUSA_GEMINI = 4.5  # segundos entre chamadas (respeita 15 RPM)
 
 HEADERS = {
     "User-Agent": (
@@ -118,7 +120,6 @@ PADROES_IGNORAR = [
 ]
 
 PROMPT_RELEVANCIA = """Sua tarefa é avaliar se o conteúdo abaixo é uma divulgação de edital, concurso, processo seletivo, certame, e similares, que sejam relevantes para um bacharel em Direito que estuda para concursos públicos nas seguintes áreas:
-
 RELEVANTE — incluir sempre que o conteúdo tiver:
 - Procurador ou Advogado em qualquer órgão do executivo ou legislativo: AGU, PGFN, PGF, PGE, PGM, câmaras municipais, assembleias legislativas, TCU, TCE, TCM, agências reguladoras federais como ANATEL, ANEEL, ANVISA, ANAC, ANS, ANA, ANTAQ, ANTT, ANP, CADE, Banco Central, conselhos profissionais como OAB, CRM, CREA, CFM, etc
 - Procurador ou Advogado da Caixa Econômica Federal, Banco do Brasil, Petrobras, BNDES, Correios, EBSERH, Embrapa, Serpro, DATAPREV, autarquias e fundações federais, estaduais e municipais, etc
@@ -128,17 +129,14 @@ RELEVANTE — incluir sempre que o conteúdo tiver:
 - Residência Jurídica em qualquer órgão público
 - Estágio de pós-graduação em Direito em qualquer órgão público
 - Programas de formação jurídica remunerada em órgãos públicos
-- Todos os cargos que, por algum dos motivos acima, pareçam relevantes mas não estejam incluído nessa lista
-
+- Todos os cargos que, por algum dos motivos acima, pareçam relevantes mas não estejam incluídos nessa lista
 NÃO RELEVANTE — excluir se o conteúdo for apenas:
 - Cargos que não exijam formação em Direito (professores de ensino básico, médicos, engenheiros, enfermeiros, técnicos de outras áreas, etc)
 - Cargos de nível médio ou técnico sem relevância jurídica
-
 Responda APENAS no seguinte formato JSON, sem nenhum texto adicional:
 {"relevante": true, "motivo": "explicação em uma linha"}
 ou
 {"relevante": false, "motivo": "explicação em uma linha"}
-
 Conteúdo para avaliar:
 """
 
@@ -178,7 +176,7 @@ def extrair_url_real(href: str) -> str:
     return href
 
 
-# ─── Scraping das páginas-alvo ────────────────────────────────────────────────
+# ─── Scraping ─────────────────────────────────────────────────────────────────
 
 def coletar_links_pagina(url: str, sessao: requests.Session) -> set:
     try:
@@ -258,18 +256,16 @@ def coletar_todos_alertas() -> list:
     return todos
 
 
-# ─── Extração de texto da página ─────────────────────────────────────────────
+# ─── Extração de texto ────────────────────────────────────────────────────────
 
 def extrair_texto_pagina(url: str) -> str:
     try:
         resp = requests.get(url, timeout=20, headers=HEADERS)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
-        # Remove scripts e estilos
         for tag in soup(["script", "style", "nav", "footer", "header"]):
             tag.decompose()
         texto = soup.get_text(separator=" ", strip=True)
-        # Limpa espaços excessivos
         texto = re.sub(r"\s+", " ", texto).strip()
         return texto[:MAX_CHARS_PAGINA]
     except Exception as e:
@@ -277,15 +273,14 @@ def extrair_texto_pagina(url: str) -> str:
         return ""
 
 
-# ─── Análise de relevância via Gemini ────────────────────────────────────────
+# ─── Gemini ───────────────────────────────────────────────────────────────────
 
 def avaliar_relevancia(url: str, titulo: str, texto: str) -> dict:
-    """
-    Retorna {"relevante": bool, "motivo": str}
-    Em caso de erro, retorna {"relevante": False, "motivo": "erro na API"}
-    """
     if not GEMINI_API_KEY:
         return {"relevante": False, "motivo": "GEMINI_API_KEY não configurada"}
+
+    if not texto or len(texto) < 50:
+        return {"relevante": False, "motivo": "texto insuficiente para avaliar"}
 
     conteudo = f"URL: {url}\nTítulo: {titulo}\n\nTexto:\n{texto}"
     payload = {
@@ -304,10 +299,8 @@ def avaliar_relevancia(url: str, titulo: str, texto: str) -> dict:
         resp.raise_for_status()
         data = resp.json()
         texto_resposta = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-        # Remove possíveis blocos markdown ```json ... ```
         texto_resposta = re.sub(r"```json|```", "", texto_resposta).strip()
-        resultado = json.loads(texto_resposta)
-        return resultado
+        return json.loads(texto_resposta)
     except Exception as e:
         print(f"    [ERRO Gemini] {url} → {e}")
         return {"relevante": False, "motivo": f"erro: {e}"}
@@ -401,7 +394,7 @@ def main():
 
     salvar_base(base)
 
-    # ── Salva novos_links.txt ─────────────────────────────────────────────────
+    # ── novos_links.txt ───────────────────────────────────────────────────────
     total_novos = len(novos_scraping) + len(novos_alertas)
     with open(OUTPUT_NOVOS, "w", encoding="utf-8") as f:
         f.write(f"Verificação: {agora}\n")
@@ -426,8 +419,8 @@ def main():
         if total_novos == 0:
             f.write("Nenhum link novo encontrado.\n")
 
-    # ── Análise de relevância via Gemini ──────────────────────────────────────
-    print(f"\nAnalisando relevância de {total_novos} links novos via Gemini...\n")
+    # ── Análise Gemini ────────────────────────────────────────────────────────
+    print(f"\nAnalisando {total_novos} links novos via Gemini ({GEMINI_MODEL})...\n")
     relevantes = []
 
     todos_novos = []
@@ -442,15 +435,10 @@ def main():
         print(f"  [{i}/{total_novos}] {url}")
 
         texto = extrair_texto_pagina(url)
-        if not texto:
+        if not texto or len(texto) < 50:
             print("    Sem texto extraído, pulando.")
-            time.sleep(1)
+            time.sleep(PAUSA_GEMINI)
             continue
-
-        # Usa título da matéria extraído da página se não vier do alerta
-        if not titulo:
-            soup_titulo = BeautifulSoup(texto[:500], "html.parser")
-            titulo = url  # fallback
 
         avaliacao = avaliar_relevancia(url, titulo, texto)
         print(f"    → relevante: {avaliacao.get('relevante')} | {avaliacao.get('motivo', '')}")
@@ -458,13 +446,13 @@ def main():
         if avaliacao.get("relevante"):
             relevantes.append({**item, "motivo": avaliacao.get("motivo", "")})
 
-        time.sleep(1.5)  # respeita rate limit do Gemini
+        time.sleep(PAUSA_GEMINI)
 
-    # ── Salva novos_relevantes.txt ────────────────────────────────────────────
+    # ── novos_relevantes.txt ──────────────────────────────────────────────────
     with open(OUTPUT_RELEVANTES, "w", encoding="utf-8") as f:
         f.write(f"Verificação: {agora}\n")
-        f.write(f"Links novos analisados: {total_novos}\n")
-        f.write(f"Links relevantes encontrados: {len(relevantes)}\n")
+        f.write(f"Links analisados: {total_novos}\n")
+        f.write(f"Links relevantes: {len(relevantes)}\n")
         f.write("=" * 60 + "\n\n")
         if relevantes:
             for item in relevantes:
