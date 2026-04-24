@@ -5750,12 +5750,6 @@
     "ausencias_consecutivas": 1,
     "fonte": "scraping"
   },
-  "https://cj.estrategia.com/portal/concurso-delegado-ce/": {
-    "primeira_vez": "2026-04-24T10:56:24.998375+00:00",
-    "ultima_vez_visto": "2026-04-24T10:56:24.998375+00:00",
-    "ausencias_consecutivas": 0,
-    "fonte": "scraping"
-  },
   "https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-cau-sp-2026-edital-inscricao-89656": {
     "primeira_vez": "2026-04-24T10:56:24.998375+00:00",
     "ultima_vez_visto": "2026-04-24T10:56:24.998375+00:00",
