@@ -117,26 +117,22 @@ PADROES_IGNORAR = [
     r"whatsapp:",
 ]
 
-PROMPT_RELEVANCIA = """Você é um assistente especializado em concursos públicos brasileiros. Sua tarefa é avaliar se o conteúdo abaixo é relevante para um bacharel em Direito que estuda para concursos públicos nas seguintes áreas:
+PROMPT_RELEVANCIA = """Sua tarefa é avaliar se o conteúdo abaixo é uma divulgação de edital, concurso, processo seletivo, certame, e similares, que sejam relevantes para um bacharel em Direito que estuda para concursos públicos nas seguintes áreas:
 
-RELEVANTE — incluir:
-- Procurador (em qualquer órgão do executivo ou legislativo: AGU, PGFN, PGF, PGE, PGM, câmaras municipais, assembleias legislativas, TCU, TCE, TCM, agências reguladoras federais como ANATEL, ANEEL, ANVISA, ANAC, ANS, ANA, ANTAQ, ANTT, ANP, CADE, Banco Central, conselhos profissionais como OAB, CRM, CREA, CFM etc.)
-- Advogado público (Caixa Econômica Federal, Banco do Brasil, Petrobras, BNDES, Correios, EBSERH, Embrapa, Serpro, DATAPREV, autarquias e fundações federais, estaduais e municipais)
-- Analista Jurídico ou Assessor Jurídico em órgãos do executivo federal, estadual ou municipal, secretarias, ministérios, autarquias, agências reguladoras, empresas públicas
-- Analista Jurídico de Tribunal de Contas (TCU, TCE, TCM) — esses são relevantes
-- Cargos que exijam bacharelado em Direito e cujo conteúdo programático envolva direito administrativo, constitucional, tributário, financeiro, licitações, contratos públicos, execução fiscal
+RELEVANTE — incluir sempre que o conteúdo tiver:
+- Procurador ou Advogado em qualquer órgão do executivo ou legislativo: AGU, PGFN, PGF, PGE, PGM, câmaras municipais, assembleias legislativas, TCU, TCE, TCM, agências reguladoras federais como ANATEL, ANEEL, ANVISA, ANAC, ANS, ANA, ANTAQ, ANTT, ANP, CADE, Banco Central, conselhos profissionais como OAB, CRM, CREA, CFM, etc
+- Procurador ou Advogado da Caixa Econômica Federal, Banco do Brasil, Petrobras, BNDES, Correios, EBSERH, Embrapa, Serpro, DATAPREV, autarquias e fundações federais, estaduais e municipais, etc
+- Analista ou Assessor de matéria jurídica ou correlatas em órgãos do executivo federal, estadual ou municipal, secretarias, ministérios, autarquias, agências reguladoras, empresas públicas, etc
+- Analista ou Assessor de matéria jurídica ou correlatas de Tribunal de Contas como TCU, TCE, TCM, etc
+- Cargos que exijam bacharelado em Direito e cujo conteúdo programático envolva direito público, administrativo, constitucional, tributário, civil, financeiro, licitações, contratos públicos, execução fiscal
 - Residência Jurídica em qualquer órgão público
-- Estágio de pós-graduação em Direito em órgãos públicos
+- Estágio de pós-graduação em Direito em qualquer órgão público
 - Programas de formação jurídica remunerada em órgãos públicos
+- Todos os cargos que, por algum dos motivos acima, pareçam relevantes mas não estejam incluído nessa lista
 
-NÃO RELEVANTE — excluir:
-- Cargos do Poder Judiciário (TJ, TRF, TRT, STJ, STF, juízes, servidores de vara)
-- Ministério Público (federal ou estadual)
-- Defensoria Pública
-- Delegado, escrivão, perito, agente policial
-- Cargos que não exijam formação em Direito (professores, médicos, engenheiros, enfermeiros, técnicos de outras áreas)
-- Cargos militares ou de formação militar
-- Cargos de nível médio ou técnico sem requisito jurídico
+NÃO RELEVANTE — excluir se o conteúdo for apenas:
+- Cargos que não exijam formação em Direito (professores de ensino básico, médicos, engenheiros, enfermeiros, técnicos de outras áreas, etc)
+- Cargos de nível médio ou técnico sem relevância jurídica
 
 Responda APENAS no seguinte formato JSON, sem nenhum texto adicional:
 {"relevante": true, "motivo": "explicação em uma linha"}
