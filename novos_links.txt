@@ -1,14 +1,22 @@
-Verificação: 2026-04-24T10:56:24.998375+00:00
-Links novos encontrados: 3
-  Scraping: 3
+Verificação: 2026-04-24T11:11:24.305049+00:00
+Links novos encontrados: 11
+  Scraping: 11
   Alertas:  0
-Removidos da base: 0
-Total na base: 1132
+Removidos da base: 79
+Total na base: 1064
 ============================================================
 
 ── NOVOS (scraping) ──
 
-https://cj.estrategia.com/portal/prova-subjetiva-mpgo-como-funciona/
-https://cj.estrategia.com/portal/simulado-discursivo-pge-al-procurador-pos-edital/
-https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-cau-sp-2026-edital-inscricao-89656
+https://cj.estrategia.com/portal/aulas-de-correcao-de-sentencas-tj-rj-juiz/
+https://cj.estrategia.com/portal/concurso-advogado-tres-barras-sc/
+https://cj.estrategia.com/portal/concurso-delegado-ce/
+https://cj.estrategia.com/portal/concurso-delegado-rs/
+https://cj.estrategia.com/portal/concurso-magistratura-ce/
+https://cj.estrategia.com/portal/dpe-ma-defensor-veja-os-possiveis-recursos-contra-o-gabarito-da-prova-objetiva/
+https://cj.estrategia.com/portal/enam-2026-1/
+https://cj.estrategia.com/portal/imunidade-parlamentar-responsabilidade-civil/
+https://cj.estrategia.com/portal/revisao-de-vespera-tj-mt-cartorio/
+https://cj.estrategia.com/portal/vicaricidio-e-violencia-vicaria/
+https://www.acheconcursos.com.br/concursos-brasil/concurso-nav-brasil-2026-edital-como-se-inscrever-89657
 
