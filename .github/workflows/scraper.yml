@@ -27,6 +27,7 @@ jobs:
       - name: Executar o scraper
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
         run: python scraper.py
 
       - name: Commitar resultados
