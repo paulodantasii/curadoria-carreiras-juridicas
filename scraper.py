@@ -15,14 +15,6 @@ URLS_ALVO = [
     "https://www.pciconcursos.com.br/previstos/",
     "https://www.pciconcursos.com.br/noticias/",
     "https://www.pciconcursos.com.br/ultimas/",
-    "https://jcconcursos.com.br/noticia/concursos",
-    "https://jcconcursos.com.br/noticia/concursos?page=2",
-    "https://jcconcursos.com.br/noticia/empregos",
-    "https://jcconcursos.com.br/noticia/empregos?page=2",
-    "https://jcconcursos.com.br/concursos/previstos",
-    "https://jcconcursos.com.br/concursos/autorizados",
-    "https://jcconcursos.com.br/concursos/inscricoes-abertas",
-    "https://jcconcursos.com.br/cronograma-geral/",
     "https://www.acheconcursos.com.br/concursos-atualizados-recentemente",
     "https://www.acheconcursos.com.br/concursos-previstos",
     "https://www.acheconcursos.com.br/concursos-abertos",
@@ -31,37 +23,54 @@ URLS_ALVO = [
     "https://cj.estrategia.com/portal/page/3/",
     "https://cj.estrategia.com/portal/page/4/",
     "https://cj.estrategia.com/portal/page/5/",
-    "https://cj.estrategia.com/portal/page/6/",
-    "https://cj.estrategia.com/portal/page/7/",
-    "https://cj.estrategia.com/portal/page/8/",
-    "https://cj.estrategia.com/portal/page/9/",
-    "https://cj.estrategia.com/portal/page/10/",
     "https://cj.estrategia.com/portal/carreiras-juridicas/",
     "https://cj.estrategia.com/portal/carreiras-juridicas/page/2/",
     "https://cj.estrategia.com/portal/carreiras-juridicas/page/3/",
     "https://cj.estrategia.com/portal/carreiras-juridicas/page/4/",
     "https://cj.estrategia.com/portal/carreiras-juridicas/page/5/",
-    "https://cj.estrategia.com/portal/carreiras-juridicas/page/6/",
-    "https://cj.estrategia.com/portal/carreiras-juridicas/page/7/",
-    "https://cj.estrategia.com/portal/carreiras-juridicas/page/8/",
-    "https://cj.estrategia.com/portal/carreiras-juridicas/page/9/",
-    "https://cj.estrategia.com/portal/carreiras-juridicas/page/10/",
     "https://cj.estrategia.com/portal/procuradoria/",
     "https://cj.estrategia.com/portal/procuradoria/page/2/",
     "https://cj.estrategia.com/portal/procuradoria/page/3/",
     "https://cj.estrategia.com/portal/procuradoria/page/4/",
     "https://cj.estrategia.com/portal/procuradoria/page/5/",
-    "https://cj.estrategia.com/portal/procuradoria/page/6/",
-    "https://cj.estrategia.com/portal/procuradoria/page/7/",
-    "https://cj.estrategia.com/portal/procuradoria/page/8/",
-    "https://cj.estrategia.com/portal/procuradoria/page/9/",
-    "https://cj.estrategia.com/portal/procuradoria/page/10/",
 ]
 
 GOOGLE_ALERTAS_FEEDS = [
     {
         "url": "https://www.google.com/alerts/feeds/05883152892408713569/13784085206058947900",
-        "termo": "residencia jurídica estágio de pós graduação",
+        "termo": "seletivo concurso residencia juridica",
+    },
+    {
+        "url": "https://www.google.com/alerts/feeds/05883152892408713569/10699205725319407642",
+        "termo": "seletivo concurso procurador",
+    },
+    {
+        "url": "https://www.google.com/alerts/feeds/05883152892408713569/15459908627525988139",
+        "termo": "seletivo concurso advogado",
+    },
+    {
+        "url": "https://www.google.com/alerts/feeds/05883152892408713569/5648081314456116013",
+        "termo": "seletivo concurso estagio de pos graduacao direito",
+    },
+    {
+        "url": "https://www.google.com/alerts/feeds/05883152892408713569/15126815070692715421",
+        "termo": "seletivo concurso analista juridico",
+    },
+    {
+        "url": "https://www.google.com/alerts/feeds/05883152892408713569/4736851925661048284",
+        "termo": "seletivo concurso assessor juridico",
+    },
+    {
+        "url": "https://www.google.com/alerts/feeds/05883152892408713569/2563769251380958392",
+        "termo": "seletivo concurso tecnico juridico",
+    },
+    {
+        "url": "https://www.google.com/alerts/feeds/05883152892408713569/16659093265726736111",
+        "termo": "seletivo concurso consultor legislativo",
+    },
+    {
+        "url": "https://www.google.com/alerts/feeds/05883152892408713569/4996675272987879500",
+        "termo": "seletivo concurso direito",
     },
 ]
 
@@ -91,7 +100,6 @@ HEADERS = {
 
 DOMINIOS_ALVO = {
     "pciconcursos.com.br",
-    "jcconcursos.com.br",
     "acheconcursos.com.br",
     "cj.estrategia.com",
 }
@@ -122,7 +130,7 @@ PADROES_IGNORAR = [
     r"whatsapp:",
 ]
 
-PROMPT_RELEVANCIA = """Sua tarefa é avaliar se o conteúdo abaixo é uma divulgação de edital, concurso, processo seletivo, certame, e similares, que sejam relevantes para um bacharel em Direito que estuda para concursos públicos nas seguintes áreas:
+PROMPT_RELEVANCIA = """Sua tarefa é avaliar se o conteúdo abaixo é uma notícia de atualização, novidade ou divulgação de edital, concurso, processo seletivo, certame, e similares, que sejam relevantes para um bacharel em Direito que estuda para concursos públicos nas seguintes áreas:
 RELEVANTE — incluir sempre que o conteúdo tiver:
 - Procurador ou Advogado em qualquer órgão do executivo ou legislativo: AGU, PGFN, PGF, PGE, PGM, câmaras municipais, assembleias legislativas, TCU, TCE, TCM, agências reguladoras federais como ANATEL, ANEEL, ANVISA, ANAC, ANS, ANA, ANTAQ, ANTT, ANP, CADE, Banco Central, conselhos profissionais como OAB, CRM, CREA, CFM, etc
 - Procurador ou Advogado da Caixa Econômica Federal, Banco do Brasil, Petrobras, BNDES, Correios, EBSERH, Embrapa, Serpro, DATAPREV, autarquias e fundações federais, estaduais e municipais, etc
