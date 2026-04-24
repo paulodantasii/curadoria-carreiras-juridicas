@@ -1,15 +1,23 @@
-Verificação: 2026-04-24T12:34:12.807055+00:00
-Links novos encontrados: 4
-  Scraping: 4
+Verificação: 2026-04-24T13:12:56.488492+00:00
+Links novos encontrados: 12
+  Scraping: 12
   Alertas:  0
-Removidos da base: 4
-Total na base: 1044
+Removidos da base: 7
+Total na base: 1045
 ============================================================
 
 ── NOVOS (scraping) ──
 
-https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-unifei-mg-selecao-edital-31-2026-professor-substituto-89659
-https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-publico-camara-santa-isabel-sp-abre-4-cargos-89660
+https://cj.estrategia.com/portal/aulas-de-correcao-de-sentencas-tj-rj-juiz/
+https://cj.estrategia.com/portal/concurso-advogado-cfbm/
+https://cj.estrategia.com/portal/concurso-delegado-rs/
+https://cj.estrategia.com/portal/concurso-magistratura-ce/
+https://cj.estrategia.com/portal/imunidade-parlamentar-responsabilidade-civil/
+https://cj.estrategia.com/portal/inscricao-procurador-ale-rr-como-fazer/
+https://cj.estrategia.com/portal/local-prova-mpms-promotor-2026/
+https://www.acheconcursos.com.br/concursos-alagoas/concurso-prefeitura-cajueiro-al-2026-edital-95-vagas-4-1-mil-89661
+https://www.acheconcursos.com.br/concursos-santa-catarina/concurso-prefeitura-xavantina-sc-2026-edital-15-vagas-89662
+https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-cau-sp-2026-edital-inscricao-89656
 https://www.pciconcursos.com.br/noticias/ale-rr-publica-editais-de-concursos-com-salarios-de-ate-39589
 https://www.pciconcursos.com.br/noticias/funpresp-jud-df-abre-concurso-publico-com-salarios-de-ate-11-4-mil
 

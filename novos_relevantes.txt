@@ -1,20 +1,49 @@
-Verificação: 2026-04-24T12:34:12.807055+00:00
-Links analisados: 4
-Links relevantes: 3
+Verificação: 2026-04-24T13:12:56.488492+00:00
+Links analisados: 12
+Links relevantes: 11
 ============================================================
 
-Fonte:   scraping
-Título:  (ver link)
-URL:     https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-publico-camara-santa-isabel-sp-abre-4-cargos-89660
-Motivo:  O cargo de Controlador Interno exige bacharelado em Direito e envolve atividades de controle e gestão pública.
+Título:  MPMS Promotor: local de prova já foi divulgado
+URL:     https://cj.estrategia.com/portal/local-prova-mpms-promotor-2026/
+Motivo:  O conteúdo trata de concurso para o cargo de Promotor de Justiça, carreira jurídica de alto nível que exige bacharelado em Direito.
 
-Fonte:   scraping
-Título:  (ver link)
+Título:  Aulas de correção de sentenças TJ RJ (Juiz)
+URL:     https://cj.estrategia.com/portal/aulas-de-correcao-de-sentencas-tj-rj-juiz/
+Motivo:  O conteúdo trata de preparação específica para o cargo de Juiz de Direito, carreira jurídica de alto nível que exige bacharelado em Direito.
+
+Título:  Concurso Prefeitura de Xavantina-SC 2026: Edital abre 15 vagas
+URL:     https://www.acheconcursos.com.br/concursos-santa-catarina/concurso-prefeitura-xavantina-sc-2026-edital-15-vagas-89662
+Motivo:  O edital contempla cargos de Advogado e Técnico em Licitações, Compras Públicas e Contratos, que exigem formação em Direito.
+
+Título:  Concurso Magistratura CE: sessão de identificação das provas e notas da sentença em 29/04!
+URL:     https://cj.estrategia.com/portal/concurso-magistratura-ce/
+Motivo:  Trata-se de concurso público para o cargo de Juiz Substituto, que exige bacharelado em Direito e atividade jurídica.
+
+Título:  Procurador ALE RR: como se inscrever e os erros que podem te eliminar
+URL:     https://cj.estrategia.com/portal/inscricao-procurador-ale-rr-como-fazer/
+Motivo:  O conteúdo trata de concurso para o cargo de Procurador de Assembleia Legislativa, carreira jurídica de alta relevância.
+
+Título:  Concurso Advogado CFBM: inscrições abertas! Salário de R$ 13 mil!
+URL:     https://cj.estrategia.com/portal/concurso-advogado-cfbm/
+Motivo:  O conteúdo trata de concurso público para o cargo de Advogado em autarquia federal (CFBM), exigindo bacharelado em Direito e OAB.
+
+Título:  ALE-RR publica editais de concursos com salários de até R$ 39.589,56
 URL:     https://www.pciconcursos.com.br/noticias/ale-rr-publica-editais-de-concursos-com-salarios-de-ate-39589
-Motivo:  O edital contempla o cargo de Procurador da ALE-RR, que exige bacharelado em Direito e é de alta relevância para a carreira jurídica.
+Motivo:  O edital contempla o cargo de Procurador da ALE-RR e cargos de Consultor Legislativo, que são de interesse direto para bacharéis em Direito.
 
-Fonte:   scraping
-Título:  (ver link)
+Título:  Funpresp-Jud - DF abre concurso público com salários de até R$ 11,4 mil
 URL:     https://www.pciconcursos.com.br/noticias/funpresp-jud-df-abre-concurso-publico-com-salarios-de-ate-11-4-mil
-Motivo:  O concurso oferece vaga para o cargo de Advogado, sendo diretamente relevante para bacharéis em Direito.
+Motivo:  O concurso oferece vaga para o cargo de Advogado em fundação pública federal, sendo de interesse direto para bacharéis em Direito.
+
+Título:  Concurso Prefeitura Cajueiro-AL 2026 saiu! Edital tem 95 vagas de até R$ 4,1 mil
+URL:     https://www.acheconcursos.com.br/concursos-alagoas/concurso-prefeitura-cajueiro-al-2026-edital-95-vagas-4-1-mil-89661
+Motivo:  O edital contempla cargos de Analista de Licitação e Conciliador Municipal, que exigem ensino superior em qualquer área e envolvem atividades de natureza jurídica e administrativa pública.
+
+Título:  Concurso CAU-SP 2026: Edital abre vagas de nível médio e superior
+URL:     https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-cau-sp-2026-edital-inscricao-89656
+Motivo:  O edital contempla o cargo de Analista Técnico II - Jurídico, que exige bacharelado em Direito e OAB.
+
+Título:  Concurso Delegado RS: prova discursiva em abril! Veja complemento da convocação!
+URL:     https://cj.estrategia.com/portal/concurso-delegado-rs/
+Motivo:  O cargo de Delegado de Polícia exige bacharelado em Direito e é uma das carreiras jurídicas de maior relevância para o público-alvo.
 
