@@ -1,9 +1,108 @@
-Verificação: 2026-04-23T19:39:56.182495+00:00
-Links novos encontrados: 0
-  Scraping: 0
-  Alertas:  0
-Removidos da base: 2
-Total na base: 1053
+Verificação: 2026-04-24T01:56:57.631538+00:00
+Links novos encontrados: 79
+  Scraping: 75
+  Alertas:  4
+Removidos da base: 3
+Total na base: 1129
 ============================================================
 
-Nenhum link novo encontrado.
+── NOVOS (scraping) ──
+
+https://cj.estrategia.com/concurso/cursos-regulares
+https://cj.estrategia.com/portal/concurso-advogado-bndes-etapas/
+https://cj.estrategia.com/portal/concursos-2025-carreiras-juridicas/
+https://cj.estrategia.com/portal/concursos-juridicos-2026-prepare-se-para-os-proximos-editais/
+https://cj.estrategia.com/portal/magistratura-sp-so-ate-15-de-outubro/
+https://cj.estrategia.com/portal/prova-comentada-direito-do-trabalho-e-processo-do-trabalho-agu/
+https://cj.estrategia.com/portal/prova-comentada-direito-penal-magistratura-mt/
+https://cj.estrategia.com/portal/provas-comentadas-de-carreiras-juridicas/
+https://cj.estrategia.com/portal/residencia-juridica-tj-pi/
+https://cj.estrategia.com/portal/residencia-juridica-tj-rj/
+https://www.acheconcursos.com.br/concursos-acre/prefeitura-de-acrelandia-ac-abre-vagas-de-r-11-500-na-saude-89654
+https://www.acheconcursos.com.br/concursos-paraiba/concurso-aroeiras-pb-2026-edital-99-vagas-14-mil-89655
+https://www.acheconcursos.com.br/concursos-parana/edital-maringa-pr-2026-abre-vagas-de-r-6-672-em-9-cargos-89653
+https://www.pciconcursos.com.br/noticias/camara-de-crissiumal-rs-abre-processo-seletivo-com-vaga-para-domestica
+https://www.pciconcursos.com.br/noticias/camara-de-itapiranga-sc-abre-concurso-publico-com-salarios-de-ate-7-5-mil
+https://www.pciconcursos.com.br/noticias/camara-de-santa-isabel-sp-abre-concurso-com-salarios-de-ate-9-9-mil
+https://www.pciconcursos.com.br/noticias/espcex-sp-abre-concurso-com-440-vagas-para-curso-de-formacao-de-oficiais-de-carreira
+https://www.pciconcursos.com.br/noticias/fahece-sc-abre-selecao-para-coordenador-de-qualidade-no-cepon-de-florianopolis
+https://www.pciconcursos.com.br/noticias/fahece-sc-abre-vaga-para-analista-de-sistemas-i-no-cepon-de-florianopolis
+https://www.pciconcursos.com.br/noticias/icmbio-df-abre-processo-seletivo-para-o-cargo-de-agente-temporario-ambiental-em-taguatinga
+https://www.pciconcursos.com.br/noticias/icmbio-pi-anuncia-processo-seletivo-para-agentes-temporarios-ambientais-no-parque-nacional-de-sete-cidades
+https://www.pciconcursos.com.br/noticias/icmbio-ro-abre-processo-seletivo-para-agentes-temporarios-ambientais-em-porto-velho
+https://www.pciconcursos.com.br/noticias/icmbio-sp-abre-selecao-para-agentes-temporarios-ambientais-em-ipero
+https://www.pciconcursos.com.br/noticias/if-goiano-abre-processo-seletivo-para-professor-substituto-de-quimica-no-campus-posse
+https://www.pciconcursos.com.br/noticias/ifg-go-abre-processo-seletivo-para-professor-substituto-na-area-de-engenharia-civil-em-luziania
+https://www.pciconcursos.com.br/noticias/ifma-abre-vaga-em-processo-seletivo-para-professor-substituto-no-campus-pinheiro
+https://www.pciconcursos.com.br/noticias/ifpi-abre-selecao-para-professores-substitutos-no-campus-corrente
+https://www.pciconcursos.com.br/noticias/ifpr-abre-processos-seletivos-para-professores-substitutos-no-campus-irati
+https://www.pciconcursos.com.br/noticias/ifrn-abre-selecao-para-professor-visitante-de-matematica-em-sao-paulo-do-potengi
+https://www.pciconcursos.com.br/noticias/ifro-abre-processo-seletivo-para-professores-substitutos-em-agronomia-e-biologia
+https://www.pciconcursos.com.br/noticias/iftm-mg-abre-processo-seletivo-para-professor-substituto-de-eletronica-em-uberaba
+https://www.pciconcursos.com.br/noticias/prefeitura-de-acrelandia-ac-abre-processo-seletivo-com-salarios-de-ate-11500
+https://www.pciconcursos.com.br/noticias/prefeitura-de-alto-parana-pr-abre-concursos-para-cargos-de-nivel-medio
+https://www.pciconcursos.com.br/noticias/prefeitura-de-amambai-ms-abre-processo-seletivo-para-agente-comunitario-de-saude
+https://www.pciconcursos.com.br/noticias/prefeitura-de-aroeiras-pb-abre-concurso-publico-com-salarios-de-ate-14-mil
+https://www.pciconcursos.com.br/noticias/prefeitura-de-bage-rs-abre-processo-seletivo-para-cozinheiros
+https://www.pciconcursos.com.br/noticias/prefeitura-de-bom-retiro-do-sul-rs-abre-selecao-para-tecnico-em-edificacoes-e-medico-psiquiatra
+https://www.pciconcursos.com.br/noticias/prefeitura-de-bozano-rs-abre-selecao-para-agente-comunitario-de-saude
+https://www.pciconcursos.com.br/noticias/prefeitura-de-cambe-pr-abre-selecao-com-salarios-de-ate-10-6-mil
+https://www.pciconcursos.com.br/noticias/prefeitura-de-campos-novos-sc-abre-processos-seletivos-para-instrutor-e-orientador-social
+https://www.pciconcursos.com.br/noticias/prefeitura-de-corinto-mg-abre-processo-seletivo-para-cargos-de-nivel-superior
+https://www.pciconcursos.com.br/noticias/prefeitura-de-coronel-sapucaia-ms-abre-processo-seletivo-para-a-secretaria-municipal-de-infraestrutura
+https://www.pciconcursos.com.br/noticias/prefeitura-de-cotipora-rs-abre-processo-seletivo-para-merendeira-e-secretario-de-escola
+https://www.pciconcursos.com.br/noticias/prefeitura-de-crissiumal-rs-abre-selecoes-com-vagas-para-professores
+https://www.pciconcursos.com.br/noticias/prefeitura-de-curvelo-mg-abre-processo-seletivo-para-tecnico-em-laboratorio
+https://www.pciconcursos.com.br/noticias/prefeitura-de-curvelo-mg-abre-selecoes-para-enfermeiro-e-cirurgiao-dentista
+https://www.pciconcursos.com.br/noticias/prefeitura-de-dois-vizinhos-pr-abre-vaga-para-advogado-com-salario-de-6-4-mil
+https://www.pciconcursos.com.br/noticias/prefeitura-de-emilianopolis-sp-abre-concurso-publico-com-remuneracoes-de-ate-6-4-mil
+https://www.pciconcursos.com.br/noticias/prefeitura-de-espumoso-rs-abre-selecao-para-agente-comunitario-de-saude
+https://www.pciconcursos.com.br/noticias/prefeitura-de-igrejinha-rs-abre-processo-seletivo-para-o-cargo-de-psicopedagogo
+https://www.pciconcursos.com.br/noticias/prefeitura-de-juara-mt-abre-selecao-para-a-secretaria-de-educacao
+https://www.pciconcursos.com.br/noticias/prefeitura-de-maracai-sp-abre-concurso-publico-com-salarios-de-ate-18199
+https://www.pciconcursos.com.br/noticias/prefeitura-de-maringa-pr-abre-processo-seletivo-com-salarios-de-ate-6672
+https://www.pciconcursos.com.br/noticias/prefeitura-de-mato-leitao-rs-abre-concurso-publico-com-salarios-de-ate-10-5-mil
+https://www.pciconcursos.com.br/noticias/prefeitura-de-milagres-ce-abre-concursos-publicos-com-salarios-de-ate-10-mil
+https://www.pciconcursos.com.br/noticias/prefeitura-de-morada-nova-ce-abre-processo-seletivo-com-salarios-de-ate-4259
+https://www.pciconcursos.com.br/noticias/prefeitura-de-pelotas-rs-abre-selecao-para-o-cargo-de-nutricionista
+https://www.pciconcursos.com.br/noticias/prefeitura-de-perdoes-mg-abre-processos-seletivos-com-salarios-de-ate-15-5-mil
+https://www.pciconcursos.com.br/noticias/prefeitura-de-quirinopolis-go-abre-processo-seletivo-com-50-vagas-e-cadastro-reserva
+https://www.pciconcursos.com.br/noticias/prefeitura-de-sao-domingos-pb-abre-selecao-com-15-vagas-para-cuidador-escolar
+https://www.pciconcursos.com.br/noticias/prefeitura-de-tangara-sc-abre-vagas-para-assistente-social-e-psicologo-nasf
+https://www.pciconcursos.com.br/noticias/prefeitura-de-vera-mendes-pi-abre-processo-seletivo-para-profissionais-de-nivel-superior
+https://www.pciconcursos.com.br/noticias/prefeitura-de-viana-es-abre-selecao-para-professores-e-pedagogos
+https://www.pciconcursos.com.br/noticias/prefeitura-de-vila-velha-es-abre-selecao-para-a-secretaria-municipal-de-educacao
+https://www.pciconcursos.com.br/noticias/prefeitura-de-xavantina-sc-abre-concurso-publico-com-salarios-de-ate-29-6-mil
+https://www.pciconcursos.com.br/noticias/samae-de-orleans-sc-abre-concurso-para-encanador-auxiliar-de-operacoes-e-servente
+https://www.pciconcursos.com.br/noticias/secretaria-de-saude-pe-abre-selecao-para-diversos-cargos-e-salarios-de-ate-15-4-mil
+https://www.pciconcursos.com.br/noticias/uema-abre-concursos-para-professores-com-salarios-de-11294
+https://www.pciconcursos.com.br/noticias/ufmg-abre-selecoes-para-professores-substitutos-nos-departamentos-de-engenharia-de-minas-e-engenharia-quimica
+https://www.pciconcursos.com.br/noticias/ufmg-abre-vaga-para-professor-substituto-de-ciencia-da-computacao
+https://www.pciconcursos.com.br/noticias/ufmg-abre-vaga-para-professor-substituto-no-departamento-de-artes-cenicas
+https://www.pciconcursos.com.br/noticias/ufpi-abre-processo-seletivo-para-professores-substitutos-de-enfermagem
+https://www.pciconcursos.com.br/noticias/ufu-mg-abre-concurso-publico-com-vagas-para-cargos-tecnico-administrativos
+https://www.pciconcursos.com.br/noticias/unifal-mg-abre-processo-seletivo-para-professor-substituto-de-matematica
+https://www.pciconcursos.com.br/noticias/unir-ro-abre-processo-seletivo-para-professores-substitutos-no-campus-de-cacoal
+
+── NOVOS (Google Alertas) ──
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  Com aprovação para criação de <b>pós</b>-<b>graduações</b> e programas de <b>residência</b>, Conselho ... - UEA
+URL:     http://www.uea.edu.br/index.php/2026/04/23/com-aprovacao-para-criacao-de-pos-graduacoes-e-programas-de-residencia-conselho-universitario-da-uea-realiza-1a-reuniao-ordinaria-de-2026/
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  PGE-SE abre inscrições para <b>estágio de Pós</b>-<b>Graduação</b> em Direito - O que é notícia em Sergipe
+URL:     https://infonet.com.br/noticias/educacao/pge-se-abre-inscricoes-para-estagio-de-pos-graduacao-em-direito/
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  Fiocruz abre seleção de <b>estágio</b> 2026 com inscrições até 15 de maio; veja áreas e como participar
+URL:     https://concursonews.com/2026/04/fiocruz-abre-selecao-de-estagio-2026-com-inscricoes-ate-15-de-maio-veja-areas-e-como-participar/
+Trecho:  
+
+Termo:   residencia jurídica estágio de pós graduação
+Título:  Termina nesta quarta-feira (22) o prazo para candidatos(as) do PRJud realizarem ... - Esmat
+URL:     http://esmat.tjto.jus.br/portal/index.php/noticias/233-processo-seletivo/9943-termina-nesta-quarta-feira-22-o-prazo-para-candidatos-as-do-prjud-realizarem-procedimento-de-heteroidentificacao
+Trecho:  
+
