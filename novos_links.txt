@@ -1,23 +1,145 @@
-Verificação: 2026-04-24T13:12:56.488492+00:00
-Links novos encontrados: 12
-  Scraping: 12
-  Alertas:  0
-Removidos da base: 7
-Total na base: 1045
+Verificação: 2026-04-24T16:30:44.359660+00:00
+Links novos encontrados: 32
+  Scraping: 7
+  Alertas:  25
+Removidos da base: 6
+Total na base: 1071
 ============================================================
 
 ── NOVOS (scraping) ──
 
-https://cj.estrategia.com/portal/aulas-de-correcao-de-sentencas-tj-rj-juiz/
-https://cj.estrategia.com/portal/concurso-advogado-cfbm/
-https://cj.estrategia.com/portal/concurso-delegado-rs/
-https://cj.estrategia.com/portal/concurso-magistratura-ce/
-https://cj.estrategia.com/portal/imunidade-parlamentar-responsabilidade-civil/
-https://cj.estrategia.com/portal/inscricao-procurador-ale-rr-como-fazer/
-https://cj.estrategia.com/portal/local-prova-mpms-promotor-2026/
-https://www.acheconcursos.com.br/concursos-alagoas/concurso-prefeitura-cajueiro-al-2026-edital-95-vagas-4-1-mil-89661
-https://www.acheconcursos.com.br/concursos-santa-catarina/concurso-prefeitura-xavantina-sc-2026-edital-15-vagas-89662
-https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-cau-sp-2026-edital-inscricao-89656
-https://www.pciconcursos.com.br/noticias/ale-rr-publica-editais-de-concursos-com-salarios-de-ate-39589
-https://www.pciconcursos.com.br/noticias/funpresp-jud-df-abre-concurso-publico-com-salarios-de-ate-11-4-mil
+https://www.acheconcursos.com.br/concursos-goias/processo-seletivo-ifg-07-2026-professor-substituto-goiania-89669
+https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-cefet-mg-4-editais-professor-tres-cidades-89666
+https://www.acheconcursos.com.br/concursos-rio-de-janeiro/processo-seletivo-prefeitura-campos-goytacazes-rj-236-vagas-niveis-medio-superior-89678
+https://www.acheconcursos.com.br/concursos-santa-catarina/concurso-publico-camara-itapiranga-sc-3-cargos-89663
+https://www.acheconcursos.com.br/concursos-santa-catarina/concurso-samae-orleans-sc-aberto-3-cargos-89664
+https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-prefeitura-emilianopolis-sp-2026-89665
+https://www.pciconcursos.com.br/noticias/prefeitura-de-salto-do-jacui-rs-cancela-processo-seletivo-para-agente-de-combate-as-endemias
+
+── NOVOS (Google Alertas) ──
+
+Termo:   seletivo concurso tecnico juridico
+Título:  <b>Concurso</b> Prefeitura de Emilianópolis SP abre vagas imediatas e CR - Folha Dirigida
+URL:     https://folha.qconcursos.com/n/concurso-prefeitura-de-emilianopolis-sp-abre-vagas-imediatas-e-cr
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Câmara de Crissiumal RS abre processo <b>seletivo</b> para doméstica com 1 vaga
+URL:     https://folha.qconcursos.com/n/camara-de-crissiumal-rs-abre-processo-seletivo-para-domestica-com-1-vaga
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  <b>Concurso</b> da Câmara de Santa Isabel SP oferece salários de quase R$ 10 mil
+URL:     https://jcconcursos.com.br/noticia/concursos/concurso-da-camara-de-santa-isabel-sp-edital-142100
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  <b>Concurso</b> na construção tem vagas para todos os níveis escolares e salários de até R$ 10 mil
+URL:     https://primeirapagina.com.br/emprego-e-concursos/concurso-na-construcao-tem-vagas-para-todos-os-niveis-escolares-e-salarios-de-ate-r-10-mil/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Prefeitura de Dois Vizinhos PR abre processo <b>seletivo</b> com 1 vaga para advogado
+URL:     https://folha.qconcursos.com/n/prefeitura-de-dois-vizinhos-pr-abre-processo-seletivo-com-1-vaga-para-advogado
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Edital de processo <b>seletivo</b> com vagas para diversas áreas da saúde em Rondônia será ...
+URL:     https://rondonia.ro.gov.br/edital-de-processo-seletivo-com-vagas-para-diversas-areas-da-saude-em-rondonia-sera-lancado-na-segunda-feira-27/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Edital NAV publicado! São 858 vagas e até R$ 10,8 mil - Estratégia Concursos
+URL:     https://www.estrategiaconcursos.com.br/blog/concurso-nav-edital-publicado-2026/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Duque de Caxias abre seleção com 200 vagas; inscrições começam sexta (24) - Itatiaia
+URL:     https://www.itatiaia.com.br/emprego-e-concursos/duque-de-caxias-abre-selecao-com-200-vagas-inscricoes-comecam-sexta-24/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Mais de 31 mil fazem prova da Câmara, saiba o que pode ou não levar - Correio Braziliense
+URL:     https://www.correiobraziliense.com.br/euestudante/concursos/2026/04/7404167-mais-de-31-mil-fazem-prova-da-camara-saiba-o-que-pode-ou-nao-levar.html
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Câmara de Arujá abre <b>concurso</b> público para diversos cargos - Portal News
+URL:     https://portalnews.com.br/cidades/2026/04/camara-de-aruja-abre-concurso-publico-para-diversos-cargos
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  <b>Concurso</b> Câmara de Rio das Ostras RJ: saiu edital. Até R$5.713! - Degrau Cultural
+URL:     https://degraucultural.com.br/noticia/concurso-camara-de-rio-das-ostras-rj-saiu-edital-ate-r5713
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Edital de processo <b>seletivo</b> com vagas para diversas áreas da saúde em Rondônia será ...
+URL:     https://oestadoderondonia.com.br/edital-de-processo-seletivo-com-vagas-para-diversas-areas-da-saude-em-rondonia-sera-lancado-na-segunda-feira-27/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Salário de até R$ 10 mil, 36 vagas: <b>concurso</b> em SP abre inscrições - Revista Fórum
+URL:     https://revistaforum.com.br/concurso-e-emprego/concurso-cau-sp/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  HSVP abre processo <b>seletivo</b> com vagas para diferentes perfis profissionais - Uirapuru
+URL:     https://rduirapuru.com.br/hsvp-abre-processo-seletivo-com-vagas-para-diferentes-perfis-profissionais/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Câmara de Arujá abre <b>concurso</b> com salários de até R$ 15,6 mil | Portal Gazeta Regional
+URL:     https://portalgazetaregional.com.br/concurso-camara-aruja-2026-salarios-ate-15-mil/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  <b>Concurso</b> da Câmara de Rio das Ostras RJ lança edital com 38 vagas
+URL:     https://jcconcursos.com.br/noticia/concursos/concurso-da-camara-de-rio-das-ostras-rj-edital-142111
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  IFMA abre <b>seletivo</b> para cursos técnicos EaD com 3.690 vagas - Imirante.com
+URL:     https://imirante.com/noticias/maranhao/2026/04/23/ifma-abre-seletivo-para-cursos-tecnicos-ead-com-3690-vagas
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  <b>Concurso</b> AL MS: retificação do cronograma. Veja as novas datas!
+URL:     https://blog.grancursosonline.com.br/concurso-al-ms-retificacao-6-2026/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Interessados em fazer um curso gratuito podem se inscrever no Processo <b>Seletivo</b> 2026/2 do IFRS
+URL:     https://ifrs.edu.br/interessados-em-fazer-um-curso-gratuito-podem-se-inscrever-no-processo-seletivo-2026-2-do-ifrs/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  <b>Concurso</b> Câmara dos Deputados Policial: participe da Revisão de Véspera!
+URL:     https://blog.grancursosonline.com.br/concurso-camara-dos-deputados-policial-revisao-de-vespera-2026/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Universidade Federal de Minas Gerais PRÓ-REITORIA DE RECURSOS HUMANOS DA UFMG
+URL:     https://www.ufmg.br/prorh/noticia/resultado-do-processo-seletivo-interno-para-requisicao-de-servidores-da-ufmg-para-a-advocacia-geral-da-uniao-agu/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  IFMA abre <b>seletivo</b> para cursos técnicos EaD com 3.690 vagas; saiba como se inscrever
+URL:     https://g1.globo.com/ma/maranhao/educacao/noticia/2026/04/23/ifma-abre-seletivo-para-cursos-tecnicos-ead-com-3690-vagas-saiba-como-se-inscrever.ghtml
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Com 850 vagas, UFCA abre processo <b>seletivo</b> para graduações EaD. Interessados podem ...
+URL:     https://www.ufca.edu.br/noticias/com-850-vagas-ufca-abre-processo-seletivo-para-graduacoes-ead-interessados-podem-participar-ate-8-de-maio/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  UEMA abre <b>concurso</b> com vagas para professor de Direito em Timon com salários de até R$ 11 mil
+URL:     https://portalodia.com/noticias/brasil/uema-abre-concurso-com-vagas-para-professor-de-direito-em-timon-com-salarios-de-ate-r-11-mil-456711.html
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  <b>Concurso</b> Câmara: tudo o que você precisa saber antes da prova para Policial <b>Legislativo</b>
+URL:     https://ceisc.com.br/blog/post/concurso-camara-tudo-o-que-voce-precisa-saber-antes-da-prova-para-policial-legislativo
+Trecho:  
 
