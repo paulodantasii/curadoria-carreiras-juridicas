@@ -66,7 +66,7 @@ GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_M
 CALLMEBOT_PHONE = "558699252617"
 CALLMEBOT_APIKEY = os.environ.get("CALLMEBOT_APIKEY", "")
 GITHUB_USER = "paulodantasii"
-GITHUB_REPO = "monitor-concursos"
+GITHUB_REPO = "alerta-concursos-juridicos"
 URL_RELATORIO = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/relatorio.html"
 
 DATABASE_FILE = "database.json"
@@ -118,6 +118,24 @@ PADROES_IGNORAR = [
     r"whatsapp:",
 ]
 
+# Mapeamento de domínios para nomes de exibição
+NOMES_SITES = {
+    "pciconcursos.com.br": "PCI CONCURSOS",
+    "acheconcursos.com.br": "ACHE CONCURSOS",
+    "estrategiaconcursos.com.br": "ESTRATÉGIA CONCURSOS",
+    "grancursosonline.com.br": "GRAN CURSOS",
+    "cj.estrategia.com": "ESTRATÉGIA CJ",
+    "jcconcursos.com.br": "JC CONCURSOS",
+    "qconcursos.com": "QConcursos",
+    "concursonews.com": "CONCURSO NEWS",
+    "concursosnobrasil.com": "CONCURSOS NO BRASIL",
+    "folha.qconcursos.com": "FOLHA CONCURSOS",
+    "magistrarcursos.com.br": "MAGISTRAR CURSOS",
+    "mdcconcursos.com.br": "MDC CONCURSOS",
+    "uniten.com.br": "UNITEN",
+    "noticiasconcursos.com.br": "NOTÍCIAS CONCURSOS",
+}
+
 PROMPT_RELEVANCIA = """Sua tarefa é avaliar se o conteúdo abaixo é uma notícia de atualização, novidade ou divulgação de edital, concurso, processo seletivo, certame, e similares, que sejam relevantes para um bacharel em Direito que estuda para concursos públicos nas seguintes áreas:
 RELEVANTE — sempre que o conteúdo tiver:
 - Procurador ou Advogado em qualquer órgão do executivo ou legislativo: AGU, PGFN, PGF, PGE, PGM, câmaras municipais, assembleias legislativas, TCU, TCE, TCM, agências reguladoras federais como ANATEL, ANEEL, ANVISA, ANAC, ANS, ANA, ANTAQ, ANTT, ANP, CADE, Banco Central, conselhos profissionais como OAB, CRM, CREA, CFM, etc
@@ -151,14 +169,23 @@ def agora_brasilia() -> datetime:
     return datetime.now(timezone(timedelta(hours=-3)))
 
 
-def dominio(url: str) -> str:
-    host = urlparse(url).netloc
-    return host.replace("www.", "")
+def nome_site(url: str) -> str:
+    """Retorna o nome de exibição do site em maiúsculo."""
+    host = urlparse(url).netloc.replace("www.", "")
+    # Verifica mapeamento direto
+    for dominio_chave, nome in NOMES_SITES.items():
+        if dominio_chave in host:
+            return nome
+    # Fallback: usa o domínio limpo em maiúsculo
+    partes = host.split(".")
+    if len(partes) >= 2:
+        return partes[-2].upper()
+    return host.upper()
 
 
 def eh_relevante_url(url: str) -> bool:
-    dom = dominio(url)
-    if not any(d in dom for d in DOMINIOS_ALVO):
+    host = urlparse(url).netloc.replace("www.", "")
+    if not any(d in host for d in DOMINIOS_ALVO):
         return False
     for p in PADROES_IGNORAR:
         if re.search(p, url, re.IGNORECASE):
@@ -353,13 +380,11 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
         titulo = re.sub(r"\s*[|\-–]\s*.{3,40}$", "", titulo).strip()
         url = item.get("url", "")
         motivo = item.get("motivo", "")
-        fonte = item.get("fonte", "")
-        termo = item.get("termo", "")
-        tag = f'<span class="tag">{termo}</span>' if termo else f'<span class="tag">{fonte}</span>'
+        tag = nome_site(url)
 
         cards += f"""
         <div class="card">
-            {tag}
+            <span class="tag">{tag}</span>
             <h2><a href="{url}" target="_blank">{titulo}</a></h2>
             <p class="motivo">{motivo}</p>
             <a href="{url}" target="_blank" class="btn">Acessar matéria →</a>
@@ -374,7 +399,7 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitor de Concursos Jurídicos</title>
+    <title>Alertas de Concursos Jurídicos</title>
     <style>
         * {{ box-sizing: border-box; margin: 0; padding: 0; }}
         body {{
@@ -430,7 +455,6 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
             font-weight: 600;
             padding: 0.2rem 0.6rem;
             border-radius: 6px;
-            text-transform: uppercase;
             letter-spacing: 0.3px;
             margin-bottom: 0.6rem;
         }}
@@ -463,7 +487,6 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
             padding: 0.45rem 1rem;
             border-radius: 8px;
             text-decoration: none;
-            transition: background 0.2s;
         }}
         .btn:hover {{
             background: #e94560;
@@ -484,14 +507,14 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
 </head>
 <body>
     <header>
-        <h1>⚖️ Monitor de Concursos Jurídicos</h1>
+        <h1>⚖️ Alertas de Concursos Jurídicos</h1>
         <p>Verificação de {data_str} · {total_analisados} links analisados</p>
         <div class="badge">{len(relevantes)} oportunidade(s) relevante(s)</div>
     </header>
     <div class="container">
         {cards}
     </div>
-    <footer>Gerado automaticamente · Monitor de Concursos Jurídicos</footer>
+    <footer>Gerado automaticamente · Alertas de Concursos Jurídicos</footer>
 </body>
 </html>"""
 
@@ -520,7 +543,7 @@ def enviar_whatsapp(mensagem: str) -> None:
 
 def formatar_mensagem_whatsapp(data_str: str, total_novos: int, relevantes: list, resumo: str) -> str:
     cabecalho = (
-        f"Alerta de Concursos - {data_str}\n"
+        f"Alertas de Concursos - {data_str}\n"
         f"{len(relevantes)} oportunidade(s) relevante(s) encontrada(s).\n\n"
     )
     if not relevantes:
@@ -530,7 +553,6 @@ def formatar_mensagem_whatsapp(data_str: str, total_novos: int, relevantes: list
     corpo = resumo if resumo else "Veja o relatório completo no link abaixo."
 
     mensagem = cabecalho + corpo + rodape
-    # Garante que não ultrapasse 768 caracteres
     if len(mensagem) > 768:
         espaco = 768 - len(cabecalho) - len(rodape) - 3
         corpo = corpo[:espaco] + "..."
@@ -713,7 +735,7 @@ def main():
         f.write(html)
     print(f"  Relatório salvo em '{OUTPUT_HTML}'.")
 
-    # ── Resumo via Gemini para WhatsApp ───────────────────────────────────────
+    # ── Resumo Gemini para WhatsApp ───────────────────────────────────────────
     resumo = ""
     if relevantes:
         print("\nGerando resumo para WhatsApp...")
