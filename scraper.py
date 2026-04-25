@@ -254,13 +254,11 @@ def coletar_todos_alertas() -> list:
 # ─── Extração de texto e título ───────────────────────────────────────────────
 
 def extrair_pagina(url: str) -> tuple:
-    """Retorna (titulo, texto) da página."""
     try:
         resp = requests.get(url, timeout=20, headers=HEADERS)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
 
-        # Extrai título
         titulo = ""
         if soup.title and soup.title.string:
             titulo = soup.title.string.strip()
@@ -269,7 +267,6 @@ def extrair_pagina(url: str) -> tuple:
             if h1:
                 titulo = h1.get_text(strip=True)
 
-        # Extrai texto
         for tag in soup(["script", "style", "nav", "footer", "header"]):
             tag.decompose()
         texto = soup.get_text(separator=" ", strip=True)
@@ -280,7 +277,7 @@ def extrair_pagina(url: str) -> tuple:
         return "", ""
 
 
-# ─── Gemini ───────────────────────────────────────────────────────────────────
+# ─── Gemini com retry ─────────────────────────────────────────────────────────
 
 def avaliar_relevancia(url: str, titulo: str, texto: str) -> dict:
     if not GEMINI_API_KEY:
@@ -293,22 +290,27 @@ def avaliar_relevancia(url: str, titulo: str, texto: str) -> dict:
         "contents": [{"parts": [{"text": PROMPT_RELEVANCIA + conteudo}]}],
         "generationConfig": {"temperature": 0, "maxOutputTokens": 200},
     }
-    try:
-        resp = requests.post(
-            GEMINI_URL,
-            headers={"Content-Type": "application/json"},
-            params={"key": GEMINI_API_KEY},
-            json=payload,
-            timeout=30,
-        )
-        resp.raise_for_status()
-        data = resp.json()
-        texto_resposta = data["candidates"][0]["content"]["parts"][0]["text"].strip()
-        texto_resposta = re.sub(r"```json|```", "", texto_resposta).strip()
-        return json.loads(texto_resposta)
-    except Exception as e:
-        print(f"    [ERRO Gemini] {url} → {e}")
-        return {"relevante": False, "motivo": f"erro: {e}"}
+
+    for tentativa in range(3):
+        try:
+            resp = requests.post(
+                GEMINI_URL,
+                headers={"Content-Type": "application/json"},
+                params={"key": GEMINI_API_KEY},
+                json=payload,
+                timeout=45,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            texto_resposta = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+            texto_resposta = re.sub(r"```json|```", "", texto_resposta).strip()
+            return json.loads(texto_resposta)
+        except Exception as e:
+            print(f"    [ERRO Gemini tentativa {tentativa+1}/3] {url} → {e}")
+            if tentativa < 2:
+                time.sleep(15 * (tentativa + 1))  # 15s na 1ª, 30s na 2ª
+
+    return {"relevante": False, "motivo": "erro após 3 tentativas"}
 
 
 # ─── WhatsApp via CallMeBot ───────────────────────────────────────────────────
@@ -334,7 +336,6 @@ def enviar_whatsapp(mensagem: str) -> None:
 
 
 def formatar_mensagem_whatsapp(agora: str, total_novos: int, relevantes: list) -> str:
-    # Formata data legível
     dt = datetime.fromisoformat(agora)
     data_str = dt.strftime("%d/%m/%Y às %Hh%M")
 
@@ -352,7 +353,6 @@ def formatar_mensagem_whatsapp(agora: str, total_novos: int, relevantes: list) -
     ]
     for i, item in enumerate(relevantes, 1):
         titulo = item.get("titulo_real") or item.get("title") or ""
-        # Limpa sufixos de site do título
         titulo = re.sub(r"\s*[|\-–]\s*.{3,40}$", "", titulo).strip()
         if not titulo:
             titulo = "Ver link"
@@ -500,7 +500,6 @@ def main():
             time.sleep(PAUSA_GEMINI)
             continue
 
-        # Usa título do feed de alertas se a página não retornou título
         titulo = titulo_real or item.get("title", "")
 
         avaliacao = avaliar_relevancia(url, titulo, texto)
