@@ -1,50 +1,9 @@
-Verificação: 2026-04-25T15:00:31.614937+00:00
-Links novos encontrados: 8
+Verificação: 2026-04-25T15:30:33.608521+00:00
+Links novos encontrados: 0
   Scraping: 0
-  Alertas:  8
-Removidos da base: 295
-Total na base: 933
+  Alertas:  0
+Removidos da base: 88
+Total na base: 845
 ============================================================
 
-── NOVOS (Google Alertas) ──
-
-Termo:   seletivo concurso procurador
-Título:  <b>Concurso</b> PGE BA: Edital confirmado para julho! VEJA - Blog Gran Cursos Online
-URL:     https://blog.grancursosonline.com.br/concurso-pge-ba-edital-confirmado-para-julho-veja/amp
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  Prefeitura de Praia Grande SP abre <b>concurso</b> com 22 vagas em várias áreas
-URL:     https://folha.qconcursos.com/n/prefeitura-de-praia-grande-sp-abre-concurso-com-22-vagas-em-varias-areas
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  Prefeitura de Capão Bonito do Sul RS abre processo <b>seletivo</b> com 4 vagas | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/prefeitura-de-capao-bonito-do-sul-rs-abre-processo-seletivo-com-4-vagas
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  Nota pública — <b>Procuradoria</b>-Geral da Fazenda Nacional - Portal Gov.br
-URL:     https://www.gov.br/pgfn/pt-br/assuntos/noticias/2026/nota-publica-1
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  <b>Concurso</b> Prefeitura de Pedregulho SP prorroga inscrições com vagas imediatas
-URL:     https://folha.qconcursos.com/n/concurso-prefeitura-de-pedregulho-sp-prorroga-inscricoes-com-vagas-imediatas
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  <b>Concurso</b> PGE BA <b>Procurador</b>: edital anunciado para o início do 2º semestre; confira!
-URL:     https://blog.grancursosonline.com.br/concurso-pge-ba-procurador-edital-anunciado-para-o-inicio-do-2o-semestre-confira/
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  <b>Concurso</b> Praia Grande SP abre 23 vagas com salários de até R$ 25 mil
-URL:     https://mdcconcursos.com.br/concurso-praia-grande-sp-2026/
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  Prefeitura abre processo <b>seletivo</b> simplificado para professores
-URL:     https://prefeitura.poa.br/smap/noticias/prefeitura-abre-processo-seletivo-simplificado-para-professores
-Trecho:  
-
+Nenhum link novo encontrado.
