@@ -66,7 +66,7 @@ GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_M
 CALLMEBOT_PHONE = "558699252617"
 CALLMEBOT_APIKEY = os.environ.get("CALLMEBOT_APIKEY", "")
 GITHUB_USER = "paulodantasii"
-GITHUB_REPO = "monitor-concursos"
+GITHUB_REPO = "alerta-concursos-juridicos"
 URL_RELATORIO = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/relatorio.html"
 
 DATABASE_FILE = "database.json"
