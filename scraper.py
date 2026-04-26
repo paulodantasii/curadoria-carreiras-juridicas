@@ -126,7 +126,7 @@ NOMES_SITES = {
     "grancursosonline.com.br": "GRAN CURSOS",
     "cj.estrategia.com": "ESTRATÉGIA CJ",
     "jcconcursos.com.br": "JC CONCURSOS",
-    "qconcursos.com": "QConcursos",
+    "qconcursos.com": "QCONCURSOS",
     "concursonews.com": "CONCURSO NEWS",
     "concursosnobrasil.com": "CONCURSOS NO BRASIL",
     "folha.qconcursos.com": "FOLHA CONCURSOS",
@@ -134,6 +134,21 @@ NOMES_SITES = {
     "mdcconcursos.com.br": "MDC CONCURSOS",
     "uniten.com.br": "UNITEN",
     "noticiasconcursos.com.br": "NOTÍCIAS CONCURSOS",
+    "ojornalextra.com.br": "O JORNAL EXTRA",
+    "contilnetnoticias.com.br": "CONTILNET",
+    "midiamax.com.br": "MÍDIAMAX",
+    "noticiasconcursos.com.br": "NOTÍCIAS CONCURSOS",
+    "primeirapagina.com.br": "PRIMEIRA PÁGINA",
+    "portaln10.com.br": "PORTAL N10",
+    "novaconcursos.com.br": "NOVA CONCURSOS",
+    "tribunaonline.com.br": "TRIBUNA ONLINE",
+    "unifor.br": "UNIFOR",
+    "setorsaude.com.br": "SETOR SAÚDE",
+    "academiaconcursos.com.br": "ACADEMIA CONCURSOS",
+    "correiobraziliense.com.br": "CORREIO BRAZILIENSE",
+    "g1.globo.com": "G1",
+    "folhavitoria.com.br": "FOLHA VITÓRIA",
+    "proximosconcursos.com": "PRÓXIMOS CONCURSOS",
 }
 
 PROMPT_RELEVANCIA = """Sua tarefa é avaliar se o conteúdo abaixo é uma notícia de atualização, novidade ou divulgação de edital, concurso, processo seletivo, certame, e similares, que sejam relevantes para um bacharel em Direito que estuda para concursos públicos nas seguintes áreas:
@@ -148,7 +163,7 @@ RELEVANTE — sempre que o conteúdo tiver:
 - Programas de formação jurídica remunerada em órgãos públicos
 - Todos os cargos que, por algum dos motivos acima, pareçam relevantes mas não estejam incluídos nessa lista
 NÃO RELEVANTE — se o conteúdo for apenas:
-- Cargos que NÃO exijam formação em Direito (professores de ensino básico, médicos, engenheiros, enfermeiros, motoristas, técnicos de outras áreas, etc)
+- Cargos que NÃO exijam formação em Direito (professores de ensino básico, médicos, engenheiros, enfermeiros, saúde, limpeza, motoristas, técnicos de outras áreas, etc)
 - Cargos de nível médio ou técnico sem relevância jurídica
 Responda APENAS no seguinte formato JSON, sem nenhum texto adicional:
 {"relevante": true, "motivo": "explicação em uma linha"}
@@ -157,7 +172,7 @@ ou
 Conteúdo para avaliar:
 """
 
-PROMPT_RESUMO = """Com base nos resultados abaixo, escreva um resumo MUITO CURTO (máximo 300 caracteres) das oportunidades encontradas, mencionando os tipos de cargo e órgãos principais. Seja direto e objetivo, sem introdução. Exemplo: "Vagas para Procurador (PGM-SP, ALE-RR), Advogado (FUNPRESP, NAV Brasil) e Residência Jurídica (MPMG). Inscrições abertas."
+PROMPT_RESUMO = """Com base nos resultados abaixo, escreva um resumo MUITO CURTO (entre 450 e 550 caracteres) das oportunidades encontradas, mencionando os tipos de cargo e órgãos principais. Seja direto e objetivo, sem introdução. Por EXEMPLO: "Vagas para Procurador (abreviação dos órgãos), Advogado (siglas dos orgãos) e Residência Jurídica (orgão/sigla). Inscrições abertas ou Provas próximas, algo nesse sentido."
 
 Resultados:
 """
@@ -178,8 +193,11 @@ def nome_site(url: str) -> str:
             return nome
     # Fallback: usa o domínio limpo em maiúsculo
     partes = host.split(".")
-    if len(partes) >= 2:
-        return partes[-2].upper()
+    # Remove sufixos comuns para pegar o nome real
+    sufixos = {"com", "net", "org", "gov", "edu", "br"}
+    partes_validas = [p for p in partes if p not in sufixos]
+    if partes_validas:
+        return partes_validas[-1].upper()
     return host.upper()
 
 
