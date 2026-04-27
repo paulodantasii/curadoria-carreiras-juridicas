@@ -168,7 +168,7 @@ NÃO RELEVANTE — se o conteúdo for apenas:
 - Cargos que NÃO exijam formação em Direito (professores de ensino básico, médicos, engenheiros, enfermeiros, saúde, limpeza, motoristas, técnicos de outras áreas, etc)
 - Cargos de nível médio ou técnico sem relevância jurídica
 Responda APENAS no seguinte formato JSON, sem nenhum texto adicional:
-{"relevante": true, "motivo": "explicação em uma linha, sem precisar reafirmar que é relevante para bacharéis em Direito, se disser o cargo ou o contexto é suficiente para ficar subentendido"}
+{"relevante": true, "motivo": "explicação em duas linha, sem precisar reafirmar que é relevante para bacharéis em Direito, se disser o cargo ou o contexto é suficiente para ficar subentendido"}
 ou
 {"relevante": false, "motivo": "explicação em uma linha"}
 Conteúdo para avaliar:
