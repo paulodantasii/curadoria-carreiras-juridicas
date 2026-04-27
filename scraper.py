@@ -174,8 +174,7 @@ ou
 Conteúdo para avaliar:
 """
 
-PROMPT_RESUMO = """Com base nos resultados abaixo, escreva um resumo MUITO CURTO (entre 450 e 550 caracteres) das oportunidades encontradas, mencionando os tipos de cargo e órgãos principais. Seja direto e objetivo, sem introdução. Por EXEMPLO: "Vagas para Procurador (abreviação ou sigla dos órgãos), Advogado (sigla ou abreviação dos orgãos) e Residência Jurídica (orgão ou sigla). Inscrições abertas ou Provas próximas, algo nesse sentido."
-
+PROMPT_RESUMO = """Com base nos resultados abaixo, escreva um resumo (entre 900 e 1000 caracteres) das oportunidades encontradas, mencionando os tipos de cargo e órgãos principais. Seja direto e objetivo, sem introdução.
 Resultados:
 """
 
@@ -392,7 +391,7 @@ def gerar_resumo_whatsapp(relevantes: list) -> str:
         for item in relevantes
     )
     resposta = chamar_openai(PROMPT_RESUMO + lista)
-    return resposta[:300] if resposta else ""
+    return resposta[:1000] if resposta else ""
 
 
 # ─── Relatório HTML ───────────────────────────────────────────────────────────
@@ -586,8 +585,8 @@ def formatar_mensagem_whatsapp(data_str: str, total_novos: int, relevantes: list
     corpo = resumo if resumo else "Veja o relatório completo no link abaixo."
 
     mensagem = cabecalho + corpo + rodape
-    if len(mensagem) > 768:
-        espaco = 768 - len(cabecalho) - len(rodape) - 3
+    if len(mensagem) > 1500:
+        espaco = 1500 - len(cabecalho) - len(rodape) - 3
         corpo = corpo[:espaco] + "..."
         mensagem = cabecalho + corpo + rodape
 
