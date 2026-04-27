@@ -4,7 +4,7 @@ import re
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
-from urllib.parse import urljoin, urlparse, parse_qs, unquote, quote
+from urllib.parse import urljoin, urlparse, parse_qs, unquote
 
 import requests
 from bs4 import BeautifulSoup
@@ -63,8 +63,10 @@ OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 OPENAI_MODEL = "gpt-4o-mini"
 OPENAI_URL = "https://api.openai.com/v1/chat/completions"
 
-CALLMEBOT_PHONE = "558699252617"
-CALLMEBOT_APIKEY = os.environ.get("CALLMEBOT_APIKEY", "")
+TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID", "")
+TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN", "")
+TWILIO_FROM = "whatsapp:+14155238886"
+TWILIO_TO = "whatsapp:+558699252617"
 GITHUB_USER = "paulodantasii"
 GITHUB_REPO = "alerta-concursos-juridicos"
 URL_RELATORIO = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/relatorio.html"
@@ -544,23 +546,28 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
 # ─── WhatsApp via CallMeBot ───────────────────────────────────────────────────
 
 def enviar_whatsapp(mensagem: str) -> None:
-    if not CALLMEBOT_APIKEY:
-        print("  [AVISO] CALLMEBOT_APIKEY não configurada. Pulando envio.")
+    if not TWILIO_ACCOUNT_SID or not TWILIO_AUTH_TOKEN:
+        print("  [AVISO] Credenciais Twilio não configuradas. Pulando envio.")
         return
-    try:
-        url = (
-            f"https://api.callmebot.com/whatsapp.php"
-            f"?phone={CALLMEBOT_PHONE}"
-            f"&text={quote(mensagem)}"
-            f"&apikey={CALLMEBOT_APIKEY}"
-        )
-        resp = requests.get(url, timeout=15)
-        if resp.status_code == 200:
-            print("  [WhatsApp] Mensagem enviada com sucesso.")
-        else:
-            print(f"  [WhatsApp] Erro {resp.status_code}: {resp.text[:200]}")
-    except Exception as e:
-        print(f"  [WhatsApp] Erro ao enviar: {e}")
+    url = f"https://api.twilio.com/2010-04-01/Accounts/{TWILIO_ACCOUNT_SID}/Messages.json"
+    for tentativa in range(3):
+        try:
+            resp = requests.post(
+                url,
+                data={"From": TWILIO_FROM, "To": TWILIO_TO, "Body": mensagem},
+                auth=(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN),
+                timeout=30,
+            )
+            if resp.status_code in (200, 201):
+                print("  [WhatsApp] Mensagem enviada com sucesso.")
+                return
+            else:
+                print(f"  [WhatsApp] Erro {resp.status_code}: {resp.text[:200]}")
+        except Exception as e:
+            print(f"  [WhatsApp tentativa {tentativa+1}/3] Erro: {e}")
+            if tentativa < 2:
+                time.sleep(10)
+    print("  [WhatsApp] Falha após 3 tentativas.")
 
 
 def formatar_mensagem_whatsapp(data_str: str, total_novos: int, relevantes: list, resumo: str, erros_gemini: int = 0) -> str:
