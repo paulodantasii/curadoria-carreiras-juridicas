@@ -1,59 +1,25 @@
-Verificação: 2026-04-27T11:20:12.265751+00:00
-Links novos encontrados: 87
-  Scraping: 4
-  Alertas:  83
+Verificação: 2026-04-27T13:29:14.518945+00:00
+Links novos encontrados: 92
+  Scraping: 10
+  Alertas:  82
 Removidos da base: 0
-Total na base: 982
+Total na base: 987
 ============================================================
 
 ── NOVOS (scraping) ──
 
+https://www.acheconcursos.com.br/concursos-alagoas/edital-detran-al-2026-concurso-inscricao-89708
+https://www.acheconcursos.com.br/concursos-maranhao/processo-seletivo-ifma-vagas-professores-2026-89702
 https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-ufv-minas-gerais-novo-professor-2026-89701
 https://www.acheconcursos.com.br/concursos-minas-gerais/prefeitura-de-lagoa-da-prata-mg-abre-67-vagas-de-ate-r-21-489-via-concurso-87953
+https://www.acheconcursos.com.br/concursos-parana/concurso-prefeitura-alto-parana-pr-lanca-editais-36-vagas-89704
+https://www.acheconcursos.com.br/concursos-parana/concurso-prefeitura-terra-boa-pr-2026-edital-inscricao-89705
 https://www.acheconcursos.com.br/concursos-pernambuco/edital-upe-2026-abre-concurso-para-assistentes-e-analistas-89700
 https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-prefeitura-bauru-sp-abre-salario-3-319-89086
+https://www.acheconcursos.com.br/concursos-sao-paulo/processo-seletivo-prefeitura-sete-barras-sp-vagas-temporarias-14-192-89706
+https://www.acheconcursos.com.br/concursos-sao-paulo/processo-seletivo-unifesp-edital-260-2026-vaga-professor-substituto-89703
 
 ── NOVOS (Google Alertas) ──
-
-Termo:   seletivo concurso consultor legislativo
-Título:  <b>Concurso</b> Câmara de Colíder MT 2026 divulga edital com salários de até R$ 4.778
-URL:     https://academiaconcursos.com.br/concurso-camara-colider-mt-2026-edital-salarios-e-prazos/
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  Tribunal de Justiça abre <b>concurso</b> público de nível médio com 800 vagas e salário de R$ 10 mil
-URL:     https://www.portaltemponovo.com.br/tribunal-de-justica-abre-concurso-publico-de-nivel-medio-com-800-vagas/
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  Edital do <b>concurso</b> EsPCEx 2026 é publicado com 440 vagas de nível médio para oficiais
-URL:     https://www.roraimanarede.com.br/concurso/edital-do-concurso-espcex-2026-e-publicado-com-440-vagas-de-nivel-medio-para-oficiais
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-judiciario-tecnologia-da-informacao-analista-de-negocios-abrangente
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  Prefeituras do ES, Exército e Ministério Público: 24 mil vagas em concursos e seleções
-URL:     https://www.agazeta.com.br/concursos-e-empregos/prefeituras-do-es-exercito-e-ministerio-publico-24-mil-vagas-em-concursos-e-selecoes-0426
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  <b>Concurso</b> CAU SP 2026 abre 36 vagas com salários de até R$ 10 mil; confira edital
-URL:     https://concursonews.com/2026/04/cau-sp-abre-concurso-com-36-vagas-em-todo-o-estado-e-salarios-de-ate-r-10-mil-inscricoes-comecam-em-maio/
-Trecho:  
-
-Termo:   seletivo concurso tecnico juridico
-Título:  TJRJ divulga resultado da Fase Oral do 53° <b>Concurso</b> Extrajudicial - Recivil
-URL:     https://recivil.com.br/tjrj-divulga-resultado-da-fase-oral-do-53°-concurso-extrajudicial/?amp=1
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/advogado-ipm-abrangente/30
-Trecho:  
 
 Termo:   seletivo concurso estagio de pos graduacao direito
 Título:  Gabarito BADESUL 2026 sai nesta segunda; confira detalhes das provas e próximos passos - Uniten
@@ -61,173 +27,8 @@ URL:     https://uniten.com.br/gabarito-badesul-2026-prova-objetiva-discursiva/
 Trecho:  
 
 Termo:   seletivo concurso advogado
-Título:  Câmara de Mário Campos/mg divulga gabarito do <b>concurso</b> realizado pelo IBGP
-URL:     https://fiibrasil.com/noticia/camara-de-mario-campos-mg-mg-gabarito-concurso-01-2025/
-Trecho:  
-
-Termo:   seletivo concurso consultor legislativo
-Título:  Gabarito Extraoficial <b>Concurso</b> Policial <b>Legislativo</b> Federal 2026
-URL:     https://academiaconcursos.com.br/gabarito-extraoficial-concurso-policial-legislativo-federal-2026/
-Trecho:  
-
-Termo:   seletivo concurso consultor legislativo
-Título:  Gabarito extraoficial - <b>Concurso</b> PLF Câmara dos Deputados
-URL:     https://www.estrategiaconcursos.com.br/blog/gabarito-extraoficial-concurso-camara-dos-deputados-policial-legislativo-plf/
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  FAHECE abre seleção para <b>Analista</b> de Sistemas em Florianópolis com salário de R$ 6,7 mil
-URL:     https://concursonews.com/2026/04/fahece-abre-selecao-para-analista-de-sistemas-em-florianopolis-com-salario-de-r-67-mil-inscricoes-encerram-nesta-segunda-27/
-Trecho:  
-
-Termo:   seletivo concurso estagio de pos graduacao direito
-Título:  Fiocruz abre 166 vagas para <b>estágio</b> com bolsa de até R$ 2.231; confira - Aratu On
-URL:     https://aratuon.com.br/empregos-concursos/fiocruz-abre-166-vagas-para-estagio-com-bolsa-de-ate-r-2-231-confira/
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Gabarito Extraoficial <b>Concurso</b> Prefeitura de João Lisboa (MA) 2026
-URL:     https://academiaconcursos.com.br/gabarito-extraoficial-concurso-prefeitura-de-joao-lisboa-ma-2026/
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  Com salários de R$ 11 mil, cidade ao lado da “fábrica dos bilionários” abre <b>concurso</b> público
-URL:     https://www.nsctotal.com.br/noticias/com-salarios-de-r-11-mil-cidade-ao-lado-da-fabrica-dos-bilionarios-abre-concurso-publico
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  Prefeitura de Carlos Barbosa abre <b>concurso</b> público e processo <b>seletivo</b> - GZH
-URL:     https://gauchazh.clicrbs.com.br/pioneiro/geral/noticia/2026/04/prefeitura-de-carlos-barbosa-abre-concurso-publico-e-processo-seletivo-cargos-tem-salarios-ate-r-14-mil-cmofr0ash02hi015b4yf18vpd.html
-Trecho:  
-
-Termo:   seletivo concurso tecnico juridico
-Título:  IFRS oferece 901 vagas em cursos gratuitos de nível <b>técnico</b>, superior e EJA | Agora RS
-URL:     https://agorars.com/rs/ifrs-inscricoes-processo-seletivo-2026-02-vagas/
-Trecho:  
-
-Termo:   seletivo concurso direito
-Título:  Inscrições no <b>concurso</b> da UEPB terminam neste domingo (26); salários chegam a R$ 4,7 mil
-URL:     https://bigpb.com.br/ultima-chamada-inscricoes-no-concurso-da-uepb-terminam-neste-domingo-26-salarios-chegam-a-r-47-mil/
-Trecho:  
-
-Termo:   seletivo concurso tecnico juridico
-Título:  TRT da 8ª Região instala comissão e prepara novo <b>concurso</b> para 92 vagas - Uniten
-URL:     https://uniten.com.br/trt-8-instala-comissao-e-prepara-novo-concurso/
-Trecho:  
-
-Termo:   seletivo concurso consultor legislativo
-Título:  Gabarito da Câmara dos Deputados para Policial <b>Legislativo</b> sai pelo Cebraspe na terça, 28
-URL:     https://www.acheconcursos.com.br/noticias/concurso-gabarito-camara-deputados-policial-legislativo-cebraspe-terca-28-89682
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  <b>Concurso</b> Humberto de Campos MA avança e divulga inscritos e turnos das provas
-URL:     https://concursonews.com/2026/04/concurso-humberto-de-campos-ma-avanca-e-divulga-inscritos-e-turnos-das-provas-salarios-chegam-a-r-43-mil/
-Trecho:  
-
-Termo:   seletivo concurso direito
-Título:  CRC-BA inicia etapa para novo <b>concurso</b> público e busca banca organizadora
-URL:     https://concursonews.com/2026/04/crc-ba-inicia-etapa-para-novo-concurso-publico-e-busca-banca-organizadora-prazo-vai-ate-30-de-abril/
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  Jorge Messias fraudou o <b>concurso</b> da Fazenda Nacional?
-URL:     https://gazetahora1.com/noticia/9238/jorge-messias-fraudou-o-concurso-da-fazenda-nacional-n
-Trecho:  
-
-Termo:   seletivo concurso estagio de pos graduacao direito
-Título:  FUNCERN abre vagas de <b>estágio</b> em Comunicação, Administração e Contabilidade
-URL:     https://portaln10.com.br/empregos/funcern-abre-selecao-de-estagio-para-estudantes-de-comunicacao-administracao-e-contabilidade-330868/
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  Prefeitura abre processo <b>seletivo</b> de nível médio e superior com salário de R$ 4 mil
-URL:     https://www.portaltemponovo.com.br/prefeitura-abre-processo-seletivo-de-nivel-medio-e-superior-com-salario-de-4-mil/
-Trecho:  
-
-Termo:   seletivo concurso direito
-Título:  Prefeitura de Indaial abre <b>concurso</b> público com 57 vagas e salários de até R$ 20,6 mil
-URL:     https://uniten.com.br/concurso-prefeitura-indaial-57-vagas-ate-206-mil/
-Trecho:  
-
-Termo:   seletivo concurso advogado
 Título:  Prefeitura de Carlos Barbosa abre <b>concurso</b> com salários de até R$ 14,4 mil - Leouve
 URL:     https://leouve.com.br/cidades/carlos-barbosa/prefeitura-de-carlos-barbosa-abre-concurso-com-salarios-de-ate-r-144-mil/
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  <b>Concurso</b> Prefeitura de Paracatu 2026 abre 312 vagas e paga até R$ 6,5 mil - Uniten
-URL:     https://uniten.com.br/concurso-prefeitura-paracatu-2026-312-vagas-salarios/
-Trecho:  
-
-Termo:   seletivo concurso consultor legislativo
-Título:  Câmara de Colíder abre <b>concurso</b> para 2026 com vagas em todos os níveis e salários de ...
-URL:     https://uniten.com.br/concurso-camara-colider-mt-2026-vagas-salarios/
-Trecho:  
-
-Termo:   seletivo concurso estagio de pos graduacao direito
-Título:  Fiocruz abre 166 vagas para <b>estágio</b> em Curitiba e outras nove cidades - Bem Paraná
-URL:     https://www.bemparana.com.br/noticias/fiocruz-abre-166-vagas-para-estagio-em-curitiba-e-outras-nove-cidades/amp/
-Trecho:  
-
-Termo:   seletivo concurso direito
-Título:  Fundatec abre seleção com bolsas integrais para cursos técnicos em 2026
-URL:     https://concursonews.com/2026/04/fundatec-abre-selecao-com-bolsas-integrais-para-cursos-tecnicos-em-2026-inscricoes-seguem-ate-maio/
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  <b>Concurso</b> Público: 12 editais abrem inscrições para 680 vagas nesta segunda, 27
-URL:     https://www.acheconcursos.com.br/noticias/concurso-publico-12-editais-abrem-inscricoes-segunda-27-89667
-Trecho:  
-
-Termo:   seletivo concurso tecnico juridico
-Título:  <b>Concurso</b> TRT8: preparativos e formação da comissão são iniciados
-URL:     https://folha.qconcursos.com/n/concurso-trt8-2026-preparativos-iniciados
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  Estado abre <b>concurso</b> público inédito com 1.200 vagas e salário de R$ 5 mil
-URL:     https://www.portaltemponovo.com.br/estado-abre-concurso-publico-inedito-com-1-200-vagas-e-salario-de-5-mil/
-Trecho:  
-
-Termo:   seletivo concurso direito
-Título:  Concursos em universidades oferecem salários de até R$ 26,3 mil - LeiaJá
-URL:     https://www.leiaja.com/carreiras/2026/04/26/concursos-em-universidades-estaduais-e-federais-oferecem-salarios-de-ate-r-263-mil/
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  Provas do <b>concurso</b> público da educação de Campos aplicadas neste domingo
-URL:     https://campos24horas.com.br/noticia/provas-do-concurso-publico-da-educacao-de-campos-aplicadas-neste-domingo
-Trecho:  
-
-Termo:   seletivo concurso estagio de pos graduacao direito
-Título:  UFAM abre seleção para Mestrado em Cirurgia com 25 vagas para 2026 - Concurso News
-URL:     https://concursonews.com/2026/04/ufam-abre-selecao-para-mestrado-em-cirurgia-com-25-vagas-para-2026-inscricoes-comecam-em-maio/
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  <b>Concurso</b> TJSC 2026 entra na reta final de inscrições com salários de até R$ 10,3 mil
-URL:     https://concursonews.com/2026/04/tjsc-entra-na-reta-final-de-inscricoes-para-concurso-com-salarios-de-ate-r-103-mil-prazo-termina-dia-30/
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  Morada Nova CE abre <b>seletivo</b> com salários até R$ 4.259 - Sou Enfermagem
-URL:     https://www.souenfermagem.com.br/noticias/morada-nova-ce-abre-seletivo-com-salarios-ate-r-4-259/
-Trecho:  
-
-Termo:   seletivo concurso estagio de pos graduacao direito
-Título:  Instituto Euvaldo Lodi (IEL) disponibiliza 41 vagas de <b>estágio</b> no DF - Correio Braziliense
-URL:     https://www.correiobraziliense.com.br/euestudante/estagio/2026/04/7405143-instituto-euvaldo-lodi-iel-disponibiliza-41-vagas-de-estagio-no-df.html
-Trecho:  
-
-Termo:   seletivo concurso tecnico juridico
-Título:  MPMG abre vagas de estágio remunerado para pós-graduandos em Direito em Entre Rios de Minas
-URL:     https://www.entreriosnews.com.br/noticia/6802/mpmg-abre-vagas-de-estagio-remunerado-para-pos-graduandos-em-direito-em-entre-rios-de-minas
-Trecho:  
-
-Termo:   seletivo concurso consultor legislativo
-Título:  Gabarito Policial <b>Legislativo</b> 2026: Veja cronograma e como recorrer no Cebraspe
-URL:     https://concursosnoticias.com.br/gabarito-policial-legislativo-2026-veja-cronograma-e-como-recorrer-no-cebraspe/
 Trecho:  
 
 Termo:   seletivo concurso consultor legislativo
@@ -235,89 +36,9 @@ Título:  Provas para Download - PCI Concursos
 URL:     https://www.pciconcursos.com.br/provas/tecnico-municipal-de-nivel-superior-i-arquitetura-urbanistica-abrangente/4
 Trecho:  
 
-Termo:   seletivo concurso consultor legislativo
-Título:  <b>Concurso</b> PLF 2026: veja quando sai o gabarito e próximos passos para Policial <b>Legislativo</b>
-URL:     https://uniten.com.br/concurso-plf-2026-gabarito-proximas-etapas/
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  <b>Concurso</b> UNIFAE SP 2026: confira o cronograma, salários de até R$ 5,1 mil e dicas finais
-URL:     https://academiaconcursos.com.br/concurso-unifae-sp-2026-cronograma-salarios-dicas/
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  <b>Concurso</b> Prefeitura de Paracatu 2026 oferece 312 vagas e salários de até R$ 6,5 mil
-URL:     https://uniten.com.br/concurso-prefeitura-paracatu-2026-312-vagas/
-Trecho:  
-
-Termo:   seletivo concurso procurador
-Título:  <b>Concurso</b> da Sefaz CE: inscrições abrem nesta segunda (27); 300 vagas | Rádio Itatiaia
-URL:     https://www.itatiaia.com.br/emprego-e-concursos/concurso-da-sefaz-ce-inscricoes-abrem-nesta-segunda-27-300-vagas/
-Trecho:  
-
-Termo:   seletivo concurso residencia juridica
-Título:  Enare 2026/2027: HU Brasil abre adesão de instituições de ensino até 15 de maio
-URL:     https://concursonews.com/2026/04/enare-2026-2027-hu-brasil-abre-adesao-de-instituicoes-de-ensino-ate-15-de-maio/
-Trecho:  
-
-Termo:   seletivo concurso direito
-Título:  Motorista e professor: vagas abertas no Paraná; inscrições fecham segunda (27)
-URL:     https://noticiasconcursos.com.br/motorista-e-professor-vagas-abertas-no-parana-inscricoes-fecham-segunda-27/
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-de-procedimentos-institucionais-e-regulatorios-jr-abrangente/97
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/pesquisador-iii-area-3-subarea-de-1-a-7-abrangente/98
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-em-c-t-pleno-b24-abrangente/31
-Trecho:  
-
-Termo:   seletivo concurso direito
-Título:  Processo <b>seletivo</b> da Prefeitura de Riacho de Santana encerra inscrições na próxima quinta-feira
-URL:     https://agenciasertao.com/2026/04/26/processo-seletivo-da-prefeitura-de-riacho-de-santana-encerra-inscricoes-na-proxima-quinta-feira/
-Trecho:  
-
-Termo:   seletivo concurso consultor legislativo
-Título:  Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-administrativo-educador-fisico-administracao-central-abrangente/28
-Trecho:  
-
-Termo:   seletivo concurso direito
-Título:  Secretaria de Educação abre <b>concurso</b> público de níveis médio e superior
-URL:     https://www.portaltemponovo.com.br/secretaria-de-educacao-abre-concurso-publico-de-niveis-medio-e-superior/
-Trecho:  
-
 Termo:   seletivo concurso estagio de pos graduacao direito
-Título:  SPM-BA abriu processo <b>seletivo</b> com 40 vagas de níveis médio e superior - Agência Sertão
-URL:     https://agenciasertao.com/2026/04/27/spm-ba-abriu-processo-seletivo-com-40-vagas-de-niveis-medio-e-superior/
-Trecho:  
-
-Termo:   seletivo concurso consultor legislativo
-Título:  Gabarito Extraoficial <b>Concurso</b> CRT RS 2026
-URL:     https://academiaconcursos.com.br/gabarito-extraoficial-concurso-crt-rs-2026/
-Trecho:  
-
-Termo:   seletivo concurso direito
-Título:  Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/consultor-legislativo-area-obras-publicas-infraestrutura-e-urbanismo-abrangente/20
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Processo <b>Seletivo</b> JUCEPE abre 40 vagas com salários de até R$ 5.200,00
-URL:     https://mdcconcursos.com.br/processo-seletivo-jucepe-2026/
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Simulado TJ SC: domingo tem prova teste para técnico e <b>analista</b> judiciário
-URL:     https://academiaconcursos.com.br/simulado-tj-sc-domingo-prova-teste/
+Título:  Fiocruz abre 166 vagas para <b>estágio</b> com bolsa de até R$ 2.231; confira - Aratu On
+URL:     https://aratuon.com.br/empregos-concursos/fiocruz-abre-166-vagas-para-estagio-com-bolsa-de-ate-r-2-231-confira/
 Trecho:  
 
 Termo:   seletivo concurso consultor legislativo
@@ -325,59 +46,9 @@ Título:  Provas para Download - PCI Concursos
 URL:     https://www.pciconcursos.com.br/provas/analista-em-c-t-pleno-b24-abrangente/71
 Trecho:  
 
-Termo:   seletivo concurso advogado
-Título:  Gabarito Processo <b>Seletivo</b> Nova Odessa 2026: Veja datas e como recorrer
-URL:     https://concursosnoticias.com.br/gabarito-processo-seletivo-nova-odessa-2026-veja-datas-e-como-recorrer/
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Gabarito Extraoficial <b>Concurso</b> ANSA 2026
-URL:     https://academiaconcursos.com.br/gabarito-extraoficial-concurso-ansa-2026/
-Trecho:  
-
-Termo:   seletivo concurso advogado
-Título:  CORE-PI abre <b>concurso</b> com 160 vagas e salários de até R$ 6,5 mil - GP1
-URL:     https://www.gp1.com.br/empregos-e-concursos/noticia/2026/4/26/core-pi-abre-concurso-com-160-vagas-e-salarios-de-ate-r-65-mil-621577.html
-Trecho:  
-
 Termo:   seletivo concurso tecnico juridico
-Título:  UPE abre <b>concurso</b> público com 19 vagas e salários de até R$ 3,8 mil
-URL:     https://www.diariodepernambuco.com.br/vida-urbana/2026/04/11712902-upe-abre-concurso-publico-com-19-vagas-e-salarios-de-ate-rs-38-mil.html
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-judiciario-area-apoio-especializado-especialidade-engenharia-abrangente/99
-Trecho:  
-
-Termo:   seletivo concurso consultor legislativo
-Título:  Gabarito PLF 2026: Respostas da Prova de Hoje - Academia Concursos
-URL:     https://academiaconcursos.com.br/gabarito-plf-2026-respostas-da-prova-de-hoje/
-Trecho:  
-
-Termo:   seletivo concurso consultor legislativo
-Título:  Gabarito Polícia Legislativa Federal 2026: confira notas mínimas, prazos e próximos passos
-URL:     https://uniten.com.br/gabarito-policia-legislativa-federal-2026-notas-minimas-prazos/
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Simulado especial TJ SC: técnico e <b>analista</b> judiciário - Estratégia Concursos
-URL:     https://www.estrategiaconcursos.com.br/blog/simulado-especial-tj-sc-tecnico-e-analista-judiciario/amp/
-Trecho:  
-
-Termo:   seletivo concurso estagio de pos graduacao direito
-Título:  ICMBio abre seleção com 8 vagas para voluntários no Parque Nacional da Serra da Canastra
-URL:     https://concursonews.com/2026/04/icmbio-abre-selecao-com-8-vagas-para-voluntarios-no-parque-nacional-da-serra-da-canastra-inscricoes-seguem-ate-27-de-abril/
-Trecho:  
-
-Termo:   seletivo concurso analista juridico
-Título:  Banco Safra abre 40 vagas de emprego e estágio em várias áreas; veja como se candidatar
-URL:     https://concursonews.com/2026/04/banco-safra-abre-40-vagas-de-emprego-e-estagio-em-varias-areas-veja-como-se-candidatar/
-Trecho:  
-
-Termo:   seletivo concurso consultor legislativo
-Título:  Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/sectec-secretaria-de-ciencia-e-tecnologia-do-estado-abrangente/53
+Título:  Concursos em universidades oferecem salários de até R$ 26,3 mil - LeiaJá
+URL:     https://www.leiaja.com/carreiras/2026/04/26/concursos-em-universidades-estaduais-e-federais-oferecem-salarios-de-ate-r-263-mil/
 Trecho:  
 
 Termo:   seletivo concurso consultor legislativo
@@ -386,23 +57,208 @@ URL:     https://concursosnoticias.com.br/gabarito-concurso-ifce-2026-veja-data-
 Trecho:  
 
 Termo:   seletivo concurso advogado
+Título:  <b>Concurso</b> Público: 12 editais abrem inscrições para 680 vagas nesta segunda, 27
+URL:     https://www.acheconcursos.com.br/noticias/concurso-publico-12-editais-abrem-inscricoes-segunda-27-89667
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  <b>Concurso</b> UNIFAE SP 2026: confira o cronograma, salários de até R$ 5,1 mil e dicas finais
+URL:     https://academiaconcursos.com.br/concurso-unifae-sp-2026-cronograma-salarios-dicas/
+Trecho:  
+
+Termo:   seletivo concurso direito
+Título:  Secretaria de Educação abre <b>concurso</b> público de níveis médio e superior
+URL:     https://www.portaltemponovo.com.br/secretaria-de-educacao-abre-concurso-publico-de-niveis-medio-e-superior/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Prefeitura abre processo <b>seletivo</b> de nível médio e superior com salário de R$ 4 mil
+URL:     https://www.portaltemponovo.com.br/prefeitura-abre-processo-seletivo-de-nivel-medio-e-superior-com-salario-de-4-mil/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Gabarito da Câmara dos Deputados para Policial <b>Legislativo</b> sai pelo Cebraspe na terça, 28
+URL:     https://www.acheconcursos.com.br/noticias/concurso-gabarito-camara-deputados-policial-legislativo-cebraspe-terca-28-89682
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Câmara de Colíder abre <b>concurso</b> para 2026 com vagas em todos os níveis e salários de ...
+URL:     https://uniten.com.br/concurso-camara-colider-mt-2026-vagas-salarios/
+Trecho:  
+
+Termo:   seletivo concurso direito
+Título:  Inscrições no <b>concurso</b> da UEPB terminam neste domingo (26); salários chegam a R$ 4,7 mil
+URL:     https://bigpb.com.br/ultima-chamada-inscricoes-no-concurso-da-uepb-terminam-neste-domingo-26-salarios-chegam-a-r-47-mil/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/pesquisador-iii-area-3-subarea-de-1-a-7-abrangente/98
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/tecnologista-em-analise-de-seguranca-junior-17-abrangente/73
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Processo <b>Seletivo</b> JUCEPE abre 40 vagas com salários de até R$ 5.200,00
+URL:     https://mdcconcursos.com.br/processo-seletivo-jucepe-2026/
+Trecho:  
+
+Termo:   seletivo concurso estagio de pos graduacao direito
+Título:  Instituto Euvaldo Lodi (IEL) disponibiliza 41 vagas de <b>estágio</b> no DF - Correio Braziliense
+URL:     https://www.correiobraziliense.com.br/euestudante/estagio/2026/04/7405143-instituto-euvaldo-lodi-iel-disponibiliza-41-vagas-de-estagio-no-df.html
+Trecho:  
+
+Termo:   seletivo concurso advogado
 Título:  Cidade colada na terra dos bilionários em SC abre <b>concurso</b> com salários acima de R$ 10 mil
 URL:     https://ndmais.com.br/empregos-e-concursos/cidade-colada-na-terra-dos-bilionarios-abre-concurso-publico-em-sc-com-salarios-acima-de-r-10-mil/
 Trecho:  
 
-Termo:   seletivo concurso estagio de pos graduacao direito
-Título:  FAHECE abre <b>seletivo</b> para Coordenador de Qualidade I em Florianópolis com salário de R$ 8,9 mil
-URL:     https://concursonews.com/2026/04/fahece-abre-seletivo-para-coordenador-de-qualidade-i-em-florianopolis-com-salario-de-r-89-mil/
+Termo:   seletivo concurso direito
+Título:  Fundatec abre seleção com bolsas integrais para cursos técnicos em 2026
+URL:     https://concursonews.com/2026/04/fundatec-abre-selecao-com-bolsas-integrais-para-cursos-tecnicos-em-2026-inscricoes-seguem-ate-maio/
 Trecho:  
 
-Termo:   seletivo concurso assessor juridico
-Título:  Câmara de Aracati-CE retifica edital e mantém <b>concurso</b> com 17 vagas; veja o que muda e ...
-URL:     https://concursonews.com/2026/04/camara-de-aracati-ce-retifica-edital-e-mantem-concurso-com-17-vagas-veja-o-que-muda-e-como-participar/
+Termo:   seletivo concurso consultor legislativo
+Título:  Gabarito Policial <b>Legislativo</b> 2026: Veja cronograma e como recorrer no Cebraspe
+URL:     https://concursosnoticias.com.br/gabarito-policial-legislativo-2026-veja-cronograma-e-como-recorrer-no-cebraspe/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Gabarito Extraoficial <b>Concurso</b> ANSA 2026
+URL:     https://academiaconcursos.com.br/gabarito-extraoficial-concurso-ansa-2026/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Governo da Bahia oferta 40 vagas em processo <b>seletivo</b> REDA para a Secretaria das Mulheres
+URL:     https://www.bahianoticias.com.br/noticia/316188-governo-da-bahia-oferta-40-vagas-em-processo-seletivo-reda-para-a-secretaria-das-mulheres
 Trecho:  
 
 Termo:   seletivo concurso advogado
-Título:  Quer ganhar até R$ 10,4 mil? Veja 1,9 mil vagas abertas em concursos - Folha Vitória
-URL:     https://www.folhavitoria.com.br/trabalho/concursos/quer-ganhar-ate-r-104-mil-veja-19-mil-vagas-abertas-em-concursos/
+Título:  CORE-PI abre <b>concurso</b> com 160 vagas e salários de até R$ 6,5 mil - GP1
+URL:     https://www.gp1.com.br/empregos-e-concursos/noticia/2026/4/26/core-pi-abre-concurso-com-160-vagas-e-salarios-de-ate-r-65-mil-621577.html
+Trecho:  
+
+Termo:   seletivo concurso procurador
+Título:  <b>Concurso</b> Humberto de Campos MA avança e divulga inscritos e turnos das provas
+URL:     https://concursonews.com/2026/04/concurso-humberto-de-campos-ma-avanca-e-divulga-inscritos-e-turnos-das-provas-salarios-chegam-a-r-43-mil/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Estado abre <b>concurso</b> público inédito com 1.200 vagas e salário de R$ 5 mil
+URL:     https://www.portaltemponovo.com.br/estado-abre-concurso-publico-inedito-com-1-200-vagas-e-salario-de-5-mil/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Gabarito Extraoficial <b>Concurso</b> CRT RS 2026
+URL:     https://academiaconcursos.com.br/gabarito-extraoficial-concurso-crt-rs-2026/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/analista-judiciario-area-apoio-especializado-especialidade-engenharia-abrangente/99
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  <b>Concurso</b> Prefeitura de Paracatu 2026 abre 312 vagas e paga até R$ 6,5 mil - Uniten
+URL:     https://uniten.com.br/concurso-prefeitura-paracatu-2026-312-vagas-salarios/
+Trecho:  
+
+Termo:   seletivo concurso estagio de pos graduacao direito
+Título:  Fiocruz abre 166 vagas para <b>estágio</b> em Curitiba e outras nove cidades - Bem Paraná
+URL:     https://www.bemparana.com.br/noticias/fiocruz-abre-166-vagas-para-estagio-em-curitiba-e-outras-nove-cidades/amp/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Edital do <b>concurso</b> EsPCEx 2026 é publicado com 440 vagas de nível médio para oficiais
+URL:     https://www.roraimanarede.com.br/concurso/edital-do-concurso-espcex-2026-e-publicado-com-440-vagas-de-nivel-medio-para-oficiais
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Mais de mil vagas no Ifes para estudar no segundo semestre | Tribuna Online
+URL:     https://tribunaonline.com.br/cidades/mais-de-mil-vagas-no-ifes-para-estudar-no-segundo-semestre-300046?_=amp
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/sectec-secretaria-de-ciencia-e-tecnologia-do-estado-abrangente/53
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Governo da Bahia forma comissões para novos processos <b>seletivos</b> Reda na Saeb, SAC e Secom
+URL:     https://agenciasertao.com/2026/04/27/governo-da-bahia-forma-comissoes-para-novos-processos-seletivos-reda-na-saeb-sac-e-secom/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  <b>Concurso</b> Prefeitura de Paracatu 2026 oferece 312 vagas e salários de até R$ 6,5 mil
+URL:     https://uniten.com.br/concurso-prefeitura-paracatu-2026-312-vagas/
+Trecho:  
+
+Termo:   seletivo concurso residencia juridica
+Título:  Enare 2026/2027: HU Brasil abre adesão de instituições de ensino até 15 de maio
+URL:     https://concursonews.com/2026/04/enare-2026-2027-hu-brasil-abre-adesao-de-instituicoes-de-ensino-ate-15-de-maio/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Banco Safra abre 40 vagas de emprego e estágio em várias áreas; veja como se candidatar
+URL:     https://concursonews.com/2026/04/banco-safra-abre-40-vagas-de-emprego-e-estagio-em-varias-areas-veja-como-se-candidatar/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/advogado-ipm-abrangente/30
+Trecho:  
+
+Termo:   seletivo concurso direito
+Título:  Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/consultor-legislativo-area-obras-publicas-infraestrutura-e-urbanismo-abrangente/20
+Trecho:  
+
+Termo:   seletivo concurso procurador
+Título:  Jorge Messias fraudou o <b>concurso</b> da Fazenda Nacional?
+URL:     https://gazetahora1.com/noticia/9238/jorge-messias-fraudou-o-concurso-da-fazenda-nacional-n
+Trecho:  
+
+Termo:   seletivo concurso direito
+Título:  Processo <b>seletivo</b> da Prefeitura de Riacho de Santana encerra inscrições na próxima quinta-feira
+URL:     https://agenciasertao.com/2026/04/26/processo-seletivo-da-prefeitura-de-riacho-de-santana-encerra-inscricoes-na-proxima-quinta-feira/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  FAHECE abre seleção para <b>Analista</b> de Sistemas em Florianópolis com salário de R$ 6,7 mil
+URL:     https://concursonews.com/2026/04/fahece-abre-selecao-para-analista-de-sistemas-em-florianopolis-com-salario-de-r-67-mil-inscricoes-encerram-nesta-segunda-27/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/analista-em-c-t-pleno-b24-abrangente/31
+Trecho:  
+
+Termo:   seletivo concurso estagio de pos graduacao direito
+Título:  SPM-BA abriu processo <b>seletivo</b> com 40 vagas de níveis médio e superior - Agência Sertão
+URL:     https://agenciasertao.com/2026/04/27/spm-ba-abriu-processo-seletivo-com-40-vagas-de-niveis-medio-e-superior/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  <b>Concurso</b> TJSC 2026 entra na reta final de inscrições com salários de até R$ 10,3 mil
+URL:     https://concursonews.com/2026/04/tjsc-entra-na-reta-final-de-inscricoes-para-concurso-com-salarios-de-ate-r-103-mil-prazo-termina-dia-30/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  <b>Concurso</b> Câmara de Colíder MT 2026 divulga edital com salários de até R$ 4.778
+URL:     https://academiaconcursos.com.br/concurso-camara-colider-mt-2026-edital-salarios-e-prazos/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  <b>Concurso</b> da Câmara Municipal de Arujá SP abre inscrições para 13 cargos
+URL:     https://jcconcursos.com.br/noticia/concursos/concurso-da-camara-municipal-de-aruja-sp-abre-inscricoes-para-13-cargos-142133
+Trecho:  
+
+Termo:   seletivo concurso direito
+Título:  CRC-BA inicia etapa para novo <b>concurso</b> público e busca banca organizadora
+URL:     https://concursonews.com/2026/04/crc-ba-inicia-etapa-para-novo-concurso-publico-e-busca-banca-organizadora-prazo-vai-ate-30-de-abril/
 Trecho:  
 
 Termo:   seletivo concurso analista juridico
@@ -410,14 +266,129 @@ Título:  Provas para Download - PCI Concursos
 URL:     https://www.pciconcursos.com.br/provas/analista-judiciario-apoio-especializado-administrativa-abrangente/82
 Trecho:  
 
+Termo:   seletivo concurso tecnico juridico
+Título:  Processo <b>seletivo</b> Sapiranga RS abre 21 vagas com salários de até R$ 2.582,07
+URL:     https://mdcconcursos.com.br/processo-seletivo-sapiranga-rs-2026/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Gabarito Extraoficial <b>Concurso</b> Policial <b>Legislativo</b> Federal 2026
+URL:     https://academiaconcursos.com.br/gabarito-extraoficial-concurso-policial-legislativo-federal-2026/
+Trecho:  
+
+Termo:   seletivo concurso direito
+Título:  Prefeitura de Indaial abre <b>concurso</b> público com 57 vagas e salários de até R$ 20,6 mil
+URL:     https://uniten.com.br/concurso-prefeitura-indaial-57-vagas-ate-206-mil/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Com salários de R$ 11 mil, cidade ao lado da “fábrica dos bilionários” abre <b>concurso</b> público
+URL:     https://www.nsctotal.com.br/noticias/com-salarios-de-r-11-mil-cidade-ao-lado-da-fabrica-dos-bilionarios-abre-concurso-publico
+Trecho:  
+
+Termo:   seletivo concurso direito
+Título:  Motorista e professor: vagas abertas no Paraná; inscrições fecham segunda (27)
+URL:     https://noticiasconcursos.com.br/motorista-e-professor-vagas-abertas-no-parana-inscricoes-fecham-segunda-27/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Gabarito Processo <b>Seletivo</b> Nova Odessa 2026: Veja datas e como recorrer
+URL:     https://concursosnoticias.com.br/gabarito-processo-seletivo-nova-odessa-2026-veja-datas-e-como-recorrer/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/analista-de-procedimentos-institucionais-e-regulatorios-jr-abrangente/97
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Prefeituras do ES, Exército e Ministério Público: 24 mil vagas em concursos e seleções
+URL:     https://www.agazeta.com.br/concursos-e-empregos/prefeituras-do-es-exercito-e-ministerio-publico-24-mil-vagas-em-concursos-e-selecoes-0426
+Trecho:  
+
+Termo:   seletivo concurso procurador
+Título:  Morada Nova CE abre <b>seletivo</b> com salários até R$ 4.259 - Sou Enfermagem
+URL:     https://www.souenfermagem.com.br/noticias/morada-nova-ce-abre-seletivo-com-salarios-ate-r-4-259/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Gabarito PLF 2026: Respostas da Prova de Hoje - Academia Concursos
+URL:     https://academiaconcursos.com.br/gabarito-plf-2026-respostas-da-prova-de-hoje/
+Trecho:  
+
+Termo:   seletivo concurso tecnico juridico
+Título:  Concursos no Brasil: confira agenda com mais de quatro mil vagas, e salários de até 39 mil reais
+URL:     https://www.folhape.com.br/colunistas/blogdosconcursos/concursos-no-brasil-confira-agenda-com-mais-de-quatro-mil-vagas-e-salarios-de-ate-39-mil-reais/53383/
+Trecho:  
+
 Termo:   seletivo concurso consultor legislativo
 Título:  Gabarito Câmara dos Deputados Policial extraoficial: confira! - Blog Gran Cursos Online
 URL:     https://blog.grancursosonline.com.br/gabarito-extraoficial-camara-dos-deputados-policial-2026/amp
 Trecho:  
 
+Termo:   seletivo concurso analista juridico
+Título:  <b>Concurso</b> CAU SP 2026 abre 36 vagas com salários de até R$ 10 mil; confira edital
+URL:     https://concursonews.com/2026/04/cau-sp-abre-concurso-com-36-vagas-em-todo-o-estado-e-salarios-de-ate-r-10-mil-inscricoes-comecam-em-maio/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Gabarito Extraoficial <b>Concurso</b> Prefeitura de João Lisboa (MA) 2026
+URL:     https://academiaconcursos.com.br/gabarito-extraoficial-concurso-prefeitura-de-joao-lisboa-ma-2026/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Simulado TJ SC: domingo tem prova teste para técnico e <b>analista</b> judiciário
+URL:     https://academiaconcursos.com.br/simulado-tj-sc-domingo-prova-teste/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  <b>Concurso</b> PLF 2026: veja quando sai o gabarito e próximos passos para Policial <b>Legislativo</b>
+URL:     https://uniten.com.br/concurso-plf-2026-gabarito-proximas-etapas/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/analista-judiciario-tecnologia-da-informacao-analista-de-negocios-abrangente
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Câmara de Mário Campos/mg divulga gabarito do <b>concurso</b> realizado pelo IBGP
+URL:     https://fiibrasil.com/noticia/camara-de-mario-campos-mg-mg-gabarito-concurso-01-2025/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Prefeitura de Carlos Barbosa abre <b>concurso</b> público e processo <b>seletivo</b> - GZH
+URL:     https://gauchazh.clicrbs.com.br/pioneiro/geral/noticia/2026/04/prefeitura-de-carlos-barbosa-abre-concurso-publico-e-processo-seletivo-cargos-tem-salarios-ate-r-14-mil-cmofr0ash02hi015b4yf18vpd.html
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Gabarito extraoficial - <b>Concurso</b> PLF Câmara dos Deputados
+URL:     https://www.estrategiaconcursos.com.br/blog/gabarito-extraoficial-concurso-camara-dos-deputados-policial-legislativo-plf/
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/analista-administrativo-educador-fisico-administracao-central-abrangente/28
+Trecho:  
+
+Termo:   seletivo concurso estagio de pos graduacao direito
+Título:  ICMBio abre seleção com 8 vagas para voluntários no Parque Nacional da Serra da Canastra
+URL:     https://concursonews.com/2026/04/icmbio-abre-selecao-com-8-vagas-para-voluntarios-no-parque-nacional-da-serra-da-canastra-inscricoes-seguem-ate-27-de-abril/
+Trecho:  
+
+Termo:   seletivo concurso analista juridico
+Título:  Simulado especial TJ SC: técnico e <b>analista</b> judiciário - Estratégia Concursos
+URL:     https://www.estrategiaconcursos.com.br/blog/simulado-especial-tj-sc-tecnico-e-analista-judiciario/amp/
+Trecho:  
+
+Termo:   seletivo concurso estagio de pos graduacao direito
+Título:  FUNCERN abre vagas de <b>estágio</b> em Comunicação, Administração e Contabilidade
+URL:     https://portaln10.com.br/empregos/funcern-abre-selecao-de-estagio-para-estudantes-de-comunicacao-administracao-e-contabilidade-330868/
+Trecho:  
+
 Termo:   seletivo concurso tecnico juridico
-Título:  Ufac abre processo <b>seletivo</b> para professores substitutos em Rio Branco | G1 - Globo
-URL:     https://g1.globo.com/google/amp/ac/acre/noticia/2026/04/24/com-salarios-de-ate-r-95-mil-ufac-abre-processo-seletivo-para-professores-substitutos.ghtml
+Título:  Das Câmaras Municipais ao MPMS: semana tem vagas em diversos concursos no estado
+URL:     https://midiamax.com.br/cotidiano/emprego-concurso/2026/camaras-municipais-mpms-semana-tem-vagas-diversos-concursos-estado/
 Trecho:  
 
 Termo:   seletivo concurso analista juridico
@@ -425,8 +396,38 @@ Título:  PROCON RJ 2026: confira onde achar o gabarito extraoficial e próximos
 URL:     https://uniten.com.br/procon-rj-2026-gabarito-extraoficial-e-cronograma/
 Trecho:  
 
-Termo:   seletivo concurso tecnico juridico
-Título:  Funed abre novo processo <b>seletivo</b> com vagas para pesquisadores e técnicos em saúde
-URL:     https://agenciaminas.mg.gov.br/noticia/funed-abre-novo-processo-seletivo-com-vagas-para-pesquisadores-e-tecnicos-em-saude
+Termo:   seletivo concurso procurador
+Título:  <b>Concurso</b> da Sefaz CE: inscrições abrem nesta segunda (27); 300 vagas | Rádio Itatiaia
+URL:     https://www.itatiaia.com.br/emprego-e-concursos/concurso-da-sefaz-ce-inscricoes-abrem-nesta-segunda-27-300-vagas/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Provas do <b>concurso</b> público da educação de Campos aplicadas neste domingo
+URL:     https://campos24horas.com.br/noticia/provas-do-concurso-publico-da-educacao-de-campos-aplicadas-neste-domingo
+Trecho:  
+
+Termo:   seletivo concurso consultor legislativo
+Título:  Gabarito Polícia Legislativa Federal 2026: confira notas mínimas, prazos e próximos passos
+URL:     https://uniten.com.br/gabarito-policia-legislativa-federal-2026-notas-minimas-prazos/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Tribunal de Justiça abre <b>concurso</b> público de nível médio com 800 vagas e salário de R$ 10 mil
+URL:     https://www.portaltemponovo.com.br/tribunal-de-justica-abre-concurso-publico-de-nivel-medio-com-800-vagas/
+Trecho:  
+
+Termo:   seletivo concurso estagio de pos graduacao direito
+Título:  UFAM abre seleção para Mestrado em Cirurgia com 25 vagas para 2026 - Concurso News
+URL:     https://concursonews.com/2026/04/ufam-abre-selecao-para-mestrado-em-cirurgia-com-25-vagas-para-2026-inscricoes-comecam-em-maio/
+Trecho:  
+
+Termo:   seletivo concurso estagio de pos graduacao direito
+Título:  FAHECE abre <b>seletivo</b> para Coordenador de Qualidade I em Florianópolis com salário de R$ 8,9 mil
+URL:     https://concursonews.com/2026/04/fahece-abre-seletivo-para-coordenador-de-qualidade-i-em-florianopolis-com-salario-de-r-89-mil/
+Trecho:  
+
+Termo:   seletivo concurso advogado
+Título:  Quer ganhar até R$ 10,4 mil? Veja 1,9 mil vagas abertas em concursos - Folha Vitória
+URL:     https://www.folhavitoria.com.br/trabalho/concursos/quer-ganhar-ate-r-104-mil-veja-19-mil-vagas-abertas-em-concursos/
 Trecho:  
 
