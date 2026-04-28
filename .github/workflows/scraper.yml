@@ -1,8 +1,8 @@
-name: Coletor de Links de Concursos
+name: CuradorIA de Carreiras Jurídicas
 
 on:
   schedule:
-    - cron: "0 1 * * *"  # 1h de Brasília (UTC-3)
+    - cron: "0 4 * * *"  # 1h de Brasília (UTC-3)
   workflow_dispatch:
 
 jobs:
