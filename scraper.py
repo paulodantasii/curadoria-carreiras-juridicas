@@ -122,38 +122,6 @@ PADROES_IGNORAR = [
     r"whatsapp:",
 ]
 
-# Mapeamento de domínios para nomes de exibição
-NOMES_SITES = {
-    "pciconcursos.com.br": "PCI CONCURSOS",
-    "acheconcursos.com.br": "ACHE CONCURSOS",
-    "estrategiaconcursos.com.br": "ESTRATÉGIA CONCURSOS",
-    "grancursosonline.com.br": "GRAN CURSOS",
-    "cj.estrategia.com": "ESTRATÉGIA CJ",
-    "jcconcursos.com.br": "JC CONCURSOS",
-    "qconcursos.com": "QCONCURSOS",
-    "concursonews.com": "CONCURSO NEWS",
-    "concursosnobrasil.com": "CONCURSOS NO BRASIL",
-    "folha.qconcursos.com": "FOLHA CONCURSOS",
-    "magistrarcursos.com.br": "MAGISTRAR CURSOS",
-    "mdcconcursos.com.br": "MDC CONCURSOS",
-    "uniten.com.br": "UNITEN",
-    "noticiasconcursos.com.br": "NOTÍCIAS CONCURSOS",
-    "ojornalextra.com.br": "O JORNAL EXTRA",
-    "contilnetnoticias.com.br": "CONTILNET",
-    "midiamax.com.br": "MÍDIAMAX",
-    "primeirapagina.com.br": "PRIMEIRA PÁGINA",
-    "portaln10.com.br": "PORTAL N10",
-    "novaconcursos.com.br": "NOVA CONCURSOS",
-    "tribunaonline.com.br": "TRIBUNA ONLINE",
-    "unifor.br": "UNIFOR",
-    "setorsaude.com.br": "SETOR SAÚDE",
-    "academiaconcursos.com.br": "ACADEMIA CONCURSOS",
-    "correiobraziliense.com.br": "CORREIO BRAZILIENSE",
-    "g1.globo.com": "G1",
-    "folhavitoria.com.br": "FOLHA VITÓRIA",
-    "proximosconcursos.com": "PRÓXIMOS CONCURSOS",
-}
-
 PROMPT_RELEVANCIA = """Sua tarefa é avaliar se o conteúdo abaixo é um artigo de atualização, previsão, ou divulgação, de edital, concurso, processo seletivo, certame, e similares, que sejam relevantes para um bacharel em Direito que estuda para concursos públicos nas seguintes áreas:
 RELEVANTE — sempre que o conteúdo tiver:
 - Procurador ou Advogado em qualquer órgão do executivo ou legislativo: AGU, PGFN, PGF, PGE, PGM, câmaras municipais, assembleias legislativas, TCU, TCE, TCM, agências reguladoras federais como ANATEL, ANEEL, ANVISA, ANAC, ANS, ANA, ANTAQ, ANTT, ANP, CADE, Banco Central (BACEN), conselhos profissionais como OAB, CRM, CREA, CFM, CFBM, CRBM, CONFEA, etc
@@ -185,22 +153,8 @@ def agora_brasilia() -> datetime:
 
 
 def nome_site(url: str) -> str:
-    """Retorna o nome de exibição do site em maiúsculo."""
     host = urlparse(url).netloc.replace("www.", "")
-    for dominio_chave, nome in NOMES_SITES.items():
-        if dominio_chave in host:
-            return nome
-    partes = host.split(".")
-    sufixos = {"com", "net", "org", "gov", "edu", "br"}
-    partes_validas = [p for p in partes if p not in sufixos]
-    if partes_validas:
-        return partes_validas[-1].upper()
     return host.upper()
-
-
-def dominio(url: str) -> str:
-    """Extrai o domínio limpo de uma URL."""
-    return urlparse(url).netloc.replace("www.", "")
 
 
 def eh_relevante_url(url: str) -> bool:
@@ -236,7 +190,7 @@ def extrair_url_real(href: str) -> str:
 def dominio_bloqueado(base: dict, url: str) -> bool:
     """Verifica se o domínio da URL está bloqueado e se o prazo ainda não venceu."""
     bloqueios = base.get("_bloqueios_403", {})
-    d = dominio(url)
+    d = urlparse(url).netloc.replace("www.", "")
     if d not in bloqueios:
         return False
     data_bloqueio = datetime.fromisoformat(bloqueios[d])
@@ -248,7 +202,7 @@ def registrar_bloqueio_403(base: dict, url: str) -> None:
     """Registra o domínio como bloqueado por 403 a partir de agora."""
     if "_bloqueios_403" not in base:
         base["_bloqueios_403"] = {}
-    d = dominio(url)
+    d = urlparse(url).netloc.replace("www.", "")
     agora = datetime.now(timezone.utc).isoformat()
     base["_bloqueios_403"][d] = agora
     print(f"    [403 BLOQUEADO] Domínio '{d}' bloqueado por {DIAS_BLOQUEIO_403} dias.")
@@ -671,7 +625,7 @@ def analisar_item(item: dict, base: dict, relevantes: list, agora_utc: str) -> s
     url = item["url"]
 
     if dominio_bloqueado(base, url):
-        d = dominio(url)
+        d = urlparse(url).netloc.replace("www.", "")
         print(f"    [BLOQUEADO] Domínio '{d}' bloqueado por 403. Pulando.")
         return "bloqueado"
 
