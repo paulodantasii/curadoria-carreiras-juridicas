@@ -68,7 +68,7 @@ TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN", "")
 TWILIO_FROM = "whatsapp:+14155238886"
 TWILIO_TO = "whatsapp:+558699252617"
 GITHUB_USER = "paulodantasii"
-GITHUB_REPO = "alerta-concursos-juridicos"
+GITHUB_REPO = "curadoria-carreiras-juridicas"
 URL_RELATORIO = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/relatorio.html"
 
 DATABASE_FILE = "database.json"
@@ -422,7 +422,7 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alertas de Concursos Jurídicos</title>
+    <title>CuradorIA de Carreiras Jurídicas</title>
     <style>
         * {{ box-sizing: border-box; margin: 0; padding: 0; }}
         body {{
@@ -530,14 +530,14 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
 </head>
 <body>
     <header>
-        <h1>⚖️ Alertas de Concursos Jurídicos</h1>
+        <h1>🤖 CuradorIA de Carreiras Jurídicas ⚖️</h1>
         <p>Verificação de {data_str} · {total_analisados} links analisados</p>
         <div class="badge">{len(relevantes)} oportunidade(s) relevante(s)</div>
     </header>
     <div class="container">
         {cards}
     </div>
-    <footer>Gerado automaticamente · Alertas de Concursos Jurídicos</footer>
+    <footer>Gerado automaticamente · CuradorIA de Carreiras Jurídicas</footer>
 </body>
 </html>"""
 
@@ -571,18 +571,18 @@ def enviar_whatsapp(mensagem: str) -> None:
 
 def formatar_mensagem_whatsapp(data_str: str, total_novos: int, relevantes: list, resumo: str, erros_ia: int = 0) -> str:
     cabecalho = (
-        f"Alertas de Concursos - {data_str}\n"
-        f"{len(relevantes)} oportunidade(s) relevante(s) encontrada(s).\n\n"
+        f"🤖 CuradorIA de Carreiras Jurídicas ⚖️ - {data_str}\n"
+        f"{len(relevantes)} artigo(s) relevante(s) encontrado(s).\n\n"
     )
     if not relevantes:
-        msg = cabecalho + "Nenhuma oportunidade relevante encontrada hoje."
+        msg = cabecalho + "Nenhum artigo relevante encontrado hoje."
         if erros_ia > 0:
             msg += f"\n\n⚠️ {erros_ia} link(s) não analisado(s) por erro na API."
         return msg
 
     aviso_erros = f"\n\n⚠️ {erros_ia} link(s) não analisado(s) por erro na API." if erros_ia > 0 else ""
     rodape = f"\n\n🔗 {URL_RELATORIO}{aviso_erros}"
-    corpo = resumo if resumo else "Veja o relatório completo no link abaixo."
+    corpo = resumo if resumo else "Veja a curadorIA completa no link abaixo."
 
     mensagem = cabecalho + corpo + rodape
     if len(mensagem) > 1500:
@@ -614,7 +614,10 @@ def main():
     agora_br = agora_brasilia()
     data_str = agora_br.strftime("%d/%m/%Y às %Hh%M")
 
-    print(f"\n=== Execução: {agora_utc} ===\n")
+    print(f"\n{'='*60}")
+    print(f"  CuradorIA de Carreiras Jurídicas")
+    print(f"  Execução: {data_str}")
+    print(f"{'='*60}\n")
 
     base = carregar_base()
     primeira_execucao = len(base) == 0
