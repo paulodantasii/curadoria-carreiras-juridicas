@@ -303,8 +303,8 @@ def coletar_todos_alertas() -> list:
 
 # ─── Extração de texto e título ───────────────────────────────────────────────
 
-# Retorna (titulo, texto, erro) onde erro pode ser "403", "timeout" ou ""
 def extrair_pagina(url: str, timeout: int = 20) -> tuple:
+    """Retorna (titulo, texto, erro) onde erro pode ser '403', 'timeout' ou ''."""
     try:
         resp = requests.get(url, timeout=timeout, headers=HEADERS)
         resp.raise_for_status()
@@ -395,7 +395,12 @@ def gerar_resumo_whatsapp(relevantes: list) -> str:
         for item in relevantes
     )
     resposta = chamar_openai(PROMPT_RESUMO + "\n\nResultados:\n" + lista)
-    return resposta[:1000] if resposta else ""
+    if not resposta:
+        return ""
+    # Trunca no limite de 1000 caracteres sem cortar no meio de uma palavra
+    if len(resposta) > 1000:
+        resposta = resposta[:1000].rsplit(" ", 1)[0] + "..."
+    return resposta
 
 
 # ─── Relatório HTML ───────────────────────────────────────────────────────────
@@ -592,7 +597,7 @@ def formatar_mensagem_whatsapp(data_str: str, total_novos: int, relevantes: list
     mensagem = cabecalho + corpo + rodape
     if len(mensagem) > 1500:
         espaco = 1500 - len(cabecalho) - len(rodape) - 3
-        corpo = corpo[:espaco] + "..."
+        corpo = corpo[:espaco].rsplit(" ", 1)[0] + "..."
         mensagem = cabecalho + corpo + rodape
 
     return mensagem
@@ -674,7 +679,7 @@ def processar_retry(item: dict, base: dict, relevantes: list, agora_utc: str,
                     timeout: int, numero: int) -> str:
     """
     Executa uma tentativa de retry para um item que deu timeout.
-    Retorna "ok", "403", "timeout" ou "erro_ia".
+    Retorna "ok", "403", "timeout", "erro" ou "erro_ia".
     """
     url = item["url"]
     print(f"  [Retry {numero}/3 | {timeout}s] {url}")
@@ -843,15 +848,17 @@ def main():
     # Tentativas com timeouts progressivamente menores: 10s e 5s
     RETRY_TIMEOUTS = [10, 5]
 
-    for tentativa_num, timeout_seg in enumerate(RETRY_TIMEOUTS, start=2):
+    for i, timeout_seg in enumerate(RETRY_TIMEOUTS):
         if not fila_timeout:
             break
+        tentativa_num = i + 2  # começa em 2 para manter o log legível
+        tem_proxima = i + 1 < len(RETRY_TIMEOUTS)
         print(f"\nRetentando {len(fila_timeout)} link(s) com timeout ({tentativa_num}ª tentativa, {timeout_seg}s)...\n")
         proxima_fila = []
         for item in fila_timeout:
             resultado = processar_retry(item, base, relevantes, agora_utc, timeout_seg, tentativa_num)
             if resultado == "timeout":
-                if tentativa_num < len(RETRY_TIMEOUTS) + 1:
+                if tem_proxima:
                     proxima_fila.append(item)
                 else:
                     print(f"    [TIMEOUT DEFINITIVO] {item['url']} — não entra na base.")
