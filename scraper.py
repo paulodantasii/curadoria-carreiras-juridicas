@@ -168,7 +168,7 @@ ou
 Conteúdo para avaliar:
 """
 
-PROMPT_RESUMO = """Com base nos resultados abaixo, escreva um resumo, sem introdução, em texto corrido (entre 900 e 1000 caracteres) dos artigos encontrados, mencionando os cargos e órgãos, ou inscrições, ou provas, etc, priorizando o cargos e carreiras mais importantes no resumo."""
+PROMPT_RESUMO = """Com base nos resultados abaixo, escreva um resumo (entre 900 e 1000 caracteres), sem introdução, em pequenos parágrafos, dos artigos encontrados, mencionando os cargos e órgãos, ou inscrições, ou provas, etc, priorizando o cargos e carreiras mais importantes no resumo."""
 
 
 # Mapa de estados para etiqueta e cor no relatório HTML
@@ -604,6 +604,7 @@ def gerar_html(grupos: list, data_str: str, total_analisados: int, total_relevan
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CuradorIA de Carreiras Jurídicas</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     <style>
         * {{ box-sizing: border-box; margin: 0; padding: 0; }}
         body {{
