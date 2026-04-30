@@ -61,14 +61,15 @@ GOOGLE_ALERTAS_FEEDS = [
     },
 ]
 
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
-OPENAI_MODEL = "gpt-4o-mini"
-OPENAI_URL = "https://api.openai.com/v1/chat/completions"
+IA_API_KEY = os.environ.get("OPENAI_API_KEY", "")
+IA_MODEL = "gpt-4o-mini"
+IA_URL = "https://api.openai.com/v1/chat/completions"
 
 TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID", "")
 TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN", "")
 TWILIO_FROM = "whatsapp:+14155238886"
 TWILIO_TO = f"whatsapp:{os.environ.get('WHATSAPP_NUMBER', '')}"
+
 GITHUB_USER = "paulodantasii"
 GITHUB_REPO = "curadoria-carreiras-juridicas"
 URL_RELATORIO = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/relatorio.html"
@@ -430,9 +431,9 @@ def extrair_pagina(url: str, timeout: int = 20) -> tuple:
 
 # ─── IA ───────────────────────────────────────────────────────────────────────
 
-def chamar_openai(prompt: str) -> str:
+def chamar_api_ia(prompt: str) -> str:
     payload = {
-        "model": OPENAI_MODEL,
+        "model": IA_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0,
         "max_tokens": 400,
@@ -440,10 +441,10 @@ def chamar_openai(prompt: str) -> str:
     for tentativa in range(3):
         try:
             resp = requests.post(
-                OPENAI_URL,
+                IA_URL,
                 headers={
                     "Content-Type": "application/json",
-                    "Authorization": f"Bearer {OPENAI_API_KEY}",
+                    "Authorization": f"Bearer {IA_API_KEY}",
                 },
                 json=payload,
                 timeout=45,
@@ -459,13 +460,13 @@ def chamar_openai(prompt: str) -> str:
 
 
 def avaliar_relevancia(url: str, titulo: str, texto: str) -> dict:
-    if not OPENAI_API_KEY:
-        return {"relevante": False, "motivo": "OPENAI_API_KEY não configurada"}
+    if not IA_API_KEY:
+        return {"relevante": False, "motivo": "IA_API_KEY não configurada"}
     if not texto or len(texto) < 50:
         return {"relevante": False, "motivo": "texto insuficiente"}
 
     conteudo = f"URL: {url}\nTítulo: {titulo}\n\nTexto:\n{texto}"
-    resposta = chamar_openai(PROMPT_RELEVANCIA + conteudo)
+    resposta = chamar_api_ia(PROMPT_RELEVANCIA + conteudo)
     if not resposta:
         return {"relevante": False, "motivo": "erro após 3 tentativas"}
     try:
@@ -482,14 +483,14 @@ def avaliar_relevancia(url: str, titulo: str, texto: str) -> dict:
         return {"relevante": False, "motivo": "erro ao interpretar resposta"}
 
 
-def gerar_resumo_whatsapp(relevantes: list) -> str:
-    if not OPENAI_API_KEY or not relevantes:
+def gerar_resumo(relevantes: list) -> str:
+    if not IA_API_KEY or not relevantes:
         return ""
     lista = "\n".join(
         f"- {item.get('titulo_real') or item.get('title') or item.get('url')} | {item.get('motivo', '')}"
         for item in relevantes
     )
-    resposta = chamar_openai(PROMPT_RESUMO + "\n\nResultados:\n" + lista)
+    resposta = chamar_api_ia(PROMPT_RESUMO + "\n\nResultados:\n" + lista)
     if not resposta:
         return ""
     # Trunca no limite de 1000 caracteres sem cortar no meio de uma palavra
@@ -758,7 +759,7 @@ def gerar_html(grupos: list, data_str: str, total_analisados: int, total_relevan
     <header>
         <h1>🤖 CuradorIA de Carreiras Jurídicas ⚖️</h1>
         <p>Verificação de {data_str} · {total_analisados} artigos analisados</p>
-        <div class="badge">{total_relevantes} relevante(s) em {len(grupos)} concurso(s)</div>
+        <div class="badge">{total_relevantes} artigo(s) relevante(s) sobre {len(grupos)} certame(s)</div>
     </header>
     <div class="container">
         {cards}
@@ -824,13 +825,15 @@ def enviar_whatsapp(mensagem: str) -> None:
     print("  [WhatsApp] Falha após 3 tentativas.")
 
 
-def formatar_mensagem_whatsapp(data_str: str, total_novos: int, relevantes: list, resumo: str, erros_ia: int = 0, total_grupos: int = 0) -> str:
+# ─── Formatação de mensagem ───────────────────────────────────────────────────
+
+def formatar_mensagem(data_str: str, total_novos: int, relevantes: list, resumo: str, erros_ia: int = 0, total_grupos: int = 0) -> str:
     cabecalho = (
         f"🤖 CuradorIA de Carreiras Jurídicas ⚖️ - {data_str}\n"
-        f"{len(relevantes)} artigo(s) relevante(s) em {total_grupos} concurso(s).\n\n"
+        f"{len(relevantes)} artigo(s) relevante(s) sobre {total_grupos} certame(s).\n\n"
     )
     if not relevantes:
-        msg = cabecalho + "Nenhum artigo relevante encontrado hoje."
+        msg = cabecalho + "Nenhum artigo relevante encontrado na busca."
         if erros_ia > 0:
             msg += f"\n\n⚠️ {erros_ia} artigo(s) não analisado(s) por erro na API."
         return msg
@@ -1153,12 +1156,12 @@ def main():
     resumo = ""
     if relevantes:
         print("\nGerando resumo para WhatsApp...")
-        resumo = gerar_resumo_whatsapp(relevantes)
+        resumo = gerar_resumo(relevantes)
         print(f"  Resumo: {resumo}")
 
     # ── WhatsApp ──────────────────────────────────────────────────────────────
     print("\nEnviando mensagem para WhatsApp...")
-    mensagem = formatar_mensagem_whatsapp(data_str, total_novos, relevantes, resumo, erros_ia, len(grupos))
+    mensagem = formatar_mensagem(data_str, total_novos, relevantes, resumo, erros_ia, len(grupos))
     print(f"  Mensagem ({len(mensagem)} chars):\n{mensagem}")
     enviar_whatsapp(mensagem)
 
