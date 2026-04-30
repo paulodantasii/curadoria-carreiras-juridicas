@@ -161,8 +161,13 @@ Se for relevante, identifique também:
    - "tjto-residencia-juridica"
    Use o mesmo identificador para notícias que tratem do mesmo concurso, mesmo que escritas de formas diferentes. Se houver dúvida sobre o cargo específico, omita a parte do cargo.
 
+REGRAS PARA O MOTIVO:
+- Descreva o cargo e o contexto específico do certame
+- Nunca use frases como "relevante para bacharéis em Direito", "exige formação em Direito" ou similares
+- Essas conclusões são óbvias; o motivo deve agregar informação nova, não reafirmar o óbvio
+
 Responda APENAS no seguinte formato JSON, sem nenhum texto adicional:
-{"relevante": true, "motivo": "explicação em duas linhas, não reafirme que é relevante para bacharéis em Direito, diga o cargo ou o contexto suficiente para ficar subentendido", "estado": "inscricao_aberta", "grupo": "orgao-localidade-cargo"}
+{"relevante": true, "motivo": "cargo e contexto específico do certame", "estado": "inscricao_aberta", "grupo": "orgao-localidade-cargo"}
 ou
 {"relevante": false, "motivo": "explicação em uma linha"}
 
