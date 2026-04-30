@@ -2,6 +2,7 @@ import json
 import os
 import re
 import time
+import unicodedata
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from urllib.parse import urljoin, urlparse, parse_qs, unquote
@@ -123,6 +124,7 @@ PADROES_IGNORAR = [
 ]
 
 PROMPT_RELEVANCIA = """Sua tarefa é avaliar se o conteúdo abaixo é um artigo de atualização, previsão, ou divulgação, de edital, concurso, processo seletivo, certame, e similares, que sejam relevantes para um bacharel em Direito que estuda para concursos públicos nas seguintes áreas:
+
 RELEVANTE — sempre que o conteúdo tiver:
 - Procurador ou Advogado em qualquer órgão do executivo ou legislativo: AGU, PGFN, PGF, PGE, PGM, câmaras municipais, assembleias legislativas, TCU, TCE, TCM, agências reguladoras federais como ANATEL, ANEEL, ANVISA, ANAC, ANS, ANA, ANTAQ, ANTT, ANP, CADE, Banco Central (BACEN), conselhos profissionais como OAB, CRM, CREA, CFM, CFBM, CRBM, CONFEA, etc
 - Procurador ou Advogado da Caixa Econômica Federal, Banco do Brasil, Petrobras, BNDES, Correios, EBSERH, Embrapa, Serpro, DATAPREV, autarquias e fundações federais, estaduais e municipais, etc
@@ -133,17 +135,51 @@ RELEVANTE — sempre que o conteúdo tiver:
 - Estágio de pós-graduação em Direito em qualquer órgão público
 - Programas de formação jurídica remunerada em órgãos públicos
 - Todos os cargos que, por algum dos motivos acima, pareçam necessitar de curso superior (diploma) em Direito mas não estejam incluídos nessa lista
+
 NÃO RELEVANTE — se o conteúdo for integralmente apenas sobre:
 - Cargos que NÃO exijam formação (curso superior/bacharelato/diploma) em Direito, como, por exemplo: professores de ensino básico, médicos, engenheiros, enfermeiros, saúde, limpeza, motoristas, técnicos de outras áreas, etc
 - Cargos de nível médio ou técnico sem relevância jurídica
+- Páginas que sejam apenas listagens de provas para download, índices de banca, ou agregadores de outros concursos sem foco em um certame específico
+
+Se for relevante, identifique também:
+
+1. ESTADO do certame, escolhendo UMA das opções:
+   - "anunciado" → autorização publicada, comissão formada, banca contratada, edital previsto mas ainda não publicado
+   - "inscricao_aberta" → edital publicado e inscrições em andamento
+   - "inscricao_encerrada" → inscrições já fecharam, aguardando prova
+   - "prova_realizada" → prova aplicada, aguardando gabarito ou resultado preliminar
+   - "resultado" → gabarito divulgado, resultado preliminar, recursos, resultado final
+   - "encerrado" → certame finalizado, convocações, posses, prorrogação de validade
+
+2. GRUPO no formato "orgao-localidade-cargo" usando apenas letras minúsculas, números e hífens, SEM acentos. Exemplos:
+   - "cgm-porto-velho-ro-auditor"
+   - "prefeitura-martinopolis-sp-advogado"
+   - "sefaz-ce-auditor-fiscal"
+   - "pgm-caxias-do-sul-rs-procurador"
+   - "al-ms-analista-juridico"
+   - "tjto-residencia-juridica"
+   Use o mesmo identificador para notícias que tratem do mesmo concurso, mesmo que escritas de formas diferentes. Se houver dúvida sobre o cargo específico, omita a parte do cargo.
+
 Responda APENAS no seguinte formato JSON, sem nenhum texto adicional:
-{"relevante": true, "motivo": "explicação em duas linha, não reafirme que é relevante para bacharéis em Direito, diga o cargo ou o contexto suficiente para ficar subentendido"}
+{"relevante": true, "motivo": "explicação em duas linhas, não reafirme que é relevante para bacharéis em Direito, diga o cargo ou o contexto suficiente para ficar subentendido", "estado": "inscricao_aberta", "grupo": "orgao-localidade-cargo"}
 ou
 {"relevante": false, "motivo": "explicação em uma linha"}
+
 Conteúdo para avaliar:
 """
 
 PROMPT_RESUMO = """Com base nos resultados abaixo, escreva um resumo, sem introdução, em texto corrido (entre 900 e 1000 caracteres) dos artigos encontrados, mencionando os cargos e órgãos, ou inscrições, ou provas, etc, priorizando o cargos e carreiras mais importantes no resumo."""
+
+
+# Mapa de estados para etiqueta e cor no relatório HTML
+ESTADO_LABELS = {
+    "anunciado": ("📢 Anunciado", "#6c757d"),
+    "inscricao_aberta": ("✅ Inscrição aberta", "#28a745"),
+    "inscricao_encerrada": ("⏰ Inscrição encerrada", "#fd7e14"),
+    "prova_realizada": ("📝 Prova realizada", "#17a2b8"),
+    "resultado": ("🏁 Resultado", "#6f42c1"),
+    "encerrado": ("🔒 Encerrado", "#495057"),
+}
 
 
 # ─── Utilitários ──────────────────────────────────────────────────────────────
@@ -183,6 +219,58 @@ def extrair_url_real(href: str) -> str:
         if "url" in qs:
             return unquote(qs["url"][0])
     return href
+
+
+def normalizar_grupo(g: str) -> str:
+    """Normaliza o identificador de grupo retornado pela IA.
+
+    Remove acentos, deixa minúsculo, troca caracteres não permitidos por hífen
+    e colapsa hífens repetidos. Garante que comparações de grupo sejam
+    consistentes mesmo se a IA variar a grafia.
+    """
+    if not g:
+        return ""
+    g = unicodedata.normalize("NFKD", g).encode("ascii", "ignore").decode("ascii")
+    g = g.lower().strip()
+    g = re.sub(r"[^a-z0-9-]", "-", g)
+    g = re.sub(r"-+", "-", g).strip("-")
+    return g
+
+
+def limpar_titulo(titulo: str) -> str:
+    """Remove apenas sufixos conhecidos de portais (nome do site no final).
+
+    Substitui a regex anterior, que cortava qualquer trecho após hífen e
+    acabava removendo partes legítimas do título como '- SP abre concurso'.
+    """
+    sufixos = [
+        " - PCI Concursos", " | PCI Concursos",
+        " - JC Concursos", " | JC Concursos",
+        " | Folha Dirigida",
+        " - Concursos no Brasil",
+        " | Acheconcursos", " - Acheconcursos",
+        " - Magistrar", " | Magistrar",
+        " - MDC Concursos", " | MDC Concursos",
+        " - Estratégia Concursos", " | Estratégia Concursos",
+        " - Concurso News", " | Concurso News",
+        " - Uniten", " | Uniten",
+        " - G1", " | G1",
+        " - Folha PE", " | Folha PE",
+        " - iG", " - iG Economia",
+        " - Conjur", " | Conjur",
+        " - Folha Vitória", " | Folha Vitória",
+        " - Correio Braziliense",
+        " - Itatiaia", " | Itatiaia",
+        " - Mídia Bahia", " | Mídia Bahia",
+        " - Roraima na Rede",
+        " - Portal Piauí Hoje",
+        " - Tribuna Online",
+        " - ND Mais", " | ND Mais",
+    ]
+    for sufixo in sufixos:
+        if titulo.endswith(sufixo):
+            return titulo[: -len(sufixo)].strip()
+    return titulo.strip()
 
 
 # ─── Bloqueios 403 ────────────────────────────────────────────────────────────
@@ -382,7 +470,14 @@ def avaliar_relevancia(url: str, titulo: str, texto: str) -> dict:
         return {"relevante": False, "motivo": "erro após 3 tentativas"}
     try:
         resposta = re.sub(r"```json|```", "", resposta).strip()
-        return json.loads(resposta)
+        avaliacao = json.loads(resposta)
+        # Normaliza o identificador de grupo para garantir comparações consistentes
+        if avaliacao.get("relevante"):
+            avaliacao["grupo"] = normalizar_grupo(avaliacao.get("grupo", ""))
+            # Garante que estado venha em formato canônico
+            estado = (avaliacao.get("estado") or "").strip().lower()
+            avaliacao["estado"] = estado if estado in ESTADO_LABELS else ""
+        return avaliacao
     except Exception:
         return {"relevante": False, "motivo": "erro ao interpretar resposta"}
 
@@ -403,28 +498,104 @@ def gerar_resumo_whatsapp(relevantes: list) -> str:
     return resposta
 
 
-# ─── Relatório HTML ───────────────────────────────────────────────────────────
+# ─── Agrupamento e geração do relatório HTML ──────────────────────────────────
 
-def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
-    cards = ""
+def agrupar_relevantes(relevantes: list) -> list:
+    """Agrupa as notícias relevantes pelo identificador 'grupo' devolvido pela IA.
+
+    Retorna uma lista ordenada do maior grupo para o menor. Cada grupo é um
+    dict com 'grupo_id', 'itens' e 'tamanho'.
+    """
+    grupos = {}
     for item in relevantes:
+        gid = (item.get("grupo") or "").strip().lower()
+        # Sem identificador, cada item vira um grupo isolado para não perder a notícia
+        if not gid:
+            gid = f"_isolado_{id(item)}"
+        if gid not in grupos:
+            grupos[gid] = []
+        grupos[gid].append(item)
+
+    lista_grupos = [
+        {"grupo_id": gid, "itens": itens, "tamanho": len(itens)}
+        for gid, itens in grupos.items()
+    ]
+    # Ordena do maior grupo para o menor; em empate, mantém ordem original
+    lista_grupos.sort(key=lambda g: g["tamanho"], reverse=True)
+    return lista_grupos
+
+
+def render_card_grupo(idx: int, grupo: dict) -> str:
+    """Renderiza um card-grupo com carrossel se tiver mais de 1 fonte."""
+    itens = grupo["itens"]
+    tamanho = grupo["tamanho"]
+
+    classe_destaque = " destaque" if tamanho >= 3 else ""
+    badge_fontes = ""
+    if tamanho > 1:
+        badge_fontes = f'<div class="fontes-badge">📰 {tamanho} fontes</div>'
+
+    slides_html = ""
+    for item in itens:
         titulo = item.get("titulo_real") or item.get("title") or "Ver link"
-        titulo = re.sub(r"\s*[|\-–]\s*.{3,40}$", "", titulo).strip()
+        titulo = limpar_titulo(titulo)
         titulo = escape(titulo)
         url = item.get("url", "")
         motivo = escape(item.get("motivo", ""))
-        tag = nome_site(url)
+        site = nome_site(url)
+        estado = item.get("estado", "")
+        estado_label, estado_cor = ESTADO_LABELS.get(estado, ("", "#6c757d"))
+        estado_html = ""
+        if estado_label:
+            estado_html = (
+                f'<span class="estado-tag" style="background:{estado_cor};">'
+                f'{estado_label}</span>'
+            )
 
-        cards += f"""
-        <div class="card">
-            <span class="tag">{tag}</span>
-            <h2><a href="{url}" target="_blank">{titulo}</a></h2>
-            <p class="motivo">{motivo}</p>
-            <a href="{url}" target="_blank" class="btn">Acessar matéria →</a>
-        </div>
+        slides_html += f"""
+            <div class="slide">
+                {estado_html}<span class="site-tag">{site}</span>
+                <h2><a href="{url}" target="_blank">{titulo}</a></h2>
+                <p class="motivo">{motivo}</p>
+                <a href="{url}" target="_blank" class="btn">Acessar matéria →</a>
+            </div>
         """
 
-    if not relevantes:
+    # Controles aparecem apenas se houver mais de 1 fonte
+    controles_html = ""
+    if tamanho > 1:
+        indicadores = "".join(
+            f'<span class="indicador{" ativo" if i == 0 else ""}"></span>'
+            for i in range(tamanho)
+        )
+        controles_html = f"""
+            <div class="controles">
+                <button class="seta seta-esq" aria-label="Anterior">‹</button>
+                <div class="indicadores">{indicadores}</div>
+                <button class="seta seta-dir" aria-label="Próxima">›</button>
+            </div>
+        """
+
+    return f"""
+        <div class="card-grupo{classe_destaque}">
+            {badge_fontes}
+            <div class="carrossel">
+                <div class="slides">
+                    {slides_html}
+                </div>
+            </div>
+            {controles_html}
+        </div>
+    """
+
+
+def gerar_html(grupos: list, data_str: str, total_analisados: int, total_relevantes: int) -> str:
+    """Gera o relatório HTML usando a estrutura de grupos com carrossel."""
+    cards = ""
+    for idx, grupo in enumerate(grupos):
+        cards += render_card_grupo(idx, grupo)
+
+    if not grupos:
         cards = '<div class="vazio">Nenhuma oportunidade relevante encontrada nesta verificação.</div>'
 
     return f"""<!DOCTYPE html>
@@ -447,16 +618,8 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
             padding: 2rem 1.5rem 1.5rem;
             text-align: center;
         }}
-        header h1 {{
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.4rem;
-        }}
-        header p {{
-            font-size: 0.85rem;
-            opacity: 0.75;
-        }}
+        header h1 {{ font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }}
+        header p {{ font-size: 0.85rem; opacity: 0.75; }}
         .badge {{
             display: inline-block;
             background: #e94560;
@@ -467,44 +630,74 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
             border-radius: 20px;
             margin-top: 0.8rem;
         }}
-        .container {{
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 1.5rem 1rem;
-        }}
-        .card {{
+        .container {{ max-width: 680px; margin: 0 auto; padding: 1.5rem 1rem; }}
+
+        .card-grupo {{
             background: white;
             border-radius: 12px;
-            padding: 1.2rem 1.3rem;
             margin-bottom: 1rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
             border-left: 4px solid #e94560;
+            overflow: hidden;
+            position: relative;
         }}
-        .tag {{
+        .card-grupo.destaque {{ border-left-width: 6px; }}
+
+        .fontes-badge {{
+            position: absolute;
+            top: 0.8rem;
+            right: 0.8rem;
+            background: #1a1a2e;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.25rem 0.55rem;
+            border-radius: 12px;
+            z-index: 2;
+        }}
+
+        .carrossel {{
+            position: relative;
+            overflow: hidden;
+        }}
+        .slides {{
+            display: flex;
+            transition: transform 0.35s ease;
+        }}
+        .slide {{
+            min-width: 100%;
+            padding: 1.2rem 1.3rem 0.5rem;
+        }}
+
+        .estado-tag {{
+            display: inline-block;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }}
+        .site-tag {{
             display: inline-block;
             background: #f0f2f5;
             color: #555;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            padding: 0.2rem 0.6rem;
+            padding: 0.2rem 0.55rem;
             border-radius: 6px;
-            letter-spacing: 0.3px;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
+            margin-left: 0.4rem;
         }}
-        .card h2 {{
+        .slide h2 {{
             font-size: 1rem;
             font-weight: 600;
             line-height: 1.4;
             margin-bottom: 0.5rem;
             color: #1a1a2e;
         }}
-        .card h2 a {{
-            color: inherit;
-            text-decoration: none;
-        }}
-        .card h2 a:hover {{
-            color: #e94560;
-        }}
+        .slide h2 a {{ color: inherit; text-decoration: none; }}
+        .slide h2 a:hover {{ color: #e94560; }}
         .motivo {{
             font-size: 0.85rem;
             color: #666;
@@ -521,33 +714,84 @@ def gerar_html(relevantes: list, data_str: str, total_analisados: int) -> str:
             border-radius: 8px;
             text-decoration: none;
         }}
-        .btn:hover {{
-            background: #e94560;
+        .btn:hover {{ background: #e94560; }}
+
+        .controles {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 1rem 1rem;
+            border-top: 1px solid #f0f2f5;
+            background: #fafbfc;
         }}
-        .vazio {{
-            text-align: center;
-            color: #888;
-            padding: 3rem 1rem;
-            font-size: 0.95rem;
+        .seta {{
+            background: white;
+            border: 1px solid #ddd;
+            color: #1a1a2e;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
         }}
-        footer {{
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 0.78rem;
-            color: #aaa;
+        .seta:disabled {{ opacity: 0.3; cursor: default; }}
+        .seta:not(:disabled):hover {{ background: #1a1a2e; color: white; }}
+        .indicadores {{ display: flex; gap: 0.4rem; }}
+        .indicador {{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ccc;
         }}
+        .indicador.ativo {{ background: #e94560; }}
+
+        .vazio {{ text-align: center; color: #888; padding: 3rem 1rem; font-size: 0.95rem; }}
+        footer {{ text-align: center; padding: 1.5rem; font-size: 0.78rem; color: #aaa; }}
     </style>
 </head>
 <body>
     <header>
         <h1>🤖 CuradorIA de Carreiras Jurídicas ⚖️</h1>
         <p>Verificação de {data_str} · {total_analisados} artigos analisados</p>
-        <div class="badge">{len(relevantes)} oportunidade(s) relevante(s)</div>
+        <div class="badge">{total_relevantes} relevante(s) em {len(grupos)} concurso(s)</div>
     </header>
     <div class="container">
         {cards}
     </div>
     <footer>Gerado automaticamente · CuradorIA de Carreiras Jurídicas</footer>
+
+    <script>
+    document.querySelectorAll('.card-grupo').forEach(function(card) {{
+        var slidesEl = card.querySelector('.slides');
+        if (!slidesEl) return;
+        var total = slidesEl.children.length;
+        var atual = 0;
+        var setaEsq = card.querySelector('.seta-esq');
+        var setaDir = card.querySelector('.seta-dir');
+        var indicadores = card.querySelectorAll('.indicador');
+
+        function atualizar() {{
+            slidesEl.style.transform = 'translateX(-' + (atual * 100) + '%)';
+            indicadores.forEach(function(ind, i) {{
+                ind.classList.toggle('ativo', i === atual);
+            }});
+            if (setaEsq) setaEsq.disabled = atual === 0;
+            if (setaDir) setaDir.disabled = atual === total - 1;
+        }}
+
+        if (setaEsq) setaEsq.addEventListener('click', function() {{
+            if (atual > 0) {{ atual--; atualizar(); }}
+        }});
+        if (setaDir) setaDir.addEventListener('click', function() {{
+            if (atual < total - 1) {{ atual++; atualizar(); }}
+        }});
+        atualizar();
+    }});
+    </script>
 </body>
 </html>"""
 
@@ -579,10 +823,10 @@ def enviar_whatsapp(mensagem: str) -> None:
     print("  [WhatsApp] Falha após 3 tentativas.")
 
 
-def formatar_mensagem_whatsapp(data_str: str, total_novos: int, relevantes: list, resumo: str, erros_ia: int = 0) -> str:
+def formatar_mensagem_whatsapp(data_str: str, total_novos: int, relevantes: list, resumo: str, erros_ia: int = 0, total_grupos: int = 0) -> str:
     cabecalho = (
         f"🤖 CuradorIA de Carreiras Jurídicas ⚖️ - {data_str}\n"
-        f"{len(relevantes)} artigo(s) relevante(s) encontrado(s).\n\n"
+        f"{len(relevantes)} artigo(s) relevante(s) em {total_grupos} concurso(s).\n\n"
     )
     if not relevantes:
         msg = cabecalho + "Nenhum artigo relevante encontrado hoje."
@@ -657,7 +901,6 @@ def analisar_item(item: dict, base: dict, relevantes: list, agora_utc: str) -> s
     if motivo == "erro após 3 tentativas":
         return "erro_ia"
 
-    # Verificação bem-sucedida: insere na base
     base[url] = {
         "primeira_vez": agora_utc,
         "ultima_vez_visto": agora_utc,
@@ -670,6 +913,8 @@ def analisar_item(item: dict, base: dict, relevantes: list, agora_utc: str) -> s
             **item,
             "titulo_real": titulo_real,
             "motivo": motivo,
+            "estado": avaliacao.get("estado", ""),
+            "grupo": avaliacao.get("grupo", ""),
         })
 
     return "ok"
@@ -677,10 +922,7 @@ def analisar_item(item: dict, base: dict, relevantes: list, agora_utc: str) -> s
 
 def processar_retry(item: dict, base: dict, relevantes: list, agora_utc: str,
                     timeout: int, numero: int) -> str:
-    """
-    Executa uma tentativa de retry para um item que deu timeout.
-    Retorna "ok", "403", "timeout", "erro" ou "erro_ia".
-    """
+    """Tentativa de retry para um item que deu timeout."""
     url = item["url"]
     print(f"  [Retry {numero}/3 | {timeout}s] {url}")
 
@@ -713,7 +955,13 @@ def processar_retry(item: dict, base: dict, relevantes: list, agora_utc: str,
     }
 
     if avaliacao.get("relevante"):
-        relevantes.append({**item, "titulo_real": titulo_real, "motivo": motivo})
+        relevantes.append({
+            **item,
+            "titulo_real": titulo_real,
+            "motivo": motivo,
+            "estado": avaliacao.get("estado", ""),
+            "grupo": avaliacao.get("grupo", ""),
+        })
 
     return "ok"
 
@@ -766,7 +1014,7 @@ def main():
         with open(OUTPUT_RELEVANTES, "w", encoding="utf-8") as f:
             f.write(f"Primeira execução em {agora_utc}.\nNenhum link relevante acusado.\n")
         with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
-            f.write(gerar_html([], data_str, 0))
+            f.write(gerar_html([], data_str, 0, 0))
         print(f"Base criada com {len(base)} links.")
         return
 
@@ -845,13 +1093,12 @@ def main():
             time.sleep(PAUSA_API)
 
     # ── Retry de timeouts ─────────────────────────────────────────────────────
-    # Tentativas com timeouts progressivamente menores: 10s e 5s
     RETRY_TIMEOUTS = [10, 5]
 
     for i, timeout_seg in enumerate(RETRY_TIMEOUTS):
         if not fila_timeout:
             break
-        tentativa_num = i + 2  # começa em 2 para manter o log legível
+        tentativa_num = i + 2
         tem_proxima = i + 1 < len(RETRY_TIMEOUTS)
         print(f"\nRetentando {len(fila_timeout)} link(s) com timeout ({tentativa_num}ª tentativa, {timeout_seg}s)...\n")
         proxima_fila = []
@@ -868,11 +1115,9 @@ def main():
                 time.sleep(PAUSA_API)
         fila_timeout = proxima_fila
 
-    # Links que esgotaram todas as tentativas
     for item in fila_timeout:
         print(f"  [TIMEOUT DEFINITIVO] {item['url']} — não entra na base.")
 
-    # Salva a base após todas as análises
     salvar_base(base)
 
     # ── novos_relevantes.txt ──────────────────────────────────────────────────
@@ -886,13 +1131,19 @@ def main():
                 titulo = item.get("titulo_real") or item.get("title") or "(ver link)"
                 f.write(f"Título:  {titulo}\n")
                 f.write(f"URL:     {item.get('url', '')}\n")
+                f.write(f"Estado:  {item.get('estado', '')}\n")
+                f.write(f"Grupo:   {item.get('grupo', '')}\n")
                 f.write(f"Motivo:  {item.get('motivo', '')}\n\n")
         else:
             f.write("Nenhum link relevante encontrado.\n")
 
-    # ── Relatório HTML ────────────────────────────────────────────────────────
-    print("\nGerando relatório HTML...")
-    html = gerar_html(relevantes, data_str, total_novos)
+    # ── Agrupamento e Relatório HTML ──────────────────────────────────────────
+    print("\nAgrupando notícias por concurso...")
+    grupos = agrupar_relevantes(relevantes)
+    print(f"  {len(relevantes)} notícia(s) → {len(grupos)} grupo(s)")
+
+    print("Gerando relatório HTML...")
+    html = gerar_html(grupos, data_str, total_novos, len(relevantes))
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"  Relatório salvo em '{OUTPUT_HTML}'.")
@@ -906,11 +1157,11 @@ def main():
 
     # ── WhatsApp ──────────────────────────────────────────────────────────────
     print("\nEnviando mensagem para WhatsApp...")
-    mensagem = formatar_mensagem_whatsapp(data_str, total_novos, relevantes, resumo, erros_ia)
+    mensagem = formatar_mensagem_whatsapp(data_str, total_novos, relevantes, resumo, erros_ia, len(grupos))
     print(f"  Mensagem ({len(mensagem)} chars):\n{mensagem}")
     enviar_whatsapp(mensagem)
 
-    print(f"\nRelevantes: {len(relevantes)}/{total_novos}")
+    print(f"\nRelevantes: {len(relevantes)}/{total_novos} em {len(grupos)} grupo(s)")
     print(f"Relatório: {URL_RELATORIO}")
 
 
