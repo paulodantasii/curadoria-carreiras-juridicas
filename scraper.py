@@ -10,11 +10,11 @@ import requests
 from bs4 import BeautifulSoup
 import trafilatura
 
-# Importa a inteligência (ia.py) e o visual (report.py)
-from ia import evaluate_relevance
+# Importa a inteligência (ai.py) e o visual (report.py)
+from ai import evaluate_relevance
 from report import group_relevant_items, generate_html
 
-# ─── Configurações Gerais ──────────────────────────────────────────────────
+# ─── Configurações gerais ─────────────────────────────────────────────────────
 TARGET_URLS = [
     "https://www.pciconcursos.com.br/previstos/",
     "https://www.pciconcursos.com.br/noticias/",
@@ -38,12 +38,12 @@ GOOGLE_ALERTS_FEEDS = [
 
 GITHUB_USER = "paulodantasii"
 GITHUB_REPO = "curadoria-carreiras-juridicas"
-REPORT_URL = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/relatorio.html"
+REPORT_URL = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/report.html"
 
 DATABASE_FILE = "database.json"
-OUTPUT_NEW_LINKS = "novos_links.txt"
-OUTPUT_RELEVANT = "novos_relevantes.txt"
-OUTPUT_HTML = "relatorio.html"
+OUTPUT_NEW_LINKS = "new_links.txt"
+OUTPUT_RELEVANT = "new_relevant.txt"
+OUTPUT_HTML = "report.html"
 
 MAX_ABSENCES = 3
 MAX_PAGE_CHARS = 6000
@@ -62,13 +62,13 @@ RELEVANT_PATTERNS = [r"/concurso", r"/noticia", r"/edital", r"/concursos/", r"/p
 IGNORE_PATTERNS = [r"/(login|cadastro|conta|assinar|assine|newsletter)", r"\.(jpg|jpeg|png|gif|pdf|zip|rar|mp4|svg|css|js)$", r"/(tag|autor|author|page|pagina)/", r"#", r"javascript:", r"mailto:", r"whatsapp:"]
 
 
-# ─── Utilitários Básicos ──────────────────────────────────────────────────
+# ─── Utilitários básicos ──────────────────────────────────────────────────────
 def get_brasilia_time() -> datetime:
-    """Retorna o horário atual do servidor ajustado para Brasília"""
+    """Retorna a hora atual do servidor ajustada ao fuso horário de Brasília"""
     return datetime.now(timezone(timedelta(hours=-3)))
 
 def is_relevant_url(url: str) -> bool:
-    """Verifica se o link capturado faz parte dos domínios ou padrões permitidos"""
+    """Checks if the captured link belongs to the allowed domains or patterns."""
     host = urlparse(url).netloc.replace("www.", "")
     if not any(d in host for d in TARGET_DOMAINS): return False
     for p in IGNORE_PATTERNS:
@@ -78,23 +78,23 @@ def is_relevant_url(url: str) -> bool:
     return False
 
 def normalize_url(url: str) -> str:
-    """Remove fragmentos de âncora (#) dos links para evitar URLs duplicadas"""
+    """Removes anchor fragments (#) from links to avoid duplicate URLs."""
     url = url.split("#")[0].strip()
     parsed = urlparse(url)
     return parsed._replace(fragment="").geturl()
 
 def extract_real_url(href: str) -> str:
-    """Limpa URLs fornecidas pelo Google Alerts que vêm mascaradas"""
+    """Unwraps URLs provided by Google Alerts that come masked."""
     parsed = urlparse(href)
     if "google.com" in parsed.netloc and parsed.path == "/url":
         qs = parse_qs(parsed.query)
         if "url" in qs: return unquote(qs["url"][0])
     return href
 
-# ─── Gerenciamento de Bloqueios (403) ──────────────────────────────────────
+# ─── 403 Block Management ─────────────────────────────────────────────────
 def is_domain_blocked(db: dict, url: str) -> bool:
-    """Verifica se o domínio do site está de castigo por ter bloqueado o robô antes"""
-    blocks = db.get("_bloqueios_403", {})
+    """Checks if the domain is currently blocked due to a prior 403 response."""
+    blocks = db.get("_blocks_403", {})
     d = urlparse(url).netloc.replace("www.", "")
     if d not in blocks: return False
     block_date = datetime.fromisoformat(blocks[d])
@@ -102,16 +102,16 @@ def is_domain_blocked(db: dict, url: str) -> bool:
     return datetime.now(timezone.utc) < deadline
 
 def register_403_block(db: dict, url: str) -> None:
-    """Coloca o domínio de castigo no banco de dados se ele der erro 403"""
-    if "_bloqueios_403" not in db: db["_bloqueios_403"] = {}
+    """Records the domain as blocked in the database after a 403 error."""
+    if "_blocks_403" not in db: db["_blocks_403"] = {}
     d = urlparse(url).netloc.replace("www.", "")
     now = datetime.now(timezone.utc).isoformat()
-    db["_bloqueios_403"][d] = now
+    db["_blocks_403"][d] = now
     print(f"    [403 BLOQUEADO] Domínio '{d}' bloqueado por {BLOCK_403_DAYS} dias.")
 
 def clear_expired_blocks(db: dict) -> None:
-    """Remove o castigo de domínios cujo prazo de bloqueio já expirou"""
-    blocks = db.get("_bloqueios_403", {})
+    """Removes block records for domains whose block period has expired."""
+    blocks = db.get("_blocks_403", {})
     now = datetime.now(timezone.utc)
     expired = [d for d, date_str in blocks.items() if now >= datetime.fromisoformat(date_str) + timedelta(days=BLOCK_403_DAYS)]
     for d in expired:
@@ -120,7 +120,7 @@ def clear_expired_blocks(db: dict) -> None:
 
 # ─── Web Scraping ─────────────────────────────────────────────────────────
 def collect_page_links(url: str, session: requests.Session) -> set:
-    """Abre uma página alvo e coleta todos os links válidos de notícias dentro dela"""
+    """Opens a target page and collects all valid news links within it."""
     try:
         resp = session.get(url, timeout=20, headers=HEADERS)
         resp.raise_for_status()
@@ -141,7 +141,7 @@ def collect_page_links(url: str, session: requests.Session) -> set:
     return links
 
 def collect_all_links() -> set:
-    """Passa por todas as URLs alvo chamando a função de coleta de links"""
+    """Iterates over all target URLs calling the link collection function."""
     session = requests.Session()
     all_links = set()
     for url in TARGET_URLS:
@@ -152,7 +152,7 @@ def collect_all_links() -> set:
 
 # ─── Google Alerts ────────────────────────────────────────────────────────
 def read_alert_feed(feed_url: str, term: str) -> list:
-    """Lê o feed RSS do Google Alerts e extrai os links notificados pelo Google"""
+    """Reads the Google Alerts RSS feed and extracts the links notified by Google."""
     try:
         resp = requests.get(feed_url, timeout=15, headers=HEADERS)
         resp.raise_for_status()
@@ -190,9 +190,9 @@ def collect_all_alerts() -> list:
         time.sleep(1)
     return all_alerts
 
-# ─── Extração de Conteúdo da Página ───────────────────────────────────────
+# ─── Page Content Extraction ──────────────────────────────────────────────
 def extract_page(url: str, timeout: int = 20) -> tuple:
-    """Extrai apenas o miolo de texto útil de uma página ignorando menus/propagandas"""
+    """Extracts only the useful text body from a page, ignoring menus and ads."""
     try:
         resp = requests.get(url, timeout=timeout, headers=HEADERS)
         resp.raise_for_status()
@@ -232,7 +232,7 @@ def extract_page(url: str, timeout: int = 20) -> tuple:
         print(f"    [ERRO página] {url} → {e}")
         return "", "", ""
 
-# ─── Manipulação do Banco de Dados JSON ───────────────────────────────────
+# ─── JSON Database Management ─────────────────────────────────────────────
 def load_database() -> dict:
     if not os.path.exists(DATABASE_FILE): return {}
     with open(DATABASE_FILE, "r", encoding="utf-8") as f:
@@ -242,14 +242,14 @@ def save_database(db: dict) -> None:
     with open(DATABASE_FILE, "w", encoding="utf-8") as f:
         json.dump(db, f, ensure_ascii=False, indent=2)
 
-# ─── Análise e Validação do Item ──────────────────────────────────────────
+# ─── Item Analysis and Validation ─────────────────────────────────────────
 def analyze_item(item: dict, db: dict, relevant_items: list, now_utc: str) -> str:
-    """Extrai e envia o item para a inteligência artificial aprovar/reprovar"""
+    """Extracts and sends the item to the AI for approval/rejection."""
     url = item["url"]
     if is_domain_blocked(db, url):
         d = urlparse(url).netloc.replace("www.", "")
         print(f"    [BLOQUEADO] Domínio '{d}' bloqueado por 403. Pulando.")
-        return "bloqueado"
+        return "blocked"
 
     real_title, text, error = extract_page(url)
 
@@ -264,32 +264,32 @@ def analyze_item(item: dict, db: dict, relevant_items: list, now_utc: str) -> st
 
     title = real_title or item.get("title", "")
     evaluation = evaluate_relevance(url, title, text)
-    reason = evaluation.get("motivo", "")
-    print(f"    → relevante: {evaluation.get('relevante')} | {reason}")
+    reason = evaluation.get("reason", "")
+    print(f"    → relevante: {evaluation.get('relevant')} | {reason}")
 
-    if reason == "erro após 3 tentativas":
+    if reason == "error after 3 attempts":
         return "ai_error"
 
-    # Atualiza o banco indicando que este link já foi mapeado
+    # Marks the URL as already processed in the database
     db[url] = {
         "first_seen": now_utc,
         "last_seen": now_utc,
         "consecutive_absences": 0,
-        "source": item.get("fonte", "scraping"),
+        "source": item.get("source", "scraping"),
     }
 
-    if evaluation.get("relevante"):
+    if evaluation.get("relevant"):
         relevant_items.append({
             **item,
             "real_title": real_title,
-            "motivo": reason,
-            "estado": evaluation.get("estado", ""),
-            "grupo": evaluation.get("grupo", ""),
+            "reason": reason,
+            "status": evaluation.get("status", ""),
+            "group": evaluation.get("group", ""),
         })
     return "ok"
 
 def process_retry(item: dict, db: dict, relevant_items: list, now_utc: str, timeout: int, attempt_num: int) -> str:
-    """Tenta baixar o site novamente em caso de Timeout anterior (demora do site)"""
+    """Retries downloading a page that previously timed out."""
     url = item["url"]
     print(f"  [Retry {attempt_num}/3 | {timeout}s] {url}")
     real_title, text, error = extract_page(url, timeout=timeout)
@@ -305,30 +305,30 @@ def process_retry(item: dict, db: dict, relevant_items: list, now_utc: str, time
 
     title = real_title or item.get("title", "")
     evaluation = evaluate_relevance(url, title, text)
-    reason = evaluation.get("motivo", "")
-    print(f"    → relevante: {evaluation.get('relevante')} | {reason}")
+    reason = evaluation.get("reason", "")
+    print(f"    → relevante: {evaluation.get('relevant')} | {reason}")
 
-    if reason == "erro após 3 tentativas":
+    if reason == "error after 3 attempts":
         return "ai_error"
 
     db[url] = {
         "first_seen": now_utc,
         "last_seen": now_utc,
         "consecutive_absences": 0,
-        "source": item.get("fonte", "scraping"),
+        "source": item.get("source", "scraping"),
     }
 
-    if evaluation.get("relevante"):
+    if evaluation.get("relevant"):
         relevant_items.append({
             **item,
             "real_title": real_title,
-            "motivo": reason,
-            "estado": evaluation.get("estado", ""),
-            "grupo": evaluation.get("grupo", ""),
+            "reason": reason,
+            "status": evaluation.get("status", ""),
+            "group": evaluation.get("group", ""),
         })
     return "ok"
 
-# ─── Função Principal que Rege Todo o Processo ────────────────────────────
+# ─── Main Function ────────────────────────────────────────────────────────
 def main():
     now_utc = datetime.now(timezone.utc).isoformat()
     br_time = get_brasilia_time()
@@ -361,7 +361,7 @@ def main():
                 "first_seen": now_utc,
                 "last_seen": now_utc,
                 "consecutive_absences": 0,
-                "source": "alerta" if url in alerts_links else "scraping",
+                "source": "alert" if url in alerts_links else "scraping",
             }
         save_database(db)
         with open(OUTPUT_NEW_LINKS, "w", encoding="utf-8") as f:
@@ -376,9 +376,9 @@ def main():
     new_alerts = []
 
     for url in all_links:
-        source = "alerta" if url in alerts_links else "scraping"
+        source = "alert" if url in alerts_links else "scraping"
         if url not in db:
-            if source == "alerta":
+            if source == "alert":
                 info = next((r for r in alerts_results if r["url"] == url), {})
                 new_alerts.append(info if info else {"url": url, "title": "", "snippet": "", "term": ""})
             else:
@@ -402,21 +402,21 @@ def main():
         f.write(f"Verificação: {now_utc}\nLinks novos encontrados: {total_new}\n  Scraping: {len(new_scraping)}\n  Alertas:  {len(new_alerts)}\nRemovidos da base: {len(removed_links)}\nTotal na base: {len(db)}\n")
         f.write("=" * 60 + "\n\n")
         if new_scraping:
-            f.write("── NOVOS (scraping) ──\n\n")
+            f.write("── NEW (scraping) ──\n\n")
             for url in sorted(new_scraping): f.write(url + "\n")
             f.write("\n")
         if new_alerts:
-            f.write("── NOVOS (Google Alertas) ──\n\n")
+            f.write("── NEW (Google Alerts) ──\n\n")
             for item in new_alerts:
-                f.write(f"Termo:   {item.get('term', '')}\nTítulo:  {item.get('title', '')}\nURL:     {item.get('url', '')}\nTrecho:  {item.get('snippet', '')}\n\n")
+                f.write(f"Term:    {item.get('term', '')}\nTitle:   {item.get('title', '')}\nURL:     {item.get('url', '')}\nSnippet: {item.get('snippet', '')}\n\n")
 
     print(f"\nAnalisando {total_new} links novos via IA...\n")
     relevant_items = []
     ai_errors = 0
     timeout_queue = []
 
-    all_new_items = [{"url": url, "title": "", "fonte": "scraping"} for url in new_scraping]
-    all_new_items.extend([{**item, "fonte": "alerta"} for item in new_alerts])
+    all_new_items = [{"url": url, "title": "", "source": "scraping"} for url in new_scraping]
+    all_new_items.extend([{**item, "source": "alert"} for item in new_alerts])
 
     for i, item in enumerate(all_new_items, 1):
         print(f"  [{i}/{total_new}] {item['url']}")
@@ -448,7 +448,7 @@ def main():
         f.write("=" * 60 + "\n\n")
         for item in relevant_items:
             title = item.get("real_title") or item.get("title") or "(ver link)"
-            f.write(f"Título:  {title}\nURL:     {item.get('url', '')}\nEstado:  {item.get('estado', '')}\nGrupo:   {item.get('grupo', '')}\nMotivo:  {item.get('motivo', '')}\n\n")
+            f.write(f"Title:   {title}\nURL:     {item.get('url', '')}\nStatus:  {item.get('status', '')}\nGroup:   {item.get('group', '')}\nReason:  {item.get('reason', '')}\n\n")
 
     groups = group_relevant_items(relevant_items)
     print("Gerando relatório HTML...")
