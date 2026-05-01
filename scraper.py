@@ -2,18 +2,20 @@ import json
 import os
 import re
 import time
-import unicodedata
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from urllib.parse import urljoin, urlparse, parse_qs, unquote
-from html import escape
 
 import requests
 from bs4 import BeautifulSoup
+import trafilatura
 
-# ─── Configuração ────────────────────────────────────────────────────────────
+# Importa a inteligência (ia.py) e o visual (report.py)
+from ia import evaluate_relevance
+from report import group_relevant_items, generate_html
 
-URLS_ALVO = [
+# ─── Configurações Gerais ──────────────────────────────────────────────────
+TARGET_URLS = [
     "https://www.pciconcursos.com.br/previstos/",
     "https://www.pciconcursos.com.br/noticias/",
     "https://www.pciconcursos.com.br/ultimas/",
@@ -22,304 +24,105 @@ URLS_ALVO = [
     "https://www.acheconcursos.com.br/concursos-abertos",
 ]
 
-GOOGLE_ALERTAS_FEEDS = [
-    {
-        "url": "https://www.google.com/alerts/feeds/05883152892408713569/13784085206058947900",
-        "termo": "seletivo concurso residencia juridica",
-    },
-    {
-        "url": "https://www.google.com/alerts/feeds/05883152892408713569/10699205725319407642",
-        "termo": "seletivo concurso procurador",
-    },
-    {
-        "url": "https://www.google.com/alerts/feeds/05883152892408713569/15459908627525988139",
-        "termo": "seletivo concurso advogado",
-    },
-    {
-        "url": "https://www.google.com/alerts/feeds/05883152892408713569/5648081314456116013",
-        "termo": "seletivo concurso estagio de pos graduacao direito",
-    },
-    {
-        "url": "https://www.google.com/alerts/feeds/05883152892408713569/15126815070692715421",
-        "termo": "seletivo concurso analista juridico",
-    },
-    {
-        "url": "https://www.google.com/alerts/feeds/05883152892408713569/4736851925661048284",
-        "termo": "seletivo concurso assessor juridico",
-    },
-    {
-        "url": "https://www.google.com/alerts/feeds/05883152892408713569/2563769251380958392",
-        "termo": "seletivo concurso tecnico juridico",
-    },
-    {
-        "url": "https://www.google.com/alerts/feeds/05883152892408713569/16659093265726736111",
-        "termo": "seletivo concurso consultor legislativo",
-    },
-    {
-        "url": "https://www.google.com/alerts/feeds/05883152892408713569/4996675272987879500",
-        "termo": "seletivo concurso direito",
-    },
+GOOGLE_ALERTS_FEEDS = [
+    {"url": "https://www.google.com/alerts/feeds/05883152892408713569/13784085206058947900", "term": "seletivo concurso residencia juridica"},
+    {"url": "https://www.google.com/alerts/feeds/05883152892408713569/10699205725319407642", "term": "seletivo concurso procurador"},
+    {"url": "https://www.google.com/alerts/feeds/05883152892408713569/15459908627525988139", "term": "seletivo concurso advogado"},
+    {"url": "https://www.google.com/alerts/feeds/05883152892408713569/5648081314456116013", "term": "seletivo concurso estagio de pos graduacao direito"},
+    {"url": "https://www.google.com/alerts/feeds/05883152892408713569/15126815070692715421", "term": "seletivo concurso analista juridico"},
+    {"url": "https://www.google.com/alerts/feeds/05883152892408713569/4736851925661048284", "term": "seletivo concurso assessor juridico"},
+    {"url": "https://www.google.com/alerts/feeds/05883152892408713569/2563769251380958392", "term": "seletivo concurso tecnico juridico"},
+    {"url": "https://www.google.com/alerts/feeds/05883152892408713569/16659093265726736111", "term": "seletivo concurso consultor legislativo"},
+    {"url": "https://www.google.com/alerts/feeds/05883152892408713569/4996675272987879500", "term": "seletivo concurso direito"},
 ]
-
-IA_API_KEY = os.environ.get("OPENAI_API_KEY", "")
-IA_MODEL = "gpt-4o-mini"
-IA_URL = "https://api.openai.com/v1/chat/completions"
-
-TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID", "")
-TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN", "")
-TWILIO_FROM = "whatsapp:+14155238886"
-TWILIO_TO = f"whatsapp:{os.environ.get('WHATSAPP_NUMBER', '')}"
 
 GITHUB_USER = "paulodantasii"
 GITHUB_REPO = "curadoria-carreiras-juridicas"
-URL_RELATORIO = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/relatorio.html"
+REPORT_URL = f"https://{GITHUB_USER}.github.io/{GITHUB_REPO}/relatorio.html"
 
 DATABASE_FILE = "database.json"
-OUTPUT_NOVOS = "novos_links.txt"
-OUTPUT_RELEVANTES = "novos_relevantes.txt"
+OUTPUT_NEW_LINKS = "novos_links.txt"
+OUTPUT_RELEVANT = "novos_relevantes.txt"
 OUTPUT_HTML = "relatorio.html"
-MAX_AUSENCIAS = 3
-MAX_CHARS_PAGINA = 6000
-PAUSA_API = 2.0
-DIAS_BLOQUEIO_403 = 30
+
+MAX_ABSENCES = 3
+MAX_PAGE_CHARS = 6000
+API_PAUSE = 2.0
+BLOCK_403_DAYS = 30
 
 HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
+    "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"),
     "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
 }
 
-DOMINIOS_ALVO = {
-    "pciconcursos.com.br",
-    "acheconcursos.com.br",
-}
+TARGET_DOMAINS = {"pciconcursos.com.br", "acheconcursos.com.br"}
 
-PADROES_RELEVANTES = [
-    r"/concurso",
-    r"/noticia",
-    r"/edital",
-    r"/concursos/",
-    r"/previstos",
-    r"/abertos",
-    r"/autorizados",
-    r"/inscricoes",
-    r"/cronograma",
-    r"/ultimas",
-    r"/noticias",
-    r"/portal/\d{4}/",
-    r"/portal/[a-z0-9-]+/$",
-]
-
-PADROES_IGNORAR = [
-    r"/(login|cadastro|conta|assinar|assine|newsletter)",
-    r"\.(jpg|jpeg|png|gif|pdf|zip|rar|mp4|svg|css|js)$",
-    r"/(tag|autor|author|page|pagina)/",
-    r"#",
-    r"javascript:",
-    r"mailto:",
-    r"whatsapp:",
-]
-
-PROMPT_RELEVANCIA = """Sua tarefa é avaliar se o conteúdo abaixo é um artigo de atualização, previsão, ou divulgação, de edital, concurso, processo seletivo, certame, e similares, que sejam relevantes para um bacharel em Direito que estuda para concursos públicos nas seguintes áreas:
-
-RELEVANTE — sempre que o conteúdo tiver:
-- Procurador ou Advogado em qualquer órgão do executivo ou legislativo: AGU, PGFN, PGF, PGE, PGM, câmaras municipais, assembleias legislativas, TCU, TCE, TCM, agências reguladoras federais como ANATEL, ANEEL, ANVISA, ANAC, ANS, ANA, ANTAQ, ANTT, ANP, CADE, Banco Central (BACEN), conselhos profissionais como OAB, CRM, CREA, CFM, CFBM, CRBM, CONFEA, etc
-- Procurador ou Advogado da Caixa Econômica Federal, Banco do Brasil, Petrobras, BNDES, Correios, EBSERH, Embrapa, Serpro, DATAPREV, autarquias e fundações federais, estaduais e municipais, etc
-- Analista ou Assessor de matéria jurídica ou correlatas em órgãos do executivo federal, estadual ou municipal, secretarias, ministérios, autarquias, agências reguladoras, empresas públicas, etc
-- Analista ou Assessor de matéria jurídica ou correlatas de Tribunal de Contas como TCU, TCE, TCM, etc
-- Cargos que exijam bacharelado em Direito e cujo conteúdo programático envolva direito público, como: administrativo, constitucional, tributário, civil, financeiro, licitações, contratos públicos, execução fiscal, etc
-- Residência Jurídica em qualquer órgão público
-- Estágio de pós-graduação em Direito em qualquer órgão público
-- Programas de formação jurídica remunerada em órgãos públicos
-- Todos os cargos que, por algum dos motivos acima, pareçam necessitar de curso superior (diploma) em Direito mas não estejam incluídos nessa lista
-
-NÃO RELEVANTE — se o conteúdo for integralmente apenas sobre:
-- Cargos que NÃO exijam formação (curso superior/bacharelato/diploma) em Direito, como, por exemplo: professores de ensino básico, médicos, engenheiros, enfermeiros, saúde, limpeza, motoristas, técnicos de outras áreas, etc
-- Cargos de nível médio ou técnico sem relevância jurídica
-- Páginas que sejam apenas listagens de provas para download, índices de banca, ou agregadores de outros concursos sem foco em um certame específico
-
-Se for relevante, identifique também:
-
-1. ESTADO do certame, escolhendo UMA das opções:
-   - "anunciado" → autorização publicada, comissão formada, banca contratada, edital previsto mas ainda não publicado
-   - "inscricao_aberta" → edital publicado e inscrições em andamento
-   - "inscricao_encerrada" → inscrições já fecharam, aguardando prova
-   - "prova_realizada" → prova aplicada, aguardando gabarito ou resultado preliminar
-   - "resultado" → gabarito divulgado, resultado preliminar, recursos, resultado final
-   - "encerrado" → certame finalizado, convocações, posses, prorrogação de validade
-
-2. GRUPO no formato "orgao-localidade-cargo" usando apenas letras minúsculas, números e hífens, SEM acentos. Exemplos:
-   - "cgm-porto-velho-ro-auditor"
-   - "prefeitura-martinopolis-sp-advogado"
-   - "sefaz-ce-auditor-fiscal"
-   - "pgm-caxias-do-sul-rs-procurador"
-   - "al-ms-analista-juridico"
-   - "tjto-residencia-juridica"
-   Use o mesmo identificador para notícias que tratem do mesmo concurso, mesmo que escritas de formas diferentes. Se houver dúvida sobre o cargo específico, omita a parte do cargo.
-
-REGRAS PARA O MOTIVO:
-- Descreva o cargo e o contexto específico do certame
-- Nunca use frases como "relevante para bacharéis em Direito", "exige formação em Direito" ou similares
-- Essas conclusões são óbvias; o motivo deve agregar informação nova, não reafirmar o óbvio
-
-Responda APENAS no seguinte formato JSON, sem nenhum texto adicional:
-{"relevante": true, "motivo": "cargo e contexto específico do certame", "estado": "inscricao_aberta", "grupo": "orgao-localidade-cargo"}
-ou
-{"relevante": false, "motivo": "explicação em uma linha"}
-
-Conteúdo para avaliar:
-"""
-
-PROMPT_RESUMO = """Com base nos resultados abaixo, escreva um resumo (entre 900 e 1000 caracteres), sem introdução, em pequenos parágrafos, dos artigos encontrados, mencionando os cargos e órgãos, ou inscrições, ou provas, etc, priorizando o cargos e carreiras mais importantes no resumo."""
+RELEVANT_PATTERNS = [r"/concurso", r"/noticia", r"/edital", r"/concursos/", r"/previstos", r"/abertos", r"/autorizados", r"/inscricoes", r"/cronograma", r"/ultimas", r"/noticias", r"/portal/\d{4}/", r"/portal/[a-z0-9-]+/$"]
+IGNORE_PATTERNS = [r"/(login|cadastro|conta|assinar|assine|newsletter)", r"\.(jpg|jpeg|png|gif|pdf|zip|rar|mp4|svg|css|js)$", r"/(tag|autor|author|page|pagina)/", r"#", r"javascript:", r"mailto:", r"whatsapp:"]
 
 
-# Mapa de estados para etiqueta e cor no relatório HTML
-ESTADO_LABELS = {
-    "anunciado": ("📢 Anunciado", "#6c757d"),
-    "inscricao_aberta": ("✅ Inscrição aberta", "#28a745"),
-    "inscricao_encerrada": ("⏰ Inscrição encerrada", "#fd7e14"),
-    "prova_realizada": ("📝 Prova realizada", "#17a2b8"),
-    "resultado": ("🏁 Resultado", "#6f42c1"),
-    "encerrado": ("🔒 Encerrado", "#495057"),
-}
-
-
-# ─── Utilitários ──────────────────────────────────────────────────────────────
-
-def agora_brasilia() -> datetime:
+# ─── Utilitários Básicos ──────────────────────────────────────────────────
+def get_brasilia_time() -> datetime:
+    """Retorna o horário atual do servidor ajustado para Brasília"""
     return datetime.now(timezone(timedelta(hours=-3)))
 
-
-def nome_site(url: str) -> str:
+def is_relevant_url(url: str) -> bool:
+    """Verifica se o link capturado faz parte dos domínios ou padrões permitidos"""
     host = urlparse(url).netloc.replace("www.", "")
-    return host.upper()
-
-
-def eh_relevante_url(url: str) -> bool:
-    host = urlparse(url).netloc.replace("www.", "")
-    if not any(d in host for d in DOMINIOS_ALVO):
-        return False
-    for p in PADROES_IGNORAR:
-        if re.search(p, url, re.IGNORECASE):
-            return False
-    for p in PADROES_RELEVANTES:
-        if re.search(p, url, re.IGNORECASE):
-            return True
+    if not any(d in host for d in TARGET_DOMAINS): return False
+    for p in IGNORE_PATTERNS:
+        if re.search(p, url, re.IGNORECASE): return False
+    for p in RELEVANT_PATTERNS:
+        if re.search(p, url, re.IGNORECASE): return True
     return False
 
-
-def normalizar(url: str) -> str:
+def normalize_url(url: str) -> str:
+    """Remove fragmentos de âncora (#) dos links para evitar URLs duplicadas"""
     url = url.split("#")[0].strip()
     parsed = urlparse(url)
     return parsed._replace(fragment="").geturl()
 
-
-def extrair_url_real(href: str) -> str:
+def extract_real_url(href: str) -> str:
+    """Limpa URLs fornecidas pelo Google Alerts que vêm mascaradas"""
     parsed = urlparse(href)
     if "google.com" in parsed.netloc and parsed.path == "/url":
         qs = parse_qs(parsed.query)
-        if "url" in qs:
-            return unquote(qs["url"][0])
+        if "url" in qs: return unquote(qs["url"][0])
     return href
 
-
-def normalizar_grupo(g: str) -> str:
-    """Normaliza o identificador de grupo retornado pela IA.
-
-    Remove acentos, deixa minúsculo, troca caracteres não permitidos por hífen
-    e colapsa hífens repetidos. Garante que comparações de grupo sejam
-    consistentes mesmo se a IA variar a grafia.
-    """
-    if not g:
-        return ""
-    g = unicodedata.normalize("NFKD", g).encode("ascii", "ignore").decode("ascii")
-    g = g.lower().strip()
-    g = re.sub(r"[^a-z0-9-]", "-", g)
-    g = re.sub(r"-+", "-", g).strip("-")
-    return g
-
-
-def limpar_titulo(titulo: str) -> str:
-    """Remove apenas sufixos conhecidos de portais (nome do site no final).
-
-    Substitui a regex anterior, que cortava qualquer trecho após hífen e
-    acabava removendo partes legítimas do título como '- SP abre concurso'.
-    """
-    sufixos = [
-        " - PCI Concursos", " | PCI Concursos",
-        " - JC Concursos", " | JC Concursos",
-        " | Folha Dirigida",
-        " - Concursos no Brasil",
-        " | Acheconcursos", " - Acheconcursos",
-        " - Magistrar", " | Magistrar",
-        " - MDC Concursos", " | MDC Concursos",
-        " - Estratégia Concursos", " | Estratégia Concursos",
-        " - Concurso News", " | Concurso News",
-        " - Uniten", " | Uniten",
-        " - G1", " | G1",
-        " - Folha PE", " | Folha PE",
-        " - iG", " - iG Economia",
-        " - Conjur", " | Conjur",
-        " - Folha Vitória", " | Folha Vitória",
-        " - Correio Braziliense",
-        " - Itatiaia", " | Itatiaia",
-        " - Mídia Bahia", " | Mídia Bahia",
-        " - Roraima na Rede",
-        " - Portal Piauí Hoje",
-        " - Tribuna Online",
-        " - ND Mais", " | ND Mais",
-    ]
-    for sufixo in sufixos:
-        if titulo.endswith(sufixo):
-            return titulo[: -len(sufixo)].strip()
-    return titulo.strip()
-
-
-# ─── Bloqueios 403 ────────────────────────────────────────────────────────────
-
-def dominio_bloqueado(base: dict, url: str) -> bool:
-    """Verifica se o domínio da URL está bloqueado e se o prazo ainda não venceu."""
-    bloqueios = base.get("_bloqueios_403", {})
+# ─── Gerenciamento de Bloqueios (403) ──────────────────────────────────────
+def is_domain_blocked(db: dict, url: str) -> bool:
+    """Verifica se o domínio do site está de castigo por ter bloqueado o robô antes"""
+    blocks = db.get("_bloqueios_403", {})
     d = urlparse(url).netloc.replace("www.", "")
-    if d not in bloqueios:
-        return False
-    data_bloqueio = datetime.fromisoformat(bloqueios[d])
-    prazo = data_bloqueio + timedelta(days=DIAS_BLOQUEIO_403)
-    return datetime.now(timezone.utc) < prazo
+    if d not in blocks: return False
+    block_date = datetime.fromisoformat(blocks[d])
+    deadline = block_date + timedelta(days=BLOCK_403_DAYS)
+    return datetime.now(timezone.utc) < deadline
 
-
-def registrar_bloqueio_403(base: dict, url: str) -> None:
-    """Registra o domínio como bloqueado por 403 a partir de agora."""
-    if "_bloqueios_403" not in base:
-        base["_bloqueios_403"] = {}
+def register_403_block(db: dict, url: str) -> None:
+    """Coloca o domínio de castigo no banco de dados se ele der erro 403"""
+    if "_bloqueios_403" not in db: db["_bloqueios_403"] = {}
     d = urlparse(url).netloc.replace("www.", "")
-    agora = datetime.now(timezone.utc).isoformat()
-    base["_bloqueios_403"][d] = agora
-    print(f"    [403 BLOQUEADO] Domínio '{d}' bloqueado por {DIAS_BLOQUEIO_403} dias.")
+    now = datetime.now(timezone.utc).isoformat()
+    db["_bloqueios_403"][d] = now
+    print(f"    [403 BLOQUEADO] Domínio '{d}' bloqueado por {BLOCK_403_DAYS} dias.")
 
-
-def limpar_bloqueios_vencidos(base: dict) -> None:
-    """Remove da lista de bloqueios os domínios cujo prazo já venceu."""
-    bloqueios = base.get("_bloqueios_403", {})
-    agora = datetime.now(timezone.utc)
-    vencidos = [
-        d for d, data_str in bloqueios.items()
-        if agora >= datetime.fromisoformat(data_str) + timedelta(days=DIAS_BLOQUEIO_403)
-    ]
-    for d in vencidos:
-        del bloqueios[d]
+def clear_expired_blocks(db: dict) -> None:
+    """Remove o castigo de domínios cujo prazo de bloqueio já expirou"""
+    blocks = db.get("_bloqueios_403", {})
+    now = datetime.now(timezone.utc)
+    expired = [d for d, date_str in blocks.items() if now >= datetime.fromisoformat(date_str) + timedelta(days=BLOCK_403_DAYS)]
+    for d in expired:
+        del blocks[d]
         print(f"  [403] Bloqueio vencido para '{d}', domínio liberado para novo teste.")
 
-
-# ─── Scraping ─────────────────────────────────────────────────────────────────
-
-def coletar_links_pagina(url: str, sessao: requests.Session) -> set:
+# ─── Web Scraping ─────────────────────────────────────────────────────────
+def collect_page_links(url: str, session: requests.Session) -> set:
+    """Abre uma página alvo e coleta todos os links válidos de notícias dentro dela"""
     try:
-        resp = sessao.get(url, timeout=20, headers=HEADERS)
+        resp = session.get(url, timeout=20, headers=HEADERS)
         resp.raise_for_status()
     except Exception as e:
         print(f"  [ERRO] {url} → {e}")
@@ -329,28 +132,27 @@ def coletar_links_pagina(url: str, sessao: requests.Session) -> set:
     links = set()
     for tag in soup.find_all("a", href=True):
         href = tag["href"].strip()
-        absoluto = urljoin(url, href)
-        absoluto = normalizar(absoluto)
-        if eh_relevante_url(absoluto):
-            links.add(absoluto)
+        absolute = urljoin(url, href)
+        absolute = normalize_url(absolute)
+        if is_relevant_url(absolute):
+            links.add(absolute)
 
     print(f"  [OK] {url} → {len(links)} links")
     return links
 
-
-def coletar_todos_links() -> set:
-    sessao = requests.Session()
-    todos = set()
-    for url in URLS_ALVO:
-        links = coletar_links_pagina(url, sessao)
-        todos.update(links)
+def collect_all_links() -> set:
+    """Passa por todas as URLs alvo chamando a função de coleta de links"""
+    session = requests.Session()
+    all_links = set()
+    for url in TARGET_URLS:
+        links = collect_page_links(url, session)
+        all_links.update(links)
         time.sleep(1.5)
-    return todos
+    return all_links
 
-
-# ─── Google Alertas RSS ───────────────────────────────────────────────────────
-
-def ler_feed_alerta(feed_url: str, termo: str) -> list:
+# ─── Google Alerts ────────────────────────────────────────────────────────
+def read_alert_feed(feed_url: str, term: str) -> list:
+    """Lê o feed RSS do Google Alerts e extrai os links notificados pelo Google"""
     try:
         resp = requests.get(feed_url, timeout=15, headers=HEADERS)
         resp.raise_for_status()
@@ -358,7 +160,7 @@ def ler_feed_alerta(feed_url: str, termo: str) -> list:
         print(f"  [ERRO feed] {feed_url} → {e}")
         return []
 
-    resultados = []
+    results = []
     try:
         root = ET.fromstring(resp.content)
         ns = {"atom": "http://www.w3.org/2005/Atom"}
@@ -367,812 +169,294 @@ def ler_feed_alerta(feed_url: str, termo: str) -> list:
             title = title_el.text if title_el is not None else ""
             link_el = entry.find("atom:link", ns)
             href = link_el.attrib.get("href", "") if link_el is not None else ""
-            url_real = extrair_url_real(href)
+            real_url = extract_real_url(href)
             summary_el = entry.find("atom:summary", ns)
             snippet = ""
             if summary_el is not None and summary_el.text:
                 soup = BeautifulSoup(summary_el.text, "html.parser")
                 snippet = soup.get_text(separator=" ").strip()
-            if url_real:
-                resultados.append({
-                    "url": url_real,
-                    "title": title,
-                    "snippet": snippet,
-                    "termo": termo,
-                })
-        print(f"  [Alerta] '{termo}' → {len(resultados)} resultados")
+            if real_url:
+                results.append({"url": real_url, "title": title, "snippet": snippet, "term": term})
+        print(f"  [Alerta] '{term}' → {len(results)} resultados")
     except Exception as e:
         print(f"  [ERRO parse] {feed_url} → {e}")
-    return resultados
+    return results
 
-
-def coletar_todos_alertas() -> list:
-    todos = []
-    for feed in GOOGLE_ALERTAS_FEEDS:
-        resultados = ler_feed_alerta(feed["url"], feed["termo"])
-        todos.extend(resultados)
+def collect_all_alerts() -> list:
+    all_alerts = []
+    for feed in GOOGLE_ALERTS_FEEDS:
+        results = read_alert_feed(feed["url"], feed["term"])
+        all_alerts.extend(results)
         time.sleep(1)
-    return todos
+    return all_alerts
 
-
-# ─── Extração de texto e título ───────────────────────────────────────────────
-
-def extrair_pagina(url: str, timeout: int = 20) -> tuple:
-    """Retorna (titulo, texto, erro) onde erro pode ser '403', 'timeout' ou ''."""
+# ─── Extração de Conteúdo da Página ───────────────────────────────────────
+def extract_page(url: str, timeout: int = 20) -> tuple:
+    """Extrai apenas o miolo de texto útil de uma página ignorando menus/propagandas"""
     try:
         resp = requests.get(url, timeout=timeout, headers=HEADERS)
         resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, "html.parser")
+        html_content = resp.text
 
-        titulo = ""
+        # 1. Pega o Título
+        soup = BeautifulSoup(html_content, "html.parser")
+        title = ""
         if soup.title and soup.title.string:
-            titulo = soup.title.string.strip()
-        if not titulo:
+            title = soup.title.string.strip()
+        if not title:
             h1 = soup.find("h1")
-            if h1:
-                titulo = h1.get_text(strip=True)
+            if h1: title = h1.get_text(strip=True)
 
-        for tag in soup(["script", "style", "nav", "footer", "header"]):
-            tag.decompose()
-        texto = soup.get_text(separator=" ", strip=True)
-        texto = re.sub(r"\s+", " ", texto).strip()
-        return titulo, texto[:MAX_CHARS_PAGINA], ""
+        # 2. Usa a inteligência do trafilatura para isolar o miolo do artigo
+        text = trafilatura.extract(html_content, include_comments=False)
+
+        # 3. Fallback: Se o trafilatura falhar, usa a limpeza manual pelo BeautifulSoup
+        if not text:
+            for tag in soup(["script", "style", "nav", "footer", "header", "aside", "form"]):
+                tag.decompose()
+            text = soup.get_text(separator=" ", strip=True)
+            text = re.sub(r"\s+", " ", text).strip()
+
+        return title, text[:MAX_PAGE_CHARS], ""
 
     except requests.exceptions.Timeout:
         print(f"    [TIMEOUT] {url}")
         return "", "", "timeout"
-
     except requests.exceptions.HTTPError as e:
         if e.response is not None and e.response.status_code == 403:
             print(f"    [ERRO página] {url} → 403 Client Error: Forbidden")
             return "", "", "403"
         print(f"    [ERRO página] {url} → {e}")
         return "", "", ""
-
     except Exception as e:
         print(f"    [ERRO página] {url} → {e}")
         return "", "", ""
 
-
-# ─── IA ───────────────────────────────────────────────────────────────────────
-
-def chamar_api_ia(prompt: str) -> str:
-    payload = {
-        "model": IA_MODEL,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0,
-        "max_tokens": 400,
-    }
-    for tentativa in range(3):
-        try:
-            resp = requests.post(
-                IA_URL,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {IA_API_KEY}",
-                },
-                json=payload,
-                timeout=45,
-            )
-            resp.raise_for_status()
-            data = resp.json()
-            return data["choices"][0]["message"]["content"].strip()
-        except Exception as e:
-            print(f"    [ERRO OpenAI tentativa {tentativa+1}/3] → {e}")
-            if tentativa < 2:
-                time.sleep(10 * (tentativa + 1))
-    return ""
-
-
-def avaliar_relevancia(url: str, titulo: str, texto: str) -> dict:
-    if not IA_API_KEY:
-        return {"relevante": False, "motivo": "IA_API_KEY não configurada"}
-    if not texto or len(texto) < 50:
-        return {"relevante": False, "motivo": "texto insuficiente"}
-
-    conteudo = f"URL: {url}\nTítulo: {titulo}\n\nTexto:\n{texto}"
-    resposta = chamar_api_ia(PROMPT_RELEVANCIA + conteudo)
-    if not resposta:
-        return {"relevante": False, "motivo": "erro após 3 tentativas"}
-    try:
-        resposta = re.sub(r"```json|```", "", resposta).strip()
-        avaliacao = json.loads(resposta)
-        # Normaliza o identificador de grupo para garantir comparações consistentes
-        if avaliacao.get("relevante"):
-            avaliacao["grupo"] = normalizar_grupo(avaliacao.get("grupo", ""))
-            # Garante que estado venha em formato canônico
-            estado = (avaliacao.get("estado") or "").strip().lower()
-            avaliacao["estado"] = estado if estado in ESTADO_LABELS else ""
-        return avaliacao
-    except Exception:
-        return {"relevante": False, "motivo": "erro ao interpretar resposta"}
-
-
-def gerar_resumo(relevantes: list) -> str:
-    if not IA_API_KEY or not relevantes:
-        return ""
-    lista = "\n".join(
-        f"- {item.get('titulo_real') or item.get('title') or item.get('url')} | {item.get('motivo', '')}"
-        for item in relevantes
-    )
-    resposta = chamar_api_ia(PROMPT_RESUMO + "\n\nResultados:\n" + lista)
-    if not resposta:
-        return ""
-    # Trunca no limite de 1000 caracteres sem cortar no meio de uma palavra
-    if len(resposta) > 1000:
-        resposta = resposta[:1000].rsplit(" ", 1)[0] + "..."
-    return resposta
-
-
-# ─── Agrupamento e geração do relatório HTML ──────────────────────────────────
-
-def agrupar_relevantes(relevantes: list) -> list:
-    """Agrupa as notícias relevantes pelo identificador 'grupo' devolvido pela IA.
-
-    Retorna uma lista ordenada do maior grupo para o menor. Cada grupo é um
-    dict com 'grupo_id', 'itens' e 'tamanho'.
-    """
-    grupos = {}
-    for item in relevantes:
-        gid = (item.get("grupo") or "").strip().lower()
-        # Sem identificador, cada item vira um grupo isolado para não perder a notícia
-        if not gid:
-            gid = f"_isolado_{id(item)}"
-        if gid not in grupos:
-            grupos[gid] = []
-        grupos[gid].append(item)
-
-    lista_grupos = [
-        {"grupo_id": gid, "itens": itens, "tamanho": len(itens)}
-        for gid, itens in grupos.items()
-    ]
-    # Ordena do maior grupo para o menor; em empate, mantém ordem original
-    lista_grupos.sort(key=lambda g: g["tamanho"], reverse=True)
-    return lista_grupos
-
-
-def render_card_grupo(idx: int, grupo: dict) -> str:
-    """Renderiza um card-grupo com carrossel se tiver mais de 1 fonte."""
-    itens = grupo["itens"]
-    tamanho = grupo["tamanho"]
-
-    classe_destaque = " destaque" if tamanho >= 3 else ""
-    badge_fontes = ""
-    if tamanho > 1:
-        badge_fontes = f'<div class="fontes-badge">📰 {tamanho} fontes</div>'
-
-    slides_html = ""
-    for item in itens:
-        titulo = item.get("titulo_real") or item.get("title") or "Ver link"
-        titulo = limpar_titulo(titulo)
-        titulo = escape(titulo)
-        url = item.get("url", "")
-        motivo = escape(item.get("motivo", ""))
-        site = nome_site(url)
-        estado = item.get("estado", "")
-        estado_label, estado_cor = ESTADO_LABELS.get(estado, ("", "#6c757d"))
-        estado_html = ""
-        if estado_label:
-            estado_html = (
-                f'<span class="estado-tag" style="background:{estado_cor};">'
-                f'{estado_label}</span>'
-            )
-
-        slides_html += f"""
-            <div class="slide">
-                {estado_html}<span class="site-tag">{site}</span>
-                <h2><a href="{url}" target="_blank">{titulo}</a></h2>
-                <p class="motivo">{motivo}</p>
-                <a href="{url}" target="_blank" class="btn">Acessar matéria →</a>
-            </div>
-        """
-
-    # Controles aparecem apenas se houver mais de 1 fonte
-    controles_html = ""
-    if tamanho > 1:
-        indicadores = "".join(
-            f'<span class="indicador{" ativo" if i == 0 else ""}"></span>'
-            for i in range(tamanho)
-        )
-        controles_html = f"""
-            <div class="controles">
-                <button class="seta seta-esq" aria-label="Anterior">‹</button>
-                <div class="indicadores">{indicadores}</div>
-                <button class="seta seta-dir" aria-label="Próxima">›</button>
-            </div>
-        """
-
-    return f"""
-        <div class="card-grupo{classe_destaque}">
-            {badge_fontes}
-            <div class="carrossel">
-                <div class="slides">
-                    {slides_html}
-                </div>
-            </div>
-            {controles_html}
-        </div>
-    """
-
-
-def gerar_html(grupos: list, data_str: str, total_analisados: int, total_relevantes: int) -> str:
-    """Gera o relatório HTML usando a estrutura de grupos com carrossel."""
-    cards = ""
-    for idx, grupo in enumerate(grupos):
-        cards += render_card_grupo(idx, grupo)
-
-    if not grupos:
-        cards = '<div class="vazio">Nenhuma oportunidade relevante encontrada nesta verificação.</div>'
-
-    return f"""<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CuradorIA de Carreiras Jurídicas</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    <style>
-        * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f0f2f5;
-            color: #1a1a2e;
-            min-height: 100vh;
-        }}
-        header {{
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 2rem 1.5rem 1.5rem;
-            text-align: center;
-        }}
-        header h1 {{ font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }}
-        header p {{ font-size: 0.85rem; opacity: 0.75; }}
-        .badge {{
-            display: inline-block;
-            background: #e94560;
-            color: white;
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            margin-top: 0.8rem;
-        }}
-        .container {{ max-width: 680px; margin: 0 auto; padding: 1.5rem 1rem; }}
-
-        .card-grupo {{
-            background: white;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            border-left: 4px solid #e94560;
-            overflow: hidden;
-            position: relative;
-        }}
-        .card-grupo.destaque {{ border-left-width: 6px; }}
-
-        .fontes-badge {{
-            position: absolute;
-            top: 0.8rem;
-            right: 0.8rem;
-            background: #1a1a2e;
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 0.25rem 0.55rem;
-            border-radius: 12px;
-            z-index: 2;
-        }}
-
-        .carrossel {{
-            position: relative;
-            overflow: hidden;
-        }}
-        .slides {{
-            display: flex;
-            transition: transform 0.35s ease;
-        }}
-        .slide {{
-            min-width: 100%;
-            padding: 1.2rem 1.3rem 0.5rem;
-        }}
-
-        .estado-tag {{
-            display: inline-block;
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 0.2rem 0.55rem;
-            border-radius: 6px;
-            margin-bottom: 0.5rem;
-        }}
-        .site-tag {{
-            display: inline-block;
-            background: #f0f2f5;
-            color: #555;
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 0.2rem 0.55rem;
-            border-radius: 6px;
-            margin-bottom: 0.5rem;
-            margin-left: 0.4rem;
-        }}
-        .slide h2 {{
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 0.5rem;
-            color: #1a1a2e;
-        }}
-        .slide h2 a {{ color: inherit; text-decoration: none; }}
-        .slide h2 a:hover {{ color: #e94560; }}
-        .motivo {{
-            font-size: 0.85rem;
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 0.9rem;
-        }}
-        .btn {{
-            display: inline-block;
-            background: #1a1a2e;
-            color: white;
-            font-size: 0.82rem;
-            font-weight: 600;
-            padding: 0.45rem 1rem;
-            border-radius: 8px;
-            text-decoration: none;
-        }}
-        .btn:hover {{ background: #e94560; }}
-
-        .controles {{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.6rem 1rem 1rem;
-            border-top: 1px solid #f0f2f5;
-            background: #fafbfc;
-        }}
-        .seta {{
-            background: white;
-            border: 1px solid #ddd;
-            color: #1a1a2e;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-        }}
-        .seta:disabled {{ opacity: 0.3; cursor: default; }}
-        .seta:not(:disabled):hover {{ background: #1a1a2e; color: white; }}
-        .indicadores {{ display: flex; gap: 0.4rem; }}
-        .indicador {{
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #ccc;
-        }}
-        .indicador.ativo {{ background: #e94560; }}
-
-        .vazio {{ text-align: center; color: #888; padding: 3rem 1rem; font-size: 0.95rem; }}
-        footer {{ text-align: center; padding: 1.5rem; font-size: 0.78rem; color: #aaa; }}
-    </style>
-</head>
-<body>
-    <header>
-        <h1>🤖 CuradorIA de Carreiras Jurídicas ⚖️</h1>
-        <p>Verificação de {data_str} · {total_analisados} artigos analisados</p>
-        <div class="badge">{total_relevantes} artigo(s) relevante(s) sobre {len(grupos)} certame(s)</div>
-    </header>
-    <div class="container">
-        {cards}
-    </div>
-    <footer>Gerado automaticamente · CuradorIA de Carreiras Jurídicas</footer>
-
-    <script>
-    document.querySelectorAll('.card-grupo').forEach(function(card) {{
-        var slidesEl = card.querySelector('.slides');
-        if (!slidesEl) return;
-        var total = slidesEl.children.length;
-        var atual = 0;
-        var setaEsq = card.querySelector('.seta-esq');
-        var setaDir = card.querySelector('.seta-dir');
-        var indicadores = card.querySelectorAll('.indicador');
-
-        function atualizar() {{
-            slidesEl.style.transform = 'translateX(-' + (atual * 100) + '%)';
-            indicadores.forEach(function(ind, i) {{
-                ind.classList.toggle('ativo', i === atual);
-            }});
-            if (setaEsq) setaEsq.disabled = atual === 0;
-            if (setaDir) setaDir.disabled = atual === total - 1;
-        }}
-
-        if (setaEsq) setaEsq.addEventListener('click', function() {{
-            if (atual > 0) {{ atual--; atualizar(); }}
-        }});
-        if (setaDir) setaDir.addEventListener('click', function() {{
-            if (atual < total - 1) {{ atual++; atualizar(); }}
-        }});
-        atualizar();
-    }});
-    </script>
-</body>
-</html>"""
-
-
-# ─── WhatsApp ─────────────────────────────────────────────────────────────────
-
-def enviar_whatsapp(mensagem: str) -> None:
-    if not TWILIO_ACCOUNT_SID or not TWILIO_AUTH_TOKEN:
-        print("  [AVISO] Credenciais WhatsApp não configuradas. Pulando envio.")
-        return
-    url = f"https://api.twilio.com/2010-04-01/Accounts/{TWILIO_ACCOUNT_SID}/Messages.json"
-    for tentativa in range(3):
-        try:
-            resp = requests.post(
-                url,
-                data={"From": TWILIO_FROM, "To": TWILIO_TO, "Body": mensagem},
-                auth=(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN),
-                timeout=30,
-            )
-            if resp.status_code in (200, 201):
-                print("  [WhatsApp] Mensagem enviada com sucesso.")
-                return
-            else:
-                print(f"  [WhatsApp] Erro {resp.status_code}: {resp.text[:200]}")
-        except Exception as e:
-            print(f"  [WhatsApp tentativa {tentativa+1}/3] Erro: {e}")
-            if tentativa < 2:
-                time.sleep(10)
-    print("  [WhatsApp] Falha após 3 tentativas.")
-
-
-# ─── Formatação de mensagem ───────────────────────────────────────────────────
-
-def formatar_mensagem(data_str: str, total_novos: int, relevantes: list, resumo: str, erros_ia: int = 0, total_grupos: int = 0) -> str:
-    cabecalho = (
-        f"🤖 CuradorIA de Carreiras Jurídicas ⚖️ - {data_str}\n"
-        f"{len(relevantes)} artigo(s) relevante(s) sobre {total_grupos} certame(s).\n\n"
-    )
-    if not relevantes:
-        msg = cabecalho + "Nenhum artigo relevante encontrado na busca."
-        if erros_ia > 0:
-            msg += f"\n\n⚠️ {erros_ia} artigo(s) não analisado(s) por erro na API."
-        return msg
-
-    aviso_erros = f"\n\n⚠️ {erros_ia} artigo(s) não analisado(s) por erro na API." if erros_ia > 0 else ""
-    rodape = f"\n\n🔗 {URL_RELATORIO}{aviso_erros}"
-    corpo = resumo if resumo else "Veja a CuradorIA completa no link abaixo."
-
-    mensagem = cabecalho + corpo + rodape
-    if len(mensagem) > 1500:
-        espaco = 1500 - len(cabecalho) - len(rodape) - 3
-        corpo = corpo[:espaco].rsplit(" ", 1)[0] + "..."
-        mensagem = cabecalho + corpo + rodape
-
-    return mensagem
-
-
-# ─── Base de dados ────────────────────────────────────────────────────────────
-
-def carregar_base() -> dict:
-    if not os.path.exists(DATABASE_FILE):
-        return {}
+# ─── Manipulação do Banco de Dados JSON ───────────────────────────────────
+def load_database() -> dict:
+    if not os.path.exists(DATABASE_FILE): return {}
     with open(DATABASE_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 
-
-def salvar_base(base: dict) -> None:
+def save_database(db: dict) -> None:
     with open(DATABASE_FILE, "w", encoding="utf-8") as f:
-        json.dump(base, f, ensure_ascii=False, indent=2)
+        json.dump(db, f, ensure_ascii=False, indent=2)
 
-
-# ─── Análise de um item ───────────────────────────────────────────────────────
-
-def analisar_item(item: dict, base: dict, relevantes: list, agora_utc: str) -> str:
-    """
-    Tenta extrair e avaliar um item. Retorna:
-    - "ok"       → verificado com sucesso (entra na base)
-    - "403"      → bloqueado pelo site
-    - "timeout"  → não respondeu no tempo
-    - "bloqueado"→ domínio já bloqueado por 403 anterior
-    - "erro"     → outro erro sem retry útil
-    - "erro_ia"  → falha na API da IA
-    """
+# ─── Análise e Validação do Item ──────────────────────────────────────────
+def analyze_item(item: dict, db: dict, relevant_items: list, now_utc: str) -> str:
+    """Extrai e envia o item para a inteligência artificial aprovar/reprovar"""
     url = item["url"]
-
-    if dominio_bloqueado(base, url):
+    if is_domain_blocked(db, url):
         d = urlparse(url).netloc.replace("www.", "")
         print(f"    [BLOQUEADO] Domínio '{d}' bloqueado por 403. Pulando.")
         return "bloqueado"
 
-    titulo_real, texto, erro = extrair_pagina(url)
+    real_title, text, error = extract_page(url)
 
-    if erro == "403":
-        registrar_bloqueio_403(base, url)
+    if error == "403":
+        register_403_block(db, url)
         return "403"
-
-    if erro == "timeout":
+    if error == "timeout":
         return "timeout"
-
-    if not texto or len(texto) < 50:
+    if not text or len(text) < 50:
         print("    Sem texto extraído, pulando.")
-        return "erro"
+        return "error"
 
-    titulo = titulo_real or item.get("title", "")
-    avaliacao = avaliar_relevancia(url, titulo, texto)
-    motivo = avaliacao.get("motivo", "")
-    print(f"    → relevante: {avaliacao.get('relevante')} | {motivo}")
+    title = real_title or item.get("title", "")
+    evaluation = evaluate_relevance(url, title, text)
+    reason = evaluation.get("motivo", "")
+    print(f"    → relevante: {evaluation.get('relevante')} | {reason}")
 
-    if motivo == "erro após 3 tentativas":
-        return "erro_ia"
+    if reason == "erro após 3 tentativas":
+        return "ai_error"
 
-    base[url] = {
-        "primeira_vez": agora_utc,
-        "ultima_vez_visto": agora_utc,
-        "ausencias_consecutivas": 0,
-        "fonte": item.get("fonte", "scraping"),
+    # Atualiza o banco indicando que este link já foi mapeado
+    db[url] = {
+        "first_seen": now_utc,
+        "last_seen": now_utc,
+        "consecutive_absences": 0,
+        "source": item.get("fonte", "scraping"),
     }
 
-    if avaliacao.get("relevante"):
-        relevantes.append({
+    if evaluation.get("relevante"):
+        relevant_items.append({
             **item,
-            "titulo_real": titulo_real,
-            "motivo": motivo,
-            "estado": avaliacao.get("estado", ""),
-            "grupo": avaliacao.get("grupo", ""),
+            "real_title": real_title,
+            "motivo": reason,
+            "estado": evaluation.get("estado", ""),
+            "grupo": evaluation.get("grupo", ""),
         })
-
     return "ok"
 
-
-def processar_retry(item: dict, base: dict, relevantes: list, agora_utc: str,
-                    timeout: int, numero: int) -> str:
-    """Tentativa de retry para um item que deu timeout."""
+def process_retry(item: dict, db: dict, relevant_items: list, now_utc: str, timeout: int, attempt_num: int) -> str:
+    """Tenta baixar o site novamente em caso de Timeout anterior (demora do site)"""
     url = item["url"]
-    print(f"  [Retry {numero}/3 | {timeout}s] {url}")
+    print(f"  [Retry {attempt_num}/3 | {timeout}s] {url}")
+    real_title, text, error = extract_page(url, timeout=timeout)
 
-    titulo_real, texto, erro = extrair_pagina(url, timeout=timeout)
-
-    if erro == "403":
-        registrar_bloqueio_403(base, url)
+    if error == "403":
+        register_403_block(db, url)
         return "403"
-
-    if erro == "timeout":
+    if error == "timeout":
         return "timeout"
-
-    if not texto or len(texto) < 50:
+    if not text or len(text) < 50:
         print("    Sem texto extraído, pulando.")
-        return "erro"
+        return "error"
 
-    titulo = titulo_real or item.get("title", "")
-    avaliacao = avaliar_relevancia(url, titulo, texto)
-    motivo = avaliacao.get("motivo", "")
-    print(f"    → relevante: {avaliacao.get('relevante')} | {motivo}")
+    title = real_title or item.get("title", "")
+    evaluation = evaluate_relevance(url, title, text)
+    reason = evaluation.get("motivo", "")
+    print(f"    → relevante: {evaluation.get('relevante')} | {reason}")
 
-    if motivo == "erro após 3 tentativas":
-        return "erro_ia"
+    if reason == "erro após 3 tentativas":
+        return "ai_error"
 
-    base[url] = {
-        "primeira_vez": agora_utc,
-        "ultima_vez_visto": agora_utc,
-        "ausencias_consecutivas": 0,
-        "fonte": item.get("fonte", "scraping"),
+    db[url] = {
+        "first_seen": now_utc,
+        "last_seen": now_utc,
+        "consecutive_absences": 0,
+        "source": item.get("fonte", "scraping"),
     }
 
-    if avaliacao.get("relevante"):
-        relevantes.append({
+    if evaluation.get("relevante"):
+        relevant_items.append({
             **item,
-            "titulo_real": titulo_real,
-            "motivo": motivo,
-            "estado": avaliacao.get("estado", ""),
-            "grupo": avaliacao.get("grupo", ""),
+            "real_title": real_title,
+            "motivo": reason,
+            "estado": evaluation.get("estado", ""),
+            "grupo": evaluation.get("grupo", ""),
         })
-
     return "ok"
 
-
-# ─── Principal ────────────────────────────────────────────────────────────────
-
+# ─── Função Principal que Rege Todo o Processo ────────────────────────────
 def main():
-    agora_utc = datetime.now(timezone.utc).isoformat()
-    agora_br = agora_brasilia()
-    data_str = agora_br.strftime("%d/%m/%Y às %Hh%M")
+    now_utc = datetime.now(timezone.utc).isoformat()
+    br_time = get_brasilia_time()
+    date_str = br_time.strftime("%d/%m/%Y às %Hh%M")
 
     print(f"\n{'='*60}")
     print(f"  CuradorIA de Carreiras Jurídicas")
-    print(f"  Execução: {data_str}")
+    print(f"  Execução: {date_str}")
     print(f"{'='*60}\n")
 
-    base = carregar_base()
-    primeira_execucao = len(base) == 0
-
-    limpar_bloqueios_vencidos(base)
+    db = load_database()
+    first_run = len(db) == 0
+    clear_expired_blocks(db)
 
     print("Coletando links das páginas-alvo...")
-    links_scraping = coletar_todos_links()
-    print(f"Total scraping: {len(links_scraping)}\n")
+    scraping_links = collect_all_links()
+    print(f"Total scraping: {len(scraping_links)}\n")
 
     print("Lendo Google Alertas...")
-    resultados_alertas = coletar_todos_alertas()
-    links_alertas = {r["url"] for r in resultados_alertas if r["url"]}
-    print(f"Total alertas: {len(links_alertas)}\n")
+    alerts_results = collect_all_alerts()
+    alerts_links = {r["url"] for r in alerts_results if r["url"]}
+    print(f"Total alertas: {len(alerts_links)}\n")
 
-    todos_links = links_scraping | links_alertas
+    all_links = scraping_links | alerts_links
 
-    if primeira_execucao:
+    if first_run:
         print("Primeira execução: populando a base de dados.")
-        for url in todos_links:
-            base[url] = {
-                "primeira_vez": agora_utc,
-                "ultima_vez_visto": agora_utc,
-                "ausencias_consecutivas": 0,
-                "fonte": "alerta" if url in links_alertas else "scraping",
+        for url in all_links:
+            db[url] = {
+                "first_seen": now_utc,
+                "last_seen": now_utc,
+                "consecutive_absences": 0,
+                "source": "alerta" if url in alerts_links else "scraping",
             }
-        salvar_base(base)
-        with open(OUTPUT_NOVOS, "w", encoding="utf-8") as f:
-            f.write(
-                f"Primeira execução em {agora_utc}.\n"
-                f"Base criada com {len(base)} links "
-                f"({len(links_scraping)} scraping + {len(links_alertas)} alertas).\n"
-                "Nenhum link 'novo' acusado (todos são a base inicial).\n"
-            )
-        with open(OUTPUT_RELEVANTES, "w", encoding="utf-8") as f:
-            f.write(f"Primeira execução em {agora_utc}.\nNenhum link relevante acusado.\n")
+        save_database(db)
+        with open(OUTPUT_NEW_LINKS, "w", encoding="utf-8") as f:
+            f.write(f"Primeira execução em {now_utc}.\nBase criada com {len(db)} links.\nNenhum link 'novo' acusado.\n")
+        with open(OUTPUT_RELEVANT, "w", encoding="utf-8") as f:
+            f.write(f"Primeira execução em {now_utc}.\nNenhum link relevante acusado.\n")
         with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
-            f.write(gerar_html([], data_str, 0, 0))
-        print(f"Base criada com {len(base)} links.")
+            f.write(generate_html([], date_str, 0, 0))
         return
 
-    # ── Verificação normal ────────────────────────────────────────────────────
-    novos_scraping = []
-    novos_alertas = []
+    new_scraping = []
+    new_alerts = []
 
-    for url in todos_links:
-        fonte = "alerta" if url in links_alertas else "scraping"
-        if url not in base:
-            if fonte == "alerta":
-                info = next((r for r in resultados_alertas if r["url"] == url), {})
-                novos_alertas.append(info if info else {"url": url, "title": "", "snippet": "", "termo": ""})
+    for url in all_links:
+        source = "alerta" if url in alerts_links else "scraping"
+        if url not in db:
+            if source == "alerta":
+                info = next((r for r in alerts_results if r["url"] == url), {})
+                new_alerts.append(info if info else {"url": url, "title": "", "snippet": "", "term": ""})
             else:
-                novos_scraping.append(url)
+                new_scraping.append(url)
         else:
-            base[url]["ultima_vez_visto"] = agora_utc
-            base[url]["ausencias_consecutivas"] = 0
-            base[url]["fonte"] = fonte
+            db[url]["last_seen"] = now_utc
+            db[url]["consecutive_absences"] = 0
+            db[url]["source"] = source
 
-    removidos = []
-    for url in list(base.keys()):
-        if url.startswith("_"):
-            continue
-        if url not in todos_links:
-            base[url]["ausencias_consecutivas"] += 1
-            if base[url]["ausencias_consecutivas"] >= MAX_AUSENCIAS:
-                removidos.append(url)
-                del base[url]
+    removed_links = []
+    for url in list(db.keys()):
+        if url.startswith("_"): continue
+        if url not in all_links:
+            db[url]["consecutive_absences"] += 1
+            if db[url]["consecutive_absences"] >= MAX_ABSENCES:
+                removed_links.append(url)
+                del db[url]
 
-    # ── novos_links.txt ───────────────────────────────────────────────────────
-    total_novos = len(novos_scraping) + len(novos_alertas)
-    with open(OUTPUT_NOVOS, "w", encoding="utf-8") as f:
-        f.write(f"Verificação: {agora_utc}\n")
-        f.write(f"Links novos encontrados: {total_novos}\n")
-        f.write(f"  Scraping: {len(novos_scraping)}\n")
-        f.write(f"  Alertas:  {len(novos_alertas)}\n")
-        f.write(f"Removidos da base: {len(removidos)}\n")
-        f.write(f"Total na base: {len(base)}\n")
+    total_new = len(new_scraping) + len(new_alerts)
+    with open(OUTPUT_NEW_LINKS, "w", encoding="utf-8") as f:
+        f.write(f"Verificação: {now_utc}\nLinks novos encontrados: {total_new}\n  Scraping: {len(new_scraping)}\n  Alertas:  {len(new_alerts)}\nRemovidos da base: {len(removed_links)}\nTotal na base: {len(db)}\n")
         f.write("=" * 60 + "\n\n")
-        if novos_scraping:
+        if new_scraping:
             f.write("── NOVOS (scraping) ──\n\n")
-            for url in sorted(novos_scraping):
-                f.write(url + "\n")
+            for url in sorted(new_scraping): f.write(url + "\n")
             f.write("\n")
-        if novos_alertas:
+        if new_alerts:
             f.write("── NOVOS (Google Alertas) ──\n\n")
-            for item in novos_alertas:
-                f.write(f"Termo:   {item.get('termo', '')}\n")
-                f.write(f"Título:  {item.get('title', '')}\n")
-                f.write(f"URL:     {item.get('url', '')}\n")
-                f.write(f"Trecho:  {item.get('snippet', '')}\n\n")
-        if total_novos == 0:
-            f.write("Nenhum link novo encontrado.\n")
+            for item in new_alerts:
+                f.write(f"Termo:   {item.get('term', '')}\nTítulo:  {item.get('title', '')}\nURL:     {item.get('url', '')}\nTrecho:  {item.get('snippet', '')}\n\n")
 
-    # ── Análise IA ────────────────────────────────────────────────────────────
-    print(f"\nAnalisando {total_novos} links novos via IA...\n")
-    relevantes = []
-    erros_ia = 0
-    fila_timeout = []
+    print(f"\nAnalisando {total_new} links novos via IA...\n")
+    relevant_items = []
+    ai_errors = 0
+    timeout_queue = []
 
-    todos_novos = []
-    for url in novos_scraping:
-        todos_novos.append({"url": url, "title": "", "fonte": "scraping"})
-    for item in novos_alertas:
-        todos_novos.append({**item, "fonte": "alerta"})
+    all_new_items = [{"url": url, "title": "", "fonte": "scraping"} for url in new_scraping]
+    all_new_items.extend([{**item, "fonte": "alerta"} for item in new_alerts])
 
-    for i, item in enumerate(todos_novos, 1):
-        print(f"  [{i}/{total_novos}] {item['url']}")
-        resultado = analisar_item(item, base, relevantes, agora_utc)
-        if resultado == "timeout":
-            fila_timeout.append(item)
-        elif resultado == "erro_ia":
-            erros_ia += 1
-        if resultado == "ok":
-            time.sleep(PAUSA_API)
+    for i, item in enumerate(all_new_items, 1):
+        print(f"  [{i}/{total_new}] {item['url']}")
+        result = analyze_item(item, db, relevant_items, now_utc)
+        if result == "timeout": timeout_queue.append(item)
+        elif result == "ai_error": ai_errors += 1
+        if result == "ok": time.sleep(API_PAUSE)
 
-    # ── Retry de timeouts ─────────────────────────────────────────────────────
     RETRY_TIMEOUTS = [10, 5]
+    for i, timeout_sec in enumerate(RETRY_TIMEOUTS):
+        if not timeout_queue: break
+        attempt_num = i + 2
+        has_next = i + 1 < len(RETRY_TIMEOUTS)
+        print(f"\nRetentando {len(timeout_queue)} link(s) com timeout ({attempt_num}ª tentativa, {timeout_sec}s)...\n")
+        next_queue = []
+        for item in timeout_queue:
+            result = process_retry(item, db, relevant_items, now_utc, timeout_sec, attempt_num)
+            if result == "timeout":
+                if has_next: next_queue.append(item)
+                else: print(f"    [TIMEOUT DEFINITIVO] {item['url']} — não entra na base.")
+            elif result == "ai_error": ai_errors += 1
+            if result == "ok": time.sleep(API_PAUSE)
+        timeout_queue = next_queue
 
-    for i, timeout_seg in enumerate(RETRY_TIMEOUTS):
-        if not fila_timeout:
-            break
-        tentativa_num = i + 2
-        tem_proxima = i + 1 < len(RETRY_TIMEOUTS)
-        print(f"\nRetentando {len(fila_timeout)} link(s) com timeout ({tentativa_num}ª tentativa, {timeout_seg}s)...\n")
-        proxima_fila = []
-        for item in fila_timeout:
-            resultado = processar_retry(item, base, relevantes, agora_utc, timeout_seg, tentativa_num)
-            if resultado == "timeout":
-                if tem_proxima:
-                    proxima_fila.append(item)
-                else:
-                    print(f"    [TIMEOUT DEFINITIVO] {item['url']} — não entra na base.")
-            elif resultado == "erro_ia":
-                erros_ia += 1
-            if resultado == "ok":
-                time.sleep(PAUSA_API)
-        fila_timeout = proxima_fila
+    save_database(db)
 
-    for item in fila_timeout:
-        print(f"  [TIMEOUT DEFINITIVO] {item['url']} — não entra na base.")
-
-    salvar_base(base)
-
-    # ── novos_relevantes.txt ──────────────────────────────────────────────────
-    with open(OUTPUT_RELEVANTES, "w", encoding="utf-8") as f:
-        f.write(f"Verificação: {agora_utc}\n")
-        f.write(f"Links analisados: {total_novos}\n")
-        f.write(f"Links relevantes: {len(relevantes)}\n")
+    with open(OUTPUT_RELEVANT, "w", encoding="utf-8") as f:
+        f.write(f"Verificação: {now_utc}\nLinks analisados: {total_new}\nLinks relevantes: {len(relevant_items)}\n")
         f.write("=" * 60 + "\n\n")
-        if relevantes:
-            for item in relevantes:
-                titulo = item.get("titulo_real") or item.get("title") or "(ver link)"
-                f.write(f"Título:  {titulo}\n")
-                f.write(f"URL:     {item.get('url', '')}\n")
-                f.write(f"Estado:  {item.get('estado', '')}\n")
-                f.write(f"Grupo:   {item.get('grupo', '')}\n")
-                f.write(f"Motivo:  {item.get('motivo', '')}\n\n")
-        else:
-            f.write("Nenhum link relevante encontrado.\n")
+        for item in relevant_items:
+            title = item.get("real_title") or item.get("title") or "(ver link)"
+            f.write(f"Título:  {title}\nURL:     {item.get('url', '')}\nEstado:  {item.get('estado', '')}\nGrupo:   {item.get('grupo', '')}\nMotivo:  {item.get('motivo', '')}\n\n")
 
-    # ── Agrupamento e Relatório HTML ──────────────────────────────────────────
-    print("\nAgrupando notícias por concurso...")
-    grupos = agrupar_relevantes(relevantes)
-    print(f"  {len(relevantes)} notícia(s) → {len(grupos)} grupo(s)")
-
+    groups = group_relevant_items(relevant_items)
     print("Gerando relatório HTML...")
-    html = gerar_html(grupos, data_str, total_novos, len(relevantes))
-    with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
-        f.write(html)
-    print(f"  Relatório salvo em '{OUTPUT_HTML}'.")
+    html = generate_html(groups, date_str, total_new, len(relevant_items))
+    with open(OUTPUT_HTML, "w", encoding="utf-8") as f: f.write(html)
 
-    # ── Resumo para WhatsApp ──────────────────────────────────────────────────
-    resumo = ""
-    if relevantes:
-        print("\nGerando resumo para WhatsApp...")
-        resumo = gerar_resumo(relevantes)
-        print(f"  Resumo: {resumo}")
-
-    # ── WhatsApp ──────────────────────────────────────────────────────────────
-    print("\nEnviando mensagem para WhatsApp...")
-    mensagem = formatar_mensagem(data_str, total_novos, relevantes, resumo, erros_ia, len(grupos))
-    print(f"  Mensagem ({len(mensagem)} chars):\n{mensagem}")
-    enviar_whatsapp(mensagem)
-
-    print(f"\nRelevantes: {len(relevantes)}/{total_novos} em {len(grupos)} grupo(s)")
-    print(f"Relatório: {URL_RELATORIO}")
-
+    print(f"\nRelevantes: {len(relevant_items)}/{total_new} em {len(groups)} grupo(s)")
+    print(f"Relatório: {REPORT_URL}")
 
 if __name__ == "__main__":
     main()
