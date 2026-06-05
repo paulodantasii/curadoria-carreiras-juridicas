@@ -1,9 +1,9 @@
-Verificação: 2026-06-04T08:22:21.570512+00:00
-Links novos encontrados: 342
-  Scraping: 240
-  Alertas:  102
-Removidos da base: 124
-Total na base: 1041
+Verificação: 2026-06-05T08:09:38.953321+00:00
+Links novos encontrados: 284
+  Scraping: 202
+  Alertas:  82
+Removidos da base: 165
+Total na base: 1064
 ============================================================
 
 ── NEW (scraping) ──
@@ -14,20 +14,11 @@ Concurso TCE-AC 2026: sai edital com vagas de R$ 39.753
 Concurso ITA Aeronáutica 2027 abre 200 vagas
   https://www.acheconcursos.com.br/concursos-aeronautica/concurso-ita-2027-abre-200-vagas-90577
 
-Rede SARAH abre seleção para Engenheiros; salários de até R$ 14.700
-  https://www.acheconcursos.com.br/concursos-brasil/processo-seletivo-rede-sarah-selecao-engenheiros-90550
-
-Edital ISGH-CE 2026 abre 118 vagas de até R$ 11 mil
-  https://www.acheconcursos.com.br/concursos-ceara/edital-isgh-ce-2026-abre-118-vagas-de-ate-r-11-mil-90570
-
 Concurso da Câmara de Ipameri-GO 2026: Edital publicado
   https://www.acheconcursos.com.br/concursos-goias/concurso-camara-ipameri-go-2026-edital-publicado-90594
 
 IF Goiano abre seleção para Professor em duas disciplinas
   https://www.acheconcursos.com.br/concursos-goias/processo-seletivo-if-goiano-abre-selecao-professor-duas-disciplinas-90610
-
-IFG abre seleção para Professores Substitutos pelo edital 05/2026
-  https://www.acheconcursos.com.br/concursos-goias/processo-seletivo-ifg-abre-selecao-professores-substitutos-edital-05-2026-90557
 
 IFG abre três vagas para Professor Substituto em Jataí
   https://www.acheconcursos.com.br/concursos-goias/processo-seletivo-ifg-abre-tres-vagas-professor-substituto-jatai-90621
@@ -41,38 +32,17 @@ Prefeitura de Itinga do Maranhão-MA abre 33 vagas para Professores via PND
 UFMA abre seleção com novas vagas para Professor Substituto em 2026
   https://www.acheconcursos.com.br/concursos-maranhao/processo-seletivo-ufma-selecao-novas-vagas-professor-substituto-2026-90580
 
-Concurso CRQ MS 2026: Edital e Inscrição
-  https://www.acheconcursos.com.br/concursos-mato-grosso-do-sul/concurso-crq-ms-2026-edital-e-inscricao-90543
-
 Edital Poconé-MT 2026 abre concurso na prefeitura para Advogado
   https://www.acheconcursos.com.br/concursos-mato-grosso/concurso-edital-pocone-mt-2026-prefeitura-advogado-90602
-
-Edital CISA-MT 2026 abre vagas de R$ 6.070 no estado
-  https://www.acheconcursos.com.br/concursos-mato-grosso/edital-cisa-mt-2026-abre-vagas-de-r-6-070-no-estado-90575
-
-Prefeitura de Juara-MT abre seleção na saúde
-  https://www.acheconcursos.com.br/concursos-mato-grosso/processo-seletivo-prefeitura-juara-mt-selecao-saude-90552
-
-Câmara de Capetinga-MG abre concurso para Procurador Jurídico
-  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-camara-capetinga-mg-procurador-juridico-89114
 
 Concurso da Câmara de Passos-MG tem edital aberto com vagas de R$ 5.485
   https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-da-camara-de-passos-mg-tem-edital-aberto-com-vagas-de-r-5-485-90605
 
-Concurso Delfinópolis-MG 2026: veja edital que 32 vagas de R$ 18 mil
-  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-delfinopolis-mg-2026-veja-edital-32-vagas-18-mil-90573
-
 Concurso Pouso Alegre-MG 2026: Sai edital para Guarda Municipal
   https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-pouso-alegre-mg-2026-edital-guarda-municipal-89049
 
-Concurso Prefeitura de Baependi-MG 2026: Edital abre 119 vagas
-  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-prefeitura-baependi-mg-2026-saiu-edital-89184
-
 Concurso Prefeitura Faria Lemos-MG 2026: Edital tem 102 vagas de até R$ 16,8 mil
   https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-prefeitura-faria-lemos-mg-2026-edital-tem-102-vagas-16-8-mil-90583
-
-Concurso Prefeitura de Miradouro-MG 2026 - Edital e inscrição
-  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-prefeitura-miradouro-mg-2026-edital-inscricao-89293
 
 Concurso Prefeitura São Félix de Minas-MG 2026: Edital abre 54 vagas
   https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-prefeitura-sao-felix-minas-mg-2026-edital-54-vagas-90581
@@ -86,17 +56,8 @@ Concurso para Professor UFU-MG tem edital 93/2026 publicado
 Câmara de Ingaí-MG abre concurso público em 2026
   https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-publico-camara-ingai-mg-abre-2026-90629
 
-UFV-MG abre concurso para Médico Veterinário pelo edital 10/2026
-  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-ufv-mg-abre-medico-veterinario-edital-10-2026-90544
-
 Edital São Thomé das Letras-MG 2026 abre 40 vagas para Guardas e Técnicos
   https://www.acheconcursos.com.br/concursos-minas-gerais/edital-sao-thome-das-letras-mg-2026-abre-40-vagas-para-guardas-e-tecnicos-90637
-
-Edital Jenipapo de Minas-MG: Prefeitura abre vagas de Agentes de Saúde
-  https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-edital-jenipapo-minas-mg-prefeitura-vagas-agentes-saude-89402
-
-IFSULDEMINAS abre nova seleção para Professores Substitutos em cinco cidades
-  https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-ifsuldeminas-nova-selecao-professores-substitutos-cinco-cidades-90547
 
 Prefeitura Alto Rio Doce-MG abre vagas de R$ 3.242 para Agentes de Saúde
   https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-prefeitura-alto-rio-doce-mg-abre-vagas-3-242-agentes-saude-90617
@@ -104,41 +65,17 @@ Prefeitura Alto Rio Doce-MG abre vagas de R$ 3.242 para Agentes de Saúde
 Prefeitura de Conselheiro Pena-MG abre vagas de R$ 3.242 para Agentes de Saúde
   https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-prefeitura-conselheiro-pena-mg-vagas-3-242-agentes-saude-90604
 
-UFOP abre duas vagas para Professores Substitutos
-  https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-ufop-duas-vagas-professores-substitutos-90546
-
-UFV-MG abre seleção para Professor Substituto pelo edital 54/2026
-  https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-ufv-mg-selecao-professor-substituto-edital-54-2026-90559
-
-Edital SEAP-PA abre vagas de até R$ 5.887
-  https://www.acheconcursos.com.br/concursos-para/processo-seletivo-edital-seap-pa-abre-vagas-5-887-90555
-
 Câmara de Loanda-PR abre concurso para nível médio
   https://www.acheconcursos.com.br/concursos-parana/camara-de-loanda-pr-abre-concurso-para-nivel-medio-90636
-
-IFPR abre vagas para Professor Substituto em Londrina
-  https://www.acheconcursos.com.br/concursos-parana/processo-seletivo-ifpr-abre-vagas-professor-substituto-londrina-90558
 
 IFPR abre vagas para Professor Visitante
   https://www.acheconcursos.com.br/concursos-parana/processo-seletivo-ifpr-abre-vagas-professor-visitante-90620
 
-Edital Salgado Filho-PR 2026: Prefeitura abre vagas de até R$ 12.115
-  https://www.acheconcursos.com.br/concursos-parana/processo-seletivo-prefeitura-salgado-filho-pr-2026-inscricao-90548
-
-IF Sertão-PE abre vagas para Professor Substituto em Petrolina
-  https://www.acheconcursos.com.br/concursos-pernambuco/processo-seletivo-if-sertao-pe-vagas-professor-substituto-petrolina-90545
-
 Prefeitura de Orobó-PE abre vagas para Profissional de de Apoio Escolar
   https://www.acheconcursos.com.br/concursos-pernambuco/processo-seletivo-prefeitura-orobo-pe-abre-vagas-profissional-apoio-escolar-90614
 
-Prefeitura de Salgueiro-PE 2026: 2 editais abrem vagas de R$ 3,2 mil
-  https://www.acheconcursos.com.br/concursos-pernambuco/processo-seletivo-prefeitura-salgueiro-pe-2026-2-editais-abrem-vagas-3-2-mil-90554
-
 UFPI abre vagas para Professor Substituto em Medicina Veterinária
   https://www.acheconcursos.com.br/concursos-piaui/processo-seletivo-ufpi-vagas-professor-substituto-medicina-veterinaria-90598
-
-Concurso DPE-RJ: Sai edital com 35 vagas de R$ 34 mil
-  https://www.acheconcursos.com.br/concursos-rio-de-janeiro/concurso-dpe-rj-sai-edital-com-35-vagas-de-r-34-mil-90542
 
 Edital UERJ 189/2026 abre concurso para Professor
   https://www.acheconcursos.com.br/concursos-rio-de-janeiro/concurso-edital-uerj-189-2026-professor-90615
@@ -185,9 +122,6 @@ Prefeitura de Campos Novos-SC abre vagas para Educador Social
 Processo Seletivo Prefeitura de Celso Ramos-SC 2026 - Inscrição
   https://www.acheconcursos.com.br/concursos-santa-catarina/processo-seletivo-prefeitura-celso-ramos-sc-2026-inscricao-90589
 
-Prefeitura de Presidente Nereu-SC abre vagas de R$ 8.036 via PSS
-  https://www.acheconcursos.com.br/concursos-santa-catarina/processo-seletivo-prefeitura-presidente-nereu-sc-abre-vagas-de-r-8-036-via-pss-90549
-
 Prefeitura de Xanxerê-SC abre vagas para Professores com salários de até R$ 5.053
   https://www.acheconcursos.com.br/concursos-santa-catarina/processo-seletivo-prefeitura-xanxere-sc-vagas-professores-salarios-90609
 
@@ -218,9 +152,6 @@ Prefeitura de Urupês-SP abre cadastro de reserva para Professores
 ABIN faz novo pedido de concurso público com 300 vagas de nível superior
   https://www.acheconcursos.com.br/noticias/abin-faz-novo-pedido-de-concurso-publico-com-300-vagas-de-nivel-superior-90618
 
-Concurso ANTT: agência pede autorização para 720 cargos
-  https://www.acheconcursos.com.br/noticias/concurso-antt-agencia-pede-autorizacao-para-720-cargos-90553
-
 Concurso IBGE: veja as bancas que farão as seleções para 9 mil vagas em 2026
   https://www.acheconcursos.com.br/noticias/concurso-ibge-veja-as-bancas-que-farao-as-selecoes-para-9-mil-vagas-em-2026-90600
 
@@ -244,6 +175,9 @@ Câmara de Ingaí - MG abre concurso público para o cargo de auxiliar administr
 
 Câmara de Ipameri - GO abre concurso público com remunerações de até R$ 8.589,00
   https://www.pciconcursos.com.br/noticias/camara-de-ipameri-go-abre-concurso-publico-com-remuneracoes-de-ate-8589
+
+Câmara de Loanda - PR abre concurso público para Oficial Legislativo
+  https://www.pciconcursos.com.br/noticias/camara-de-loanda-pr-abre-concurso-publico-para-oficial-legislativo
 
 Câmara de Passos - MG abre concurso público com salários de até R$ 5.485,48
   https://www.pciconcursos.com.br/noticias/camara-de-passos-mg-abre-concurso-publico-com-salarios-de-ate-5485
@@ -269,15 +203,6 @@ DMAE de Porto Alegre - RS abre processo seletivo para preencher vagas e formar c
 EBSERH abre processo seletivo para Analista de Tecnologia da Informação
   https://www.pciconcursos.com.br/noticias/ebserh-abre-processo-seletivo-para-analista-de-tecnologia-da-informacao
 
-FAHECE - SC abre seleção para Supervisor de Atendimento em Florianópolis
-  https://www.pciconcursos.com.br/noticias/fahece-sc-abre-selecao-para-supervisor-de-atendimento-em-florianopolis
-
-FAHECE - SC abre seleção para Técnico de Enfermagem em Florianópolis
-  https://www.pciconcursos.com.br/noticias/fahece-sc-abre-selecao-para-tecnico-de-enfermagem-em-florianopolis
-
-FAHECE - SC abre vaga para Técnico de Enfermagem em Florianópolis
-  https://www.pciconcursos.com.br/noticias/fahece-sc-abre-vaga-para-tecnico-de-enfermagem-em-florianopolis
-
 FAHECE - SC abre vagas para Técnico em Eletrotécnica e Nutricionista em Florianópolis
   https://www.pciconcursos.com.br/noticias/fahece-sc-abre-vagas-para-tecnico-em-eletrotecnica-e-nutricionista-em-florianopolis
 
@@ -290,9 +215,6 @@ FHEMIG - MG abre processo seletivo com vagas para médicos em Belo Horizonte
 FHEMIG - MG abre processo seletivo para Farmacêutico e Técnico em Farmácia em Betim
   https://www.pciconcursos.com.br/noticias/fhemig-mg-abre-processo-seletivo-para-farmaceutico-e-tecnico-em-farmacia-em-betim
 
-FHEMIG - MG abre processos seletivos para médicos em Uberlândia, Sabará e Belo Horizonte
-  https://www.pciconcursos.com.br/noticias/fhemig-mg-abre-processos-seletivos-para-medicos-em-uberlandia-sabara-e-belo-horizonte
-
 FHEMIG - MG abre vaga para médico anestesiologista no Instituto Raul Soares
   https://www.pciconcursos.com.br/noticias/fhemig-mg-abre-vaga-para-medico-anestesiologista-no-instituto-raul-soares
 
@@ -302,20 +224,14 @@ FUNCAMP - SP abre processo seletivo para médico intensivista plantonista
 FUNCAMP - SP abre processo seletivo para o cargo de Telefonista PcD no AME de Limeira
   https://www.pciconcursos.com.br/noticias/funcamp-sp-abre-processo-seletivo-para-o-cargo-de-telefonista-pcd-no-ame-de-limeira
 
+Fundação Helena Antipoff - MG abre dois novos processos seletivos
+  https://www.pciconcursos.com.br/noticias/fundacao-helena-antipoff-mg-abre-dois-novos-processos-seletivos
+
 Fundação Santo André - SP abre concurso para Operador de Máquina Copiadora
   https://www.pciconcursos.com.br/noticias/fundacao-santo-andre-sp-abre-concurso-para-operador-de-maquina-copiadora
 
-ICMBio - MT abre seleção para Agente Temporário Ambiental em Cáceres
-  https://www.pciconcursos.com.br/noticias/icmbio-mt-abre-selecao-para-agente-temporario-ambiental-em-caceres
-
 ICMBio - PA abre seleção para agente temporário ambiental em Tucuruí
   https://www.pciconcursos.com.br/noticias/icmbio-pa-abre-selecao-para-agente-temporario-ambiental-em-tucurui
-
-ICMBio - RO abre seleção para Agente Temporário Ambiental em Ji-Paraná
-  https://www.pciconcursos.com.br/noticias/icmbio-ro-abre-selecao-para-agente-temporario-ambiental-em-ji-parana
-
-ICMBio - SC abre processo seletivo para agente temporário ambiental em Três Barras
-  https://www.pciconcursos.com.br/noticias/icmbio-sc-abre-processo-seletivo-para-agente-temporario-ambiental-em-tres-barras
 
 IFB - DF abre vaga em processo seletivo para professor substituto de Matemática
   https://www.pciconcursos.com.br/noticias/ifb-df-abre-vaga-em-processo-seletivo-para-professor-substituto-de-matematica
@@ -350,6 +266,9 @@ IFMS abre processo seletivo para professor de português em Nova Andradina
 IFMS abre seleção para professores substitutos nas áreas de administração e engenharia civil
   https://www.pciconcursos.com.br/noticias/ifms-abre-selecao-para-professores-substitutos-nas-areas-de-administracao-e-engenharia-civil
 
+IFMS publica edital de processo seletivo para docente substituto de administração em Ponta Porã
+  https://www.pciconcursos.com.br/noticias/ifms-publica-edital-de-processo-seletivo-para-docente-substituto-de-administracao-em-ponta-pora
+
 IFNMG abre processo seletivo para professor substituto de língua portuguesa em Pirapora
   https://www.pciconcursos.com.br/noticias/ifnmg-abre-processo-seletivo-para-professor-substituto-de-lingua-portuguesa-em-pirapora
 
@@ -373,9 +292,6 @@ IFRS abre seleção para professor substituto de contabilidade no campus Osório
 
 IFSertãoPE abre processo seletivo para professor substituto de AEE no campus Petrolina
   https://www.pciconcursos.com.br/noticias/ifsertaope-abre-processo-seletivo-para-professor-substituto-de-aee-no-campus-petrolina
-
-IFSul - RS retifica processo seletivo com vaga para Professor Substituto em Sapirangaprorrogado
-  https://www.pciconcursos.com.br/noticias/ifsul-rs-retifica-processo-seletivo-com-vaga-para-professor-substituto-em-sapiranga
 
 IFTM - MG abre processo seletivo para professor substituto de engenharia elétrica em Patrocínio
   https://www.pciconcursos.com.br/noticias/iftm-mg-abre-processo-seletivo-para-professor-substituto-de-engenharia-eletrica-em-patrocinio
@@ -401,9 +317,6 @@ PM - SP abre concurso com 2.000 vagas para Aluno-Soldado
 PMES - ES abre seleção para Auxiliar de Saúde Bucal
   https://www.pciconcursos.com.br/noticias/pmes-es-abre-selecao-para-auxiliar-de-saude-bucal
 
-Prefeitura de Açailândia - MA abre processo seletivo para cadastro de reserva em diversas áreas profissionais
-  https://www.pciconcursos.com.br/noticias/prefeitura-de-acailandia-ma-abre-processo-seletivo-para-cadastro-de-reserva-em-diversas-areas-profissionais
-
 Prefeitura de Águas de São Pedro - SP abre concurso com 19 vagas
   https://www.pciconcursos.com.br/noticias/prefeitura-de-aguas-de-sao-pedro-sp-abre-concurso-com-19-vagas
 
@@ -425,9 +338,6 @@ Prefeitura de Antônio Almeida - PI abre vagas para Brigadistas e Chefes de Esqu
 Prefeitura de Arez - RN abre processo seletivo para professores e pedagogos
   https://www.pciconcursos.com.br/noticias/prefeitura-de-arez-rn-abre-processo-seletivo-para-professores-e-pedagogos
 
-Prefeitura de Ariranha do Ivaí - PR abre concurso público com salários de até R$ 6.513,08
-  https://www.pciconcursos.com.br/noticias/prefeitura-de-ariranha-do-ivai-pr-abre-concurso-publico-com-salarios-de-ate-6513
-
 Prefeitura de Balsa Nova - PR abre processo seletivo para técnico em enfermagem
   https://www.pciconcursos.com.br/noticias/prefeitura-de-balsa-nova-pr-abre-processo-seletivo-para-tecnico-em-enfermagem
 
@@ -445,9 +355,6 @@ Prefeitura de Campos Novos - SC abre processo seletivo para Professor de Língua
 
 Prefeitura de Campos Novos - SC abre seleção para o cargo de Educador Social
   https://www.pciconcursos.com.br/noticias/prefeitura-de-campos-novos-sc-abre-selecao-para-o-cargo-de-educador-social
-
-Prefeitura de Celso Ramos - SC abre processo seletivo para nível superior
-  https://www.pciconcursos.com.br/noticias/prefeitura-de-celso-ramos-sc-abre-processo-seletivo-para-nivel-superior
 
 Prefeitura de Claraval - MG abre processo seletivo para Motorista I
   https://www.pciconcursos.com.br/noticias/prefeitura-de-claraval-mg-abre-processo-seletivo-para-motorista-i
@@ -482,23 +389,20 @@ Prefeitura de Erechim - RS abre vagas de nível fundamental em processos seletiv
 Prefeitura de Fagundes Varela - RS abre vaga em processo seletivo para Operador de Máquinas
   https://www.pciconcursos.com.br/noticias/prefeitura-de-fagundes-varela-rs-abre-vaga-em-processo-seletivo-para-operador-de-maquinas
 
-Prefeitura de Faria Lemos - MG abre concurso público com remunerações de até R$ 16.803,20
-  https://www.pciconcursos.com.br/noticias/prefeitura-de-faria-lemos-mg-abre-concurso-publico-com-remuneracoes-de-ate-16803
-
 Prefeitura de Fraiburgo - SC abre processo seletivo para professores de história
   https://www.pciconcursos.com.br/noticias/prefeitura-de-fraiburgo-sc-abre-processo-seletivo-para-professores-de-historia
 
 Prefeitura de Fraiburgo - SC abre processos seletivos para Técnico de Enfermagem e Médico de Saúde da Família
   https://www.pciconcursos.com.br/noticias/prefeitura-de-fraiburgo-sc-abre-processos-seletivos-para-tecnico-de-enfermagem-e-medico-de-saude-da-familia
 
-Prefeitura de Garopaba - SC divulga edital retificado de processo seletivo
-  https://www.pciconcursos.com.br/noticias/prefeitura-de-garopaba-sc-divulga-edital-retificado-de-processo-seletivo
+Prefeitura de Glorinha - RS abre seleção para Especialista em Educação Especial
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-glorinha-rs-abre-selecao-para-especialista-em-educacao-especial
 
-Prefeitura de Ibiraçu - ES abre processo seletivo para cadastro de reserva
-  https://www.pciconcursos.com.br/noticias/prefeitura-de-ibiracu-es-abre-processo-seletivo-para-cadastro-de-reserva
+Prefeitura de Itaqui - RS abre seleção para cadastro de reserva em diversas áreas de atuação
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-itaqui-rs-abre-selecao-para-cadastro-de-reserva-em-diversas-areas-de-atuacao
 
-Prefeitura de Ibiraçu - ES abre seleção para a Secretaria Municipal de Educação
-  https://www.pciconcursos.com.br/noticias/prefeitura-de-ibiracu-es-abre-selecao-para-a-secretaria-municipal-de-educacao
+Prefeitura de João Neiva - ES abre processo seletivo para cargos de nível médio e superior
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-joao-neiva-es-abre-processo-seletivo-para-cargos-de-nivel-medio-e-superior
 
 Prefeitura de Leopoldina - MG abre seleção para cargos de nível fundamental
   https://www.pciconcursos.com.br/noticias/prefeitura-de-leopoldina-mg-abre-selecao-para-cargos-de-nivel-fundamental
@@ -518,9 +422,6 @@ Prefeitura de Mineiros do Tietê - SP abre concurso público para cargos de nív
 Prefeitura de Miracatu - SP abre processo seletivo com salários de até R$ 10 mil
   https://www.pciconcursos.com.br/noticias/prefeitura-de-miracatu-sp-abre-processo-seletivo-com-salarios-de-ate-10-mil
 
-Prefeitura de Miradouro - MG abre vagas para Agente Comunitário de Saúde com salário de R$ 3.242,00
-  https://www.pciconcursos.com.br/noticias/prefeitura-de-miradouro-mg-abre-vagas-para-agente-comunitario-de-saude-com-salario-de-3242
-
 Prefeitura de Morro Reuter - RS abre seleção para Fiscal de Obras
   https://www.pciconcursos.com.br/noticias/prefeitura-de-morro-reuter-rs-abre-selecao-para-fiscal-de-obras
 
@@ -536,17 +437,20 @@ Prefeitura de Ouro Verde - SP abre concurso público com salários de até R$ 10
 Prefeitura de Pinhalzinho - SC abre processo seletivo para Agente Educativo
   https://www.pciconcursos.com.br/noticias/prefeitura-de-pinhalzinho-sc-abre-processo-seletivo-para-agente-educativo
 
+Prefeitura de Poconé - MT abre vaga em concurso público para Advogado
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-pocone-mt-abre-vaga-em-concurso-publico-para-advogado
+
 Prefeitura de Pouso Alegre - MG retifica edital de concurso para Guarda Civil Municipal
   https://www.pciconcursos.com.br/noticias/prefeitura-de-pouso-alegre-mg-retifica-edital-de-concurso-para-guarda-civil-municipal
 
 Prefeitura de Rio Negro - PR abre processo seletivo para motoristas de transporte escolar
   https://www.pciconcursos.com.br/noticias/prefeitura-de-rio-negro-pr-abre-processo-seletivo-para-motoristas-de-transporte-escolar
 
+Prefeitura de Santa Carmem - MT abre seleção com vagas imediatas e cadastro de reserva
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-santa-carmem-mt-abre-selecao-com-vagas-imediatas-e-cadastro-de-reserva
+
 Prefeitura de Santa Lúcia - PR abre processo seletivo para nível fundamental
   https://www.pciconcursos.com.br/noticias/prefeitura-de-santa-lucia-pr-abre-processo-seletivo-para-nivel-fundamental
-
-Prefeitura de São Félix de Minas - MG abre concurso público com salários de até R$ 12 mil
-  https://www.pciconcursos.com.br/noticias/prefeitura-de-sao-felix-de-minas-mg-abre-concurso-publico-com-salarios-de-ate-12-mil
 
 Prefeitura de São Tomé das Letras - MG abre vagas para guarda municipal, técnico de enfermagem e técnico de saúde bucal
   https://www.pciconcursos.com.br/noticias/prefeitura-de-sao-tome-das-letras-mg-abre-vagas-para-guarda-municipal-tecnico-de-enfermagem-e-tecnico-de-saude-bucal
@@ -560,8 +464,8 @@ Prefeitura de Tambaú - SP abre concurso público com salários de até R$ 6.917
 Prefeitura de Tocantins - MG abre processo seletivo para médico psiquiatra
   https://www.pciconcursos.com.br/noticias/prefeitura-de-tocantins-mg-abre-processo-seletivo-para-medico-psiquiatra
 
-Prefeitura de Uruçuí - PI abre seleção com vagas para Brigadistas
-  https://www.pciconcursos.com.br/noticias/prefeitura-de-urucui-pi-abre-selecao-com-vagas-para-brigadistas
+Prefeitura de Tramandaí - RS abre seleção para Cadastrador REURB
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-tramandai-rs-abre-selecao-para-cadastrador-reurb
 
 Prefeitura de Urupês - SP abre processo seletivo para professores de diversas áreas
   https://www.pciconcursos.com.br/noticias/prefeitura-de-urupes-sp-abre-processo-seletivo-para-professores-de-diversas-areas
@@ -589,9 +493,6 @@ SEE - PB abre seleção com 23 vagas para equipe técnica de educação do campo
 
 TCE - AC abre concurso para Auditor - Conselheiro Substituto
   https://www.pciconcursos.com.br/noticias/tce-ac-abre-concurso-para-auditor-conselheiro-substituto
-
-TJ-CE retifica concurso público para cargos de nível médio e superior
-  https://www.pciconcursos.com.br/noticias/tj-ce-retifica-concurso-publico-para-cargos-de-nivel-medio-e-superior
 
 TJ - TO: Concurso para juiz substituto é retomado
   https://www.pciconcursos.com.br/noticias/tj-to-concurso-para-juiz-substituto-e-retomado
@@ -665,9 +566,6 @@ Abin enfrenta déficit de servidores de nível médio e aguarda autorização pa
 Concurso da Câmara de Cuiabá: edital em preparação com 43 vagas previstas
   https://www.pciconcursos.com.br/previstos/concurso-da-camara-de-cuiaba-edital-em-preparacao-com-43-vagas-previstas
 
-Concurso INPI: pedido de 502 vagas de nível superior é enviado ao MDIC
-  https://www.pciconcursos.com.br/previstos/concurso-inpi-pedido-de-502-vagas-de-nivel-superior-e-enviado-ao-mdic
-
 Concurso para Procurador do Banco Central terá 20 vagas e seleção unificada com carreiras da AGU
   https://www.pciconcursos.com.br/previstos/concurso-para-procurador-do-banco-central-tera-20-vagas-e-selecao-unificada-com-carreiras-da-agu
 
@@ -686,12 +584,6 @@ Concurso PM PI: FCC confirmada como banca; edital próximo e provas previstas pa
 Concurso SAPE SC: Fepese é escolhida como organizadora; 20 vagas e cadastro de reserva
   https://www.pciconcursos.com.br/previstos/concurso-sape-sc-fepese-e-escolhida-como-organizadora-20-vagas-e-cadastro-de-reserva
 
-Concurso Seduc PA avança com escolha da banca e prevê 2 mil vagas
-  https://www.pciconcursos.com.br/previstos/concurso-seduc-pa-avanca-com-escolha-da-banca-e-preve-2-mil-vagas
-
-Concurso TJ AL: vaga de Analista (Oficial de Justiça e Avaliador) autorizada
-  https://www.pciconcursos.com.br/previstos/concurso-tj-al-vaga-de-analista-oficial-de-justica-e-avaliador-autorizada
-
 FCC é escolhida para organizar o primeiro concurso da ABGF; edital previsto e provas até setembro
   https://www.pciconcursos.com.br/previstos/fcc-e-escolhida-para-organizar-o-primeiro-concurso-da-abgf-edital-previsto-e-provas-ate-setembro
 
@@ -700,9 +592,6 @@ Governo do Pará confirma concurso da Polícia Civil com 237 vagas
 
 IBGE deve publicar editais com 9.667 vagas temporárias em junho
   https://www.pciconcursos.com.br/previstos/ibge-deve-publicar-editais-com-9667-vagas-temporarias-em-junho
-
-IBGE estuda solicitar novo concurso com cerca de 900 vagas efetivas
-  https://www.pciconcursos.com.br/previstos/ibge-estuda-solicitar-novo-concurso-com-cerca-de-900-vagas-efetivas
 
 INCA solicita autorização para novo concurso com 1.496 vagas na área de Ciência e Tecnologia
   https://www.pciconcursos.com.br/previstos/inca-solicita-autorizacao-para-novo-concurso-com-1496-vagas-na-area-de-ciencia-e-tecnologia
@@ -722,521 +611,418 @@ TCDF forma comissão do concurso para analista; preparativos do edital avançam
 TCDF oficializa Cebraspe e edital do novo concurso é iminente
   https://www.pciconcursos.com.br/previstos/tcdf-oficializa-cebraspe-e-edital-do-novo-concurso-e-iminente
 
-TRT-8 prepara novo concurso: comissão em formação, 87 cargos vagos e detalhes do último edital
-  https://www.pciconcursos.com.br/previstos/trt-8-prepara-novo-concurso-comissao-em-formacao-87-cargos-vagos-e-detalhes-do-ultimo-edital
-
 Validade do concurso da Polícia Penal Federal chega ao fim e novo edital ganha força
   https://www.pciconcursos.com.br/previstos/validade-do-concurso-da-policia-penal-federal-chega-ao-fim-e-novo-edital-ganha-forca
 
 ── NEW (Google Alerts) ──
 
+Term:    seletivo concurso direito
+Title:   <b>Concurso</b> INPI: pedido de 502 vagas de nível superior é enviado ao MDIC
+URL:     https://www.pciconcursos.com.br/previstos/concurso-inpi-pedido-de-502-vagas-de-nivel-superior-e-enviado-ao-mdic
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> Seduc PA avança com escolha da banca e prevê 2 mil vagas
+URL:     https://www.pciconcursos.com.br/previstos/concurso-seduc-pa-avanca-com-escolha-da-banca-e-preve-2-mil-vagas
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   TRT-8 prepara novo <b>concurso</b>: comissão em formação, 87 cargos vagos e detalhes do último edital
+URL:     https://www.pciconcursos.com.br/previstos/trt-8-prepara-novo-concurso-comissao-em-formacao-87-cargos-vagos-e-detalhes-do-ultimo-edital
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   <b>Concurso</b> TJ AL: vaga de <b>Analista</b> (Oficial de Justiça e Avaliador) autorizada
+URL:     https://www.pciconcursos.com.br/previstos/concurso-tj-al-vaga-de-analista-oficial-de-justica-e-avaliador-autorizada
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   IBGE estuda solicitar novo <b>concurso</b> com cerca de 900 vagas efetivas
+URL:     https://www.pciconcursos.com.br/previstos/ibge-estuda-solicitar-novo-concurso-com-cerca-de-900-vagas-efetivas
+Snippet: 
+
 Term:    seletivo concurso procurador
+Title:   IFSul - RS retifica processo <b>seletivo</b> com vaga para Professor Substituto em Sapiranga
+URL:     https://www.pciconcursos.com.br/noticias/ifsul-rs-retifica-processo-seletivo-com-vaga-para-professor-substituto-em-sapiranga
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Prefeitura de Miradouro - MG abre vagas para Agente Comunitário de Saúde com salário ...
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-miradouro-mg-abre-vagas-para-agente-comunitario-de-saude-com-salario-de-3242
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Prefeitura de Uruçuí - PI abre seleção com vagas para Brigadistas
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-urucui-pi-abre-selecao-com-vagas-para-brigadistas
+Snippet: 
+
+Term:    seletivo concurso advogado
 Title:   Prefeitura de Goioerê - PR abre <b>concurso</b> público com salários de até R$ 19.542,67
 URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-goioere-pr-abre-concurso-publico-com-salarios-de-ate-19542
 Snippet: 
 
-Term:    seletivo concurso advogado
-Title:   Prefeitura de Santa Carmem - MT abre seleção com vagas imediatas e cadastro de reserva
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-santa-carmem-mt-abre-selecao-com-vagas-imediatas-e-cadastro-de-reserva
+Term:    seletivo concurso procurador
+Title:   Prefeitura de Ariranha do Ivaí - PR abre <b>concurso</b> público com salários de até R$ 6.513,08
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-ariranha-do-ivai-pr-abre-concurso-publico-com-salarios-de-ate-6513
 Snippet: 
 
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   Prefeitura de Glorinha - RS abre seleção para Especialista em Educação Especial
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-glorinha-rs-abre-selecao-para-especialista-em-educacao-especial
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Prefeitura de João Neiva - ES abre processo <b>seletivo</b> para cargos de nível médio e superior
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-joao-neiva-es-abre-processo-seletivo-para-cargos-de-nivel-medio-e-superior
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Câmara de Loanda - PR abre <b>concurso</b> público para Oficial Legislativo
-URL:     https://www.pciconcursos.com.br/noticias/camara-de-loanda-pr-abre-concurso-publico-para-oficial-legislativo
-Snippet: 
-
-Term:    seletivo concurso analista juridico
+Term:    seletivo concurso procurador
 Title:   Prefeitura de Iporã - PR retifica edital de <b>concurso</b> público
 URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-ipora-pr-retifica-edital-de-concurso-publico
 Snippet: 
 
-Term:    seletivo concurso advogado
-Title:   Prefeitura de Itaqui - RS abre seleção para cadastro de reserva em diversas áreas de atuação
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-itaqui-rs-abre-selecao-para-cadastro-de-reserva-em-diversas-areas-de-atuacao
-Snippet: 
-
 Term:    seletivo concurso analista juridico
-Title:   IFMS publica edital de processo <b>seletivo</b> para docente substituto de administração em Ponta Porã
-URL:     https://www.pciconcursos.com.br/noticias/ifms-publica-edital-de-processo-seletivo-para-docente-substituto-de-administracao-em-ponta-pora
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
 Title:   Prefeitura de Bossoroca - RS abre processo <b>seletivo</b> para Fiscal de Tributos
 URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-bossoroca-rs-abre-processo-seletivo-para-fiscal-de-tributos
 Snippet: 
 
-Term:    seletivo concurso procurador
-Title:   Prefeitura de Tramandaí - RS abre seleção para Cadastrador REURB
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-tramandai-rs-abre-selecao-para-cadastrador-reurb
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> da Marinha encerra inscrições para oficiais nesta quinta-feira (4)
+URL:     https://jcconcursos.com.br/noticia/concursos/concurso-marinha-encerra-inscricoes-para-oficiais-nesta-quinta-feira-4-143103
 Snippet: 
 
-Term:    seletivo concurso tecnico juridico
-Title:   Fundação Helena Antipoff - MG abre dois novos processos <b>seletivos</b> - PCI Concursos
-URL:     https://www.pciconcursos.com.br/noticias/fundacao-helena-antipoff-mg-abre-dois-novos-processos-seletivos
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Prefeitura de Poconé - MT abre vaga em <b>concurso</b> público para Advogado
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-pocone-mt-abre-vaga-em-concurso-publico-para-advogado
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   <b>Concurso</b> Sefaz RN é homologado e convocações podem ocorrer - Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-sefaz-rn-homologado-2026
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   Saiba os detalhes da prova discursiva da <b>Residência Jurídica</b> da PGM Niterói!
-URL:     https://cj.estrategia.com/portal/saiba-os-detalhes-da-prova-discursiva-da-residencia-juridica-da-pgm-niteroi/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   TJPA aplica segunda etapa do <b>concurso</b> para juiz(a) substituto(a)
-URL:     https://www.tjpa.jus.br/PortalExterno/imprensa/noticias/Informes/2425214-tjpa-aplica-segunda-etapa-do-concurso-publico-para-cargo-de-juiz-substituto.xhtml
+Term:    seletivo concurso consultor legislativo
+Title:   <b>Concurso</b> da Câmara com salários de R$ 10.013 e benefícios de R$ 3.622,79 encerra ...
+URL:     https://noticiasconcursos.com.br/concurso-da-camara-com-salarios-de-r-10-013-e-beneficios-de-r-3-62279-encerra-inscricoes-nesta-sexta-feira-5/
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   Prefeitura de João Neiva ES abre processo <b>seletivo</b> com vagas imediatas | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/prefeitura-de-joao-neiva-es-abre-processo-seletivo-com-vagas-imediatas
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   <b>Concurso</b> da Prefeitura de Itajaí SC: editais oferecem 42 vagas e até R$ 25 mil
-URL:     https://jcconcursos.com.br/noticia/concursos/concurso-da-prefeitura-de-itajai-sc-editais-143099
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   UEMS abre <b>concurso</b> para bolsa de pós-doutorado com salário de R$ 5,2 mil - Midiamax
-URL:     https://midiamax.com.br/cotidiano/2026/uems-abre-concurso-bolsa-pos-doutorado-salario-r-52-mil/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Salário acima de R$ 5 mil e mais: novo <b>concurso</b> da Polícia Militar tem 2 mil vagas de emprego
-URL:     https://www.atribuna.com.br/noticias/concurso-e-emprego/salario-acima-de-r-5-mil-e-mais-novo-concurso-da-policia-militar-tem-2-mil-vagas-de-emprego-veja-como-se-inscrever-1.516586
+Title:   Exército abre inscrições para oficiais, sargentos e cabos em MS - Midiamax
+URL:     https://midiamax.com.br/sem-categoria/2026/exercito-abre-inscricoes-oficiais-sargentos-cabos-ms/
 Snippet: 
 
 Term:    seletivo concurso estagio de pos graduacao direito
-Title:   Seduc abre 116 vagas para <b>pós</b>-<b>graduação</b> em Inteligência Artificial na Educação
-URL:     https://www.agoramt.com.br/2026/06/seduc-abre-116-vagas-para-pos-graduacao-em-inteligencia-artificial-na-educacao/
+Title:   IFB oferece mais de 150 vagas em cursos gratuitos de graduação e <b>pós</b>-<b>graduação</b> para o ... - Uni10
+URL:     https://uniten.com.br/ifb-vagas-cursos-gratuitos-graduacao-pos-2026/
 Snippet: 
 
 Term:    seletivo concurso direito
-Title:   <b>Concurso</b> Receita Federal: processo para novo edital avança - Folha Dirigida
+Title:   SESI abre seleção para Técnico em Segurança do Trabalho com salário de R$ 3,3 mil em Palmas
+URL:     https://gazetadocerrado.com.br/oportunidades/sesi-abre-selecao-para-tecnico-em-seguranca-do-trabalho-com-salario-de-r-33-mil-em-palmas/
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   TJMG abre mais de 500 vagas de <b>estágio</b> com bolsas de até R$ 3,3 mil em Minas Gerais
+URL:     https://pordentrodeminas.com.br/noticias/gerais/2026/06/tjmg-500-vagas-estagio-minas-gerais/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Sesi Tocantins abre processo <b>seletivo</b> para Técnico em Segurança do Trabalho em Palmas
+URL:     https://conexaoto.com.br/2026/06/04/sesi-tocantins-abre-processo-seletivo-para-tecnico-em-seguranca-do-trabalho-em-palmas
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Prefeitura de Campo Grande publica resultado de <b>seletivos</b> com salários de até R$ 2 mil
+URL:     https://primeirapagina.com.br/emprego-e-concursos/prefeitura-de-campo-grande-publica-resultado-de-seletivos-com-salarios-de-ate-r-2-mil/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Veja detalhes e cronograma dos editais do IBGE 2026 previstos para junho - DOL
+URL:     https://dol.com.br/concursos/federais/943614/veja-detalhes-e-cronograma-dos-editais-do-ibge-2026-previstos-para-junho
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Prefeitura nomeia 120 candidatos do cadastro reserva do <b>concurso</b> do Quadro Geral
+URL:     https://conexaoto.com.br/2026/06/04/prefeitura-nomeia-120-candidatos-do-cadastro-reserva-do-concurso-do-quadro-geral
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   <b>Pós</b>-<b>graduação</b> em Matemática da Universidade do Estado do Pará abre inscrições
+URL:     https://arenadenoticias.com.br/noticia/167867/pos-graduacao-em-matematica-da-universidade-do-estado-do-para-abre-inscricoes
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/analista-tecnico-contratos-abrangente/14
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Prefeitura de Marabá (PA) abre <b>seletivo</b> com vagas para todos níveis de escolaridade
+URL:     https://concursosnobrasil.com/concursos/pa/2026/06/04/prefeitura-de-maraba-pa-abre-seletivo-com-vagas-para-todos-niveis-de-escolaridade/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Prefeitura publica editais de <b>concurso</b> e processo <b>seletivo</b> - Folha de Candelária
+URL:     https://folhadecandelaria.com.br/noticias/geral/prefeitura-publica-editais-de-concurso-e-processo-seletivo/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Exército abre seleção para militares temporários com vagas em MS - Campo Grande News
+URL:     https://www.campograndenews.com.br/cidades/empregos/exercito-abre-selecao-para-militares-temporarios-com-vagas-em-ms
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   MPMG abre seleção para <b>estágio de pós</b> em <b>Direito</b> com duas vagas em Itabirito | Plox
+URL:     https://www.plox.com.br/noticia/04/06/2026/mpmg-selecao-estagio-pos-direito-itabirito
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   <b>Concurso</b> Receita Federal: processo para novo edital avança | Folha Dirigida - Qconcursos
 URL:     https://folha.qconcursos.com/n/concurso-receita-federal-2026-avancos-pedido-novo-edital
 Snippet: 
 
-Term:    seletivo concurso advogado
-Title:   Publicação de Edital de Eleição Escolar - Prefeitura Municipal de Colombo
-URL:     https://prefeitura.colombo.pr.gov.br/publicacao-de-edital-de-eleicao-escolar/
+Term:    seletivo concurso procurador
+Title:   Emater abre processos <b>seletivos</b> com salários de até R$ 4.733,21 - Ver-o-Fato
+URL:     https://ver-o-fato.com.br/emater-abre-processos-seletivos-com-salarios-de-ate-r-4-73321/
+Snippet: 
+
+Term:    seletivo concurso assessor juridico
+Title:   <b>Concurso</b> público: Prefeitura de Americana convoca mais 58 aprovados - SB Noticias
+URL:     https://sbnoticias.com.br/noticia/Concurso-publico-Prefeitura-de-Americana-convoca-mais-58-aprovados/229276
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   Governo de SP abre 2 mil vagas para <b>concurso</b> da PM; salário passa de R$ 5,4 mil
-URL:     https://bpmoney.com.br/noticias/governo-de-sp-abre-2-mil-vagas-para-concurso-da-pm-salario-passa-de-r-54-mil/
+Title:   Governo de SP abre seleção para contratar 2 mil novos soldados da PM - BS9
+URL:     https://www.bs9.com.br/estado/governo-de-sp-abre-selecao-para-contratar-2-mil-novos-soldados-da-pm/39832/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   <b>Concurso</b> da Sesap tem nova nomeação de candidatos para a 2ª Região de Saúde
+URL:     https://portaln10.com.br/concursos/rn-concursos/concurso-da-sesap-tem-nova-nomeacao-de-candidatos-para-a-2a-regiao-de-saude-342598/
 Snippet: 
 
 Term:    seletivo concurso direito
-Title:   Quer ser bombeiro em MG? <b>Concurso</b> tem 341 vagas com salários de até R$ 11,5 mil
-URL:     https://tnonline.uol.com.br/empregos-e-concursos/quer-ser-bombeiro-em-mg-concurso-tem-341-vagas-com-salarios-de-ate-r-115-mil-1095454
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Câmara de Loanda-PR abre <b>concurso</b> para nível médio
-URL:     https://www.acheconcursos.com.br/concursos-parana/camara-de-loanda-pr-abre-concurso-para-nivel-medio-90636.amp
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   Prefeitura de Almirante Tamandaré PR abre PSS com 65 vagas em 2026 | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/prefeitura-de-almirante-tamandare-pr-abre-pss-com-65-vagas-em-2026
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   <b>Concurso</b> Câmara de Loanda PR oferece salário de R$ 4.274,66 para nível médio
-URL:     https://mdcconcursos.com.br/concurso-camara-de-loanda-pr-2026/
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Concursos públicos em Itajaí oferecem 42 vagas e salários de até R$ 25 mil
-URL:     https://jornalextrasc.com.br/economia/concursos-publicos-em-itajai-oferecem-42-vagas-e-salarios-de-ate-r-25-mil-inscricoes-abrem-em-junho/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   Judiciário convoca estudantes para <b>residência jurídica</b> - TJPA
-URL:     https://www.tjpa.jus.br/PortalExterno/imprensa/noticias/Informes/2425209-tjpa-convoca-candidatos-para-ingresso-no-programa-de-residencia-juridica.xhtml
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   <b>Concurso</b> CRECI SP: definida banca para 88 vagas e cadastros de niveis médio e superior
-URL:     https://jcconcursos.com.br/amp/noticia/concursos/concurso-creci-sp-definida-banca-para-88-vagas-e-cadastros-143095
-Snippet: 
-
-Term:    seletivo concurso assessor juridico
-Title:   <b>Concurso</b> público em Itajaí oferece 42 vagas: saiba os detalhes - diário do estado
-URL:     https://diariodoestadogo.com.br/concurso-publico-em-itajai-oferece-42-vagas-saiba-os-detalhes/
-Snippet: 
-
-Term:    seletivo concurso assessor juridico
-Title:   Itajaí-SC abre concursos com 42 vagas e salários de até R$ 25 mil | Rádio Itatiaia
-URL:     https://www.itatiaia.com.br/emprego-e-concursos/itajai-sc-abre-concursos-com-42-vagas-e-salarios-de-ate-r-25-mil/
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   <b>Concurso</b> Câmara de Loanda PR 2026 abre vaga para Oficial <b>Legislativo</b>
-URL:     https://concursossc.com.br/concurso-camara-de-loanda-pr-2026-abre-vaga-para-oficial-legislativo/
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Como montar plano de estudos para o <b>concurso</b> Alece? Confira aqui | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-alece-plano-estudos
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   PRJud: Edital convoca candidatos(as) do cadastro reserva para vagas do Programa de <b>Residência</b>
-URL:     https://www.tjto.jus.br/comunicacao/noticias/prjud-edital-convoca-candidatos-as-do-cadastro-reserva-para-vagas-do-programa-de-residencia
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Interessados em prestar o <b>concurso</b> público da FJP têm até esta sexta-feira (5/6) para se ...
-URL:     https://www.agenciaminas.mg.gov.br/noticia/interessados-em-prestar-o-concurso-publico-da-fjp-tem-ate-esta-sexta-feira-5-6-para-se-inscrever-no-enem-2026
+Title:   Comissão Especial do Processo <b>Seletivo</b> Simplificado nº 02/202 convoca candidatos pretos e pardos
+URL:     https://jornaldoradialista.com.br/comissao-especial-do-processo-seletivo-simplificado-no-02-202-convoca-candidatos-pretos-e-pardos/
 Snippet: 
 
 Term:    seletivo concurso analista juridico
 Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/tecnico-judiciario-calculo-abrangente/46
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   MP do Amazonas divulga resultado definitivo da prova objetiva do estágio em direito
-URL:     https://www.mpam.mp.br/comunicacao/noticias/mp-do-amazonas-divulga-resultado-definitivo-da-prova-objetiva-do-estagio-em-direito
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   PGE-SP abre seleção para áreas administrativas; veja as vagas - Debate Jurídico
-URL:     https://debatejuridico.com.br/pge-sp-abre-processo-seletivo-para-tres-vagas-em-areas-administrativas/
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   <b>Concurso</b> TJ RJ tem resultado final adiado para técnico e <b>analista</b> - Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-tj-rj-2026-resultado-final-adiado
+URL:     https://www.pciconcursos.com.br/provas/analista-judiciario-area-de-apoio-judiciario-e-administrativo-abrangente/66
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   Imposto <b>seletivo</b>: setor cervejeiro pede agilidade ao governo - Guia da Cerveja
-URL:     https://guiadacervejabr.com/setor-cervejeiro-pede-agilidade-do-governo-no-envio-do-projeto-do-imposto-seletivo-ao-congresso/
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   UFRGS abre seleção para professor e oferece salários de até R$ 13,7 mil | Rádio Itatiaia
-URL:     https://www.itatiaia.com.br/emprego-e-concursos/ufrgs-abre-selecao-para-professor-e-oferece-salarios-de-ate-r-137-mil/
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Processo <b>seletivo</b> SEAP Pará oferece 5 vagas em Belém PA | Folha Dirigida - Qconcursos
-URL:     https://folha.qconcursos.com/n/processo-seletivo-seap-para-oferece-5-vagas-em-belem-pa
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   TJMS abre processo <b>seletivo</b> para juiz leigo com 21 vagas - A Crítica de Campo Grande
-URL:     https://acritica.net/noticias/tjms-inscricoes-juiz-leigo-ate-11-junho/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Governo de SP abre 2.000 vagas para <b>concurso</b> da PM; salário é de R$ 5.400
-URL:     https://economia.uol.com.br/empregos-e-carreiras/noticias/redacao/2026/06/03/governo-de-sp-abre-2-mil-vagas-para-concurso-da-pm-salario-e-de-r-54-mil.ghtm
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Prova oral para magistratura dispensa divulgação do espelho - Conjur
-URL:     https://www.conjur.com.br/2026-jun-03/prova-oral-para-magistratura-dispensa-divulgacao-do-espelho-de-correcao/
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   Bacen anuncia <b>concurso</b> para <b>procurador</b> após 13 anos sem edital - ContilNet Notícias
-URL:     https://contilnetnoticias.com.br/editais-concursos/bacen-anuncia-concurso-para-procurador-apos-13-anos-sem-edital/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   Prefeitura de Ariquemes suspende processo <b>seletivo</b> para readequação técnica e <b>jurídica</b>
-URL:     https://ariquemes190.com.br/noticia.php?id=85674
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Processo <b>Seletivo</b> Prefeitura de Itaqui RS abre cadastro reserva para níveis técnico e superior
-URL:     https://concursossc.com.br/processo-seletivo-prefeitura-de-itaqui-rs-abre-cadastro-reserva-para-niveis-tecnico-e-superior/
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Quer atuar em uma das maiores empresas do país? Veja quem pode participar do processo ...
-URL:     https://jcconcursos.com.br/noticia/empregos/quer-atuar-em-uma-das-maiores-empresas-do-pais-veja-quem-pode-participar-do-processo-seletivo-da-petrobras-com-150-vagas-143082
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Hospital Municipal de Americana abre processo <b>seletivo</b> para três cargos - SB Noticias
-URL:     https://sbnoticias.com.br/noticia/Hospital-Municipal-de-Americana-abre-processo-seletivo-para-tres-cargos/229279
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   MP PB cobra novo <b>concurso</b> Penal PB e ingresso de servidores - Folha Dirigida
-URL:     https://folha.qconcursos.com/n/mp-cobra-novo-concurso-penal-pb-2026
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   <b>Concurso</b> MP AL Promotor vai ter edital ainda em 2026? Veja salários atualizados e cargos vagos
-URL:     https://magistrarcursos.com.br/blog/concurso-mp-al-promotor-vai-ter-edital-ainda-em-2026-veja-salarios-atualizados-e-cargos-vagos/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Governo de SP abre seleção para contratar 2 mil novos soldados da PM - Agência SP
-URL:     https://www.agenciasp.sp.gov.br/edital-concurso-da-pm-sao-paulo/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> Prefeitura de Palhano (CE) abre 418 vagas em 4 editais
-URL:     https://concursosnobrasil.com/concursos/ce/2026/06/03/concurso-prefeitura-de-palhano-ce-abre-418-vagas-em-4-editais/
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Veja os cursos que podem participar do processo <b>seletivo</b> da Câmara de Guarujá
-URL:     https://jcconcursos.com.br/noticia/empregos/veja-os-cursos-que-podem-participar-do-processo-seletivo-da-camara-de-guaruja-143083
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   <b>Concurso</b> ALEPA terá novo edital até o fim do ano! - Blog Gran Cursos Online
-URL:     https://blog.grancursosonline.com.br/concurso-alepa-anunciado-2026/
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Prefeitura de São Thomé das Letras MG abre processo <b>seletivo</b> com 26 vagas
-URL:     https://folha.qconcursos.com/n/prefeitura-de-sao-thome-das-letras-mg-abre-processo-seletivo-com-26-vagas
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   De Guarda Municipal a <b>Procurador</b>: Prefeitura de Itajaí abre 42 vagas e salários chegam a R$ 25 mil
-URL:     https://jornalrazao.com/geral/de-guarda-municipal-a-procurador-prefeitura-de-itajai-abre-42-vagas-e-salarios-chegam-a-r-25-mil
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Prefeitura de Itaqui RS abre processo <b>seletivo</b> simplificado para cadastro reserva
-URL:     https://folha.qconcursos.com/n/prefeitura-de-itaqui-rs-abre-processo-seletivo-simplificado-para-cadastro-reserva
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   IFG abre três vagas para Professor Substituto em Jataí - Ache Concursos
-URL:     https://www.acheconcursos.com.br/concursos-goias/processo-seletivo-ifg-abre-tres-vagas-professor-substituto-jatai-90621.amp
+Title:   Governo de SP abre <b>concurso</b> com 2 mil vagas para soldados da PM - Dhoje Interior
+URL:     https://jornaldhoje.com.br/noticia/governo-de-sp-abre-concurso-com-2-mil-vagas-para-soldados-da-pm
 Snippet: 
 
 Term:    seletivo concurso tecnico juridico
-Title:   CCJ abre processo <b>seletivo</b> com vagas para bolsistas de diversos cursos - UFPB
-URL:     https://www.ufpb.br/oportunidades/ccj-abre-processo-seletivo-com-vagas-para-bolsistas-de-diversos-cursos/
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   UFPI lança edital com 106 vagas para os novos cursos de <b>graduação</b> em Inteligência ...
-URL:     https://ufpi.br/ultimas-noticias-ufpi/1107-destaques-ufpi/67685-ufpi-lanca-edital-com-106-vagas-para-os-novos-cursos-de-graduacao-em-inteligencia-artificial-e-psicologia-em-teresina-e-medicina-em-floriano-inscricoes-entre-9-e-23-de-junho
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Tribunal de Justiça do Tocantins retoma <b>concurso</b> com 7 vagas para juiz | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/tribunal-de-justica-do-tocantins-retoma-concurso-com-7-vagas-para-juiz
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   <b>Concurso</b> CRQ MS 2026 oferece 80 vagas para níveis médio e técnico em Campo Grande
-URL:     https://folhams.com.br/2026/06/03/concurso-crq-ms-2026-oferece-80-vagas-para-niveis-medio-e-tecnico-em-campo-grande/
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   <b>Concurso</b> do CAU SP: últimas horas de inscrição para quase 40 vagas em 11 cidades
-URL:     https://jcconcursos.com.br/noticia/concursos/concurso-cau-sp-ultimas-horas-de-inscricao-para-quase-40-vagas-em-11-cidades-143097
+Title:   Prefeitura de Uruçuí, no Piauí, abre inscrições para <b>seletivo</b> com 13 vagas e salários de até ...
+URL:     https://a10mais.com/amp/noticias/concursos/prefeitura-de-urucui-no-piaui-abre-inscricoes-para-seletivo-com-13-vagas-e-salarios-de-ate-r-3-2-mil-confira-o-edital-42932.html
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   Governo do ES contrata temporários com salário de até R$ 5.500 - A Gazeta
-URL:     https://www.agazeta.com.br/concursos-e-empregos/governo-do-es-contrata-temporarios-com-salario-de-ate-r-0626
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Senac AL prorroga inscrições de processo <b>seletivo</b> para vagas em Maceió e Arapiraca
-URL:     https://tribunahoje.com/noticias/economia/2026/06/03/186421-senac-al-prorroga-inscricoes-de-processo-seletivo-para-vagas-em-maceio-e-arapiraca
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Prefeitura de Açailândia (MA) realiza uma nova seleção simplificada - Concursos no Brasil
-URL:     https://concursosnobrasil.com/concursos/ma/2026/06/02/prefeitura-de-acailandia-ma-realiza-uma-nova-selecao-simplificada/
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   IFRN e UAB Oferecem 150 Vagas em Curso de <b>Graduação</b> em Sistemas Para Internet EAD ...
-URL:     https://www.pebsp.com/ifrn-e-uab-oferecem-150-vagas-em-curso-de-graduacao-em-sistemas-para-internet-ead-totalmente-gratuito-dcs/
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   IFRS Alvorada RS abre processo <b>seletivo</b> para professores EBTT - Folha Dirigida
-URL:     https://folha.qconcursos.com/n/ifrs-alvorada-rs-abre-processo-seletivo-para-professores-ebtt
-Snippet: 
-
-Term:    seletivo concurso assessor juridico
-Title:   Assessores de vereadores podem exercer outras atividades fora do expediente da Câmara ...
-URL:     https://www.independente.com.br/artigo/assessores-de-vereadores-podem-exercer-outras-atividades-fora-do-expediente-da-camara-esclarece-assessor-juridico
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Câmara de Curitibanos (SC) oferece até R$ 8,9 mil em <b>concurso</b>
-URL:     https://concursosnobrasil.com/concursos/sc/2026/06/03/camara-de-curitibanos-sc-oferece-ate-r-89-mil-em-concurso/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   Processo <b>seletivo</b> Prefeitura de Varginha MG abre 7 vagas para pediatra plantonista
-URL:     https://folha.qconcursos.com/n/processo-seletivo-prefeitura-de-varginha-mg-abre-7-vagas-para-pediatra-plantonista
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   <b>Estágio</b> Museu Goeldi: inscrições abertas para <b>graduação</b> e <b>pós</b> - Diário do Pará
-URL:     https://diariodopara.com.br/concursos-e-empregos/museu-goeldi-abre-selecao-para-estagio-com-bolsas-de-ate-r-15-mil-em-belem/
-Snippet: 
-
-Term:    seletivo concurso assessor juridico
-Title:   <b>Concurso</b> público Itajaí: 42 vagas e salários de até R$ 25 mil - diário do estado
-URL:     https://diariodoestadogo.com.br/concurso-publico-itajai-42-vagas-e-salarios-de-ate-r-25-mil/
+Title:   Processo <b>Seletivo</b> Concórdia SC: Saúde oferece salários de até R$ 4.174,40
+URL:     https://mdcconcursos.com.br/processo-seletivo-concordia-sc-2026-2/
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   Prefeitura de Erechim RS abre processo <b>seletivo</b> com 32 vagas | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/prefeitura-de-erechim-rs-abre-processo-seletivo-com-32-vagas
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   <b>Concurso</b> Ministério dos Transportes é solicitado com 411 vagas - Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-ministerio-dos-transportes-2026-solicitacao-vagas
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   São Mateus tem dois servidores aprovados em curso de <b>pós</b>-<b>graduação</b> do Tribunal de Contas
-URL:     https://tconline.com.br/sao-mateus-tem-dois-servidores-aprovados-em-curso-de-pos-graduacao-do-tribunal-de-contas/
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   <b>Concurso</b> ALEPA terá novo edital até o fim do ano! - Blog Gran Cursos Online
-URL:     https://blog.grancursosonline.com.br/concurso-alepa-anunciado-2026/amp
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   <b>Concurso</b> Câmara de Loanda (PR) oferta iniciais de R$ 4,2 mil
-URL:     https://concursosnobrasil.com/concursos/pr/2026/06/03/concurso-camara-de-loanda-pr-oferta-iniciais-de-r-42-mil/
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   <b>Concurso</b> Ministério dos Transportes: novo pedido enviado para 411 vagas de níveis médio ...
-URL:     https://jcconcursos.com.br/noticia/concursos/concurso-ministerio-dos-transportes-novo-pedido-encaminhado-para-411-vagas-de-niveis-medio-e-superior-143110
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   Prefeitura de Morro Reuter RS abre processo <b>seletivo</b> com 1 vaga para fiscal de obras
-URL:     https://folha.qconcursos.com/n/prefeitura-de-morro-reuter-rs-abre-processo-seletivo-com-1-vaga-para-fiscal-de-obras
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Processos <b>seletivos</b> da Suzano oferecem vagas em três municípios de MS - Midiamax
-URL:     https://midiamax.com.br/cotidiano/emprego-concurso/2026/processos-seletivos-suzano-oferecem-vagas-tres-municipios-ms/
-Snippet: 
-
-Term:    seletivo concurso assessor juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/medico-clinico-geral-da-ubs-abrangente/65
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Prefeitura de São José dos Campos abre processo <b>seletivo</b> com 12 vagas de estágio para ...
-URL:     https://portalaquivale.com.br/prefeitura-de-sao-jose-dos-campos-abre-processo-seletivo-com-12-vagas-de-estagio-para-ensino-superior/
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
 Title:   <b>Concurso</b> Alema: Casa estuda proposta de novo edital até dezembro
 URL:     https://folha.qconcursos.com/n/concurso-alema-2026-novo-edital-ate-dezembro
 Snippet: 
 
-Term:    seletivo concurso tecnico juridico
-Title:   Prefeitura de Canoas abre inscrições para seleção de estagiários de níveis médio, <b>técnico</b> e superior
-URL:     https://www.abcmais.com/brasil/rio-grande-do-sul/vale-do-rio-dos-sinos/canoas/prefeitura-de-canoas-abre-inscricoes-para-selecao-de-estagiarios-de-niveis-medio-tecnico-e-superior/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   25ª Chamada para Candidatos aprovados no Processo <b>Seletivo</b> 02/2024 (Saúde) será ...
-URL:     https://tubarao.sc.gov.br/25a-chamada-para-candidatos-aprovados-no-processo-seletivo-02-2024-saude-sera-realizada-no-dia-10-de-junho/
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   Prefeitura de Bossoroca (RS) abre vaga em <b>seletivo</b> simplificado - Concursos no Brasil
-URL:     https://concursosnobrasil.com/concursos/rs/2026/06/03/prefeitura-de-bossoroca-rs-abre-vaga-em-seletivo-simplificado/
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   Prefeitura de Sapiranga RS abre processo <b>seletivo</b> com 31 vagas | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/prefeitura-de-sapiranga-rs-abre-processo-seletivo-com-31-vagas
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Enem 2026 é porta de entrada para <b>concurso</b> da Fundação João Pinheiro - Portal Impactto
-URL:     https://portalimpactto.com.br/noticia/14351/enem-2026-e-porta-de-entrada-para-concurso-da-fundacao-joao-pinheiro-inscricoes-terminam-sexta-feira
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   Processos seletivos com salário de até R$ 3,2 mil entram na reta final; confira
-URL:     https://primeirapagina.com.br/emprego-e-concursos/processos-seletivos-com-salario-de-ate-r-32-mil-entram-na-reta-final-confira/
-Snippet: 
-
 Term:    seletivo concurso direito
-Title:   Prefeitura de Mata de São João (BA) abre 95 vagas em <b>seletivo</b> REDA
-URL:     https://concursosnobrasil.com/concursos/ba/2026/06/03/prefeitura-de-mata-de-sao-joao-ba-abre-95-vagas-em-seletivo-reda/
+Title:   <b>Concurso</b> público da Guarda Municipal de Natal avança e pode ter edital em breve.
+URL:     https://concursosrn.com.br/concurso-publico-da-guarda-municipal-de-natal-avanca-e-pode-ter-edital-em-breve/
 Snippet: 
 
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   3ª Turma Recursal dos Juizados Especiais do RN abre processo <b>seletivo</b> para <b>estagiário de</b> ...
-URL:     https://www.tjrn.jus.br/noticias/27693-3-turma-recursal-dos-juizados-especiais-do-rn-abre-processo-seletivo-para-estagiario-de-pos-em-direito
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Processo <b>seletivo</b> Prefeitura de Miracatu SP abre vagas e cadastro de reserva
-URL:     https://folha.qconcursos.com/n/processo-seletivo-prefeitura-de-miracatu-sp-abre-vagas-e-cadastro-de-reserva
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Inscrições para <b>concurso</b> da Educação vão até o próximo dia 8 em Volta Redonda
-URL:     https://www.voltaredonda.rj.gov.br/comunicacao/noticias/13-sme/11992-inscrições-para-concurso-da-educação-vão-até-o-próximo-dia-8-em-volta-redonda/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   MPMG abre seleção para estágio de pós-graduação em Direito em Itabirito | Rádio Itatiaia
-URL:     https://www.itatiaia.com.br/ouropreto/mpmg-abre-selecao-para-estagio-de-pos-graduacao-em-direito-em-itabirito/
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   PGE soma mais de mil inscritos para programas de <b>estágio</b> | Agência Pará
-URL:     https://www.agenciapara.com.br/noticia/77774/pge-soma-mais-de-mil-inscritos-para-programas-de-estagio
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   EMCOP divulga classificação final do <b>concurso</b> público | Portal da Prefeitura de Rio Preto
-URL:     https://www.riopreto.sp.gov.br/noticias/emcop-divulga-classificacao-final-do-concurso-publico
+Term:    seletivo concurso analista juridico
+Title:   <b>Concurso</b> DPDF: veja cargos vagos de <b>Analista</b>; novo edital iminente! - Magistrar
+URL:     https://magistrarcursos.com.br/blog/concurso-dpdf-veja-cargos-vagos-de-analista-novo-edital-iminente/
 Snippet: 
 
 Term:    seletivo concurso assessor juridico
-Title:   <b>Concurso</b> público Itajaí: 42 vagas e salários de até R$ 25 mil - G1 - Globo
-URL:     https://g1.globo.com/sc/santa-catarina/noticia/2026/06/02/concursos-publicos-itajai-42-vagas-salarios-r-25-mil-veja-cargos.ghtml
+Title:   Última chance: inscrições para <b>concurso</b> e seleção em MG e SP com salários de até R ...
+URL:     https://noticiasconcursos.com.br/ultima-chance-inscricoes-para-concurso-e-selecao-em-mg-e-sp-com-salarios-de-ate-r-7-49099-encerram-nesta-sexta-5/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Exército abre seleção para militares temporários com vagas para níveis fundamental, médio ...
+URL:     https://www.hojemais.com.br/tres-lagoas/noticia/cotidiano/exercito-abre-selecao-para-militares-temporarios-com-vagas-para-niveis-fundamental-medio-e-superior
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   IFSP Lança Edital de Seleção Para 600 Vagas em Cursos de Graduação Gratuitos e EAD ...
+URL:     https://www.pebsp.com/ifsp-lanca-edital-de-selecao-para-600-vagas-em-cursos-de-graduacao-gratuitos-e-ead-em-tecnologia-dcs/
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   Resultado final do <b>concurso</b> da Câmara Municipal de Manaus é divulgado; confira - G1
+URL:     https://g1.globo.com/am/amazonas/utilidade-publica/noticia/2026/06/04/resultado-final-do-concurso-da-camara-municipal-de-manaus-e-divulgado-confira.ghtml
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Homologado resultado do <b>Concurso</b> Público para Técnicos e Analistas Universitários
+URL:     https://www.uemg.br/noticias-1/23247-homologado-resultado-do-concurso-publico-para-tecnicos-e-analistas-universitarios
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Saiba os detalhes da prova discursiva da Residência Jurídica da PGM Niterói!
+URL:     https://cj.estrategia.com/portal/saiba-os-detalhes-da-prova-discursiva-da-residencia-juridica-da-pgm-niteroi/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Prefeitura de São Sebastião do Passé (BA) abre mais de 130 vagas em <b>seletivo</b>
+URL:     https://concursosnobrasil.com/concursos/ba/2026/06/03/prefeitura-de-sao-sebastiao-do-passe-ba-abre-mais-de-130-vagas-em-seletivo/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Prefeitura de Caicó prepara estudos para novo <b>concurso</b> público municipal - Portal N10
+URL:     https://portaln10.com.br/concursos/rn-concursos/prefeitura-de-caico-prepara-estudos-para-novo-concurso-publico-municipal-342604/
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   Funai envia pedido de novo <b>concurso</b> público para 2027 com 2.568 vagas
+URL:     https://contilnetnoticias.com.br/editais-concursos/funai-envia-pedido-de-novo-concurso-publico-para-2027-com-2-568-vagas/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/advogado-programas-de-assistencia-social-abrangente/55
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   <b>Concurso</b> da Prefeitura de Volta Redonda tem vagas para docentes de níveis médio e superior
+URL:     https://povonarua.com.br/concurso-da-prefeitura-de-volta-redonda-tem-vagas-para-docentes-de-niveis-medio-e-superior/
 Snippet: 
 
 Term:    seletivo concurso estagio de pos graduacao direito
-Title:   500 vagas de <b>estágio</b> para estudantes de <b>direito</b>, psicologia e serviço social
-URL:     https://www.correiobraziliense.com.br/euestudante/estagio/2026/06/7434246-500-vagas-de-estagio-para-estudantes-de-direito-psicologia-e-servico-social.html
+Title:   SEDUC abre inscrições para contratação de Professores em 2027 - PEBSP
+URL:     https://www.pebsp.com/seduc-abre-inscricoes-para-contratacao-de-professores-em-2027/
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   PGE-SP tem processo <b>seletivo</b> com 3 vagas em áreas administrativas - ACidade ON Ribeirão Preto
+URL:     https://www.acidadeon.com/ribeiraopreto/economia/pge-sp-tem-processo-seletivo-com-3-vagas-em-areas-administrativas/
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   Florianópolis demite 209 grevistas e oferece PSS emergencial como resposta. - JASB
+URL:     https://www.jasb.com.br/2026/06/florianopolis-demite209.html
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   Prefeitura de Colorado (RS) abre vaga em edital de <b>seletivo</b> - Concursos no Brasil
+URL:     https://concursosnobrasil.com/concursos/rs/2026/06/04/prefeitura-de-colorado-rs-abre-vaga-em-edital-de-seletivo/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   ANAC solicita novo <b>concurso</b> com 169 vagas e salários de até R$ 16,4 mil
+URL:     https://academiaconcursos.com.br/anac-solicita-concurso-169-vagas-salarios-ate-16-mil/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Funai divulga resultado preliminar de processo <b>seletivo</b> simplificado para proteção territorial
+URL:     https://www.gov.br/funai/pt-br/assuntos/noticias/2026/funai-divulga-resultado-preliminar-de-processo-seletivo-simplificado-para-protecao-territorial
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> Receita Federal: veja cargos vagos de Auditor e Analista; novo edital previsto para 2027!
+URL:     https://magistrarcursos.com.br/blog/concurso-receita-federal-veja-cargos-vagos-de-auditor-e-analista-novo-edital-previsto-para-2027/
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   <b>Concurso</b> PGE/RN: locais de prova para Analista Jurídico serão divulgados em 12 de junho
+URL:     https://portaln10.com.br/concursos/rn-concursos/concurso-pge-rn-locais-de-prova-para-analista-juridico-serao-divulgados-em-12-de-junho-342601/
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   5 Editais abertos para Especialização EAD com mais de 1.000 vagas - PEBSP
+URL:     https://www.pebsp.com/5-editais-abertos-para-especializacao-ead-com-mais-de-1-000-vagas/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Qualin Faculdade de Saúde abre processo <b>seletivo</b> para contratação de professores do ...
+URL:     https://www.tnh1.com.br/noticia/nid/qualin-faculdade-de-saude-abre-processo-seletivo-para-contratacao-de-professores-do-curso-de-medicina-em-penedo/
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   <b>Concurso</b> Sefaz AL 2026 confirma Cebraspe e oferece 50 oportunidades para Auditor Fiscal
+URL:     https://academiaconcursos.com.br/concurso-sefaz-al-2026-cebraspe-50-vagas/
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   Instituto Federal do Paraná Palmas PR abre processo <b>seletivo</b> simplificado professor visitante 1 vaga
+URL:     https://folha.qconcursos.com/n/instituto-federal-do-parana-palmas-pr-abre-processo-seletivo-simplificado-professor-visitante-1-vaga
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   MPF convoca candidato do Acre para entrevista de heteroidentificação em seleção de ...
+URL:     https://ac24horas.com/2026/06/04/mpf-convoca-candidato-do-acre-para-entrevista-de-heteroidentificacao-em-selecao-de-estagio-de-pos-graduacao/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Concursos em Varginha MG: guia de editais abertos, vagas e salários em 2026
+URL:     https://www.varginhaonline.com.br/vagas-de-emprego/concursos-em-varginha/
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   Processo <b>Seletivo</b> Prefeitura de Tramandaí RS abre vagas para Cadastrador REURB
+URL:     https://concursossc.com.br/processo-seletivo-prefeitura-de-tramandai-rs-abre-vagas-para-cadastrador-reurb/
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   FUNAI pede 2.568 vagas em <b>concurso</b> para 2027 e mira reforço na proteção indígena
+URL:     https://uniten.com.br/concurso-funai-2027-2568-vagas-reforco/
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   CONSUN destaca crescimento no Vestibular de Inverno e reforça necessidade de um plano ...
+URL:     https://j.pucsp.br/noticia/consun-destaca-crescimento-no-vestibular-de-inverno-e-reforca-necessidade-de-um-plano-de-aposentadoria-adequado
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   <b>Concurso</b> ALEPA terá novo edital até o fim do ano! - Blog Gran Cursos Online
+URL:     https://blog.grancursosonline.com.br/concurso-alepa-anunciado-2026/
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/especialista-em-politicas-e-gestao-da-saude-epgs-nivel-i-grau-a-geologia-abrangente/46
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   IFMT abre processo <b>seletivo</b> para cursos <b>técnicos</b> subsequentes com 140 vagas em Cuiabá
+URL:     https://issoenoticia.com.br/ifmt-abre-processo-seletivo-para-cursos-tecnicos-subsequentes-com-140-vagas-em-cuiaba/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   <b>Concurso</b> do TCE-RN divulga resultado final da prova discursiva e convoca para novas etapas
+URL:     https://portaln10.com.br/concursos/rn-concursos/concurso-do-tce-rn-avanca-com-resultado-final-da-discursiva-e-convocacao-para-proximas-etapas-342623/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/fiscal-em-vigilancia-sanitaria-engenharia-civil-arquitetura-abrangente/59
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   <b>Concurso</b> e seleção da Prefeitura com vagas na área da saúde e segurança encerram ...
+URL:     https://noticiasconcursos.com.br/concurso-e-selecao-da-prefeitura-com-vagas-na-area-da-saude-e-seguranca-encerram-inscricoes-em-5-de-junho/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/analista-judiciario-apoio-especializado-controle-interno-abrangente/83
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   Câmara de Curitibanos (SC) oferece até R$ 8,9 mil em <b>concurso</b>
+URL:     https://concursosnobrasil.com/concursos/sc/2026/06/03/camara-de-curitibanos-sc-oferece-ate-r-89-mil-em-concurso/
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   CEPHRECE de Nova Russas (CE) abre 59 vagas em edital de <b>seletivo</b>
+URL:     https://concursosnobrasil.com/concursos/ce/2026/06/04/cephrece-de-nova-russas-ce-abre-59-vagas-em-edital-de-seletivo/
+Snippet: 
+
+Term:    seletivo concurso residencia juridica
+Title:   EBSERH abre vagas em <b>seletivo</b> na área de TI com salário de R$ 9,8 mil
+URL:     https://concursosnobrasil.com/concursos/2026/06/04/ebserh-abre-vagas-em-seletivo-na-area-de-ti-com-salario-de-r-98-mil/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Sesab convoca mais de 170 profissionais para reforçar assistência à saúde na Bahia
+URL:     https://www.saude.ba.gov.br/2026/06/04/sesab-convoca-mais-de-170-profissionais-para-reforcar-assistencia-a-saude-na-bahia/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Emater abre processo <b>seletivo</b> com salários acima de R$ 4 mil no Pará - DOL
+URL:     https://dol.com.br/concursos/estaduais/943645/emater-abre-processo-seletivo-com-salarios-acima-de-r-4-mil-no-para
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Brigada Militar-RS abre edital com 620 vagas temporárias e salários de até R$ 17,2 mil
+URL:     https://www.itatiaia.com.br/emprego-e-concursos/brigada-militar-rs-abre-edital-com-620-vagas-temporarias-e-salarios-de-ate-r-172-mil/
 Snippet: 
 
