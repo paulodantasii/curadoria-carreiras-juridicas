@@ -17,6 +17,12 @@ def setup_logging(log_file: str = LOG_FILE, level: int = logging.INFO) -> loggin
 
     formatter = logging.Formatter(LOG_FORMAT, DATE_FORMAT)
 
+    if hasattr(sys.stdout, "reconfigure"):
+        try:
+            sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
     console = logging.StreamHandler(sys.stdout)
     console.setFormatter(formatter)
     root.addHandler(console)

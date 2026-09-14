@@ -24,3 +24,7 @@ run.log
 # OS
 .DS_Store
 Thumbs.db
+
+# Backups & Secrets
+*.bak
+.env

@@ -8,8 +8,10 @@ This module just "wires" the pipeline: link/alert collection, AI analysis,
 report generation. Constants live in config.py, persistence in storage.py,
 parsing/HTTP in extractor.py, AI in ai.py, HTML in report.py.
 """
+import argparse
 import logging
 import os
+import sys
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
@@ -18,7 +20,11 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
-from ai import evaluate_relevance, consolidate_groups
+from ai import (
+    consolidate_groups,
+    evaluate_batch,
+    triage_item,
+)
 from config import (
     API_PAUSE,
     GOOGLE_ALERTS_FEEDS,
@@ -145,8 +151,8 @@ def collect_all_alerts() -> list:
 
 
 # Análise / Analysis
-def _run_ai(item: dict, db: dict, relevant_items: list, now_utc: str, timeout: int) -> str:
-    """Núcleo compartilhado entre análise inicial e retry / Shared core for initial analysis and retry"""
+def _triage_single(item: dict, db: dict, candidate_items: list, now_utc: str, timeout: int) -> str:
+    """Extrai conteúdo e executa a Triagem Ampla (Flash Lite) / Extracts page and runs Lite triage"""
     url = item["url"]
     source = item.get("source", "scraping")
 
@@ -163,30 +169,25 @@ def _run_ai(item: dict, db: dict, relevant_items: list, now_utc: str, timeout: i
         register_url_failure(db, url, "empty", source, now_utc)
         return "error"
 
-    title = real_title or item.get("title", "")  # fallback de título da listagem (2.5)
-    evaluation = evaluate_relevance(url, title, text)
-    reason = evaluation.get("reason", "")
-    logger.info("→ %s", evaluation.get("raw_response", reason))
+    title = real_title or item.get("title", "")
+    is_candidate = triage_item(url, title, text)
 
-    if reason == "empty response from AI":
-        register_url_failure(db, url, "ai_empty", source, now_utc)
-        return "ai_error"
+    if not is_candidate:
+        logger.info("  ↳ [LITE] Descartado: sem relação com carreiras jurídicas.")
+        record_processed(db, url, source, now_utc)
+        return "discarded"
 
-    record_processed(db, url, source, now_utc)
-
-    if evaluation.get("relevant"):
-        relevant_items.append({
-            **item,
-            "real_title": real_title,
-            "reason": reason,
-            "career": evaluation.get("career", ""),
-            "group": evaluation.get("group", ""),
-        })
-    return "ok"
+    logger.info("  ↳ [LITE] Pré-aprovado para refinamento Flash.")
+    candidate_items.append({
+        **item,
+        "real_title": real_title,
+        "text": text,
+    })
+    return "candidate"
 
 
-def analyze_item(item: dict, db: dict, relevant_items: list, now_utc: str) -> str:
-    """Análise de um item, com checagem prévia de bloqueios e cooldown / Item analysis with upfront block/cooldown checks"""
+def analyze_item(item: dict, db: dict, candidate_items: list, now_utc: str) -> str:
+    """Triagem inicial de um item com verificação prévia de bloqueios e cooldown"""
     url = item["url"]
     if is_domain_blocked(db, url):
         d = urlparse(url).netloc.replace("www.", "")
@@ -196,13 +197,13 @@ def analyze_item(item: dict, db: dict, relevant_items: list, now_utc: str) -> st
         failures = db[url].get("consecutive_failures", 0)
         logger.info("URL em cooldown (%d falhas), pulando.", failures)
         return "cooldown"
-    return _run_ai(item, db, relevant_items, now_utc, timeout=20)
+    return _triage_single(item, db, candidate_items, now_utc, timeout=20)
 
 
-def process_retry(item: dict, db: dict, relevant_items: list, now_utc: str, timeout: int, attempt_num: int) -> str:
-    """Retry de itens que deram timeout, com timeout reduzido / Retry of items that timed out, with shorter timeout"""
+def process_retry(item: dict, db: dict, candidate_items: list, now_utc: str, timeout: int, attempt_num: int) -> str:
+    """Retry de extração para itens que deram timeout com timeout progressivo reduzido"""
     logger.info("Retry %d/3 (%ds) em %s", attempt_num, timeout, item["url"])
-    return _run_ai(item, db, relevant_items, now_utc, timeout=timeout)
+    return _triage_single(item, db, candidate_items, now_utc, timeout=timeout)
 
 
 # Identificação de novos itens / New item identification
@@ -318,26 +319,55 @@ def _elapsed(t0: float) -> str:
     return f"{(time.time() - t0):.1f}s"
 
 
-def _populate_first_run(db: dict, all_links: dict, alerts_links: set, now_utc: str, date_str: str) -> None:
-    """Primeira execução: popula a base e gera relatório vazio / First run: populates DB and emits an empty report"""
-    logger.info("Primeira execução: populando a base de dados.")
+def _populate_sync(db: dict, all_links: dict, alerts_links: set, now_utc: str, date_str: str, is_first_run: bool = False) -> None:
+    """Sincroniza/popula a base de dados com as URLs atuais sem executar chamadas de IA"""
+    action_name = "Primeira execução" if is_first_run else "Repovoamento manual (--populate-only)"
+    logger.info("%s: sincronizando a base de dados com links ativos hoje.", action_name)
+    added_count = 0
+    updated_count = 0
     for url in all_links:
-        db[url] = {
-            "first_seen": now_utc,
-            "last_seen": now_utc,
-            "consecutive_absences": 0,
-            "source": "alert" if url in alerts_links else "scraping",
-        }
+        source = "alert" if url in alerts_links else "scraping"
+        if url not in db:
+            db[url] = {
+                "first_seen": now_utc,
+                "last_seen": now_utc,
+                "consecutive_absences": 0,
+                "source": source,
+            }
+            added_count += 1
+        else:
+            db[url]["last_seen"] = now_utc
+            db[url]["consecutive_absences"] = 0
+            db[url]["source"] = source
+            updated_count += 1
     save_database(db)
+    logger.info(
+        "Base sincronizada com sucesso: %d adicionadas, %d atualizadas (Total: %d URLs). Zero chamadas de IA.",
+        added_count,
+        updated_count,
+        len(db),
+    )
     with open(OUTPUT_NEW_LINKS, "w", encoding="utf-8") as f:
-        f.write(f"Primeira execução em {now_utc}.\nBase criada com {len(db)} links.\nNenhum link 'novo' acusado.\n")
+        f.write(
+            f"Sincronização ({action_name}) em {now_utc}.\n"
+            f"Base atualizada com {len(db)} links ({added_count} novos, {updated_count} atualizados).\n"
+            f"Nenhum link 'novo' para processamento de IA.\n"
+        )
     with open(OUTPUT_RELEVANT, "w", encoding="utf-8") as f:
-        f.write(f"Primeira execução em {now_utc}.\nNenhum link relevante acusado.\n")
-    with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
-        f.write(generate_html([], date_str, 0, 0))
+        f.write(
+            f"Sincronização ({action_name}) em {now_utc}.\n"
+            f"Nenhum link relevante acusado (modo sem IA).\n"
+        )
+    if is_first_run:
+        with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
+            f.write(generate_html([], date_str, 0, 0))
 
 
 def main():
+    parser = argparse.ArgumentParser(description="CuradorIA - Coleta e curadoria de concursos jurídicos")
+    parser.add_argument("--populate-only", action="store_true", help="Apenas sincroniza a base com as URLs ativas sem chamar a IA")
+    args = parser.parse_args()
+
     setup_logging()
     run_start = time.time()
     now_utc = datetime.now(timezone.utc).isoformat()
@@ -346,6 +376,8 @@ def main():
 
     logger.info("=" * 60)
     logger.info("CuradorIA de Carreiras Jurídicas — Execução: %s", date_str)
+    if args.populate_only:
+        logger.info("MODO: --populate-only ativo (repovoamento sem chamadas de IA)")
     logger.info("=" * 60)
 
     db = load_database()
@@ -374,8 +406,8 @@ def main():
         if url not in all_links:
             all_links[url] = ""
 
-    if first_run:
-        _populate_first_run(db, all_links, alerts_links, now_utc, date_str)
+    if first_run or args.populate_only:
+        _populate_sync(db, all_links, alerts_links, now_utc, date_str, is_first_run=first_run)
         return
 
     new_scraping, new_alerts, retried_after_cooldown = _identify_new_items(
@@ -392,10 +424,18 @@ def main():
 
     _write_new_links_file(new_scraping, new_alerts, len(removed_links), len(db), now_utc)
 
-    logger.info("Analisando %d links novos via IA...", total_new)
-    relevant_items: list = []
+    logger.info("Iniciando Etapa 1: Triagem de %d novos links via Gemini Flash Lite...", total_new)
+    candidate_items: list = []
     timeout_queue: list = []
-    results_count = {"ok": 0, "blocked": 0, "cooldown": 0, "403": 0, "timeout": 0, "error": 0, "ai_error": 0}
+    results_count = {
+        "candidate": 0,
+        "discarded": 0,
+        "blocked": 0,
+        "cooldown": 0,
+        "403": 0,
+        "timeout": 0,
+        "error": 0,
+    }
 
     all_new_items = [
         {"url": item["url"], "title": item.get("title", ""), "source": "scraping"}
@@ -407,13 +447,11 @@ def main():
     for i, item in enumerate(all_new_items, 1):
         source_tag = "alerta" if item.get("source") == "alert" else "scraping"
         logger.info("[%d/%d] [%s] %s", i, total_new, source_tag, item["url"])
-        result = analyze_item(item, db, relevant_items, now_utc)
+        result = analyze_item(item, db, candidate_items, now_utc)
         results_count[result] = results_count.get(result, 0) + 1
         if result == "timeout":
             timeout_queue.append(item)
-        if result == "ok":
-            time.sleep(API_PAUSE)
-    logger.info("Análise inicial: %s", _elapsed(t0))
+    logger.info("Triagem inicial concluída em %s (%d pré-aprovados)", _elapsed(t0), len(candidate_items))
 
     RETRY_TIMEOUTS = [10, 5]
     for i, timeout_sec in enumerate(RETRY_TIMEOUTS):
@@ -424,22 +462,60 @@ def main():
         logger.info("Retentando %d link(s) com timeout (tentativa %d, %ds)...", len(timeout_queue), attempt_num, timeout_sec)
         next_queue = []
         for item in timeout_queue:
-            result = process_retry(item, db, relevant_items, now_utc, timeout_sec, attempt_num)
+            result = process_retry(item, db, candidate_items, now_utc, timeout_sec, attempt_num)
             results_count[result] = results_count.get(result, 0) + 1
             if result == "timeout":
                 if has_next:
                     next_queue.append(item)
                 else:
                     logger.warning("TIMEOUT DEFINITIVO em %s — registrado para cooldown.", item["url"])
-            if result == "ok":
-                time.sleep(API_PAUSE)
         timeout_queue = next_queue
+
+    relevant_items: list = []
+    if candidate_items:
+        batch_size = 3
+        total_batches = (len(candidate_items) + batch_size - 1) // batch_size
+        logger.info(
+            "Iniciando Etapa 2: Validação analítica de %d candidatos em %d lotes via Gemini Flash (Extended Thinking)...",
+            len(candidate_items),
+            total_batches,
+        )
+        t_flash = time.time()
+
+        for b_idx in range(0, len(candidate_items), batch_size):
+            batch = candidate_items[b_idx : b_idx + batch_size]
+            current_batch_num = (b_idx // batch_size) + 1
+            logger.info("Processando lote %d/%d (%d notícias)...", current_batch_num, total_batches, len(batch))
+
+            evaluations = evaluate_batch(batch)
+            for cand, eval_result in zip(batch, evaluations):
+                url = cand["url"]
+                source = cand.get("source", "scraping")
+                record_processed(db, url, source, now_utc)
+
+                if eval_result.get("relevant"):
+                    career = eval_result.get("career", "administrativo")
+                    group = eval_result.get("group", "")
+                    reason = eval_result.get("reason", "")
+                    logger.info("  ✓ [FLASH CONFIRMADO] [%s | %s]: %s", career, group, reason[:120])
+                    relevant_items.append({
+                        **cand,
+                        "reason": reason,
+                        "career": career,
+                        "group": group,
+                    })
+                else:
+                    logger.info("  ✗ [FLASH FALSO POSITIVO]: %s", eval_result.get("reason", "")[:120])
+
+        logger.info("Validação Flash concluída em %s", _elapsed(t_flash))
+    else:
+        logger.info("Nenhum candidato pré-aprovado na Triagem Lite; chamadas Flash dispensadas.")
 
     save_database(db)
     db_size_end = sum(1 for k in db if not k.startswith("_"))
 
     if len(relevant_items) > 1:
-        logger.info("Executando passe de consolidação de grupos via IA...")
+        logger.info("Iniciando Etapa 3: Consolidação e unificação de grupos via Gemini Flash...")
         consolidate_groups(relevant_items)
 
     _write_relevant_file(relevant_items, total_new, now_utc)
@@ -503,16 +579,16 @@ def main():
     logger.info("Links removidos:  %d", len(removed_links))
     logger.info("Base: %d → %d URLs", db_size_start, db_size_end)
     logger.info(
-        "IA — OK: %d | bloqueado: %d | cooldown: %d | 403: %d | timeout: %d | erro: %d",
-        results_count.get("ok", 0),
+        "Triagem Lite:   %d candidatos | %d descartados | %d bloqueados | %d cooldown | %d timeouts/erros",
+        results_count.get("candidate", 0),
+        results_count.get("discarded", 0),
         results_count.get("blocked", 0),
         results_count.get("cooldown", 0),
-        results_count.get("403", 0),
-        results_count.get("timeout", 0),
-        results_count.get("error", 0) + results_count.get("ai_error", 0),
+        results_count.get("timeout", 0) + results_count.get("error", 0) + results_count.get("403", 0),
     )
-    logger.info("Relevantes:       %d/%d em %d grupo(s)", len(relevant_items), total_new, len(groups))
-    logger.info("Relatório:        %s", REPORT_URL)
+    logger.info("Validação Flash: %d confirmados relevantes de %d pré-selecionados", len(relevant_items), len(candidate_items))
+    logger.info("Grupos finais:   %d grupo(s)", len(groups))
+    logger.info("Relatório:       %s", REPORT_URL)
     logger.info("=" * 60)
 
 
