@@ -1,3 +1,507 @@
-Sincronização (Repovoamento manual (--populate-only)) em 2026-09-13T23:41:24.411773+00:00.
-Base atualizada com 1649 links (607 novos, 228 atualizados).
-Nenhum link 'novo' para processamento de IA.
+Verificação: 2026-09-14T00:21:06.740203+00:00
+Links novos encontrados: 155
+  Scraping: 140
+  Alertas:  15
+Removidos da base: 71
+Total na base: 1523
+============================================================
+
+── NEW (scraping) ──
+
+Concursos 2027
+  https://www.acheconcursos.com.br/concursos-2027
+
+Concurso Câmara de Rio Branco: salário de R$ 6,3 mil e 13 vagas; veja edital
+  https://www.acheconcursos.com.br/concursos-acre/concurso-camara-de-rio-branco-salario-de-r-6-3-mil-e-13-vagas-veja-edital-93227
+
+Concurso Bombeiros (CBM-AL) 2026: Inscrição é reaberta para Soldado e Oficial
+  https://www.acheconcursos.com.br/concursos-alagoas/concurso-bombeiros-al-2026-soldado-oficial-90321
+
+Concurso SESA-AP 2026: Sai edital com 4.210 vagas
+  https://www.acheconcursos.com.br/concursos-amapa/concurso-sesa-ap-2026-sai-edital-com-4-210-vagas-93234
+
+Processo seletivo SENAR/AR-GO abre vagas de até R$ 11.863
+  https://www.acheconcursos.com.br/concursos-goias/processo-seletivo-senar-ar-go-abre-vagas-de-ate-r-11-863-93224
+
+Edital Canarana-MT 2026: Prefeitura abre vagas de até R$ 8.214
+  https://www.acheconcursos.com.br/concursos-mato-grosso/edital-canarana-mt-2026-prefeitura-abre-vagas-8-214-93229
+
+Câmara de Augusto de Lima-MG abre concurso em 2026
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-camara-augusto-lima-mg-2026-91139
+
+Concurso Conceição Barra de Minas-MG 2026: Sai edital com vagas de R$ 16 mil
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-conceicao-barra-de-minas-mg-2026-sai-edital-com-vagas-de-r-16-mil-91060
+
+Concurso de Itacarambi-MG 2026: Câmara abre vagas
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-de-itacarambi-mg-2026-camara-abre-vagas-91248
+
+Edital de Campanário-MG 2026: Concurso abre vagas de até R$ 3.820
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-edital-campanario-mg-2026-91452
+
+Concurso Prefeitura Carmo da Mata-MG: Sai edital com 21 vagas de R$ 3,8 mil
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-prefeitura-carmo-da-mata-mg-sai-edital-com-21-vagas-de-r-3-8-mil-91407
+
+Prefeitura de Dores do Indaiá-MG: Edital 2026 abre 155 vagas via concurso
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-prefeitura-dores-indaia-mg-edital-2026-abre-155-vagas-91310
+
+Concurso Prefeitura de Oliveira Fortes-MG 2026 - Edital e Inscrição
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-prefeitura-oliveira-fortes-mg-2026-edital-inscricao-91274
+
+Concurso Prefeitura Paracatu-MG 2026: Inscrição para 272 vagas é prorrogada
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-prefeitura-paracatu-mg-2026-edital-abre-272-vagas-89095
+
+Câmara de Bom Despacho-MG abre concurso público com salários de até R$ 6.210
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-publico-camara-bom-despacho-mg-91189
+
+ITABIRAPREV-MG abre concurso público para 3 cargos
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-publico-itabiraprev-mg-abre-3-cargos-91149
+
+Concurso Unimontes-MG 2026 abre 20 vagas de até R$ 8,2 mil
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-unimontes-mg-2026-abre-20-vagas-91118
+
+Fundação João Pinheiro-MG abre concurso para 30 vagas em 2026
+  https://www.acheconcursos.com.br/concursos-minas-gerais/fundacao-joao-pinheiro-mg-abre-concurso-para-30-vagas-em-2026-91117
+
+Prefeitura de Abre Campo-MG abre vagas para Agente de Saúde e Endemias
+  https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-prefeitura-campo-mg-abre-vagas-agente-saude-endemias-91081
+
+Prefeitura de Conceição da Barra de Minas-MG abre vagas para Agente de Saúde e Endemias
+  https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-prefeitura-conceicao-barra-minas-mg-vagas-agente-saude-endemias-91076
+
+Prefeitura mineira abre edital para Agente de Saúde e paga R$ 3 mil
+  https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-prefeitura-mineira-abre-processo-seletivo-agente-saude-3-mil-91123
+
+Edital Ivaiporã-PR: Prefeitura abre 15 vagas com salários de até R$ 18 mil
+  https://www.acheconcursos.com.br/concursos-parana/edital-ivaipora-pr-prefeitura-abre-15-vagas-18-mil-93222
+
+UTFPR abre processo seletivo com vagas de até R$ 8.340
+  https://www.acheconcursos.com.br/concursos-parana/edital-utfpr-78-2026-para-professores-e-publicado-93218
+
+Nova Tebas-PR publica edital com 37 vagas imediatas e salários de até R$ 20,6 mil
+  https://www.acheconcursos.com.br/concursos-parana/nova-tebas-pr-publica-edital-com-37-vagas-20-6-mil-93231
+
+Edital Nísia Floresta-RN: Prefeitura e Câmara abrem 161 vagas; veja cargos e salários
+  https://www.acheconcursos.com.br/concursos-rio-grande-do-norte/edital-nisia-floresta-rn-prefeitura-e-camara-161-vagas-93232
+
+Prefeitura de Ouro-SC abre concurso com vagas de até R$ 5.595
+  https://www.acheconcursos.com.br/concursos-santa-catarina/prefeitura-de-ouro-sc-abre-concurso-com-vagas-5-595-93215
+
+Concurso Prefeitura de Guarulhos-SP 2026: Sai edital com 200 vagas
+  https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-prefeitura-de-guarulhos-sp-2026-sai-edital-para-guarda-civil-municipal-93213
+
+Concurso Prefeitura de São José do Rio Pardo-SP 2026: Edital publicado
+  https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-prefeitura-de-sao-jose-do-rio-pardo-sp-2026-edital-publicado-93237
+
+USP realiza concurso público para Professor Titular com salário de R$ 24.309
+  https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-publico-usp-realiza-professor-titular-91354
+
+Concurso Tatuí-SP 2026: Prefeitura abre 107 vagas de até R$ 2,1 mil
+  https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-tatui-sp-2026-prefeitura-abre-107-vagas-de-ate-r-2-1-mil-93236
+
+Consórcio de Saúde 8 de Abril-SP abre vagas de até R$ 4,5 mil
+  https://www.acheconcursos.com.br/concursos-sao-paulo/consorcio-de-saude-8-de-abril-sp-abre-vagas-de-ate-r-4-5-mil-93238
+
+Edital Prefeitura de Cajamar-SP 2026: vagas são abertas na área da educação
+  https://www.acheconcursos.com.br/concursos-sao-paulo/edital-prefeitura-de-cajamar-sp-2026-vagas-sao-abertas-93217
+
+Prefeitura de Buri-SP abre dois editais de até R$ 6.208
+  https://www.acheconcursos.com.br/concursos-sao-paulo/prefeitura-de-buri-sp-abre-dois-editais-de-ate-r-6-208-93226
+
+Prefeitura de Cotia-SP abre edital com 73 vagas e salários de até R$ 5,1 mil
+  https://www.acheconcursos.com.br/concursos-sao-paulo/prefeitura-de-cotia-sp-abre-edital-73-vagas-salarios-5-1-mil-93230
+
+Prefeitura de Mauá-SP abre concurso com 100 vagas para Guarda Municipal
+  https://www.acheconcursos.com.br/concursos-sao-paulo/prefeitura-de-maua-sp-abre-concurso-com-100-vagas-93214
+
+Prefeitura de Roseira-SP abre 17 vagas de até R$ 3.242
+  https://www.acheconcursos.com.br/concursos-sao-paulo/prefeitura-de-roseira-sp-abre-17-vagas-de-ate-r-3-242-93235
+
+Processo Seletivo Prefeitura de Paulínia-SP: edital abre vagas para estágio
+  https://www.acheconcursos.com.br/concursos-sao-paulo/processo-seletivo-prefeitura-de-paulinia-sp-edital-abre-vagas-para-estagio-93228
+
+Câmara e Prefeitura de Trindade - GO divulgam retificações do processo seletivo e do concurso público
+  https://www.pciconcursos.com.br/noticias/camara-e-prefeitura-de-trindade-go-divulgam-retificacoes-do-processo-seletivo-e-do-concurso-publico
+
+EMATER - MG anuncia concurso público com salários de até R$ 7.321,75
+  https://www.pciconcursos.com.br/noticias/emater-mg-anuncia-concurso-publico-com-salarios-de-ate-7321
+
+IFPI abre concurso público para cargos técnico-administrativos em educação
+  https://www.pciconcursos.com.br/noticias/ifpi-abre-concurso-publico-para-cargos-tecnico-administrativos-em-educacao
+
+ITABIRAPREV - MG abre concurso público com salários de até R$ 6.280,77
+  https://www.pciconcursos.com.br/noticias/itabiraprev-mg-abre-concurso-publico-com-salarios-de-ate-6280
+
+Polícia Civil - BA prorroga inscrições do concurso público para Delegado, Investigador e Escrivão
+  https://www.pciconcursos.com.br/noticias/policia-civil-ba-prorroga-inscricoes-do-concurso-publico-para-delegado-investigador-e-escrivao
+
+Prefeitura de Abaetetuba - PA divulga nova retificação de concurso público
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-abaetetuba-pa-divulga-nova-retificacao-de-concurso-publico
+
+Prefeitura de Andradina - SP retifica concurso público para profissionais da educação
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-andradina-sp-retifica-concurso-publico-para-profissionais-da-educacao
+
+Prefeitura de Caruaru - PE abre concurso público para auditores e analistas fiscais
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-caruaru-pe-abre-concurso-publico-para-auditores-e-analistas-fiscais
+
+Prefeitura de Contagem - MG abre concurso público com salários de até R$ 13.305,57
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-contagem-mg-abre-concurso-publico-com-salarios-de-ate-13305
+
+Prefeitura de Corumbiara - RO abre processo seletivo com vagas para diversos cargos
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-corumbiara-ro-abre-processo-seletivo-com-vagas-para-diversos-cargos
+
+Prefeitura de Cotia - SP abre processo seletivo com vagas na área da educação
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-cotia-sp-abre-processo-seletivo-com-vagas-na-area-da-educacao
+
+Prefeitura de Cruz do Espírito Santo - PB abre concurso público com vagas para diversas áreas
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-cruz-do-espirito-santo-pb-abre-concurso-publico-com-vagas-para-diversas-areas
+
+Prefeitura de Paracatu - MG prorroga inscrições do concurso público com salários de até R$ 9.600,00
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-paracatu-mg-prorroga-inscricoes-do-concurso-publico-com-salarios-de-ate-9600
+
+Prefeitura de Patos de Minas - MG abre processo seletivo com vagas para médicos
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-patos-de-minas-mg-abre-processo-seletivo-com-vagas-para-medicos
+
+Prefeitura de Tatuí - SP abre concurso público para cargos de nível fundamental e médio
+  https://www.pciconcursos.com.br/noticias/prefeitura-de-tatui-sp-abre-concurso-publico-para-cargos-de-nivel-fundamental-e-medio
+
+SEAP - MA abre concurso público com vagas imediatas e cadastro de reserva
+  https://www.pciconcursos.com.br/noticias/seap-ma-abre-concurso-publico-com-vagas-imediatas-e-cadastro-de-reserva
+
+SEDUC e SEPLAG - CE abrem concurso público com vagas para professores
+  https://www.pciconcursos.com.br/noticias/seduc-e-seplag-ce-abrem-concurso-publico-com-vagas-para-professores
+
+SEPLAD e SEDUC - PA abrem concurso público com vagas para diversas áreas de atuação
+  https://www.pciconcursos.com.br/noticias/seplad-e-seduc-pa-abrem-concurso-publico-com-vagas-para-diversas-areas-de-atuacao
+
+SES e IASERJ - RJ abrem concurso público com vagas de nível médio e superior
+  https://www.pciconcursos.com.br/noticias/ses-e-iaserj-rj-abrem-concurso-publico-com-vagas-de-nivel-medio-e-superior
+
+SETEC Campinas - SP abre concurso público com salários de até R$ 10.428,05
+  https://www.pciconcursos.com.br/noticias/setec-campinas-sp-abre-concurso-publico-com-salarios-de-ate-10428
+
+Transpetro publica retificações de processos seletivos para diversos cargos
+  https://www.pciconcursos.com.br/noticias/transpetro-publica-retificacoes-de-processos-seletivos-para-diversos-cargos
+
+Abin enfrenta déficit de servidores de nível médio e aguarda autorização para novo concurso
+  https://www.pciconcursos.com.br/previstos/abin-enfrenta-deficit-de-servidores-de-nivel-medio-e-aguarda-autorizacao-para-novo-concurso
+
+ABIN solicita concurso com 301 vagas; pedido cobre 17,3% do déficit
+  https://www.pciconcursos.com.br/previstos/abin-solicita-concurso-com-301-vagas-pedido-cobre-17-3-do-deficit
+
+ALEMA avalia proposta de novo concurso; edital pode sair até dezembro
+  https://www.pciconcursos.com.br/previstos/alema-avalia-proposta-de-novo-concurso-edital-pode-sair-ate-dezembro
+
+Alepe aprova 35 vagas no MP de Pernambuco e reajuste para carreiras de apoio
+  https://www.pciconcursos.com.br/previstos/alepe-aprova-35-vagas-no-mp-de-pernambuco-e-reajuste-para-carreiras-de-apoio
+
+ANPD busca autorização para concurso com 50 vagas de especialista
+  https://www.pciconcursos.com.br/previstos/anpd-busca-autorizacao-para-concurso-com-50-vagas-de-especialista
+
+Bahia autoriza concursos na Segurança com 3.300 vagas para PM e Bombeiros
+  https://www.pciconcursos.com.br/previstos/bahia-autoriza-concursos-na-seguranca-com-3300-vagas-para-pm-e-bombeiros
+
+Câmara de Nilópolis (RJ) contrata banca e prepara novo concurso com 35 vagas
+  https://www.pciconcursos.com.br/previstos/camara-de-nilopolis-rj-contrata-banca-e-prepara-novo-concurso-com-35-vagas
+
+CGE-TO inicia preparação de concurso com 40 vagas para Analista de Controle Interno
+  https://www.pciconcursos.com.br/previstos/cge-to-inicia-preparacao-de-concurso-com-40-vagas-para-analista-de-controle-interno
+
+CNEN solicita ao MGI autorização para concurso com 340 vagas
+  https://www.pciconcursos.com.br/previstos/cnen-solicita-ao-mgi-autorizacao-para-concurso-com-340-vagas
+
+Comissão do concurso da CGE-TO é instituída e seleção terá 40 vagas
+  https://www.pciconcursos.com.br/previstos/comissao-do-concurso-da-cge-to-e-instituida-e-selecao-tera-40-vagas
+
+Comissão é autorizada para novo concurso da Gestão Governamental do Amapá
+  https://www.pciconcursos.com.br/previstos/comissao-e-autorizada-para-novo-concurso-da-gestao-governamental-do-amapa
+
+Concurso Bacen deve ser autorizado com 140 vagas; 120 para auditor e 20 para procurador
+  https://www.pciconcursos.com.br/previstos/concurso-bacen-deve-ser-autorizado-com-140-vagas-120-para-auditor-e-20-para-procurador
+
+Concurso Ceeteps: SP autoriza 561 vagas para auxiliar docente
+  https://www.pciconcursos.com.br/previstos/concurso-ceeteps-sp-autoriza-561-vagas-para-auxiliar-docente
+
+Concurso CGU terá 60 vagas para Auditor e possibilidade de ampliação para 120
+  https://www.pciconcursos.com.br/previstos/concurso-cgu-tera-60-vagas-para-auditor-e-possibilidade-de-ampliacao-para-120
+
+Concurso da Câmara de Cuiabá: comissão formada e previsão de 43 vagas
+  https://www.pciconcursos.com.br/previstos/concurso-da-camara-de-cuiaba-comissao-formada-e-previsao-de-43-vagas
+
+Concurso da Câmara de Cuiabá: edital em preparação com 43 vagas previstas
+  https://www.pciconcursos.com.br/previstos/concurso-da-camara-de-cuiaba-edital-em-preparacao-com-43-vagas-previstas
+
+Concurso da Educação do Ceará: Funece será banca; edital com 2 mil vagas para docentes
+  https://www.pciconcursos.com.br/previstos/concurso-da-educacao-do-ceara-funece-sera-banca-edital-com-2-mil-vagas-para-docentes
+
+Concurso da Guarda Municipal de São Gonçalo (RJ): Selecon é a banca; vagas, etapas e salários
+  https://www.pciconcursos.com.br/previstos/concurso-da-guarda-municipal-de-sao-goncalo-rj-selecon-e-a-banca-vagas-etapas-e-salarios
+
+Concurso DPU para Defensor: regulamento publicado e etapas definidas
+  https://www.pciconcursos.com.br/previstos/concurso-dpu-para-defensor-regulamento-publicado-e-etapas-definidas
+
+Concurso Inea RJ: governo em exercício sinaliza 150 vagas e edital em até dois meses
+  https://www.pciconcursos.com.br/previstos/concurso-inea-rj-governo-em-exercicio-sinaliza-150-vagas-e-edital-em-ate-dois-meses
+
+Concurso INPI: pedido de 502 vagas de nível superior é enviado ao MDIC
+  https://www.pciconcursos.com.br/previstos/concurso-inpi-pedido-de-502-vagas-de-nivel-superior-e-enviado-ao-mdic
+
+Concurso ManausPrev: banca será oficializada nos próximos dias e edital vem na sequência
+  https://www.pciconcursos.com.br/previstos/concurso-manausprev-banca-sera-oficializada-nos-proximos-dias-e-edital-vem-na-sequencia
+
+Concurso MME: pedido de autorização para 254 vagas de nível superior
+  https://www.pciconcursos.com.br/previstos/concurso-mme-pedido-de-autorizacao-para-254-vagas-de-nivel-superior
+
+Concurso para Procurador do Banco Central terá 20 vagas e seleção unificada com carreiras da AGU
+  https://www.pciconcursos.com.br/previstos/concurso-para-procurador-do-banco-central-tera-20-vagas-e-selecao-unificada-com-carreiras-da-agu
+
+Concurso PC AL pode ter vagas para agente e escrivão após parecer da Procuradoria-Geral
+  https://www.pciconcursos.com.br/previstos/concurso-pc-al-pode-ter-vagas-para-agente-e-escrivao-apos-parecer-da-procuradoria-geral
+
+Concurso PC BA: AOCP é a banca e edital segue previsto para maio, com 750 vagas
+  https://www.pciconcursos.com.br/previstos/concurso-pc-ba-aocp-e-a-banca-e-edital-segue-previsto-para-maio-com-750-vagas
+
+Concurso PC BA: edital volta a ser previsto para julho e oferecerá 750 vagas
+  https://www.pciconcursos.com.br/previstos/concurso-pc-ba-edital-volta-a-ser-previsto-para-julho-e-oferecera-750-vagas
+
+Concurso PC RJ: banca em fase final e 414 vagas autorizadas
+  https://www.pciconcursos.com.br/previstos/concurso-pc-rj-banca-em-fase-final-e-414-vagas-autorizadas
+
+Concurso PC TO: 452 vagas integram plano estratégico de Segurança Pública
+  https://www.pciconcursos.com.br/previstos/concurso-pc-to-452-vagas-integram-plano-estrategico-de-seguranca-publica
+
+Concurso PGM Manaus: FCC contratada; edital iminente e salário inicial de R$29.009,10
+  https://www.pciconcursos.com.br/previstos/concurso-pgm-manaus-fcc-contratada-edital-iminente-e-salario-inicial-de-29009
+
+Concurso PM PI: edital previsto para junho e mais de mil vagas
+  https://www.pciconcursos.com.br/previstos/concurso-pm-pi-edital-previsto-para-junho-e-mais-de-mil-vagas
+
+Concurso PM PI: FCC confirmada como banca; edital próximo e provas previstas para junho
+  https://www.pciconcursos.com.br/previstos/concurso-pm-pi-fcc-confirmada-como-banca-edital-proximo-e-provas-previstas-para-junho
+
+Concurso Polícia Científica SP: 397 vagas autorizadas; confira cargos, salários e áreas de atuação
+  https://www.pciconcursos.com.br/previstos/concurso-policia-cientifica-sp-397-vagas-autorizadas-confira-cargos-salarios-e-areas-de-atuacao
+
+Concurso Polícia Científica SP: comissões formadas e seleção com 397 vagas avança
+  https://www.pciconcursos.com.br/previstos/concurso-policia-cientifica-sp-comissoes-formadas-e-selecao-com-397-vagas-avanca
+
+Concurso Porto Alegre: Fundação La Salle organizará seleção para agente de fiscalização
+  https://www.pciconcursos.com.br/previstos/concurso-porto-alegre-fundacao-la-salle-organizara-selecao-para-agente-de-fiscalizacao
+
+Concurso SAPE SC: Fepese é escolhida como organizadora; 20 vagas e cadastro de reserva
+  https://www.pciconcursos.com.br/previstos/concurso-sape-sc-fepese-e-escolhida-como-organizadora-20-vagas-e-cadastro-de-reserva
+
+Concurso Saúde RJ: 287 vagas e edital previsto para junho
+  https://www.pciconcursos.com.br/previstos/concurso-saude-rj-287-vagas-e-edital-previsto-para-junho
+
+Concurso Seduc PA avança com escolha da banca e prevê 2 mil vagas
+  https://www.pciconcursos.com.br/previstos/concurso-seduc-pa-avanca-com-escolha-da-banca-e-preve-2-mil-vagas
+
+Concurso Sefaz AL: banca em definição e edital próximo
+  https://www.pciconcursos.com.br/previstos/concurso-sefaz-al-banca-em-definicao-e-edital-proximo
+
+Concurso Seplan AP: comissão formada inicia preparativos no Amapá
+  https://www.pciconcursos.com.br/previstos/concurso-seplan-ap-comissao-formada-inicia-preparativos-no-amapa
+
+Concurso Sesa/AP: 1.815 vagas previstas em quatro eixos de lotação
+  https://www.pciconcursos.com.br/previstos/concurso-sesa-ap-1815-vagas-previstas-em-quatro-eixos-de-lotacao
+
+Concurso Sesa AP: banca contratada e edital próximo de ser publicado
+  https://www.pciconcursos.com.br/previstos/concurso-sesa-ap-banca-contratada-e-edital-proximo-de-ser-publicado
+
+Concurso Sudam: pedido de 34 vagas é enviado ao MGI; edital projetado para 2027
+  https://www.pciconcursos.com.br/previstos/concurso-sudam-pedido-de-34-vagas-e-enviado-ao-mgi-edital-projetado-para-2027
+
+Concurso TCE AP: coordenação definida e novo edital em preparação
+  https://www.pciconcursos.com.br/previstos/concurso-tce-ap-coordenacao-definida-e-novo-edital-em-preparacao
+
+Concurso TCE-GO: FCC contratada para seleção de técnicos de controle externo
+  https://www.pciconcursos.com.br/previstos/concurso-tce-go-fcc-contratada-para-selecao-de-tecnicos-de-controle-externo
+
+Concurso TCE-MA: banca contratada, provas de múltipla escolha e edital iminente
+  https://www.pciconcursos.com.br/previstos/concurso-tce-ma-banca-contratada-provas-de-multipla-escolha-e-edital-iminente
+
+Concurso TCE-MA: banca definida e 40 vagas para níveis médio e superior
+  https://www.pciconcursos.com.br/previstos/concurso-tce-ma-banca-definida-e-40-vagas-para-niveis-medio-e-superior
+
+Concurso TCE-MA: Cebraspe contratado e edital próximo com 118 vagas autorizadas
+  https://www.pciconcursos.com.br/previstos/concurso-tce-ma-cebraspe-contratado-e-edital-proximo-com-118-vagas-autorizadas
+
+Concurso TJ AL: vaga de Analista (Oficial de Justiça e Avaliador) autorizada
+  https://www.pciconcursos.com.br/previstos/concurso-tj-al-vaga-de-analista-oficial-de-justica-e-avaliador-autorizada
+
+Concurso unificado AGU e Banco Central: autorização em análise e 170 vagas
+  https://www.pciconcursos.com.br/previstos/concurso-unificado-agu-e-banco-central-autorizacao-em-analise-e-170-vagas
+
+Defensoria Pública da Paraíba escolhe FCC para organizar seu primeiro concurso de servidores
+  https://www.pciconcursos.com.br/previstos/defensoria-publica-da-paraiba-escolhe-fcc-para-organizar-seu-primeiro-concurso-de-servidores
+
+FCC é escolhida para organizar o primeiro concurso da ABGF; edital previsto e provas até setembro
+  https://www.pciconcursos.com.br/previstos/fcc-e-escolhida-para-organizar-o-primeiro-concurso-da-abgf-edital-previsto-e-provas-ate-setembro
+
+Fundação Florestal SP avança no concurso: FCC contratada e edital iminente
+  https://www.pciconcursos.com.br/previstos/fundacao-florestal-sp-avanca-no-concurso-fcc-contratada-e-edital-iminente
+
+Governo de Pernambuco analisa novos concursos para a Segurança Pública
+  https://www.pciconcursos.com.br/previstos/governo-de-pernambuco-analisa-novos-concursos-para-a-seguranca-publica
+
+Governo do Pará confirma concurso da Polícia Civil com 237 vagas
+  https://www.pciconcursos.com.br/previstos/governo-do-para-confirma-concurso-da-policia-civil-com-237-vagas
+
+Guapimirim (RJ) avança com novo concurso: Instituto Access será a banca organizadora
+  https://www.pciconcursos.com.br/previstos/guapimirim-rj-avanca-com-novo-concurso-instituto-access-sera-a-banca-organizadora
+
+IBGE deve publicar editais com 9.667 vagas temporárias em junho
+  https://www.pciconcursos.com.br/previstos/ibge-deve-publicar-editais-com-9667-vagas-temporarias-em-junho
+
+IBGE estuda solicitar novo concurso com cerca de 900 vagas efetivas
+  https://www.pciconcursos.com.br/previstos/ibge-estuda-solicitar-novo-concurso-com-cerca-de-900-vagas-efetivas
+
+IBGE pede autorização para novo concurso com 900 vagas efetivas
+  https://www.pciconcursos.com.br/previstos/ibge-pede-autorizacao-para-novo-concurso-com-900-vagas-efetivas
+
+INCA solicita autorização para novo concurso com 1.496 vagas na área de Ciência e Tecnologia
+  https://www.pciconcursos.com.br/previstos/inca-solicita-autorizacao-para-novo-concurso-com-1496-vagas-na-area-de-ciencia-e-tecnologia
+
+Maricá (RJ) prepara editais com cerca de 900 vagas; Sanemar deve sair em junho e provas em agosto
+  https://www.pciconcursos.com.br/previstos/marica-rj-prepara-editais-com-cerca-de-900-vagas-sanemar-deve-sair-em-junho-e-provas-em-agosto
+
+Minas Gerais institui comissão do concurso para EPPGG; banca definida e 30 vagas
+  https://www.pciconcursos.com.br/previstos/minas-gerais-institui-comissao-do-concurso-para-eppgg-banca-definida-e-30-vagas
+
+Novo concurso da Caixa para técnico bancário está em estudo e pode ter Cesgranrio como banca
+  https://www.pciconcursos.com.br/previstos/novo-concurso-da-caixa-para-tecnico-bancario-esta-em-estudo-e-pode-ter-cesgranrio-como-banca
+
+Novo concurso da Polícia Penal de MT é confirmado; 283 aprovados de 2016 serão chamados
+  https://www.pciconcursos.com.br/previstos/novo-concurso-da-policia-penal-de-mt-e-confirmado-283-aprovados-de-2016-serao-chamados
+
+PC BA avança no novo concurso com 750 vagas e edital próximo
+  https://www.pciconcursos.com.br/previstos/pc-ba-avanca-no-novo-concurso-com-750-vagas-e-edital-proximo
+
+PM MA: MP amplia idade e ajusta altura mínima; banca definida e 1.000 vagas
+  https://www.pciconcursos.com.br/previstos/pm-ma-mp-amplia-idade-e-ajusta-altura-minima-banca-definida-e-1000-vagas
+
+PM PI reabre escolha da banca e mantém concurso com cerca de mil vagas
+  https://www.pciconcursos.com.br/previstos/pm-pi-reabre-escolha-da-banca-e-mantem-concurso-com-cerca-de-mil-vagas
+
+Polícia Científica de SP: 397 vagas autorizadas e escolha da banca em preparação
+  https://www.pciconcursos.com.br/previstos/policia-cientifica-de-sp-397-vagas-autorizadas-e-escolha-da-banca-em-preparacao
+
+Prefeitura de Macapá anuncia novo concurso público; edital é previsto para 2026
+  https://www.pciconcursos.com.br/previstos/prefeitura-de-macapa-anuncia-novo-concurso-publico-edital-e-previsto-para-2026
+
+PRF solicita autorização para 533 vagas nas áreas Policial e Administrativa
+  https://www.pciconcursos.com.br/previstos/prf-solicita-autorizacao-para-533-vagas-nas-areas-policial-e-administrativa
+
+Receita Federal pode ganhar autorização para novo concurso com 100 vagas, dizem fontes
+  https://www.pciconcursos.com.br/previstos/receita-federal-pode-ganhar-autorizacao-para-novo-concurso-com-100-vagas-dizem-fontes
+
+Rio das Ostras anuncia concurso para a Guarda Municipal com previsão de seleção em 2027
+  https://www.pciconcursos.com.br/previstos/rio-das-ostras-anuncia-concurso-para-a-guarda-municipal-com-previsao-de-selecao-em-2027
+
+Sanemar Maricá RJ: edital pronto e ajustes contratuais em andamento
+  https://www.pciconcursos.com.br/previstos/sanemar-marica-rj-edital-pronto-e-ajustes-contratuais-em-andamento
+
+Seduc-CE assina contrato com Funece e avança em concurso com 2 mil vagas para professores
+  https://www.pciconcursos.com.br/previstos/seduc-ce-assina-contrato-com-funece-e-avanca-em-concurso-com-2-mil-vagas-para-professores
+
+Sefaz DF atualiza conteúdo, redefine sindicância e reajusta taxa em aditivo; edital segue aguardado
+  https://www.pciconcursos.com.br/previstos/sefaz-df-atualiza-conteudo-redefine-sindicancia-e-reajusta-taxa-em-aditivo-edital-segue-aguardado
+
+Senappen solicita novo concurso para a área Penal Federal
+  https://www.pciconcursos.com.br/previstos/senappen-solicita-novo-concurso-para-a-area-penal-federal
+
+TCDF forma comissão do concurso para analista; preparativos do edital avançam
+  https://www.pciconcursos.com.br/previstos/tcdf-forma-comissao-do-concurso-para-analista-preparativos-do-edital-avancam
+
+TCDF oficializa Cebraspe e edital do novo concurso é iminente
+  https://www.pciconcursos.com.br/previstos/tcdf-oficializa-cebraspe-e-edital-do-novo-concurso-e-iminente
+
+Terceiro concurso da Câmara dos Deputados para analistas está em preparação
+  https://www.pciconcursos.com.br/previstos/terceiro-concurso-da-camara-dos-deputados-para-analistas-esta-em-preparacao
+
+TJ TO inicia preparativos para novo concurso com equipe formada para contratar banca
+  https://www.pciconcursos.com.br/previstos/tj-to-inicia-preparativos-para-novo-concurso-com-equipe-formada-para-contratar-banca
+
+TRT-8 prepara novo concurso: comissão em formação, 87 cargos vagos e detalhes do último edital
+  https://www.pciconcursos.com.br/previstos/trt-8-prepara-novo-concurso-comissao-em-formacao-87-cargos-vagos-e-detalhes-do-ultimo-edital
+
+Validade do concurso da Polícia Penal Federal chega ao fim e novo edital ganha força
+  https://www.pciconcursos.com.br/previstos/validade-do-concurso-da-policia-penal-federal-chega-ao-fim-e-novo-edital-ganha-forca
+
+── NEW (Google Alerts) ──
+
+Term:    seletivo concurso procurador
+Title:   Acusações de &#39;fura-fila&#39; e &#39;fura-teto&#39; entre João Campos e Raquel Lyra viram batalha judicial
+URL:     https://www.blogdorobertoararipina.com.br/acusacoes-de-fura-fila-e-fura-teto-entre-joao-campos-e-raquel-lyra-viram-batalha-judicial/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/tecnico-em-assuntos-educacionais-cod-203-abrangente/73
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/operador-de-equipamento-pesado-cnh-categoria-c-abrangente/14
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   TRE manda retirar propaganda de Raquel Lyra contra João Campos - G1 - Globo.com
+URL:     https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/09/13/decisao-tre-propaganda-raquel-lyra-joao-campos.ghtml
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Sem mensalidades, Instituto Federal abre 280 vagas para 7 cursos <b>técnicos</b> integrados ao ...
+URL:     https://www.pebsp.com/sem-mensalidades-instituto-federal-abre-280-vagas-para-7-cursos-tecnicos-integrados-ao-ensino-medio-gratuito-dcs/
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   <b>Concurso</b> Câmara de Mossoró terá 24 vagas e salários até R$ 8,8 mil - Portal N10
+URL:     https://portaln10.com.br/concursos/concurso-camara-mossoro-comperve-24-vagas-2026-352672/
+Snippet: 
+
+Term:    seletivo concurso residencia juridica
+Title:   Candidata processa Justiça após ser desclassificada de <b>concurso</b> - Correio do Povo Penedo
+URL:     https://correiodopovo-al.com.br/noticia/2026/09/13/candidata-processa-justica-apos-ser-desclassificada-de-concurso
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   Ultragaz abre vagas de <b>estágio</b> em 16 cidades; CPFL e Zamp também recebem inscrições
+URL:     https://portalhortolandia.com.br/empregos/ultragaz-abre-vagas-de-estagio-em-16-cidades-cpfl-e-zamp-tambem-recebem-inscricoes-234615/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/analista-trainee-6104-abrangente/73
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   CEMEP e ETEP abrem inscrições para o Vestibulinho 2027 - Correio RAC
+URL:     https://correio.rac.com.br/ultimas/cemep-e-etep-abrem-inscric-es-para-o-vestibulinho-2027-1.1853538
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Concursos Bancários: conheça principais carreiras e atribuições | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/concursos-bancarios-carreira
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   TJRO suspende <b>concurso</b> de Vilhena por cláusulas discriminatórias
+URL:     https://folhadevilhena.com.br/12/09/2026/tjro-suspende-concurso-de-vilhena-por-clausulas-discriminatorias/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/medico-veterinario-area-medicina-de-grandes-animais-abrangente/57
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Salinópolis terá novo <b>concurso</b> público para todas as áreas da prefeitura - Diário do Pará
+URL:     https://diariodopara.com.br/concursos-e-empregos/salinopolis-anuncia-novo-concurso-publico-para-todas-as-areas-da-prefeitura/
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   UFMS abre 240 vagas para tecnólogo em Gestão de Serviços Jurídicos e Notariais a distância
+URL:     https://www.pebsp.com/ufms-gestao-servicos-juridicos-notariais-2027-ead/
+Snippet: 
+
