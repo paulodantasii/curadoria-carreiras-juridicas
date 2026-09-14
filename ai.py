@@ -86,18 +86,35 @@ class GeminiClient:
     def __init__(self, api_key: Optional[str] = None) -> None:
         self._api_key: Optional[str] = api_key
         self.exhausted_models: set[str] = set()
-        self.last_call_time: float = 0.0
+        self.last_call_times: dict[str, float] = {}
 
     @property
     def api_key(self) -> str:
         if self._api_key:
             return self._api_key
-        return os.environ.get("AI_API_KEY", os.environ.get("GEMINI_API_KEY", AI_API_KEY))
+        import ai
+        module_key = getattr(ai, "AI_API_KEY", None)
+        if module_key is not None and module_key == "":
+            return ""
+        return module_key or os.environ.get("AI_API_KEY", os.environ.get("GEMINI_API_KEY", ""))
 
-    def _wait_for_rate_limit(self, tier: str) -> None:
-        """Garante o espaçamento mínimo entre chamadas para respeitar o RPM do modelo"""
+    @property
+    def last_call_time(self) -> float:
+        """Compatibilidade para monitoramento ou testes legados"""
+        if not self.last_call_times:
+            return 0.0
+        return max(self.last_call_times.values())
+
+    @last_call_time.setter
+    def last_call_time(self, val: float) -> None:
+        self.last_call_times["_global"] = val
+
+    def _wait_for_rate_limit(self, tier: str, model_name: str = "") -> None:
+        """Garante o espaçamento mínimo entre chamadas para respeitar o RPM individual de cada modelo"""
         min_interval = RPM_INTERVALS.get(tier, 4.2)
-        elapsed = time.time() - self.last_call_time
+        key = model_name or tier
+        last_time = self.last_call_times.get(key, 0.0)
+        elapsed = time.time() - last_time
         if elapsed < min_interval:
             sleep_duration = min_interval - elapsed
             time.sleep(sleep_duration)
@@ -171,12 +188,12 @@ class GeminiClient:
             use_thinking = enable_thinking and (current_tier == "flash")
 
             for attempt in range(2):
-                self._wait_for_rate_limit(current_tier)
+                self._wait_for_rate_limit(current_tier, model_name)
                 payload = self._build_payload(system_prompt, user_content, use_thinking, model_name)
 
                 try:
                     resp = requests.post(url, json=payload, timeout=60)
-                    self.last_call_time = time.time()
+                    self.last_call_times[model_name] = time.time()
 
                     if resp.status_code == 200:
                         content = self._extract_content(resp.json())
@@ -202,11 +219,16 @@ class GeminiClient:
                         self.exhausted_models.add(model_name)
                         break
 
-                    # Erros 5xx: Instabilidade temporária da API
+                    # Erros 5xx: Instabilidade temporária da API (ex: HTTP 503 Model Overloaded)
+                    # Pula imediatamente para o próximo modelo neste lote, sem insistir;
+                    # mas mantém o modelo na fila para tentar novamente nos próximos lotes.
                     if resp.status_code >= 500:
-                        logger.warning("Instabilidade na API Google (%s - HTTP %d). Retentando em 3s...", model_name, resp.status_code)
-                        time.sleep(3)
-                        continue
+                        logger.warning(
+                            "Instabilidade na API Google (%s - HTTP %d). Pulando para o próximo modelo neste lote...",
+                            model_name,
+                            resp.status_code,
+                        )
+                        break
 
                     logger.error("Erro inesperado em %s [HTTP %d]: %s", model_name, resp.status_code, resp.text[:300])
 

@@ -39,6 +39,8 @@ class TestEvaluateRelevance:
 
     def test_no_api_key(self, monkeypatch):
         monkeypatch.setattr("ai.AI_API_KEY", "")
+        monkeypatch.delenv("AI_API_KEY", raising=False)
+        monkeypatch.delenv("GEMINI_API_KEY", raising=False)
         result = evaluate_relevance("https://x.com", "title", self.LEGAL_TEXT)
         assert result["relevant"] is False
         assert result["reason"] == "AI_API_KEY not configured"
@@ -184,6 +186,45 @@ class TestGeminiClient:
         second_call_url = mock_post.call_args_list[1][0][0]
         assert "gemini-3.8-flash" in first_call_url
         assert "gemini-3.7-flash" in second_call_url
+
+    def test_fallback_on_503_fast_fails_and_retries_next_batch(self):
+        client = GeminiClient(api_key="test-key")
+
+        resp_503 = type("MockResponse", (), {"status_code": 503, "text": "Model Overloaded"})()
+        resp_200_fallback = type("MockResponse", (), {
+            "status_code": 200,
+            "json": lambda *args, **kwargs: {
+                "candidates": [{"content": {"parts": [{"text": '{"result": "fallback_ok"}'}]}}]
+            },
+        })()
+        resp_200_recovered = type("MockResponse", (), {
+            "status_code": 200,
+            "json": lambda *args, **kwargs: {
+                "candidates": [{"content": {"parts": [{"text": '{"result": "recovered_ok"}'}]}}]
+            },
+        })()
+
+        # Lote 1: 3.8 dá 503, pula imediatamente sem retry interno e vai para 3.7
+        with patch("requests.post", side_effect=[resp_503, resp_200_fallback]) as mock_post:
+            with patch("time.sleep"):
+                res1 = client.generate(tier="flash", system_prompt="sys", user_content="batch 1")
+
+        assert res1 == '{"result": "fallback_ok"}'
+        # Apenas 2 chamadas: 1 tentativa no 3.8 (sem retry 2/2) + 1 chamada no 3.7
+        assert mock_post.call_count == 2
+        assert "gemini-3.8-flash" in mock_post.call_args_list[0][0][0]
+        assert "gemini-3.7-flash" in mock_post.call_args_list[1][0][0]
+        # O modelo 3.8 NÃO foi adicionado a exhausted_models (preservado para o próximo lote)
+        assert len(client.exhausted_models) == 0
+
+        # Lote 2: O modelo 3.8 é tentado novamente e desta vez tem sucesso!
+        with patch("requests.post", side_effect=[resp_200_recovered]) as mock_post2:
+            with patch("time.sleep"):
+                res2 = client.generate(tier="flash", system_prompt="sys", user_content="batch 2")
+
+        assert res2 == '{"result": "recovered_ok"}'
+        assert mock_post2.call_count == 1
+        assert "gemini-3.8-flash" in mock_post2.call_args_list[0][0][0]
 
     def test_thinking_unsupported_400_retry(self):
         client = GeminiClient(api_key="test-key")
