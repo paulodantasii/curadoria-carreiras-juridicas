@@ -6,6 +6,32 @@ do que precisam — não há regra de negócio neste arquivo, só dados.
 Every tunable constant of the project lives here. Other modules import only
 what they need — no business logic in this file, just data.
 """
+import os
+
+def _load_env_file() -> None:
+    """Carrega variáveis de .env local se existir (suporte nativo sem dependências)"""
+    if os.path.exists(".env"):
+        try:
+            with open(".env", "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        k, v = line.split("=", 1)
+                        k, v = k.strip(), v.strip().strip("'\"")
+                        if k and v and k not in os.environ:
+                            os.environ[k] = v
+        except Exception:
+            pass
+
+_load_env_file()
+
+# TypeSafe AI (Jev) - Classificação e Triagem / Classification & Triage
+TYPESAFE_API_KEY = os.environ.get("TYPESAFE_API_KEY", "")
+TYPESAFE_API_URL = "https://api.typesafe.ai/v1/systemone"
+TYPESAFE_MODEL = "jev-latest"
+TYPESAFE_CERTAINTY_THRESHOLD = 0.90
+TYPESAFE_DISCARD_THRESHOLD = 0.15
+TYPESAFE_TIMEOUT = 15.0
 
 # Páginas de listagem que serão raspadas / Listing pages to scrape
 TARGET_URLS = [

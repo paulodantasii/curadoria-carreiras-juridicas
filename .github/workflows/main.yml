@@ -29,6 +29,7 @@ jobs:
       - name: Executar scraper / Run scraper
         env:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
         run: python scraper.py
 
       - name: Salvar logs como artifact / Upload logs as artifact

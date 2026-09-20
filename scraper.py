@@ -170,18 +170,20 @@ def _triage_single(item: dict, db: dict, candidate_items: list, now_utc: str, ti
         return "error"
 
     title = real_title or item.get("title", "")
-    is_candidate = triage_item(url, title, text)
+    item_meta: dict = {}
+    is_candidate = triage_item(url, title, text, item_metadata=item_meta)
 
     if not is_candidate:
-        logger.info("  ↳ [LITE] Descartado: sem relação com carreiras jurídicas.")
+        logger.info("  ↳ [JEV] Descartado: sem relação com carreiras jurídicas.")
         record_processed(db, url, source, now_utc)
         return "discarded"
 
-    logger.info("  ↳ [LITE] Pré-aprovado para refinamento Flash.")
+    logger.info("  ↳ [JEV] Pré-aprovado (%s) para refinamento Flash.", item_meta.get("career", "juridico"))
     candidate_items.append({
         **item,
         "real_title": real_title,
         "text": text,
+        **item_meta,
     })
     return "candidate"
 

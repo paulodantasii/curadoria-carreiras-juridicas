@@ -18,26 +18,9 @@ from typing import Any, Optional
 import requests
 
 from config import CAREER_LABELS
+from typesafe_client import TypeSafeClient
 
 logger = logging.getLogger(__name__)
-
-def _load_env_file() -> None:
-    """Carrega variáveis de .env local se existir (suporte nativo sem dependências)"""
-    if os.path.exists(".env"):
-        try:
-            with open(".env", "r", encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if line and not line.startswith("#") and "=" in line:
-                        k, v = line.split("=", 1)
-                        k, v = k.strip(), v.strip().strip("'\"")
-                        if k and v and k not in os.environ:
-                            os.environ[k] = v
-        except Exception:
-            pass
-
-
-_load_env_file()
 
 # Chave da API Google / Google API Key
 AI_API_KEY: str = os.environ.get("AI_API_KEY", os.environ.get("GEMINI_API_KEY", ""))
@@ -245,6 +228,7 @@ class GeminiClient:
 
 # Instância única compartilhada na execução / Shared client instance
 gemini_client = GeminiClient()
+typesafe_client = TypeSafeClient()
 
 
 def normalize_group(g: str) -> str:
@@ -290,16 +274,29 @@ def _validate_evaluation(data: Any) -> dict[str, Any]:
     return result
 
 
-def call_ai_api(system_prompt: str, user_content: str, tier: str = "flash", enable_thinking: bool = True) -> str:
-    """Função central de chamada à IA com fallback de modelos e extended thinking"""
+def call_ai_api(system_prompt: str, user_content: str, tier: str = "lite", enable_thinking: bool = False) -> str:
+    """Função central de chamada à IA com fallback de modelos"""
     return gemini_client.generate(tier=tier, system_prompt=system_prompt, user_content=user_content, enable_thinking=enable_thinking)
 
 
-def triage_item(url: str, title: str, text: str) -> bool:
-    """Etapa 1: Triagem de alto recall com Gemini Flash Lite (descarta apenas os 100% irrelevantes)"""
-    if not gemini_client.api_key:
-        return False
+def triage_item(url: str, title: str, text: str, item_metadata: Optional[dict[str, Any]] = None) -> bool:
+    """Etapa 1: Triagem de alto recall com TypeSafe Jev (System One) com fallback defensivo"""
     if not text or len(text) < 50:
+        return False
+
+    if typesafe_client.api_key:
+        try:
+            res = typesafe_client.triage(title, text)
+            is_rel = bool(res.get("relevant", False))
+            if is_rel and item_metadata is not None:
+                item_metadata["career"] = res.get("career")
+                item_metadata["stage"] = res.get("stage")
+            return is_rel
+        except Exception as e:
+            logger.warning("Falha na triagem do Jev para %s: %s. Aplicando fail-open.", url, e)
+            return True
+
+    if not gemini_client.api_key:
         return False
 
     snippet = text[:2000]
@@ -335,7 +332,7 @@ def _evaluate_single_fallback(item: dict[str, Any]) -> dict[str, Any]:
     content = f"URL: {url}\nTítulo: {title}\n\nTexto:\n{text}"
 
     prompt_single = PROMPT_REFINEMENT_BATCH + "\nAvalie este item único e responda com array contendo apenas 1 objeto JSON [ { ... } ]."
-    response = call_ai_api(prompt_single, content, tier="flash", enable_thinking=True)
+    response = call_ai_api(prompt_single, content, tier="lite", enable_thinking=False)
     if not response:
         return {"relevant": False, "reason": "empty response from AI in single fallback"}
 
@@ -353,7 +350,7 @@ def _evaluate_single_fallback(item: dict[str, Any]) -> dict[str, Any]:
 
 
 def evaluate_batch(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Etapa 2: Avaliação analítica profunda em lote (2 a 3 notícias) com Gemini Flash + Extended Thinking"""
+    """Etapa 2: Validação analítica e geração de resumo/grupo em lote via Gemini Flash Lite (15 RPM / 500 RPD)"""
     if not items:
         return []
     if not gemini_client.api_key:
@@ -386,12 +383,12 @@ def evaluate_batch(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     response = call_ai_api(
         system_prompt=PROMPT_REFINEMENT_BATCH,
         user_content=user_content,
-        tier="flash",
-        enable_thinking=True,
+        tier="lite",
+        enable_thinking=False,
     )
 
     if not response:
-        logger.warning("Lote de %d itens sem resposta da IA Flash. Acionando fallback individual.", len(valid_indices))
+        logger.warning("Lote de %d itens sem resposta da IA Lite. Acionando fallback individual.", len(valid_indices))
         for idx in valid_indices:
             results[idx] = _evaluate_single_fallback(items[idx])
         return [r for r in results if r is not None]
@@ -430,7 +427,7 @@ def evaluate_relevance(url: str, title: str, text: str) -> dict[str, Any]:
         return {"relevant": False, "reason": "insufficient text"}
 
     content = f"URL: {url}\nTítulo: {title}\n\nTexto:\n{text}"
-    response = call_ai_api(PROMPT_REFINEMENT_BATCH, content, tier="flash", enable_thinking=True)
+    response = call_ai_api(PROMPT_REFINEMENT_BATCH, content, tier="lite", enable_thinking=False)
     if not response:
         return {"relevant": False, "reason": "empty response from AI"}
 
@@ -466,8 +463,8 @@ def consolidate_groups(relevant_items: list[dict[str, Any]]) -> None:
     response = call_ai_api(
         system_prompt=PROMPT_CONSOLIDATION,
         user_content=content,
-        tier="flash",
-        enable_thinking=True,
+        tier="lite",
+        enable_thinking=False,
     )
 
     if not response:

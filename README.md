@@ -19,22 +19,23 @@ O sistema monitora diariamente as principais fontes de certames públicos, aplic
 
 ---
 
-## ⚙️ Mecânica do Funil de IA (Google Gemini)
+## ⚙️ Mecânica do Funil de IA (TypeSafe Jev + Google Gemini)
 
-O sistema utiliza a API do **Google Gemini** em uma arquitetura de funil de 3 etapas otimizada para cotas e precisão:
+O sistema opera em uma arquitetura híbrida de alto desempenho e baixíssimo custo:
 
-1. **Etapa 1: Triagem Ampla (Gemini Flash Lite):**
-   - Avalia rapidamente todos os novos links coletados.
-   - Configurado com alta sensibilidade para não perder nenhum edital potencial (`fail-open`).
-   - Desmarca e descarta certames 100% não jurídicos (saúde, educação, etc.) consumindo zero cotas dos modelos analíticos.
-2. **Etapa 2: Validação & Extração em Lotes (Gemini Flash + Extended Thinking):**
-   - Processa os candidatos em lotes de 2 a 3 notícias.
-   - Utiliza raciocínio analítico profundo para eliminar falsos positivos.
-   - Extrai resumo factual denso (status, vagas, remuneração, prazos), categoriza carreira e slug de grupo.
-3. **Etapa 3: Consolidação e Harmonização (Gemini Flash):**
-   - Unifica as tags de grupo de itens que tratam do mesmo certame.
+1. **Etapa 1: Triagem & Classificação (TypeSafe Jev - System One):**
+   - Avalia rapidamente todos os novos links coletados em ~100 ms por notícia.
+   - Aplica *Speculative Fan-Out* com 4 perguntas paralelas (`has_legal_vacancies`, `is_exclusive_non_legal`, `is_only_legislative_citation`, `career`, `stage`) e *Composite Decision Scoring*.
+   - Aciona *Deep Probe* autônomo para resolver casos ambíguos na zona cinzenta (< 90% de certeza).
+   - Descarta certames sem relação com Direito a um custo de \$0.042 / 1M tokens, sem consumir cotas de LLMs generativos.
+2. **Etapa 2: Validação Analítica & Resumos (Gemini Flash Lite):**
+   - Processa apenas os candidatos pré-aprovados em lotes de 2 a 3 notícias via `gemini-3.5-flash-lite` (15 RPM / 500 RPD).
+   - Redige o resumo factual denso (status, vagas, remuneração, prazos) e o slug de grupo.
+3. **Etapa 3: Consolidação e Harmonização (Gemini Flash Lite):**
+   - Unifica as tags de grupo de notícias que tratam do mesmo certame/órgão.
 4. **Resiliência e Cascata de Fallback:**
-   - Alternância automática entre modelos da família Flash (`gemini-3.8-flash`, `gemini-3.7-flash`, etc.) caso limites de cota (HTTP 429) sejam atingidos, com fallback de emergência para Flash Lite.
+   - Jev com retentativas automáticas e backoff exponencial.
+   - Alternância automática na família Lite (`gemini-3.5-flash-lite` $\rightarrow$ `gemini-3.1-flash-lite` $\rightarrow$ `gemini-flash-lite-latest` $\rightarrow$ `gemini-2.5-flash-lite`).
 
 ---
 
@@ -49,15 +50,16 @@ pip install -r requirements.txt
 pip install -r requirements-dev.txt
 ```
 
-### 2. Configurar Chave de API
+### 2. Configurar Chaves de API
 
-Defina sua chave da API Google Gemini no ambiente:
+Defina suas chaves de API no ambiente ou crie um arquivo `.env`:
 
 ```powershell
-$env:AI_API_KEY = "sua_chave_do_google_aqui"
+$env:TYPESAFE_API_KEY = "sua_chave_typesafe_aqui"
+$env:AI_API_KEY = "sua_chave_do_google_gemini_aqui"
 ```
 
-No GitHub Actions, configure o secret do repositório com o nome `AI_API_KEY`.
+No GitHub Actions, configure os secrets correspondentes no repositório (`TYPESAFE_API_KEY` e `AI_API_KEY`).
 
 ### 3. Modos de Execução
 

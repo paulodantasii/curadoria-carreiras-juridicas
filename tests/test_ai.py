@@ -253,7 +253,30 @@ class TestGeminiClient:
 
 
 class TestTriageItem:
-    def test_triage_item_true(self, monkeypatch):
+    def test_triage_item_typesafe_true(self):
+        meta = {}
+        with patch("ai.typesafe_client.triage", return_value={"relevant": True, "career": "procuradorias", "stage": "edital_publicado"}) as mock_triage:
+            res = triage_item("https://ex.com", "Concurso Procurador", "Texto longo sobre o certame " * 10, item_metadata=meta)
+        assert res is True
+        assert meta.get("career") == "procuradorias"
+        assert meta.get("stage") == "edital_publicado"
+        mock_triage.assert_called_once()
+
+    def test_triage_item_typesafe_false(self):
+        meta = {}
+        with patch("ai.typesafe_client.triage", return_value={"relevant": False, "career": "none", "stage": "edital_publicado"}):
+            res = triage_item("https://ex.com", "Concurso Médico", "Texto longo sobre certame médico " * 10, item_metadata=meta)
+        assert res is False
+        assert "career" not in meta
+
+    def test_triage_item_typesafe_exception_fails_open(self):
+        with patch("ai.typesafe_client.triage", side_effect=RuntimeError("API timeout")):
+            res = triage_item("https://ex.com", "Concurso Qualquer", "Texto longo " * 10)
+        # Fail-open: garante que não descartamos edital em caso de erro na API
+        assert res is True
+
+    def test_triage_item_gemini_fallback_true(self, monkeypatch):
+        monkeypatch.setattr("ai.typesafe_client.api_key", "")
         monkeypatch.setattr("ai.AI_API_KEY", "fake-key")
         with patch("ai.gemini_client.generate", return_value='{"relevant": true}') as mock_gen:
             res = triage_item("https://ex.com", "Concurso Juiz", "Texto longo sobre o certame " * 10)
@@ -261,17 +284,18 @@ class TestTriageItem:
         mock_gen.assert_called_once()
         assert mock_gen.call_args[1]["tier"] == "lite"
 
-    def test_triage_item_false(self, monkeypatch):
+    def test_triage_item_gemini_fallback_false(self, monkeypatch):
+        monkeypatch.setattr("ai.typesafe_client.api_key", "")
         monkeypatch.setattr("ai.AI_API_KEY", "fake-key")
         with patch("ai.gemini_client.generate", return_value='{"relevant": false}'):
             res = triage_item("https://ex.com", "Concurso Médico", "Texto longo sobre certame médico " * 10)
         assert res is False
 
-    def test_triage_item_empty_response_fails_open(self, monkeypatch):
+    def test_triage_item_gemini_fallback_empty_response_fails_open(self, monkeypatch):
+        monkeypatch.setattr("ai.typesafe_client.api_key", "")
         monkeypatch.setattr("ai.AI_API_KEY", "fake-key")
         with patch("ai.gemini_client.generate", return_value=""):
             res = triage_item("https://ex.com", "Concurso Qualquer", "Texto longo " * 10)
-        # Fail-open: garante que não descartamos edital em caso de timeout
         assert res is True
 
 
@@ -305,8 +329,8 @@ class TestEvaluateBatch:
         assert results[0]["career"] == "procuradorias"
         assert results[0]["group"] == "pgm-exemplo-procurador"
         assert results[1]["relevant"] is False
-        assert mock_gen.call_args[1]["tier"] == "flash"
-        assert mock_gen.call_args[1]["enable_thinking"] is True
+        assert mock_gen.call_args[1]["tier"] == "lite"
+        assert mock_gen.call_args[1]["enable_thinking"] is False
 
     def test_evaluate_batch_empty_list(self):
         assert evaluate_batch([]) == []
