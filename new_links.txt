@@ -1,377 +1,348 @@
-Verificação: 2026-09-20T09:00:38.570942+00:00
-Links novos encontrados: 75
-  Scraping: 5
-  Alertas:  70
-Removidos da base: 121
-Total na base: 985
+Verificação: 2026-09-21T09:33:18.882995+00:00
+Links novos encontrados: 68
+  Scraping: 2
+  Alertas:  66
+Removidos da base: 146
+Total na base: 907
 ============================================================
 
 ── NEW (scraping) ──
 
-Câmara de Jacuí-MG abre vagas para Auxiliar Administrativo
-  https://www.acheconcursos.com.br/concursos-minas-gerais/camara-de-jacui-mg-abre-vagas-para-auxiliar-administrativo-93412
+Concurso Heitoraí-GO 2026: Prefeitura publica edital
+  https://www.acheconcursos.com.br/concursos-goias/concurso-heitorai-go-2026-edital-92533
 
-Concurso Hospital Municipal Dr. Gil Alves-MG 2026: Sai edital com 183 vagas
-  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-hospital-municipal-dr-gil-alves-mg-2026-sai-edital-com-183-vagas-93410
-
-Concurso de Ivoti-RS 2026: Prefeitura abre vagas de até R$ 10,4 mil
-  https://www.acheconcursos.com.br/concursos-rio-grande-do-sul/concurso-de-ivoti-rs-2026-prefeitura-abre-vagas-de-ate-r-10-4-mil-93409
-
-Edital FUNCAMP-SP 2026 abre vagas para Técnico Mecânico
-  https://www.acheconcursos.com.br/concursos-sao-paulo/edital-funcamp-sp-2026-abre-vagas-para-tecnico-mecanico-93413
-
-Prefeitura de São João das Duas Pontes-SP abre vagas para níveis médio e superior
-  https://www.acheconcursos.com.br/concursos-sao-paulo/prefeitura-de-sao-joao-das-duas-pontes-sp-abre-vagas-para-niveis-medio-e-superior-93411
+Concurso Hidrolina-GO 2026: Sai edital com 320 vagas de todos os níveis
+  https://www.acheconcursos.com.br/concursos-goias/concurso-hidrolina-go-2026-92595
 
 ── NEW (Google Alerts) ──
 
-Term:    seletivo concurso advogado
-Title:   TJSC nega posse a <b>advogado</b> autista aprovado para juiz leigo e caso vai ao STF - CRN1
-URL:     https://crn1.com.br/2026/09/tjsc-nega-posse-a-advogado-autista-aprovado-para-juiz-leigo-caso-vai-ao-stf
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   UEMS abre inscrições do Vestibular 2027 com 1.043 vagas em 52 cursos de <b>graduação</b>
-URL:     https://www.pebsp.com/uems-abre-inscricoes-do-vestibular-2027-com-1043-vagas-em-52-cursos-de-graduacao/
-Snippet: 
-
-Term:    seletivo concurso analista juridico
+Term:    seletivo concurso tecnico juridico
 Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/agsus-agencia-brasileira-de-apoio-a-gestao-do-sistema-unico-de-saude-abrangente/68
+URL:     https://www.pciconcursos.com.br/provas/auxiliar-de-seguranca-interna-abrangente/54
 Snippet: 
 
 Term:    seletivo concurso tecnico juridico
-Title:   IPC de Cariacica abre processo <b>seletivo</b> com salário de até R$ 5,7 mil - Serra Noticiário
-URL:     https://serranoticiario.com.br/ipc-de-cariacica-abre-processo-seletivo-com-salario-de-ate-r-57-mil/
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   Câmara de Rio Branco abre <b>concurso</b> para <b>procurador</b> com salário de R$ 19,4 mil
-URL:     https://ampost.com.br/acre/camara-de-rio-branco-abre-concurso-para-procurador-com-salario-de-r-194-mil/
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Salário de até R$ 10 mil e muito mais: programas de estágio e trainee abrem 10,4 mil vagas ...
-URL:     https://www.atribuna.com.br/noticias/concurso-e-emprego/salario-de-ate-r-10-mil-e-muito-mais-programas-de-estagio-e-trainee-abrem-10-4-mil-vagas-de-emprego-veja-a-lista-1.529999
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Marinha e Funai abrem inscrições para processos <b>seletivos</b> no Amazonas - G1 - Globo
-URL:     https://g1.globo.com/am/amazonas/utilidade-publica/noticia/2026/09/19/marinha-e-funai-abrem-inscricoes-para-processos-seletivos-no-amazonas-veja-como-participar.ghtml
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   <b>Concurso</b> para <b>procurador</b> do Município de Manaus tem primeira fase neste domingo
-URL:     https://todahora.com/concurso-para-procurador-do-municipio-de-manaus-tem-primeira-fase-neste-domingo/
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   IFMG abre seleção para 38 professores formadores do Protec Inovação; veja detalhes
-URL:     https://www.itatiaia.com.br/emprego-e-concursos/ifmg-abre-selecao-para-38-professores-formadores-do-protec-inovacao-veja-detalhes/
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   TCE-RO suspende todas as contratações de <b>seletivo</b> de Campo Novo após denúncia do CEDECA
-URL:     https://newsrondonia.com.br/noticias/2026/09/19/tce-ro-suspende-todas-as-contratacoes-de-seletivo-de-campo-novo-apos-denuncia-do-cedeca/
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Após TJRO, TCE/RO também suspende seleção de Vilhena e dá cinco dias para prefeito ...
-URL:     https://newsrondonia.com.br/noticias/2026/09/19/apos-tjro-tce-ro-tambem-suspende-selecao-de-vilhena-e-da-cinco-dias-para-prefeito-comprovar-cumprimento-da-decisao/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/epagri-empresa-de-pesquisa-agropecuaria-e-extensao-rural-de-santa-catarina-abrangente/9
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/engenheiro-senior-mecanica-abrangente/31
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Funai abre processo <b>seletivo</b> com 807 vagas e salários de até R$ 7,6 mil
-URL:     https://redeondadigital.com.br/amazonas/funai-abre-processo-seletivo-com-807-vagas-e-salarios-de-ate-r-76-mil
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   <b>Concurso</b> Manausprev abre 17 vagas com salários de até R$ 9.175,25; veja como se inscrever
-URL:     https://www.bra1.com.br/geral/id-694707/concurso_manausprev_abre_17_vagas_com_salarios_de_ate_r__9.175_25__veja_como_se_inscrever
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   IFRO publica minutas dos editais do Processo <b>Seletivo</b> 2027/1 - Tudo Rondônia
-URL:     https://www.tudorondonia.com/noticias/ifro-publica-minutas-dos-editais-do-processo-seletivo-2027-1,162907.shtml
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   Marinha do Brasil abre processo <b>seletivo</b> com 23 vagas para oficiais temporários
-URL:     https://portalmanausalerta.com.br/marinha-do-brasil-abre-processo-seletivo-com-23-vagas-para-oficiais-temporarios/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Concursos em SC têm vagas abertas e salários de até R$ 25 mil; veja - Guararema News
-URL:     https://guararemanews.com.br/economia/concursos-em-sc-tem-vagas-abertas-e-salarios-de-ate-r-25-mil-veja/
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   Funai abre processo <b>seletivo</b> com salários de até R$ 7,6 mil em Rondônia
-URL:     https://gazetarondonia.com.br/noticia/22825/funai-abre-processo-seletivo-com-salarios-de-ate-r-76-mil-em-rondonia
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/agsus-agencia-brasileira-de-apoio-a-gestao-do-sistema-unico-de-saude-abrangente/71
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   IFRO abre inscrições para o Processo <b>Seletivo</b> Unificado 2027/1 com 3.806 vagas | Folha de Vilhena
-URL:     https://folhadevilhena.com.br/19/09/2026/ifro-abre-inscricoes-para-o-processo-seletivo-unificado-2027-1-com-3-806-vagas/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   Arquivo de <b>residência jurídica</b> - nabocadanoite.com.br
-URL:     https://nabocadanoite.com.br/tag/residencia-juridica/
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/hemosc-centro-de-hematologia-e-hemoterapia-de-santa-catarina-fahece-abrangente/20
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   DPE - PB divulga <b>concurso</b> público com 20 vagas e salários de até R$ 5.197,50.
-URL:     https://concursosrn.com.br/dpe-pb-divulga-concurso-publico-com-20-vagas-e-salarios-de-ate-r-5-19750/
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   TJSC nega posse a advogado autista aprovado para juiz leigo e caso vai ao STF - CRN1
-URL:     https://crn1.com.br/2026/09/tjsc-nega-posse-a-advogado-autista-aprovado-para-juiz-leigo-caso-vai-ao-stf/amp
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   Prefeitura Municipal de Novo Horizonte do Oeste - Ache Concursos
-URL:     https://www.acheconcursos.com.br/imagens/anexo/64446/edital-processo-seletivo-prefeitura-municipal-de-novo-horizonte-do-oeste-ro-01-2026.pdf
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Marinha do Brasil abre mais de 370 vagas para Oficiais temporários em todo o País
-URL:     https://www.agencia.marinha.mil.br/vem-pra-marinha/marinha-do-brasil-abre-mais-de-370-vagas-para-oficiais-temporarios-em-todo-o-pais
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> no ES com salário de R$ 8,1 mil define banca organizadora - Tribuna Online
-URL:     https://tribunaonline.com.br/concursos/concurso-no-es-com-salario-de-r-81-mil-define-banca-organizadora-331026
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   TCE-RO suspende todas as contratações de <b>seletivo</b> de Campo Novo após denúncia do CEDECA
-URL:     https://www.oobservador.com/2026/09/tce-ro-suspende-todas-as-contratacoes.html
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   Concursos Jurídicos Abertos: mais de 290 oportunidades; até R$ 37,7 mil - Magistrar
-URL:     https://magistrarcursos.com.br/blog/concursos-juridicos-abertos-mais-de-290-oportunidades-ate-r-377-mil/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Justiça barra contratações em Campo Novo e cobra explicações sobre <b>concurso</b> | Tudo Rondônia
-URL:     https://www.tudorondonia.com/noticias/justica-barra-contratacoes-em-campo-novo-e-cobra-explicacoes-sobre-concurso,162889.shtml
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   <b>Procurador</b> da Fazenda Nacional: carreira, remuneração, benefícios, atividades e o próximo ...
-URL:     https://ceisc.com.br/blog/post/procurador-da-fazenda-nacional-guia-da-carreira?category=concursos
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/auxiliar-de-ensino-area-de-atuacao-educacao-abrangente/44
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/epagri-empresa-de-pesquisa-agropecuaria-e-extensao-rural-de-santa-catarina-abrangente/26
-Snippet: 
-
-Term:    seletivo concurso assessor juridico
-Title:   Estão abertas as inscrições para <b>concurso</b> público em Goiás com salários de até R$ 5 mil
-URL:     https://portal6.com.br/2026/09/18/estao-abertas-as-inscricoes-para-concurso-publico-em-goias-com-salarios-de-ate-r-5-mil/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   Após denúncia do CEDECA, TCE-RO cobra explicações sobre <b>seletivo</b> de Guajará-Mirim
-URL:     http://www.tudorondonia.com/noticias/apos-denuncia-do-cedeca-tce-ro-cobra-explicacoes-sobre-seletivo-de-guajara-mirim,162887.shtml
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   TJGO autoriza <b>concurso</b> e prevê seleção de banca em fevereiro de 2027 - Diário de Goiás
-URL:     https://diariodegoias.com.br/tjgo-autoriza-concurso-e-preve-selecao-de-banca-em-fevereiro-de-2027/547877/
+Title:   Universidade Estadual encerra inscrições para 4,3 mil vagas em cursos de Licenciatura ...
+URL:     https://www.pebsp.com/ueg-4300-vagas-graduacao-2026/
 Snippet: 
 
 Term:    seletivo concurso consultor legislativo
-Title:   Funai reabre inscrições de processo <b>seletivo</b> com salário de R$ 7,6 mil; veja cargos
-URL:     https://portaldeprefeitura.com.br/oportunidades/funai-reabre-inscricoes-de-processo-seletivo/632321/
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/agsus-agencia-brasileira-de-apoio-a-gestao-do-sistema-unico-de-saude-abrangente/36
 Snippet: 
 
 Term:    seletivo concurso direito
-Title:   Estado convoca 237 professores aprovados em processo <b>seletivo</b> na Bahia
-URL:     https://tribunadoreconcavo.com/bahia-convoca-237-professores-processo-seletivo/
+Title:   <b>Concurso</b> da Transpetro: prazo de inscrição termina nesta segunda-feira
+URL:     https://imprensa24h.com.br/concurso-transpetro-inscricoes-terminam-hoje/
 Snippet: 
 
-Term:    seletivo concurso analista juridico
-Title:   Processos <b>seletivos</b> e concursos pagam até R$ 13 mil em MT - GC Notícias
-URL:     https://www.gcnoticias.com.br/geral/processos-seletivos-e-concursos-pagam-ate-r-13-mil-em-mt/264021136
+Term:    seletivo concurso advogado
+Title:   Inscrições para o <b>concurso</b> em Cruz do Espírito Santo são prorrogadas com 202 vagas
+URL:     https://www.sertaodaparaiba.com.br/noticia/inscricoes-para-o-concurso-em-cruz-do-espirito-santo-sao-prorrogadas-com-202-vagas
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Concursos e seleções em PE têm mais de 1,4 mil vagas e salários de até R$ 37 mil - G1
+URL:     https://g1.globo.com/pe/pernambuco/noticia/2026/09/20/concursos-e-selecoes-em-pe-tem-mais-de-14-mil-vagas-e-salarios-de-ate-r-37-mil-saiba-como-se-inscrever.ghtml
 Snippet: 
 
 Term:    seletivo concurso estagio de pos graduacao direito
-Title:   MPT-PB prevê prova de <b>estágio</b> neste domingo com bolsa de até R$ 2.640
-URL:     https://thmais.com.br/cidades/joao-pessoa/cotidiano-joao-pessoa/mpt-pb-prova-estagio-domingo-bolsa-2640/
+Title:   Professores da rede pública podem fazer <b>pós</b>-<b>graduação</b> de graça e mais de 8 mil vagas ...
+URL:     https://tribunademinas.com.br/maistendencias/professores-da-rede-publica-podem-fazer-pos-graduacao-de-graca-e-mais-de-8-mil-vagas-estao-sendo-oferecidas-pelo-pais
 Snippet: 
 
 Term:    seletivo concurso analista juridico
 Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-de-empresa-de-comunicacao-publica-animacao-abrangente/98
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   Justiça eleva para R$ 35 mil indenização por racismo na Uerj - Poder360
-URL:     https://www.poder360.com.br/poder-brasil/justica-eleva-para-r-35-mil-indenizacao-por-racismo-na-uerj/
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   TJ CE divulga resultados preliminares das provas do <b>concurso</b> público - Imprensa 24h
-URL:     https://imprensa24h.com.br/tj-ce-divulga-resultados-preliminares-concurso/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   IBGE libera locais de prova de seleção com 8.258 vagas e salário de R$ 4 mil
-URL:     https://tribunaonline.com.br/concursos/ibge-libera-locais-de-prova-de-selecao-com-8258-vagas-e-salario-de-r-4-mil-330992?_=amp
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/agsus-agencia-brasileira-de-apoio-a-gestao-do-sistema-unico-de-saude-abrangente/59
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/agsus-agencia-brasileira-de-apoio-a-gestao-do-sistema-unico-de-saude-abrangente/61
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   IFRO divulga regras preliminares do Processo <b>Seletivo</b> Unificado com mais de três mil ...
-URL:     https://newsrondonia.com.br/educacao/2026/09/18/ifro-divulga-regras-preliminares-do-processo-seletivo-unificado-com-mais-de-tres-mil-vagas-para-cursos-tecnicos-e-graduacao/
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Autista passa em <b>concurso</b> para juiz em SC, mas TJ o impede de assumir cargo - aRede
-URL:     https://arede.info/cotidiano/672711/autista-passa-em-concurso-para-juiz-em-sc-mas-tj-o-impede-de-assumir-cargo
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Últimos dias de incrição para o Vestibular UFRGS 2027; são milhares de vagas em 98 ...
-URL:     https://www.pebsp.com/ultimos-dias-de-incricao-para-o-vestibular-ufrgs-2027-sao-milhares-de-vagas-em-98-cursos-de-graduacao-gratuitos-dcs/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Edital Processo <b>Seletivo</b> Câmara de Jacuí-MG 02-2026 - Ache Concursos
-URL:     https://www.acheconcursos.com.br/edital-concurso/edital-camara-jacui-mg-02-2026
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Autista passa em <b>concurso</b> para juiz em SC, mas TJ o impede de assumir cargo - TNOnline
-URL:     https://tnonline.uol.com.br/noticias/cotidiano/autista-passa-em-concurso-para-juiz-em-sc-mas-tj-o-impede-de-assumir-cargo-1147564
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   <b>Direito</b> estágio:Defensoria do Amazonas abre inscrições com bolsa R$1,3 mil
-URL:     https://portalvoce.com/direito-estagiodefensoria-do-amazonas-abre-inscricoes-com-bolsa-r13-mil/
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   TCE-RO suspende todas as contratações de <b>seletivo</b> de Campo Novo após denúncia do CEDECA
-URL:     https://www.portalrondonia.com/2026/09/19/tce-ro-suspende-todas-as-contratacoes-de-seletivo-de-campo-novo-apos-denuncia-do-cedeca/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   Polícia Civil abre <b>concurso</b> com 396 vagas e salários a partir de R$ 7,3 mil; veja cargos
-URL:     https://noticias.maringa.com/44952/policia-civil-abre-concurso-com-396-vagas-e-salarios-a-partir-de-r-73-mil-veja-cargos
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Prefeitura de Salvador anuncia <b>concurso</b> público com vagas para a Guarda Civil - iBahia
-URL:     https://www.ibahia.com/empregos-e-concursos/prefeitura-de-salvador-anuncia-concurso-publico-com-vagas-para-a-guarda-civil-391036
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   <b>Concurso</b> no ES com salário de R$ 8,1 mil define banca organizadora - Tribuna Online
-URL:     https://tribunaonline.com.br/concursos/concurso-no-es-com-salario-de-r-81-mil-define-banca-organizadora-331026?_=amp
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-do-mp-farmacia-abrangente/83
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Prefeitura de Marabá abre seleção sem taxa e com auxílio de R$ 750
-URL:     https://estadodoparaonline.com/prefeitura-de-maraba-abre-selecao-sem-taxa-e-com-auxilio-de-r-750/
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/tecnico-universitario-assistencia-tecnica-em-administracao-abrangente/38
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Advogado</b> autista de 30 anos é aprovado em seleção para juiz leigo do TJSC, recebe três ...
-URL:     https://clickpetroleoegas.com.br/advogado-autista-de-30-anos-e-aprovado-em-selecao-para-juiz-leigo-do-tjsc-em-vaga-destinada-a-pessoas-com-deficiencia-recebe-tres-avaliacoes-psiquiatricas-apontando-capacidade-para-ex-mhbb01/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> da Petrobras tem 281 vagas e salário de até R$ 15 mil - Primeira Página
-URL:     https://primeirapagina.com.br/emprego-e-concursos/concurso-nacional-da-petrobras-tem-salario-de-ate-r-15-mil/
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/gestor-ambiental-matematica-abrangente/18
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Marinha abre processo <b>seletivo</b> com 23 vagas para oficiais temporários no Amazonas e Rondônia
-URL:     https://www.portaldoholanda.com.br/amazonas/marinha-abre-processo-seletivo-com-23-vagas-para-oficiais-temporarios-no-amazonas-e-rondonia
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Nova Mutum abre <b>seletivo</b> com salários de até R$ 22,6 mil; inscrições começam segunda
-URL:     https://www.fatosdematogrosso.com.br/concursos/nova-mutum-abre-seletivo-com-salarios-de-ate-r-226-mil-inscricoes-comecam-segunda/16272
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Marinha abre vagas em Natal para oficiais temporários; remuneração supera R$ 9 mil
-URL:     https://portaln10.com.br/concursos/processo-seletivo/marinha-13-vagas-natal-oficiais-temporarios-2027-352974/
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Inscrições para <b>seletivo</b> da Prefeitura de Cubatão vão até domingo (20) - JC Concursos
-URL:     https://jcconcursos.com.br/noticia/empregos/inscricoes-para-seletivo-da-prefeitura-de-cubatao-vao-ate-domingo-20-145509
+URL:     https://www.pciconcursos.com.br/provas/tecnico-em-eletricista-abrangente/52
 Snippet: 
 
 Term:    seletivo concurso procurador
-Title:   Câmara de Rio Branco abre <b>concurso</b> para <b>procurador</b>; VEJA edital | G1
-URL:     https://g1.globo.com/ac/acre/noticia/2026/09/19/camara-de-rio-branco-abre-concurso-para-procurador-com-salario-de-quase-r-20-mil-veja-edital.ghtml
+Title:   <b>Concurso</b> Guarabira: 170 vagas e salários de R$ 8 mil até domingo - G1
+URL:     https://g1.globo.com/pb/paraiba/noticia/2026/09/20/inscricoes-para-concurso-da-prefeitura-de-guarabira-pb-com-170-vagas-e-salarios-de-mais-de-r-8-mil-se-encerram-neste-domingo-20.ghtml
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   Primeira fase do <b>concurso</b> de <b>Procurador</b> do Município - Prefeitura de Manaus
+URL:     https://www.manaus.am.gov.br/noticia/concurso/primeira-fase-concurso-procurador-municipio/
+Snippet: 
+
+Term:    seletivo concurso residencia juridica
+Title:   TCE-RO suspende contratações de processo <b>seletivo</b> em Campo Novo após denúncia do CEDECA
+URL:     https://www.valoremercadoro.com.br/tce-ro-suspende-contratacoes-de-processo-seletivo-em-campo-novo-apos-denuncia-do-cedeca/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> de empresa da Petrobras oferece mais de 4 mil oportunidades com salários de ...
+URL:     https://agenciagbc.com/2026/09/20/concurso-transpetro-petrobras-vagas-salarios-15-mil/
 Snippet: 
 
 Term:    seletivo concurso tecnico juridico
-Title:   Ifal ofertará mais de 2,7 mil vagas para 43 cursos <b>técnicos</b> integrados - TribunaHoje.com
-URL:     https://tribunahoje.com/noticias/educacao/2026/09/19/194112-ifal-ofertara-mais-de-27-mil-vagas-para-43-cursos-tecnicos-integrados
+Title:   IFRO abre inscrições para o Processo <b>Seletivo</b> Unificado 2027/1 com 3.806 vagas
+URL:     https://www.gentedeopiniao.com.br/educacao/ifro-abre-inscricoes-para-o-processo-seletivo-unificado-2027-1-com-3-806-vagas
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   <b>Concurso</b> para <b>procurador</b> de Manaus começa neste domingo com seis vagas - Antena 10 FM
+URL:     https://www.antena10fm.com.br/noticiaatual/geral_concurso-para-procurador-de-manaus-comeca-neste-domingo-com-seis-vagas
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   Processos <b>seletivos</b> da Funai e da Marinha oferecem 127 vagas no Amazonas com salários ...
+URL:     https://marioadolfo.com/processos-seletivos-da-funai-e-da-marinha-oferecem-127-vagas-no-amazonas-com-salarios-de-ate-r-11-mil/
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   Gabarito Câmara de Nilópolis-RJ 2026; veja resultado das provas - Ache Concursos
+URL:     https://www.acheconcursos.com.br/noticias/gabarito-camara-de-nilopolis-rj-2026-veja-resultado-das-provas-93406
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Processos <b>seletivos</b> da Marinha e da Funai abrem oportunidades de emprego no Amazonas
+URL:     https://contilnetnoticias.com.br/cotidiano/processos-seletivos-da-marinha-e-da-funai-abrem-oportunidades-de-emprego-no-amazonas/
 Snippet: 
 
 Term:    seletivo concurso analista juridico
 Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/epagri-empresa-de-pesquisa-agropecuaria-e-extensao-rural-de-santa-catarina-abrangente/11
+URL:     https://www.pciconcursos.com.br/provas/agente-administrativo-40h-administracao-abrangente/18
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Confira lista com 62 concursos abertos e 12.373 vagas em todo o país - Correio Braziliense
+URL:     https://www.correiobraziliense.com.br/euestudante/concursos/2026/09/7503616-confira-lista-com-62-concursos-abertos-e-12-373-vagas-em-todo-o-pais.html
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Transpetro: inscrições para <b>concurso</b> terminam nesta segunda; salários chegam a R$ 15 mil
+URL:     https://g1.globo.com/trabalho-e-carreira/concursos/noticia/2026/09/21/transpetro-inscricoes-para-concurso-terminam-nesta-segunda-salarios-chegam-a-r-15-mil.ghtml
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   <b>Concurso</b> da PGM Manaus tem primeira etapa neste domingo - Amazonas
+URL:     https://www.portaldoholanda.com.br/amazonas/concurso-da-pgm-manaus-tem-primeira-etapa-neste-domingo
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   <b>Concurso</b> para <b>procurador</b> de Manaus começa neste domingo com seis vagas
+URL:     https://www.irecelider.com.br/noticias-do-mundo/i/507b63522bf9a38fe9b11f697a0f9607/concurso-para-procurador-de-manaus-comeca-neste-domingo-com-seis-vagas
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Conselhos do ES, Vitória e Funai: 19 mil vagas em concursos e seleções - A Gazeta
+URL:     https://www.agazeta.com.br/concursos/conselhos-do-es-vitoria-e-funai-19-mil-vagas-em-concursos-e-selecoes-0926
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> Vitória do Xingu PA: processo <b>seletivo</b> de 2026
+URL:     https://www.estrategiaconcursos.com.br/blog/concurso-prefeitura-vitoria-do-xingu/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/tecnico-em-eletricista-abrangente/50
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   Prefeitura de Goioerê divulga resultados do <b>concurso</b> público - CONFIRA - Goionews
+URL:     https://goio.news/noticias/2360/54779/prefeitura-de-goioere-divulga-resultados-do-concurso-publico-confira
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   Unioeste de Toledo é espaço de inclusão e suporte pedagógico para estudantes PcD
+URL:     https://gazetadetoledo.com.br/unioeste-de-toledo-e-espaco-de-inclusao-e-suporte-pedagogico-para-estudantes-pcd/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Gabaritos de concursos: veja datas e links oficiais após as provas de setembro de 2026
+URL:     https://fiibrasil.com/noticia/gabaritos-de-concursos-veja-datas-e-links-oficiais-apos-as-provas-de-setembro-de-2026/
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   Com 1.792 vagas gratuitas, IFNMG abre inscrições em 42 cursos técnicos integrados ao ...
+URL:     https://www.pebsp.com/com-1-792-vagas-gratuitas-ifnmg-abre-inscricoes-em-42-cursos-tecnicos-integrados-ao-ensino-medio-dcs/
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   PND é aplicada neste domingo para quase 626 mil professores - G1
+URL:     https://g1.globo.com/educacao/noticia/2026/09/20/pnd-e-aplicada-neste-domingo-para-quase-626-mil-inscritos.ghtml
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   Brasil vence Sul-Americano de vôlei e garante vaga nas Olimpíadas de 2028 - AM POST
+URL:     https://ampost.com.br/veja-mais/brasil-vence-sul-americano-de-volei-e-garante-vaga-nas-olimpiadas-de-2028/
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   Processos <b>seletivos</b> da Funai e da Marinha oferecem 127 vagas no Amazonas com salários ...
+URL:     https://www.blogdomarioadolfo.com.br/processos-seletivos-da-funai-e-da-marinha-oferecem-127-vagas-no-amazonas-com-salarios-de-ate-r-11-mil/
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   Instituto Federal abre 420 vagas em <b>pós</b>-<b>graduação</b> gratuita EAD para graduados de ...
+URL:     https://clickpetroleoegas.com.br/instituto-federal-abre-420-vagas-em-pos-graduacao-gratuita-ead-para-graduados-de-diferentes-areas-com-selecao-sem-prova-por-sorteio-eletronico-em-21-polos-do-rio-grande-do-sul-e-inscric-afch/
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/monitor-educacao-fundamental-abrangente/63
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   Jovem de 18 anos morre de parada cardíaca enquanto dormia na região de Umuarama
+URL:     https://goio.news/noticias/2360/54729/jovem-de-18-anos-morre-de-parada-cardiaca-enquanto-dormia-na-regiao-de-umuarama
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/tecnico-tecnico-analise-clinica-abrangente/8
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   IFRO abre inscrições para o Processo <b>Seletivo</b> Unificado 2027/1 com 3.806 vagas
+URL:     https://tribunapopular.com.br/ifro-abre-inscricoes-para-o-processo-seletivo-unificado-2027-1-com-3-806-vagas/
+Snippet: 
+
+Term:    seletivo concurso residencia juridica
+Title:   Racismo: Uerj indenizará alunas negras obrigadas a prender cabelo em prova - Migalhas
+URL:     https://www.migalhas.com.br/quentes/464901/racismo-uerj-indenizara-alunas-negras-obrigadas-a-prender-cabelo
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Tribunal de Justiça de Goiás autoriza novo <b>concurso</b> para 2027 - O Hoje
+URL:     https://ohoje.com/2026/09/20/tribunal-de-justica-de-goias-autoriza-novo-concurso-para-2027/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Transpetro: inscrições para <b>concurso</b> terminam nesta segunda - G1
+URL:     https://g1.globo.com/google/amp/trabalho-e-carreira/concursos/noticia/2026/09/21/transpetro-inscricoes-para-concurso-terminam-nesta-segunda-salarios-chegam-a-r-15-mil.ghtml
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   <b>Concurso</b> para <b>procurador</b> de Manaus começa neste domingo com seis vagas - G1
+URL:     https://g1.globo.com/am/amazonas/noticia/2026/09/20/concurso-para-procurador-de-manaus-comeca-neste-domingo-com-seis-vagas.ghtml
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/tecnico-em-eletricista-abrangente/56
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   PGM realiza a primeira fase do <b>concurso</b> para o cargo de <b>Procurador</b> de Manaus neste domingo
+URL:     https://marioadolfo.com/pgm-realiza-a-primeira-fase-do-concurso-para-o-cargo-de-procurador-de-manaus-neste-domingo/
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   Transpetro, Guarda e educação: veja mais de 4,6 mil vagas em concursos - Folha Vitória
+URL:     https://www.folhavitoria.com.br/trabalho/concursos/transpetro-guarda-e-educacao-veja-mais-de-46-mil-vagas-em-concursos/
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/infraestrutura-opcao-341-ciencias-contabeis-administracao-abrangente/36
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   Processos <b>seletivos</b> da Marinha e da Funai abrem oportunidades de emprego no Amazonas
+URL:     https://contilnetnoticias.com.br/cotidiano/processos-seletivos-da-marinha-e-da-funai-abrem-oportunidades-de-emprego-no-amazonas/amp/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Exército reabre inscrições para militares temporários; veja vagas e quem pode participar
+URL:     https://diariodopara.com.br/concursos-e-empregos/exercito-reabre-inscricoes-para-militares-temporarios-veja-vagas-e-quem-pode-participar/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   <b>Concurso</b> Câmara de Dois Córregos (SP): edital publicado com vagas para todos os níveis de ...
+URL:     https://jcconcursos.com.br/amp/noticia/concursos/concurso-camara-de-dois-corregos-sp-edital-publicado-com-vagas-para-todos-os-niveis-de-escolaridade-145532
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   Santa Catarina abre 50 vagas de auditor com salário de R$ 25,3 mil - BRA 1
+URL:     https://www.bra1.com.br/geral/id-694947/santa_catarina_abre_50_vagas_de_auditor_com_salario_de_r__25_3_mil
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   <b>Concurso</b> PM SP: confira o gabarito extraoficial para o cargo de soldado - Imprensa 24h
+URL:     https://imprensa24h.com.br/concurso-pm-sp-gabarito-extraoficial/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Funai abre mais de 100 vagas temporárias no Amazonas com salários de até R$ 7,6 mil
+URL:     https://ampost.com.br/amazonas/funai-abre-mais-de-100-vagas-temporarias-no-amazonas-com-salarios-de-ate-r-76-mil/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/tecnico-em-eletricista-abrangente/66
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   Câmara de Nilópolis divulga nesta segunda gabarito do <b>concurso</b> 2026 - Imprensa 24h
+URL:     https://imprensa24h.com.br/gabarito-camara-nilopolis-rj-2026/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   <b>Concurso</b> abre 215 vagas no Hospital das Clínicas com salários de até R$ 3.918,15
+URL:     https://ver-o-fato.com.br/concurso-abre-215-vagas-no-hospital-das-clinicas-com-salarios-de-ate-r-3-91815/
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   <b>Procuradoria</b>-Geral do Município aplica 1ª fase de <b>concurso</b> para <b>procurador</b> neste domingo ...
+URL:     https://www.portaldoholanda.com.br/amazonas/procuradoria-geral-do-municipio-aplica-1a-fase-de-concurso-para-procurador-neste-domingo-em-manaus
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   Marinha oferece vagas para 12 áreas em Manaus e Tabatinga; veja como se inscrever
+URL:     https://www.portaldoholanda.com.br/concursos/marinha-oferece-vagas-para-12-areas-em-manaus-e-tabatinga-veja-como-se-inscrever
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/analista-judiciario-grupo-nivel-superior-sem-especialidade-abrangente/49
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Prazo para inscrições em <b>concurso</b> da Câmara de Redentora termina na terça-feira
+URL:     https://www.clicportela.com.br/noticia/177428/prazo-para-inscricoes-em-concurso-da-camara-de-redentora-termina-na-terca-feira
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   Nova Mutum abre <b>seletivo</b> com salários de até R$ 22,6 mil; veja como participar | VGN
+URL:     https://www.vgnoticias.com.br/cidades/nova-mutum-abre-seletivo-com-salarios-de-ate-r-226-mil-veja-como-participar/152278
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/agente-administrativo-40h-administracao-abrangente/16
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   <b>Procuradoria</b>-Geral do Município aplica 1ª fase de <b>concurso</b> para <b>procurador</b> neste domingo ...
+URL:     https://ampost.com.br/manaus/procuradoria-geral-do-municipio-aplica-1a-fase-de-concurso-para-procurador-neste-domingo-em-manaus/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> Volta Redonda-RJ: Gabarito e quem passa na prova
+URL:     https://www.acheconcursos.com.br/noticias/concurso-volta-redonda-rj-gabarito-e-quem-passa-na-prova-93403
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> em SC oferece salário de R$ 25,3 mil e inscrições até 5 de outubro
+URL:     https://jornalrazao.com/concursos/concurso-em-sc-oferece-salario-de-r-253-mil-e-inscricoes-ate-5-de-outubro
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   Funai abre processo <b>seletivo</b> com vagas para o Amazonas; inscrições são gratuitas
+URL:     https://www.portaldoholanda.com.br/amazonas/funai-abre-processo-seletivo-com-vagas-para-o-amazonas-inscricoes-sao-gratuitas
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Câmara de Nilópolis: Divulgação do Gabarito Preliminar Gera Expectativa; Confira
+URL:     https://fiibrasil.com/noticia/gabarito-concurso-camara-nilopolis-rj-2026/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Processo <b>seletivo</b> FAI (SP): últimas dias para concorrer ao cargo de Analista Jurídico
+URL:     https://jcconcursos.com.br/noticia/concursos/processo-seletivo-fai-sp-ultimas-dias-para-concorrer-ao-cargo-de-analista-juridico-145530
 Snippet: 
 
