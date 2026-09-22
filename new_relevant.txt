@@ -1,125 +1,245 @@
-Verificação: 2026-09-21T09:33:18.882995+00:00
-Links analisados: 68
-Links relevantes: 20
+Verificação: 2026-09-22T08:59:02.997633+00:00
+Links analisados: 179
+Links relevantes: 40
 ============================================================
 
-Title:   Concurso da Transpetro: prazo de inscrição termina nesta segunda-feira
-URL:     https://imprensa24h.com.br/concurso-transpetro-inscricoes-terminam-hoje/
+Title:   CRBio-01 - SP, MT e MS abre concurso público com salários de até R$ 7.181,50
+URL:     https://www.pciconcursos.com.br/noticias/crbio-01-sp-mt-e-ms-abre-concurso-publico-com-salarios-de-ate-7181
 Career:   procuradorias
-Group:   transpetro-nacional-advogado
-Reason:  Edital publicado pela Transpetro com vagas para o quadro de terra, incluindo o cargo de Advogado. O certame oferece remunerações iniciais de até R$ 15.034,81, além de benefícios. Inscrições encerrando-se na data de hoje via Fundação Cesgranrio, com provas objetivas e discursivas agendadas para 29 de novembro.
+Group:   crbio01-sp-mt-ms-advogado
+Reason:  O CRBio-01 publicou edital de concurso público oferecendo cadastro de reserva para o cargo de Analista Advogado, com exigência de graduação em Direito e registro na OAB. A remuneração inicial é de R$ 7.181,50 para jornada de 40 horas semanais, acrescida de benefícios como vale-refeição de R$ 1.540,00 e vale-alimentação de R$ 950,00. As inscrições seguem abertas até 21/10/2026 pelo site da banca Quadrix, com provas previstas para 29/11/2026.
 
-Title:   Concursos em PE têm 1,4 mil vagas e salários de até R$ 37,7 mil | G1
-URL:     https://g1.globo.com/pe/pernambuco/noticia/2026/09/20/concursos-e-selecoes-em-pe-tem-mais-de-14-mil-vagas-e-salarios-de-ate-r-37-mil-saiba-como-se-inscrever.ghtml
+Title:   Prefeitura de Erval Velho - SC retifica concurso público com salários de até R$ 22.044,76
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-erval-velho-sc-retifica-concurso-publico-com-salarios-de-ate-22044
+Career:   procuradorias
+Group:   prefeitura-erval-velho-sc-advogado
+Reason:  A Prefeitura de Erval Velho/SC publicou retificação em seu edital de concurso público, contemplando a formação de cadastro de reserva para o cargo de Advogado. As remunerações gerais do certame chegam a até R$ 22.044,76, variando conforme o cargo e a jornada de 20 a 40 horas semanais. As inscrições permanecem abertas até 01/10/2026 no site da banca organizadora Aprender SC, com aplicação da prova objetiva agendada para 08/11/2026.
+
+Title:   Prefeitura de Alvorada - RS retifica concurso público com salários de até R$ 18.974,55
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-alvorada-rs-retifica-concurso-publico-com-salarios-de-ate-18974
+Career:   procuradorias
+Group:   prefeitura-alvorada-rs-procurador
+Reason:  O Município de Alvorada/RS anunciou concurso público destinado à formação de cadastro de reserva, incluindo a função de Procurador para profissionais com bacharelado em Direito e inscrição na OAB. As remunerações da seleção alcançam até R$ 18.974,55 para jornadas de até 40 horas semanais. As inscrições devem ser realizadas até 18/10/2026 no portal do Instituto Legalle, com provas teórico-objetivas marcadas para o dia 29/11/2026.
+
+Title:   Câmara de Barão de Antonina - SP abre concurso público para o cargo de Advogado
+URL:     https://www.pciconcursos.com.br/noticias/camara-de-barao-de-antonina-sp-abre-concurso-publico-para-o-cargo-de-advogado
+Career:   procuradorias
+Group:   camara-barao-de-antonina-sp-advogado
+Reason:  Edital publicado pela Câmara Municipal de Barão de Antonina/SP com 1 vaga para Advogado. O cargo exige graduação em Direito e registro na OAB, oferecendo remuneração inicial de R$ 6.603,39 para jornada de 20 horas semanais. Inscrições abertas de 23/09/2026 a 21/10/2026 no site da banca Fundação FAFIPA. Provas objetiva e discursiva previstas para 22/11/2026.
+
+Title:   Concurso da Prefeitura de Arco-Íris-SP 2026: Edital e Inscrição
+URL:     https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-da-prefeitura-de-arco-iris-sp-2026-93438
+Career:   procuradorias
+Group:   prefeitura-arco-iris-sp-advogado
+Reason:  Prefeitura de Arco-Íris/SP publicou edital de concurso público formando cadastro de reserva para o cargo de Advogado. A função exige nível superior em Direito e registro na OAB, com vencimento inicial de R$ 5.462,22 acrescido de vale-alimentação de R$ 800,00 para 30 horas semanais. Inscrições de 21/09/2026 a 05/10/2026 no site da Império Concursos. Provas objetivas agendadas para 22/11/2026.
+
+Title:   Câmara de Barão de Antonina-SP abre vagas para Advogado de R$ 6,6 mil
+URL:     https://www.acheconcursos.com.br/concursos-sao-paulo/camara-de-barao-de-antonina-sp-abre-vagas-para-advogado-6-6-mil-93432
+Career:   procuradorias
+Group:   camara-barao-de-antonina-sp-advogado
+Reason:  Publicado edital de concurso público na Câmara de Barão de Antonina/SP ofertando 1 vaga imediata para o cargo de Advogado. Exige-se ensino superior em Direito e inscrição ativa na OAB. A remuneração é de R$ 6.603,39 para carga horária de 20 horas semanais. Inscrições de 23/09 a 21/10/2026 via Fundação FAFIPA, com taxa de R$ 60,00. As provas objetiva e discursiva aplicam-se em 22/11/2026.
+
+Title:   Concurso CRBio 1ª Região: Edital abre vagas de níveis médio e superior
+URL:     https://www.acheconcursos.com.br/concursos-brasil/concurso-crbio-1a-regiao-edital-vagas-niveis-medio-e-superior-93422
+Career:   procuradorias
+Group:   crbio01-sp-mt-ms-advogado
+Reason:  O Conselho Regional de Biologia da 1ª Região publicou edital de concurso público sob o regime CLT, oferecendo vagas imediatas e cadastro de reserva para o cargo de Analista - Advogado. As inscrições seguem até 21 de outubro de 2026 pelo site do Instituto Quadrix, com taxa de R$ 100,00. As provas objetivas e discursivas estão aplicadas para o dia 29 de novembro de 2026 nas cidades de São Paulo, Campo Grande e Cuiabá.
+
+Title:   Concurso de Capelinha-MG 2026: Câmara abre vagas de até R$ 4,5 mil
+URL:     https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-camara-capelinha-mg-2026-91872
+Career:   procuradorias
+Group:   camara-capelinha-mg-advogado
+Reason:  A Câmara Municipal de Capelinha (MG) publicou edital estatutário oferecendo 1 vaga imediata para o cargo de Advogado, que exige graduação em Direito e registro na OAB. A remuneração inicial é de R$ 4.527,60 para jornada de 20 a 40 horas semanais. As inscrições ficam abertas até 21 de outubro de 2026, com organização da banca IMESO, e taxa de participação no valor de R$ 100,00 para o nível superior.
+
+Title:   Prefeitura de Caruaru - PE retifica concurso público para auditores e analistas fiscais
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-caruaru-pe-retifica-concurso-publico-para-auditores-e-analistas-fiscais
+Career:   procuradorias
+Group:   prefeitura-caruaru-pe-analista-fiscal-direito
+Reason:  A Prefeitura de Caruaru (PE) retificou edital de concurso público estatutário com vagas para nível superior, contemplando a função de Analista Fiscal Municipal - Direito (2 vagas) e Auditor Fiscal Municipal (10 vagas). A remuneração para analista é de R$ 2.500,00 acrescida de Gratificação de Produtividade Fazendária, enquanto o auditor conta com vencimento de R$ 6.000,00. Inscrições encerradas em 08/10/2026 via IBAM, com provas em 29/11/2026.
+
+Title:   Prefeitura de Campina Grande - PB altera data da prova do concurso público para Procurador Municipal
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-campina-grande-pb-altera-data-da-prova-do-concurso-publico-para-procurador-municipal
+Career:   procuradorias
+Group:   pgm-campina-grande-pb-procurador
+Reason:  Retificação publicada prorroga inscrições até 13/07/2026 e posterga provas objetivas e discursivas para 10/01/2027 para o concurso da PGM de Campina Grande/PB. O certame oferta 5 vagas para Procurador Municipal, exigindo superior em Direito e OAB, com remuneração inicial de R$ 9.652,80 para jornada de 30 horas semanais. Banca organizadora é o Idecan com taxa de R$ 230,00.
+
+Title:   ADE SAMPA - SP abre seleção pública para Assistente II na área de Gerência Jurídica
+URL:     https://www.pciconcursos.com.br/noticias/ade-sampa-sp-abre-selecao-publica-para-assistente-ii-na-area-de-gerencia-juridica
+Career:   administrativo
+Group:   adesampa-sao-paulo-sp-assistente-juridico
+Reason:  Seleção pública simplificada aberta pela ADE SAMPA em São Paulo/SP para 1 vaga de Assistente II na Gerência Jurídica, exigindo superior em andamento ou concluído em Direito. A remuneração é de R$ 4.586,83 para 40 horas semanais, sob regime CLT, com acréscimo de benefícios. Inscrições de 21 a 27/09/2026 pelo site da agência. Etapas incluem avaliação curricular, prova técnica e entrevista.
+
+Title:   Câmara e Município de Siqueira Campos - PR abrem concursos com salários de até R$ 16.681,60
+URL:     https://www.pciconcursos.com.br/noticias/camara-e-municipio-de-siqueira-campos-pr-abrem-concursos-com-salarios-de-ate-16681
+Career:   procuradorias
+Group:   camara-siqueira-campos-pr-procurador
+Reason:  Edital publicado pela Câmara Municipal de Siqueira Campos/PR com 1 vaga imediata mais cadastro reserva para o cargo de Procurador Jurídico. O salário inicial é de R$ 5.654,04 para jornada de 20 horas semanais. As inscrições ocorrem de 28/09/2026 a 27/10/2026 pelo site da banca Concursos FAU, com taxa de R$ 150,00. A prova objetiva está marcada para o dia 29/11/2026.
+
+Title:   CRQ da 9ª Região do Paraná abre concurso público com salários de até R$ 10.727,55
+URL:     https://www.pciconcursos.com.br/noticias/crq-da-9-regiao-do-parana-abre-concurso-publico-com-salarios-de-ate-10727
+Career:   procuradorias
+Group:   crq9-pr-assessor-juridico
+Reason:  O Conselho Regional de Química da 9ª Região (CRQ-PR) publicou edital de concurso com cadastro reserva para Assessor Jurídico. A remuneração varia de R$ 3.459,01 a R$ 10.727,55, somada a auxílio-alimentação de até R$ 1.540,00 e outros benefícios para jornada de 40 horas semanais. Inscrições abertas até 21/10/2026 no site do Instituto Quadrix, com taxa de R$ 66,00 para nível superior. Provas em 29/11/2026.
+
+Title:   Prefeitura de Arco-Íris - SP abre concurso público e processo seletivo para diversos cargos
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-arco-iris-sp-abre-concurso-publico-e-processo-seletivo-para-diversos-cargos
+Career:   procuradorias
+Group:   prefeitura-arco-iris-sp-advogado
+Reason:  Prefeitura de Arco-Íris/SP lançou concurso público com vagas para Advogado sob regime estatutário. Os vencimentos chegam a R$ 5.462,22 acrescidos de vale-alimentação de R$ 800,00 para jornadas de até 40 horas semanais. Inscrições de 21/09/2026 a 05/10/2026 por meio do portal Império Concursos, com taxa máxima de R$ 120,00. A realização das provas objetivas está prevista para 22/11/2026.
+
+Title:   Concurso CRQ-PR 2026 abre vagas para sete cargos; veja detalhes
+URL:     https://www.acheconcursos.com.br/concursos-parana/concurso-crq-pr-2026-inscricao-93423
+Career:   administrativo
+Group:   crq9-pr-assessor-juridico
+Reason:  Extrato de edital publicado pelo Conselho Regional de Química da 9ª Região (CRQ-PR) com vagas e cadastro de reserva para Assessor Jurídico de nível superior. As inscrições seguem abertas até 21/10/2026 pelo site do Instituto Quadrix, com taxas a R$ 66,00. As avaliações objetiva e discursiva estão agendadas para 29/11/2026 em Curitiba e Maringá.
+
+Title:   Concurso UFERSA-RN 2026: Sai edital com 25 vagas de até R$ 14.288
+URL:     https://www.acheconcursos.com.br/concursos-rio-grande-do-norte/concurso-ufersa-rn-2026-sai-edital-com-25-vagas-14-288-93421
+Career:   administrativo
+Group:   ufersa-rn-professor-direito
+Reason:  Edital 30/2026 da Universidade Federal Rural do Semi-Árido (UFERSA/RN) contempla 2 vagas de Professor do Magistério Superior para a área de Direito Privado e Práticas Jurídicas no campus de Mossoró. O cargo exige graduação em Direito, doutorado na área, inscrição na OAB e 3 anos de advocacia. A remuneração alcança até R$ 14.288,85 com regime de dedicação exclusiva.
+
+Title:   Concurso IFPA 2026: Sai edital com 65 vagas para Técnicos Administrativos
+URL:     https://www.acheconcursos.com.br/concursos-para/concurso-ifpa-2026-sai-edital-com-65-vagas-para-tecnicos-administrativos-93420
+Career:   administrativo
+Group:   ifpa-pa-auditor
+Reason:  Divulgado edital 05/2026 do Instituto Federal do Pará (IFPA) com 5 vagas imediatas para o cargo de Auditor, que admite bacharéis em Direito, além de Economia e Ciências Contábeis. A remuneração inicial é de R$ 5.215,39 para jornada de 40 horas semanais. As inscrições ficam abertas até 20/10/2026 sob a organização do Instituto AOCP.
+
+Title:   Concurso PGE-RS tem novidades; veja regulamento do edital
+URL:     https://www.acheconcursos.com.br/noticias/concurso-pge-rs-tem-novidades-veja-regulamento-do-edital-93441
+Career:   procuradorias
+Group:   pger-rs-procurador
+Reason:  Publicado o regulamento do novo concurso para Procurador do Estado da PGE-RS, estruturado em fase objetiva, escrita (com seis provas dissertativas e trabalho jurídico), definitiva (provas orais) e avaliação de títulos, prevendo reservas de vagas para pessoas com deficiência, negros, trans e indígenas.
+
+Title:   Concurso para advogado e contador; salário chega a R$ 5,5 mil
+URL:     https://www.folhavitoria.com.br/trabalho/concursos/conselho-abre-concurso-em-vitoria-para-advogado-e-contador-salario-chega-a-r-55-mil/
+Career:   procuradorias
+Group:   cref22-vitoria-es-advogado
+Reason:  O CREF22/ES abriu edital de concurso público com 1 vaga imediata para Advogado I, exigindo graduação em Direito, OAB e CNH categoria B. A remuneração inicial é de R$ 5.500,00 para 44 horas semanais, acrescida de benefícios. Inscrições até 20 de outubro com provas aplicadas em dezembro.
+
+Title:   TJPR abre PSS para estágio de pós-graduação com bolsa de R$ 3,2 mil em Campo Mourão
+URL:     https://www.tribunadointerior.com.br/campo-mourao/tjpr-abre-pss-para-estagio-de-pos-graduacao-com-bolsa-de-r-32-mil-em-campo-mourao/
+Career:   estagio
+Group:   tjpr-campo-mourao-pr-estagio
+Reason:  O TJPR abriu processo seletivo para estágio de pós-graduação em Direito na Secretaria da 2ª Vara Criminal de Campo Mourão. A oportunidade oferece bolsa-auxílio de R$ 3.198,21 mais auxílio-transporte para jornada de 30 horas semanais. Inscrições gratuitas abertas até 2 de outubro.
+
+Title:   Concurso CREMERJ: vagas para níveis médio, técnico e superior com salários de até R$ 18 mil
+URL:     https://www.portaltemponovo.com.br/concurso-cremerj-vagas-para-niveis-medio-tecnico-e-superior-com-salarios-de-ate-r-18-mil/
+Career:   procuradorias
+Group:   cremerj-rj-juridico
+Reason:  Edital publicado pelo CREMERJ sob organização do Instituto Consulplan, ofertando vagas para Advogado com remuneração de R$ 7.718,45 e Analista Jurídico com R$ 6.084,46, além de amplos benefícios como auxílio-refeição e assistência médica. As inscrições ocorrem de 23/09 a 22/10/2026, com provas objetiva e discursiva agendadas para o dia 13/12/2026.
+
+Title:   Prefeitura de Curitiba anuncia concurso com 348 vagas de nível médio e superior
+URL:     https://www.bemparana.com.br/noticias/parana/prefeitura-de-curitiba-anuncia-concurso-com-348-vagas-de-nivel-medio-e-superior/
+Career:   procuradorias
+Group:   pgm-curitiba-pr-procurador
+Reason:  Concurso público unificado da Prefeitura de Curitiba publicado com 5 vagas imediatas para o cargo de Procurador do Município. O certame exige nível superior em Direito e OAB, contando com taxa de inscrição de R$ 250,00. As etapas incluem prova objetiva e discursiva aplicadas em 13/12/2026, além de avaliação de títulos.
+
+Title:   Câmara de Siqueira Campos: procurador terá salário inicial de R$ 5,6 mil
+URL:     https://diariodamidia.com.br/camara-de-siqueira-campos-procurador-tera-salario-inicial-de-r-56-mil
+Career:   procuradorias
+Group:   camara-siqueira-campos-pr-procurador
+Reason:  Processo seletivo publicado pela Câmara Municipal de Siqueira Campos/PR oferecendo 1 vaga imediata e cadastro reserva para Procurador Jurídico. O cargo exige graduação em Direito e registro na OAB, com remuneração de R$ 5.654,04 para jornada de 20 horas semanais. Inscrições abertas de 28/09 a 27/10/2026, com prova objetiva prevista para 29/11/2026.
+
+Title:   Concurso PGE RS: publicado regulamento para nova seleção de procurador
+URL:     https://jcconcursos.com.br/noticia/concursos/concurso-pge-rs-publicado-regulamento-para-nova-selecao-de-procurador-145543
+Career:   procuradorias
+Group:   pger-rs-procurador
+Reason:  Publicado o regulamento oficial do novo concurso da PGE-RS para o cargo de Procurador do Estado, exigindo nível superior em Direito. A comissão organizadora já está formada e o edital de abertura deve ser lançado em breve. O último certame, realizado em 2021 pela banca Fundatec, ofertou 7 vagas imediatas com remuneração inicial que ultrapassava R$ 27 mil somada aos honorários de sucumbência.
+
+Title:   Concurso DPE PB: veja como serÃ£o as provas e etapas; atÃ© R$ 5.1 mil!
+URL:     https://www.direcaoconcursos.com.br/noticias/concurso-dpe-pb-provas-e-etapas
+Career:   defensoria
+Group:   dpepb-pb-analista-e-tecnico
+Reason:  Publicado o edital do concurso da DPE-PB, organizado pela Fundação Carlos Chagas (FCC), oferecendo 20 vagas mais cadastro de reserva para cargos de níveis médio e superior, com remunerações de até R$ 5.197,50. As etapas incluem provas objetiva e discursiva aplicadas na data prevista de 28/02/2027, com encerramento de todas as fases e resultado final homologado previsto para agosto de 2027.
+
+Title:   Conselho Regional de Química do Paraná abre concurso com 3 vagas em Curitiba | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/conselho-regional-de-quimica-do-parana-abre-concurso-com-3-vagas-em-curitiba
+Career:   administrativo
+Group:   crq9-pr-assessor-juridico
+Reason:  O Conselho Regional de Química do Paraná (CRQ-PR) publicou edital com vagas e cadastro reserva sob organização do Instituto Quadrix, contemplando o cargo de Assessor Jurídico de nível superior. As remunerações variam de R$ 3.459,01 a R$ 10.727,55 em regime CLT, acrescidas de auxílio-alimentação de até R$ 1.540. As inscrições seguem abertas até 21/10/2026 e as provas ocorrem em 29/11/2026.
+
+Title:   Concurso PGM Curitiba PR: edital com 5 vagas e R$ 38 mil
+URL:     https://cj.estrategia.com/portal/concurso-pgm-curitiba-pr-edital-publicado/
+Career:   procuradorias
+Group:   pgm-curitiba-pr-procurador
+Reason:  Publicado edital para Procurador do Município na PGM Curitiba/PR com 5 vagas imediatas e remuneração inicial de R$ 38.087,99 para 40h semanais. As inscrições ocorrem de 7 de outubro a 5 de novembro de 2026 no site da banca Fundação FAFIPA. A taxa custa R$ 250,00. A prova objetiva está marcada para 13 de dezembro de 2026, seguida de prova discursiva e avaliação de títulos.
+
+Title:   Câmara Municipal de Barão de Antonina SP abre concurso com 1 vaga para advogado | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/camara-municipal-de-barao-de-antonina-sp-abre-concurso-com-1-vaga-para-advogado
+Career:   procuradorias
+Group:   camara-barao-de-antonina-sp-advogado
+Reason:  A Câmara Municipal de Barão de Antonina/SP publicou edital com 1 vaga para Advogado em regime estatutário, exigindo graduação e OAB. A remuneração inicial é de R$ 6.603,39 para jornada de 20 horas semanais. As inscrições seguem abertas de 23 de setembro a 21 de outubro de 2026 pelo portal da Fundação FAFIPA, com taxa de R$ 60,00. As provas objetiva e discursiva estão agendadas para 22 de novembro de 2026.
+
+Title:   Concurso Câmara de Siqueira Campos (PR) oferta inicial de R$ 5,6 mil
+URL:     https://concursosnobrasil.com/concursos/pr/2026/09/21/concurso-camara-de-siqueira-campos-pr-oferta-inicial-de-r-56-mil/
+Career:   procuradorias
+Group:   camara-siqueira-campos-pr-procurador
+Reason:  Divulgado edital pela Câmara de Siqueira Campos/PR ofertando 1 vaga imediata e cadastro reserva para Procurador Jurídico, exigindo superior em Direito e registro na OAB. A remuneração é de R$ 5.654,04 para jornada de 20 horas semanais. Inscrições abertas de 28 de setembro a 27 de outubro de 2026 no site da banca UNICENTRO, com taxa de R$ 150,00. Prova objetiva prevista para 29 de novembro de 2026.
+
+Title:   Processo seletivo ADE SAMPA (SP) remunera R$ 4,5 mil para nível superior
+URL:     https://concursosnobrasil.com/concursos/sp/2026/09/21/processo-seletivo-ade-sampa-sp-remunera-r-45-mil-para-nivel-superior/
+Career:   administrativo
+Group:   adesampa-sao-paulo-sp-assistente-juridico
+Reason:  Processo seletivo publicado pela Agência São Paulo de Desenvolvimento (ADE SAMPA) para o cargo de Assistente II na Gerência Jurídica, oferecendo 1 vaga imediata mais cadastro reserva. Remuneração mensal de R$ 4.586,83 mais benefícios para 40h semanais. Inscrições abertas de 21 a 27 de setembro de 2026. Prova técnica online prevista para 8 de outubro de 2026.
+
+Title:   Prefeitura de Limeira abre inscrições para processo seletivo para estagiários de ensino médio, técnico e superior - Prefeitura de Limeira
+URL:     https://www.limeira.sp.gov.br/imprensa/noticias/administracao/prefeitura-de-limeira-abre-inscricoes-para-processo-seletivo-para-estagiarios-de-ensino-medio-tecnico-e-superior
+Career:   estagio
+Group:   prefeitura-limeira-sp-estagio-direito
+Reason:  Processo seletivo de estágio aberto pela Prefeitura de Limeira/SP (Edital nº 06/2026) para formação de cadastro reserva em 26 cursos, incluindo graduação em Direito. Bolsa-auxílio fixada em R$ 1.000,00 para carga horária de 30 horas semanais. Inscrições podem ser realizadas exclusivamente pela internet até o dia 5 de outubro de 2026.
+
+Title:   Concurso TJ PE Juiz: locais de prova são divulgados; confira
+URL:     https://magistrarcursos.com.br/blog/concurso-tj-pe-juiz-locais-de-prova-sao-divulgados-confira/
 Career:   tribunais
-Group:   trf5-nacional-juiz-federal-substituto
-Reason:  Edital publicado pelo Tribunal Regional Federal da 5ª Região (TRF-5) oferecendo 11 vagas para o cargo de Juiz Federal Substituto. A remuneração inicial é de R$ 37.731,80. As inscrições permanecem abertas até o dia 28 de setembro, conforme divulgado no levantamento de seleções em Pernambuco.
+Group:   tjpe-pe-juiz
+Reason:  O Tribunal de Justiça de Pernambuco divulgou os locais de prova objetiva do concurso para Juiz Substituto, organizado pela FGV. O certame oferece 30 vagas imediatas com subsídio inicial de R$ 35.877,28. A avaliação objetiva seletiva está marcada para o dia 27 de setembro de 2026, reunindo 4.214 inscritos.
 
-Title:   Concurso Guarabira: 170 vagas e salários de R$ 8 mil até domingo | G1
-URL:     https://g1.globo.com/pb/paraiba/noticia/2026/09/20/inscricoes-para-concurso-da-prefeitura-de-guarabira-pb-com-170-vagas-e-salarios-de-mais-de-r-8-mil-se-encerram-neste-domingo-20.ghtml
-Career:   procuradorias
-Group:   pgm-guarabira-pb-procurador
-Reason:  Edital publicado pela Prefeitura de Guarabira/PB, com organização da CPCon/UEPB, oferecendo vaga para Procurador Municipal. O certame contempla oportunidades de níveis médio, técnico e superior, com remunerações iniciais que chegam a R$ 8.472,00. As inscrições encerram-se em 20 de setembro e a prova objetiva está agendada para 18 de outubro.
-
-Title:   Primeira fase do concurso de Procurador do Município
-URL:     https://www.manaus.am.gov.br/noticia/concurso/primeira-fase-concurso-procurador-municipio/
-Career:   procuradorias
-Group:   pgm-manaus-am-procurador
-Reason:  A Prefeitura de Manaus/AM, por meio da PGM, realizou a aplicação da prova objetiva da primeira fase do concurso público para Procurador do Município de 3ª Classe. O certame oferece 6 vagas imediatas, sendo 5 para ampla concorrência e 1 para PcD, além de cadastro de reserva. A seleção é organizada pela Fundação Carlos Chagas (FCC) e conta com mais de 2 mil inscritos.
-
-Title:   Gabarito Câmara de Nilópolis-RJ 2026; veja resultado das provas
-URL:     https://www.acheconcursos.com.br/noticias/gabarito-camara-de-nilopolis-rj-2026-veja-resultado-das-provas-93406
-Career:   procuradorias
-Group:   camara-nilopolis-rj-procurador
-Reason:  Concurso da Câmara Municipal de Nilópolis/RJ com provas objetivas já realizadas e gabarito preliminar previsto. O certame oferta 3 vagas imediatas mais cadastro de reserva para o cargo de Procurador, que exigiu graduação em Direito e inscrição na OAB, contando com 392 inscritos. A seleção inclui avaliação discursiva específica para a carreira.
-
-Title:   Transpetro: inscrições para concurso terminam nesta segunda | G1
-URL:     https://g1.globo.com/trabalho-e-carreira/concursos/noticia/2026/09/21/transpetro-inscricoes-para-concurso-terminam-nesta-segunda-salarios-chegam-a-r-15-mil.ghtml
+Title:   Transpetro: prazo para inscrição no concurso termina hoje; veja como se inscrever
+URL:     https://gauchazh.clicrbs.com.br/viral/noticia/2026/09/inscricoes-para-concurso-da-transpetro-terminam-nesta-segunda-feira-veja-como-se-inscrever-cmubhovwb006l013egzzk5w0w.html
 Career:   procuradorias
 Group:   transpetro-nacional-advogado
-Reason:  Edital da Transpetro com inscrições abertas até o final do dia para o cargo de Profissional de Nível Superior Júnior na ênfase de Advocacia. A seleção conta com vagas imediatas e formação de cadastro reserva, oferecendo remuneração inicial de R$ 14.973,62. O processo avaliativo inclui provas objetivas de conhecimentos gerais e específicos, além de prova discursiva.
+Reason:  A Transpetro está com inscrições abertas até 21/09/2026 em seu concurso público organizado pela Fundação Cesgranrio. O Edital 4 contempla vagas de nível superior, incluindo o cargo de advogado, com remuneração inicial de até R$ 15.034,81 mais benefícios. As provas objetivas serão aplicadas em 29 de novembro de 2026.
 
-Title:   Concurso da PGM Manaus tem primeira etapa neste domingo - Amazonas | Portal do Holanda
-URL:     https://www.portaldoholanda.com.br/amazonas/concurso-da-pgm-manaus-tem-primeira-etapa-neste-domingo
+Title:   Concurso PGE-RS tem novidades; veja regulamento do edital
+URL:     https://www.acheconcursos.com.br/noticias/concurso-pge-rs-tem-novidades-veja-regulamento-do-edital-93441.amp
 Career:   procuradorias
-Group:   pgm-manaus-am-procurador
-Reason:  Certame da PGM Manaus com provas objetivas em andamento neste domingo para o cargo de Procurador do Município de 3ª Classe. A seleção, organizada pela FCC, oferece 6 vagas imediatas, sendo 5 para ampla concorrência e 1 para PcD, além de cadastro de reserva. O processo é composto por três fases sucessivas.
+Group:   pger-rs-procurador
+Reason:  A Procuradoria-Geral do Estado do Rio Grande do Sul publicou a Resolução nº 316, oficializando o regulamento do novo concurso para Procurador do Estado, que contará com fases objetiva, escrita, definitiva e avaliação de títulos. Simultaneamente, o órgão formou comissão para organizar o certame de servidores, cujo último edital ofertou vagas para Analista Jurídico.
 
-Title:   Concurso para procurador de Manaus começa neste domingo com seis vagas
-URL:     https://www.irecelider.com.br/noticias-do-mundo/i/507b63522bf9a38fe9b11f697a0f9607/concurso-para-procurador-de-manaus-comeca-neste-domingo-com-seis-vagas
-Career:   procuradorias
-Group:   pgm-manaus-am-procurador
-Reason:  Concurso público para o cargo de Procurador do Município de 3ª Classe na PGM Manaus com provas objetivas aplicadas neste domingo. A seleção é organizada pela Fundação Carlos Chagas (FCC) e oferta 6 vagas imediatas, incluindo reserva para PcD, além de cadastro de reserva, estruturada em três etapas sucessivas.
-
-Title:   Conselhos do ES, Vitória e Funai: 19 mil vagas em concursos e seleções
-URL:     https://www.agazeta.com.br/concursos/conselhos-do-es-vitoria-e-funai-19-mil-vagas-em-concursos-e-selecoes-0926
-Career:   procuradorias
-Group:   crefes-crfes-es-advogado
-Reason:  O CREF17/ES e o CRF-ES abriram concursos públicos com vagas para Advogado. O CREF17 oferece vagas com salário de R$ 5.500,00 e inscrições até 20 de outubro. Já o CRF-ES traz 1 vaga imediata para jornada de 20 horas semanais com remuneração de R$ 3.000,00 e inscrições abertas até 5 de outubro de 2026.
-
-Title:   Tribunal de Justiça de Goiás autoriza novo concurso para 2027 - O Hoje
-URL:     https://ohoje.com/2026/09/20/tribunal-de-justica-de-goias-autoriza-novo-concurso-para-2027/
-Career:   tribunais
-Group:   tjgo-go-analista-judiciario
-Reason:  O Tribunal de Justiça de Goiás avançou nos preparativos para seu novo concurso previsto no Plano de Contratações Anual, estimando a contratação da banca para fevereiro de 2027. A seleção contemplará analista judiciário nas áreas Judiciária e de Apoio, exigindo nível superior com remuneração inicial de R$ 10.400,74. O quantitativo exato de vagas ainda não foi divulgado pelo órgão.
-
-Title:   Transpetro: inscrições para concurso terminam nesta segunda | G1
-URL:     https://g1.globo.com/google/amp/trabalho-e-carreira/concursos/noticia/2026/09/21/transpetro-inscricoes-para-concurso-terminam-nesta-segunda-salarios-chegam-a-r-15-mil.ghtml
-Career:   procuradorias
-Group:   transpetro-nacional-advogado
-Reason:  A Transpetro está com inscrições abertas em seu concurso público unificado organizado pela Fundação Cesgranrio, oferecendo vagas para nível superior, incluindo a ênfase de Advocacia no quadro de terra. O certame conta com remuneração mínima de R$ 14.973,62 para os cargos superiores, compreendendo prova objetiva e prova discursiva específica para advogados.
-
-Title:   Concurso Procurador de Manaus: provas começam neste domingo | G1
-URL:     https://g1.globo.com/am/amazonas/noticia/2026/09/20/concurso-para-procurador-de-manaus-comeca-neste-domingo-com-seis-vagas.ghtml
-Career:   procuradorias
-Group:   pgm-manaus-am-procurador
-Reason:  O concurso público para Procurador do Município de 3ª Classe da PGM Manaus realiza sua primeira fase (prova objetiva) sob organização da banca Fundação Carlos Chagas (FCC). O certame oferta 6 vagas imediatas, divididas entre ampla concorrência e reserva para PcD, além de formação de cadastro de reserva. A avaliação objetiva possui duração de 5 horas.
-
-Title:   PGM realiza a primeira fase do concurso para o cargo de Procurador de Manaus neste domingo
-URL:     https://marioadolfo.com/pgm-realiza-a-primeira-fase-do-concurso-para-o-cargo-de-procurador-de-manaus-neste-domingo/
-Career:   procuradorias
-Group:   pgm-manaus-am-procurador
-Reason:  A Procuradoria-Geral do Município de Manaus aplica a primeira fase do concurso público para Procurador de 3ª Classe, sob responsabilidade técnica da FCC. O edital contempla 6 vagas imediatas, contemplando cotas para PcD, e previsão de cadastro de reserva. O certame é estruturado em três fases sucessivas.
-
-Title:   Concurso Câmara de Dois Córregos (SP): edital publicado com vagas para todos os níveis de escolaridade
-URL:     https://jcconcursos.com.br/amp/noticia/concursos/concurso-camara-de-dois-corregos-sp-edital-publicado-com-vagas-para-todos-os-niveis-de-escolaridade-145532
+Title:   Concurso CRBio 01 prevê mais de 400 vagas de níveis médio e superior em novo edital
+URL:     https://concursosnobrasil.com/concursos/2026/09/21/concurso-crbio-01-preve-vagas-de-niveis-medio-e-superior-em-novo-edital/
 Career:   administrativo
-Group:   camara-dois-corregos-sp-diretor-juridico
-Reason:  Edital publicado pela Câmara Municipal de Dois Córregos/SP com vagas imediatas e cadastro de reserva para nível superior, incluindo o cargo de Diretor Jurídico Legislativo com remuneração inicial de R$ 7.114,33 para jornada de 20 horas semanais. Inscrições abertas de 23/09 a 22/10/2026 no site da banca Império Concursos. Prova objetiva prevista para 15/11/2026.
+Group:   crbio01-sp-mt-ms-advogado
+Reason:  O Conselho Regional de Biologia da 1ª Região (CRBio-01) publicou edital com 470 vagas para níveis médio e superior, incluindo o cargo de Advogado com remuneração inicial de R$ 7.181,50 para jornada de 40 horas semanais. As inscrições seguem abertas até 21 de outubro de 2026, sob organização do Instituto Quadrix, com provas previstas para novembro.
 
-Title:   Santa Catarina abre 50 vagas de auditor com salário de R$ 25,3 mil - BRA 1
-URL:     https://www.bra1.com.br/geral/id-694947/santa_catarina_abre_50_vagas_de_auditor_com_salario_de_r__25_3_mil
-Career:   procuradorias
-Group:   sefaz-sc-florianopolis-sc-auditor
-Reason:  Concurso público da Secretaria de Estado da Fazenda de Santa Catarina (Sefaz-SC) com edital publicado oferecendo 50 vagas imediatas para Auditor Estadual de Finanças Públicas, sendo 8 vagas exclusivas para graduados em Direito. Remuneração inicial de R$ 25.337,61. Inscrições até 05/10/2026 pelo site da FCC e provas objetivas agendadas para 22/11/2026 em Florianópolis/SC.
-
-Title:   Câmara de Nilópolis divulga nesta segunda gabarito do concurso 2026
-URL:     https://imprensa24h.com.br/gabarito-camara-nilopolis-rj-2026/
-Career:   procuradorias
-Group:   camara-nilopolis-rj-procurador
-Reason:  Concurso público da Câmara Municipal de Nilópolis/RJ com vagas para o cargo de Procurador teve provas objetiva e discursiva aplicadas em setembro de 2026. O certame oferta 3 vagas imediatas para a função jurídica, sob organização do Instituto Seleção. Divulgação do gabarito preliminar em andamento e resultado final previsto para janeiro de 2027.
-
-Title:   Procuradoria-Geral do Município aplica 1ª fase de concurso para procurador neste domingo em Manaus - Amazonas | Portal do Holanda
-URL:     https://www.portaldoholanda.com.br/amazonas/procuradoria-geral-do-municipio-aplica-1a-fase-de-concurso-para-procurador-neste-domingo-em-manaus
+Title:   Prefeitura realiza concurso que vai selecionar seis novos procuradores - Blog do Hiel Levy
+URL:     https://blogdohiellevy.com.br/prefeitura-realiza-concurso-que-vai-selecionar-seis-novos-procuradores/
 Career:   procuradorias
 Group:   pgm-manaus-am-procurador
-Reason:  A Procuradoria-Geral do Município de Manaus (PGM) realizou a aplicação da prova objetiva da 1ª fase do concurso público para Procurador Municipal de 3ª Classe. O certame, organizado pela Fundação Carlos Chagas (FCC), oferta 6 vagas imediatas, contemplando ampla concorrência e reserva para PcD, além de cadastro de reserva.
+Reason:  A Prefeitura de Manaus realizou a primeira fase do concurso público para o cargo de Procurador do Município de 3ª Classe, sob organização da FCC. O certame oferta 6 vagas imediatas, sendo 5 para ampla concorrência e 1 para PcD, além de cadastro de reserva. A seleção é composta por prova objetiva, provas escritas, prova oral e avaliação de títulos.
 
-Title:   Marinha oferece vagas para 12 áreas em Manaus e Tabatinga; veja como se inscrever - Concursos | Portal do Holanda
-URL:     https://www.portaldoholanda.com.br/concursos/marinha-oferece-vagas-para-12-areas-em-manaus-e-tabatinga-veja-como-se-inscrever
+Title:   Agência São Paulo de Desenvolvimento abre processo seletivo para assistente II na Gerência Jurídica | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/agencia-sao-paulo-de-desenvolvimento-abre-processo-seletivo-para-assistente-ii-na-gerencia-juridica
 Career:   administrativo
-Group:   marinha-nacional-oficial-temporario-direito
-Reason:  Processo seletivo da Marinha do Brasil para o Serviço Militar Voluntário como Oficial Temporário (PS-SMV-OF/2027) com vagas para bacharéis em Direito. São ofertadas 3 vagas para a área jurídica distribuídas entre Manaus/AM, Tabatinga/AM e Porto Velho/RO, com remuneração inicial aproximada de R$ 11.000,00 após o estágio. Inscrições abertas até 10 de novembro de 2026.
+Group:   adesampa-sao-paulo-sp-assistente-juridico
+Reason:  Processo seletivo publicado pela ADE SAMPA (edital 06/2026) oferece 1 vaga para Assistente II na Gerência Jurídica, exigindo nível superior em Direito. A remuneração é de R$ 4.586,83 para 40h semanais, acrescida de benefícios. Inscrições entre 21 e 27 de setembro de 2026 no site da agência.
 
-Title:   Concurso em SC oferece salário de R$ 25,3 mil e inscrições até 5 de outubro
-URL:     https://jornalrazao.com/concursos/concurso-em-sc-oferece-salario-de-r-253-mil-e-inscricoes-ate-5-de-outubro
+Title:   Concurso Prefeitura de Curitiba PR 2026: publicados três editais com 348 vagas e salários de até R$ 38 mil
+URL:     https://concursossc.com.br/concurso-prefeitura-de-curitiba-pr-2026-publicados-tres-editais-com-348-vagas-e-salarios-de-ate-r-38-mil/
 Career:   procuradorias
-Group:   sefaz-sc-florianopolis-sc-auditor
-Reason:  Edital publicado pela Secretaria de Fazenda de Santa Catarina (Sefaz SC) com 50 vagas para Auditor Estadual de Finanças Públicas, contemplando 8 vagas específicas para bacharéis em Direito. Remuneração inicial de R$ 25.337,61 para jornada de 40 horas semanais. Organização a cargo da FCC, com inscrições até 05/10/2026 e provas aplicadas em 22/11/2026.
+Group:   pgm-curitiba-pr-procurador
+Reason:  Prefeitura de Curitiba/PR publicou três editais (04, 05 e 06/2026) com 348 vagas totais sob regime estatutário, destacando-se o cargo de Procurador do Município com 5 vagas e remuneração inicial de R$ 38.087,99. Inscrições de 7 de outubro a 5 de novembro de 2026 pela banca FAFIPA.
 
-Title:   Processo seletivo FAI (SP): últimas dias para concorrer ao cargo de Analista Jurídico
-URL:     https://jcconcursos.com.br/noticia/concursos/processo-seletivo-fai-sp-ultimas-dias-para-concorrer-ao-cargo-de-analista-juridico-145530
+Title:   Concurso Câmara de Barão de Antonina (SP) paga R$ 6,6 mil em edital
+URL:     https://concursosnobrasil.com/concursos/sp/2026/09/21/concurso-camara-de-barao-de-antonina-sp-paga-r-66-mil-em-edital/
+Career:   procuradorias
+Group:   camara-barao-de-antonina-sp-advogado
+Reason:  Edital publicado pela Câmara de Barão de Antonina/SP, oferecendo 1 vaga imediata mais cadastro de reserva para o cargo de Advogado. A remuneração inicial é de R$ 6.603,39 para jornada de 20 horas semanais. As inscrições seguem abertas até 21/10/2026 pelo site da banca Fundação FAFIPA, com taxa de R$ 60,00. As provas objetiva e discursiva estão aplicadas para 22/11/2026.
+
+Title:   Concurso Cremerj: veja cargos e salários de até R$18 mil | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/concurso-cremerj-cargos-e-salarios
 Career:   administrativo
-Group:   fai-adamantina-sp-analista-juridico
-Reason:  Processo seletivo publicado pelo Centro Universitário de Adamantina (FAI-SP) para Analista Jurídico, exigindo graduação em Direito. Oferece 1 vaga imediata mais cadastro de reserva sob regime celetista, com remuneração inicial de R$ 4.494,00 para carga horária de 40 horas semanais. Inscrições abertas de 09/09/2026 a 23/09/2026 no site da banca IASPE. Prova objetiva agendada para 11/10/2026.
+Group:   cremerj-rj-juridico
+Reason:  Concurso público divulgado pelo Cremerj contempla vagas efetivas e cadastro reserva para cargos de nível superior em Direito, incluindo Advogado, Analista Jurídico, Analista de Procedimentos Éticos e Analista de Processos. As remunerações iniciais variam de R$ 6.084,46 a R$ 7.718,45, além de benefícios institucionais previstos na norma de regência do certame.
 
