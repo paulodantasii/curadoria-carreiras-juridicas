@@ -1,173 +1,251 @@
-Verificação: 2026-09-23T09:01:50.568805+00:00
-Links analisados: 155
-Links relevantes: 28
+Verificação: 2026-09-24T08:58:02.988211+00:00
+Links analisados: 170
+Links relevantes: 41
 ============================================================
 
-Title:   Prefeitura de Comodoro - MT abre novos editais de concurso e processo seletivo
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-comodoro-mt-abre-novos-editais-de-concurso-e-processo-seletivo
+Title:   PMMG abre concurso com 90 vagas para o Curso de Formação de Oficiais
+URL:     https://www.pciconcursos.com.br/noticias/pmmg-abre-concurso-com-90-vagas-para-o-curso-de-formacao-de-oficiais
+Career:   policiais
+Group:   pmmg-mg-oficial
+Reason:  Edital publicado para o Curso de Formação de Oficiais da PMMG oferecendo 90 vagas para bacharéis em Direito. A remuneração inicial para Cadete é de R$ 7.912,17, chegando a R$ 12.170,61 após a formatura para 2º Tenente. Inscrições de 10/11 a 10/12/2026 pelo site da corporação, com taxa de R$ 243,00. As provas objetivas e dissertativas estão programadas para 10 de janeiro de 2027.
+
+Title:   SEFAZ - SC abre concurso público para o cargo de Auditor Estadual de Finanças Públicas
+URL:     https://www.pciconcursos.com.br/noticias/sefaz-sc-abre-concurso-publico-para-o-cargo-de-auditor-estadual-de-financas-publicas
 Career:   procuradorias
-Group:   prefeitura-comodoro-mt-analista-procuradoria
-Reason:  A Prefeitura e a Câmara de Comodoro/MT publicaram concurso com vagas e cadastro de reserva para os cargos de Analista de Procuradoria e Analista de Procuradoria Legislativa, exigindo formação superior em Direito. As inscrições ocorrem de 5 a 22 de outubro de 2026 pelo site da UFMT, com taxa de R$ 120,00 e provas objetivas previstas para novembro de 2026.
+Group:   sefazsc-sc-auditor-juridico
+Reason:  Publicado edital pela SEFAZ/SC com 8 vagas imediatas para o cargo de Auditor Estadual de Finanças Públicas exigindo graduação em Direito. O vencimento inicial é de R$ 25.337,61 para carga horária de 40 horas semanais. Inscrições abertas de 04/09 a 05/10/2026 no site da banca FCC, com taxa de R$ 200,00. As provas objetivas de conhecimentos gerais e específicos estão agendadas para o dia 22 de novembro de 2026.
 
-Title:   Prefeitura e Câmara de Comodoro - MT lançam concursos públicos para procuradores jurídicos
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-e-camara-de-comodoro-mt-lancam-concursos-publicos-para-procuradores-juridicos
-Career:   procuradorias
-Group:   prefeitura-comodoro-mt-procurador
-Reason:  Concurso público lançado pela Prefeitura e Câmara Municipal de Comodoro/MT provê vagas e cadastro reserva para Procurador Jurídico e Procurador Jurídico Legislativo, com remunerações de R$ 14.470,40 e R$ 13.961,92 para 40h semanais. Inscrições abertas de 5 a 22 de outubro de 2026 no portal da UFMT. A seleção compreende provas objetiva, discursiva e de títulos.
-
-Title:   Prefeitura de Curitiba - PR abre concursos públicos com vagas imediatas e cadastro de reserva
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-curitiba-pr-abre-concursos-publicos-com-vagas-imediatas-e-cadastro-de-reserva
-Career:   procuradorias
-Group:   prefeitura-curitiba-pr-procurador
-Reason:  Edital publicado pela Prefeitura de Curitiba/PR com vagas imediatas e cadastro de reserva para Procurador do Município. A remuneração inicial alcança até R$ 14.117,18 em regime estatutário, com jornada de 30 a 40 horas semanais. As inscrições seguem abertas de 07/10/2026 a 05/11/2026 no site da banca Fundação Fafipa, com taxa de R$ 250,00. A seleção envolverá provas objetiva, discursiva e de títulos.
-
-Title:   CASAN - SC retifica editais de concursos públicos
-URL:     https://www.pciconcursos.com.br/noticias/casan-sc-retifica-editais-de-concursos-publicos
-Career:   procuradorias
-Group:   casan-sc-advogado
-Reason:  A CASAN/SC publicou retificação em seus editais de concurso público, contemplando vagas para Advogado e Assistente Jurídico com exigência de graduação em Direito e registro na OAB. A remuneração inicial varia até R$ 12.600,62, acrescida de benefícios como vale-alimentação de R$ 1.892,00. As inscrições encerraram em 05/10/2026, sob organização do Instituto AOCP, com provas objetivas previstas para 22/11/2026.
-
-Title:   Câmara de Siqueira Campos-PR abre concurso com salário de R$ 5.654
-URL:     https://www.acheconcursos.com.br/concursos-parana/camara-de-siqueira-campos-pr-abre-concurso-com-salario-5-654-93457
-Career:   procuradorias
-Group:   camara-siqueira-campos-pr-procurador
-Reason:  Publicado edital de concurso público pela Câmara Municipal de Siqueira Campos/PR para o cargo de Procurador Jurídico, exigindo graduação em Direito e inscrição na OAB. A remuneração é de R$ 5.654,04 para jornada de 20 horas semanais. Inscrições abertas até 27/10/2026 pelo site da banca FAU, com taxa de R$ 150,00. A avaliação consistirá em prova objetiva e de títulos no dia 29/11/2026.
-
-Title:   Concurso Curitiba-PR 2026: Prefeitura lança 3 editais com vagas de até R$ 38 mil
-URL:     https://www.acheconcursos.com.br/concursos-parana/concurso-curitiba-pr-2026-edital-inscricao-93458
-Career:   procuradorias
-Group:   prefeitura-curitiba-pr-procurador
-Reason:  A Prefeitura de Curitiba/PR publicou edital com 5 vagas para Procurador do Município, exigindo graduação em Direito e inscrição na OAB. A remuneração inicial alcança R$ 38.087,99 para jornada de 40 horas semanais, composta por vencimento, gratificações e prêmio por atividade jurídica. As inscrições seguem abertas de 7 de outubro a 5 de novembro, com aplicação das provas prevista para 6 de dezembro pela Fundação FAFIPA.
-
-Title:   Manicoré tem seleção para residência jurídica com bolsa de R$ 2.550 - Amazonas | Portal do Holanda
-URL:     https://www.portaldoholanda.com.br/amazonas/manicore-tem-selecao-para-residencia-juridica-com-bolsa-de-r-2550
-Career:   estagio
-Group:   dpe-am-manicore-residencia-juridica
-Reason:  A Defensoria Pública do Amazonas (DPE/AM) realiza processo seletivo para residência jurídica na comarca de Manicoré, visando à formação de cadastro reserva. O programa oferece bolsa-auxílio de R$ 2.550,00 para carga horária de 30 horas semanais. Podem participar bacharéis em Direito e estudantes matriculados nos últimos períodos da graduação. As inscrições presenciais encerram-se em 25 de outubro, com provas discursivas previstas para 27 de setembro.
-
-Title:   PJM Boa Vista/RR divulga Resultado Definitivo da Prova Objetiva da seleção para residência jurídica – MINISTÉRIO PÚBLICO MILITAR
-URL:     https://www.mpm.mp.br/arquivos/74019
-Career:   estagio
-Group:   mpm-boa-vista-rr-residencia-juridica
-Reason:  A Procuradoria de Justiça Militar em Boa Vista (PJM Boa Vista/RR), vinculada ao Ministério Público Militar, divulgou o resultado definitivo da prova objetiva referente ao processo seletivo de residência jurídica. O certame destina-se a bacharéis em Direito e estudantes de pós-graduação, com o objetivo de preencher vagas de cadastro reserva no órgão ministerial. O resultado preliminar da prova subjetiva será publicado nos próximos dias.
-
-Title:   Concurso ALEAC: exclusivo! Documentos detalham novo edital
-URL:     https://blog.grancursosonline.com.br/concurso-aleac-documentos-detalham-novo-edital-2026/amp/
+Title:   Secretaria Municipal de Educação de Cuiabá - MT abre processo seletivo com salários de até R$ 5.599,94
+URL:     https://www.pciconcursos.com.br/noticias/secretaria-municipal-de-educacao-de-cuiaba-mt-abre-processo-seletivo-com-salarios-de-ate-5599
 Career:   administrativo
-Group:   aleac-ac-analista-legislativo-direito
-Reason:  Documentos internos da Assembleia Legislativa do Acre (ALEAC) detalham novo concurso com 100 vagas totais, sendo 3 imediatas e 3 em cadastro reserva para Analista Legislativo - Direito, com vencimento inicial de R$ 7.553,00 mais gratificações e jornada de 40 horas semanais.
+Group:   smedcuiaba-mt-tecnico-juridico
+Reason:  Divulgado processo seletivo simplificado pela Secretaria Municipal de Educação de Cuiabá/MT contemplando vagas para Técnico de Nível Superior - Bacharel em Direito. As remunerações chegam a R$ 5.599,94 para jornadas de até 40 horas semanais. As inscrições devem ser efetuadas via internet no portal Selecon entre 08/09 e 28/09/2026, mediante pagamento de taxa de R$ 85,00. A seleção contará com prova objetiva e análise de títulos.
 
-Title:   Concurso Curitiba PR: saem editais com 348 vagas em 10 cargos | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-curitiba-pr-editais-2026
+Title:   SEMA - MT abre concurso para Analistas de Meio Ambiente e de Desenvolvimento Econômico e Social
+URL:     https://www.pciconcursos.com.br/noticias/sema-mt-abre-concurso-para-analistas-de-meio-ambiente-e-de-desenvolvimento-economico-e-social
+Career:   administrativo
+Group:   semamt-mt-analista-juridico
+Reason:  Publicado edital pela SEMA-MT para o cargo de Analista de Desenvolvimento Econômico e Social na especialidade de Direito, oferecendo cadastro de reserva com remuneração inicial de R$ 10.491,97 para jornada de 40 horas semanais. As inscrições ocorrem de 17/09 a 14/10/2026 pelo site da Fundação Cesgranrio, com taxa de R$ 150,00. As provas objetiva e discursiva estão aplicadas para o dia 13 de dezembro de 2026.
+
+Title:   Câmara de Rio Branco - AC abre concurso público com 13 vagas imediatas
+URL:     https://www.pciconcursos.com.br/noticias/camara-de-rio-branco-ac-abre-concurso-publico-com-13-vagas-imediatas
+Career:   administrativo
+Group:   camarariobranco-ac-analista-juridico
+Reason:  A Câmara Municipal de Rio Branco/AC lançou edital com 1 vaga imediata e cadastro de reserva para Analista Legislativo na especialidade de Direito. A remuneração inicial é de R$ 6.300,00, acrescida de auxílio-alimentação de R$ 1.500,00 e auxílio-saúde de R$ 500,00, para uma jornada de 30 horas semanais. Inscrições abertas até 13/10/2026 pelo IDIB, com taxa de R$ 95,00. Provas objetivas e discursivas marcadas para 22/11/2026.
+
+Title:   Município e Câmara de Nova Prata do Iguaçu - PR abrem concursos com salários de até R$ 12.823,98
+URL:     https://www.pciconcursos.com.br/noticias/municipio-e-camara-de-nova-prata-do-iguacu-pr-abrem-concursos-com-salarios-de-ate-12823
 Career:   procuradorias
-Group:   prefeitura-curitiba-pr-procurador
-Reason:  Prefeitura de Curitiba/PR publicou editais de concurso com 348 vagas totais. O edital nº 6 contempla 5 vagas para Procurador do Município com remuneração inicial de R$ 38.087,99. Inscrições abertas de 7 de outubro a 5 de novembro pela banca Fundação Fafipa, com provas previstas para dezembro.
+Group:   camaranovapratadoiguacu-pr-advogado
+Reason:  Divulgado concurso público da Câmara Municipal de Nova Prata do Iguaçu/PR com vaga em cadastro de reserva para o cargo de Advogado sob regime estatutário. A remuneração inicial chega a até R$ 12.823,98 para jornadas variando de 20 a 40 horas semanais. As inscrições seguem abertas até 29/10/2026 no site da banca Concursos FAU, mediante taxa de R$ 180,00. A aplicação da prova objetiva está prevista para o dia 15 de novembro de 2026.
 
-Title:   Inscrições para processo seletivo em Cariacica terminam quinta
-URL:     https://www.folhavitoria.com.br/trabalho/concursos/inscricoes-para-processo-seletivo-em-cariacica-terminam-nesta-quinta/
+Title:   Comando do 1º Distrito Naval - RJ/MG abre vagas para oficiais temporários de nível superior
+URL:     https://www.pciconcursos.com.br/noticias/comando-do-1-distrito-naval-rj-mg-abre-vagas-para-oficiais-temporarios-de-nivel-superior
+Career:   administrativo
+Group:   marinha-rj-mg-oficial-temporario-direito
+Reason:  Comando do 1º Distrito Naval do RJ/MG publicou edital para oficiais temporários RM2 com 8 vagas para graduados em Direito (6 no Rio de Janeiro e 2 em São Pedro da Aldeia). A seleção exige nível superior e oferece remuneração inicial atrativa para prestação de serviço militar temporário.
+
+Title:   Edital de Maravilha-SC 2026 abre concurso com vagas de até R$ 15.748
+URL:     https://www.acheconcursos.com.br/concursos-santa-catarina/edital-de-maravilha-sc-2026-abre-concurso-com-vagas-de-15-748-93478
+Career:   procuradorias
+Group:   prefeitura-maravilha-sc-auditor-de-tributos
+Reason:  Prefeitura de Maravilha/SC lançou concurso público com edital que contempla o cargo de Auditor de Tributos, exigindo graduação em Direito, Administração, Ciências Contábeis ou Economia, com remuneração inicial de R$ 5.900,00 para 40 horas semanais. Inscrições abertas de 02/10 a 03/11, com provas em 29/11.
+
+Title:   Processo Seletivo UFAL 2026: Sai edital com 32 vagas para Professores
+URL:     https://www.acheconcursos.com.br/concursos-alagoas/processo-seletivo-ufal-2026-sai-edital-com-32-vagas-para-professores-93477
+Career:   administrativo
+Group:   ufal-al-professor-substituto-direito
+Reason:  Universidade Federal de Alagoas (UFAL) abriu processo seletivo simplificado para Professor Substituto, incluindo vaga na área de Direito Público com exigência de graduação e mestrado na área. A remuneração chega até R$ 8.340,33 acrescida de auxílio-alimentação para regime de 40 horas semanais.
+
+Title:   Concurso MP-AP sairá pela FCC com vagas de R$ 35 mil
+URL:     https://www.acheconcursos.com.br/noticias/concurso-mp-ap-saira-pela-fcc-com-vagas-de-r-35-mil-93497
+Career:   mp
+Group:   mpap-ap-promotor
+Reason:  O Ministério Público do Amapá definiu a Fundação Carlos Chagas como banca organizadora para o novo concurso de Promotor de Justiça Substituto. A seleção prevê a oferta de 5 vagas imediatas e cadastro de reserva, com exigência de bacharelado em Direito e 3 anos de atividade jurídica. O subsídio inicial atualizado é de R$ 35.877,28. O cronograma completo de inscrições e provas ainda será divulgado.
+
+Title:   Marinha do Brasil - AM e RO abre processo seletivo para Oficiais Temporários de nível superior
+URL:     https://www.pciconcursos.com.br/noticias/marinha-do-brasil-am-e-ro-abre-processo-seletivo-para-oficiais-temporarios-de-nivel-superior
+Career:   administrativo
+Group:   marinha-am-ro-oficial-temporario-direito
+Reason:  O Comando do 9º Distrito Naval da Marinha do Brasil publicou processo seletivo para Oficiais Temporários com vagas para bacharéis em Direito nas cidades de Manaus/AM, Porto Velho/RO e Tabatinga/AM. As inscrições seguem abertas até 10 de novembro de 2026, mediante taxa de R$ 150,00. A seleção conta com prova objetiva, títulos, inspeção de saúde e teste de aptidão física.
+
+Title:   Marinha do Brasil - 7º Distrito Naval: edital de processo seletivo oferece vagas de nível superior para oficiais temporários
+URL:     https://www.pciconcursos.com.br/noticias/marinha-do-brasil-7-distrito-naval-edital-de-processo-seletivo-oferece-vagas-de-nivel-superior-para-oficiais-temporarios
+Career:   administrativo
+Group:   marinha-brasilia-df-oficial-temporario-direito
+Reason:  O Comando do 7º Distrito Naval da Marinha do Brasil abriu processo seletivo para o Serviço Militar Voluntário de Oficiais Temporários, contemplando 1 vaga imediata para bacharéis em Direito em Brasília/DF. As inscrições podem ser realizadas até 10 de novembro de 2026 pelo site oficial, com taxa de R$ 150,00. O certame inclui prova objetiva, avaliação de títulos e testes físicos.
+
+Title:   Câmara de Nova Prata do Iguaçu-PR abre concurso com vagas de R$ 6 mil
+URL:     https://www.acheconcursos.com.br/concursos-parana/camara-de-nova-prata-do-iguacu-pr-abre-concurso-com-vagas-de-r-6-mil-93499
+Career:   procuradorias
+Group:   camaranovapratadoiguacu-pr-advogado
+Reason:  Edital publicado pela Câmara Municipal de Nova Prata do Iguaçu/PR ofertando vagas em cadastro de reserva para o cargo de Advogado, sob organização da FAU. A remuneração inicial é de R$ 5.543,88 para jornada de 20 horas semanais. As inscrições ocorrem de 30 de setembro a 29 de outubro, com provas objetivas agendadas para 15 de novembro.
+
+Title:   Concurso Prefeitura e Câmara de Comodoro-MT: Saem 4 editais com 277 vagas
+URL:     https://www.acheconcursos.com.br/concursos-mato-grosso/concurso-prefeitura-e-camara-de-comodoro-mt-2026-saem-4-editais-93495
+Career:   procuradorias
+Group:   prefeitura-e-camara-comodoro-mt-procurador
+Reason:  Publicados editais pela Prefeitura e Câmara de Comodoro/MT, sob organização da UFMT, contemplando vagas para Procurador Jurídico na Prefeitura (R$ 14.470,40) e Procurador Jurídico Legislativo na Câmara (R$ 13.961,92), ambos com exigência de 40 horas semanais. O certame integra um conjunto de 4 editais para diversos níveis de escolaridade.
+
+Title:   Concurso PMERJ: contratação da banca é autorizada para o CFO | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/concurso-pmerj-cfo-2026-contratacao-da-banca-autorizada
+Career:   policiais
+Group:   pmerj-rj-oficial
+Reason:  Autorizada a contratação da Fundação Cesgranrio como banca organizadora do novo concurso para o Curso de Formação de Oficiais da Polícia Militar do Rio de Janeiro. O certame ofertará 100 vagas imediatas e cadastro de reserva para bacharéis em Direito. Os ganhos iniciais variam de R$ 4.127,16 durante o curso até R$ 10.348,18 como 2º tenente, com edital previsto para o segundo semestre.
+
+Title:   Poder Judiciário do Estado do Acre | Publicados três editais de convocação para estágio remunerado no TJAC
+URL:     https://www.tjac.jus.br/2026/09/publicados-tres-editais-de-convocacao-para-estagio-remunerado-no-tjac/
+Career:   estagio
+Group:   tjac-ac-estagio
+Reason:  O Tribunal de Justiça do Acre (TJAC) publicou editais de convocação para entrega de documentos referentes aos processos seletivos de estágio remunerado em andamento. O edital n.° 7/2026 contempla oportunidades de pós-graduação em Direito para comarcas como Acrelândia, Brasiléia, Cruzeiro do Sul, Plácido de Castro, Rio Branco e Sena Madureira. Os convocados devem enviar a documentação exigida para o e-mail institucional no prazo de cinco dias úteis a contar da publicação.
+
+Title:   MPF aplica prova discursiva para estágio em Direito neste domingo (27) — Ministério Público Federal
+URL:     https://www.mpf.mp.br/o-mpf/unidades/pr-ap/noticias/mpf-aplica-prova-discursiva-para-estagio-em-direito-neste-domingo-27
+Career:   estagio
+Group:   mpf-ap-estagio
+Reason:  O Ministério Público Federal no Amapá (MPF/AP) realiza a aplicação da prova discursiva do 2º Processo Seletivo de Estágio de 2026 para estudantes de graduação e pós-graduação em Direito. O certame visa à formação de cadastro de reserva para a Procuradoria da República no Amapá, oferecendo bolsa-estágio de R$ 1.320 para graduação e R$ 2.640 para pós-graduação, acrescidas de auxílio-transporte de R$ 12 por dia e jornada de 20 horas semanais.
+
+Title:   MPF/SE aplica prova subjetiva do processo seletivo para estágio em Direito neste domingo (27) — Ministério Público Federal
+URL:     https://www.mpf.mp.br/o-mpf/unidades/pr-se/noticias/mpf-se-aplica-prova-subjetiva-do-processo-seletivo-para-estagio-em-direito-neste-domingo-27
+Career:   estagio
+Group:   mpf-se-estagio
+Reason:  O Ministério Público Federal em Sergipe (MPF/SE) aplica a prova subjetiva do processo seletivo para formação de cadastro de reserva de estágio na área de Direito, contemplando estudantes de graduação e pós-graduação. A avaliação ocorre no Centro Universitário Pio Décimo, em Aracaju, exigindo dos candidatos o cumprimento das normas editalícias quanto a horários de fechamento de portões e apresentação de documento oficial com foto.
+
+Title:   Prefeitura de Campinas tem concurso com 40 vagas e salários de até R$ 13,5 mil; veja cargos - Tribuna de Jundiaí
+URL:     https://tribunadejundiai.com.br/economia/concursos/concurso-campinas-sp-setec-40-vagas/
+Career:   procuradorias
+Group:   setec-campinas-sp-procurador
+Reason:  Edital publicado para Procurador da Setec de Campinas/SP com 1 vaga imediata e formação de cadastro de reserva. A remuneração mensal chega a R$ 13.578,10, somando o salário-base e o vale-alimentação. Inscrições abertas até 04/12/2026 pelo site da banca Indepac, com taxa de R$ 78,00. As provas objetiva e prático-profissional (peça) estão previstas para 17/01/2027.
+
+Title:   Comodoro abre concurso com salários de até R$ 23,6 mil; veja vagas | VGN - Notícias em MT com credibilidade
+URL:     https://www.vgnoticias.com.br/cidades/comodoro-abre-concurso-com-salarios-de-ate-r-236-mil-veja-vagas/152463
+Career:   procuradorias
+Group:   prefeitura-e-camara-comodoro-mt-procurador
+Reason:  Publicados editais de concurso pela Prefeitura e Câmara Municipal de Comodoro/MT, contemplando cargos de Procurador Jurídico e Analista de Procuradoria. As seleções são organizadas pela UFMT, com inscrições de 05 a 22/10 e provas objetivas previstas para 22/11/2026. Os salários iniciais variam conforme o cargo e o edital de regência.
+
+Title:   MPRS abre processo seletivo para residência jurídica na 1ª Promotoria de Justiça Criminal de Alegrete
+URL:     https://www.alegretetudo.com.br/mprs-abre-processo-seletivo-para-residencia-juridica-na-1a-promotoria-de-justica-criminal-de-alegrete/
+Career:   estagio
+Group:   mprs-alegrete-rs-residencia-juridica
+Reason:  Processo seletivo aberto pelo Ministério Público do Rio Grande do Sul para 1 vaga e cadastro de reserva em Residência Jurídica na 1ª Promotoria de Justiça Criminal de Alegrete. Bolsa-auxílio estimada em até R$ 3.041,64 mensais para 30h semanais. Inscrições até 02/10/2026, com provas previstas para 06/10.
+
+Title:   Últimos dias: processo seletivo em Cariacica tem salários de até R$ 5,7 mil - Revista Conexão
+URL:     https://www.conexaoes.com.br/noticia/ultimos-dias-processo-seletivo-em-cariacica-tem-salarios-de-ate-r-5-7-mil
 Career:   administrativo
 Group:   ipc-cariacica-es-analista-previdenciario
-Reason:  Processo seletivo simplificado do Instituto de Previdência de Cariacica/ES com edital aberto para contratação temporária de Analista Previdenciário na área de Direito. São ofertadas 2 vagas imediatas mais cadastro reserva com remuneração inicial de R$ 3.675,00 para carga horária de 40 horas semanais. Seleção ocorre por meio de análise de títulos.
+Reason:  Edital de processo seletivo simplificado publicado pelo Instituto de Previdência dos Servidores Públicos de Cariacica/ES com 2 vagas imediatas e cadastro de reserva para Analista Previdenciário na especialidade de Direito. Remuneração inicial de R$ 3.675,00 para jornada de 40 horas semanais. Inscrições abertas até 24/09, com seleção por análise de títulos.
 
-Title:   Concurso DPE PB: Primeiro edital publicado; 20 vagas
-URL:     https://www.novaconcursos.com.br/portal/noticias/concurso-dpe-pb-primeiro-edital-publicado/
-Career:   defensoria
-Group:   dpe-pb-analista-da-defensoria
-Reason:  Primeiro edital para o quadro efetivo de servidores da Defensoria Pública da Paraíba publicado com organização da FCC. O certame oferta 20 vagas, contemplando cargos de Analista da Defensoria nas especialidades de Assistente Jurídico (exige Direito) e Auditor Interno (ampla a graduação em Direito), com remuneração inicial de R$ 5.197,50. Inscrições abertas até 13 de novembro e provas em fevereiro de 2027.
-
-Title:   Defensoria abre seleção para residência jurídica em Manicoré
-URL:     https://segundoasegundo.com.br/2026/09/defensoria-abre-selecao-para/
+Title:   Defensoria do Amazonas está com inscrições abertas para residência jurídica em Manicoré | No Ar!
+URL:     https://noarportal.com.br/defensoria-do-amazonas-esta-com-inscricoes-abertas-para-residencia-juridica-em-manicore/
 Career:   estagio
-Group:   dpe-am-manicore-residencia-juridica
-Reason:  Processo seletivo aberto para residência jurídica na Defensoria Pública do Estado do Amazonas (DPE-AM), com atuação no município de Manicoré/AM. O certame visa cadastro de reserva com bolsa-auxílio de R$ 2.550,00 para 30 horas semanais. Inscrições presenciais até 25/09. Prova escrita discursiva agendada para 27/09.
+Group:   dpam-manicore-am-residencia-juridica
+Reason:  A Defensoria Pública do Amazonas abriu processo seletivo para formação de cadastro de reserva em Residência Jurídica na comarca de Manicoré. A bolsa-auxílio é de R$ 2.550,00 para jornada de 30 horas semanais. Inscrições presenciais disponíveis até 25/09, com prova discursiva agendada para 27/09.
 
-Title:   Concurso DPE SP: edital para 70 vagas segue em elaboração e deve sair em breve
-URL:     https://jcconcursos.com.br/noticia/concursos/concurso-dpe-sp-edital-para-70-vagas-segue-em-elaboracao-145573
-Career:   defensoria
-Group:   dpe-sp-defensor
-Reason:  Concurso público para o cargo de Defensor Público da DPE SP está com edital em fase final de elaboração após assinatura de contrato com a banca FCC. O certame ofertará 70 vagas imediatas exigindo graduação em Direito e três anos de atividade jurídica, com remuneração inicial de R$ 29.716,00.
-
-Title:   Curitiba anuncia concurso público com 348 vagas
-URL:     https://www.bemparana.com.br/noticias/curitiba-anuncia-concurso-publico-com-348-vagas/
+Title:   Concurso Prefeitura de Comodoro (MT) tem salários até R$ 23,6 mil
+URL:     https://concursosnobrasil.com/concursos/mt/2026/09/22/concurso-prefeitura-de-comodoro-mt-abre-novas-vagas-e-tem-mensais-ate-r/
 Career:   procuradorias
-Group:   prefeitura-curitiba-pr-procurador
-Reason:  Edital publicado pela Prefeitura de Curitiba/PR ofertando 5 vagas para Procurador do Município. O certame exige nível superior em Direito e OAB, com remuneração inicial integrada ao plano de carreira unificado. As inscrições ocorrem de 7 de outubro a 5 de novembro no site da banca Fundação Fafipa, com taxa de R$ 250,00. As provas objetiva e discursiva estão aplicadas em 13 de dezembro.
+Group:   prefeitura-comodoro-mt-analista-de-procuradoria
+Reason:  Editais publicados para a Prefeitura e Câmara de Comodoro/MT com vagas que contemplam Analista de Procuradoria e Analista de Procuradoria Legislativa exigindo nível superior em Direito. As inscrições ocorrem de 05 a 22 de outubro de 2026, com organização da UFMT e provas aplicadas em 22 de novembro de 2026. A remuneração chega até R$ 23.686,47.
 
-Title:   Prefeitura Municipal de Comodoro MT publica concurso para procurador jurídico | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/prefeitura-municipal-de-comodoro-mt-publica-concurso-para-procurador-juridico
+Title:   Concurso TRT 8 AP: cronograma em fase definição com a banca organizadora
+URL:     https://jcconcursos.com.br/noticia/concursos/concurso-trt-8-ap-cronograma-em-fase-definicao-com-a-banca-145616
+Career:   tribunais
+Group:   trt8-pa-ap-analista-judiciario
+Reason:  Certame do TRT da 8ª Região (PA e AP) encontra-se em fase de definição de cronograma com a banca organizadora Fundação Carlos Chagas (FCC), cujo contrato foi assinado em 28 de agosto. A seleção formará cadastro reserva para Analista Judiciário na Área Judiciária e Oficial de Justiça Avaliador Federal, cargos de nível superior em Direito.
+
+Title:   A Defensoria Pública do Amazonas abre seleção para residência jurídica em Manicoré
+URL:     https://redeondadigital.com.br/amazonas/a-defensoria-publica-do-amazonas-abre-selecao-para-residencia-juridica-em-manicore
+Career:   estagio
+Group:   dpam-manicore-am-residencia-juridica
+Reason:  A Defensoria Pública do Amazonas abriu seleção para residência jurídica na comarca de Manicoré, visando a formação de cadastro de reserva para bacharéis em Direito ou estudantes do 9º e 10º períodos. A bolsa-auxílio é de R$ 2.550,00 para jornada de 30 horas semanais. As inscrições presenciais seguem até o dia 25, com prova discursiva agendada para 27 de setembro e entrevista em 5 de outubro.
+
+Title:   Concurso CRQ-9 PR: 330 vagas abertas com salários de até R$ 10,7 mil
+URL:     https://auxilioconcursos.com.br/concurso-crq-9-pr-330-vagas-abertas-com-salarios-de-ate-r-107-mil/
 Career:   procuradorias
-Group:   prefeitura-comodoro-mt-procurador
-Reason:  Publicado o edital 01/2026 da Prefeitura Municipal de Comodoro/MT com 1 vaga imediata para Procurador Jurídico. O cargo exige graduação em Direito e jornada de 40 horas semanais, com remuneração inicial de R$ 14.470,40. Inscrições abertas de 5 a 22 de outubro no site da banca organizadora UFMT, com taxa de R$ 120,00. A realização das provas objetiva, discursiva e de títulos está prevista para 22 de novembro.
+Group:   crq9-pr-assessor-juridico
+Reason:  O Conselho Regional de Química da 9ª Região (PR) publicou edital com 30 vagas em cadastro reserva para o cargo de Assessor Jurídico, exigindo graduação em Direito e inscrição na OAB. A remuneração inicial é de R$ 10.727,55, acrescida de auxílio-alimentação de R$ 1.540,00 e outros benefícios. Inscrições abertas até 21/10/2026 pelo Instituto Quadrix, com provas objetiva e peça processual previstas para 29/11/2026.
 
-Title:   Edital Publicado: Procurador do Município - PGM Curitiba - Meu site jurídico
-URL:     https://meusitejuridico.editorajuspodivm.com.br/2026/09/22/edital-publicado-procurador-do-municipio-pgm-curitiba/
+Title:   Vagas
+URL:     https://www.jornaldocomercio.com/ge2/noticias/2026/09/1264084-vagas.html
+Career:   estagio
+Group:   mptrh-rs-estagio
+Reason:  Processo seletivo aberto para formação de cadastro de reserva de estágio em Direito (graduação e pós-graduação) no MPT-RS, abrangendo a capital e várias unidades do interior. A bolsa é de R$ 1.320,00 para graduação e R$ 2.640,00 para pós-graduação, com carga horária de 20 horas semanais. Inscrições abertas até 30 de setembro com seleção por análise de currículo.
+
+Title:   Concurso público em Comodoro (MT) oferece mensais de até R$ 14,4 mil
+URL:     https://concursosnobrasil.com/concursos/mt/2026/09/22/concurso-publico-em-comodoro-mt-oferece-mensais-de-ate-r-144-mil/
 Career:   procuradorias
-Group:   prefeitura-curitiba-pr-procurador
-Reason:  Edital publicado para a Procuradoria-Geral do Município de Curitiba/PR, ofertando 5 vagas para Procurador com remuneração inicial de R$ 38.087,99. O certame é organizado pela banca FAFIPA, exigindo graduação em Direito e 3 anos de atividade jurídica. As inscrições ocorrem de 07/10 a 05/11/2026, com prova objetiva aplicada em 13/12/2026.
+Group:   prefeitura-e-camara-comodoro-mt-procurador
+Reason:  Edital unificado publicado pela Prefeitura e Câmara Municipal de Comodoro/MT, ofertando vaga imediata e cadastro de reserva para Procurador Jurídico e Procurador Legislativo. Exige graduação em Direito e OAB, com acréscimo de prática jurídica para a Câmara. Remunerações iniciais variam de R$ 13.961,92 a R$ 14.470,40 para 40 horas semanais. Inscrições de 05 a 22/10/2026 pela banca UFMT, com provas objetiva, discursiva e de títulos previstas para 22/11/2026.
 
-Title:   Com cinco vagas e iniciais de até R$ 38 mil, PGM Curitiba publica edital para Procurador
-URL:     https://ceisc.com.br/blog/post/com-cinco-vagas-e-iniciais-de-ate-r-38-mil-pgm-curitiba-publica-edital-para-procurador?category=undefined
+Title:   Prefeitura de Curitiba anuncia concursos com 348 vagas e salários de até R$ 38 mil | Rádio Itatiaia
+URL:     https://www.itatiaia.com.br/emprego-e-concursos/prefeitura-de-curitiba-anuncia-concursos-com-348-vagas-e-salarios-de-ate-r-38-mil/
 Career:   procuradorias
-Group:   prefeitura-curitiba-pr-procurador
-Reason:  Edital publicado para Procurador Municipal da PGM de Curitiba/PR, ofertando 5 vagas imediatas com remuneração inicial de até R$ 38.087,99. Inscrições abertas de 7 de outubro a 5 de novembro, sob a organização da Fundação Fafipa. A prova objetiva está marcada para o dia 13 de dezembro.
+Group:   pgm-curitiba-pr-procurador
+Reason:  A Prefeitura de Curitiba/PR publicou edital com 5 vagas imediatas para Procurador do Município, cargo estatutário que exige graduação em Direito e OAB. A remuneração inicial pode alcançar até R$ 38.087,99, composta por vencimento básico, gratificação e prêmio por atividade jurídica. As inscrições ocorrem de 07/10 a 05/11/2026 pelo site da Fundação FAFIPA, com taxa de R$ 250. O certame compreende prova objetiva em 13/12/2026, além de prova discursiva e avaliação de títulos.
 
-Title:   Concurso ALEAC: exclusivo! Documentos detalham novo edital
-URL:     https://blog.grancursosonline.com.br/concurso-aleac-documentos-detalham-novo-edital-2026/
+Title:   Prefeitura no Paraná abre concurso com 348 vagas
+URL:     https://www.vvale.com.br/utilidade-publica/concursos/prefeitura-no-parana-abre-concurso-com-348-vagas/
+Career:   procuradorias
+Group:   pgm-curitiba-pr-procurador
+Reason:  Novo concurso público da Prefeitura de Curitiba/PR traz 5 vagas para Procurador do Município, exigindo nível superior em Direito e registro na OAB. A remuneração total chega a R$ 38.087,99 em virtude de gratificações e prêmios da carreira. Inscrições abertas entre 07/10 e 05/11/2026, sob organização da Fundação FAFIPA. O processo seletivo conta com taxa de inscrição de R$ 250, aplicando-se provas objetiva e discursiva, além de avaliação de títulos, com exames previstos para dezembro de 2026.
+
+Title:   TJAC faz novas convocações de estagiários para preencher vagas
+URL:     https://ac24horas.com/2026/09/23/tjac-faz-novas-convocacoes-de-estagiarios-para-preencher-vagas/amp/
+Career:   estagio
+Group:   tjac-ac-estagio
+Reason:  O Tribunal de Justiça do Acre (TJAC) publicou editais de convocação para estágio de pós-graduação em Direito para preenchimento de vagas e formação de cadastro reserva em diversas comarcas do estado, incluindo Rio Branco. Os convocados devem encaminhar a documentação exigida por e-mail no prazo de cinco dias úteis.
+
+Title:   Concurso Cremerj abre inscrições. Acesse edital verticalizado | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/concurso-cremerj-inscricoes
+Career:   procuradorias
+Group:   cremerj-rj-advogado
+Reason:  O concurso público do CREMERJ oferece vagas de nível superior para o cargo de Advogado, com jornada de 30 horas semanais, além de oportunidades para Auditor. As inscrições seguem abertas até 22 de outubro de 2026 pelo site do Instituto Consulplan, com taxa de R$ 47,50 e provas marcadas para 13 de dezembro.
+
+Title:   Concurso Curitiba PR editais publicados com 348 vagas
+URL:     https://www.novaconcursos.com.br/portal/noticias/concurso-curitiba-pr-editais-publicados/
+Career:   procuradorias
+Group:   pgm-curitiba-pr-procurador
+Reason:  A Prefeitura de Curitiba (PR) publicou edital com 5 vagas imediatas para Procurador do Município, exigindo graduação em Direito e OAB. A remuneração inicial total alcança R$ 38.087,99, composta por vencimento básico, gratificação e prêmio por atividade jurídica. Inscrições de 7 de outubro a 5 de novembro de 2026, com organização da Fundação FAFIPA.
+
+Title:   Defensoria do Amazonas está com inscrições abertas para residência jurídica em Manicoré
+URL:     https://portalmazemourao.com.br/amazonas/defensoria-do-amazonas-esta-com-inscricoes-abertas-para-residencia-juridica-em-manicore/
+Career:   estagio
+Group:   dpam-manicore-am-residencia-juridica
+Reason:  Processo seletivo publicado pela Defensoria Pública do Amazonas (DPAM) para residência jurídica no município de Manicoré/AM, com formação de cadastro de reserva e bolsa-auxílio de R$ 2.550,00 para carga horária de 30 horas semanais. Inscrições presenciais abertas até 25 de setembro. Prova escrita prevista para 27 de setembro e entrevistas em 5 de outubro.
+
+Title:   Prefeitura do PR abre concurso público com 348 vagas para níveis médio e superior
+URL:     https://tnonline.uol.com.br/empregos-e-concursos/prefeitura-do-pr-abre-concurso-publico-com-348-vagas-para-niveis-medio-e-superior-1148625
+Career:   procuradorias
+Group:   pgm-curitiba-pr-procurador
+Reason:  Edital publicado pela Prefeitura de Curitiba (PR) com 5 vagas imediatas para o cargo de Procurador do Município. As inscrições seguem abertas até 5 de novembro de 2024 pelo site da Fundação Fafipa, com taxa de R$ 250,00. O certame exige nível superior em Direito e inscrição na OAB, contando com provas objetiva, discursiva e de títulos previstas para 13 de dezembro.
+
+Title:   ES tem 7 concursos e seleções abertos com salários de mais de R$ 8 mil
+URL:     https://www.agazeta.com.br/concursos/sete-concursos-e-selecoes-abertas-com-salario-de-mais-de-r-8-mil-no-es-0926
+Career:   procuradorias
+Group:   crfes-es-advogado
+Reason:  O Conselho Regional de Farmácia do Espírito Santo (CRF-ES) publicou edital de concurso público com 1 vaga imediata e formação de cadastro de reserva para o cargo de Advogado. A jornada é de 20 horas semanais com remuneração inicial de R$ 3.000,00 acrescida de benefícios. As inscrições para a seleção permanecem abertas até o dia 5 de outubro de 2026.
+
+Title:   Concurso Inea RJ é oficialmente autorizado com 150 vagas | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/concurso-inea-rj-2026-autorizado
+Career:   procuradorias
+Group:   inearj-rj-advogado
+Reason:  Concurso autorizado para o Instituto Estadual do Ambiente do Rio de Janeiro (Inea RJ) com 150 vagas para níveis médio, técnico e superior. O cargo de advogado possui 9 vagas autorizadas, com remuneração inicial de R$ 7.183,19. A banca organizadora está em fase de definição entre instituições como FGV e Cesgranrio.
+
+Title:   Prefeitura de Comodoro anuncia vagas com salários de até R$ 23.686,47
+URL:     https://diariodamidia.com.br/prefeitura-de-comodoro-anuncia-vagas-com-salarios-de-ate-r-2368647
+Career:   procuradorias
+Group:   prefeitura-comodoro-mt-analista-de-procuradoria
+Reason:  Publicados os editais 02 e 03/2026 do concurso da Prefeitura de Comodoro/MT, ofertando 212 vagas em diversos níveis de escolaridade. Para bacharéis em Direito, há oportunidades para o cargo de Analista de Procuradoria. As inscrições ocorrem de 05 a 22 de outubro de 2026 pelo site da UFMT, com provas objetivas previstas para 22 de novembro de 2026 e salários de até R$ 23.686,47.
+
+Title:   Concurso Curitiba 2026: Veja os editais, vagas e salários | Notícias Focus Concursos
+URL:     https://noticias.focusconcursos.com.br/noticias/concurso-prefeitura-de-curitiba-tres-editais-trazem-mais-de-340-vagas
+Career:   procuradorias
+Group:   pgm-curitiba-pr-procurador
+Reason:  Publicado edital de concurso público pela Prefeitura de Curitiba/PR (Edital nº 6/2026) com vagas para o cargo de Procurador do Município, exigindo nível superior em Direito. As inscrições ocorrem de 7 de outubro a 5 de novembro de 2026, com taxa de R$ 250,00 e prova objetiva prevista para dezembro.
+
+Title:   Concurso CREMERJ: edital passa por retificação e reduz número de vagas
+URL:     https://jcconcursos.com.br/amp/noticia/concursos/concurso-cremerj-edital-passa-por-retificacao-e-reduz-numero-de-vagas-145593
 Career:   administrativo
-Group:   aleac-ac-analista-legislativo-direito
-Reason:  Planejamento avançado do concurso da Assembleia Legislativa do Acre (ALEAC) detalha a oferta de 3 vagas imediatas e 3 em cadastro reserva para Analista Legislativo - Direito, além de vagas para Polícia Legislativa de nível superior. Remuneração inicial prevista de R$ 7.553,00 para analistas e R$ 7.350,00 para polícia legislativa.
-
-Title:   Concurso PGE RS Procurador: saiu o regulamento; confira!
-URL:     https://blog.grancursosonline.com.br/concurso-pge-rs-procurador-regulamento-publicado-2026/
-Career:   procuradorias
-Group:   pge-rs-procurador
-Reason:  Regulamento oficial publicado para o 16º concurso de Procurador do Estado da PGE RS, fixando a estrutura do certame com prova objetiva, discursiva, oral e sustentação em tribuna. O cargo exige graduação em Direito e inscrição na OAB, com remuneração inicial de R$ 23.334,82 e reserva de 33% de cotas.
-
-Title:   Câmara Municipal de Comodoro MT abre concurso para procurador jurídico legislativo | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/camara-municipal-de-comodoro-mt-abre-concurso-para-procurador-juridico-legislativo
-Career:   procuradorias
-Group:   camara-comodoro-mt-procurador
-Reason:  Edital publicado pela Câmara Municipal de Comodoro/MT (Edital 01/2026) para o cargo de Procurador Jurídico Legislativo, oferecendo cadastro de reserva com remuneração inicial de R$ 13.961,92 para carga horária de 40 horas semanais. Inscrições de 5 a 22 de outubro de 2026 pelo portal da UFMT, com taxa de R$ 120,00. Provas objetiva, discursiva e de títulos previstas para 22 de novembro de 2026.
-
-Title:   Concurso MP AP Promotor: FCC é escolhida como banca
-URL:     https://cj.estrategia.com/portal/concurso-mp-ap-promotor-2026-fcc-banca/
-Career:   mp
-Group:   mp-ap-promotor
-Reason:  Fundação Carlos Chagas (FCC) definida como banca organizadora do novo concurso para Promotor de Justiça Substituto do Ministério Público do Amapá (MPAP). O certame ofertará 5 vagas imediatas mais cadastro de reserva, com remuneração inicial de R$ 32.228,69. O cargo exige bacharelado em Direito e 3 anos de atividade jurídica. O edital prevê cerca de 2.500 inscritos e etapas que incluem prova preambular, discursivas, oral, tribuna e títulos.
-
-Title:   PORTAL FARRAPO - Notícias - Caçapava do Sul - Promotoria de Justiça de Caçapava do Sul abre processo seletivo para residência em Direito
-URL:     https://farrapo.com.br/noticias-detalhe/1/cacapava-do-sul/37938/promotoria-de-justica-de-cacapava-do-sul-abre-processo-seletivo-para-residencia-em-direito.html
-Career:   estagio
-Group:   mprs-cacapava-do-sul-rs-residencia
-Reason:  Processo seletivo aberto pela Promotoria de Justiça de Caçapava do Sul (MPRS) para o programa de residência jurídica, oferecendo 1 vaga de contratação imediata. As inscrições ocorrem de 21 a 25 de setembro de 2026 exclusivamente por envio de formulário e documentos exigidos para o e-mail institucional da promotoria.
-
-Title:   Concurso PGM-POA: Cebraspe publica o resultado final da prova discursiva para Analista
-URL:     https://ceisc.com.br/blog/post/concurso-pgm-poa-cebraspe-publica-o-resultado-final-da-prova-discursiva-para-analista?category=undefined
-Career:   procuradorias
-Group:   pgm-porto-alegre-rs-analista-juridico
-Reason:  O Cebraspe publicou o resultado final da prova discursiva do concurso da PGM de Porto Alegre/RS. O certame oferta 20 vagas imediatas para o cargo de Analista da Procuradoria na área jurídica, com remuneração inicial de R$ 5.325,66. As provas objetivas e discursivas já foram aplicadas em julho de 2026.
-
-Title:   Concurso PC AP abre inscrições para 396 vagas; veja passo a passo | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-pc-ap-2026-inscricoes
-Career:   policiais
-Group:   pc-ap-delegado
-Reason:  Edital publicado pela Polícia Civil do Amapá com 102 vagas em cadastro de reserva para Delegado, exigindo graduação em Direito e três anos de atividade jurídica ou policial. O subsídio inicial chega a R$ 31.439,06. Inscrições abertas até 19 de outubro de 2026 no site da Fundação Cesgranrio, com taxa de R$ 200,00 e provas objetivas agendadas para 6 de dezembro de 2026.
-
-Title:   Concurso Curitiba 2026: entrevista exclusiva e novos detalhes!
-URL:     https://www.estrategiaconcursos.com.br/blog/concurso-prefeitura-curitiba-2026-entrevista-exclusiva/
-Career:   procuradorias
-Group:   prefeitura-curitiba-pr-procurador
-Reason:  Edital publicado pela Prefeitura de Curitiba/PR oferecendo vagas imediatas e cadastro de reserva para o cargo de Procurador do Município, com remuneração inicial de até R$ 38.000,00. As inscrições seguem abertas sob organização da Fundação FAFIPA até outubro de 2026, com taxa de R$ 150,00. As provas objetivas serão aplicadas em dezembro de 2026 e as convocações estipuladas para abril.
-
-Title:   Concurso da Prefeitura de Curitiba tem 348 vagas; salário chega a R$ 38 mil
-URL:     https://www.band.com.br/economia/emprego/concurso-da-prefeitura-de-curitiba-tem-348-vagas-salario-chega-a-r-38-mil
-Career:   procuradorias
-Group:   prefeitura-curitiba-pr-procurador
-Reason:  Edital publicado pela Prefeitura de Curitiba/PR oferecendo 5 vagas para Procurador do Município. A remuneração inicial chega a R$ 38.087,99, composta por vencimento básico, gratificação de responsabilidade técnica e prêmio por atividade jurídica. Exige graduação em Direito e registro na OAB. Inscrições de 07/10 a 05/11, com taxa de R$ 250,00. Provas objetivas e discursivas previstas para 13 de dezembro.
-
-Title:   Comodoro abre concurso com mais de 270 vagas e salários de até R$ 23,6 mil | Fatos de Mato Grosso
-URL:     https://www.fatosdematogrosso.com.br/concursos/comodoro-abre-concurso-com-mais-de-270-vagas-e-salarios-de-ate-r-236-mil/16400
-Career:   procuradorias
-Group:   prefeitura-comodoro-mt-procurador
-Reason:  Publicado edital pela Prefeitura e Câmara Municipal de Comodoro/MT contendo vagas para Procurador Jurídico da Prefeitura e Procurador Jurídico Legislativo da Câmara. As inscrições ocorrem entre 05/10 e 22/10 no site da UFMT, com taxa de R$ 120,00 para nível superior. A prova objetiva está agendada para o dia 22 de novembro de 2026.
+Group:   cremerj-rj-advogado
+Reason:  Retificação do concurso do CREMERJ reduziu para 26 vagas imediatas mais cadastro reserva para níveis médio, técnico e superior. Há cargos voltados a bacharéis em Direito, como Advogado e Analista Jurídico. Inscrições de 23 de setembro a 22 de outubro de 2026 pela banca Instituto Consulplan, com provas em 13 de dezembro.
 
