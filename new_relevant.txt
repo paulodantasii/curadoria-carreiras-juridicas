@@ -1,216 +1,239 @@
-Verificação: 2026-10-01T10:41:31.382595+00:00
-Links analisados: 139
-Links relevantes: 35
+Verificação: 2026-10-02T10:16:47.900604+00:00
+Links analisados: 142
+Links relevantes: 39
 ============================================================
 
-Title:   UPE abre vagas para Advogado com salário de R$ 4,1 mil
-URL:     https://www.acheconcursos.com.br/concursos-pernambuco/upe-abre-vagas-para-advogado-com-salario-4-1-mil-93648
-Career:   procuradorias
-Group:   upe-pe-advogado
-Reason:  Edital publicado pela Universidade de Pernambuco (UPE) para o cargo de Advogado, oferecendo 2 vagas imediatas com remuneração inicial de R$ 4.165,25 para 30 horas semanais. As inscrições seguem abertas de 2 de outubro a 2 de novembro de 2026 pelo site do IAUPE, com taxa de R$ 280,00. A seleção contará com provas objetiva, discursiva e de títulos, previstas para 29 de novembro de 2026.
-
-Title:   Prefeitura de Santa Luzia - MG abre concurso público com salários de até R$ 8.628,87
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-santa-luzia-mg-abre-concurso-publico-com-salarios-de-ate-8628
+Title:   Concurso Prefeitura de Santa Luzia-MG lança edital 454 vagas
+URL:     https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-prefeitura-de-santa-luzia-mg-edital-454-vagas-93679
 Career:   procuradorias
 Group:   pgm-santa-luzia-mg-procurador
-Reason:  Concurso público aberto pela Prefeitura de Santa Luzia/MG traz 3 vagas para Procurador Municipal, além de oportunidades para Assistente da Procuradoria, sob regime estatutário. As remunerações chegam a R$ 8.628,87 para jornadas de até 40 horas semanais. As inscrições ocorrem de 17 de dezembro de 2026 a 15 de janeiro de 2027 pelo site da banca Cotec/Fadenor. Prova objetiva agendada para 14 de março de 2027.
+Reason:  Edital publicado pela Prefeitura de Santa Luzia/MG com 3 vagas para Procurador Municipal, exigindo graduação em Direito e inscrição na OAB. A seleção conta com prova objetiva, discursiva em formato de parecer jurídico e prova de títulos. As inscrições ocorrem de 17 de dezembro de 2026 a 15 de janeiro de 2027 pela banca COTEC, com provas em março de 2027.
 
-Title:   Universidade de Pernambuco abre concurso público para o cargo de Advogado
-URL:     https://www.pciconcursos.com.br/noticias/universidade-de-pernambuco-abre-concurso-publico-para-o-cargo-de-advogado
+Title:   Câmara de Lajinha-MG abre concurso público para Controlador Interno
+URL:     https://www.acheconcursos.com.br/concursos-minas-gerais/camara-de-lajinha-mg-abre-concurso-publico-controlador-interno-93677
+Career:   administrativo
+Group:   camara-lajinha-mg-controlador-interno
+Reason:  Concurso público aberto na Câmara Municipal de Lajinha/MG para o cargo de Controlador Interno, com 1 vaga imediata e remuneração inicial de R$ 3.800,00 para 30 horas semanais. O cargo aceita bacharéis em Direito, Administração, Ciências Contábeis, Economia ou Gestão Pública. Inscrições até 29 de dezembro de 2026 pelo Instituto IBGP e provas em janeiro de 2027.
+
+Title:   FGV fará concurso TJ-PB 2026 para 56 vagas
+URL:     https://www.acheconcursos.com.br/noticias/fgv-fara-concurso-tj-pb-2026-para-56-vagas-93692
+Career:   tribunais
+Group:   tjpb-pb-magistratura-e-servidores
+Reason:  O Tribunal de Justiça da Paraíba definiu a Fundação Getulio Vargas como banca organizadora de seu novo concurso que prevê 56 vagas, englobando 50 postos para servidores e 6 para a magistratura. Para analistas, a remuneração inicial registrada é de R$ 7.033,78, havendo também previsão de vagas para Juiz Substituto. A publicação oficial do edital é aguardada para os próximos meses.
+
+Title:   Edital Capinópolis-MG 2026: Câmara Municipal abre cinco vagas de até R$ 5.800
+URL:     https://www.acheconcursos.com.br/concursos-minas-gerais/edital-capinopolis-mg-2026-camara-cinco-vagas-5-800-92983
+Career:   administrativo
+Group:   camara-capinopolis-mg-juridico
+Reason:  A Câmara Municipal de Capinópolis/MG publicou edital de concurso com vagas para cargos de nível superior em Direito, contemplando os postos de Controlador Interno e Assistente Legislativo, ambos com vencimento inicial de R$ 5.800,00 e R$ 5.500,00, respectivamente. As inscrições seguem abertas até 16 de outubro de 2026, com aplicação das provas objetivas prevista para 29 de novembro.
+
+Title:   TCE - AC reabre concurso para Auditor - Conselheiro Substituto
+URL:     https://www.pciconcursos.com.br/noticias/tce-ac-reabre-concurso-para-auditor-conselheiro-substituto
 Career:   procuradorias
-Group:   upe-pe-advogado
-Reason:  Edital publicado pela Universidade de Pernambuco (UPE) ofertando 2 vagas imediatas para o cargo de Advogado com jornada de 30 horas semanais e remuneração inicial de R$ 4.165,25. Inscrições abertas de 02/10/2026 a 02/11/2026 pelo site da banca Upenet. As provas objetiva, discursiva de parecer e peça processual estão agendadas para o dia 29/11/2026 nas cidades de Recife e Petrolina.
+Group:   tceac-ac-auditor-substituto
+Reason:  O Tribunal de Contas do Estado do Acre reabriu as inscrições para o concurso de Auditor Conselheiro Substituto, oferecendo 1 vaga imediata mais cadastro de reserva. O cargo exige formação superior em Direito, Administração, Contabilidade ou Economia, além de 10 anos de experiência, com subsídio inicial de R$ 39.753,22. As inscrições podem ser feitas pelo Cebraspe até 26 de outubro de 2026, com provas em 17 de janeiro de 2027.
 
-Title:   Câmara de Cristalina-GO abre concurso para todos os níveis; até R$ 8,3 mil
-URL:     https://www.acheconcursos.com.br/concursos-goias/go-camara-de-cristalina-concurso-para-todos-os-niveis-93672
-Career:   administrativo
-Group:   camara-de-cristalina-go-analista-de-recursos-humanos
-Reason:  Câmara Municipal de Cristalina (GO) publica edital com 1 vaga imediata e cadastro de reserva para Analista de Recursos Humanos, cargo que aceita graduação em Direito entre outras formações, com remuneração inicial de R$ 8.383,20 mais auxílio-alimentação de R$ 300,00 para jornada de 40 horas semanais. Inscrições de 29/10 a 18/11/2026 no site do Instituto Consulplan, com provas objetiva e discursiva previstas para 20/12/2026.
+Title:   PBH abre 69 vagas de estágio com bolsas de até R$ 1.886,59
+URL:     https://bhaz.com.br/noticias/pbh-abre-69-vagas-estagio-bolsas-ate-1886/
+Career:   estagio
+Group:   pbh-belo-horizonte-mg-estagio
+Reason:  Banco de estágios da Prefeitura de Belo Horizonte/MG aberto com oportunidades para estudantes de graduação e pós-graduação em Direito. As bolsas variam de R$ 871,12 a R$ 1.886,59 para jornadas de 4 a 6 horas diárias, acrescidas de auxílio-transporte. Inscrições gratuitas e contínuas pela plataforma GO BH.
 
-Title:   Edital Ponte Alta-SC 2026: Prefeitura abre vagas de até R$ 17.248
-URL:     https://www.acheconcursos.com.br/concursos-santa-catarina/edital-ponte-alta-sc-2026-prefeitura-abre-vagas-17-248-93652
-Career:   administrativo
-Group:   prefeitura-de-ponte-alta-sc-advogado
-Reason:  Prefeitura de Ponte Alta (SC) abriu processo seletivo simplificado para formação de cadastro de reserva em diversos cargos, incluindo Advogado e Auditor Interno. Os salários chegam a R$ 17.248,32, acrescidos de auxílio-alimentação de R$ 500,00 para jornadas de 20 a 40 horas semanais. Inscrições aceitas até 18/10/2026 no site da banca GAMD Concursos, com prova objetiva marcada para 29/11/2026 e avaliação de títulos.
+Title:   PBH tem 69 vagas de estágio em outubro; veja como se inscrever
+URL:     https://www.otempo.com.br/emprego-e-concursos/2026/10/1/pbh-oferece-69-vagas-de-estagio-em-outubro-veja-requisitos-e-como-se-inscrever
+Career:   estagio
+Group:   pbh-belo-horizonte-mg-estagio
+Reason:  Abertura de 69 vagas no Banco de Estágios da Prefeitura de Belo Horizonte/MG contemplando estudantes de Direito na graduação e pós-graduação. Remuneração entre R$ 871,12 e R$ 1.886,59, com direito a auxílio-transporte e recesso remunerado. Inscrições abertas e realizadas de forma online pelo portal institucional.
 
-Title:   IPSM de São José dos Campos-SP lança edital com 17 vagas
-URL:     https://www.acheconcursos.com.br/concursos-sao-paulo/ipsm-de-sao-jose-dos-campos-sp-lanca-edital-17-vagas-93649
-Career:   administrativo
-Group:   ipsm-sao-jose-dos-campos-sp-analista-previdenciario-direito
-Reason:  Edital publicado pelo Instituto de Previdência do Servidor Municipal de São José dos Campos/SP (IPSM) oferecendo 2 vagas imediatas para Analista Previdenciário na especialidade Direito. A remuneração inicial varia entre R$ 3.889,11 e R$ 5.860,31. Inscrições abertas de 01/10 a 30/10/2026 pelo site da banca Instituto AOCP, com provas objetivas previstas para 13/12/2026.
+Title:   Concurso TJ-PB: Fundação Getúlio Vargas será banca de novo edital para servidores
+URL:     https://ceisc.com.br/blog/post/concurso-tj-pb-fundacao-getulio-vargas-sera-banca-de-novo-edital-para-servidores?category=undefined
+Career:   tribunais
+Group:   tjpb-pb-magistratura-e-servidores
+Reason:  O Tribunal de Justiça da Paraíba definiu a Fundação Getúlio Vargas (FGV) como banca organizadora de seu próximo concurso público. A seleção ofertará 56 vagas distribuídas entre cargos de nível superior para servidores e para a magistratura (Juiz Substituto), com remunerações iniciais de cerca de R$ 7.244,79 para analistas e aproximadamente R$ 30.000,00 para juízes. O cronograma completo com datas de inscrição e provas será divulgado em breve.
 
-Title:   Alepa abre inscrições para concursos com 133 vagas no Pará | G1
-URL:     https://g1.globo.com/pa/para/noticia/2026/10/01/alepa-abre-inscricoes-para-concurso-publico-com-mais-de-130-vagas-no-para-veja-como-participar.ghtml
+Title:   Concurso ALEPA: edital com 135 vagas abre inscrições nesta quinta (1º)
+URL:     https://ceisc.com.br/blog/post/concurso-alepa-edital-com-135-vagas-abre-inscricoes-nesta-quinta-1
 Career:   procuradorias
 Group:   alepa-pa-procurador
-Reason:  Edital publicado pela Assembleia Legislativa do Estado do Pará (Alepa) com vagas imediatas e cadastro de reserva, incluindo cargo de Procurador. A remuneração base para nível superior é de R$ 3.697,73 acrescida de gratificações que elevam os vencimentos para 30h semanais. Inscrições até 04/11/2026 via Fundação Cetap. Provas objetivas, discursivas e de títulos previstas para 13/12/2026.
+Reason:  A Assembleia Legislativa do Pará publicou edital de concurso público com 135 vagas para cargos de níveis médio e superior, incluindo a carreira de Procurador. As inscrições ficam abertas de 1º de outubro a 4 de novembro de 2026, sob organização da Fundação CETAP. As remunerações iniciais chegam a R$ 10.353,64, e as provas objetivas estão aplicadas em 13 de dezembro de 2026.
 
-Title:   Concurso Câmara de Florianópolis SC tem comissão organizadora formada
-URL:     https://jcconcursos.com.br/amp/noticia/concursos/concurso-camara-de-florianopolis-sc-tem-comissao-organizadora-formada-145756
-Career:   procuradorias
-Group:   camara-florianopolis-sc-procurador
-Reason:  A Câmara Municipal de Florianópolis/SC formou comissão organizadora com previsão de ofertar 29 vagas totais, sendo 2 imediatas para o cargo de Procurador, além de oportunidades de cadastro reserva. O grupo de trabalho é presidido pelo Procurador-Geral da Casa. O edital de abertura segue em fase de planejamento interno sem data definitiva de lançamento.
-
-Title:   1ª Vara da Comarca de João Câmara divulga seleção para vaga de estágio de pós-graduação em Direito - Poder Judiciário
-URL:     https://blog.tribunadonorte.com.br/poderjudiciario/1a-vara-da-comarca-de-joao-camara-divulga-selecao-para-vaga-de-estagio-de-pos-graduacao-em-direito/?amp=1
-Career:   estagio
-Group:   tjrn-joao-camara-rn-estagio
-Reason:  A 1ª Vara da Comarca de João Câmara/RN publicou edital de processo seletivo para 1 vaga de estágio de pós-graduação em Direito, mais cadastro reserva até o 10º colocado. A bolsa-auxílio é de R$ 2.315,00 acrescida de auxílio-transporte de R$ 170,00 para jornada de 30 horas semanais. Inscrições abertas até 02/10, com prova discursiva eliminatória prevista para 07/10.
-
-Title:   PM de Pernambuco abre concurso com mais de 1,3 mil vagas e salários de até R$ 13 mil | Rádio Itatiaia
-URL:     https://www.itatiaia.com.br/emprego-e-concursos/pm-de-pernambuco-abre-concurso-com-mais-de-13-mil-vagas-e-salarios-de-ate-r-13-mil/
-Career:   policiais
-Group:   pmpe-pe-oficial
-Reason:  Edital publicado pela Polícia Militar de Pernambuco (PMPE) oferecendo 40 vagas para o cargo de Oficial, que exige graduação em Direito. O soldo inicial para segundo-tenente é de R$ 12.937,33. Inscrições abertas de 5 de outubro a 5 de novembro pelo site do Instituto AOCP, com taxa de R$ 220,00. As provas objetivas e discursivas estão previstas para o dia 21 de fevereiro.
-
-Title:   ALERR divulga resultado definitivo das provas para cargos de nível superior - Folha BV
-URL:     https://www.folhabv.com.br/concursos-e-emprego/alerr-divulga-resultado-definitivo-das-provas-para-cargos-de-nivel-superior/
-Career:   procuradorias
-Group:   alerr-rr-procurador
-Reason:  Concurso público da Assembleia Legislativa de Roraima (ALERR) com andamento para a carreira de Procurador Legislativo, sob organização da Fundação Carlos Chagas (FCC). A próxima etapa do certame é a prova oral, marcada para o dia 18 de outubro no plenário da Assembleia, seguida pela divulgação do resultado preliminar e avaliação de títulos em 23 de outubro.
-
-Title:   1ª Vara da Comarca de João Câmara divulga seleção para vaga de estágio de pós-graduação em Direito - Poder Judiciário
-URL:     https://blog.tribunadonorte.com.br/poderjudiciario/1a-vara-da-comarca-de-joao-camara-divulga-selecao-para-vaga-de-estagio-de-pos-graduacao-em-direito/
-Career:   estagio
-Group:   tjrn-joao-camara-rn-estagio
-Reason:  Processo seletivo aberto pela 1ª Vara da Comarca de João Câmara/RN para vaga de estágio de pós-graduação em Direito, com formação de cadastro de reserva até o 10º colocado. A bolsa-auxílio é de R$ 2.315,00 acrescida de auxílio-transporte de R$ 170,00 para carga horária de 30 horas semanais. Inscrições até 2 de outubro mediante envio de documentação por e-mail.
-
-Title:   Concurso DAAE Araraquara SP prepara nova seleção com salários de até R$ 10,3 mil - Tribuna de Jundiaí
-URL:     https://tribunadejundiai.com.br/economia/concursos/concurso-daae-araraquara-sp/
-Career:   procuradorias
-Group:   daae-araraquara-sp-procurador
-Reason:  O Departamento Autônomo de Água e Esgotos de Araraquara/SP iniciou o processo de licitação por pregão eletrônico, com propostas até 16/10/2026, para contratar a banca organizadora do novo concurso público. O certame prevê formação de cadastro reserva para o cargo de procurador autárquico, exigindo graduação em Direito e dois anos de prática jurídica, com remuneração inicial de R$ 10.311,80 para jornada de 30 horas semanais.
-
-Title:   Concurso ALEAC: Idecan organiza novo edital de servidores; 100 vagas! - Blog Magistrar Educacional
-URL:     https://magistrarcursos.com.br/blog/concurso-aleac-idecan-organiza-novo-edital-de-servidores-100-vagas/
-Career:   administrativo
-Group:   aleac-ac-analista-juridico
-Reason:  A Assembleia Legislativa do Estado do Acre (ALEAC) oficializou a contratação do Idecan por dispensa de licitação para organizar seu novo concurso público. O edital ofertará 100 vagas, sendo 50 imediatas e 50 para cadastro reserva, distribuídas entre níveis médio e superior. Para a carreira de Analista Legislativo na especialidade de Direito, estão previstas 3 vagas imediatas e 3 em cadastro reserva, com remuneração inicial de até R$ 7.553,00 conforme a Lei nº 4.819/2026.
-
-Title:   Defensoria Pública prorroga inscrições para estágio nos cursos de Direito e Administração —
-            Click Sergipe
-URL:     https://www.clicksergipe.com.br/concursosemprego/8/110881/defensoria-publica-prorroga-inscricoes-para-estagio-nos-cursos-de-direito-e-administracao.html
-Career:   estagio
-Group:   dpse-se-estagio
-Reason:  A Defensoria Pública do Estado de Sergipe (DPSE) prorrogou as inscrições até o dia 02/10 para o processo seletivo de estágio remunerado voltado a estudantes do curso de Direito. As vagas contemplam a capital Aracaju e 33 municípios do interior. Os selecionados receberão bolsa-auxílio mensal de R$ 700,00 acrescida de auxílio-transporte de R$ 121,00 para uma jornada de 20 horas semanais. A seleção ocorre por meio de análise do histórico escolar.
-
-Title:   Concurso TJ PB: FGV é a banca; saiba mais!
-URL:     https://blog.grancursosonline.com.br/concurso-tj-pb-banca-definida-2026/
+Title:   Concurso TJ PB: definida organizadora para nova seleção para cargos de nível superior
+URL:     https://jcconcursos.com.br/noticia/concursos/concurso-tj-pb-definida-organizadora-para-nova-selecao-145792
 Career:   tribunais
-Group:   tjpb-pb-analista-e-juiz
-Reason:  O Tribunal de Justiça da Paraíba autorizou a formalização do contrato com a Fundação Getulio Vargas para organizar o novo certame. A seleção prevê 56 vagas distribuídas entre cargos de Analista Judiciário, Analista de Tecnologia da Informação, Analista de Contadoria e Juiz Substituto. A remuneração inicial varia de R$ 5.192,20 a R$ 9.071,89 para servidores e valores superiores para a magistratura. Cronograma detalhado e edital serão publicados em breve.
+Group:   tjpb-pb-magistratura-e-servidores
+Reason:  Ratificada a contratação da Fundação Getúlio Vargas (FGV) para organizar o novo concurso do Tribunal de Justiça da Paraíba. O certame prevê 56 vagas imediatas para funções de analista judiciário e juiz substituto. Os salários iniciais variam de R$ 7.244,79 a cerca de R$ 30.000,00. O contrato com a banca foi formalizado no valor de R$ 1.257.000,00, e a publicação do edital é iminente.
 
-Title:   Concurso TJ SP: órgão inicia preparativos para edital de juiz | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-tj-sp-inicia-preparativos-edital-de-juiz-2026
+Title:   Concursos abertos que pagam acima de R$ 5 mil! Confira cargos, vagas e mais!
+URL:     https://blog.grancursosonline.com.br/concursos-abertos-que-pagam-acima-de-r-5-mil-confira-cargos-vagas-e-mais/
+Career:   procuradorias
+Group:   camara-rio-branco-ac-procurador
+Reason:  Edital publicado para a Câmara Municipal de Rio Branco/AC contemplando o cargo de Procurador com remuneração inicial de R$ 19.404,00 acrescida de auxílios, oferecendo 1 vaga imediata e 2 vagas em cadastro de reserva. As inscrições ocorrem entre 11 de setembro e 13 de outubro de 2026, com aplicação das provas objetivas e discursivas prevista para 22 de novembro de 2026.
+
+Title:   Concurso público TJ PB: FGV é a banca organizadora; previsão de 56 vagas. - Concursos RN
+URL:     https://concursosrn.com.br/concurso-publico-tj-pb-fgv-e-a-banca-organizadora-previsao-de-56-vagas/
+Career:   tribunais
+Group:   tjpb-pb-magistratura-e-servidores
+Reason:  O Tribunal de Justiça da Paraíba (TJPB) autorizou a formalização do contrato com a Fundação Getulio Vargas (FGV) para organizar o novo concurso público do órgão. O certame prevê 56 vagas no total, contemplando cargos de Analista Judiciário, Analista de Tecnologia da Informação, Analista de Contadoria e 6 vagas para Juiz Substituto. A remuneração inicial para Analista é de R$ 7.033,78.
+
+Title:   Concurso TJ SP Juiz: definido presidente da comissão do 193º concurso
+URL:     https://magistrarcursos.com.br/blog/concurso-tj-sp-juiz-definido-presidente-da-comissao-do-193o-concurso/
 Career:   tribunais
 Group:   tjsp-sp-juiz
-Reason:  O Tribunal de Justiça de São Paulo iniciou os preparativos administrativos para o 193º concurso destinado ao provimento do cargo de Juiz Substituto. O certame exigirá graduação em direito e comprovação de três anos de atividade jurídica, além de aprovação prévia no Enam. O subsídio inicial de referência é de R$ 34.083,14. A comissão organizadora está em fase de composição e o quantitativo exato de vagas será divulgado no edital oficial.
+Reason:  O Tribunal de Justiça de São Paulo (TJSP) avançou nos preparativos do 193º Concurso para Ingresso na Magistratura com a indicação do desembargador Hermann Herschander para presidir a comissão do certame. Embora o quantitativo exato de vagas ainda não tenha sido divulgado para esta nova edição, o cargo exige bacharelado em Direito, três anos de atividade jurídica e oferece remuneração inicial de R$ 34.083,14.
 
-Title:   Alepa abre concurso com 135 vagas e salários de até R$ 3,6 mil mais gratificações – SelesNafes.com
-URL:     https://selesnafes.com/2026/09/alepa-abre-concurso-com-135-vagas-e-salarios-de-ate-r-36-mil-mais-gratificacoes/
-Career:   procuradorias
-Group:   alepa-pa-procurador
-Reason:  Edital publicado pela Assembleia Legislativa do Pará (Alepa) oferecendo 5 vagas para Procurador Legislativo. As inscrições seguem abertas até 04/11/2026, com taxa de R$ 118,00. O certame é organizado pela Fundação Cetap e conta com remuneração inicial que chega a R$ 10.353,64, englobando vencimento básico e gratificações. As provas objetiva e discursiva estão agendadas para 13/12/2026.
-
-Title:   Concurso ALEPA: inscrições abertas com 135 vagas; confira!
-URL:     https://blog.grancursosonline.com.br/concurso-alepa-inscricoes-abertas-2026/amp/
-Career:   procuradorias
-Group:   alepa-pa-procurador
-Reason:  Abertura oficial das inscrições para o concurso da Assembleia Legislativa do Pará (Alepa), contemplando o cargo de Procurador Legislativo com 5 vagas. O certame é gerido pela Fundação Cetap, com taxa de inscrição fixada em R$ 118,00 e prazo até 04/11/2026. A remuneração inicial atinge até R$ 10.353,64 e as avaliações objetivas e discursivas estão marcadas para o dia 13/12/2026.
-
-Title:   Concursos em Goiás têm vagas abertas e salários de até R$ 5,5 mil; veja oportunidades - Jornal Opção
-URL:     https://www.jornalopcao.com.br/concurso/concursos-em-goias-vagas-salarios-prazos-873529/
-Career:   procuradorias
-Group:   camara-mutunopolis-go-assessor-juridico
-Reason:  Concurso público aberto na Câmara Municipal de Mutunópolis/GO com 1 vaga imediata e cadastro de reserva para Assessor Jurídico, exigindo graduação em Direito. O salário inicial é de R$ 5.000,00. As inscrições seguem até 8 de outubro de forma online pelo Instituto Verbena, com taxa de R$ 150. A prova objetiva está agendada para o dia 22 de novembro.
-
-Title:   Estou Preparado
-URL:     https://estoupreparado.com.br/noticias/4677-concurso-pmpe-2026-2027-confira-a-matriz-de-disciplinas-cobradas-nas-provas-para-soldado-e-oficial
-Career:   policiais
-Group:   pmpe-pe-oficial
-Reason:  Edital publicado para a Polícia Militar de Pernambuco (PMPE) ofertando vagas para o Quadro de Oficiais Combatentes, cargo de 2º Tenente, que exige nível superior em Direito. A seleção prevê prova objetiva com 70 questões em dois turnos e redação, com aplicação em 21 de fevereiro de 2027 nas cidades de Recife, Arcoverde, Caruaru e Petrolina.
-
-Title:   Da creche à saúde: Comodoro abre concurso e seletivo com 218 vagas e salários de até R$ 23,6 mil
-URL:     https://primeirapagina.com.br/emprego-e-concursos/da-creche-a-saude-comodoro-abre-concurso-e-seletivo-com-salarios-de-ate-r-236-mil/
-Career:   procuradorias
-Group:   prefeitura-comodoro-mt-analista-de-procuradoria
-Reason:  Edital publicado pela Prefeitura de Comodoro/MT com 1 vaga imediata mais cadastro reserva para o cargo de Analista de Procuradoria, que exige formação superior em Direito. As inscrições têm início em 5 de outubro, oferecendo remuneração atrativa integrada ao plano de cargos e salários do município, com etapas de provas objetivas.
-
-Title:   Prefeitura de Blumenau
-URL:     https://www.blumenau.sc.gov.br/secao/noticias/132030
+Title:   TJAC chama 11 aprovados para estágio de pós em Direito na Capital - Na Hora da Notícia
+URL:     https://nahoradanoticia.com.br/rio-branco/tjac-chama-11-aprovados-para-estagio-de-pos-em-direito-na-capital/
 Career:   estagio
-Group:   pgm-blumenau-sc-residencia-juridica
-Reason:  Processo seletivo publicado para o Programa de Residência Jurídica da Procuradoria-Geral do Município de Blumenau/SC com 5 vagas e cadastro de reserva. Bolsa mensal de R$ 3.704,29 para jornada de 30 horas semanais. Inscrições de 13 a 29 de outubro pelo site da Furb, com taxa de R$ 150. Provas objetiva e discursiva aplicadas em 22 de novembro.
+Group:   tjac-rio-branco-estagio
+Reason:  O Tribunal de Justiça do Acre publicou convocação de 11 candidatos aprovados em processo seletivo para estágio de pós-graduação em Direito na comarca de Rio Branco. Os convocados devem enviar documentação digitalizada em até cinco dias úteis para efetivação do cadastro e futura lotação nas unidades judiciárias e administrativas.
 
-Title:   Assembleia divulga resultado definitivo de provas para cargos de nível superior - portalofato.com.br
-URL:     https://portalofato.com.br/2026/09/30/assembleia-divulga-resultado-definitivo-de-provas-para-cargos-de-nivel-superior/
+Title:   Concurso da ALERR divulga resultado definitivo para cargos de nível superior - Roraima 1
+URL:     https://roraima1.com.br/concurso-da-alerr-divulga-resultado-definitivo-para-cargos-de-nivel-superior/
 Career:   procuradorias
 Group:   alerr-rr-procurador
-Reason:  Concurso público da Assembleia Legislativa de Roraima (ALERR) detalha andamento para o cargo de Procurador Legislativo, certame organizado pela FCC. A próxima etapa consiste na prova oral marcada para 18 de outubro, seguida por divulgação de resultados em 23 de outubro e finalização do cronograma em 18 de dezembro.
+Reason:  A Assembleia Legislativa de Roraima prossegue com o concurso para Procurador Legislativo, com a realização da prova oral agendada para 18 de outubro e avaliação de títulos pendentes. O resultado final do certame conduzido pela FCC está previsto para ser divulgado em 18 de dezembro.
 
-Title:   Concurso Câmara de Florianópolis-SC avança com nova comissão para escolha da banca
-URL:     https://concursossc.com.br/concurso-camara-de-florianopolis-sc-avanca-com-nova-comissao-para-escolha-da-banca/
-Career:   administrativo
-Group:   camara-florianopolis-sc-procurador
-Reason:  A Câmara Municipal de Florianópolis/SC formou nova comissão organizadora para viabilizar concurso público efetivo após acordo com o Ministério Público. Embora a distribuição exata de vagas ainda não esteja consolidada no ato recente, estudos preliminares e tratativas previam oportunidades para o cargo de Procurador, além de vagas de níveis médio e superior. O cronograma anterior sofreu atrasos e os prazos definitivos para lançamento do edital serão definidos pelo colegiado recém-empossado.
-
-Title:   Concurso Câmara de Florianópolis SC forma comissão para edital | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-camara-de-florianopolis-sc-2026-comissao-formada
-Career:   administrativo
-Group:   camara-florianopolis-sc-procurador
-Reason:  Publicado ato de constituição de nova comissão para o concurso da Câmara Municipal de Florianópolis/SC, com o objetivo de retomar os trâmites para escolha da banca organizadora. O certame decorre de TAC firmado com o Ministério Público e tem previsão de ofertar vagas para o cargo de Procurador e demais funções de níveis médio e superior, com edital esperado após a finalização da escolha da empresa licitada.
-
-Title:   JustiÃ§a dÃ¡ 30 dias para prefeita de Nova Colinas fazer concurso pÃºblico sob pena de afastamento | O Imparcial
-URL:     https://oimparcial.com.br/noticias/2026/09/justica-da-30-dias-para-prefeita-de-nova-colinas-fazer-concurso-publico-sob-pena-de-afastamento/
-Career:   procuradorias
-Group:   pgm-nova-colinas-ma-procurador
-Reason:  Decisão judicial determina que a Prefeitura de Nova Colinas/MA realize concurso público no prazo de 30 dias para o cargo de procurador municipal, sob pena de afastamento da prefeita. A medida visa estruturar a procuradoria jurídica com servidores efetivos.
-
-Title:   Aleac oficializa contratação de banca e define regras para concurso público com 100 vagas – O RIO BRANCO
-URL:     https://oriobranco.net/aleac-oficializa-contratacao-de-banca-e-define-regras-para-concurso-publico-com-100-vagas/
-Career:   administrativo
-Group:   aleac-ac-analista-juridico
-Reason:  A Assembleia Legislativa do Acre (Aleac) oficializou a contratação do Idecan para seu novo concurso com 50 vagas imediatas e 50 em cadastro de reserva. O certame contempla cargos de nível superior, incluindo vagas específicas para graduados em Direito no cargo de Analista Legislativo, com vencimento básico de R$ 7.553,00.
-
-Title:   Defensoria Pública abre processo seletivo de estágio em pós-graduação em direito, em Barbacena – Vertentes das Gerais | Notícias de Barbacena, Lafaiete e Região
-URL:     https://vertentesdasgerais.com.br/defensoria-publica-abre-processo-seletivo-de-estagio-em-pos-graduacao-em-direito-em-barbacena/
+Title:   Blumenau abre 5 vagas para residência jurídica com bolsa de R$ 3,7 mil - Farol Blumenau
+URL:     https://farolblumenau.com/residencia-juridica-blumenau-vagas/
 Career:   estagio
-Group:   dpmg-barbacena-mg-estagio
-Reason:  A Defensoria Pública de Minas Gerais abriu processo seletivo para estágio de pós-graduação em Direito na comarca de Barbacena. A bolsa-auxílio é de R$ 2.053,00 acrescida de auxílio-transporte de R$ 210,00 para jornada de 25 horas semanais. Inscrições abertas de 05 a 15 de outubro de 2026.
+Group:   pgm-blumenau-sc-estagio
+Reason:  A Prefeitura de Blumenau abriu processo seletivo para 5 vagas de residência jurídica na Procuradoria-Geral do Município (PGM), com bolsa de R$ 3.704,29 para jornada de 30 horas semanais. Inscrições de 13 a 29 de outubro pelo site da Furb, com taxa de R$ 150 e provas objetiva e discursiva previstas para 22 de novembro.
 
-Title:   ALEPA: edital abre 135 vagas; salários até R$ 10,3 mil | Notícias Focus Concursos
-URL:     https://noticias.focusconcursos.com.br/noticias/concurso-alepa-editais-abrem-135-vagas-para-niveis-medio-e-superior
+Title:   Concurso Alepa: inscrições abrem nesta quinta (1º) com salários de até R$ 3,7 mil • DOL
+URL:     https://dol.com.br/concursos/municipais/964267/concurso-alepa-inscricoes-abrem-nesta-quinta-1-com-salarios-de-ate-r-37-mil
 Career:   procuradorias
 Group:   alepa-pa-procurador
-Reason:  A Assembleia Legislativa do Estado do Pará publicou edital de concurso público sob a organização da Fundação CETAP, ofertando 5 vagas imediatas para o cargo de Procurador. A remuneração inicial para nível superior pode alcançar R$ 10.353,64 com as gratificações legislativas para 30 horas semanais. As inscrições seguem abertas de 1º de outubro a 4 de novembro de 2026, com taxa de R$ 118,00 e provas aplicadas em Belém no dia 13 de dezembro de 2026.
+Reason:  Edital publicado pela Assembleia Legislativa do Estado do Pará (Alepa) com vaga para o cargo de Procurador. O certame oferece remuneração inicial com vencimentos básicos de até R$ 3.697,73 acrescidos de gratificações. As inscrições seguem abertas até 4 de novembro de 2026 pelo site da banca Fundação CETAP, com taxa de R$ 118. As provas objetiva e discursiva estão previstas para 13 de dezembro de 2026.
 
-Title:   Resultado preliminar das provas objetivas do processo seletivo do Programa de Residência é publicado no Portal do TCE/SC | O Tribunal da Governança Pública Catarinense
-URL:     https://www.tcesc.tc.br/resultado-preliminar-das-provas-objetivas-do-processo-seletivo-do-programa-de-residencia-e
+Title:   Prefeitura de Belo Horizonte oferece 69 vagas de estágio em outubro com bolsa de até R$ 1.886,59
+URL:     https://prefeitura.pbh.gov.br/noticias/prefeitura-de-belo-horizonte-oferece-69-vagas-de-estagio-em-outubro-com-bolsa-de-ate-r
 Career:   estagio
-Group:   tcesc-sc-residencia-juridica
-Reason:  O Tribunal de Contas de Santa Catarina divulgou o resultado preliminar das provas objetivas referentes ao seu Programa de Residência regido pelo Edital TC-1/2026. O processo seletivo contempla 5 vagas imediatas e formação de cadastro reserva específicas para bacharéis em Direito. Os residentes cumprem jornada de 30 horas semanais com bolsa mensal de R$ 5.000,00 e auxílio-transporte de R$ 500,00, com atividades previstas para iniciar em novembro.
+Group:   pbh-belo-horizonte-mg-estagio
+Reason:  A Prefeitura de Belo Horizonte (PBH) abriu vagas para o Banco de Estágios contemplando estudantes do curso de Direito. A bolsa-auxílio chega a R$ 1.306,71 para a jornada de seis horas diárias, além de auxílio-transporte e recesso remunerado. As inscrições são gratuitas e devem ser realizadas de forma online na plataforma digital municipal GO BH.
 
-Title:   Universidade de Pernambuco abre concurso para advogado com 2 vagas | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/universidade-de-pernambuco-abre-concurso-para-advogado-com-2-vagas
+Title:   Concurso TJ PB tem banca organizadora definida para novo edital | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/concurso-tj-pb-banca-definida-fgv-2026
+Career:   tribunais
+Group:   tjpb-pb-magistratura-e-servidores
+Reason:  O Tribunal de Justiça da Paraíba definiu a Fundação Getúlio Vargas (FGV) como a banca organizadora do seu novo concurso público. O edital contemplará 56 vagas distribuídas entre analista judiciário e juiz substituto. A remuneração inicial para analista parte de R$ 7.244,79, enquanto para a magistratura os ganhos ultrapassam R$ 30 mil, exigindo bacharelado em Direito e três anos de atividade jurídica.
+
+Title:   Concurso da ALEPA abre inscrições nesta quinta-feira (1°) | Roma News
+URL:     https://www.romanews.com.br/cidades/concurso-da-alepa-abre-inscricoes-nesta-quinta-feira-1-1026
 Career:   procuradorias
-Group:   upe-pe-advogado
-Reason:  A Universidade de Pernambuco publicou edital de concurso público para o cargo de Advogado, oferecendo 2 vagas imediatas para jornada de 30 horas semanais. A remuneração inicial é de R$ 4.165,25, composta por vencimento-base e parcela de valorização. As inscrições podem ser realizadas de 2 de outubro a 2 de novembro de 2026 diretamente no site da instituição, com taxa de R$ 280,00. As etapas incluem prova objetiva prevista para 29 de novembro, além de prova discursiva e de títulos.
+Group:   alepa-pa-procurador
+Reason:  A Assembleia Legislativa do Pará (ALEPA) abriu inscrições para seu concurso público organizado pela Fundação CETAP, ofertando 5 vagas para Procurador. O cargo exige graduação em Direito e registro na OAB, com remuneração que pode alcançar R$ 10.353,64 para carga horária de 30 horas semanais. As inscrições seguem abertas até 04/11/2026, com taxa de R$ 118, e provas objetivas e discursivas previstas para 13/12/2026.
 
-Title:   Concurso CRO RJ: Consulplan escolhido com organizador · Degrau Cultural
-URL:     https://degraucultural.com.br/noticia/concurso-cro-rj-consulplan-escolhido-com-organizador
+Title:   Concurso TJ PB: FGV organiza novo edital; 56 vagas para servidores e magistratura
+URL:     https://www.direcaoconcursos.com.br/noticias/concurso-tj-pb-fgv-banca
+Career:   tribunais
+Group:   tjpb-pb-magistratura-e-servidores
+Reason:  O Tribunal de Justiça da Paraíba (TJPB) ratificou a contratação da Fundação Getulio Vargas (FGV) por dispensa de licitação para organizar seu novo concurso público. O certame prevê a oferta de 56 vagas distribuídas entre cargos para servidores do Poder Judiciário e a magistratura, contemplando 6 vagas para juiz substituto e 50 para analista judiciário. O cronograma completo e a publicação do edital são aguardados para os próximos meses.
+
+Title:   TCE-AM convoca 16 aprovados na Residência Jurídica e Contábil - Portal Você Online
+URL:     https://portalvoce.com/tce-am-convoca-16-aprovados-na-residencia-juridica-e-contabil/
+Career:   estagio
+Group:   tce-am-am-residencia-juridica
+Reason:  O Tribunal de Contas do Amazonas (TCE-AM) publicou a primeira convocação de aprovados no II Processo Seletivo Público para o Programa de Residência Jurídica e Contábil (PRJeC). Foram chamados 10 candidatos para a área jurídica, que recebem bolsa-auxílio mensal de R$ 3.000,00 para uma jornada de 25 horas semanais, com duração de dois anos, prorrogável por igual período conforme as normas do edital.
+
+Title:   TCE-AM convoca 16 aprovados na Residência Jurídica e Contábil - Portal do Lobão
+URL:     https://portaldolobao.com.br/tce-am-convoca-16-aprovados-na-residencia-juridica-e-contabil/
+Career:   estagio
+Group:   tce-am-am-residencia-juridica
+Reason:  O Tribunal de Contas do Amazonas (TCE-AM) publicou a primeira convocação de aprovados no II Processo Seletivo Público para o Programa de Residência Jurídica e Contábil (PRJeC). Foram chamados 10 candidatos para a área jurídica, que recebem bolsa-auxílio mensal de R$ 3.000,00 para uma jornada de 25 horas semanais, com duração de dois anos, prorrogável por igual período conforme as normas do edital.
+
+Title:   Concurso ALEPA: edital com 135 vagas abre inscrições nesta quinta (1º)
+URL:     https://ceisc.com.br/blog/post/concurso-alepa-edital-com-135-vagas-abre-inscricoes-nesta-quinta-1?category=undefined
+Career:   procuradorias
+Group:   alepa-pa-procurador
+Reason:  Edital publicado pela Assembleia Legislativa do Pará (ALEPA) com 135 vagas para níveis médio e superior, incluindo o cargo de Procurador. As remunerações iniciais chegam a R$ 10.353,64. As inscrições ficam abertas de 1 de outubro a 4 de novembro de 2026, sob organização da Fundação CETAP. As provas objetivas estão agendadas para o dia 13 de dezembro de 2026.
+
+Title:   Concurso TJ PB: FGV é a banca definida; 56 vagas previstas!
+URL:     https://www.novaconcursos.com.br/portal/noticias/concurso-tj-pb-banca-definida/
+Career:   tribunais
+Group:   tjpb-pb-magistratura-e-servidores
+Reason:  O Tribunal de Justiça da Paraíba (TJ PB) definiu a Fundação Getulio Vargas (FGV) como banca organizadora de seu novo certame. O planejamento contempla 56 vagas no total, sendo 50 oportunidades destinadas a servidores (incluindo Analista Judiciário) e seis vagas para juiz substituto. A publicação do edital de formalização ocorreu no final de setembro de 2026.
+
+Title:   Concurso público: melhores oportunidades para Analista em outubro de 2026! - Blog Magistrar Educacional
+URL:     https://magistrarcursos.com.br/blog/concurso-publico-melhores-oportunidades-para-analista-em-outubro-de-2026/
+Career:   defensoria
+Group:   dpe-nacional-analista-juridico
+Reason:  Múltiplas oportunidades em defensorias públicas foram movimentadas em outubro de 2026. A DPDF está com banca definida (Instituto Access) para 7 vagas iniciais de Analista (Direito) com salário de R$ 8.731,96. A DPE PB abriu inscrições (banca FCC) para 20 vagas com taxas de R$ 123 e provas em 28/02/2027. A DPE AM definiu a FCC para 5 vagas de Analista Jurídico com salários até R$ 8.006,38.
+
+Title:   Jarinu: Câmara abre concurso. Salários podem ultrapassar R$ 10 mil
+URL:     https://jundiagora.com.br/jarinu-18/
+Career:   procuradorias
+Group:   camara-jarinu-sp-procurador
+Reason:  Edital publicado pela Câmara de Jarinu/SP com vaga imediata para o cargo de Procurador, oferecendo remuneração inicial de R$ 10.744,00 para jornada de 40 horas semanais. As inscrições seguem abertas até 29 de outubro, sob organização da banca Indepac. As avaliações objetiva e prático-profissional estão agendadas para o dia 22 de novembro.
+
+Title:   Concurso ALEPA: inscriÃ§Ãµes abertas para 135 vagas de atÃ© R$ 10,3 mil
+URL:     https://www.direcaoconcursos.com.br/noticias/concurso-alepa-inscricoes-abertas
+Career:   procuradorias
+Group:   alepa-pa-procurador
+Reason:  Publicado edital do concurso da Assembleia Legislativa do Pará (ALEPA) contemplando 5 vagas imediatas mais cadastro reserva para a carreira de Procurador. O certame é organizado pela Fundação CETAP, com taxa de inscrição fixada em R$ 118,00 até o dia 4 de novembro. As remunerações iniciais podem atingir até R$ 10.353,64, com provas aplicadas em dezembro.
+
+Title:   Governo do Amapá abre 351 vagas em dois novos concursos para o serviço público estadual – Diário do Amapá - Compromisso com a Notícia
+URL:     https://www.diariodoamapa.com.br/cadernos/cidades/governo-do-amapa-abre-351-vagas-em-dois-novos-concursos-para-o-servico-publico-estadual/
 Career:   administrativo
-Group:   crorj-rj-assistente-juridico
-Reason:  Definido o Instituto Consulplan como banca organizadora do novo concurso do CRO-RJ por meio de dispensa de licitação. O plano de cargos da autarquia contempla a função de assistente jurídico, que exige graduação em Direito. Os vencimentos iniciais variam de R$ 2.550,00 a R$ 5.450,00, acrescidos de benefícios como auxílio-alimentação e plano de saúde. A assinatura do contrato e a publicação do edital são iminentes.
+Group:   governo-ap-analista-juridico
+Reason:  O Governo do Amapá publicou edital com 166 vagas de nível superior no Grupo Governança e Gestão Estratégica, incluindo o cargo de Analista Jurídico. A remuneração inicial prevista é de R$ 8.331,35. As inscrições ocorrem de 8 a 28 de outubro de 2026 pela banca IDCAP, com taxa de R$ 120,00 e provas aplicadas no dia 29 de novembro de 2026.
 
-Title:   Concurso da Câmara de Boituva SP abre vagas que pagam até R$ 8,5 mil
-URL:     https://jcconcursos.com.br/noticia/concursos/concurso-da-camara-de-boituva-sp-abre-vagas-que-pagam-ate-r-85-mil-145769
-Career:   procuradorias
-Group:   camaradeboituva-sp-procurador
-Reason:  Edital publicado pela Câmara Municipal de Boituva/SP com oferta total de 7 vagas imediatas e cadastro reserva para diversos níveis de escolaridade sob a organização do Instituto Mais. O cargo de Procurador conta com remuneração inicial de até R$ 8.595,15 para regime estatutário, com jornada de 20 ou 40 horas semanais. As inscrições seguem abertas até 9 de novembro de 2026, com taxa variando de R$ 54,00 a R$ 87,00, e as provas estão previstas para 6 de dezembro de 2026.
+Title:   Concursos abertos que pagam acima de R$ 5 mil! Confira cargos, vagas e mais!
+URL:     https://blog.grancursosonline.com.br/concursos-abertos-que-pagam-acima-de-r-5-mil-confira-cargos-vagas-e-mais/amp/
+Career:   tribunais
+Group:   camara-rio-branco-ac-analista-juridico
+Reason:  Edital publicado para a Câmara Municipal de Rio Branco/AC com 1 vaga imediata e 2 em cadastro de reserva para Analista Legislativo - Direito, exigindo graduação. A remuneração inicial é de R$ 6.300,00 acrescida de auxílio-alimentação de R$ 1.500,00 e auxílio-saúde de R$ 500,00 para 30 horas semanais. Inscrições de 11/09 a 13/10/2026, com provas em 22/11/2026.
 
-Title:   Prefeitura de Santa Luzia MG publica concurso com 447 vagas | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/prefeitura-de-santa-luzia-mg-publica-concurso-com-447-vagas
+Title:   Calendário de provas: veja as próximas datas dos concursos
+URL:     https://cj.estrategia.com/portal/calendario-provas-concursos-juridicos-2026/
+Career:   tribunais
+Group:   tjrs-rs-juiz
+Reason:  Concurso público organizado pela Fundação Getulio Vargas para o provimento de 30 vagas para Juiz de Direito Substituto do Tribunal de Justiça do Estado do Rio Grande do Sul. O subsídio inicial é de R$ 30.505,36, exigindo três anos de atividade jurídica e aprovação no ENAM. Inscrições abertas até 14/10/2026, com prova objetiva seletiva prevista para 13/12/2026.
+
+Title:   IPSM de São José dos Campos publica edital de concurso com 17 vagas e salários de até R$ 5,8 mil - Notícias São José dos Campos | @noticias.sjcampos
+URL:     https://noticiassjc.com.br/ipsm-de-sao-jose-dos-campos-publica-edital-de-concurso-com-17-vagas-e-salarios-de-ate-r-58-mil/
+Career:   administrativo
+Group:   ipsm-sao-jose-dos-campos-sp-analista-juridico
+Reason:  Edital publicado pelo Instituto de Previdência do Servidor Municipal de São José dos Campos/SP oferecendo 2 vagas imediatas para Analista Previdenciário na especialidade de Direito, com exigência de nível superior. A remuneração inicial chega a R$ 5.860,31, somada a benefícios. Inscrições de 01/10 a 30/10/2026 pelo Instituto AOCP, com provas em 13/12/2026.
+
+Title:   Concurso Aleac banca Contratada: Idecan é a organizadora
+URL:     https://www.novaconcursos.com.br/portal/noticias/concurso-aleac-banca-contratada-idecan/
+Career:   administrativo
+Group:   aleac-ac-analista-legislativo
+Reason:  A Assembleia Legislativa do Acre contratou o Idecan para realizar concurso público com 50 vagas efetivas. O cargo de Analista Legislativo na especialidade de Direito oferece 3 vagas imediatas com remuneração inicial de R$ 7.553,00 para jornada de nível superior.
+
+Title:   Concurso no Rio abre vagas para quem tem ensino médio e salários podem chegar a R$ 18 mil - DiÃ¡rio do Rio
+URL:     https://diariodorio.com/variedades/2026/10/01/concurso-no-rio-abre-vagas-para-quem-tem-ensino-medio-e-salarios-podem-chegar-a-rs-18-mil.html
+Career:   administrativo
+Group:   cremerj-rj-advogado-analista
+Reason:  O CREMERJ está com inscrições abertas até 22/10 para concurso com 26 vagas imediatas mais cadastro reserva. Há oportunidades para Advogado (R$ 7.718,45) e Analista Jurídico (R$ 6.084,46), exigindo bacharelado em Direito. As provas objetivas e discursivas estão agendadas para 13/12.
+
+Title:   Alepa abre inscrições para concurso com 135 vagas e salários de até R$ 10,3 mil - NC News
+URL:     https://ncnews.com.br/2026/10/01/concurso-alepa-2026-inscricoes-135-vagas/
 Career:   procuradorias
-Group:   pgm-santa-luzia-mg-procurador
-Reason:  Edital publicado pela Prefeitura de Santa Luzia/MG (Edital 01/2026) oferecendo 3 vagas para Procurador Municipal sob regime estatutário. A remuneração chega a R$ 8.628,87. Inscrições abertas de 17/12/2026 a 15/01/2027 pelo site da banca COTEC/FADENOR. As etapas incluem provas objetiva, discursiva e análise de títulos, com aplicação prevista para 14/03/2027.
+Group:   alepa-pa-procurador
+Reason:  Edital publicado pela Assembleia Legislativa do Pará (Alepa) com 5 vagas imediatas para Procurador, exigindo graduação em Direito e registro na OAB. A remuneração inicial pode alcançar R$ 10.353,64 com gratificações para jornada de 30 horas semanais. Inscrições abertas até 04/11 no site da Fundação Cetap. Provas objetiva, discursiva e de títulos previstas para 13/12.
+
+Title:   Concurso da Alepa abre inscrições nesta quinta-feira (1º) - Portal Debate
+URL:     https://debatecarajas.com.br/concurso-da-alepa-abre-inscricoes-nesta-quinta-feira-1o/
+Career:   procuradorias
+Group:   alepa-pa-procurador
+Reason:  Assembleia Legislativa do Pará (Alepa) publicou edital para o cargo de Procurador, ofertando 5 vagas com exigência de nível superior em Direito e OAB. Vencimentos e gratificações chegam a R$ 10.353,64 mensais. Período de inscrições segue aberto até 04/11/2026, sob organização da banca Fundação CETAP. Avaliações objetiva, discursiva e de títulos marcadas para 13/12.
+
+Title:   Concurso ALEAC: termo de referência detalha cargos, vagas e provas; edital iminente! - Blog Magistrar Educacional
+URL:     https://magistrarcursos.com.br/blog/concurso-aleac-termo-de-referencia-detalha-cargos-vagas-e-provas-edital-iminente/
+Career:   administrativo
+Group:   aleac-ac-analista-legislativo
+Reason:  Termo de referência e estudo técnico preliminar publicados para o concurso da Assembleia Legislativa do Acre (Aleac), definindo a banca Idecan como organizadora. O certame ofertará 50 vagas imediatas e 50 em cadastro de reserva, incluindo 3 vagas imediatas e 3 CR para Analista Legislativo na especialidade de Direito, com exigência de superior em Direito e remuneração inicial de R$ 7.553,00.
+
+Title:   Concurso da Alepa abre inscrições nesta quinta-feira (1º); veja como participar
+URL:     https://www.oliberal.com/concurso/concurso-da-alepa-abre-inscric-es-nesta-quinta-feira-1-veja-como-participar-1.1175218
+Career:   procuradorias
+Group:   alepa-pa-procurador
+Reason:  Edital publicado para Procurador da Assembleia Legislativa do Pará com 5 vagas e remuneração inicial composta por vencimento básico de R$ 3.697,73 acrescido de 180% em gratificações, exigindo graduação em Direito e registro na OAB. Inscrições de 01/10/2026 a 04/11/2026 pela Fundação CETAP, com taxa de R$ 118,00 e provas objetiva, discursiva e de títulos previstas para 13/12/2026.
+
+Title:   Concursos jurídicos: melhores editais abertos e previstos em outubro de 2026! - Blog Magistrar Educacional
+URL:     https://magistrarcursos.com.br/blog/concursos-juridicos-melhores-editais-previstos-para-outubro-de-2026/
+Career:   tribunais
+Group:   tjrs-rs-juiz
+Reason:  Edital publicado pelo Tribunal de Justiça do Rio Grande do Sul (TJRS) com 30 vagas imediatas mais cadastro reserva para o cargo de Juiz Substituto. A remuneração inicial é de R$ 30.505,36. As inscrições seguem abertas até 14/10/2026 sob organização da banca FGV, com taxa de R$ 305,00 e prova objetiva agendada para 13/12/2026.
 
