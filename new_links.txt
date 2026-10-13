@@ -1,285 +1,1201 @@
-Verificação: 2026-10-12T11:37:14.452920+00:00
-Links novos encontrados: 55
-  Scraping: 1
-  Alertas:  54
-Removidos da base: 138
-Total na base: 937
+Verificação: 2026-10-13T11:22:17.490345+00:00
+Links novos encontrados: 365
+  Scraping: 318
+  Alertas:  47
+Removidos da base: 78
+Total na base: 901
 ============================================================
 
 ── NEW (scraping) ──
 
-Prefeitura Santana de Pirapama-MG 2026: Edital e Inscrição
-  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-prefeitura-santana-pirapama-mg-2026-92430
+Público: 5 editais previstos para Abril somam quase 2 mil vagas
+  https://www.acheconcursos.com.br/artigos/concurso-publico-5-editais-previstos-para-abril-somam-quase-2-mil-vagas-89133
+
+Receita Federal 2026: o que já começar a estudar? veja dicas
+  https://www.acheconcursos.com.br/artigos/concurso-receita-federal-2026-o-que-ja-comecar-a-estudar-veja-dicas-91935
+
+PM-ES 2026 prorroga inscrições para 1.008 vagas de Soldado
+  https://www.acheconcursos.com.br/concursos-espirito-santo/concurso-pmes-2026-sai-e-abre-1-008-vagas-90446
+
+São João Del-Rei-MG 2026: Prefeitura lança 5 editais com vagas de R$ 15 mil
+  https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-sao-joao-del-rei-mg-2026-92545
+
+Prefeitura de Berizal-MG abre oportunidades para Agente Comunitário de Saúde
+  https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-prefeitura-berizal-mg-agente-comunitario-saude-2026-92211
+
+Edital Indaiabira-MG 2026: Prefeitura abre vagas para ACS e ACE
+  https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-prefeitura-indaiabira-mg-2026-ACS-ACE-92212
+
+Prefeitura de São João do Paraíso-MG abre seleção para Agentes de Saúde
+  https://www.acheconcursos.com.br/concursos-minas-gerais/processo-seletivo-prefeitura-sao-joao-paraiso-mg-agentes-saude-2026-92235
+
+Prefeitura Cândido Godói-RS 2026 é aberto
+  https://www.acheconcursos.com.br/concursos-rio-grande-do-sul/concurso-candido-godoi-rs-2026-e-aberto-90456
+
+200 novos cargos no STF são aprovados pelo Senado; 160 serão comissionados
+  https://www.acheconcursos.com.br/noticias/200-novos-cargos-no-stf-sao-aprovados-pelo-senado-160-serao-comissionados-84824
+
+ABIN faz novo pedido de concurso público com 300 vagas de nível superior
+  https://www.acheconcursos.com.br/noticias/abin-faz-novo-pedido-de-concurso-publico-com-300-vagas-de-nivel-superior-90618
+
+ALE-GO anuncia concurso para Procurador em 2026
+  https://www.acheconcursos.com.br/noticias/ale-go-anuncia-concurso-para-procurador-em-2026-91685
+
+ANA pede novo concurso em 2026
+  https://www.acheconcursos.com.br/noticias/ana-pede-novo-concurso-em-2026-89940
+
+Após boatos, Banco do Brasil diz que não há previsão de concurso para 2026
+  https://www.acheconcursos.com.br/noticias/apos-boatos-banco-do-brasil-diz-que-nao-ha-previsao-de-concurso-para-2026-89250
+
+Após cancelar concurso em 2023, Câmara de Guarulhos-SP terá novo edital para 40 vagas de níveis médio e superior
+  https://www.acheconcursos.com.br/noticias/apos-cancelar-concurso-em-2023-camara-de-guarulhos-sp-tera-novo-edital-para-40-vagas-de-niveis-medio-e-superior-91783
+
+Assembleia Legislativa do Ceará confirma novo concurso com mais de 200 vagas efetivas
+  https://www.acheconcursos.com.br/noticias/assembleia-legislativa-do-ceara-confirma-novo-concurso-com-mais-de-200-vagas-efetivas-85376
+
+Banco Central fará concurso de nível médio com vagas de R$ 8 mil
+  https://www.acheconcursos.com.br/noticias/banco-central-concurso-nivel-medio-tecnico-salario-8-mil-91505
+
+Banco do Brasil descarta concurso esse ano e edital só deve sair em 2027
+  https://www.acheconcursos.com.br/noticias/banco-do-brasil-descarta-concurso-esse-ano-e-edital-so-deve-sair-em-2027-92596
+
+Banco do Nordeste pode ter novo concurso em 2026 após chamar todos os aprovados
+  https://www.acheconcursos.com.br/noticias/banco-do-nordeste-pode-ter-novo-concurso-em-2026-apos-chamar-todos-os-aprovados-89418
+
+Bombeiros-AL anunciam concurso com 344 vagas; veja cargos e salários
+  https://www.acheconcursos.com.br/noticias/bombeiros-al-anunciam-concurso-com-344-vagas-veja-cargos-e-salarios-85005
+
+Câmara de Boa Vista-RR terá concurso em 2026 com 70 vagas
+  https://www.acheconcursos.com.br/noticias/camara-de-boa-vista-rr-tera-concurso-em-2026-com-70-vagas-85749
+
+Câmara de Florianópolis-SC anuncia concurso público inédito para 2026
+  https://www.acheconcursos.com.br/noticias/camara-de-florianopolis-sc-anuncia-concurso-publico-inedito-para-2026-89125
+
+Câmara de Nilópolis-RJ anuncia novo concurso e edital já pode sair
+  https://www.acheconcursos.com.br/noticias/camara-de-nilopolis-rj-anuncia-novo-concurso-e-edital-ja-pode-sair-90967
+
+Câmara dos Deputados define cotas para concursos; 3º edital sai em breve
+  https://www.acheconcursos.com.br/noticias/camara-dos-deputados-define-cotas-para-concursos-3o-edital-sai-em-breve-93502
+
+Câmara dos Deputados lançará 3º edital de concurso em breve, diz presidente
+  https://www.acheconcursos.com.br/noticias/camara-dos-deputados-lancara-3o-edital-de-concurso-em-breve-diz-presidente-91046
+
+Ceará prevê 24 novos concursos públicos para 2026; saiba quais
+  https://www.acheconcursos.com.br/noticias/ceara-preve-24-novos-concursos-publicos-para-2026-saiba-quais-86716
+
+Cebraspe fará concurso PP-PE 2026 e edital já pode sair
+  https://www.acheconcursos.com.br/noticias/cebraspe-fara-concurso-pp-pe-2026-e-edital-ja-pode-sair-93210
+
+Cebraspe fará concurso TCE-MA 2026
+  https://www.acheconcursos.com.br/noticias/cebraspe-fara-concurso-tce-ma-2026-90485
+
+Cebraspe fará o concurso da Câmara dos Deputados em 2026
+  https://www.acheconcursos.com.br/noticias/cebraspe-fara-o-concurso-da-camara-dos-deputados-em-2026-86242
+
+CNU do Piauí terá edital até julho e 1.000 vagas na PM ainda em 2026
+  https://www.acheconcursos.com.br/noticias/cnu-do-piaui-tera-edital-ate-julho-e-1-000-vagas-na-pm-ainda-em-2026-90059
+
+CNU pode abrir vagas para governos estaduais; entenda
+  https://www.acheconcursos.com.br/noticias/cnu-pode-abrir-vagas-para-governos-estaduais-entenda-91566
+
+Colégio Pedro-II RJ define banca do concurso que terá 50 vagas para Professores
+  https://www.acheconcursos.com.br/noticias/colegio-pedro-ii-rj-define-banca-do-concurso-que-tera-50-vagas-para-professores-84988
+
+SEFAZ-SC contrata banca para concurso com 50 vagas de Auditor
+  https://www.acheconcursos.com.br/noticias/concurs-sefaz-sc-2026-contrata-banca-auditor-92304
+
+ADAB 2026 define banca e tem edital iminente para 200 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-adab-2026-define-banca-e-tem-edital-iminente-para-200-vagas-86412
+
+ADEAL forma comissão e pode sair no final de 2026
+  https://www.acheconcursos.com.br/noticias/concurso-adeal-forma-comissao-e-pode-sair-em-2026-91793
+
+Agência Espacial (ALADA) 2026: Governo publica portaria para edital com 32 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-agencia-espacial-alada-2026-governo-publica-portaria-para-edital-com-32-vagas-85949
+
+AGEPAR sairá pelo Cebraspe e terá vagas de R$ 9 mil
+  https://www.acheconcursos.com.br/noticias/concurso-agepar-saira-pelo-cebraspe-e-tera-vagas-de-r-9-mil-89292
+
+AGU: Diário da União divulga grupo que fará novo edital
+  https://www.acheconcursos.com.br/noticias/concurso-agu-diario-da-uniao-divulga-grupo-que-fara-novo-edital-91413
+
+AL-PB é confirmado e terá edital até 2027
+  https://www.acheconcursos.com.br/noticias/concurso-al-pb-e-confirmado-e-tera-edital-ate-2027-93007
+
+ALECE 2026: aprovados chamados e novo edital com 200 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-alece-2026-aprovados-chamados-e-novo-edital-com-200-vagas-85569
+
+ALECE 2026: Banca é definida e edital sai em Maio
+  https://www.acheconcursos.com.br/noticias/concurso-alece-2026-banca-e-definida-e-edital-sai-em-maio-89958
+
+ALEMS: Edital até Novembro com até 100 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-alems-edital-ate-novembro-com-ate-100-vagas-84860
+
+ALEPA: contrato com banca assinado torna edital iminente
+  https://www.acheconcursos.com.br/noticias/concurso-alepa-contrato-com-banca-assinado-torna-edital-iminente-91532
+
+ANPD 2026 é oficialmente autorizado e edital sai este ano
+  https://www.acheconcursos.com.br/noticias/concurso-anpd-2026-autorizado-91157
+
+ANPD: Grupo é formado para definir a banca organizadora
+  https://www.acheconcursos.com.br/noticias/concurso-anpd-grupo-e-formado-para-definir-a-banca-organizadora-91854
+
+ANTT: agência pede autorização para 720 cargos
+  https://www.acheconcursos.com.br/noticias/concurso-antt-agencia-pede-autorizacao-para-720-cargos-90553
+
+Aparecida de Goiânia-GO 2026: Edital prevê 2.956 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-aparecida-de-goiania-go-2026-edital-preve-2-956-vagas-92882
+
+ARSAL 2026: comissão formada para Analista
+  https://www.acheconcursos.com.br/noticias/concurso-arsal-2026-comissao-formada-para-analista-87091
+
+Badesul RS 2026: Instituto Legalle é a banca
+  https://www.acheconcursos.com.br/noticias/concurso-badesul-rs-2026-instituto-legalle-e-a-banca-86903
+
+Banco Central 2026: Autorização sai para 170 vagas; veja cargos
+  https://www.acheconcursos.com.br/noticias/concurso-banco-central-2026-autorizacao-cargos-91460
+
+Banco Central 2027 será autorizado! Órgão quer vagas para Técnicos
+  https://www.acheconcursos.com.br/noticias/concurso-banco-central-2027-sera-autorizado-orgao-quer-vagas-para-tecnicos-91198
+
+Banco Central: Galípolo pede autonomia para lançar novo edital
+  https://www.acheconcursos.com.br/noticias/concurso-banco-central-galipolo-pede-autonomia-para-lancar-novo-edital-90274
+
+Banco do Brasil: bancas já enviam propostas; Cesgranrio está entre as interessadas
+  https://www.acheconcursos.com.br/noticias/concurso-banco-do-brasil-bancas-ja-enviam-propostas-cesgranrio-esta-entre-as-interessadas-87033
+
+BANESTES é confirmado pelo presidente do banco e terá vagas de nível médio e superior
+  https://www.acheconcursos.com.br/noticias/concurso-banestes-e-confirmado-pelo-presidente-do-banco-e-tera-vagas-de-nivel-medio-e-superior-93010
+
+BB: edital volta à pauta após funcionários pressionarem direção
+  https://www.acheconcursos.com.br/noticias/concurso-bb-edital-volta-a-pauta-apos-funcionarios-pressionarem-direcao-92432
+
+Bombeiros-AL 2026 para 344 vagas de nível médio tem comissão formada
+  https://www.acheconcursos.com.br/noticias/concurso-bombeiros-al-2026-para-344-vagas-de-nivel-medio-tem-comissao-formada-86208
+
+Bombeiros-ES para 100 vagas encaminha banca
+  https://www.acheconcursos.com.br/noticias/concurso-bombeiros-es-para-100-vagas-encaminha-banca-93016
+
+Caixa 2025: Edital com 180 vagas sai nesta semana
+  https://www.acheconcursos.com.br/noticias/concurso-caixa-2025-edital-com-180-vagas-sai-nesta-semana-85136
+
+Caixa deve repetir a banca organizadora para Técnico Bancário
+  https://www.acheconcursos.com.br/noticias/concurso-caixa-deve-repetir-a-banca-organizadora-para-tecnico-bancario-90698
+
+Câmara de Assis-SP: Vunesp será responsável pela nova seleção
+  https://www.acheconcursos.com.br/noticias/concurso-camara-de-assis-sp-vunesp-nova-selecao-92036
+
+Câmara de Carapicuíba-SP: banca definida e salários chegam a R$ 5,2 mil
+  https://www.acheconcursos.com.br/noticias/concurso-camara-de-carapicuiba-sp-banca-definida-e-salarios-chegam-a-r-5-2-mil-92884
+
+Câmara de Rio Branco-AC: Banca é definida e edital já pode sair
+  https://www.acheconcursos.com.br/noticias/concurso-camara-de-rio-branco-ac-banca-e-definida-e-edital-ja-pode-sair-93058
+
+Câmara dos Deputados 2026: Grupo é formado para montar o edital
+  https://www.acheconcursos.com.br/noticias/concurso-camara-dos-deputados-2026-grupo-e-formado-para-montar-o-edital-84866
+
+Câmara dos Deputados: 3º edital em 2026 sai pelo Cebraspe em setembro
+  https://www.acheconcursos.com.br/noticias/concurso-camara-dos-deputados-3o-edital-em-2026-sai-pelo-cebraspe-em-setembro-93148
+
+CAU AP avança e define banca organizadora do próximo edital
+  https://www.acheconcursos.com.br/noticias/concurso-cau-ap-avanca-e-define-banca-organizadora-do-proximo-edital-91560
+
+CBMERJ 2026 para 1.500 vagas tem edital iminente
+  https://www.acheconcursos.com.br/noticias/concurso-cbmerj-2026-para-1-500-vagas-tem-edital-iminente-90971
+
+CETESB: Órgão autoriza novo edital para 107 vagas de nível médio e superior
+  https://www.acheconcursos.com.br/noticias/concurso-cetesb-orgao-autoriza-novo-edital-para-107-vagas-de-nivel-medio-e-superior-91192
+
+CGU 2026 é autorizado para 60 vagas; veja cargos
+  https://www.acheconcursos.com.br/noticias/concurso-cgu-2026-e-autorizado-para-60-vagas-veja-cargos-90507
+
+CGU: Sindicato quer vagas também para Técnicos
+  https://www.acheconcursos.com.br/noticias/concurso-cgu-sindicato-quer-vagas-tambem-para-tecnicos-91801
+
+CNJ 2026: Edital pode ter 50 vagas de Analista e 70 para Técnicos
+  https://www.acheconcursos.com.br/noticias/concurso-cnj-2026-edital-pode-ter-50-vagas-de-analista-e-70-para-tecnicos-85082
+
+Cofen 2026: banca contratada para 11 cargos
+  https://www.acheconcursos.com.br/noticias/concurso-cofen-2026-banca-contratada-para-11-cargos-86413
+
+COFEN: banca confirmada! 11 cargos confirmados
+  https://www.acheconcursos.com.br/noticias/concurso-cofen-banca-confirmada-11-cargos-confirmados-84917
+
+COFEN vai sair em 2026; veja cargos previstos
+  https://www.acheconcursos.com.br/noticias/concurso-cofen-vai-sair-em-2026-veja-cargos-previstos-89938
+
+CONFEF 2026 é anunciado e já define banca
+  https://www.acheconcursos.com.br/noticias/concurso-confef-2026-e-anunciado-e-ja-define-banca-92622
+
+Coren-SP define banca! 76 vagas de até R$ 12,1 mil
+  https://www.acheconcursos.com.br/noticias/concurso-coren-sp-define-banca-76-vagas-de-ate-r-12-1-mil-91891
+
+CRA AM: novo edital terá 10 vagas e será organizado pelo Consulplan
+  https://www.acheconcursos.com.br/noticias/concurso-cra-am-novo-edital-tera-10-vagas-e-sera-organizado-pelo-consulplan-92083
+
+CREA-AL 2026 define banca e edital já pode sair
+  https://www.acheconcursos.com.br/noticias/concurso-crea-al-2026-define-banca-e-edital-ja-pode-sair-92360
+
+CRECI DF tem banca definida e novo edital deve sair em breve
+  https://www.acheconcursos.com.br/noticias/concurso-creci-df-tem-banca-definida-e-novo-edital-deve-sair-em-breve-85232
+
+CRESS-RS: Edital abre vagas de todos os níveis de escolaridade
+  https://www.acheconcursos.com.br/noticias/concurso-cress-rs-edital-abre-vagas-de-todos-os-niveis-de-escolaridade-86444
+
+Câmara dos Deputados: 3º edital sai em breve; veja cargos
+  https://www.acheconcursos.com.br/noticias/concurso-da-camara-dos-deputados-3o-edital-sai-em-breve-veja-cargos-89416
+
+Câmara dos Deputados: Edital é o mais esperado do início de 2026
+  https://www.acheconcursos.com.br/noticias/concurso-da-camara-dos-deputados-edital-e-o-mais-esperado-do-inicio-de-2026-86667
+
+Indústria Nuclear Brasileira (INB) 2026 tem edital iminente
+  https://www.acheconcursos.com.br/noticias/concurso-da-industria-nuclear-brasileira-inb-2026-tem-edital-iminente-92991
+
+Petrobras pode sair em 2026 e abrir milhares de vagas; confira situação
+  https://www.acheconcursos.com.br/noticias/concurso-da-petrobras-pode-sair-em-2026-e-abrir-milhares-de-vagas-confira-situacao-87934
+
+PF avança em meio a debate sobre falta de efetivo
+  https://www.acheconcursos.com.br/noticias/concurso-da-pf-avanca-em-meio-a-debate-sobre-falta-de-efetivo-89470
+
+Polícia Científica-SP terá edital com 397 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-da-policia-cientifica-sp-tera-edital-com-397-vagas-92586
+
+Polícia Penal-MS pode ter até 1.000 vagas para Policial
+  https://www.acheconcursos.com.br/noticias/concurso-da-policia-penal-ms-pode-ter-ate-1-000-vagas-para-policial-91496
+
+Polícia Penal-RS define banca e edital com 213 vagas sai em abril
+  https://www.acheconcursos.com.br/noticias/concurso-da-policia-penal-rs-define-banca-e-edital-com-213-vagas-sai-em-abril-89117
+
+Receita Federal pode sair em 2026? veja últimas
+  https://www.acheconcursos.com.br/noticias/concurso-da-receita-federal-pode-sair-em-2026-veja-ultimas-88846
+
+SEFAZ-AL com 100 vagas tem edital iminente
+  https://www.acheconcursos.com.br/noticias/concurso-da-sefaz-al-com-100-vagas-tem-edital-iminente-92502
+
+SESA-AP tem banca definida; edital é iminente
+  https://www.acheconcursos.com.br/noticias/concurso-da-sesa-ap-tem-banca-definida-edital-e-iminente-90848
+
+DATAPREV 2026 define banca e edital pode sair em Julho
+  https://www.acheconcursos.com.br/noticias/concurso-dataprev-2026-define-banca-e-edital-pode-sair-em-julho-91344
+
+Águas de Lindóia-SP sairá pelo Inepam; edital iminente
+  https://www.acheconcursos.com.br/noticias/concurso-de-aguas-de-lindoia-sp-saira-pelo-inepam-edital-iminente-92692
+
+Vila Velha (ES): prefeito confirma edital para Auditor Fiscal
+  https://www.acheconcursos.com.br/noticias/concurso-de-vila-velha-es-prefeito-confirma-edital-para-auditor-fiscal-86905
+
+DER-AL 2026 já tem comissão
+  https://www.acheconcursos.com.br/noticias/concurso-der-al-2026-ja-tem-comissao-86013
+
+DER-RJ tem nova comissão e pode ter edital em 2026
+  https://www.acheconcursos.com.br/noticias/concurso-der-rj-2026-nova-comissao-e-edital-em-2026-89306
+
+Detran DF 2027: Câmara aprova reajuste salarial
+  https://www.acheconcursos.com.br/noticias/concurso-detran-df-2027-camara-aprova-reajuste-salarial-89163
+
+DETRAN-PR é autorizado e já tem comissão formada; edital pode sair em 2026
+  https://www.acheconcursos.com.br/noticias/concurso-detran-pr-e-autorizado-e-ja-tem-comissao-formada-edital-pode-sair-em-2026-91702
+
+DETRAN-RJ: Órgão define comissão interna para novo edital
+  https://www.acheconcursos.com.br/noticias/concurso-detran-rj-orgao-define-comissao-interna-para-novo-edital-90417
+
+DETRAN RN 2026 tem cargos revelados
+  https://www.acheconcursos.com.br/noticias/concurso-detran-rn-2026-tem-cargos-revelados-87813
+
+Detran SP 2025 é autorizado para 145 vagas de Agente Estadual
+  https://www.acheconcursos.com.br/noticias/concurso-detran-sp-2025-e-autorizado-para-145-vagas-de-agente-estadual-85710
+
+Banco do Brasil será focado para Agente Comercial; conheça o cargo
+  https://www.acheconcursos.com.br/noticias/concurso-do-banco-do-brasil-sera-focado-para-agente-comercial-conheca-o-cargo-88781
+
+Banco do Brasil vai sair? Entenda o passo a passo até o edital
+  https://www.acheconcursos.com.br/noticias/concurso-do-banco-do-brasil-vai-sair-entenda-o-passo-a-passo-ate-o-edital-89335
+
+IBGE com 36 mil vagas para temporários escolhe banca
+  https://www.acheconcursos.com.br/noticias/concurso-do-ibge-com-36-mil-vagas-para-temporarios-escolhe-banca-89812
+
+TRT-MT escolhe banca após formar comissão
+  https://www.acheconcursos.com.br/noticias/concurso-do-trt-mt-escolhe-banca-apos-formar-comissao-91722
+
+DPE-AM: banca contratada; edital iminente
+  https://www.acheconcursos.com.br/noticias/concurso-dpe-am-banca-contratada-edital-iminente-91861
+
+DPE-PB 2026 define banca para técnicos e analistas
+  https://www.acheconcursos.com.br/noticias/concurso-dpe-pb-2026-define-banca-para-tecnicos-e-analistas-90993
+
+DPE-PB avança e edital vai sair em 2026
+  https://www.acheconcursos.com.br/noticias/concurso-dpe-pb-avanca-e-edital-vai-sair-em-2026-89512
+
+DPE RN 2026 define banca e edital já pode sair
+  https://www.acheconcursos.com.br/noticias/concurso-dpe-rn-2026-define-banca-e-edital-ja-pode-sair-92589
+
+DPE-SP para Defensor sairá pela FCC
+  https://www.acheconcursos.com.br/noticias/concurso-dpe-sp-para-defensor-saira-pela-fcc-91421
+
+DPU 2026: regulamento define como será a próxima seleção
+  https://www.acheconcursos.com.br/noticias/concurso-dpu-2026-regulamento-91190
+
+EBSERH 2027 cria comissão para lançar edital nacional
+  https://www.acheconcursos.com.br/noticias/concurso-ebserh-2027-cria-comissao-para-lancar-edital-nacional-92904
+
+EBSERH 2027: PLOA confirma planejamento com orçamento definido
+  https://www.acheconcursos.com.br/noticias/concurso-ebserh-ploa-2027-confirma-planejamento-de-novos-concursos-93464
+
+Eduardo Leite confirma novo edital do concurso Polícia Penal RS
+  https://www.acheconcursos.com.br/noticias/concurso-eduardo-leite-confirma-novo-edital-policia-penal-rs-86876
+
+Educação-DF 2026 é autorizado para 10 mil vagas; veja quais
+  https://www.acheconcursos.com.br/noticias/concurso-educacao-df-2026-e-autorizado-para-10-mil-vagas-veja-quais-84585
+
+GHC-RS: órgão confirma que 3 editais vão sair entre 2026 e 2027
+  https://www.acheconcursos.com.br/noticias/concurso-ghc-rs-orgao-confirma-que-3-editais-vao-sair-entre-2026-e-2027-93185
+
+Guarda de Goiânia-GO 2026 forma comissão; veja detalhes
+  https://www.acheconcursos.com.br/noticias/concurso-guarda-de-goiania-go-2026-comissao-92807
+
+Guarda de Salvador-BA 2026 prevê edital a partir de setembro
+  https://www.acheconcursos.com.br/noticias/concurso-guarda-de-salvador-ba-2026-previsto-92249
+
+Guarda de Santana-AP escolhe banca e tem edital iminente
+  https://www.acheconcursos.com.br/noticias/concurso-guarda-santana-ap-escolhe-banca-edital-iminente-92334
+
+Guarda-SP: Prefeitura convoca 500 e anuncia mais 2.000 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-guarda-sp-prefeitura-convoca-500-e-anuncia-mais-2-000-vagas-86409
+
+IBGE com 9.580 vagas contrata FGV; edital em Outubro?
+  https://www.acheconcursos.com.br/noticias/concurso-ibge-contrato-banca-fgv-edital-iminente-84604
+
+IBGE: Edital para Recenseador sairá pela Cesgranrio
+  https://www.acheconcursos.com.br/noticias/concurso-ibge-edital-para-recenseador-saira-pela-cesgranrio-93161
+
+IBGE: veja as bancas que farão as seleções para 9 mil vagas em 2026
+  https://www.acheconcursos.com.br/noticias/concurso-ibge-veja-as-bancas-que-farao-as-selecoes-para-9-mil-vagas-em-2026-90600
+
+IDAF-ES 2026 sairá pelo IDCAP até agosto
+  https://www.acheconcursos.com.br/noticias/concurso-idaf-es-2026-saira-pelo-idcap-ate-agosto-91700
+
+IDR Paraná tem edital autorizado e terá 422 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-idr-parana-tem-edital-autorizado-e-tera-422-vagas-89297
+
+INEA-RJ 2026/2027 tem edital autorizado após 13 anos do último
+  https://www.acheconcursos.com.br/noticias/concurso-inea-rj-tem-edital-autorizado-apos-13-anos-do-ultimo-90742
+
+Controladoria de Alagoas (CGE-AL) terá concurso público inédito em 2026
+  https://www.acheconcursos.com.br/noticias/concurso-inedito-da-cge-al-e-confirmado-vagas-serao-para-analista-de-controle-interno-85036
+
+INSS 2026: Órgão pede 10 mil vagas ao governo
+  https://www.acheconcursos.com.br/noticias/concurso-inss-2026-orgao-pede-10-mil-vagas-ao-governo-90235
+
+INSS: Governo autoriza nomeação de 160 excedentes do CNU
+  https://www.acheconcursos.com.br/noticias/concurso-inss-governo-autoriza-nomeacao-de-160-excedentes-do-cnu-91665
+
+INSS: Órgão reduz pedido para 2 mil vagas para conseguir autorização
+  https://www.acheconcursos.com.br/noticias/concurso-inss-orgao-reduz-pedido-para-2-mil-vagas-para-conseguir-autorizacao-91316
+
+IPA SP: Vunesp é contratada para edital com 98 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-ipa-sp-vunesp-e-contratada-para-edital-com-98-vagas-92990
+
+IPAAM 2026 é Cebraspe! Edital terá 140 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-ipaam-2026-e-cebraspe-edital-tera-140-vagas-86238
+
+IBADE fará concurso do IPAM de Porto Velho-RO em 2026; veja cargos
+  https://www.acheconcursos.com.br/noticias/concurso-ipam-porto-velho-2026-ibade-92356
+
+Jucerja avança com comissão formada para novo edital
+  https://www.acheconcursos.com.br/noticias/concurso-jucerja-avanca-com-comissao-formada-para-novo-edital-92157
+
+ManausPrev 2026 é FCC!
+  https://www.acheconcursos.com.br/noticias/concurso-manausprev-2026-e-fcc-90929
+
+Metrô-DF 2027 é autorizado; veja cargos
+  https://www.acheconcursos.com.br/noticias/concurso-metro-df-2027-e-autorizado-veja-cargos-93288
+
+MP-AP sairá pela FCC com vagas de R$ 35 mil
+  https://www.acheconcursos.com.br/noticias/concurso-mp-ap-saira-pela-fcc-com-vagas-de-r-35-mil-93497
+
+MP-GO 2026 define banca e terá edital em breve
+  https://www.acheconcursos.com.br/noticias/concurso-mp-go-2026-define-banca-e-tera-edital-em-breve-88221
+
+MP-GO 2026 sairá pela AOCP e tem edital iminente
+  https://www.acheconcursos.com.br/noticias/concurso-mp-go-2026-saira-pela-aocp-e-tem-edital-iminente-86680
+
+MP-PA 2026 é anunciado para servidores
+  https://www.acheconcursos.com.br/noticias/concurso-mp-pa-2026-e-anunciado-para-servidores-86311
+
+MP-PE 2027 forma comissão para edital de servidores
+  https://www.acheconcursos.com.br/noticias/concurso-mp-pe-2027-formada-comissao-92958
+
+MP-SC 2027: Comissão é formada e edital vem aí
+  https://www.acheconcursos.com.br/noticias/concurso-mp-sc-2027-comissao-e-formada-e-edital-vem-ai-93392
+
+Nível médio e superior é autorizado na Polícia Científica-ES
+  https://www.acheconcursos.com.br/noticias/concurso-para-nivel-medio-e-superior-e-autorizado-na-policia-cientifica-es-86437
+
+PC-AP 2026 define banca e edital com 295 vagas já pode sair
+  https://www.acheconcursos.com.br/noticias/concurso-pc-ap-2026-define-banca-91472
+
+PC BA: AOCP atualiza situação e confirma edital para 750 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-pc-ba-aocp-atualiza-situacao-e-confirma-edital-para-750-vagas-92123
+
+PC-DF: banca contratada e 150 vagas previstas; salários chegam a R$ 26,6 mil
+  https://www.acheconcursos.com.br/noticias/concurso-pc-df-banca-contratada-e-150-vagas-previstas-salarios-chegam-a-r-26-6-mil-86354
+
+PC-MA: governo altera carreiras da Perícia Criminal e aumenta expectativa por edital
+  https://www.acheconcursos.com.br/noticias/concurso-pc-ma-governo-altera-carreiras-da-pericia-criminal-e-aumenta-expectativa-por-edital-91408
+
+PC PE: TCE nega pedido de suspensão do concurso com 1.315 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-pc-pe-tce-nega-pedido-de-suspensao-do-concurso-com-1-315-vagas-92193
+
+PC-PR 2026: Polícia Civil abrirá 400 vagas em três cargos
+  https://www.acheconcursos.com.br/noticias/concurso-pc-pr-2026-policia-civil-abrira-400-vagas-em-tres-cargos-90588
+
+PC-SC 2025: Edital com 300 vagas sairá pelo IDECAN
+  https://www.acheconcursos.com.br/noticias/concurso-pc-sc-2025-edital-com-300-vagas-saira-pelo-idecan-85782
+
+PC-TO 2026: novo edital com 450 vagas é confirmado
+  https://www.acheconcursos.com.br/noticias/concurso-pc-to-2026-novo-edital-com-450-vagas-e-confirmado-89120
+
+PGE-BA escolhe banca para abrir 135 vagas de nível médio e superior
+  https://www.acheconcursos.com.br/noticias/concurso-pge-ba-escolhe-banca-para-abrir-135-vagas-de-nivel-medio-e-superior-93052
+
+PGE-RS: Comissão é formada para edital de Técnico e Analista
+  https://www.acheconcursos.com.br/noticias/concurso-pge-rs-2026-comissao-tecnico-e-analista-91174
+
+PGE-RS tem novidades; veja regulamento do edital
+  https://www.acheconcursos.com.br/noticias/concurso-pge-rs-tem-novidades-veja-regulamento-do-edital-93441
+
+PM AL 2026: 1.060 vagas para Praças e Oficiais são confirmadas
+  https://www.acheconcursos.com.br/noticias/concurso-pm-al-2026-1-060-vagas-para-pracas-e-oficiais-sao-confirmadas-85045
+
+PM-AM 2027 é anunciado pelo governador
+  https://www.acheconcursos.com.br/noticias/concurso-pm-am-2027-e-anunciado-pelo-governador-93023
+
+PMBA 2026 e o edital com 2.500 vagas sai quando? veja últimas
+  https://www.acheconcursos.com.br/noticias/concurso-pm-ba-2026-edital-com-2-500-vagas-veja-ultimas-92318
+
+PM-DF 2027 é anunciado e terá 2 mil vagas para Soldado
+  https://www.acheconcursos.com.br/noticias/concurso-pm-df-2027-e-anunciado-e-tera-2-mil-vagas-para-soldado-92628
+
+PM-PE 2026 com 1.320 vagas para Soldados e Oficiais define banca
+  https://www.acheconcursos.com.br/noticias/concurso-pm-pe-2026-previsto-1320-vagas-soldados-e-oficiais-91605
+
+PM-PI 2026: seleção da organizadora é suspensa
+  https://www.acheconcursos.com.br/noticias/concurso-pm-pi-2026-selecao-da-organizadora-e-suspensa-89584
+
+PM-SC tem banca definida com 500 vagas para Soldados
+  https://www.acheconcursos.com.br/noticias/concurso-pm-sc-tem-edital-autorizado-com-500-vagas-para-soldados-90460
+
+PM-SP 2026 para Soldado é autorizado para 4.000 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-pm-sp-2026-para-soldado-e-autorizado-para-4-000-vagas-86689
+
+PMERJ 2026 terá 2.100 vagas para Soldados e Oficiais
+  https://www.acheconcursos.com.br/noticias/concurso-pmerj-2026-tera-2-100-vagas-para-soldados-e-oficiais-91275
+
+PMERJ CFO: Cesgranrio será banca para 100 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-pmerj-cfo-cesgranrio-e-autorizada-como-banca-para-100-vagas-93505
+
+PMERJ para Oficiais sairá pela FGV e terá 100 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-pmerj-para-oficiais-saira-pela-fgv-e-tera-100-vagas-92283
+
+PMSC 2026: Estado anuncia que vai abrir 2.000 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-pmsc-2026-estado-anuncia-que-vai-abrir-2-000-vagas-86499
+
+Polícia Civil-AC terá 139 vagas e edital ainda em 2026
+  https://www.acheconcursos.com.br/noticias/concurso-policia-civil-ac-tera-139-vagas-e-edital-ainda-em-2026-93319
+
+Polícia Civil-AL 2026 será lançado pelo Cebraspe
+  https://www.acheconcursos.com.br/noticias/concurso-policia-civil-al-tem-comissao-formada-veja-documento-91062
+
+Polícia Civil-PE com 1.315 vagas sairá pelo Cebraspe
+  https://www.acheconcursos.com.br/noticias/concurso-policia-civil-pe-com-1315-vagas-2026-pelo-cebraspe-93078
+
+Polícia Penal-AP: Iapen e sindicato tratam novo edital
+  https://www.acheconcursos.com.br/noticias/concurso-policia-penal-ap-iapen-e-sindicato-tratam-novo-edital-92954
+
+Polícia Penal-MA 2026 é anunciado e terá 220 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-policia-penal-ma-2026-e-anunciado-e-tera-220-vagas-85668
+
+Polícia Penal (PE) 2027: governo forma a comissão para abrir 700 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-policia-penal-pe-2027-governo-forma-a-comissao-para-abrir-700-vagas-92875
+
+Previdência de SP 2026: comissão é formada para organizar o 1º edital
+  https://www.acheconcursos.com.br/noticias/concurso-previdencia-de-sp-2026-comissao-e-formada-para-organizar-o-1o-edital-86087
+
+Com concurso previsto, Banco Central tem 3.160 cargos vagos
+  https://www.acheconcursos.com.br/noticias/concurso-previsto-banco-central-tem-3-160-cargos-vagos-92743
+
+PRF Administrativo: PRF tem quase 50% dos cargos administrativos vagos
+  https://www.acheconcursos.com.br/noticias/concurso-prf-administrativo-prf-tem-quase-50-dos-cargos-administrativos-vagos-92122
+
+PRF: Gestão de pessoas diz precisar de 4.902 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-prf-gestao-de-pessoas-diz-precisar-de-4-902-vagas-93120
+
+Procon ES 2026 tem comissão formada
+  https://www.acheconcursos.com.br/noticias/concurso-procon-es-2026-tem-comissao-formada-85716
+
+PRODERJ: banca definida e edital em novembro
+  https://www.acheconcursos.com.br/noticias/concurso-proderj-banca-definida-85268
+
+Receita Federal 2026 está autorizado! 146 vagas de R$ 23,8 mil
+  https://www.acheconcursos.com.br/noticias/concurso-receita-federal-2026-autorizado-91459
+
+Receita Federal: Bancas podem enviar proposta até essa sexta (25)
+  https://www.acheconcursos.com.br/noticias/concurso-receita-federal-bancas-podem-enviar-proposta-ate-essa-sexta-25-93533
+
+Receita Federal terá provas em todas as capitais e curso de formação em SP
+  https://www.acheconcursos.com.br/noticias/concurso-receita-federal-provas-em-todas-as-capitais-e-curso-de-formacao-em-sp-93154
+
+Receita Federal: Sindifisco cobra aumento das vagas para auditor
+  https://www.acheconcursos.com.br/noticias/concurso-receita-federal-sindifisco-cobra-aumento-das-vagas-para-auditor-92154
+
+Recife-PE: Edital da Guarda Municipal para 400 vagas já tem comissão formada
+  https://www.acheconcursos.com.br/noticias/concurso-recife-pe-edital-da-guarda-municipal-para-400-vagas-ja-tem-comissao-formada-93293
+
+SANEAGO 2026 é anunciado e terá edital até agosto
+  https://www.acheconcursos.com.br/noticias/concurso-saneago-2026-e-anunciado-e-tera-edital-ate-agosto-89482
+
+SEAP-RN 2026 define banca e terá 300 vagas na Polícia Penal
+  https://www.acheconcursos.com.br/noticias/concurso-seap-rn-2026-define-banca-e-tera-300-vagas-na-policia-penal-89097
+
+SED-MS 2026: Governo autoriza 2.000 vagas para professores
+  https://www.acheconcursos.com.br/noticias/concurso-sed-ms-2026-governo-autoriza-2-000-vagas-para-professores-89887
+
+SEDES-DF 2026: Quadrix cria página e edital com 1.197 vagas sai em abril
+  https://www.acheconcursos.com.br/noticias/concurso-sedes-df-2026-quadrix-cria-pagina-e-edital-com-1-197-vagas-sai-em-abril-89339
+
+SEDF 2026 com 10.604 vagas deve ter edital em Setembro
+  https://www.acheconcursos.com.br/noticias/concurso-sedf-2026-com-10-604-vagas-deve-ter-edital-em-setembro-92510
+
+SEDF tem comissão definida e oferta prevista de 10.604 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-sedf-tem-comissao-definida-e-oferta-prevista-de-10-604-vagas-85243
+
+SEDUC-AL 2026 para 1.442 vagas tem comissão divulgada
+  https://www.acheconcursos.com.br/noticias/concurso-seduc-al-2026-para-1-442-vagas-tem-comissao-divulgada-86684
+
+SEDUC-AM: Edital é autorizado com 7.800 vagas para professores, pedagogos e apoio
+  https://www.acheconcursos.com.br/noticias/concurso-seduc-am-edital-e-autorizado-com-7-800-vagas-para-professores-pedagogos-e-apoio-92315
+
+SEDUC-CE 2026: Edital autorizado com 2.000 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-seduc-ce-2026-edital-autorizado-com-2-000-vagas-88073
+
+SEDUC-PA 2026 sairá pela FGV e edital terá 2 mil vagas
+  https://www.acheconcursos.com.br/noticias/concurso-seduc-pa-fgv-e-escolhida-para-edital-com-2-mil-vagas-91239
+
+SEE-DF 2026 prevê 2.650 vagas em novo edital até junho
+  https://www.acheconcursos.com.br/noticias/concurso-see-df-2026-preve-2-650-vagas-em-novo-edital-ate-junho-86169
+
+SEFAZ-AL: reestruturação da carreira de Auditor sobe salário a R$ 28 mil
+  https://www.acheconcursos.com.br/noticias/concurso-sefaz-al-reestruturacao-da-carreira-de-auditor-sobe-salario-a-r-28-mil-91005
+
+SEFAZ-BA define banca de concurso e edital deve sair em novembro com 200 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-sefaz-ba-2026-banca-definida-93485
+
+Sefaz CE 2026 pode ter novo edital em breve
+  https://www.acheconcursos.com.br/noticias/concurso-sefaz-ce-2026-pode-ter-novo-edital-em-breve-86217
+
+Sefaz MT para Fiscal de Tributos sairá pelá FCC
+  https://www.acheconcursos.com.br/noticias/concurso-sefaz-mt-para-fiscal-de-tributos-saira-pela-fcc-85615
+
+FADESP fará concurso SEFAZ-PA 2026 com 286 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-sefaz-pa-2026-forma-comissao-edital-tera-286-vagas-85501
+
+Sefaz SC 2026 define banca e edital pode sair em breve
+  https://www.acheconcursos.com.br/noticias/concurso-sefaz-sc-2026-define-banca-e-edital-pode-sair-em-breve-92040
+
+SEFAZ-SP 2026 vai sair pela FCC e terá 60 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-sefaz-sp-2026-vai-sair-pela-fcc-e-tera-60-vagas-93337
+
+Sema AM: contrato com o Cebraspe é assinado; edital sai em dezembro
+  https://www.acheconcursos.com.br/noticias/concurso-sema-am-contrato-com-o-cebraspe-e-assinado-edital-sai-em-dezembro-85398
+
+SEMA MT 2026: comissão formada para salários de até R$ 9,9 mil
+  https://www.acheconcursos.com.br/noticias/concurso-sema-mt-2026-comissao-formada-para-salarios-de-ate-r-9-9-mil-84788
+
+Seplag RJ terá 60 vagas para EPPGG e APO; FGV é definida
+  https://www.acheconcursos.com.br/noticias/concurso-seplag-rj-tera-60-vagas-para-eppgg-e-apo-fgv-e-definida-91984
+
+SEPLAG (RJ) terá edital dia 31 de agosto com 60 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-seplag-rj-tera-edital-dia-31-de-agosto-com-60-vagas-92839
+
+SES-DF 2026: banca é contratada! 3 mil vagas
+  https://www.acheconcursos.com.br/noticias/concurso-ses-df-2026-banca-e-contratada-3-mil-vagas-89450
+
+SES-PE 2026: governo autoriza 1.263 vagas; veja cargos
+  https://www.acheconcursos.com.br/noticias/concurso-ses-pe-2026-governo-autoriza-1-263-vagas-veja-cargos-91607
+
+SES-SP: Governo autoriza preencher 575 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-ses-sp-governo-autoriza-preencher-575-vagas-91761
+
+SES-TO 2026 sairá pela FGV até agosto
+  https://www.acheconcursos.com.br/noticias/concurso-ses-to-2026-banca-fgv-91347
+
+SESAU/AL 2026 pode ter 1.750 vagas em cargos de níveis médio e superior
+  https://www.acheconcursos.com.br/noticias/concurso-sesau-al-2026-pode-ter-1-750-vagas-em-cargos-de-niveis-medio-e-superior-86693
+
+SESAU-AL 2026 terá 3.500 vagas, diz governo
+  https://www.acheconcursos.com.br/noticias/concurso-sesau-al-2026-tera-3-500-vagas-diz-governo-85046
+
+SME-SP 2026 é autorizado com 4.500 vagas na educação paulista
+  https://www.acheconcursos.com.br/noticias/concurso-sme-sp-2026-autorizado-4500-vagas-91880
+
+SOP-CE 2026 confirmado terá edital pelo Instituto Avalia
+  https://www.acheconcursos.com.br/noticias/concurso-sop-ce-2026-confirmado-tera-edital-pelo-instituto-avalia-91224
+
+TCE AP: tribunal inclui R$ 50 mil no orçamento para novo edital
+  https://www.acheconcursos.com.br/noticias/concurso-tce-ap-tribunal-inclui-50-mil-no-orcamento-92662
+
+TCE-GO 2026 define banca e vai sair pela FCC
+  https://www.acheconcursos.com.br/noticias/concurso-tce-go-2026-define-banca-e-vai-sair-pela-fcc-91203
+
+TCE RJ entra na proposta orçamentária e reforça expectativa de edital
+  https://www.acheconcursos.com.br/noticias/concurso-tce-rj-entra-na-proposta-orcamentaria-e-reforca-expectativa-de-edital-92197
+
+TCE-RN terá edital ainda em 2025 para nível médio e superior
+  https://www.acheconcursos.com.br/noticias/concurso-tce-rn-tera-edital-ainda-em-2025-para-nivel-medio-e-superior-85855
+
+TCE-SC 2026: FGV lança edital em Janeiro
+  https://www.acheconcursos.com.br/noticias/concurso-tce-sc-2026-fgv-lanca-edital-em-janeiro-86565
+
+TCE-SP: 50 vagas para Auditor e salário de R$ 20,9 mil
+  https://www.acheconcursos.com.br/noticias/concurso-tce-sp-50-vagas-para-auditor-e-salario-de-r-20-9-mil-89099
+
+TCE-SP: Edital ganha novo impulso após criação de 41 cargos
+  https://www.acheconcursos.com.br/noticias/concurso-tce-sp-edital-ganha-novo-impulso-apos-criacao-de-41-cargos-91222
+
+TCM-RJ 2027 é previsto na LDO e edital pode ter 57 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-tcm-rj-2027-e-previsto-na-ldo-e-edital-pode-ter-57-vagas-91957
+
+TELEBRAS terá edital em 2025 e Cebraspe fazendo as provas
+  https://www.acheconcursos.com.br/noticias/concurso-telebras-tera-edital-em-2025-e-cebraspe-fazendo-as-provas-85487
+
+TJ-AM para servidores é anunciado em live e pode ter 400 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-tj-am-para-servidores-e-anunciado-em-live-e-pode-ter-400-vagas-90462
+
+TJ-CE 2026 assina com FCC e edital sai em Abril
+  https://www.acheconcursos.com.br/noticias/concurso-tj-ce-2026-assina-com-fcc-e-edital-sai-em-abril-89092
+
+TJ-CE 2026 sairá pela FCC e terá vagas de nível médio e superior
+  https://www.acheconcursos.com.br/noticias/concurso-tj-ce-2026-saira-pela-fcc-e-tera-vagas-de-nivel-medio-e-superior-86022
+
+TJ-CE: Assembleia aprova 620 cargos de Técnico e Analista
+  https://www.acheconcursos.com.br/noticias/concurso-tj-ce-assembleia-aprova-620-cargos-de-tecnico-e-analista-85827
+
+TJ-ES é anunciado para 2027 e terá vagas para TI
+  https://www.acheconcursos.com.br/noticias/concurso-tj-es-e-anunciado-para-2027-e-tera-vagas-para-ti-93041
+
+TJ-GO 2027: contratação de banca é prevista no orçamento anual
+  https://www.acheconcursos.com.br/noticias/concurso-tj-go-2027-contratacao-de-banca-e-prevista-no-orcamento-anual-93390
+
+TJ-PB 2027 é anunciado e terá 50 vagas para Analistas e 6 para Juízes
+  https://www.acheconcursos.com.br/noticias/concurso-tj-pb-2027-e-anunciado-e-tera-50-vagas-para-analistas-e-6-para-juizes-93329
+
+TJ PB: comissão é instituída para definir banca e edital
+  https://www.acheconcursos.com.br/noticias/concurso-tj-pb-comissao-e-instituida-para-definir-banca-e-edital-91987
+
+TJ-PB: Presidente confirma novo edital
+  https://www.acheconcursos.com.br/noticias/concurso-tj-pb-presidente-confirma-novo-edital-91659
+
+TJ PR 2026: Fundatec é a banca para Contador
+  https://www.acheconcursos.com.br/noticias/concurso-tj-pr-2026-fundatec-e-a-banca-para-contador-91098
+
+TRANSPETRO é anunciado e terá 4.171 vagas em 4 editais
+  https://www.acheconcursos.com.br/noticias/concurso-transpetro-2026-tera-4-171-vagas-em-4-editais-92290
+
+Transpetro tem nova etapa antes do edital; veja o que muda
+  https://www.acheconcursos.com.br/noticias/concurso-transpetro-tem-nova-etapa-antes-do-edital-veja-o-que-muda-92121
+
+TRF-3 deve contratar banca ainda esse ano
+  https://www.acheconcursos.com.br/noticias/concurso-trf-3-deve-contratar-banca-ainda-esse-ano-91732
+
+TRF3: Órgão confirma estudos para novo edital em SP e MS
+  https://www.acheconcursos.com.br/noticias/concurso-trf3-orgao-confirma-estudos-para-novo-edital-em-sp-e-ms-89136
+
+TRT-22: cargos e especialidades definidas
+  https://www.acheconcursos.com.br/noticias/concurso-trt-22-cargos-e-especialidades-definidas-89165
+
+TRT: veja para onde vão as 300 vagas autorizadas pelo TST
+  https://www.acheconcursos.com.br/noticias/concurso-trt-300-vagas-autorizadas-pelo-tst-estado-92879
+
+TRT-4 sai em 2026? Órgão autoriza comissão para novo edital
+  https://www.acheconcursos.com.br/noticias/concurso-trt-4-sai-em-2026-orgao-autoriza-comissao-para-novo-edital-85573
+
+TRT-8 já define organizadora e edital fica mais perto
+  https://www.acheconcursos.com.br/noticias/concurso-trt-8-2026-define-organizadora-91666
+
+TRT-8 do PA e AP sairá pela FCC; veja cargos que vão aparecer
+  https://www.acheconcursos.com.br/noticias/concurso-trt-8-do-pa-e-ap-saira-pela-fcc-veja-cargos-que-vao-aparecer-92887
+
+TRT-8 sairá pela FCC e edital para servidores terá inicial de R$ 16 mil
+  https://www.acheconcursos.com.br/noticias/concurso-trt-8-saira-pela-fcc-e-edital-para-servidores-tera-inicial-de-r-16-mil-92819
+
+TRT-MG: órgão já prepara novo edital para 2027
+  https://www.acheconcursos.com.br/noticias/concurso-trt-mg-orgao-ja-prepara-novo-edital-para-2027-93522
+
+TRT-RS 2026: veja quais cargos devem abrir
+  https://www.acheconcursos.com.br/noticias/concurso-trt-rs-2026-cargos-vagas-salarios-92253
+
+TRT-SP: Projeto que cria 611 cargos avança na Câmara
+  https://www.acheconcursos.com.br/noticias/concurso-trt-sp-projeto-que-cria-611-cargos-avanca-na-camara-90158
+
+UFBA 2026 para técnicos administrativos tem edital iminente
+  https://www.acheconcursos.com.br/noticias/concurso-ufba-2026-para-tecnicos-administrativos-tem-edital-iminente-88843
+
+UFC: Universidade do Ceará define banca para 194 vagas
+  https://www.acheconcursos.com.br/noticias/concurso-ufc-universidade-do-ceara-define-banca-para-194-vagas-84879
+
+UFRJ terá 191 vagas para níveis médio e superior; banca é definida
+  https://www.acheconcursos.com.br/noticias/concurso-ufrj-tera-191-vagas-para-niveis-medio-e-superior-banca-e-definida-85238
+
+Unificado no Piauí em 2026 terá edital até julho
+  https://www.acheconcursos.com.br/noticias/concurso-unificado-no-piaui-em-2026-tera-edital-ate-julho-89942
+
+Unificado no PIAUÍ: Governo confirma abertura de 5 mil vagas
+  https://www.acheconcursos.com.br/noticias/concurso-unificado-no-piaui-governo-confirma-abertura-de-5-mil-vagas-85618
+
+VALEC 2026: órgão atualiza comissão e avança Edital
+  https://www.acheconcursos.com.br/noticias/concurso-valec-2026-orgao-atualiza-comissao-e-avanca-edital-85860
+
+2026: Congresso aprova orçamento para até 163.802 vagas
+  https://www.acheconcursos.com.br/noticias/concursos-2026-congresso-aprova-orcamento-para-ate-163-802-vagas-86562
+
+2026: Orçamento é sancionado com mais de 160 mil vagas
+  https://www.acheconcursos.com.br/noticias/concursos-2026-orcamento-e-sancionado-com-mais-de-160-mil-vagas-87082
+
+Bancos 2026/2027: veja editais previstos para sair em breve
+  https://www.acheconcursos.com.br/noticias/concursos-bancos-2026-2027-veja-editais-previstos-para-sair-em-breve-93188
+
+DF: veja os órgãos com previsão de editais na LDO 2027
+  https://www.acheconcursos.com.br/noticias/concursos-df-veja-os-orgaos-com-previsao-de-editais-na-ldo-2027-91565
+
+Pernambuco: autorização contempla 5.337 vagas; veja os órgãos
+  https://www.acheconcursos.com.br/noticias/concursos-em-pernambuco-autorizacao-contempla-5-337-vagas-veja-os-orgaos-91563
+
+Julho; veja os melhores editais previstos do mês
+  https://www.acheconcursos.com.br/noticias/concursos-julho-editais-previstos-2026-91386
+
+MA: Governador anuncia mais de 3 mil vagas na segurança
+  https://www.acheconcursos.com.br/noticias/concursos-ma-governador-anuncia-mais-de-3-mil-vagas-na-seguranca-90308
+
+PE: Diário Oficial anuncia editais nas Polícias, Bombeiros, Saúde e UPE até 2027
+  https://www.acheconcursos.com.br/noticias/concursos-pe-diario-oficial-anuncia-editais-nas-policias-bombeiros-saude-e-upe-ate-2027-92877
+
+Previstos: Instituto Consulplan já tem 16 editais para sair
+  https://www.acheconcursos.com.br/noticias/concursos-previstos-instituto-consulplan-ja-tem-16-editais-para-sair-89330
+
+Previstos no AP em 2026: Governo autoriza editais na educação, saúde e segurança
+  https://www.acheconcursos.com.br/noticias/concursos-previstos-no-ap-em-2026-governo-autoriza-editais-na-educacao-saude-e-seguranca-85719
+
+Previstos: Setembro tem 10 bons editais para sair no mês
+  https://www.acheconcursos.com.br/noticias/concursos-previstos-setembro-tem-10-bons-editais-para-sair-no-mes-92980
+
+Previstos: veja editais prontos que podem sair em Maio
+  https://www.acheconcursos.com.br/noticias/concursos-previstos-veja-editais-prontos-que-podem-sair-em-maio-89973
+
+CRA-AM anuncia novo concurso público com vagas de nível superior e médio
+  https://www.acheconcursos.com.br/noticias/cra-am-anuncia-novo-concurso-publico-com-vagas-de-nivel-superior-e-medio-90459
+
+DETRAN-PR 2026 define organização e edital pode sair
+  https://www.acheconcursos.com.br/noticias/detran-pr-concurso-2026-banca-definida-93083
+
+Edital CREF-AL 2025 tem edital publicado; veja cargos
+  https://www.acheconcursos.com.br/noticias/edital-cref-al-2025-tem-extrato-publicado-veja-cargos-85021
+
+Edital do concurso TJCE 2026 já tem data para sair
+  https://www.acheconcursos.com.br/noticias/edital-do-concurso-tjce-2026-ja-tem-data-para-sair-89921
+
+Edital EBSERH 2026 terá vagas de nível médio e superior de abrangência nacional
+  https://www.acheconcursos.com.br/noticias/edital-ebserh-2026-tera-vagas-de-nivel-medio-e-superior-de-abrangencia-nacional-89107
+
+Edital IBGE 2026: Governo autoriza 39 mil vagas, 27 mil para Recenseador
+  https://www.acheconcursos.com.br/noticias/edital-ibge-2026-governo-autoriza-39-mil-vagas-27-mil-para-recenseador-86405
+
+Edital IBGE 2026 pode aumentar duração de contratos para 4 anos
+  https://www.acheconcursos.com.br/noticias/edital-ibge-2026-pode-aumentar-duracao-de-contratos-para-5-anos-89236
+
+Edital Transpetro 2026: fim da validade acelera novo concurso
+  https://www.acheconcursos.com.br/noticias/edital-transpetro-2026-fim-da-validade-acelera-novo-concurso-89022
+
+EMGEPRON: Concurso sairá pela Selecon e terá edital ainda em Dezembro
+  https://www.acheconcursos.com.br/noticias/emgepron-concurso-saira-pela-selecon-e-tera-edital-ainda-em-dezembro-85947
+
+FAFIPA fará concurso público da área fiscal de Curitiba-PR em 2026
+  https://www.acheconcursos.com.br/noticias/fafipa-fara-concurso-publico-da-area-fiscal-de-curitiba-pr-em-2026-91949
+
+FCC fará concurso da SEFAZ-MT com 30 vagas de R$ 32 mil
+  https://www.acheconcursos.com.br/noticias/fcc-fara-concurso-da-sefaz-mt-com-30-vagas-de-r-32-mil-86214
+
+FUNAI quer concurso em 2027 e faz pedido de 2.500 vagas
+  https://www.acheconcursos.com.br/noticias/funai-quer-concurso-em-2027-e-faz-pedido-de-2-500-vagas-90661
+
+Governo autoriza IBAMA contratar Brigadistas na Prevfogo
+  https://www.acheconcursos.com.br/noticias/governo-autoriza-ibama-contratar-brigadistas-na-prevfogo-89517
+
+Governo da Bahia define banca do concurso com 50 vagas para EPPGG
+  https://www.acheconcursos.com.br/noticias/governo-da-bahia-define-banca-do-concurso-com-50-vagas-para-eppgg-92246
+
+Governo de Alagoas forma comissão do concurso ALPREV 2026 para 40 vagas de Analista Previdenciário
+  https://www.acheconcursos.com.br/noticias/governo-de-alagoas-foram-comissao-do-concurso-alprev-2026-para-40-vagas-de-analista-previdenciario-85819
+
+Governo de Roraima anuncia 100 vagas nos concursos do Iater e da Femarh
+  https://www.acheconcursos.com.br/noticias/governo-de-roraima-anuncia-100-vagas-nos-concursos-do-iater-e-da-femarh-92175
+
+Governo de SP aprova reajuste de 10% para as Polícias Civil e Militar em 2026
+  https://www.acheconcursos.com.br/noticias/governo-de-sp-aprova-reajuste-de-10-para-as-policias-civil-e-militar-em-2026-89164
+
+Governo de SP autoriza edital com 70 vagas para a Fundação Florestal
+  https://www.acheconcursos.com.br/noticias/governo-de-sp-autoriza-edital-com-70-vagas-para-a-fundacao-florestal-89245
+
+Governo de SP autoriza novo concurso CEETEPS para 561 vagas
+  https://www.acheconcursos.com.br/noticias/governo-de-sp-autoriza-novo-concurso-ceeteps-para-561-vagas-90735
+
+Governo estadual anuncia concurso com quase 200 vagas de nível médio e inicial de R$ 4 mil
+  https://www.acheconcursos.com.br/noticias/governo-estadual-anuncia-concurso-com-quase-200-vagas-de-nivel-medio-e-inicial-de-r-4-mil-90744
+
+Governo Federal anuncia 6.737 vagas para Técnicos e Professores em 2026
+  https://www.acheconcursos.com.br/noticias/governo-federal-anuncia-6-737-vagas-para-tecnicos-e-professores-em-2026-84672
+
+Governo MT anuncia concurso na Polícia Penal para 2026
+  https://www.acheconcursos.com.br/noticias/governo-mt-anuncia-concurso-na-policia-penal-para-2026-90772
+
+IBGE: Edital do concurso para 27 mil Recenseadores terá banca agora em setembro
+  https://www.acheconcursos.com.br/noticias/ibge-edital-do-concurso-para-27-mil-recenseadores-tera-banca-agora-em-setembro-93043
+
+iNOVA Capixaba anuncia concurso com 932 vagas no ES
+  https://www.acheconcursos.com.br/noticias/inova-capixaba-anuncia-concurso-com-932-vagas-no-es-85556
+
+Instituto Avalia cria página e edital do concurso DETRAN-SP sai nesta semana
+  https://www.acheconcursos.com.br/noticias/instituto-avalia-pagina-concurso-detran-sp-edital-iminente-93029
+
+ISS Manaus: comissão retoma escolha da banca após anulação do processo
+  https://www.acheconcursos.com.br/noticias/iss-manaus-comissao-retoma-escolha-da-banca-apos-anulacao-do-processo-84671
+
+Justiça revoga extensão de validade do concurso PRF e novo edital pode sair
+  https://www.acheconcursos.com.br/noticias/justica-revoga-extensao-de-validade-do-concurso-prf-e-novo-edital-pode-sair-92843
+
+MA: Polícia Penal e Perícia Oficial terão editais em Julho, diz governador
+  https://www.acheconcursos.com.br/noticias/ma-policia-penal-e-pericia-oficial-terao-novos-editais-diz-governador-91725
+
+Ministério da Fazenda fará concurso na ABGF e define organizadora
+  https://www.acheconcursos.com.br/noticias/ministerio-da-fazenda-fara-concurso-na-abgf-e-define-organizadora-90704
+
+Novo concurso do INSS ganha força: presidente confirma negociações com MGI
+  https://www.acheconcursos.com.br/noticias/novo-concurso-do-inss-ganha-forca-presidente-confirma-negociacoes-com-mgi-90513
+
+Novo concurso PM-SP é autorizado com 4.000 vagas e terá dois editais em 2027
+  https://www.acheconcursos.com.br/noticias/novo-concurso-pm-sp-e-autorizado-com-4-000-vagas-e-tera-dois-editais-em-2027-91273
+
+Novo concurso TRT MT tem autorização publicada; edital avança
+  https://www.acheconcursos.com.br/noticias/novo-concurso-trt-mt-tem-autorizacao-publicada-edital-avanca-92118
+
+Novos concursos policiais em PE estão a caminho, afirma governadora; veja quais
+  https://www.acheconcursos.com.br/noticias/novos-concursos-policiais-em-pe-estao-a-caminho-afirma-governadora-veja-quais-85395
+
+Polícia Científica-SP terá concurso público em 2026; veja autorização para 397 vagas
+  https://www.acheconcursos.com.br/noticias/policia-cientifica-sp-tera-concurso-publico-em-2026-veja-autorizacao-para-397-vagas-89966
+
+Porto Alegre-RS abre concurso público com vagas de até R$ 9 mil; veja edital
+  https://www.acheconcursos.com.br/noticias/porto-alegre-rs-abre-concurso-publico-com-vagas-de-ate-r-9-mil-veja-edital-89644
+
+Prefeitura de Belém-PA abrirá concurso para Auditor Fiscal
+  https://www.acheconcursos.com.br/noticias/prefeitura-de-belem-pa-abrira-concurso-para-auditor-fiscal-92307
+
+Prefeitura de Jaborandi/SP anuncia novo concurso para 2026
+  https://www.acheconcursos.com.br/noticias/prefeitura-de-jaborandi-sp-anuncia-novo-concurso-para-2026-89011
+
+Prefeitura de Manaus-AM anuncia concurso com 70 vagas para Auditor Fiscal
+  https://www.acheconcursos.com.br/noticias/prefeitura-de-manaus-am-anuncia-concurso-com-70-vagas-para-auditor-fiscal-91230
+
+Prefeitura de Porto Velho-RO terá concursos em 2026 com 2.678 vagas
+  https://www.acheconcursos.com.br/noticias/prefeitura-de-porto-velho-ro-tera-concursos-em-2026-com-2-678-vagas-92868
+
+Prefeitura de Queimados-RJ tem concurso previsto para 2026 para 300 vagas
+  https://www.acheconcursos.com.br/noticias/prefeitura-de-queimados-rj-tem-concurso-previsto-para-2026-para-300-vagas-89265
+
+Prefeitura de Salvador/BA anuncia concurso na Educação em 2026
+  https://www.acheconcursos.com.br/noticias/prefeitura-de-salvador-ba-anuncia-concurso-na-educacao-em-2026-89910
+
+Prefeitura de Valparaíso de Goiás/GO anuncia concurso com 3.188 vagas
+  https://www.acheconcursos.com.br/noticias/prefeitura-de-valparaiso-de-goias-go-anuncia-concurso-com-3-188-vagas-85454
+
+Prefeitura do Recife/PE vai contratar 300 auxiliares temporários em 2026
+  https://www.acheconcursos.com.br/noticias/prefeitura-do-recife-pe-vai-contratar-300-auxiliares-temporarios-em-2026-89451
+
+Prefeitura SP estuda abrir concurso público com 1.200 vagas na Assistência Social
+  https://www.acheconcursos.com.br/noticias/prefeitura-sp-estuda-abrir-concurso-publico-com-1-200-vagas-na-assistencia-social-93070
+
+Prefeituras do PI farão concurso Unificado em 2026 com 3 mil vagas em 32 cidades
+  https://www.acheconcursos.com.br/noticias/prefeituras-piaui-farao-concurso-unificado-em-2026-com-3-mil-vagas-em-32-cidades-91852
+
+SEDES-DF 2026: Concurso é autorizado com mais de 1.000 vagas
+  https://www.acheconcursos.com.br/noticias/sedes-df-2026-concurso-e-autorizado-com-mais-de-1-000-vagas-87627
+
+Segurança MA: Polícias do Maranhão terão novos concursos em 2026
+  https://www.acheconcursos.com.br/noticias/seguranca-ma-policias-do-maranhao-terao-novos-concursos-em-2026-86091
+
+Sindicato faz cobrança para Banco do Brasil abrir novo concurso
+  https://www.acheconcursos.com.br/noticias/sindicato-faz-cobranca-para-banco-do-brasil-abrir-novo-concurso-91604
+
+SP Águas terá 190 vagas de até R$ 12 mil; edital sairá pela FGV
+  https://www.acheconcursos.com.br/noticias/sp-aguas-tera-190-vagas-de-ate-r-12-mil-edital-saira-pela-fgv-93504
+
+TCE-MA se prepara para novo concurso em 2026
+  https://www.acheconcursos.com.br/noticias/tce-ma-se-prepara-para-novo-concurso-em-2026-89342
+
+TCE RN projeta concurso com 55 vagas de até R$ 17 mil
+  https://www.acheconcursos.com.br/noticias/tce-rn-projeta-concurso-com-55-vagas-de-ate-r-17-mil-84668
+
+TJSP pode ter novos concursos para Escrevente e Oficial de Justiça já no início de 2027
+  https://www.acheconcursos.com.br/noticias/tjsp-pode-ter-novos-concursos-para-escrevente-e-oficial-de-justica-ja-no-inicio-de-2027-92725
+
+TRT-RJ terá 180 novos cargos para aprovados em concurso
+  https://www.acheconcursos.com.br/noticias/trt-rj-tera-180-novos-cargos-para-aprovados-em-concurso-93060
+
+TST autoriza 300 vagas para concursos dos TRTs; veja detalhes
+  https://www.acheconcursos.com.br/noticias/tst-autoriza-300-vagas-para-concursos-trt-92831
+
+UFPR anuncia novo concurso para técnicos administrativos em 2026
+  https://www.acheconcursos.com.br/noticias/ufpr-anuncia-novo-concurso-para-tecnicos-administrativos-em-2026-88923
+
+UNILAB define banca e edital terá 39 vagas para Técnicos Administrativos
+  https://www.acheconcursos.com.br/noticias/unilab-define-banca-e-edital-tera-39-vagas-para-tecnicos-administrativos-84820
+
+Vem aí o edital da Caixa! Concurso com 184 vagas será lançado em 7 de novembro
+  https://www.acheconcursos.com.br/noticias/vem-ai-o-edital-da-caixa-concurso-com-184-vagas-sera-lancado-em-7-de-novembro-85249
 
 ── NEW (Google Alerts) ──
 
-Term:    seletivo concurso analista juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/tecnico-em-tecnologia-da-informacao-redes-e-suporte-abrangente/67
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> da CGU abre inscrições com salário inicial de R$ 20 mil - Leouve
+URL:     https://leouve.com.br/brasil/concurso-da-cgu-abre-inscricoes-com-60-vagas-de-nivel-superior-e-salario-inicial-de-r-20-mil/
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> em Teotônio Vilela oferece 205 vagas com salários de até R$ 4,9 mil
-URL:     https://www.bnewsalagoas.com.br/noticias/municipios/concurso-em-teotonio-vilela-oferece-205-vagas-com-salarios-de-ate-r-49-mil.html
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Funsat retoma atendimento na terça-feira com 878 vagas de emprego em Campo Grande
-URL:     https://midiamax.com.br/cotidiano/emprego-concurso/2026/funsat-retoma-atendimento-terca-feira-878-vagas-emprego-campo-grande/
+Title:   Inscrições para <b>concurso</b> da Seduc-CE com 3 mil vagas terminam nesta quinta-feira (15)
+URL:     https://diariodonordeste.verdesmares.com.br/papo-carreira/inscricoes-para-concurso-da-seduc-ce-com-3-mil-vagas-terminam-nesta-quinta-feira-15-1.3798137
 Snippet: 
 
 Term:    seletivo concurso direito
-Title:   Gabarito de Paracatu-MG neste domingo 11; veja quando sai o resultado - Ache Concursos
-URL:     https://www.acheconcursos.com.br/noticias/gabarito-concurso-prefeitura-paracatu-mg-resultado-93894
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/tecnico-ambiental-medicina-veterinaria-abrangente/92
+Title:   Gabarito do <b>Concurso</b> Unificado do Piauí: veja os prazos - 40graus Teresina
+URL:     https://40graus.com.br/gabarito-concurso-unificado-piaui/
 Snippet: 
 
 Term:    seletivo concurso direito
-Title:   Estão abertas as inscrições para professor temporário da UEMS
-URL:     https://midiamax.com.br/cotidiano/emprego-concurso/2026/estao-abertas-inscricoes-professor-temporario-uems/
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
 Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/tecnico-de-patrimonio-historico-cultural-e-artistico-abrangente/65
+URL:     https://www.pciconcursos.com.br/provas/samu-192-es-servico-de-atendimento-movel-de-urgencia-abrangente/62
 Snippet: 
 
-Term:    seletivo concurso residencia juridica
-Title:   FMS de Campos abre inscrições para o terceiro processo <b>seletivo</b> de <b>residência</b> médica ...
-URL:     https://www.tribunanf.com.br/fms-de-campos-abre-inscricoes-para-o-terceiro-processo-seletivo-de-residencia-medica-com-vagas-para-2027/
+Term:    seletivo concurso direito
+Title:   Quer ser professor universitário? Universidade Federal abre 42 vagas em <b>concurso</b> público
+URL:     https://primeirapagina.com.br/emprego-e-concursos/quer-ser-professor-universitario-universidade-federal-abre-42-vagas-em-concurso-publico/
 Snippet: 
 
 Term:    seletivo concurso estagio de pos graduacao direito
-Title:   Acidente na BR-393, no Rio de Janeiro, deixa cinco mortos e nove feridos - Blog de Assis
-URL:     https://www.blogdeassis.com.br/2026/10/10/acidente-na-br-393-no-rio-de-janeiro-deixa-cinco-mortos-e-nove-feridos/479461/
+Title:   Economia de Guarapuava: comércio reabre, <b>estágio</b> tem inscrições e região prepara Festa ...
+URL:     https://paranacentral.com.br/economia-de-guarapuava-comercio-reabre-estagio-tem-inscricoes-e-regiao-prepara-festa-da-cevada
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   Inscrições para <b>concurso</b> da Sema-MT terminam nesta quarta-feira (14) - Midia Jur
-URL:     https://www.midiajur.com.br/classificados/inscricoes-para-concurso-da-sema-mt-terminam-nesta-quarta-feira-14/87954
-Snippet: 
-
-Term:    seletivo concurso consultor legislativo
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/prof-de-ensino-basico-tec-e-tecnologico-engenharia-eletrica-sistemas-eletronicos-automotivos-abrangente/14
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   IGESDF abre <b>seletivos</b> com salários de até R$ 5,8 mil - Surgiu
-URL:     https://surgiu.com.br/2026/10/11/igesdf-abre-seletivos-com-salarios-de-ate-r-58-mil/
+Title:   Processos <b>seletivos</b> e concursos pagam até R$ 13 mil em MT - GC Notícias
+URL:     https://www.gcnoticias.com.br/noticias-dos-poderes/processos-seletivos-e-concursos-pagam-ate-r-13-mil-em-mt/264021136
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   Inscrições para o Vestibular e Passe 2027 da UFMS encerram segunda-feira
-URL:     https://midiamax.com.br/cotidiano/emprego-concurso/2026/inscricoes-vestibular-passe-2027-ufms-encerram-segunda-feira/
+Title:   Gabarito do <b>concurso</b> unificado do Piauí é divulgado nesta segunda (12)
+URL:     https://piauihoje.com/index.php/noticias/concursos/gabarito-do-concurso-unificado-do-piaui-sai-nesta-segunda-veja-prazos-para-recursos-468077.html
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   Concursos e seleções em PE têm mais de 3,6 mil vagas e salários de até R$ 13 mil - G1
-URL:     https://g1.globo.com/pe/pernambuco/noticia/2026/10/11/concursos-e-selecoes-em-pe-tem-mais-de-36-mil-vagas-e-salarios-de-ate-r-13-mil-saiba-como-se-inscrever.ghtml
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> da Sema entra na reta final e inscrições terminam quarta-feira - JBNEWS
-URL:     https://jbnews.com.br/concurso-da-sema-entra-na-reta-final-e-inscricoes-terminam-quarta-feira-selecao-tera-oportunidades-em-dez-cidades-de-mt/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> da Polícia Civil reúne mais de 12 mil candidatos em Cascavel - Catve
-URL:     https://catve.com/concursos-e-educacao/484993/concurso-da-policia-civil-reune-mais-de-12-mil-candidatos-em-cascavel
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   As inscrições para 6 concursos e processos <b>seletivos</b> encerram hoje. Veja quais
-URL:     https://atlaspublico.com.br/boletins/as-inscricoes-para-6-concursos-e-processos-seletivos-91593
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> Porto Alegre 2026: edital oferece 19 vagas e remuneração de até R$ 9,1 mil
-URL:     https://concursossc.com.br/concurso-porto-alegre-2026-edital-oferece-19-vagas-e-remuneracao-de-ate-r-91-mil/
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Salário de R$ 38 mil e muito mais: concursos públicos reúnem 5.130 vagas para trabalho
-URL:     https://www.atribuna.com.br/noticias/concurso-e-emprego/salario-de-r-38-mil-e-muito-mais-concursos-publicos-reunem-5-130-vagas-para-trabalho-veja-lista-completa-1.532836
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   Uepa abre seleção para professores com bolsas de até R$ 1.850 - Diário do Pará
-URL:     https://diariodopara.com.br/concursos-e-empregos/uepa-abre-selecao-para-professores-com-bolsas-de-ate-r-1-850-inscricoes-seguem-ate-dia-23-confira/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   3ª Promotoria de Justiça de Guarapuava está com duas vagas abertas - Portal RSN
-URL:     https://redesuldenoticias.com.br/noticias/3-promotoria-de-justica-de-guarapuava-esta-com-duas-vagas-abertas
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Instituto Selecon divulga gabarito <b>concurso</b> Prefeitura de Cuiabá MT 2026 em 11/10
-URL:     https://gabarite.com.br/noticia-concurso/1699-gabarito-concurso-prefeitura-de-cuiaba-mt-2026
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   UEMS está com processo <b>seletivo</b> aberto para professor de educação especializada e ...
-URL:     https://midiamax.com.br/cotidiano/emprego-concurso/2026/uems-processo-seletivo-aberto-professor-educacao-especializada-interprete-libras/
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/pratica-desportiva-i-abrangente/20
-Snippet: 
-
-Term:    seletivo concurso procurador
-Title:   CGU e Creci-ES: veja concursos no ES com salários de até R$ 20 mil - Folha Vitória
-URL:     https://www.folhavitoria.com.br/trabalho/concursos/cgu-guarda-e-creci-es-veja-mais-de-11-mil-vagas-no-es-com-salarios-de-ate-r-20-mil/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> no Paraguai tem vagas com salários de até R$ 5,3 mil - Rádio Cultura Foz
-URL:     https://www.radioculturafoz.com.br/2026/10/11/concurso-paraguai-ciudad-del-este-vagas-salarios/amp/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> em Teotônio Vilela oferece 205 vagas com salários de até R$ 4,9 mil
-URL:     https://www.bnewsalagoas.com.br/amp/noticias/municipios/concurso-em-teotonio-vilela-oferece-205-vagas-com-salarios-de-ate-r-49-mil.html
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Prefeituras do Litoral Norte têm seleções com salários de até R$ 7 mil; veja prazos
-URL:     https://litoralmania.com.br/concursos-processos-seletivos-litoral-norte-outubro-2026/
-Snippet: 
-
-Term:    seletivo concurso residencia juridica
-Title:   Editais publicados de 5 a 11 de outubro: confira as oportunidades
-URL:     https://blog.grancursosonline.com.br/editais-publicados-de-5-a-11-de-outubro/
-Snippet: 
-
-Term:    seletivo concurso estagio de pos graduacao direito
-Title:   2 Federais abrem 182 vagas gratuitas em cursos que pagam auxílio de até R$ 1.158
-URL:     https://www.pebsp.com/2-federais-abrem-182-vagas-gratuitas-em-cursos-que-pagam-auxilio-de-ate-r-1-158/
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-administrativa-220h-habf-abrangente/64
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
 Title:   <b>Concurso</b> em Santos mobiliza candidatos em busca de oportunidade no serviço público
 URL:     https://www.santos.sp.gov.br/?q=noticia%2Fconcurso-em-santos-mobiliza-candidatos-em-busca-de-oportunidade-no-servico-publico
 Snippet: 
 
-Term:    seletivo concurso tecnico juridico
+Term:    seletivo concurso analista juridico
 Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/senar-ar-servico-nacional-de-aprendizagem-rural-administracao-regional-de-goias-abrangente/63
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
-Title:   Polícia civil do Paraná realiza provas de <b>concurso</b> público com mais de 62 mil inscritos
-URL:     https://paranahoje.com.br/policia-civil-do-parana-realiza-provas-de-concurso-publico-com-mais-de-62-mil-inscritos/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> para Polícia Civil do Paraná tem 62 mil candidatos
-URL:     https://www.bemparana.com.br/noticias/parana/concurso-para-policia-civil-do-parana-tem-62-mil-candidatos/
+URL:     https://www.pciconcursos.com.br/provas/estagiario-nivel-medio-tecnico-abrangente/49
 Snippet: 
 
 Term:    seletivo concurso analista juridico
 Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-de-tecnologia-da-informacao-perfil-arquitetura-e-engenharia-tecnologica-abrangente/79
+URL:     https://www.pciconcursos.com.br/provas/analista-do-mp-farmacia-abrangente/92
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> da Câmara de Rio Branco oferece 13 vagas e encerra inscrições nesta terça-feira
-URL:     https://acreagora.com/2026/10/11/concurso-da-camara-de-rio-branco-oferece-13-vagas-e-encerra-inscricoes-nesta-terca-feira/
+Title:   <b>Concurso</b> Prefeitura do Município de Saltinho 2026 - Atlas Público
+URL:     https://atlaspublico.com.br/concursos/sp/prefeitura-do-municipio-de-saltinho-4794
 Snippet: 
 
-Term:    seletivo concurso tecnico juridico
-Title:   Gabarito TCE-SP 2026: veja quando a VUNESP divulga o resultado das provas
-URL:     https://www.acheconcursos.com.br/noticias/gabarito-tce-sp-2026-vunesp-resultado-das-provas-93892
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   Prefeitura de Guarapuava abre seleção de <b>estágio</b> com dez vagas em Pedagogia | Paraná Central
+URL:     https://paranacentral.com.br/prefeitura-de-guarapuava-abre-selecao-de-estagio-com-dez-vagas-em-pedagogia
 Snippet: 
 
 Term:    seletivo concurso analista juridico
-Title:   <b>Concurso</b> da Sema-MT recebe inscrições até quarta-feira (14) - CenárioMT
-URL:     https://cenariomt.com.br/mato-grosso/concurso-da-sema-mt-recebe-inscricoes-ate-quarta-feira-14/
+Title:   <b>Concurso</b> Receita Federal: tudo que se sabe sobre o novo edital - Magistrar
+URL:     https://magistrarcursos.com.br/blog/concurso-receita-federal-tudo-que-se-sabe-sobre-o-novo-edital/
 Snippet: 
 
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> do IGP para 40 vagas de papiloscopista tem provas aplicadas
-URL:     https://igp.rs.gov.br/concurso-do-igp-para-40-vagas-de-papiloscopista-tem-provas-aplicadas
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Creci, Iconha e Câmara dos Deputados: 41 mil vagas em concursos e seleções - A Gazeta
-URL:     https://www.agazeta.com.br/concursos/creci-iconha-e-camara-dos-deputados-41-mil-vagas-em-concursos-e-selecoes-1026
+Term:    seletivo concurso analista juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/igesdf-instituto-de-gestao-estrategica-de-saude-do-distrito-federal-abrangente/49
 Snippet: 
 
 Term:    seletivo concurso procurador
-Title:   MPE arquiva denúncia sobre suposto rombo e associação criminosa na Câmara de Livramento
-URL:     https://www.poconet.com.br/noticia/ler/mpe-arquiva-denuncia-sobre-suposto-rombo-e-associacao-criminosa-na-camara-de-livramento/46483
+Title:   <b>Concurso</b> Prefeitura Municipal de Arealva 2026 - Atlas Público
+URL:     https://atlaspublico.com.br/concursos/sp/prefeitura-municipal-de-arealva-4831
 Snippet: 
 
-Term:    seletivo concurso analista juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-em-c-t-junior-relacoes-publicas-abrangente/69
+Term:    seletivo concurso residencia juridica
+Title:   Processo <b>seletivo</b> na área da saúde, com salário de até R$ 6,4 mil, encerra inscrições nesta terça
+URL:     https://midiamax.com.br/cotidiano/emprego-concurso/2026/processo-seletivo-area-saude-salario-ate-r-64-encerra-inscricoes-nesta-terca/
 Snippet: 
 
-Term:    seletivo concurso tecnico juridico
-Title:   Processos <b>seletivos</b> e concursos pagam até R$ 13 mil em MT - GC Notícias
-URL:     https://www.gcnoticias.com.br/politica/processos-seletivos-e-concursos-pagam-ate-r-13-mil-em-mt/264021136
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   PCPR realiza <b>concurso</b> para mais de 62 mil candidatos em Curitiba, Londrina e Cascavel
-URL:     https://cgn.inf.br/noticia/2213133/pcpr-realiza-concurso-para-mais-de-62-mil-candidatos-em-curitiba-londrina-e-cascavel
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Provas para Download - PCI Concursos
-URL:     https://www.pciconcursos.com.br/provas/analista-sociologia-abrangente/38
+Term:    seletivo concurso residencia juridica
+Title:   Prefeitura de Caracol abre processos <b>seletivos</b> 67 vagas e salários de até R$ 4,9 mil
+URL:     https://midiamax.com.br/cotidiano/emprego-concurso/2026/prefeitura-caracol-abre-processos-seletivos-67-vagas-salarios-ate-r-49-mil/
 Snippet: 
 
 Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> Unificado do Piauí termina provas; gabarito sai segunda - TV Sim Brasil
-URL:     https://tvsimbrasil.com.br/pi/piaui/concursos/noticia/2026/10/11/concurso-unificado-piaui-termina-provas-gabarito-segunda
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Gabarito Dataprev extraoficial: confira AQUI! - Blog Gran Cursos Online
-URL:     https://blog.grancursosonline.com.br/gabarito-extraoficial-dataprev-2026/
-Snippet: 
-
-Term:    seletivo concurso direito
-Title:   Prefeitura de Sobral (CE) abre <b>seletivo</b> para professores temporários - Concursos no Brasil
-URL:     https://concursosnobrasil.com/concursos/ce/2026/10/10/prefeitura-de-sobral-ce-abre-seletivo-para-professores-temporarios/
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   <b>Concurso</b> da Polícia Civil reúne mais de 12 mil candidatos em Cascavel - Catve
-URL:     https://catve.com/noticia/9/484993/concurso-da-policia-civil-reune-mais-de-12-mil-candidatos-em-cascavel
-Snippet: 
-
-Term:    seletivo concurso analista juridico
-Title:   Inscrições para <b>concurso</b> da Sema terminam quarta-feira (14) | VGN - Notícias em MT com ...
-URL:     https://www.vgnoticias.com.br/cidades/inscricoes-para-concurso-da-sema-terminam-quarta-feira-14/153369
-Snippet: 
-
-Term:    seletivo concurso advogado
-Title:   Prazo para se inscrever no <b>concurso</b> da Sema termina na próxima quarta-feira (14)
-URL:     https://nativanews.com.br/blog/prazo-para-se-inscrever-no-concurso-da-sema-termina-na-proxima-quarta-feira-14/
-Snippet: 
-
-Term:    seletivo concurso tecnico juridico
 Title:   Com oportunidades para o interior de MS, processos <b>seletivos</b> oferecem salário de até R$ 6 mil
 URL:     https://midiamax.com.br/cotidiano/2026/oportunidades-interior-ms-processos-seletivos-oferecem-salario-ate-r-6-mil/
 Snippet: 
 
+Term:    seletivo concurso advogado
+Title:   Prefeitura de Paraguaçu abre <b>concurso</b> para 100 vagas com salário de até R$ 20 mil
+URL:     https://redemoinho24.com/ultimas/prefeitura-de-paraguacu-abre-concurso-para-100-vagas-com-salario-de-ate-r-20-mil/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/professor-de-educacao-basica-atendimento-educacional-especializado-professor-braille-abrangente/75
+Snippet: 
+
+Term:    seletivo concurso procurador
+Title:   <b>Concurso</b> DPU Defensor: após quase 10 anos, o que se sabe sobre o novo edital?
+URL:     https://magistrarcursos.com.br/blog/concurso-dpu-defensor-apos-quase-10-anos-o-que-se-sabe-sobre-o-novo-edital/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Prefeitura de Caracol abre seleção com salários de até R$ 4,9 mil
+URL:     https://primeirapagina.com.br/emprego-e-concursos/selecao-da-prefeitura-de-caracol-tem-inscricoes-abertas/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Prefeitura de Cuiabá-MT divulga gabarito das provas nesta terça (13) - Ache Concursos
+URL:     https://www.acheconcursos.com.br/noticias/gabarito-sme-de-cuiaba-mt-2026-resultado-provas-93898
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> com 132 vagas e salários de até R$ 9,8 mil no RN encerra inscrições nesta segunda
+URL:     https://tribunadonorte.com.br/rio-grande-do-norte/concurso-com-132-vagas-e-salarios-de-ate-r-98-mil-no-rn-encerra-inscricoes-nesta-segunda/
+Snippet: 
+
 Term:    seletivo concurso estagio de pos graduacao direito
-Title:   UFMS abre <b>concurso</b> com 42 vagas e salários de até R$ 13,7 mil - Capital News
-URL:     https://www.capitalnews.com.br/oportunidades/concurso/ufms-abre-concurso-com-42-vagas-e-salarios-de-ate-r-137-mil/448121
+Title:   ATENÇÃO, ESTUDANTES! Prefeitura de Guarapuava está com seleção aberta para <b>estágio</b> ...
+URL:     https://gmaisnoticias.com/atencao-estudantes-prefeitura-de-guarapuava-esta-com-selecao-aberta-para-estagio-em-varias-areas-inscricoes-sao-gratuitas-e-vao-ate-dia-28
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> da Polícia Civil do Paraná reúne mais de 62 mil candidatos
+URL:     https://oparana.com.br/cotidiano/concurso-da-policia-civil-reune-mais-de-62-mil-inscritos-quase-13-mil-fazem-provas-em-cascavel/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Processo <b>seletivo</b> da Udesc abre 114 vagas; saiba onde - ND Mais
+URL:     https://ndmais.com.br/empregos-e-concursos/processo-seletivo-da-udesc/
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   CGU abre <b>concurso</b> com vagas para o Acre e salário de R$ 20 mil
+URL:     https://acrejornal.com.br/cgu-abre-concurso-com-vagas-para-o-acre-e-salario-de-r-20-mil/
+Snippet: 
+
+Term:    seletivo concurso residencia juridica
+Title:   As inscrições para 138 concursos e processos <b>seletivos</b> se encerram esta semana. Veja quais
+URL:     https://atlaspublico.com.br/boletins/as-inscricoes-para-138-concursos-e-processos-seletivos-se-91604
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Gabarito oficial DATAPREV; veja quando a FGV divulga resultado das provas
+URL:     https://www.acheconcursos.com.br/noticias/gabarito-dataprev-2026-fgv-resultado-das-provas-93809
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Sema tem <b>concurso</b> com salários de até R$ 10,4 mil; inscrições acabam nesta quarta
+URL:     https://www.reportermt.com/cidades/sema-tem-concurso-com-salarios-de-ate-r-104-mil-inscricoes-acabam-nesta-quarta/244988
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/tecnico-de-tecnologia-da-informacao-area-sistemas-de-informacao-abrangente/44
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   Paraguaçu abre <b>concurso</b> público com 100 vagas e salários para diferentes níveis de escolaridade
+URL:     https://www.portalondasul.com.br/paraguacu-abre-concurso-publico-com-100-vagas-e-salarios-para-diferentes-niveis-de-escolaridade/
+Snippet: 
+
+Term:    seletivo concurso estagio de pos graduacao direito
+Title:   Com 6.205 participantes, Unicentro realiza provas do Vestibular 2027 - G+ Notícias
+URL:     https://gmaisnoticias.com/com-6205-participantes-unicentro-realiza-provas-do-vestibular-2027
+Snippet: 
+
+Term:    seletivo concurso advogado
+Title:   <b>Concurso</b> Unificado do Piauí: gabarito preliminar é divulgado; veja como consultar
+URL:     https://portalclubenews.com/2026/10/12/concurso-unificado-do-piaui-gabarito-preliminar-e-divulgado-veja-como-consultar/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/assistente-tecnico-em-tecnologia-da-informacao-abrangente/88
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   RS tem 15 concursos públicos com mais de 250 vagas e salários de até R$ 30 mil
+URL:     https://www.grupopilau.com.br/noticias/22981/rs-tem-15-concursos-publicos-com-mais-de-250-vagas-e-salarios-de-ate-r-30-mil/
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/tecnico-i-tecnico-informatica-abrangente/45
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   <b>Concurso</b> Polícia Militar: melhores editais previstos em outubro de 2026 - Magistrar
+URL:     https://magistrarcursos.com.br/blog/concurso-policia-militar-melhores-editais-previstos-em-outubro-de-2026/
+Snippet: 
+
+Term:    seletivo concurso consultor legislativo
+Title:   Provas para Download - PCI Concursos
+URL:     https://www.pciconcursos.com.br/provas/tecnico-i-tecnico-informatica-abrangente/38
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Concursos: 12 editais abrem inscrições nesta terça (13/10) para 2.865 vagas
+URL:     https://www.acheconcursos.com.br/noticias/concursos-12-editais-abrem-inscricoes-nesta-terca-13-10-para-2-865-vagas-93858
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   UFMS abre <b>concurso</b> com 42 vagas para professores e salários de até R$ 14,9 mil; Três ...
+URL:     https://www.radiocacula.com.br/ufms-abre-concurso-com-42-vagas-para-professores-e-salarios-de-ate-r-149-mil-tres-lagoas-esta-entre-as-cidades-contempladas/
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   IFPI oferta 5.365 vagas em cursos <b>técnicos</b>; inscrições começam terça (13) - G1
+URL:     https://g1.globo.com/pi/piaui/trabalho-e-carreira/noticia/2026/10/12/ifpi-classificatorio-cursos-tecnicos.ghtml
+Snippet: 
+
+Term:    seletivo concurso direito
+Title:   UFMS abre <b>concurso</b> com 42 vagas para professores e inclui oportunidade em Aquidauana
+URL:     https://aquidauananoticias.com.br/?p=26011
+Snippet: 
+
+Term:    seletivo concurso analista juridico
+Title:   Prazo de inscrição em <b>concurso</b> da Sema com vagas para Tangará termina nesta quarta
+URL:     https://tangaraemfoco.com.br/2026/10/12/prazo-de-inscricao-em-concurso-da-sema-com-vagas-para-tangara-termina-nesta-quarta.html
+Snippet: 
+
+Term:    seletivo concurso tecnico juridico
+Title:   Emprega Curitiba reúne vagas para jardineiro, gerente de loja e atendente; veja como se candidatar
+URL:     https://www.bandab.com.br/curitiba/vagas-emprego-curitiba-emprega-curitiba-diferentes-areas/
 Snippet: 
 
