@@ -1,77 +1,281 @@
-Verificação: 2026-10-19T09:32:53.248582+00:00
-Links analisados: 64
-Links relevantes: 12
+Verificação: 2026-10-20T09:05:07.726549+00:00
+Links analisados: 174
+Links relevantes: 46
 ============================================================
 
-Title:   Edital Contagem-MG 2026: Prefeitura abre 272 vagas de até R$ 13.305
-URL:     https://www.acheconcursos.com.br/concursos-minas-gerais/edital-contagem-mg-2026-prefeitura-abre-272-vagas-de-ate-r-13-305-92547
-Career:   procuradorias
-Group:   prefeitura-contagem-mg-auditor-controle-interno
-Reason:  Edital publicado pela Prefeitura de Contagem/MG com 1 vaga imediata para Auditor de Controle Interno - Direito. O cargo oferece remuneração inicial de R$ 13.305,57 acrescida de auxílio-alimentação para jornada de 40 horas semanais. As inscrições seguem abertas de 19 de outubro a 17 de novembro, sob a organização do IBGP, com provas agendadas para janeiro de 2027.
-
-Title:   Edital de Câmara de Pires do Rio-GO 2026 abre concurso com 42 vagas
-URL:     https://www.acheconcursos.com.br/concursos-goias/edital-de-camara-de-pires-do-rio-go-2026-abre-concurso-com-42-vagas-93044
+Title:   TRENSURB - RS anuncia adiamento das inscrições em concurso público
+URL:     https://www.pciconcursos.com.br/noticias/trensurb-rs-anuncia-adiamento-das-inscricoes-em-concurso-publico
 Career:   administrativo
-Group:   camara-pires-do-rio-go-analista-legislativo
-Reason:  Edital publicado pela Câmara de Pires do Rio/GO oferecendo 1 vaga imediata mais cadastro de reserva para Analista Legislativo, exigindo graduação em Direito, Administração ou Administração Pública. A remuneração inicial é de R$ 6.523,44 para jornada semanal regulamentada. As inscrições ocorrem de 19 de outubro a 18 de novembro pelo Instituto Verbena/UFG, com provas objetiva, discursiva e de títulos previstas para 17 de janeiro de 2027.
+Group:   trensurb-rs-advogado
+Reason:  A Trensurb-RS retificou edital de concurso público prevendo 1 vaga imediata para o cargo de Analista Administrativo: Advogado, com exigência de graduação em Direito e registro na OAB. A remuneração inicial varia entre R$ 2.363,24 e R$ 9.414,18 para jornadas de até 40 horas semanais. As inscrições foram adiadas para abril de 2027 sob organização da Objetiva Concursos.
 
-Title:   Residentes jurídicos e contábeis aprovados em processo seletivo iniciam atividades no TCE-AM
-URL:     https://portalmazemourao.com.br/amazonas/residentes-juridicos-e-contabeis-aprovados-em-processo-seletivo-iniciam-atividades-no-tce-am-2/
+Title:   TJSP abre concursos para Oficial de Justiça e Escrevente Técnico Judiciário
+URL:     https://www.pciconcursos.com.br/noticias/tjsp-abre-concursos-para-oficial-de-justica-e-escrevente-tecnico-judiciario
+Career:   tribunais
+Group:   tjsp-sp-oficial-de-justica
+Reason:  O Tribunal de Justiça de São Paulo (TJSP) publicou editais de concurso público para provimento de 132 vagas imediatas e formação de cadastro de reserva para Oficial de Justiça, além de cadastro para Escrevente Técnico Judiciário. Os iniciais chegam a R$ 9.856,95 para Oficial de Justiça, acrescidos de auxílios. As inscrições seguem abertas até 10 de dezembro de 2026 pela banca Vunesp, com provas aplicadas em 14 de março de 2027.
+
+Title:   Prefeitura de Iporã do Oeste-SC tem concurso aberto com vagas de até R$ 19,2 mil
+URL:     https://www.acheconcursos.com.br/concursos-santa-catarina/prefeitura-de-ipora-do-oeste-sc-tem-concurso-aberto-com-vagas-19-2-mil-94043
+Career:   procuradorias
+Group:   prefeitura-ipora-do-oeste-sc-advogado
+Reason:  A Prefeitura de Iporã do Oeste (SC) abriu concurso público e processos seletivos contemplando cadastro de reserva para o cargo de Advogado. Os salários chegam a R$ 19.265,80 conforme o edital e a jornada de trabalho. As inscrições podem ser realizadas até o dia 16 de novembro de 2026 no site da banca organizadora AMEOSC. As provas objetivas estão agendadas para os dias 28 e 29 de novembro de 2026.
+
+Title:   Concurso Piracema-MG 2026: Prefeitura lança dois editais de até R$ 18.647
+URL:     https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-piracema-mg-2026-92704
+Career:   procuradorias
+Group:   prefeitura-piracema-mg-agente-de-licitacao
+Reason:  Edital publicado pela Prefeitura de Piracema/MG com 1 vaga para Agente de Licitação, cargo que exige graduação em Direito, Administração ou Ciências Contábeis. A remuneração inicial é de R$ 2.660,39 para jornada de 40 horas semanais. Inscrições iniciam em 20 de outubro e provas ocorrem em 13 de dezembro de 2026.
+
+Title:   Concurso SAAE de Pirapora-MG 2026: Edital e Inscrição
+URL:     https://www.acheconcursos.com.br/concursos-minas-gerais/concurso-saae-de-pirapora-mg-2026-edital-e-inscricao-92752
+Career:   procuradorias
+Group:   saae-pirapora-mg-advogado
+Reason:  O SAAE de Pirapora/MG publicou edital de concurso público com 1 vaga imediata e cadastro reserva para o cargo de Advogado, exigindo graduação em Direito e registro ativo na OAB. O vencimento inicial é de R$ 4.848,48. Inscrições abertas de 20 de outubro a 18 de novembro de 2026 pelo site da banca IBGP, com provas objetivas e discursivas previstas para 20 de dezembro de 2026.
+
+Title:   Prefeitura de Confins - MG abre processo seletivo com salários de até R$ 23.298,67
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-confins-mg-abre-processo-seletivo-com-salarios-de-ate-23298
+Career:   procuradorias
+Group:   prefeitura-confins-mg-advogado
+Reason:  Processo seletivo simplificado na Prefeitura de Confins/MG com 1 vaga para Advogado. As remunerações chegam a R$ 23.298,67 considerando o teto geral do edital. Inscrições abertas de 21 de outubro a 5 de novembro de 2026 pelo site do IBGP, com taxa de R$ 80,00. A seleção consistirá em avaliação curricular.
+
+Title:   Prefeitura de Tarumã - SP prorroga inscrições para processo seletivo com salários de até R$ 23.539,17
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-taruma-sp-prorroga-inscricoes-para-processo-seletivo-com-salarios-de-ate-23539
+Career:   procuradorias
+Group:   prefeitura-taruma-sp-procurador
+Reason:  Processo seletivo da Prefeitura de Tarumã/SP visa formar cadastro de reserva para Procurador Municipal, além de contar com cargo de Auditor Fiscal. Inscrições prorrogadas até 22 de outubro de 2026 pelo site da banca IPEL. A remuneração máxima atinge R$ 23.539,17 e a prova objetiva está marcada para 22 de novembro de 2026.
+
+Title:   Prefeitura de Louveira - SP abre concursos com vagas imediatas e cadastro de reserva
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-louveira-sp-abre-concursos-com-vagas-imediatas-e-cadastro-de-reserva
+Career:   administrativo
+Group:   prefeitura-louveira-sp-assistente-juridico
+Reason:  Edital publicado pela Prefeitura de Louveira/SP com 1 vaga imediata mais cadastro reserva para o cargo de Assistente Jurídico, exigindo nível superior. A remuneração atinge até R$ 8.738,00, acrescida de auxílio-alimentação de R$ 1.000,00 e transporte. Inscrições de 16/10/2026 a 16/11/2026 pelo site da banca AvançaSP, com prova objetiva prevista para 17/01/2027.
+
+Title:   Concurso TJ-SP 2026: Sai edital com 132 vagas para Oficial de Justiça
+URL:     https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-tj-sp-2026-edital-oficial-de-justica-94047
+Career:   tribunais
+Group:   tjsp-sp-oficial-de-justica
+Reason:  Edital publicado pelo Tribunal de Justiça de São Paulo (TJSP) com 132 vagas imediatas e formação de cadastro reserva para o cargo de Oficial de Justiça, que exige ensino superior. A remuneração inicial é de R$ 9.856,95, além de benefícios. Inscrições abertas de 28/10/2026 a 10/12/2026 no site da Fundação Vunesp. Provas objetiva e discursiva agendadas para 14/03/2027.
+
+Title:   TJ-SP abre concurso com 132 vagas e salários de até R$ 9,8 mil - ACidade ON Ribeirão Preto
+URL:     https://www.acidadeon.com/ribeiraopreto/economia/tj-sp-abre-concurso-com-132-vagas-e-salarios-de-ate-r-98-mil/
+Career:   tribunais
+Group:   tjsp-sp-oficial-de-justica
+Reason:  Publicados novos editais pelo Tribunal de Justiça de São Paulo (TJSP) ofertando 132 vagas imediatas para Oficial de Justiça e formação de cadastro de reserva para Escrevente Técnico Judiciário. Os vencimentos chegam a R$ 9.856,95 para jornadas de 40 horas semanais. As inscrições ocorrem de 28/10/2026 a 10/12/2026 via Fundação Vunesp, com aplicação das provas unificadas em 14/03/2027.
+
+Title:   Concurso em Louveira abre 19 vagas com salários de até R$ 8,7 mil; veja como participar - Tribuna de Jundiaí
+URL:     https://tribunadejundiai.com.br/economia/concursos/concurso-louveira-2026/
+Career:   administrativo
+Group:   prefeitura-louveira-sp-assistente-juridico
+Reason:  Prefeitura de Louveira/SP publicou edital com 1 vaga imediata e cadastro de reserva para Assistente Jurídico, exigindo graduação superior em Direito. O salário inicial é de R$ 4.771,00 para 40 horas semanais, com acréscimo de benefícios. Inscrições abertas até 16/11/2026 pelo site da banca Avança SP. Provas objetivas previstas para 17/01/2027.
+
+Title:   Semana tem 10 editais abertos entre processos seletivos e estágios; confira a lista!
+URL:     https://www.enfoquems.com.br/semana-tem-nove-editais-abertos-entre-processos-seletivos-e-estagios-confira-a-lista/?amp=
 Career:   estagio
-Group:   tce-am-am-residencia-juridica
-Reason:  Dezesseis aprovados no processo seletivo para a Residência Jurídica e Contábil iniciaram as atividades no Tribunal de Contas do Amazonas (TCE-AM). O programa oferece bolsa-auxílio de R$ 3 mil mensais para jornada de cinco horas diárias durante o período de dois anos, contemplando dez vagas destinadas a bacharéis em Direito.
+Group:   tre-ms-ms-estagio-direito
+Reason:  Tribunal Regional Eleitoral de Mato Grosso do Sul (TRE-MS) publicou edital de processo seletivo para estágio de nível superior destinado a estudantes de Direito a partir do 3º semestre. A bolsa-auxílio é de R$ 1.020,00 acrescida de auxílio-transporte para jornada de 25 horas semanais. Inscrições e avaliações on-line até 29/10.
 
-Title:   As inscrições para 21 concursos e processos seletivos encerram hoje. Veja quais — Atlas Público
-URL:     https://atlaspublico.com.br/boletins/as-inscricoes-para-21-concursos-e-processos-seletivos-92961
+Title:   Concurso do TJ-SP abre 132 vagas com salários de até R$ 9,8 mil | VEJA SÃO PAULO
+URL:     https://vejasp.abril.com.br/cidades/concurso-tj-sp-9-8-mil/
+Career:   tribunais
+Group:   tjsp-sp-oficial-de-justica
+Reason:  Tribunal de Justiça de São Paulo (TJSP) publicou editais para Oficial de Justiça (132 vagas, ensino superior, salário de R$ 9.856,95) e Escrevente Técnico Judiciário (cadastro de reserva, ensino médio, salário de R$ 6.782,54). Inscrições de 28/10 a 10/12/2026 pela Fundação Vunesp. Provas objetivas e discursivas aplicadas em 14/03/2027.
+
+Title:   PGE-CE divulga editais para programa de estágio com 60 vagas - Papo Carreira - Diário do Nordeste
+URL:     https://diariodonordeste.verdesmares.com.br/papo-carreira/pge-ce-divulga-editais-para-programa-de-estagio-com-60-vagas-1.3799590
+Career:   estagio
+Group:   pge-ce-ce-estagio
+Reason:  A Procuradoria-Geral do Estado do Ceará (PGE-CE) divulgou editais para programa de estágio com 60 vagas imediatas, divididas igualmente entre graduação e pós-graduação em Direito. As bolsas são de R$ 1.264,23 para graduandos e R$ 2.528,44 para pós-graduandos, com jornadas de 20 horas semanais. Inscrições para pós até 18/11 e para graduação de 29/10 a 25/11. Provas previstas para janeiro de 2027.
+
+Title:   Prefeitura de Iporã do Oeste anuncia concurso público vagas e salários
+URL:     https://www.souenfermagem.com.br/noticias/prefeitura-de-ipora-do-oeste-anuncia-concurso-publico-vagas-e-salarios/
 Career:   procuradorias
-Group:   pge-pr-pr-estagio-pos
-Reason:  Processo seletivo para estagiário de pós-graduação em Direito na Procuradoria-Geral do Estado do Paraná (PGE-PR) está com inscrições abertas até a presente data, oferecendo 1 vaga imediata com bolsa-auxílio de até R$ 3.198,21 para atuação na unidade.
+Group:   prefeitura-ipora-do-oeste-sc-advogado
+Reason:  A Prefeitura de Iporã do Oeste (SC) publicou edital de concurso público contemplando vaga para o cargo de Advogado, além de oportunidades em processos seletivos. As remunerações chegam a R$ 19.265,80 para jornada de até 40 horas semanais. As inscrições seguem abertas até 16 de novembro de 2026, com aplicação de prova objetiva para avaliação dos candidatos.
 
-Title:   Gabarito Concurso Câmara de Meruoca: Veja prazos e resultado
-URL:     https://fiibrasil.com/noticia/gabarito-concurso-camara-meruoca-ce-2026-inbrasp/
+Title:   Câmara de Rio Branco prorroga inscrições para concursos; confira
+URL:     https://www.acreaovivo.com/noticia/215019/camara-de-rio-branco-prorroga-inscricoes-para-concursos-confira
 Career:   procuradorias
-Group:   camara-meruoca-ce-procurador-legislativo
-Reason:  Concurso público da Câmara Municipal de Meruoca (CE) aplicou provas objetivas e divulgou cronograma para o cargo de Procurador Legislativo, que oferta 1 vaga de nível superior com remuneração inicial de R$ 2.500,00, exigindo formação em Direito.
+Group:   camara-rio-branco-ac-procurador
+Reason:  A Câmara Municipal de Rio Branco (AC) prorrogaram até 26 de outubro as inscrições para o concurso público de Procurador, que oferta 1 vaga imediata e cadastro de reserva. O certame avalia os candidatos por meio de provas objetiva e prático-discursiva agendadas para o dia 22 de novembro de 2026, com resultado final previsto para março de 2027.
 
-Title:   MT tem 11 concursos e seletivos com inscrições abertas; salários chegam a R$ 23,6 mil
-URL:     https://www.plantaotga.com/post/mt-tem-11-concursos-e-seletivos-com-inscrições-abertas-salários-chegam-a-r-23-6-mil
+Title:   Concursos do Tribunal de Justiça pagam salários de quase R$ 10 mil | A Tarde
+URL:     https://atarde.com.br/concursos/concursos-do-tribunal-de-justica-pagam-salarios-de-quase-r-10-mil-1406236?_=amp
+Career:   tribunais
+Group:   tjsp-sp-oficial-de-justica
+Reason:  O Tribunal de Justiça de São Paulo publicou editais com 132 vagas imediatas para Oficial de Justiça e formação de cadastro de reserva para Escrevente Técnico Judiciário, exigindo níveis médio e superior. As remunerações variam de R$ 6.782,54 a R$ 9.856,95 para jornada de 40 horas semanais. As inscrições ocorrem de 28 de outubro a 10 de dezembro de 2026 pela banca Vunesp, com provas aplicadas em 14 de março de 2027.
+
+Title:   Concurso TRF3: banca contrtada; edital iminente!
+URL:     https://www.direcaoconcursos.com.br/noticias/concurso-trf3-contrato-vunesp-assinado-edital
+Career:   tribunais
+Group:   trf3-sp-ms-analista-e-tecnico
+Reason:  O Tribunal Regional Federal da 3ª Região formalizou contrato com a Fundação Vunesp para a realização de novo concurso público voltado a cargos de Analista e Técnico Judiciário, com lotações em São Paulo e Mato Grosso do Sul. O certame contemplará vagas para Analista na Área Judiciária e Oficial de Justiça Avaliador Federal, cujos iniciais chegam a R$ 13.994,78, com edital iminente e vigência contratual iniciada em outubro de 2026.
+
+Title:   Concurso AGU: comissão muda e edital é previsto até dezembro
+URL:     https://diariodopara.com.br/concursos-e-empregos/concurso-agu-comissao-170-vagas-alterada-edital-dezembro/
 Career:   procuradorias
-Group:   prefeitura-comodoro-mt-procurador
-Reason:  O edital nº 01/2026 da Prefeitura de Comodoro/MT oferta 1 vaga imediata mais cadastro reserva para Procurador Jurídico. O salário inicial é de R$ 14.470,40, com inscrições abertas até o dia 22 de outubro sob organização da UFMT.
+Group:   agu-nacional-procurador-e-advogado
+Reason:  A Advocacia-Geral da União alterou a comissão organizadora do novo concurso público que ofertará 170 vagas de nível superior em Direito, com edital previsto para publicação até 24 de dezembro de 2026. As oportunidades distribuem-se entre as carreiras de Advogado da União, Procurador Federal, Procurador da Fazenda Nacional e Procurador do Banco Central, com remuneração inicial de R$ 24.967,31. A seleção adotará o Exame Nacional da Advocacia Pública.
 
-Title:   Gabarito Câmara de Martinópolis SP 2026: Veja os Resultados
-URL:     https://fiibrasil.com/noticia/camara-martinopolis-sp-2026-gabarito/
-Career:   procuradorias
-Group:   camara-martinopolis-sp-procurador
-Reason:  A Câmara de Martinópolis/SP realizou provas em 18 de outubro de 2026 do processo seletivo para o cargo de Procurador Jurídico. A seleção oferece vaga em cadastro reserva com remuneração inicial de R$ 5.995,65 para jornada de 25 horas semanais.
-
-Title:   Gabarito Concurso CIDENNF 2026: Consulta e Prova Consulplan
-URL:     https://fiibrasil.com/noticia/gabarito-concurso-cidennf-2026-consulplan/
-Career:   procuradorias
-Group:   cidenf-campos-dos-goytacazes-rj-assessor-juridico
-Reason:  O Consórcio Intermunicipal CIDENNF aplicou provas em 18 de outubro de 2026 para o cargo de Assessor Jurídico, com formação de cadastro reserva. O salário máximo previsto é de R$ 5.637,00, sob a organização do Instituto Consulplan.
-
-Title:   Gabarito Concurso Prefeitura de Valinhos: Veja como consultar
-URL:     https://fiibrasil.com/noticia/gabarito-concurso-prefeitura-de-valinhos-edital-01-2026/
-Career:   procuradorias
-Group:   prefeitura-valinhos-sp-procurador
-Reason:  Certame da Prefeitura de Valinhos/SP com provas já aplicadas pela banca ABCP para o cargo de Procurador Municipal. São ofertadas 02 vagas imediatas com remuneração inicial de R$ 12.995,34, registrando 1.519 inscritos. Atualmente o certame encontra-se na fase de divulgação de gabaritos preliminares.
-
-Title:   Concurso AGEPAR 2026: gabarito e resultado da prova hoje
-URL:     https://fiibrasil.com/noticia/concurso-agepar-2026-prova-gabarito-resultado-18-outubro/
-Career:   procuradorias
-Group:   agepar-pr-especialista-direito
-Reason:  Concurso público da Agência Reguladora de Serviços Públicos Delegados do Paraná (AGEPAR) com provas aplicadas pelo Cebraspe. O edital contempla 2 vagas específicas para a carreira de Especialista em Regulação na área de Direito, com remuneração inicial de R$ 10.334,74.
-
-Title:   Concursos e seleção oferecem mais de 400 vagas na Paraíba – CBN Paraíba
-URL:     https://cbnparaiba.com.br/concursos-e-selecao-oferecem-mais-de-400-vagas-na-paraiba/
+Title:   Salário de R$ 38 mil e muito mais: concursos públicos têm 4.182 vagas de emprego; veja lista completa
+URL:     https://www.atribuna.com.br/noticias/concurso-e-emprego/salario-de-r-38-mil-e-muito-mais-concursos-publicos-tem-4-182-vagas-de-emprego-veja-lista-completa-1.533428
 Career:   defensoria
-Group:   dpe-pb-pb-tecnico-analista
-Reason:  Edital publicado pela Defensoria Pública do Estado da Paraíba (DPE-PB) ofertando 20 vagas para níveis médio e superior. As inscrições seguem abertas até 13 de novembro, com taxas variadas e provas objetivas agendadas para 28 de fevereiro de 2027. Remunerações variam de R$ 4.042,50 a R$ 5.197,50.
+Group:   dpesp-sp-defensor
+Reason:  Edital publicado pela Defensoria Pública do Estado de São Paulo com 70 vagas imediatas para Defensor Público, exigindo graduação em Direito. O subsídio inicial é de R$ 29.716,00. As inscrições seguem abertas até 11 de novembro de 2026 no site oficial da banca organizadora, com taxa de R$ 250,00. A primeira etapa da prova objetiva está marcada para 10 de janeiro de 2027.
 
-Title:   Estágio de Direito em Maracaju: inscrições até 23 de outubro
-URL:     https://www.campograndenews.com.br/cidades/empregos/justica-prorroga-inscricoes-para-estagio-de-direito-em-maracaju
+Title:   Prefeitura de Matão SP concurso salários até R 9.717
+URL:     https://www.souenfermagem.com.br/noticias/prefeitura-de-matao-sp-concurso-salarios-ate-r-9-717/
+Career:   procuradorias
+Group:   prefeitura-matao-sp-procurador
+Reason:  Concurso público aberto na Prefeitura de Matão/SP oferecendo vaga e cadastro reserva para Procurador Jurídico, cargo que exige nível superior em Direito e inscrição na OAB. A remuneração inicial alcança R$ 9.717,96, acrescida de auxílio-alimentação de R$ 1.000,00. Inscrições de 17/10 a 18/11/2026 pelo site do IBAM. Prova objetiva prevista para 24/01/2027, seguida de prova prático-profissional e de títulos.
+
+Title:   Com salário de R$ 9,8 mil, concurso do TJ SP oferece 132 vagas para nível médio e superior
+URL:     https://www.portaltemponovo.com.br/com-salario-de-r-98-mil-concurso-do-tj-sp-oferece-132-vagas-para-nivel-medio-e-superior/
+Career:   tribunais
+Group:   tjsp-sp-oficial-de-justica
+Reason:  O Tribunal de Justiça de São Paulo publicou edital com 132 vagas imediatas e cadastro reserva para Oficial de Justiça, exigindo nível superior em qualquer área. O salário inicial é de R$ 9.856,95, mais benefícios. As inscrições ocorrem de 28/10 a 10/12/2026 pela Fundação Vunesp, com taxa de R$ 96,00. A prova objetiva e discursiva será aplicada em 14 de março de 2027.
+
+Title:   Concurso TJ SP: editais publicados para escrevente e oficial de justiça. Até R$11.946! · Central de Concursos
+URL:     https://centraldeconcursos.com.br/noticia/concurso-tj-sp-editais-publicados-para-escrevente-e-oficial-de-justica-ate-r11946
+Career:   tribunais
+Group:   tjsp-sp-oficial-de-justica
+Reason:  O Tribunal de Justiça de São Paulo publicou editais para oficial de justiça (132 vagas imediatas e cadastro de reserva, exigindo nível superior em qualquer área, com remuneração inicial de R$ 9.856,95) e escrevente técnico judiciário (exclusivamente cadastro de reserva, exigindo nível médio, com iniciais de R$ 6.782,54). As inscrições para escrevente ocorrem de 28 de outubro a 10 de dezembro, com taxa de R$ 81 e provas objetiva e discursiva aplicadas em 14 de março.
+
+Title:   Câmara de Rio Branco prorroga inscrições de concursos para procurador e policial legislativo
+URL:     https://ac24horas.com/2026/10/19/camara-de-rio-branco-prorroga-inscricoes-de-concursos-para-procurador-e-policial-legislativo/amp/
+Career:   procuradorias
+Group:   camara-rio-branco-ac-procurador
+Reason:  A Câmara Municipal de Rio Branco prorrogou até 26 de outubro as inscrições do concurso público destinado ao provimento de 1 vaga imediata e formação de cadastro de reserva para o cargo de Procurador. As provas objetiva e prático-discursiva estão agendadas para o dia 22 de novembro. O certame é organizado para selecionar profissionais bacharéis em Direito com inscrição na OAB.
+
+Title:   TJ-SP abre concurso para escrevente técnico judiciário no interior e litoral - Apatej
+URL:     https://www.apatej.org.br/tj-sp-abre-concurso-para-escrevente-tecnico-judiciario-no-interior-e-litoral/
+Career:   tribunais
+Group:   tjsp-sp-oficial-de-justica
+Reason:  O Tribunal de Justiça de São Paulo publicou dois editais em outubro de 2026. O edital nº 01/2026 oferta 132 vagas para Oficial de Justiça (nível superior) com remuneração inicial de R$ 9.856,95. O edital nº 02/2026 forma cadastro reserva para Escrevente Técnico Judiciário (nível médio) com salário de R$ 6.782,54. As inscrições ocorrem de 28/10 a 10/12/2026 pela Fundação Vunesp, com provas objetiva e discursiva aplicadas em 14/03/2027.
+
+Title:   Concurso TJ SP tem editais publicados com 132 vagas de até R$ 9,8 mil
+URL:     https://concursosnobrasil.com/concursos/sp/2026/10/19/concurso-tj-sp-tem-editais-publicados-com-132-vagas-de-ate-r-98-mil/
+Career:   tribunais
+Group:   tjsp-sp-oficial-de-justica
+Reason:  O Tribunal de Justiça de São Paulo publicou editais do concurso público com 132 vagas imediatas para Oficial de Justiça, exigindo nível superior e pagando R$ 9.856,95, além de cadastro reserva para Escrevente Técnico Judiciário, de nível médio, com vencimentos de R$ 6.782,54. A organização está a cargo da Vunesp, com inscrições abertas de 28 de outubro a 10 de dezembro de 2026 e provas objetiva e discursiva previstas para 14 de março de 2027.
+
+Title:   Edital Publicado: Escrevente Técnico Judiciário - TJSP - Meu site jurídico
+URL:     https://meusitejuridico.editorajuspodivm.com.br/2026/10/19/edital-publicado-escrevente-tecnico-judiciario-tjsp/
+Career:   tribunais
+Group:   tjsp-sp-escrevente
+Reason:  Editais publicados para o Tribunal de Justiça de São Paulo sob organização da banca Vunesp. O certame contempla formação de cadastro de reserva para Escrevente Técnico Judiciário, cargo de nível médio com vencimento inicial de R$ 6.782,54 acrescido de benefícios. O período de inscrições segue aberto de 28 de outubro a 10 de dezembro de 2026, com avaliação objetiva e discursiva agendada para o dia 14 de março de 2027.
+
+Title:   ESUDPAM abre novo processo seletivo para contratação de estagiários
+URL:     https://concursosnobrasil.com/concursos/am/2026/10/19/esudpam-abre-novo-processo-seletivo-para-contratacao-de-estagiarios/
 Career:   estagio
-Group:   tjms-maracaju-ms-estagio
-Reason:  Processo seletivo prorrogado para formação de cadastro de reserva em estágio de pós-graduação e graduação em Direito na Comarca de Maracaju do TJMS. As inscrições presenciais seguem até sexta-feira na Secretaria do Foro. A seleção contará com prova objetiva de 20 questões marcada para 29 de outubro, oferecendo bolsa-auxílio e auxílio-transporte com jornada de 5 horas diárias.
+Group:   dpeam-am-estagio
+Reason:  Processo seletivo aberto pela ESUDPAM para formação de cadastro de reserva em estágio de graduação em Direito. A bolsa-auxílio é de R$ 1.050,54 mais auxílio-transporte de R$ 220, para jornada de 20 horas semanais. Inscrições eletrônicas até 13 de novembro de 2026 mediante taxa de R$ 30. As provas objetiva e discursiva estão agendadas para o dia 22 de novembro de 2026.
+
+Title:   Câmara de Rio Branco prorroga inscrições para concursos; confira
+URL:     https://contilnetnoticias.com.br/destaque-2/camara-de-rio-branco-prorroga-inscricoes-para-concursos-confira/
+Career:   procuradorias
+Group:   camara-rio-branco-ac-procurador
+Reason:  Retificação publicada prorrogando até 26 de outubro de 2026 as inscrições para o concurso da Câmara Municipal de Rio Branco/AC focado no cargo de Procurador, que oferta 1 vaga imediata e cadastro de reserva com remuneração inicial de R$ 32.000,00. As etapas de prova objetiva e prático-discursiva encontram-se marcadas para o dia 22 de novembro de 2026.
+
+Title:   Nova Bassano RS Concurso Público Oferece Vagas Salários
+URL:     https://www.souenfermagem.com.br/noticias/nova-bassano-rs-concurso-publico-oferece-vagas-salarios/
+Career:   procuradorias
+Group:   prefeitura-nova-bassano-rs-procurador
+Reason:  A Prefeitura de Nova Bassano/RS publicou edital de concurso público contemplando 1 vaga imediata e cadastro de reserva para o cargo de Procurador, exigindo formação superior em Direito. A remuneração inicial atinge até R$ 5.933,70, com jornada de 20 a 44 horas semanais, acrescida de vale-alimentação. As inscrições seguem abertas até 10 de novembro de 2026 no site da Fundação La Salle, com provas objetivas agendadas para 13 de dezembro de 2026.
+
+Title:   PolÃ­cia Civil de Pernambuco divulga concurso pÃºblico para Agente, Delegado e EscrivÃ£o de PolÃ­cia - Cebraspe | O melhor em avaliaÃ§Ã£o de pessoas
+URL:     https://www.cebraspe.org.br/policia-civil-de-pernambuco-divulga-concurso-publico-para-agente-delegado-e-escrivao-de-policia/
+Career:   policiais
+Group:   pcpe-pe-delegado
+Reason:  A Polícia Civil de Pernambuco (PCPE) lançou edital com 1.315 vagas para os cargos de Agente, Escrivão e Delegado de Polícia. Para Delegado, exige-se bacharelado em Direito e três anos de atividade jurídica ou policial, com remuneração inicial de R$ 13.560,00. As inscrições ficam abertas até 16 de dezembro de 2026 pelo Cebraspe, e as provas objetivas e discursivas para Delegado ocorrem em 14 de março de 2027.
+
+Title:   Concurso público paga R$ 9,8 mil, oferece 132 cargos e abre inscrições em outubro para quem tem nível superior
+URL:     https://ndmais.com.br/empregos-e-concursos/concurso-tj-sp-salario-9856-inscricoes-132-cargos/
+Career:   tribunais
+Group:   tjsp-sp-oficial-de-justica
+Reason:  O Tribunal de Justiça de São Paulo (TJSP) publicou dois editais com 132 vagas imediatas e formação de cadastro para Oficial de Justiça (cargo de nível superior em qualquer área) e cadastro de reserva para Escrevente Técnico Judiciário (nível médio). As remunerações chegam a R$ 9.856,95 para Oficial de Justiça e R$ 6.782,54 para Escrevente. As inscrições vão de 28 de outubro a 10 de dezembro de 2026 na Vunesp, com provas em 14 de março de 2027.
+
+Title:   Matão tem concurso e processo seletivo com salários de até R$ 17,4 mil - Araraquara Agora
+URL:     https://araraquaraagora.com/noticia/52109/matao-tem-3-selecoes-abertas-com-salarios-de-ate-r-17-4-mil
+Career:   procuradorias
+Group:   prefeitura-matao-sp-procurador
+Reason:  Edital publicado pela Prefeitura de Matão/SP (Concurso 02/2026, banca IBAM) oferecendo 1 vaga para Procurador Jurídico (R$ 9.717,96, 30h, exigindo OAB/Direito) e 3 vagas para Analista Técnico Jurídico (R$ 6.303,15). Inscrições até 18/11/2026. Prova objetiva e prático-profissional prevista para 24/01/2027.
+
+Title:   Câmara da capital reabre inscrições para concursos com salários de até R$ 19,4 mil | OACREAGORA.COM - Notícias do Acre
+URL:     https://oacreagora.com/camara-da-capital-reabre-inscricoes-para-concursos-com-salarios-de-ate-r-194-mil/
+Career:   procuradorias
+Group:   camara-rio-branco-ac-procurador
+Reason:  Inscrições reabertas até 26/10 no concurso da Câmara Municipal de Rio Branco/AC para o cargo de Procurador. O certame oferece 1 vaga imediata e cadastro de reserva, com remuneração inicial de R$ 19.404,00 para jornada de 30 horas semanais, acrescida de auxílio-alimentação de R$ 1.500,00 e auxílio-saúde de R$ 500,00. Exige bacharelado em Direito, registro na OAB e 2 anos de prática jurídica. As provas objetiva e prático-discursiva estão marcadas para 22/11.
+
+Title:   PJM Brasília/DF homologa resultado final do Processo Público de Seleção de Residência Jurídica – MINISTÉRIO PÚBLICO MILITAR
+URL:     https://www.mpm.mp.br/arquivos/74299
+Career:   estagio
+Group:   mpm-brasilia-df-residencia-juridica
+Reason:  Homologado o resultado final do Processo Público de Seleção para o Programa de Residência Jurídica da Procuradoria de Justiça Militar em Brasília/DF (PJM Brasília/DF), conforme a Portaria nº 12/PJM/DF. A seleção destina-se ao aperfeiçoamento teórico-prático de bacharéis em Direito, contemplando formação de cadastro para futuras convocações conforme a necessidade da administração do órgão ministerial.
+
+Title:   TJMA divulga resultados definitivos dos seletivos para estágio e residência
+URL:     https://omaranhense.com/tjma-divulga-resultados-definitivos-dos-seletivos-para-estagio-e-residencia/
+Career:   estagio
+Group:   tjma-ma-residencia-juridica
+Reason:  Divulgados os resultados definitivos dos processos seletivos para o Programa de Residência Jurídica (Edital-GP n. 25/2026) e para o Programa de Estágio Remunerado (Edital-GP n. 26/2026) do Tribunal de Justiça do Maranhão (TJMA). Os certames visam proporcionar a complementação de ensino e aprendizagem a estudantes e profissionais da área jurídica, com convocação futura regida pelas normas do tribunal conforme disponibilidade orçamentária.
+
+Title:   Concurso AGU Advogado: banca examinadora definida!
+URL:     https://blog.grancursosonline.com.br/concurso-agu-advogado-banca-examinadora-definida-2026/
+Career:   procuradorias
+Group:   agu-nacional-procurador-e-advogado
+Reason:  A Advocacia-Geral da União definiu a banca examinadora e avança nos preparativos para o novo concurso unificado, com previsão de edital até o final de 2026. O certame contemplará 50 vagas para Advogado da União, além de Procurador Federal, da Fazenda Nacional e do Banco Central, com remuneração inicial de R$ 27.264,30. O processo contará com a etapa habilitatória do Exame Nacional da Advocacia Pública (ENAP).
+
+Title:   Concurso TJPB: sai edital com vagas para analista; até R$11 mil! | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/concurso-tj-pb-2026-edital-publicado
+Career:   tribunais
+Group:   tjpb-pb-analista-juridico
+Reason:  Edital publicado pelo Tribunal de Justiça da Paraíba com 50 vagas imediatas e formação de cadastro de reserva para Analista Judiciário, exigindo graduação em Direito para a área judiciária. A remuneração inicial é de R$ 7.526,14, podendo chegar a R$ 11.526,14 com auxílios-alimentação e saúde. As inscrições ficam abertas de 20 de outubro a 18 de novembro de 2026 pela banca FGV, com provas aplicadas em 24 de janeiro de 2027.
+
+Title:   TJ-SP abre concurso para escrevente técnico judiciário no interior e litoral - Apatej
+URL:     https://www.apatej.org.br/tj-sp-abre-concurso-para-escrevente-tecnico-judiciario-no-interior-e-litoral
+Career:   tribunais
+Group:   tjsp-sp-escrevente
+Reason:  O Tribunal de Justiça de São Paulo publicou edital de concurso público para formação de cadastro de reserva para o cargo de Escrevente Técnico Judiciário, com atuação no interior e litoral paulista. As inscrições ocorrem de 28 de outubro a 10 de dezembro de 2026 no site da Fundação Vunesp, com taxa e provas objetiva e discursiva previstas para 14 de março de 2027. O cargo exige nível médio e possui atribuições de suporte técnico e processual.
+
+Title:   Concurso AGU: comissão organizadora para 170 vagas sofre alterações
+URL:     https://jcconcursos.com.br/noticia/concursos/concurso-agu-comissao-organizadora-para-170-vagas-sofre-alteracoes-146072
+Career:   procuradorias
+Group:   agu-nacional-procurador-e-advogado
+Reason:  Comissão organizadora do novo concurso da Advocacia-Geral da União (AGU) sofreu alterações por portaria publicada no Diário Oficial da União. O certame ofertará 170 vagas para Advogado da União, com remuneração inicial de R$ 24.967,31, exigindo graduação em Direito. A expectativa é que o edital seja divulgado até 24 de dezembro, devendo adotar o novo Exame Nacional da Advocacia Pública (Enap).
+
+Title:   Câmara de Rio Branco prorroga inscrições de concurso para procurador até a próxima segunda-feira, 26 | NOTíCIAS DA HORA
+URL:     https://noticiasdahora.com.br/politica/camara-de-rio-branco-prorroga-inscricoes-de-concurso-para-procurador-ate-a-proxima-segunda-feira-26/
+Career:   procuradorias
+Group:   camara-rio-branco-ac-procurador
+Reason:  Câmara Municipal de Rio Branco prorrogou até 26 de outubro as inscrições do concurso público para o cargo de Procurador, conforme retificação publicada no Diário Oficial. O certame oferece 1 vaga imediata mais cadastro de reserva. As provas objetivas e prático-discursivas estão agendadas para o dia 22 de novembro de 2026, com taxa de inscrição com pagamento estipulado até 27 de outubro.
+
+Title:   Semana tem 10 editais abertos entre processos seletivos e estágios; confira a lista!
+URL:     https://www.enfoquems.com.br/semana-tem-nove-editais-abertos-entre-processos-seletivos-e-estagios-confira-a-lista/
+Career:   estagio
+Group:   tre-ms-ms-estagio-direito
+Reason:  Tribunal Regional Eleitoral de Mato Grosso do Sul (TRE-MS) está com inscrições abertas até 29 de outubro para processo seletivo de estágio de nível superior em Direito, com formação de cadastro de reserva para atuação na Secretaria do Tribunal em Campo Grande. A bolsa-auxílio é de R$ 1.020,00 acrescida de auxílio-transporte, para jornada de 25 horas semanais. A seleção consiste em prova objetiva on-line no momento da inscrição.
+
+Title:   Matão tem concurso e processo seletivo com salários de até R$ 17,4 mil - Araraquara Agora
+URL:     https://araraquaraagora.com/noticia/52109/concurso-matao-2026-vagas-inscricoes-ibam
+Career:   procuradorias
+Group:   prefeitura-matao-sp-procurador
+Reason:  Edital publicado pela Prefeitura de Matão/SP (Concurso 02/2026), organizado pelo IBAM, oferecendo 1 vaga imediata para Procurador Jurídico, exigindo graduação em Direito e inscrição na OAB. A remuneração inicial é de R$ 9.717,96 para jornada de 30 horas semanais. As inscrições seguem abertas até 18 de novembro de 2026, com taxa de inscrição estipulada no edital. O certame contará com prova objetiva, prova prático-profissional e avaliação de títulos.
+
+Title:   Concurso TRENSURB é retificado e inscrições são adiadas para abril de 2027
+URL:     https://concursossc.com.br/concurso-trensurb-e-retificado-e-inscricoes-sao-adiadas-para-abril-de-2027/
+Career:   tribunais
+Group:   trensurb-rs-advogado
+Reason:  Retificação do concurso público da Empresa de Trens Urbanos de Porto Alegre S.A. (Trensurb/RS), organizado pela Objetiva Concursos, que contempla vaga para Analista Administrativo - Advogado, exigindo nível superior em Direito e registro na OAB. A remuneração inicial chega a R$ 9.414,18 para jornada de até 40 horas semanais. O cronograma foi retificado e as inscrições foram adiadas para o período de 19 de abril de 2027, com provas objetivas em data a ser definida.
+
+Title:   Concurso TRT 8: conheça as etapas de prova!
+URL:     https://blog.grancursosonline.com.br/concurso-trt-8-etapas-de-prova/
+Career:   tribunais
+Group:   trt8-pa-ap-analista-judiciario
+Reason:  Concurso público do Tribunal Regional do Trabalho da 8ª Região (TRT 8), com atuação no Pará e no Amapá, organizado pela Fundação Carlos Chagas (FCC), oferecendo formação de cadastro reserva para Analista Judiciário - Área Judiciária e Oficial de Justiça Avaliador Federal, exigindo graduação em Direito. As remunerações iniciais variam de R$ 9.776,71 a R$ 16.040,88. Inscrições abertas até 5 de novembro de 2026, com provas objetiva e discursiva previstas para 17 de janeiro de 2027.
+
+Title:   Prefeitura de Confins MG abre concurso com 153 vagas | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/prefeitura-de-confins-mg-abre-concurso-com-153-vagas
+Career:   procuradorias
+Group:   prefeitura-confins-mg-advogado
+Reason:  A Prefeitura de Confins/MG publicou edital de processo seletivo contemplando vaga para o cargo de advogado (Desenvolvimento Social), exigindo graduação em Direito e inscrição na OAB. A seleção organizada pelo IBGP Concursos consistirá em avaliação curricular por prova de títulos, com inscrições abertas de 21 de outubro a 5 de novembro de 2026 e taxa de inscrição fixada em R$ 80,00 para o nível superior.
 
