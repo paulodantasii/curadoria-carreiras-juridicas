@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuradorIA de Carreiras Jurídicas</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    <style>
+    :root {
+        --bg: #f0f2f5; --card-bg: #ffffff; --text: #1a1a2e; --text-muted: #666;
+        --header-bg-from: #1a1a2e; --header-bg-to: #16213e; --header-text: #ffffff;
+        --accent: #e94560; --shadow: rgba(0,0,0,0.07);
+        --border: #f0f2f5; --input-bg: #ffffff; --input-border: #d8dde3;
+        --site-tag-bg: #f0f2f5; --site-tag-text: #555; --controls-bg: #fafbfc;
+        --arrow-bg: #ffffff; --arrow-border: #ddd; --indicator: #ccc;
+    }
+    [data-theme="dark"] {
+        --bg: #0f1419; --card-bg: #1a1f2e; --text: #e1e6f0; --text-muted: #8a93a6;
+        --header-bg-from: #0a0e1a; --header-bg-to: #14192a; --header-text: #e1e6f0;
+        --accent: #f25575; --shadow: rgba(0,0,0,0.4);
+        --border: #2a3142; --input-bg: #14192a; --input-border: #2a3142;
+        --site-tag-bg: #2a3142; --site-tag-text: #b3bccf; --controls-bg: #14192a;
+        --arrow-bg: #2a3142; --arrow-border: #2a3142; --indicator: #3a4356;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+            --bg: #0f1419; --card-bg: #1a1f2e; --text: #e1e6f0; --text-muted: #8a93a6;
+            --header-bg-from: #0a0e1a; --header-bg-to: #14192a; --header-text: #e1e6f0;
+            --accent: #f25575; --shadow: rgba(0,0,0,0.4);
+            --border: #2a3142; --input-bg: #14192a; --input-border: #2a3142;
+            --site-tag-bg: #2a3142; --site-tag-text: #b3bccf; --controls-bg: #14192a;
+            --arrow-bg: #2a3142; --arrow-border: #2a3142; --indicator: #3a4356;
+        }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+           background: var(--bg); color: var(--text); min-height: 100vh; transition: background 0.2s, color 0.2s; }
+    header { background: linear-gradient(135deg, var(--header-bg-from) 0%, var(--header-bg-to) 100%);
+             color: var(--header-text); padding: 2rem 1.5rem 1.5rem; text-align: center; position: relative; }
+    header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }
+    header p { font-size: 0.85rem; opacity: 0.75; }
+    header .meta { font-size: 0.72rem; opacity: 0.55; margin-top: 0.4rem; }
+    .badge { display: inline-block; background: var(--accent); color: white; font-size: 0.8rem; font-weight: 600;
+             padding: 0.3rem 0.8rem; border-radius: 20px; margin-top: 0.8rem; }
+    .theme-toggle { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.12);
+                    border: 1px solid rgba(255,255,255,0.2); color: var(--header-text); width: 36px; height: 36px;
+                    border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center;
+                    justify-content: center; transition: background 0.2s; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.2); }
+    .container { max-width: 680px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .search-bar { margin-bottom: 1rem; position: relative; }
+    .search-bar input { width: 100%; padding: 0.6rem 0.9rem 0.6rem 2.2rem; border-radius: 10px;
+                        border: 1px solid var(--input-border); background: var(--input-bg); color: var(--text);
+                        font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+    .search-bar input:focus { border-color: var(--accent); }
+    .search-bar::before { content: '🔎'; position: absolute; left: 0.7rem; top: 50%;
+                          transform: translateY(-50%); font-size: 0.9rem; opacity: 0.6; pointer-events: none; }
+    .filter-info { font-size: 0.78rem; color: var(--text-muted); margin: 0.5rem 0 1rem; min-height: 1em; }
+    .group-card { background: var(--card-bg); border-radius: 12px; margin-bottom: 1rem;
+                  box-shadow: 0 2px 8px var(--shadow); border-left: 4px solid var(--accent);
+                  overflow: hidden; position: relative; transition: background 0.2s; }
+    .group-card.highlight { border-left-width: 6px; }
+    .sources-badge { position: absolute; top: 0.8rem; right: 0.8rem; background: var(--header-bg-from);
+                     color: white; font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.55rem;
+                     border-radius: 12px; z-index: 2; }
+    .carousel { position: relative; overflow: hidden; }
+    .slides { display: flex; transition: transform 0.35s ease; }
+    .slide { min-width: 100%; padding: 1.2rem 1.3rem 0.5rem; }
+    .status-tag { display: inline-block; color: white; font-size: 0.7rem; font-weight: 600;
+                  padding: 0.2rem 0.55rem; border-radius: 6px; margin-bottom: 0.5rem; }
+    .site-tag { display: inline-block; background: var(--site-tag-bg); color: var(--site-tag-text);
+                font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 6px;
+                margin-bottom: 0.5rem; margin-left: 0.4rem; }
+    .slide h2 { font-size: 1rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.5rem; color: var(--text); }
+    .slide h2 a { color: inherit; text-decoration: none; }
+    .slide h2 a:hover { color: var(--accent); }
+    .reason { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.9rem; }
+    .btn { display: inline-block; background: var(--header-bg-from); color: white; font-size: 0.82rem;
+           font-weight: 600; padding: 0.45rem 1rem; border-radius: 8px; text-decoration: none;
+           transition: background 0.2s; }
+    .btn:hover { background: var(--accent); }
+    .controls { display: flex; justify-content: space-between; align-items: center;
+                padding: 0.6rem 1rem 1rem; border-top: 1px solid var(--border); background: var(--controls-bg); }
+    .arrow { background: var(--arrow-bg); border: 1px solid var(--arrow-border); color: var(--text);
+             width: 32px; height: 32px; border-radius: 50%; font-size: 1rem; cursor: pointer;
+             display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .arrow:disabled { opacity: 0.3; cursor: default; }
+    .arrow:not(:disabled):hover { background: var(--header-bg-from); color: white; }
+    .indicators { display: flex; gap: 0.4rem; }
+    .indicator { width: 8px; height: 8px; border-radius: 50%; background: var(--indicator); }
+    .indicator.active { background: var(--accent); }
+    .empty { text-align: center; color: var(--text-muted); padding: 3rem 1rem; font-size: 0.95rem; }
+    .archive-banner { background: var(--accent); color: white; padding: 0.8rem 1rem; border-radius: 8px;
+                      margin-bottom: 1rem; font-size: 0.9rem; display: flex; align-items: center;
+                      flex-wrap: wrap; gap: 0.5rem; }
+    .archive-banner a { color: white; text-decoration: underline; font-weight: 600; }
+    .history-section { background: var(--card-bg); border-radius: 12px; padding: 1rem 1.2rem;
+                       margin-top: 2rem; box-shadow: 0 2px 8px var(--shadow); }
+    .history-section summary { cursor: pointer; font-weight: 600; color: var(--text);
+                               font-size: 0.9rem; padding: 0.2rem 0; }
+    .history-section summary:hover { color: var(--accent); }
+    .history-list { list-style: none; padding: 0; margin: 1rem 0 0; max-height: 400px; overflow-y: auto; }
+    .history-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+    .history-list li:last-child { border-bottom: none; }
+    .history-list li.current { color: var(--accent); font-weight: 600; }
+    .history-list a { color: var(--text-muted); text-decoration: none; display: block; }
+    .history-list a:hover { color: var(--accent); }
+    footer { text-align: center; padding: 1.5rem; font-size: 0.78rem; color: var(--text-muted); }
+</style>
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
+        <h1>CuradorIA de Carreiras Jurídicas</h1>
+        <p>Foram analisados 173 artigos na última verificação.</p>
+        <div class="badge">Encontrados 38 artigos relevantes sobre 27 certames.</div>
+        <p class="meta">Última verificação: 24/10/2026 às 05h35 · Tempo de execução: 4min 10s</p>
+    </header>
+    <div class="container">
+        
+        <div class="archive-banner">
+            Você está vendo a edição de<strong>24/10/2026 às 05h35</strong>·
+            <a href="../report.html">Ver versão mais recente</a>
+        </div>
+    
+        
+        <div class="search-bar">
+            <input id="search" type="search" placeholder="Buscar por órgão, cargo, carreira..." aria-label="Buscar">
+        </div>
+        <div class="filter-info" id="filter-info"></div>
+    
+        
+        <div class="group-card highlight" data-search="prefeitura de jaraguá do sul - sc abre processos seletivos com salários de até r$ 15.606,92 processo seletivo publicado pela prefeitura de jaraguá do sul/sc traz vaga para advogado do creas/suas, exigindo graduação em direito e inscrição na oab. a remuneração chega a r$ 15.606,92 para carga horária de até 40 horas semanais. as inscrições ocorrem entre 23 de outubro e 12 de novembro de 2026 pelo site do instituto tupy, com aplicação da prova objetiva prevista para o dia 29 de novembro de 2026. prefeitura-jaragua-do-sul-sc-advogado procuradorias pciconcursos.com.br prefeitura de jaraguá do sul: vagas com salários de até r$ 15.605,92 processo seletivo simplificado aberto na prefeitura de jaraguá do sul/sc (edital nº 001/2026/semad) com 1 vaga para advogado do creas/suas. o cargo exige graduação em direito e registro na oab, oferecendo vencimento de r$ 5.856,24 para jornada de 40 horas semanais. inscrições abertas até 12 de novembro de 2026 no site da banca instituto tupy, com taxa de r$ 90,00 e provas objetivas previstas para 29 de novembro de 2026. prefeitura-jaragua-do-sul-sc-advogado administrativo diariodamidia.com.br prefeitura de jaraguá do sul (sc) abre processos seletivos com salários de até r$ 15,6 mil publicado processo seletivo temporário na prefeitura de jaraguá do sul/sc sob o regime reda, ofertando 1 vaga imediata para o cargo de advogado do creas/suas vinculado à secretaria de administração. o vencimento ofertado é de r$ 5.856,24 para carga horária de 40 horas semanais. período de inscrições segue aberto até 12/11/2026 pelo portal da banca instituto tupy, mediante taxa de r$ 90,00, com aplicação de provas objetivas agendadas para 29/11/2026. prefeitura-jaragua-do-sul-sc-advogado administrativo concursossc.com.br">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-jaragua-do-sul-sc-abre-processos-seletivos-com-salarios-de-ate-15606" target="_blank" rel="noopener noreferrer">Prefeitura de Jaraguá do Sul - SC abre processos seletivos com salários de até R$ 15.606,92</a></h2>
+                <p class="reason">Processo seletivo publicado pela Prefeitura de Jaraguá do Sul/SC traz vaga para Advogado do CREAS/SUAS, exigindo graduação em Direito e inscrição na OAB. A remuneração chega a R$ 15.606,92 para carga horária de até 40 horas semanais. As inscrições ocorrem entre 23 de outubro e 12 de novembro de 2026 pelo site do Instituto Tupy, com aplicação da prova objetiva prevista para o dia 29 de novembro de 2026.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-jaragua-do-sul-sc-abre-processos-seletivos-com-salarios-de-ate-15606" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">DIARIODAMIDIA.COM.BR</span>
+                <h2><a href="https://diariodamidia.com.br/prefeitura-de-jaragua-do-sul-vagas-com-salarios-de-ate-r-1560592" target="_blank" rel="noopener noreferrer">Prefeitura de Jaraguá do Sul: vagas com salários de até R$ 15.605,92</a></h2>
+                <p class="reason">Processo seletivo simplificado aberto na Prefeitura de Jaraguá do Sul/SC (Edital nº 001/2026/SEMAD) com 1 vaga para Advogado do CREAS/SUAS. O cargo exige graduação em Direito e registro na OAB, oferecendo vencimento de R$ 5.856,24 para jornada de 40 horas semanais. Inscrições abertas até 12 de novembro de 2026 no site da banca Instituto Tupy, com taxa de R$ 90,00 e provas objetivas previstas para 29 de novembro de 2026.</p>
+                <a href="https://diariodamidia.com.br/prefeitura-de-jaragua-do-sul-vagas-com-salarios-de-ate-r-1560592" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">CONCURSOSSC.COM.BR</span>
+                <h2><a href="https://concursossc.com.br/prefeitura-de-jaragua-do-sul-sc-abre-processos-seletivos-com-salarios-de-ate-r-156-mil/" target="_blank" rel="noopener noreferrer">Prefeitura de Jaraguá do Sul (SC) abre processos seletivos com salários de até R$ 15,6 mil</a></h2>
+                <p class="reason">Publicado processo seletivo temporário na Prefeitura de Jaraguá do Sul/SC sob o regime REDA, ofertando 1 vaga imediata para o cargo de Advogado do CREAS/SUAS vinculado à Secretaria de Administração. O vencimento ofertado é de R$ 5.856,24 para carga horária de 40 horas semanais. Período de inscrições segue aberto até 12/11/2026 pelo portal da banca Instituto Tupy, mediante taxa de R$ 90,00, com aplicação de provas objetivas agendadas para 29/11/2026.</p>
+                <a href="https://concursossc.com.br/prefeitura-de-jaragua-do-sul-sc-abre-processos-seletivos-com-salarios-de-ate-r-156-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="concurso do trt-rs abre inscrições na segunda-feira com salários de até r$ 16 mil edital publicado pelo tribunal regional do trabalho da 4ª região (trt-rs) para formação de cadastro de reserva em cargos de técnico e analista judiciário, com remunerações iniciais de até r$ 16.040,88. inscrições de 26 de outubro a 25 de novembro de 2026 no site da fcc. as provas objetivas e discursivas estão aplicadas para o dia 31 de janeiro de 2027 em porto alegre/rs. trt4-rs-analista-e-tecnico tribunais poa24horas.com.br trt4 abre concurso para analistas e técnicos com salários de até r$ 16 mil no rs | jornal noroeste o tribunal regional do trabalho da 4ª região (rs) publicou edital para formação de cadastro reserva em cargos de nível superior. entre as especialidades estão analista judiciário na área judiciária e oficial de justiça avaliador federal, com remuneração inicial de r$ 16.040,88. as inscrições ocorrem de 26 de outubro a 25 de novembro no site da banca fundação carlos chagas, com taxa de r$ 110. as provas objetivas e discursivas estão agendadas para 31 de janeiro de 2027. trt4-rs-analista-e-tecnico tribunais jornalnoroeste.com.br concurso trt-4 rs tem edital publicado com salários de até r$ 16 mil; veja cargos e inscrições edital publicado pelo trt-4 (rs) com vagas em cadastro de reserva para analista judiciário e técnico judiciário, com remunerações iniciais de r$ 16.040,88 e r$ 9.776,71, respectivamente. a organização é da banca fcc, com inscrições de 26/10 a 25/11/2026 e provas objetivas e discursivas aplicadas na data prevista de 31/01/2027 em porto alegre. trt4-rs-analista-e-tecnico tribunais auxilioconcursos.com.br">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">POA24HORAS.COM.BR</span>
+                <h2><a href="https://poa24horas.com.br/noticias/2026/10/concurso-do-trt-rs-abre-inscricoes-na-segunda-feira-com-salarios-de-ate-r-16-mil/" target="_blank" rel="noopener noreferrer">Concurso do TRT-RS abre inscrições na segunda-feira com salários de até R$ 16 mil</a></h2>
+                <p class="reason">Edital publicado pelo Tribunal Regional do Trabalho da 4ª Região (TRT-RS) para formação de cadastro de reserva em cargos de Técnico e Analista Judiciário, com remunerações iniciais de até R$ 16.040,88. Inscrições de 26 de outubro a 25 de novembro de 2026 no site da FCC. As provas objetivas e discursivas estão aplicadas para o dia 31 de janeiro de 2027 em Porto Alegre/RS.</p>
+                <a href="https://poa24horas.com.br/noticias/2026/10/concurso-do-trt-rs-abre-inscricoes-na-segunda-feira-com-salarios-de-ate-r-16-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">JORNALNOROESTE.COM.BR</span>
+                <h2><a href="https://jornalnoroeste.com.br/noticia/geral/trt4-abre-concurso-para-analistas-e-tecnicos-com-salarios-de-ate-r-16-mil-no-rs" target="_blank" rel="noopener noreferrer">TRT4 abre concurso para analistas e técnicos com salários de até R$ 16 mil no RS | Jornal Noroeste</a></h2>
+                <p class="reason">O Tribunal Regional do Trabalho da 4ª Região (RS) publicou edital para formação de cadastro reserva em cargos de nível superior. Entre as especialidades estão Analista Judiciário na Área Judiciária e Oficial de Justiça Avaliador Federal, com remuneração inicial de R$ 16.040,88. As inscrições ocorrem de 26 de outubro a 25 de novembro no site da banca Fundação Carlos Chagas, com taxa de R$ 110. As provas objetivas e discursivas estão agendadas para 31 de janeiro de 2027.</p>
+                <a href="https://jornalnoroeste.com.br/noticia/geral/trt4-abre-concurso-para-analistas-e-tecnicos-com-salarios-de-ate-r-16-mil-no-rs" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">AUXILIOCONCURSOS.COM.BR</span>
+                <h2><a href="https://auxilioconcursos.com.br/concurso-trt-4-rs-tem-edital-publicado-com-salarios-de-ate-r-16-mil-veja-cargos-e-inscricoes/" target="_blank" rel="noopener noreferrer">Concurso TRT-4 RS tem edital publicado com salários de até R$ 16 mil; veja cargos e inscrições</a></h2>
+                <p class="reason">Edital publicado pelo TRT-4 (RS) com vagas em cadastro de reserva para Analista Judiciário e Técnico Judiciário, com remunerações iniciais de R$ 16.040,88 e R$ 9.776,71, respectivamente. A organização é da banca FCC, com inscrições de 26/10 a 25/11/2026 e provas objetivas e discursivas aplicadas na data prevista de 31/01/2027 em Porto Alegre.</p>
+                <a href="https://auxilioconcursos.com.br/concurso-trt-4-rs-tem-edital-publicado-com-salarios-de-ate-r-16-mil-veja-cargos-e-inscricoes/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="concurso mp rj promotor: conselho aprova regulamento do edital | folha dirigida o conselho superior do ministério público do rio de janeiro aprovou o regulamento do 40º concurso para o cargo de promotor de justiça substituto. o órgão registra 66 cargos vagos na carreira, sendo 28 na classe inicial, embora o quantitativo exato de vagas do edital ainda não tenha sido fixado. o subsídio de referência da última seleção é de r$ 37.765,53. a publicação do edital é aguardada para os próximos meses. mprj-rj-promotor mp folha.qconcursos.com concurso mp rj promotor: regulamento do xl edital é publicado publicado o regulamento do xl concurso para ingresso na carreira de promotor de justiça substituto do ministério público do estado do rio de janeiro, aprovado pela deliberação csmp nº 87. o documento oficializa as diretrizes da seleção para provimento de cargos vagos e futuros, com validade de dois anos prorrogável por igual período. o subsídio inicial de referência é de r$ 37.765,53 e a banca organizadora permanece em fase de definição. mprj-rj-promotor mp blog.grancursosonline.com.br concurso mp rj: publicado regulamento para nova seleção de promotor publicado o regulamento do novo concurso do mp rj para o cargo de promotor de justiça substituto, confirmando 66 vagas em aberto, sendo 28 na classe inicial. a remuneração inicial é de r$ 37.765,53, exigindo-se bacharelado em direito e pelo menos três anos de atividade jurídica. o certame contará com sete etapas, com banca organizadora e data do edital a serem divulgadas. mprj-rj-promotor mp jcconcursos.com.br">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B22222;">Ministério Público</span><span class="site-tag">FOLHA.QCONCURSOS.COM</span>
+                <h2><a href="https://folha.qconcursos.com/n/concurso-mp-rj-promotor-regulamento-aprovado-2026" target="_blank" rel="noopener noreferrer">Concurso MP RJ promotor: Conselho aprova regulamento do edital</a></h2>
+                <p class="reason">O Conselho Superior do Ministério Público do Rio de Janeiro aprovou o regulamento do 40º concurso para o cargo de Promotor de Justiça Substituto. O órgão registra 66 cargos vagos na carreira, sendo 28 na classe inicial, embora o quantitativo exato de vagas do edital ainda não tenha sido fixado. O subsídio de referência da última seleção é de R$ 37.765,53. A publicação do edital é aguardada para os próximos meses.</p>
+                <a href="https://folha.qconcursos.com/n/concurso-mp-rj-promotor-regulamento-aprovado-2026" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#B22222;">Ministério Público</span><span class="site-tag">BLOG.GRANCURSOSONLINE.COM.BR</span>
+                <h2><a href="https://blog.grancursosonline.com.br/concurso-mp-rj-promotor-regulamento-publicado-2026/amp/" target="_blank" rel="noopener noreferrer">Concurso MP RJ Promotor: regulamento do XL edital é publicado</a></h2>
+                <p class="reason">Publicado o regulamento do XL Concurso para ingresso na carreira de Promotor de Justiça Substituto do Ministério Público do Estado do Rio de Janeiro, aprovado pela Deliberação CSMP nº 87. O documento oficializa as diretrizes da seleção para provimento de cargos vagos e futuros, com validade de dois anos prorrogável por igual período. O subsídio inicial de referência é de R$ 37.765,53 e a banca organizadora permanece em fase de definição.</p>
+                <a href="https://blog.grancursosonline.com.br/concurso-mp-rj-promotor-regulamento-publicado-2026/amp/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#B22222;">Ministério Público</span><span class="site-tag">JCCONCURSOS.COM.BR</span>
+                <h2><a href="https://jcconcursos.com.br/noticia/concursos/concurso-mp-rj-publicado-regulamento-para-nova-selecao-de-promotor-146195" target="_blank" rel="noopener noreferrer">Concurso MP RJ: publicado regulamento para nova seleção de promotor</a></h2>
+                <p class="reason">Publicado o regulamento do novo concurso do MP RJ para o cargo de Promotor de Justiça Substituto, confirmando 66 vagas em aberto, sendo 28 na classe inicial. A remuneração inicial é de R$ 37.765,53, exigindo-se bacharelado em Direito e pelo menos três anos de atividade jurídica. O certame contará com sete etapas, com banca organizadora e data do edital a serem divulgadas.</p>
+                <a href="https://jcconcursos.com.br/noticia/concursos/concurso-mp-rj-publicado-regulamento-para-nova-selecao-de-promotor-146195" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="câmara de dom inocêncio-pi: edital é lançado para 6 cargos de até r$ 6 mil edital lançado pela câmara municipal de dom inocêncio-pi com 1 vaga imediata para procurador legislativo, cargo que exige graduação em direito e registro na oab. a remuneração inicial é de r$ 6.000,00 para carga horária de 20 horas semanais. as inscrições seguem abertas até 13 de novembro de 2026, com taxa de r$ 130,00. as provas objetivas estão agendadas para o dia 13 de dezembro de 2026. camara-dom-inocencio-pi-procurador-legislativo procuradorias acheconcursos.com.br câmara de dom inocêncio-pi: edital é lançado para 6 cargos de até r$ 6 mil lançado edital de concurso público na câmara de dom inocêncio/pi com 1 vaga imediata para procurador legislativo, cargo que exige diploma de bacharel em direito e inscrição ativa na oab. a remuneração inicial é de r$ 6.000,00 para jornada de 20 horas semanais. inscrições abertas até 13 de novembro de 2026 pelo site da banca gabriel excelência, com prova objetiva marcada para 13 de dezembro. camara-dom-inocencio-pi-procurador-legislativo procuradorias acheconcursos.com.br">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-piaui/camara-de-dom-inocencio-pi-edital-6-cargos-de-ate-6-mil-94158" target="_blank" rel="noopener noreferrer">Câmara de Dom Inocêncio-PI: Edital é lançado para 6 cargos de até R$ 6 mil</a></h2>
+                <p class="reason">Edital lançado pela Câmara Municipal de Dom Inocêncio-PI com 1 vaga imediata para Procurador Legislativo, cargo que exige graduação em Direito e registro na OAB. A remuneração inicial é de R$ 6.000,00 para carga horária de 20 horas semanais. As inscrições seguem abertas até 13 de novembro de 2026, com taxa de R$ 130,00. As provas objetivas estão agendadas para o dia 13 de dezembro de 2026.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-piaui/camara-de-dom-inocencio-pi-edital-6-cargos-de-ate-6-mil-94158" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-piaui/camara-de-dom-inocencio-pi-edital-6-cargos-de-ate-6-mil-94158.amp" target="_blank" rel="noopener noreferrer">Câmara de Dom Inocêncio-PI: Edital é lançado para 6 cargos de até R$ 6 mil</a></h2>
+                <p class="reason">Lançado edital de concurso público na Câmara de Dom Inocêncio/PI com 1 vaga imediata para Procurador Legislativo, cargo que exige diploma de bacharel em Direito e inscrição ativa na OAB. A remuneração inicial é de R$ 6.000,00 para jornada de 20 horas semanais. Inscrições abertas até 13 de novembro de 2026 pelo site da banca Gabriel Excelência, com prova objetiva marcada para 13 de dezembro.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-piaui/camara-de-dom-inocencio-pi-edital-6-cargos-de-ate-6-mil-94158.amp" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="concurso tjm-rs: tribunal forma comissão para edital de juiz o tribunal de justiça militar do rio grande do sul (tjm-rs) formalizou comissão de estudos preliminares, por meio da portaria nº 177/2026, para viabilizar novo concurso público para o cargo de juiz de direito substituto. o grupo tem prazo de 30 dias para levantar custos, vagas e necessidades de pessoal, preparando o terreno para a contratação da banca e posterior publicação do edital prevista para o decorrer de 2027. tjm-rs-juiz tribunais acheconcursos.com.br concurso tjm rs juiz: tribunal cria comissão para estudar novo edital - blog magistrar educacional o tribunal de justiça militar do rio grande do sul (tjm rs) instituiu comissão organizadora, por meio da portaria nº 177/2026, para realizar estudos técnicos com vistas a um novo concurso para juiz de direito substituto. a remuneração inicial registrada no portal da transparência é de r$ 30.505,36 e o relatório com o levantamento de cargos vagos deve ser apresentado em até 30 dias. tjm-rs-juiz tribunais magistrarcursos.com.br">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/noticias/concurso-tjm-rs-tribunal-forma-comissao-para-edital-de-juiz-94172" target="_blank" rel="noopener noreferrer">Concurso TJM-RS: tribunal forma comissão para edital de Juiz</a></h2>
+                <p class="reason">O Tribunal de Justiça Militar do Rio Grande do Sul (TJM-RS) formalizou comissão de estudos preliminares, por meio da Portaria nº 177/2026, para viabilizar novo concurso público para o cargo de Juiz de Direito Substituto. O grupo tem prazo de 30 dias para levantar custos, vagas e necessidades de pessoal, preparando o terreno para a contratação da banca e posterior publicação do edital prevista para o decorrer de 2027.</p>
+                <a href="https://www.acheconcursos.com.br/noticias/concurso-tjm-rs-tribunal-forma-comissao-para-edital-de-juiz-94172" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">MAGISTRARCURSOS.COM.BR</span>
+                <h2><a href="https://magistrarcursos.com.br/blog/concurso-tjm-rs-juiz-tribunal-cria-comissao-para-estudar-novo-edital/" target="_blank" rel="noopener noreferrer">Concurso TJM RS Juiz: tribunal cria comissão para estudar novo edital - Blog Magistrar Educacional</a></h2>
+                <p class="reason">O Tribunal de Justiça Militar do Rio Grande do Sul (TJM RS) instituiu comissão organizadora, por meio da Portaria nº 177/2026, para realizar estudos técnicos com vistas a um novo concurso para Juiz de Direito Substituto. A remuneração inicial registrada no portal da transparência é de R$ 30.505,36 e o relatório com o levantamento de cargos vagos deve ser apresentado em até 30 dias.</p>
+                <a href="https://magistrarcursos.com.br/blog/concurso-tjm-rs-juiz-tribunal-cria-comissao-para-estudar-novo-edital/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="cref16 - rn abre concurso público para profissionais de nível superior edital publicado pelo cref16/rn com 1 vaga imediata e cadastro de reserva para o cargo de advogado. a remuneração inicial varia de r$ 2.084,78 a r$ 4.169,55 para jornadas de até 40 horas semanais. inscrições abertas de 30 de outubro a 15 de novembro de 2026 pelo site da comperve. provas objetivas e discursivas agendadas para 13 de dezembro de 2026. cref16-rn-advogado procuradorias pciconcursos.com.br conselho regional de educação física da 16ª região abre concurso com 3 vagas | folha dirigida edital publicado pelo conselho regional de educação física da 16ª região (cref16/rn) com 1 vaga imediata para advogado. o certame oferece remuneração de até r$ 4.169,55 para jornadas de 20 a 40 horas semanais. as inscrições ocorrem de 30 de outubro a 15 de novembro de 2026, sob organização da comperve/ufrn. a prova objetiva está agendada para o dia 13 de dezembro de 2026. cref16-rn-advogado procuradorias folha.qconcursos.com">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/cref16-rn-abre-concurso-publico-para-profissionais-de-nivel-superior" target="_blank" rel="noopener noreferrer">CREF16 - RN abre concurso público para profissionais de nível superior</a></h2>
+                <p class="reason">Edital publicado pelo CREF16/RN com 1 vaga imediata e cadastro de reserva para o cargo de Advogado. A remuneração inicial varia de R$ 2.084,78 a R$ 4.169,55 para jornadas de até 40 horas semanais. Inscrições abertas de 30 de outubro a 15 de novembro de 2026 pelo site da Comperve. Provas objetivas e discursivas agendadas para 13 de dezembro de 2026.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/cref16-rn-abre-concurso-publico-para-profissionais-de-nivel-superior" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">FOLHA.QCONCURSOS.COM</span>
+                <h2><a href="https://folha.qconcursos.com/n/conselho-regional-de-educacao-fisica-da-16-regiao-abre-concurso-com-3-vagas" target="_blank" rel="noopener noreferrer">Conselho Regional de Educação Física da 16ª Região abre concurso com 3 vagas</a></h2>
+                <p class="reason">Edital publicado pelo Conselho Regional de Educação Física da 16ª Região (CREF16/RN) com 1 vaga imediata para Advogado. O certame oferece remuneração de até R$ 4.169,55 para jornadas de 20 a 40 horas semanais. As inscrições ocorrem de 30 de outubro a 15 de novembro de 2026, sob organização da Comperve/UFRN. A prova objetiva está agendada para o dia 13 de dezembro de 2026.</p>
+                <a href="https://folha.qconcursos.com/n/conselho-regional-de-educacao-fisica-da-16-regiao-abre-concurso-com-3-vagas" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="pge pr lança estágio para pós-graduandos em direito com bolsa de r$ 3,1 mil processo seletivo para formação de cadastro de reserva em estágio de pós-graduação em direito na procuradoria-geral do estado do paraná (pge-pr). bolsa-auxílio de r$ 3.198,21 mensais para 30 horas semanais. inscrições gratuitas abertas até 3 de novembro de 2026 e prova em 5 de novembro. pge-pr-estagio estagio concursosnobrasil.com pge-pr: estágio com bolsa de r$ 3.198,21 para pós-graduandos processo seletivo lançado pela pge pr para formação de cadastro de reserva em estágio de pós-graduação em direito para a procuradoria consultiva de obras e serviços de engenharia e procuradoria de saúde. a bolsa-auxílio é de r$ 3.198,21 para jornada de 30 horas semanais. inscrições abertas até 3 de novembro de 2026, com prova objetiva e discursiva agendada para 5 de novembro de 2026. pge-pr-estagio estagio diariodamidia.com.br">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">CONCURSOSNOBRASIL.COM</span>
+                <h2><a href="https://concursosnobrasil.com/concursos/pr/2026/10/23/pge-pr-lanca-estagio-para-pos-graduandos-em-direito-com-bolsa-de-r-31-mil/" target="_blank" rel="noopener noreferrer">PGE PR lança estágio para pós-graduandos em Direito com bolsa de R$ 3,1 mil</a></h2>
+                <p class="reason">Processo seletivo para formação de cadastro de reserva em estágio de pós-graduação em Direito na Procuradoria-Geral do Estado do Paraná (PGE-PR). Bolsa-auxílio de R$ 3.198,21 mensais para 30 horas semanais. Inscrições gratuitas abertas até 3 de novembro de 2026 e prova em 5 de novembro.</p>
+                <a href="https://concursosnobrasil.com/concursos/pr/2026/10/23/pge-pr-lanca-estagio-para-pos-graduandos-em-direito-com-bolsa-de-r-31-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">DIARIODAMIDIA.COM.BR</span>
+                <h2><a href="https://diariodamidia.com.br/pge-pr-estagio-com-bolsa-de-r-319821-para-pos-graduandos" target="_blank" rel="noopener noreferrer">PGE-PR: estágio com bolsa de R$ 3.198,21 para pós-graduandos</a></h2>
+                <p class="reason">Processo seletivo lançado pela PGE PR para formação de cadastro de reserva em estágio de pós-graduação em Direito para a Procuradoria Consultiva de Obras e Serviços de Engenharia e Procuradoria de Saúde. A bolsa-auxílio é de R$ 3.198,21 para jornada de 30 horas semanais. Inscrições abertas até 3 de novembro de 2026, com prova objetiva e discursiva agendada para 5 de novembro de 2026.</p>
+                <a href="https://diariodamidia.com.br/pge-pr-estagio-com-bolsa-de-r-319821-para-pos-graduandos" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="concurso do trt para cadastro reserva tem salários de até r$ 16 mil; inscrições estão abertas edital aberto para o concurso do trt 8, abrangendo pará e amapá, com formação de cadastro de reserva para cargos de níveis superior e técnico. a remuneração inicial chega a r$ 16.040,88 para analista judiciário. inscrições até 5 de novembro de 2026 pelo site da fcc, com taxas de r$ 90 e r$ 110. provas objetivas e discursivas aplicadas em 17 de janeiro de 2027. trt8-para-amapa-analista-e-tecnico tribunais bemparana.com.br concursos no país pagam até r$ 39,7 mil; cgu, tribunais e assembleia legislativa têm inscrições abertas - diário digital mt o tribunal regional do trabalho da 8ª região (pa/ap) abriu seleção para formação de cadastro de reserva em cargos de analista judiciário e técnico judiciário, com remunerações iniciais de até r$ 16.040,88, incluindo oportunidades específicas para a área de direito. inscrições abertas até 05/11 no site da fcc. provas objetivas agendadas para 17/01/2027. trt8-para-amapa-analista-e-tecnico tribunais diariodigitalmt.com.br">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">BEMPARANA.COM.BR</span>
+                <h2><a href="https://www.bemparana.com.br/noticias/economia/concurso-trt/" target="_blank" rel="noopener noreferrer">Concurso do TRT para cadastro reserva tem salários de até R$ 16 mil; inscrições estão abertas</a></h2>
+                <p class="reason">Edital aberto para o concurso do TRT 8, abrangendo Pará e Amapá, com formação de cadastro de reserva para cargos de níveis superior e técnico. A remuneração inicial chega a R$ 16.040,88 para Analista Judiciário. Inscrições até 5 de novembro de 2026 pelo site da FCC, com taxas de R$ 90 e R$ 110. Provas objetivas e discursivas aplicadas em 17 de janeiro de 2027.</p>
+                <a href="https://www.bemparana.com.br/noticias/economia/concurso-trt/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">DIARIODIGITALMT.COM.BR</span>
+                <h2><a href="https://diariodigitalmt.com.br/concursos-no-pais-pagam-ate-r-397-mil-cgu-tribunais-e-assembleia-legislativa-tem-inscricoes-abertas/" target="_blank" rel="noopener noreferrer">Concursos no país pagam até R$ 39,7 mil; CGU, tribunais e assembleia legislativa têm inscrições abertas - DIÁRIO DIGITAL MT</a></h2>
+                <p class="reason">O Tribunal Regional do Trabalho da 8ª Região (PA/AP) abriu seleção para formação de cadastro de reserva em cargos de Analista Judiciário e Técnico Judiciário, com remunerações iniciais de até R$ 16.040,88, incluindo oportunidades específicas para a área de Direito. Inscrições abertas até 05/11 no site da FCC. Provas objetivas agendadas para 17/01/2027.</p>
+                <a href="https://diariodigitalmt.com.br/concursos-no-pais-pagam-ate-r-397-mil-cgu-tribunais-e-assembleia-legislativa-tem-inscricoes-abertas/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de monteiro lobato - sp abre concurso público com vagas imediatas e cadastro de reserva edital publicado pela prefeitura de monteiro lobato/sp com 1 vaga imediata para procurador jurídico, exigindo graduação em direito. o certame oferece remuneração inicial de até r$ 7.408,75 sob o regime clt. inscrições abertas de 23/10 a 23/11/2026 pelo site do instituto aplicativa, com provas objetiva e dissertativa previstas para 13/12/2026. prefeitura-monteiro-lobato-sp-procurador-juridico procuradorias pciconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-monteiro-lobato-sp-abre-concurso-publico-com-vagas-imediatas-e-cadastro-de-reserva" target="_blank" rel="noopener noreferrer">Prefeitura de Monteiro Lobato - SP abre concurso público com vagas imediatas e cadastro de reserva</a></h2>
+                <p class="reason">Edital publicado pela Prefeitura de Monteiro Lobato/SP com 1 vaga imediata para Procurador Jurídico, exigindo graduação em Direito. O certame oferece remuneração inicial de até R$ 7.408,75 sob o regime CLT. Inscrições abertas de 23/10 a 23/11/2026 pelo site do Instituto Aplicativa, com provas objetiva e dissertativa previstas para 13/12/2026.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-monteiro-lobato-sp-abre-concurso-publico-com-vagas-imediatas-e-cadastro-de-reserva" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso cref-rn 2026: edital publicado! 183 vagas de nível superior publicado edital pelo conselho regional de educação física da 16ª região (cref-rn) ofertando 1 vaga imediata e 60 em cadastro reserva para o cargo de advogado, exigindo nível superior em direito e inscrição na oab. a remuneração inicial é de r$ 2.559,69 para 20 horas semanais, acrescida de auxílio-alimentação de r$ 59,09 diários, transporte e saúde. inscrições de 30 de outubro a 15 de novembro de 2026, com provas em 13 de dezembro. crefrn-rn-advogado procuradorias acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-rio-grande-do-norte/concurso-cref-rn-2026-edital-183-vagas-nivel-superior-94156" target="_blank" rel="noopener noreferrer">Concurso CREF-RN 2026: Edital publicado! 183 vagas de nível superior</a></h2>
+                <p class="reason">Publicado edital pelo Conselho Regional de Educação Física da 16ª Região (CREF-RN) ofertando 1 vaga imediata e 60 em cadastro reserva para o cargo de Advogado, exigindo nível superior em Direito e inscrição na OAB. A remuneração inicial é de R$ 2.559,69 para 20 horas semanais, acrescida de auxílio-alimentação de R$ 59,09 diários, transporte e saúde. Inscrições de 30 de outubro a 15 de novembro de 2026, com provas em 13 de dezembro.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-rio-grande-do-norte/concurso-cref-rn-2026-edital-183-vagas-nivel-superior-94156" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de bom retiro - rs abre concurso público com salários de até r$ 20.138,46 edital de concurso público lançado pela prefeitura de bom retiro/rs contempla vaga imediata e formação de cadastro de reserva para procurador municipal, cargo exclusivo para bacharéis em direito com inscrição na oab. os vencimentos chegam até r$ 20.138,46, acrescidos de vale-alimentação e adicionais legais. as inscrições seguem abertas até 23 de novembro de 2026 pelo site da banca sc treinamentos, com provas agendadas para dezembro. prefeitura-bom-retiro-rs-procurador procuradorias pciconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-bom-retiro-rs-abre-concurso-publico-com-salarios-de-ate-20138" target="_blank" rel="noopener noreferrer">Prefeitura de Bom Retiro - RS abre concurso público com salários de até R$ 20.138,46</a></h2>
+                <p class="reason">Edital de concurso público lançado pela Prefeitura de Bom Retiro/RS contempla vaga imediata e formação de cadastro de reserva para Procurador Municipal, cargo exclusivo para bacharéis em Direito com inscrição na OAB. Os vencimentos chegam até R$ 20.138,46, acrescidos de vale-alimentação e adicionais legais. As inscrições seguem abertas até 23 de novembro de 2026 pelo site da banca SC Treinamentos, com provas agendadas para dezembro.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-bom-retiro-rs-abre-concurso-publico-com-salarios-de-ate-20138" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de ijuí - rs abre concurso público com salários de até r$ 21.312,22 a prefeitura de ijuí/rs publicou edital de concurso público ofertando vagas para os cargos de advogado (1) e procurador (2), ambos exigindo nível superior em direito e registro na oab. os salários chegam a r$ 21.312,22, com benefícios como auxílio-alimentação. as inscrições devem ser realizadas de 23 de outubro a 19 de novembro de 2026 no site da fundatec, com etapas de prova objetiva e avaliação de títulos. prefeitura-ijui-rs-procurador procuradorias pciconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-ijui-rs-abre-concurso-publico-com-salarios-de-ate-21312" target="_blank" rel="noopener noreferrer">Prefeitura de Ijuí - RS abre concurso público com salários de até R$ 21.312,22</a></h2>
+                <p class="reason">A Prefeitura de Ijuí/RS publicou edital de concurso público ofertando vagas para os cargos de Advogado (1) e Procurador (2), ambos exigindo nível superior em Direito e registro na OAB. Os salários chegam a R$ 21.312,22, com benefícios como auxílio-alimentação. As inscrições devem ser realizadas de 23 de outubro a 19 de novembro de 2026 no site da Fundatec, com etapas de prova objetiva e avaliação de títulos.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-ijui-rs-abre-concurso-publico-com-salarios-de-ate-21312" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso da câmara de são geraldo do araguaia-pa; veja edital edital publicado pela câmara de são geraldo do araguaia/pa oferecendo 1 vaga para chefe de controle interno, cargo que exige ensino superior em direito, administração, contabilidade ou áreas correlatas. a remuneração inicial é de r$ 3.000,00. inscrições abertas até 23 de novembro de 2026 pelo site do instituto icap. provas objetivas previstas para o dia 6 de dezembro de 2026. camara-sao-geraldo-do-araguaia-pa-chefe-de-controle-interno administrativo acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-para/concurso-da-camara-de-sao-geraldo-do-araguaia-pa-veja-edital-94166" target="_blank" rel="noopener noreferrer">Concurso da Câmara de São Geraldo do Araguaia-PA; veja edital</a></h2>
+                <p class="reason">Edital publicado pela Câmara de São Geraldo do Araguaia/PA oferecendo 1 vaga para Chefe de Controle Interno, cargo que exige ensino superior em Direito, Administração, Contabilidade ou áreas correlatas. A remuneração inicial é de R$ 3.000,00. Inscrições abertas até 23 de novembro de 2026 pelo site do Instituto ICAP. Provas objetivas previstas para o dia 6 de dezembro de 2026.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-para/concurso-da-camara-de-sao-geraldo-do-araguaia-pa-veja-edital-94166" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="sgc tv: concurso da câmara de candeias do jamari oferece salários de até r$ 3,5 mil - portal sgc a câmara municipal de candeias do jamari (ro) está com inscrições abertas até 30 de outubro para concurso público com vagas de níveis fundamental, médio e superior. o certame inclui o cargo de analista jurídico, com remuneração inicial de até r$ 3.500,00 para jornada de 40 horas semanais. o processo seletivo é organizado pelo ibgp concursos, com taxa de inscrição de r$ 125 para o nível superior e provas objetivas previstas para o dia 22 de novembro. camara-candeias-do-jamari-ro-analista-juridico administrativo sgc.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">SGC.COM.BR</span>
+                <h2><a href="https://sgc.com.br/noticia/6/453071/sgc-tv-concurso-da-camara-de-candeias-do-jamari-oferece-salarios-de-ate-r-35-mil" target="_blank" rel="noopener noreferrer">SGC TV: Concurso da Câmara de Candeias do Jamari oferece salários de até R$ 3,5 mil - Portal SGC</a></h2>
+                <p class="reason">A Câmara Municipal de Candeias do Jamari (RO) está com inscrições abertas até 30 de outubro para concurso público com vagas de níveis fundamental, médio e superior. O certame inclui o cargo de Analista Jurídico, com remuneração inicial de até R$ 3.500,00 para jornada de 40 horas semanais. O processo seletivo é organizado pelo IBGP Concursos, com taxa de inscrição de R$ 125 para o nível superior e provas objetivas previstas para o dia 22 de novembro.</p>
+                <a href="https://sgc.com.br/noticia/6/453071/sgc-tv-concurso-da-camara-de-candeias-do-jamari-oferece-salarios-de-ate-r-35-mil" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso abdi: edital com 180 vagas e salário de r$ 16 mil | notícias focus concursos a agência brasileira de desenvolvimento industrial (abdi) publicou edital com 18 edital para o cargo de analista de produtividade e inovação, contemplando 2 vagas imediatas e 16 em cadastro de reserva para o perfil jurídico. a remuneração inicial é de r$ 16.034,70 sob o regime clt, acrescida de diversos benefícios. as inscrições seguem até 10 de novembro no site da fgv, com taxa de r$ 100, e a prova objetiva online será aplicada em 20 de dezembro. abdi-nacional-analista-juridico procuradorias noticias.focusconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">NOTICIAS.FOCUSCONCURSOS.COM.BR</span>
+                <h2><a href="https://noticias.focusconcursos.com.br/noticias/concurso-abdi-180-vagas-salario-de-r-16-mil-e-prova-online" target="_blank" rel="noopener noreferrer">Concurso ABDI: edital com 180 vagas e salário de R$ 16 mil | Notícias Focus Concursos</a></h2>
+                <p class="reason">A Agência Brasileira de Desenvolvimento Industrial (ABDI) publicou edital com 18 edital para o cargo de Analista de Produtividade e Inovação, contemplando 2 vagas imediatas e 16 em cadastro de reserva para o perfil Jurídico. A remuneração inicial é de R$ 16.034,70 sob o regime CLT, acrescida de diversos benefícios. As inscrições seguem até 10 de novembro no site da FGV, com taxa de R$ 100, e a prova objetiva online será aplicada em 20 de dezembro.</p>
+                <a href="https://noticias.focusconcursos.com.br/noticias/concurso-abdi-180-vagas-salario-de-r-16-mil-e-prova-online" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="veja os concursos que terão provas em novembro pelo país; cargos pagam até r$ 37 mil aplicada em 1 de novembro de 2026, a seleção da polícia civil do maranhão oferta 232 vagas para delegado de polícia civil de 3ª classe, sendo 58 imediatas e 174 em cadastro reserva. o cargo exige graduação em direito e três anos de atividade jurídica ou exercício policial. a remuneração inicial é de r$ 22.820,23, contemplando etapas como provas objetiva, discursiva, taf e avaliação oral. pcma-ma-delegado policiais acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#2F4F4F;">Carreiras Policiais</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/noticias/veja-os-concursos-que-terao-provas-em-novembro-pelo-pais-cargos-pagam-ate-r-37-mil-94136" target="_blank" rel="noopener noreferrer">Veja os concursos que terão provas em novembro pelo país; cargos pagam até R$ 37 mil</a></h2>
+                <p class="reason">Aplicada em 1 de novembro de 2026, a seleção da Polícia Civil do Maranhão oferta 232 vagas para Delegado de Polícia Civil de 3ª Classe, sendo 58 imediatas e 174 em cadastro reserva. O cargo exige graduação em Direito e três anos de atividade jurídica ou exercício policial. A remuneração inicial é de R$ 22.820,23, contemplando etapas como provas objetiva, discursiva, TAF e avaliação oral.</p>
+                <a href="https://www.acheconcursos.com.br/noticias/veja-os-concursos-que-terao-provas-em-novembro-pelo-pais-cargos-pagam-ate-r-37-mil-94136" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso câmara de guarujá sp: banca contratada para nova seleção câmara municipal de guarujá/sp contratou a fundação vunesp como banca organizadora para novo concurso público destinado ao provimento do cargo de procurador legislativo, com exigência de nível superior em direito e inscrição na oab. a publicação do edital iminente detalhará o quantitativo de vagas. a estrutura remuneratória da casa inclui vencimento inicial acrescido de vales alimentação e refeição robustos, conforme contrato assinado. camara-guaruja-sp-procurador-legislativo procuradorias jcconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">JCCONCURSOS.COM.BR</span>
+                <h2><a href="https://jcconcursos.com.br/amp/noticia/concursos/concurso-camara-de-guaruja-sp-banca-contratada-para-nova-selecao-146203" target="_blank" rel="noopener noreferrer">Concurso Câmara de Guarujá SP: banca contratada para nova seleção</a></h2>
+                <p class="reason">Câmara Municipal de Guarujá/SP contratou a Fundação Vunesp como banca organizadora para novo concurso público destinado ao provimento do cargo de Procurador Legislativo, com exigência de nível superior em Direito e inscrição na OAB. A publicação do edital iminente detalhará o quantitativo de vagas. A estrutura remuneratória da casa inclui vencimento inicial acrescido de vales alimentação e refeição robustos, conforme contrato assinado.</p>
+                <a href="https://jcconcursos.com.br/amp/noticia/concursos/concurso-camara-de-guaruja-sp-banca-contratada-para-nova-selecao-146203" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="trt-rn seleciona estagiários de graduação e pós com bolsas de r$ 1.150 a r$ 2 mil processo seletivo aberto no trt-rn para cadastro de reserva de estágio de graduação e pós-graduação em direito, com bolsas de r$ 1.150 e r$ 2.000, respectivamente, e jornadas de 20 a 30 horas semanais. inscrições até 10 de novembro de 2026 pelo iel-rn e prova objetiva online prevista para 17 de novembro. trtrn-rn-estagio estagio portaln10.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">PORTALN10.COM.BR</span>
+                <h2><a href="https://portaln10.com.br/empregos/trt-rn-seleciona-estagiarios-de-graduacao-e-pos-com-bolsas-de-r-1-150-a-r-2-mil-356038/" target="_blank" rel="noopener noreferrer">TRT-RN seleciona estagiários de graduação e pós com bolsas de R$ 1.150 a R$ 2 mil</a></h2>
+                <p class="reason">Processo seletivo aberto no TRT-RN para cadastro de reserva de estágio de graduação e pós-graduação em Direito, com bolsas de R$ 1.150 e R$ 2.000, respectivamente, e jornadas de 20 a 30 horas semanais. Inscrições até 10 de novembro de 2026 pelo IEL-RN e prova objetiva online prevista para 17 de novembro.</p>
+                <a href="https://portaln10.com.br/empregos/trt-rn-seleciona-estagiarios-de-graduacao-e-pos-com-bolsas-de-r-1-150-a-r-2-mil-356038/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="cebraspe notã­cias - cebraspe | o melhor em avaliaã§ã£o de pessoas edital publicado pela polícia civil de pernambuco (pcpe) para 1.315 vagas, incluindo 356 vagas para delegado de polícia, exigindo bacharelado em direito e três anos de atividade jurídica ou policial. remuneração inicial de r$ 13.560,00 com inscrições até 16 de dezembro de 2026 e provas em março de 2027. pcpe-pe-delegado policiais cebraspe.org.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#2F4F4F;">Carreiras Policiais</span><span class="site-tag">CEBRASPE.ORG.BR</span>
+                <h2><a href="https://www.cebraspe.org.br/cebraspe-noticias-105/" target="_blank" rel="noopener noreferrer">Cebraspe NotÃ­cias - Cebraspe | O melhor em avaliaÃ§Ã£o de pessoas</a></h2>
+                <p class="reason">Edital publicado pela Polícia Civil de Pernambuco (PCPE) para 1.315 vagas, incluindo 356 vagas para Delegado de Polícia, exigindo bacharelado em Direito e três anos de atividade jurídica ou policial. Remuneração inicial de R$ 13.560,00 com inscrições até 16 de dezembro de 2026 e provas em março de 2027.</p>
+                <a href="https://www.cebraspe.org.br/cebraspe-noticias-105/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de bom retiro sc abre concurso com 66 vagas | folha dirigida prefeitura de bom retiro/sc publicou edital de concurso público reunindo 66 vagas em diversos níveis, incluindo 1 vaga imediata para o cargo de procurador municipal. a seleção é organizada pela banca sc treinamentos, com remunerações que chegam a r$ 20.138,46. as inscrições seguem abertas até 23 de novembro de 2026, com prova objetiva prevista para o dia 6 de dezembro de 2026. prefeitura-bom-retiro-sc-procurador-municipal procuradorias folha.qconcursos.com">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">FOLHA.QCONCURSOS.COM</span>
+                <h2><a href="https://folha.qconcursos.com/n/prefeitura-de-bom-retiro-sc-abre-concurso-com-66-vagas" target="_blank" rel="noopener noreferrer">Prefeitura de Bom Retiro SC abre concurso com 66 vagas</a></h2>
+                <p class="reason">Prefeitura de Bom Retiro/SC publicou edital de concurso público reunindo 66 vagas em diversos níveis, incluindo 1 vaga imediata para o cargo de Procurador Municipal. A seleção é organizada pela banca SC Treinamentos, com remunerações que chegam a R$ 20.138,46. As inscrições seguem abertas até 23 de novembro de 2026, com prova objetiva prevista para o dia 6 de dezembro de 2026.</p>
+                <a href="https://folha.qconcursos.com/n/prefeitura-de-bom-retiro-sc-abre-concurso-com-66-vagas" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de suzano publica edital de concurso público com 73 vagas e salários de até r$ 12 mil | suzano publicado edital de concurso público pela prefeitura de suzano/sp com vagas imediatas e formação de cadastro reserva, incluindo o cargo de procurador jurídico, que exige nível superior em direito e registro na oab. as inscrições ocorrem de 29 de outubro a 25 de novembro pelo site do instituto nosso rumo, com taxa conforme o edital. as provas objetivas estão agendadas para o dia 13 de dezembro. prefeitura-suzano-sp-procurador-juridico procuradorias suzano.sp.gov.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">SUZANO.SP.GOV.BR</span>
+                <h2><a href="https://suzano.sp.gov.br/prefeitura-de-suzano-publica-edital-de-concurso-publico-com-73-vagas-e-salarios-de-ate-r-12-mil/" target="_blank" rel="noopener noreferrer">Prefeitura de Suzano publica edital de concurso público com 73 vagas e salários de até R$ 12 mil | Suzano</a></h2>
+                <p class="reason">Publicado edital de concurso público pela Prefeitura de Suzano/SP com vagas imediatas e formação de cadastro reserva, incluindo o cargo de procurador jurídico, que exige nível superior em Direito e registro na OAB. As inscrições ocorrem de 29 de outubro a 25 de novembro pelo site do Instituto Nosso Rumo, com taxa conforme o edital. As provas objetivas estão agendadas para o dia 13 de dezembro.</p>
+                <a href="https://suzano.sp.gov.br/prefeitura-de-suzano-publica-edital-de-concurso-publico-com-73-vagas-e-salarios-de-ate-r-12-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="defensoria pública de mt divulga resultado final do vii concurso para defensor público • olhar direto a defensoria pública do estado de mato grosso divulgou o resultado final do vii concurso para defensor público, contendo a relação de 121 candidatos aprovados e classificados. o certame ofertou 30 vagas imediatas mais cadastro reserva na classe inicial da carreira. o processo seletivo foi organizado pela fundação carlos chagas e contou com 3.799 inscritos ao longo de suas quatro etapas. dpmt-mt-defensor-publico defensoria olhardireto.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">OLHARDIRETO.COM.BR</span>
+                <h2><a href="https://www.olhardireto.com.br/juridico/noticias/defensoria-publica-de-mt-divulga-resultado-final-do-vii-concurso-para-defensor-publico" target="_blank" rel="noopener noreferrer">Defensoria Pública de MT divulga resultado final do VII Concurso para defensor público • Olhar Direto</a></h2>
+                <p class="reason">A Defensoria Pública do Estado de Mato Grosso divulgou o resultado final do VII Concurso para Defensor Público, contendo a relação de 121 candidatos aprovados e classificados. O certame ofertou 30 vagas imediatas mais cadastro reserva na classe inicial da carreira. O processo seletivo foi organizado pela Fundação Carlos Chagas e contou com 3.799 inscritos ao longo de suas quatro etapas.</p>
+                <a href="https://www.olhardireto.com.br/juridico/noticias/defensoria-publica-de-mt-divulga-resultado-final-do-vii-concurso-para-defensor-publico" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="pge-rs abre inscrições para estágio de pós-graduação em direito - procuradoria-geral do estado do rs a procuradoria-geral do estado do rs publicou o edital nº 05/2026 oferecendo 32 vagas imediatas e cadastro de reserva para estágio de pós-graduação em direito, com lotação em porto alegre, brasília e regionais. a bolsa-auxílio média é de r$ 2.899,25 para 30h semanais. inscrições de 26/10 a 19/11 no site do órgão. prova dissertativa prevista para 01/12. pger-rs-estagio-pos estagio pge.rs.gov.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">PGE.RS.GOV.BR</span>
+                <h2><a href="https://www.pge.rs.gov.br/pge-rs-abre-inscricoes-para-estagio-de-pos-graduacao-em-direito-6ada10bc3515b" target="_blank" rel="noopener noreferrer">PGE-RS abre inscrições para estágio de pós-graduação em Direito - Procuradoria-Geral do Estado do RS</a></h2>
+                <p class="reason">A Procuradoria-Geral do Estado do RS publicou o Edital nº 05/2026 oferecendo 32 vagas imediatas e cadastro de reserva para estágio de pós-graduação em Direito, com lotação em Porto Alegre, Brasília e regionais. A bolsa-auxílio média é de R$ 2.899,25 para 30h semanais. Inscrições de 26/10 a 19/11 no site do órgão. Prova dissertativa prevista para 01/12.</p>
+                <a href="https://www.pge.rs.gov.br/pge-rs-abre-inscricoes-para-estagio-de-pos-graduacao-em-direito-6ada10bc3515b" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="defensoria pública da paraíba abre concurso com salários de até r$ 5,1 mil edital publicado pela dpe-pb com 20 vagas e formação de cadastro reserva para os níveis médio e superior. o cargo de analista da defensoria na especialidade de assistente jurídico exige graduação em direito, com remuneração inicial de r$ 5.197,50. inscrições abertas até 13/11/2026 no site da fcc, com taxa de r$ 123,00. provas objetiva e discursiva previstas para 28/02/2027. dpepb-pb-analista-juridico defensoria folhapatoense.com">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">FOLHAPATOENSE.COM</span>
+                <h2><a href="https://folhapatoense.com/2026/10/23/defensoria-publica-da-paraiba-abre-concurso-com-salarios-de-ate-r-51-mil/" target="_blank" rel="noopener noreferrer">Defensoria Pública da Paraíba abre concurso com salários de até R$ 5,1 mil</a></h2>
+                <p class="reason">Edital publicado pela DPE-PB com 20 vagas e formação de cadastro reserva para os níveis médio e superior. O cargo de Analista da Defensoria na especialidade de Assistente Jurídico exige graduação em Direito, com remuneração inicial de R$ 5.197,50. Inscrições abertas até 13/11/2026 no site da FCC, com taxa de R$ 123,00. Provas objetiva e discursiva previstas para 28/02/2027.</p>
+                <a href="https://folhapatoense.com/2026/10/23/defensoria-publica-da-paraiba-abre-concurso-com-salarios-de-ate-r-51-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso pc pr 2026: cargos, provas e como se preparar edital publicado pela polícia civil do paraná (pc-pr) com vagas para formação de cadastro de reserva. o certame oferta o cargo de delegado de polícia, com remuneração inicial de r$ 26.876,48, exigindo bacharelado em direito e 3 anos de atividade jurídica ou policial. as inscrições foram encerradas e o planejamento da corporação prevê a convocação de 80 delegados em 2027. pcpr-pr-delegado policiais ceisc.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#2F4F4F;">Carreiras Policiais</span><span class="site-tag">CEISC.COM.BR</span>
+                <h2><a href="https://ceisc.com.br/blog/post/concurso-pc-pr?category=concursos" target="_blank" rel="noopener noreferrer">Concurso PC PR 2026: cargos, provas e como se preparar</a></h2>
+                <p class="reason">Edital publicado pela Polícia Civil do Paraná (PC-PR) com vagas para formação de cadastro de reserva. O certame oferta o cargo de Delegado de Polícia, com remuneração inicial de R$ 26.876,48, exigindo bacharelado em Direito e 3 anos de atividade jurídica ou policial. As inscrições foram encerradas e o planejamento da corporação prevê a convocação de 80 delegados em 2027.</p>
+                <a href="https://ceisc.com.br/blog/post/concurso-pc-pr?category=concursos" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso unificado maranhão: mais de 10 mil vagas; fcc é a banca! concurso unificado do estado do maranhão com banca definida (fcc) e oferta global de mais de 10 mil vagas. a seleção inclui a procuradoria-geral do estado (pge-ma) com o cargo de procurador do estado, exigindo nível superior em direito e inscrição na oab, com remuneração inicial de r$ 24.203,58, além de cargos de analista com exigência jurídica em órgãos como pge, iterma e funac. pgema-ma-procurador procuradorias blog.grancursosonline.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">BLOG.GRANCURSOSONLINE.COM.BR</span>
+                <h2><a href="https://blog.grancursosonline.com.br/concurso-unificado-maranhao/" target="_blank" rel="noopener noreferrer">Concurso Unificado Maranhão: mais de 10 mil vagas; FCC é a banca!</a></h2>
+                <p class="reason">Concurso unificado do Estado do Maranhão com banca definida (FCC) e oferta global de mais de 10 mil vagas. A seleção inclui a Procuradoria-Geral do Estado (PGE-MA) com o cargo de Procurador do Estado, exigindo nível superior em Direito e inscrição na OAB, com remuneração inicial de R$ 24.203,58, além de cargos de analista com exigência jurídica em órgãos como PGE, ITERMA e FUNAC.</p>
+                <a href="https://blog.grancursosonline.com.br/concurso-unificado-maranhao/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="dores do rio preto abre seleção com 176 vagas e salários de até r$ 17 mil processo seletivo temporário aberto pela prefeitura de dores do rio preto (es) oferecendo 1 vaga imediata mais cadastro de reserva para o cargo de assistente jurídico municipal. a remuneração inicial é de r$ 4.543,07 para jornada de 30 horas semanais. as inscrições presenciais ocorrem entre 3 e 10 de novembro de 2026, com classificação por títulos e tempo de serviço. prefeitura-dores-do-rio-preto-es-assistente-juridico procuradorias folhavitoria.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">FOLHAVITORIA.COM.BR</span>
+                <h2><a href="https://www.folhavitoria.com.br/trabalho/concursos/dores-do-rio-preto-abre-selecao-com-176-vagas-e-salarios-de-ate-r-17-mil/" target="_blank" rel="noopener noreferrer">Dores do Rio Preto abre seleção com 176 vagas e salários de até R$ 17 mil</a></h2>
+                <p class="reason">Processo seletivo temporário aberto pela Prefeitura de Dores do Rio Preto (ES) oferecendo 1 vaga imediata mais cadastro de reserva para o cargo de Assistente Jurídico Municipal. A remuneração inicial é de R$ 4.543,07 para jornada de 30 horas semanais. As inscrições presenciais ocorrem entre 3 e 10 de novembro de 2026, com classificação por títulos e tempo de serviço.</p>
+                <a href="https://www.folhavitoria.com.br/trabalho/concursos/dores-do-rio-preto-abre-selecao-com-176-vagas-e-salarios-de-ate-r-17-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        
+    </div>
+    <footer>Gerado automaticamente · CuradorIA de Carreiras Jurídicas · Todos os créditos reservados aos respectivos autores dos artigos encontrados.</footer>
+    <script>
+    // Tema (dark mode) / Theme (dark mode)
+    (function () {
+        var saved = localStorage.getItem('curadoria-theme');
+        if (saved === 'dark' || saved === 'light') {
+            document.documentElement.setAttribute('data-theme', saved);
+        }
+    })();
+
+    function toggleTheme() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme');
+        if (!current) {
+            current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('curadoria-theme', next);
+        var btn = document.getElementById('theme-toggle');
+        if (btn) btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('theme-toggle');
+        if (btn) {
+            var current = document.documentElement.getAttribute('data-theme') ||
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            btn.textContent = current === 'dark' ? '☀️' : '🌙';
+            btn.addEventListener('click', toggleTheme);
+        }
+
+        // Carrossel / Carousel
+        document.querySelectorAll('.group-card').forEach(function (card) {
+            var slidesEl = card.querySelector('.slides');
+            if (!slidesEl) return;
+            var total = slidesEl.children.length;
+            var current = 0;
+            var leftArrow = card.querySelector('.arrow-left');
+            var rightArrow = card.querySelector('.arrow-right');
+            var indicators = card.querySelectorAll('.indicator');
+
+            function update() {
+                slidesEl.style.transform = 'translateX(-' + (current * 100) + '%)';
+                indicators.forEach(function (ind, i) { ind.classList.toggle('active', i === current); });
+                if (leftArrow) leftArrow.disabled = current === 0;
+                if (rightArrow) rightArrow.disabled = current === total - 1;
+            }
+            if (leftArrow) leftArrow.addEventListener('click', function () {
+                if (current > 0) { current--; update(); }
+            });
+            if (rightArrow) rightArrow.addEventListener('click', function () {
+                if (current < total - 1) { current++; update(); }
+            });
+            update();
+        });
+
+        // Busca / Search
+        var searchInput = document.getElementById('search');
+        var filterInfo = document.getElementById('filter-info');
+        var allCards = document.querySelectorAll('.group-card');
+
+        function applyFilter() {
+            var q = (searchInput.value || '').trim().toLowerCase();
+            var visible = 0;
+            allCards.forEach(function (card) {
+                var blob = card.getAttribute('data-search') || '';
+                var match = !q || blob.indexOf(q) !== -1;
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+            if (filterInfo) {
+                if (!q) filterInfo.textContent = '';
+                else filterInfo.textContent = visible + ' de ' + allCards.length + ' certames correspondem a "' + q + '"';
+            }
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', applyFilter);
+            searchInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { searchInput.value = ''; applyFilter(); }
+            });
+        }
+    });
+</script>
+</body>
+</html>
