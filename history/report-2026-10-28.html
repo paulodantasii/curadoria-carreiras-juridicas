@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuradorIA de Carreiras Jurídicas</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    <style>
+    :root {
+        --bg: #f0f2f5; --card-bg: #ffffff; --text: #1a1a2e; --text-muted: #666;
+        --header-bg-from: #1a1a2e; --header-bg-to: #16213e; --header-text: #ffffff;
+        --accent: #e94560; --shadow: rgba(0,0,0,0.07);
+        --border: #f0f2f5; --input-bg: #ffffff; --input-border: #d8dde3;
+        --site-tag-bg: #f0f2f5; --site-tag-text: #555; --controls-bg: #fafbfc;
+        --arrow-bg: #ffffff; --arrow-border: #ddd; --indicator: #ccc;
+    }
+    [data-theme="dark"] {
+        --bg: #0f1419; --card-bg: #1a1f2e; --text: #e1e6f0; --text-muted: #8a93a6;
+        --header-bg-from: #0a0e1a; --header-bg-to: #14192a; --header-text: #e1e6f0;
+        --accent: #f25575; --shadow: rgba(0,0,0,0.4);
+        --border: #2a3142; --input-bg: #14192a; --input-border: #2a3142;
+        --site-tag-bg: #2a3142; --site-tag-text: #b3bccf; --controls-bg: #14192a;
+        --arrow-bg: #2a3142; --arrow-border: #2a3142; --indicator: #3a4356;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+            --bg: #0f1419; --card-bg: #1a1f2e; --text: #e1e6f0; --text-muted: #8a93a6;
+            --header-bg-from: #0a0e1a; --header-bg-to: #14192a; --header-text: #e1e6f0;
+            --accent: #f25575; --shadow: rgba(0,0,0,0.4);
+            --border: #2a3142; --input-bg: #14192a; --input-border: #2a3142;
+            --site-tag-bg: #2a3142; --site-tag-text: #b3bccf; --controls-bg: #14192a;
+            --arrow-bg: #2a3142; --arrow-border: #2a3142; --indicator: #3a4356;
+        }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+           background: var(--bg); color: var(--text); min-height: 100vh; transition: background 0.2s, color 0.2s; }
+    header { background: linear-gradient(135deg, var(--header-bg-from) 0%, var(--header-bg-to) 100%);
+             color: var(--header-text); padding: 2rem 1.5rem 1.5rem; text-align: center; position: relative; }
+    header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }
+    header p { font-size: 0.85rem; opacity: 0.75; }
+    header .meta { font-size: 0.72rem; opacity: 0.55; margin-top: 0.4rem; }
+    .badge { display: inline-block; background: var(--accent); color: white; font-size: 0.8rem; font-weight: 600;
+             padding: 0.3rem 0.8rem; border-radius: 20px; margin-top: 0.8rem; }
+    .theme-toggle { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.12);
+                    border: 1px solid rgba(255,255,255,0.2); color: var(--header-text); width: 36px; height: 36px;
+                    border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center;
+                    justify-content: center; transition: background 0.2s; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.2); }
+    .container { max-width: 680px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .search-bar { margin-bottom: 1rem; position: relative; }
+    .search-bar input { width: 100%; padding: 0.6rem 0.9rem 0.6rem 2.2rem; border-radius: 10px;
+                        border: 1px solid var(--input-border); background: var(--input-bg); color: var(--text);
+                        font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+    .search-bar input:focus { border-color: var(--accent); }
+    .search-bar::before { content: '🔎'; position: absolute; left: 0.7rem; top: 50%;
+                          transform: translateY(-50%); font-size: 0.9rem; opacity: 0.6; pointer-events: none; }
+    .filter-info { font-size: 0.78rem; color: var(--text-muted); margin: 0.5rem 0 1rem; min-height: 1em; }
+    .group-card { background: var(--card-bg); border-radius: 12px; margin-bottom: 1rem;
+                  box-shadow: 0 2px 8px var(--shadow); border-left: 4px solid var(--accent);
+                  overflow: hidden; position: relative; transition: background 0.2s; }
+    .group-card.highlight { border-left-width: 6px; }
+    .sources-badge { position: absolute; top: 0.8rem; right: 0.8rem; background: var(--header-bg-from);
+                     color: white; font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.55rem;
+                     border-radius: 12px; z-index: 2; }
+    .carousel { position: relative; overflow: hidden; }
+    .slides { display: flex; transition: transform 0.35s ease; }
+    .slide { min-width: 100%; padding: 1.2rem 1.3rem 0.5rem; }
+    .status-tag { display: inline-block; color: white; font-size: 0.7rem; font-weight: 600;
+                  padding: 0.2rem 0.55rem; border-radius: 6px; margin-bottom: 0.5rem; }
+    .site-tag { display: inline-block; background: var(--site-tag-bg); color: var(--site-tag-text);
+                font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 6px;
+                margin-bottom: 0.5rem; margin-left: 0.4rem; }
+    .slide h2 { font-size: 1rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.5rem; color: var(--text); }
+    .slide h2 a { color: inherit; text-decoration: none; }
+    .slide h2 a:hover { color: var(--accent); }
+    .reason { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.9rem; }
+    .btn { display: inline-block; background: var(--header-bg-from); color: white; font-size: 0.82rem;
+           font-weight: 600; padding: 0.45rem 1rem; border-radius: 8px; text-decoration: none;
+           transition: background 0.2s; }
+    .btn:hover { background: var(--accent); }
+    .controls { display: flex; justify-content: space-between; align-items: center;
+                padding: 0.6rem 1rem 1rem; border-top: 1px solid var(--border); background: var(--controls-bg); }
+    .arrow { background: var(--arrow-bg); border: 1px solid var(--arrow-border); color: var(--text);
+             width: 32px; height: 32px; border-radius: 50%; font-size: 1rem; cursor: pointer;
+             display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .arrow:disabled { opacity: 0.3; cursor: default; }
+    .arrow:not(:disabled):hover { background: var(--header-bg-from); color: white; }
+    .indicators { display: flex; gap: 0.4rem; }
+    .indicator { width: 8px; height: 8px; border-radius: 50%; background: var(--indicator); }
+    .indicator.active { background: var(--accent); }
+    .empty { text-align: center; color: var(--text-muted); padding: 3rem 1rem; font-size: 0.95rem; }
+    .archive-banner { background: var(--accent); color: white; padding: 0.8rem 1rem; border-radius: 8px;
+                      margin-bottom: 1rem; font-size: 0.9rem; display: flex; align-items: center;
+                      flex-wrap: wrap; gap: 0.5rem; }
+    .archive-banner a { color: white; text-decoration: underline; font-weight: 600; }
+    .history-section { background: var(--card-bg); border-radius: 12px; padding: 1rem 1.2rem;
+                       margin-top: 2rem; box-shadow: 0 2px 8px var(--shadow); }
+    .history-section summary { cursor: pointer; font-weight: 600; color: var(--text);
+                               font-size: 0.9rem; padding: 0.2rem 0; }
+    .history-section summary:hover { color: var(--accent); }
+    .history-list { list-style: none; padding: 0; margin: 1rem 0 0; max-height: 400px; overflow-y: auto; }
+    .history-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+    .history-list li:last-child { border-bottom: none; }
+    .history-list li.current { color: var(--accent); font-weight: 600; }
+    .history-list a { color: var(--text-muted); text-decoration: none; display: block; }
+    .history-list a:hover { color: var(--accent); }
+    footer { text-align: center; padding: 1.5rem; font-size: 0.78rem; color: var(--text-muted); }
+</style>
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
+        <h1>CuradorIA de Carreiras Jurídicas</h1>
+        <p>Foram analisados 157 artigos na última verificação.</p>
+        <div class="badge">Encontrados 41 artigos relevantes sobre 27 certames.</div>
+        <p class="meta">Última verificação: 28/10/2026 às 07h17 · Tempo de execução: 3min 51s</p>
+    </header>
+    <div class="container">
+        
+        <div class="archive-banner">
+            Você está vendo a edição de<strong>28/10/2026 às 07h17</strong>·
+            <a href="../report.html">Ver versão mais recente</a>
+        </div>
+    
+        
+        <div class="search-bar">
+            <input id="search" type="search" placeholder="Buscar por órgão, cargo, carreira..." aria-label="Buscar">
+        </div>
+        <div class="filter-info" id="filter-info"></div>
+    
+        
+        <div class="group-card highlight" data-search="tribunal abre concurso com salários de até r$ 20 mil; veja cargos o tribunal regional federal da 3ª região (trf-3) publicou edital com 11 vagas imediatas e formação de cadastro reserva, incluindo os cargos de analista judiciário da área judiciária e oficial de justiça avaliador federal. iniciantes recebem até r$ 20.013,11. inscrições de 4 a 23 de novembro via vunesp, com provas em janeiro de 2027. trf3-nacional-analista-e-tecnico tribunais atarde.com.br concurso trf3 paga até r$ 20 mil; veja o que se sabe publicado edital pelo tribunal regional federal da 3ª região (trf3) com vagas e formação de cadastro reserva para analista judiciário (incluindo a especialidade judiciária e oficial de justiça, que exigem graduação em direito) e técnico judiciário. os salários variam de r$ 9.776,73 a r$ 20.013,11. inscrições de 4 a 23 de novembro de 2026 pela fundação vunesp, com provas objetivas e discursivas aplicadas em 31 de janeiro de 2027. trf3-nacional-analista-e-tecnico tribunais diariodopara.com.br concurso do trf-3 abre vagas em sp e ms com salários de até r$ 20 mil; veja cargos | rádio itatiaia o trf-3 publicou edital para provimento de cargos de analista e técnico judiciário, incluindo cadastro de reserva para a área judiciária e oficial de justiça avaliador federal. as remunerações iniciais variam de r$ 9.776,73 a r$ 20.013,11. as inscrições ocorrem de 4 a 23 de novembro de 2026, com provas objetivas e discursivas previstas para 31 de janeiro de 2027 em diversas cidades de sp e ms. trf3-nacional-analista-e-tecnico tribunais itatiaia.com.br trf 3: edital publicado com salários de r$ 20 mil; veja mais | notícias focus concursos edital publicado pelo trf da 3ª região com formação de cadastro de reserva para analista judiciário (área judiciária e oficial de justiça) e técnico judiciário. os salários iniciais variam de r$ 9.776,73 a r$ 20.013,11. inscrições abertas de 4 a 23 de novembro de 2026, com taxa de r$ 160 para analista e r$ 100 para técnico. as provas objetivas e discursivas estão marcadas para 31 de janeiro de 2027, sob organização da vunesp. trf3-nacional-analista-e-tecnico tribunais noticias.focusconcursos.com.br">
+            <div class="sources-badge">4 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">ATARDE.COM.BR</span>
+                <h2><a href="https://atarde.com.br/brasil/tribunal-abre-concurso-com-salarios-de-ate-r-20-mil-veja-cargos-1407386" target="_blank" rel="noopener noreferrer">Tribunal abre concurso com salários de até R$ 20 mil; veja cargos</a></h2>
+                <p class="reason">O Tribunal Regional Federal da 3ª Região (TRF-3) publicou edital com 11 vagas imediatas e formação de cadastro reserva, incluindo os cargos de Analista Judiciário da Área Judiciária e Oficial de Justiça Avaliador Federal. Iniciantes recebem até R$ 20.013,11. Inscrições de 4 a 23 de novembro via Vunesp, com provas em janeiro de 2027.</p>
+                <a href="https://atarde.com.br/brasil/tribunal-abre-concurso-com-salarios-de-ate-r-20-mil-veja-cargos-1407386" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">DIARIODOPARA.COM.BR</span>
+                <h2><a href="https://diariodopara.com.br/concursos-e-empregos/concurso-trf3-paga-salarios-de-ate-r-20-mil-veja-o-que-se-sabe-sobre-o-edital/" target="_blank" rel="noopener noreferrer">Concurso TRF3 paga até R$ 20 mil; veja o que se sabe</a></h2>
+                <p class="reason">Publicado edital pelo Tribunal Regional Federal da 3ª Região (TRF3) com vagas e formação de cadastro reserva para Analista Judiciário (incluindo a especialidade Judiciária e Oficial de Justiça, que exigem graduação em Direito) e Técnico Judiciário. Os salários variam de R$ 9.776,73 a R$ 20.013,11. Inscrições de 4 a 23 de novembro de 2026 pela Fundação Vunesp, com provas objetivas e discursivas aplicadas em 31 de janeiro de 2027.</p>
+                <a href="https://diariodopara.com.br/concursos-e-empregos/concurso-trf3-paga-salarios-de-ate-r-20-mil-veja-o-que-se-sabe-sobre-o-edital/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">ITATIAIA.COM.BR</span>
+                <h2><a href="https://www.itatiaia.com.br/emprego-e-concursos/concurso-do-trf-3-abre-vagas-em-sp-e-ms-com-salarios-de-ate-r-20-mil-veja-cargos/" target="_blank" rel="noopener noreferrer">Concurso do TRF-3 abre vagas em SP e MS com salários de até R$ 20 mil; veja cargos | Rádio Itatiaia</a></h2>
+                <p class="reason">O TRF-3 publicou edital para provimento de cargos de Analista e Técnico Judiciário, incluindo cadastro de reserva para a Área Judiciária e Oficial de Justiça Avaliador Federal. As remunerações iniciais variam de R$ 9.776,73 a R$ 20.013,11. As inscrições ocorrem de 4 a 23 de novembro de 2026, com provas objetivas e discursivas previstas para 31 de janeiro de 2027 em diversas cidades de SP e MS.</p>
+                <a href="https://www.itatiaia.com.br/emprego-e-concursos/concurso-do-trf-3-abre-vagas-em-sp-e-ms-com-salarios-de-ate-r-20-mil-veja-cargos/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">NOTICIAS.FOCUSCONCURSOS.COM.BR</span>
+                <h2><a href="https://noticias.focusconcursos.com.br/noticias/concurso-trf-3-edital-publicado-com-salarios-de-ate-r-20-mil" target="_blank" rel="noopener noreferrer">TRF 3: edital publicado com salários de R$ 20 mil; veja mais | Notícias Focus Concursos</a></h2>
+                <p class="reason">Edital publicado pelo TRF da 3ª Região com formação de cadastro de reserva para Analista Judiciário (Área Judiciária e Oficial de Justiça) e Técnico Judiciário. Os salários iniciais variam de R$ 9.776,73 a R$ 20.013,11. Inscrições abertas de 4 a 23 de novembro de 2026, com taxa de R$ 160 para analista e R$ 100 para técnico. As provas objetivas e discursivas estão marcadas para 31 de janeiro de 2027, sob organização da Vunesp.</p>
+                <a href="https://noticias.focusconcursos.com.br/noticias/concurso-trf-3-edital-publicado-com-salarios-de-ate-r-20-mil" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="câmara de laranjal-mg abre novo concurso público; veja edital edital publicado para a câmara municipal de laranjal/mg ofertando 1 vaga imediata para procurador legislativo, com exigência de graduação em direito, oab e 2 anos de prática jurídica. a remuneração inicial é de r$ 5.296,39 para jornada de 20 horas semanais. inscrições abertas de 06/01/2027 a 04/02/2027 pelo site do ibgp, com provas previstas para 28/02/2027. camara-laranjal-mg-procurador-legislativo procuradorias acheconcursos.com.br concurso câmara de laranjal (mg) oferta iniciais de até r$ 5,2 mil edital publicado pela câmara municipal de laranjal/mg, organizado pelo ibgp, ofertando 1 vaga imediata para procurador legislativo. o cargo exige graduação em direito, inscrição na oab e 2 anos de atividade jurídica, com vencimento de até r$ 5.296,39 para 20 a 40 horas semanais. inscrições de 06/01 a 04/02/2026, com provas objetivas previstas para 28/02/2027. camara-laranjal-mg-procurador-legislativo procuradorias concursosnobrasil.com câmara de laranjal oferece salários iniciais de até r$ 5.296,39 edital 001/2026 publicado pela câmara municipal de laranjal ofertando vaga para procurador legislativo (nível superior em direito, oab e 2 anos de prática). a remuneração chega a r$ 5.296,39 para jornada de até 40h semanais. inscrições de 06/01 a 04/02/2026 pela banca ibgp, com provas em 28/02/2027. camara-laranjal-mg-procurador-legislativo procuradorias diariodamidia.com.br">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-minas-gerais/camara-de-laranjal-mg-abre-novo-concurso-publico-94239" target="_blank" rel="noopener noreferrer">Câmara de Laranjal-MG abre novo concurso público; veja edital</a></h2>
+                <p class="reason">Edital publicado para a Câmara Municipal de Laranjal/MG ofertando 1 vaga imediata para Procurador Legislativo, com exigência de graduação em Direito, OAB e 2 anos de prática jurídica. A remuneração inicial é de R$ 5.296,39 para jornada de 20 horas semanais. Inscrições abertas de 06/01/2027 a 04/02/2027 pelo site do IBGP, com provas previstas para 28/02/2027.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-minas-gerais/camara-de-laranjal-mg-abre-novo-concurso-publico-94239" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">CONCURSOSNOBRASIL.COM</span>
+                <h2><a href="https://concursosnobrasil.com/concursos/mg/2026/10/27/concurso-camara-de-laranjal-mg-oferta-iniciais-de-ate-r-52-mil/" target="_blank" rel="noopener noreferrer">Concurso Câmara de Laranjal (MG) oferta iniciais de até R$ 5,2 mil</a></h2>
+                <p class="reason">Edital publicado pela Câmara Municipal de Laranjal/MG, organizado pelo IBGP, ofertando 1 vaga imediata para Procurador Legislativo. O cargo exige graduação em Direito, inscrição na OAB e 2 anos de atividade jurídica, com vencimento de até R$ 5.296,39 para 20 a 40 horas semanais. Inscrições de 06/01 a 04/02/2026, com provas objetivas previstas para 28/02/2027.</p>
+                <a href="https://concursosnobrasil.com/concursos/mg/2026/10/27/concurso-camara-de-laranjal-mg-oferta-iniciais-de-ate-r-52-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">DIARIODAMIDIA.COM.BR</span>
+                <h2><a href="https://diariodamidia.com.br/camara-de-laranjal-oferece-salarios-iniciais-de-ate-r-529639" target="_blank" rel="noopener noreferrer">Câmara de Laranjal oferece salários iniciais de até R$ 5.296,39</a></h2>
+                <p class="reason">Edital 001/2026 publicado pela Câmara Municipal de Laranjal ofertando vaga para Procurador Legislativo (nível superior em Direito, OAB e 2 anos de prática). A remuneração chega a R$ 5.296,39 para jornada de até 40h semanais. Inscrições de 06/01 a 04/02/2026 pela banca IBGP, com provas em 28/02/2027.</p>
+                <a href="https://diariodamidia.com.br/camara-de-laranjal-oferece-salarios-iniciais-de-ate-r-529639" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="concurso campo grande do piauí-pi 2026: edital publicado prefeitura de campo grande do piauí/pi publicou edital de concurso público contendo 1 vaga imediata para o cargo de analista jurídico, exigindo formação superior em direito. a remuneração inicial chega a até r$ 8.257,00 no topo da tabela de níveis do edital para 40 horas semanais. inscrições iniciam em 30 de outubro de 2026. prefeitura-campo-grande-do-piaui-pi-analista-juridico procuradorias acheconcursos.com.br prefeitura de campo grande do piauí - pi abre concurso público para diversos cargos e cadastro de reserva a prefeitura de campo grande do piauí/pi publicou edital de concurso público contemplando 1 vaga imediata para o cargo de analista jurídico. as remunerações variam até r$ 8.257,00. as inscrições ocorrem de 30 de outubro a 25 de novembro de 2026, sob organização do ibed. prefeitura-campo-grande-do-piaui-pi-analista-juridico procuradorias pciconcursos.com.br concurso da prefeitura de campo grande do piauí oferece 90 vagas com salários de até r$ 8,2 mil - portal clube news publicado edital de concurso pela prefeitura de campo grande do piauí com 90 vagas e vencimentos de até r$ 8.257,00. o certame inclui vaga para analista jurídico, exigindo graduação em direito. as inscrições ocorrem de 30 de outubro a 25 de novembro pelo site do ibed, e a prova objetiva será aplicada em 13 de dezembro. prefeitura-campo-grande-do-piaui-pi-analista-juridico procuradorias portalclubenews.com">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-piaui/concurso-campo-grande-do-piaui-pi-2026-edital-94233" target="_blank" rel="noopener noreferrer">Concurso Campo Grande do Piauí-PI 2026: Edital publicado</a></h2>
+                <p class="reason">Prefeitura de Campo Grande do Piauí/PI publicou edital de concurso público contendo 1 vaga imediata para o cargo de Analista Jurídico, exigindo formação superior em Direito. A remuneração inicial chega a até R$ 8.257,00 no topo da tabela de níveis do edital para 40 horas semanais. Inscrições iniciam em 30 de outubro de 2026.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-piaui/concurso-campo-grande-do-piaui-pi-2026-edital-94233" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-campo-grande-do-piaui-pi-abre-concurso-publico-para-diversos-cargos-e-cadastro-de-reserva" target="_blank" rel="noopener noreferrer">Prefeitura de Campo Grande do Piauí - PI abre concurso público para diversos cargos e cadastro de reserva</a></h2>
+                <p class="reason">A Prefeitura de Campo Grande do Piauí/PI publicou edital de concurso público contemplando 1 vaga imediata para o cargo de Analista Jurídico. As remunerações variam até R$ 8.257,00. As inscrições ocorrem de 30 de outubro a 25 de novembro de 2026, sob organização do IBED.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-campo-grande-do-piaui-pi-abre-concurso-publico-para-diversos-cargos-e-cadastro-de-reserva" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PORTALCLUBENEWS.COM</span>
+                <h2><a href="https://portalclubenews.com/2026/10/27/concurso-da-prefeitura-de-campo-grande-do-piaui-oferece-90-vagas-com-salarios-de-ate-r-82-mil/" target="_blank" rel="noopener noreferrer">Concurso da Prefeitura de Campo Grande do Piauí oferece 90 vagas com salários de até R$ 8,2 mil - Portal Clube News</a></h2>
+                <p class="reason">Publicado edital de concurso pela Prefeitura de Campo Grande do Piauí com 90 vagas e vencimentos de até R$ 8.257,00. O certame inclui vaga para analista jurídico, exigindo graduação em Direito. As inscrições ocorrem de 30 de outubro a 25 de novembro pelo site do IBED, e a prova objetiva será aplicada em 13 de dezembro.</p>
+                <a href="https://portalclubenews.com/2026/10/27/concurso-da-prefeitura-de-campo-grande-do-piaui-oferece-90-vagas-com-salarios-de-ate-r-82-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="concurso suzano-sp 2026: prefeitura abre 73 vagas de até r$ 12 mil edital publicado pela prefeitura de suzano/sp com vagas e formação de cadastro reserva para procurador jurídico. a seleção conta com prova objetiva, peça processual e avaliação de títulos, com inscrições abertas até 25 de novembro de 2026 pelo instituto nosso rumo e provas em dezembro. pgm-suzano-sp-procurador-juridico procuradorias acheconcursos.com.br prefeitura de suzano abre 73 vagas em novo concurso municipal edital n.º 02/2026 publicado pela prefeitura de suzano/sp oferta vagas imediatas e cadastro reserva, contemplando o cargo de procurador jurídico com exigência de superior em direito e inclusão de prova de peça processual. as inscrições ocorrem de 29/10 a 25/11/2026 pelo site do instituto nosso rumo, com taxa de r$ 106,62. as provas objetivas estão agendadas para 13/12/2026, com vencimentos iniciais que alcançam até r$ 12.062,91. pgm-suzano-sp-procurador-juridico procuradorias diariodamidia.com.br concurso prefeitura de suzano (sp) abre 73 vagas em novo edital publicado o edital n.º 02/2026 da prefeitura de suzano/sp, contendo vaga para procurador jurídico de nível superior em direito. a seleção oferece remuneração de até r$ 12.062,91 e conta com a banca instituto nosso rumo. inscrições de 29 de outubro a 25 de novembro de 2026, com prova objetiva e peça processual previstas para 13 de dezembro de 2026. pgm-suzano-sp-procurador-juridico procuradorias concursosnobrasil.com">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-suzano-sp-2026-prefeitura-abre-73-vagas-94225" target="_blank" rel="noopener noreferrer">Concurso Suzano-SP 2026: Prefeitura abre 73 vagas de até R$ 12 mil</a></h2>
+                <p class="reason">Edital publicado pela Prefeitura de Suzano/SP com vagas e formação de cadastro reserva para Procurador Jurídico. A seleção conta com prova objetiva, peça processual e avaliação de títulos, com inscrições abertas até 25 de novembro de 2026 pelo Instituto Nosso Rumo e provas em dezembro.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-suzano-sp-2026-prefeitura-abre-73-vagas-94225" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">DIARIODAMIDIA.COM.BR</span>
+                <h2><a href="https://diariodamidia.com.br/prefeitura-de-suzano-abre-73-vagas-em-novo-concurso-municipal" target="_blank" rel="noopener noreferrer">Prefeitura de Suzano abre 73 vagas em novo concurso municipal</a></h2>
+                <p class="reason">Edital n.º 02/2026 publicado pela Prefeitura de Suzano/SP oferta vagas imediatas e cadastro reserva, contemplando o cargo de Procurador Jurídico com exigência de superior em Direito e inclusão de prova de peça processual. As inscrições ocorrem de 29/10 a 25/11/2026 pelo site do Instituto Nosso Rumo, com taxa de R$ 106,62. As provas objetivas estão agendadas para 13/12/2026, com vencimentos iniciais que alcançam até R$ 12.062,91.</p>
+                <a href="https://diariodamidia.com.br/prefeitura-de-suzano-abre-73-vagas-em-novo-concurso-municipal" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">CONCURSOSNOBRASIL.COM</span>
+                <h2><a href="https://concursosnobrasil.com/concursos/sp/2026/10/26/concurso-prefeitura-de-suzano-sp-abre-73-vagas-em-novo-edital/" target="_blank" rel="noopener noreferrer">Concurso Prefeitura de Suzano (SP) abre 73 vagas em novo edital</a></h2>
+                <p class="reason">Publicado o edital n.º 02/2026 da Prefeitura de Suzano/SP, contendo vaga para Procurador Jurídico de nível superior em Direito. A seleção oferece remuneração de até R$ 12.062,91 e conta com a banca Instituto Nosso Rumo. Inscrições de 29 de outubro a 25 de novembro de 2026, com prova objetiva e peça processual previstas para 13 de dezembro de 2026.</p>
+                <a href="https://concursosnobrasil.com/concursos/sp/2026/10/26/concurso-prefeitura-de-suzano-sp-abre-73-vagas-em-novo-edital/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="cã¢mara municipal no piauã­ abre concurso com salã¡rios de atã© r$ 6 mil; veja edital | piauã­ edital publicado pela câmara municipal de dom inocêncio/pi com 1 vaga para procurador legislativo e remuneração de até r$ 6.000,00 para 20 horas semanais. as inscrições ocorrem de 22 de outubro a 13 de novembro de 2026 no site da banca gabriel excelência. a seleção contará com prova objetiva prevista para 13 de dezembro de 2026 e avaliação de títulos. camara-dom-inocencio-pi-procurador-legislativo procuradorias meionews.com concurso da câmara de dom inocêncio tem 6 vagas e salários de até r$ 6 mil a câmara municipal de dom inocêncio/pi lançou edital com 6 vagas para níveis médio e superior. o cargo de procurador legislativo oferece 1 vaga com remuneração de r$ 6.000,00 para 20 horas semanais, exigindo bacharelado em direito e oab. inscrições abertas até 13 de novembro de 2026, com provas em 13 de dezembro. camara-dom-inocencio-pi-procurador-legislativo procuradorias piauihoje.com concurso da câmara de dom inocêncio tem 6 vagas e salários de até r$ 6 mil concurso público aberto pela câmara municipal de dom inocêncio/pi, com 1 vaga imediata para procurador legislativo. a função exige bacharelado em direito e inscrição regular na oab, oferecendo remuneração inicial de r$ 6.000,00 para jornada de 20 horas semanais. inscrições até 13/11/2026 pelo site do instituto gabriel excelência, com provas objetivas agendadas para 13/12/2026. camara-dom-inocencio-pi-procurador-legislativo procuradorias piauihoje.com">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">MEIONEWS.COM</span>
+                <h2><a href="https://www.meionews.com/piaui/camara-municipal-no-piaui-abre-concurso-com-salarios-de-ate-r-6-mil-veja-edital-579259" target="_blank" rel="noopener noreferrer">CÃ¢mara Municipal no PiauÃ­ abre concurso com salÃ¡rios de atÃ© R$ 6 mil; veja edital | PiauÃ­</a></h2>
+                <p class="reason">Edital publicado pela Câmara Municipal de Dom Inocêncio/PI com 1 vaga para Procurador Legislativo e remuneração de até R$ 6.000,00 para 20 horas semanais. As inscrições ocorrem de 22 de outubro a 13 de novembro de 2026 no site da banca Gabriel Excelência. A seleção contará com prova objetiva prevista para 13 de dezembro de 2026 e avaliação de títulos.</p>
+                <a href="https://www.meionews.com/piaui/camara-municipal-no-piaui-abre-concurso-com-salarios-de-ate-r-6-mil-veja-edital-579259" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PIAUIHOJE.COM</span>
+                <h2><a href="https://piauihoje.com/amp/noticias/concursos/concurso-da-camara-de-dom-inocencio-tem-6-vagas-e-salarios-de-ate-r-6-mil-469404.html" target="_blank" rel="noopener noreferrer">Concurso da Câmara de Dom Inocêncio tem 6 vagas e salários de até R$ 6 mil</a></h2>
+                <p class="reason">A Câmara Municipal de Dom Inocêncio/PI lançou edital com 6 vagas para níveis médio e superior. O cargo de procurador legislativo oferece 1 vaga com remuneração de R$ 6.000,00 para 20 horas semanais, exigindo bacharelado em Direito e OAB. Inscrições abertas até 13 de novembro de 2026, com provas em 13 de dezembro.</p>
+                <a href="https://piauihoje.com/amp/noticias/concursos/concurso-da-camara-de-dom-inocencio-tem-6-vagas-e-salarios-de-ate-r-6-mil-469404.html" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PIAUIHOJE.COM</span>
+                <h2><a href="https://piauihoje.com/noticias/concursos/concurso-da-camara-de-dom-inocencio-tem-6-vagas-e-salarios-de-ate-r-6-mil-469404.html" target="_blank" rel="noopener noreferrer">Concurso da Câmara de Dom Inocêncio tem 6 vagas e salários de até R$ 6 mil</a></h2>
+                <p class="reason">Concurso público aberto pela Câmara Municipal de Dom Inocêncio/PI, com 1 vaga imediata para Procurador Legislativo. A função exige bacharelado em Direito e inscrição regular na OAB, oferecendo remuneração inicial de R$ 6.000,00 para jornada de 20 horas semanais. Inscrições até 13/11/2026 pelo site do Instituto Gabriel Excelência, com provas objetivas agendadas para 13/12/2026.</p>
+                <a href="https://piauihoje.com/noticias/concursos/concurso-da-camara-de-dom-inocencio-tem-6-vagas-e-salarios-de-ate-r-6-mil-469404.html" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de santa luzia d&#x27;oeste - ro abre seleção com salários de até r$ 5.130,63 processo seletivo simplificado aberto pela prefeitura de santa luzia d&#x27;oeste/ro oferece 1 vaga para o cargo de advogado. a contratação temporária pelo regime clt prevê remuneração de até r$ 5.130,63 para jornada de até 40 horas semanais. as inscrições gratuitas podem ser realizadas pela internet até o dia 11 de novembro de 2026. a seleção consistirá em análise de títulos e de experiência profissional. prefeitura-santa-luzia-doeste-ro-advogado procuradorias pciconcursos.com.br prefeitura de santa luzia d&#x27;oeste ro retifica processo seletivo e atualiza cronograma | folha dirigida a prefeitura de santa luzia d&#x27;oeste/ro retificou o cronograma do processo seletivo regido pelo edital nº 002/2026, ofertando 1 vaga imediata para o cargo de advogado, com remuneração de até r$ 5.130,63. as inscrições gratuitas podem ser realizadas até 11 de novembro de 2026 diretamente pelo portal oficial do município, sob regime da clt e contratos de 12 meses. prefeitura-santa-luzia-doeste-ro-advogado procuradorias folha.qconcursos.com">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-santa-luzia-doeste-ro-abre-selecao-com-salarios-de-ate-5130" target="_blank" rel="noopener noreferrer">Prefeitura de Santa Luzia d&#x27;Oeste - RO abre seleção com salários de até R$ 5.130,63</a></h2>
+                <p class="reason">Processo seletivo simplificado aberto pela Prefeitura de Santa Luzia d&#x27;Oeste/RO oferece 1 vaga para o cargo de Advogado. A contratação temporária pelo regime CLT prevê remuneração de até R$ 5.130,63 para jornada de até 40 horas semanais. As inscrições gratuitas podem ser realizadas pela internet até o dia 11 de novembro de 2026. A seleção consistirá em análise de títulos e de experiência profissional.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-santa-luzia-doeste-ro-abre-selecao-com-salarios-de-ate-5130" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">FOLHA.QCONCURSOS.COM</span>
+                <h2><a href="https://folha.qconcursos.com/n/prefeitura-de-santa-luzia-d-oeste-ro-retifica-processo-seletivo-e-atualiza-cronograma" target="_blank" rel="noopener noreferrer">Prefeitura de Santa Luzia d&#x27;Oeste RO retifica processo seletivo e atualiza cronograma</a></h2>
+                <p class="reason">A Prefeitura de Santa Luzia d&#x27;Oeste/RO retificou o cronograma do processo seletivo regido pelo Edital nº 002/2026, ofertando 1 vaga imediata para o cargo de advogado, com remuneração de até R$ 5.130,63. As inscrições gratuitas podem ser realizadas até 11 de novembro de 2026 diretamente pelo portal oficial do município, sob regime da CLT e contratos de 12 meses.</p>
+                <a href="https://folha.qconcursos.com/n/prefeitura-de-santa-luzia-d-oeste-ro-retifica-processo-seletivo-e-atualiza-cronograma" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="concurso tj al tem banca definida para novo edital de analista | folha dirigida o tribunal de justiça de alagoas definiu a fundação carlos chagas (fcc) como banca organizadora do novo edital para o quadro de pessoal. o órgão contabiliza 117 cargos vagos, englobando oportunidades para analista judiciário e oficial de justiça avaliador, carreira que exige formação em direito. o cronograma completo de publicação do edital e as datas de inscrição ainda serão divulgados. tjal-al-analista-e-oficial tribunais folha.qconcursos.com francês news | notícias do nordeste, brasil e do mundo em tempo real o tribunal de justiça de alagoas (tjal) autorizou a contratação da fundação carlos chagas (fcc) para organizar seu novo concurso de analistas. o órgão contabiliza 117 cargos vagos, contemplando vagas para a especialidade de oficial de justiça avaliador, que exige formação em direito. tjal-al-analista-e-oficial tribunais francesnews.com.br">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">FOLHA.QCONCURSOS.COM</span>
+                <h2><a href="https://folha.qconcursos.com/n/concurso-tj-al-2026-banca-definida" target="_blank" rel="noopener noreferrer">Concurso TJ AL tem banca definida para novo edital de analista</a></h2>
+                <p class="reason">O Tribunal de Justiça de Alagoas definiu a Fundação Carlos Chagas (FCC) como banca organizadora do novo edital para o quadro de pessoal. O órgão contabiliza 117 cargos vagos, englobando oportunidades para Analista Judiciário e Oficial de Justiça Avaliador, carreira que exige formação em Direito. O cronograma completo de publicação do edital e as datas de inscrição ainda serão divulgados.</p>
+                <a href="https://folha.qconcursos.com/n/concurso-tj-al-2026-banca-definida" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">FRANCESNEWS.COM.BR</span>
+                <h2><a href="https://francesnews.com.br/post/2026/10/26/44032-concurso-do-tjal-tera-fcc-como-banca-e-preve-vagas-para-analistas" target="_blank" rel="noopener noreferrer">Francês News | Notícias do Nordeste, Brasil e do mundo em Tempo Real</a></h2>
+                <p class="reason">O Tribunal de Justiça de Alagoas (TJAL) autorizou a contratação da Fundação Carlos Chagas (FCC) para organizar seu novo concurso de analistas. O órgão contabiliza 117 cargos vagos, contemplando vagas para a especialidade de Oficial de Justiça Avaliador, que exige formação em Direito.</p>
+                <a href="https://francesnews.com.br/post/2026/10/26/44032-concurso-do-tjal-tera-fcc-como-banca-e-preve-vagas-para-analistas" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="concurso da defensoria sp oferece salã¡rio de r$ 29 mil edital publicado pela defensoria pública do estado de são paulo (dpe-sp) com 70 vagas imediatas para o cargo de defensor público. a remuneração inicial é de r$ 29.716,00. as inscrições seguem abertas até o dia 11 de novembro de 2026, mediante taxa de r$ 250,00 no portal da fundação carlos chagas (fcc). o órgão conta atualmente com 845 defensores ativos e atende cerca de 3 milhões de casos anualmente. dpesp-sp-defensor defensoria abcdoabc.com.br concurso da defensoria pública de sp está com inscrições abertas para 70 vagas com salário inicial de r$ 29,7 mil | g1 edital do x concurso público publicado pela defensoria pública de são paulo, ofertando 70 vagas para defensor público. o subsídio inicial é de r$ 29.716,00. as inscrições seguem abertas até o dia 11 de novembro de 2026, com taxa de r$ 250,00, sob a organização da banca fundação carlos chagas (fcc). dpesp-sp-defensor defensoria g1.globo.com">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">ABCDOABC.COM.BR</span>
+                <h2><a href="https://www.abcdoabc.com.br/concurso-da-defensoria-sp-salario-de-r-29-mil/" target="_blank" rel="noopener noreferrer">Concurso da Defensoria SP oferece salÃ¡rio de R$ 29 mil</a></h2>
+                <p class="reason">Edital publicado pela Defensoria Pública do Estado de São Paulo (DPE-SP) com 70 vagas imediatas para o cargo de Defensor Público. A remuneração inicial é de R$ 29.716,00. As inscrições seguem abertas até o dia 11 de novembro de 2026, mediante taxa de R$ 250,00 no portal da Fundação Carlos Chagas (FCC). O órgão conta atualmente com 845 defensores ativos e atende cerca de 3 milhões de casos anualmente.</p>
+                <a href="https://www.abcdoabc.com.br/concurso-da-defensoria-sp-salario-de-r-29-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">G1.GLOBO.COM</span>
+                <h2><a href="https://g1.globo.com/sp/sao-paulo/noticia/2026/10/27/concurso-da-defensoria-publica-de-sp-esta-com-inscricoes-abertas-para-70-vagas-com-salario-inicial-de-r-297-mil.ghtml" target="_blank" rel="noopener noreferrer">Concurso da Defensoria Pública de SP está com inscrições abertas para 70 vagas com salário inicial de R$ 29,7 mil</a></h2>
+                <p class="reason">Edital do X Concurso Público publicado pela Defensoria Pública de São Paulo, ofertando 70 vagas para Defensor Público. O subsídio inicial é de R$ 29.716,00. As inscrições seguem abertas até o dia 11 de novembro de 2026, com taxa de R$ 250,00, sob a organização da banca Fundação Carlos Chagas (FCC).</p>
+                <a href="https://g1.globo.com/sp/sao-paulo/noticia/2026/10/27/concurso-da-defensoria-publica-de-sp-esta-com-inscricoes-abertas-para-70-vagas-com-salario-inicial-de-r-297-mil.ghtml" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="concurso da câmara de portel-pa é aberto com mais de 20 vagas publicado edital pela câmara municipal de portel/pa com 1 vaga imediata mais cadastro reserva para advogado legislativo, cargo que exige graduação em direito e inscrição na oab. a remuneração inicial é de r$ 4.723,31 para carga horária de 30 horas semanais. as inscrições seguem abertas até 15 de novembro de 2026, sob a organização do ivin, com provas objetivas em 29 de novembro. camara-portel-pa-advogado-legislativo procuradorias acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-para/concurso-da-camara-de-portel-pa-e-aberto-com-mais-de-20-vagas-94211" target="_blank" rel="noopener noreferrer">Concurso da Câmara de Portel-PA é aberto com mais de 20 vagas</a></h2>
+                <p class="reason">Publicado edital pela Câmara Municipal de Portel/PA com 1 vaga imediata mais cadastro reserva para Advogado Legislativo, cargo que exige graduação em Direito e inscrição na OAB. A remuneração inicial é de R$ 4.723,31 para carga horária de 30 horas semanais. As inscrições seguem abertas até 15 de novembro de 2026, sob a organização do IVIN, com provas objetivas em 29 de novembro.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-para/concurso-da-camara-de-portel-pa-e-aberto-com-mais-de-20-vagas-94211" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de alvinópolis - mg publica retificações de concurso público com salários de até r$ 17.954,23 concurso público publicado pela prefeitura de alvinópolis/mg contempla 1 vaga para advogado e 2 vagas para assistente judiciário, com regime estatutário. as remunerações chegam a r$ 17.954,23. inscrições abertas de 16 de novembro a 15 de dezembro de 2026 pelo site do instituto consulplan, com taxas de r$ 130,00 para nível superior. as provas objetivas e discursivas estão agendadas para o dia 24 de janeiro de 2027. prefeitura-alvinopolis-mg-advogado administrativo pciconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-alvinopolis-mg-publica-retificacoes-de-concurso-publico-com-salarios-de-ate-17954" target="_blank" rel="noopener noreferrer">Prefeitura de Alvinópolis - MG publica retificações de concurso público com salários de até R$ 17.954,23</a></h2>
+                <p class="reason">Concurso público publicado pela Prefeitura de Alvinópolis/MG contempla 1 vaga para Advogado e 2 vagas para Assistente Judiciário, com regime estatutário. As remunerações chegam a R$ 17.954,23. Inscrições abertas de 16 de novembro a 15 de dezembro de 2026 pelo site do Instituto Consulplan, com taxas de R$ 130,00 para nível superior. As provas objetivas e discursivas estão agendadas para o dia 24 de janeiro de 2027.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-alvinopolis-mg-publica-retificacoes-de-concurso-publico-com-salarios-de-ate-17954" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de lagoa santa anuncia novo concurso público anunciado concurso público para a prefeitura de lagoa santa/mg contemplando o cargo de procurador municipal. o certame oferece vagas com remunerações que alcançam até r$ 8.860,79. as inscrições estarão abertas entre 16 de dezembro e 18 de janeiro, com a realização da prova objetiva agendada para o dia 21 de fevereiro de 2027. prefeitura-lagoa-santa-mg-procurador-municipal procuradorias jornalgeraes.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">JORNALGERAES.COM.BR</span>
+                <h2><a href="https://jornalgeraes.com.br/prefeitura-de-lagoa-santa-anuncia-novo-concurso-publico/" target="_blank" rel="noopener noreferrer">Prefeitura de Lagoa Santa anuncia novo concurso público</a></h2>
+                <p class="reason">Anunciado concurso público para a Prefeitura de Lagoa Santa/MG contemplando o cargo de Procurador Municipal. O certame oferece vagas com remunerações que alcançam até R$ 8.860,79. As inscrições estarão abertas entre 16 de dezembro e 18 de janeiro, com a realização da prova objetiva agendada para o dia 21 de fevereiro de 2027.</p>
+                <a href="https://jornalgeraes.com.br/prefeitura-de-lagoa-santa-anuncia-novo-concurso-publico/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso câmara caruaru pe: banca em definição para 20 vagas! a câmara municipal de caruaru/pe está em fase de definição de banca organizadora para novo concurso público que ofertará 20 vagas efetivas. o certame contará com 1 vaga de nível superior na especialidade de direito para o cargo de analista legislativo. camara-caruaru-pe-analista-direito tribunais blog.grancursosonline.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">BLOG.GRANCURSOSONLINE.COM.BR</span>
+                <h2><a href="https://blog.grancursosonline.com.br/concurso-camara-caruaru-pe/" target="_blank" rel="noopener noreferrer">Concurso Câmara Caruaru PE: banca em definição para 20 vagas!</a></h2>
+                <p class="reason">A Câmara Municipal de Caruaru/PE está em fase de definição de banca organizadora para novo concurso público que ofertará 20 vagas efetivas. O certame contará com 1 vaga de nível superior na especialidade de Direito para o cargo de Analista Legislativo.</p>
+                <a href="https://blog.grancursosonline.com.br/concurso-camara-caruaru-pe/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de garopaba abre processo seletivo para estágio com vagas e cadastro reserva – real news a prefeitura de garopaba/sc realizou processo seletivo para formação de cadastro reserva e preenchimento de vagas de estágio não obrigatório. a seleção contemplou estudantes do curso superior em direito, oferecendo bolsa-auxílio de r$ 850,00 e auxílio-transporte para jornada de 30 horas semanais. prefeitura-garopaba-sc-estagio-direito estagio realnews.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">REALNEWS.COM.BR</span>
+                <h2><a href="https://realnews.com.br/prefeitura-de-garopaba-abre-processo-seletivo-para-estagio-com-vagas-e-cadastro-reserva/" target="_blank" rel="noopener noreferrer">Prefeitura de Garopaba abre processo seletivo para estágio com vagas e cadastro reserva – Real News</a></h2>
+                <p class="reason">A Prefeitura de Garopaba/SC realizou processo seletivo para formação de cadastro reserva e preenchimento de vagas de estágio não obrigatório. A seleção contemplou estudantes do curso superior em Direito, oferecendo bolsa-auxílio de R$ 850,00 e auxílio-transporte para jornada de 30 horas semanais.</p>
+                <a href="https://realnews.com.br/prefeitura-de-garopaba-abre-processo-seletivo-para-estagio-com-vagas-e-cadastro-reserva/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso trt4 (rs): inscrições abertas! edital publicado pelo trt da 4ª região (rs) com inscrições abertas até 25 de novembro de 2026 para formação de cadastro reserva em cargos de técnico e analista judiciário, exigindo nível superior. remunerações iniciais chegam a r$ 16.040,88. a seleção é organizada pela banca fcc, com provas objetivas e discursivas agendadas para o dia 31 de janeiro de 2027. trt4-rs-analista-e-tecnico tribunais novaconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">NOVACONCURSOS.COM.BR</span>
+                <h2><a href="https://www.novaconcursos.com.br/portal/noticias/concurso-trt4-rs-inscricoes-abertas/" target="_blank" rel="noopener noreferrer">Concurso TRT4 (RS): inscrições abertas!</a></h2>
+                <p class="reason">Edital publicado pelo TRT da 4ª Região (RS) com inscrições abertas até 25 de novembro de 2026 para formação de cadastro reserva em cargos de Técnico e Analista Judiciário, exigindo nível superior. Remunerações iniciais chegam a R$ 16.040,88. A seleção é organizada pela banca FCC, com provas objetivas e discursivas agendadas para o dia 31 de janeiro de 2027.</p>
+                <a href="https://www.novaconcursos.com.br/portal/noticias/concurso-trt4-rs-inscricoes-abertas/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso prefeitura de curitiba (pr): 348 vagas e inscrições até 5 de novembro edital publicado pela prefeitura de curitiba (pr) ofertando 5 vagas imediatas para o cargo de procurador do município, com exigência de graduação em direito e registro na oab. a remuneração inicial alcança r$ 38.087,99, englobando vencimento, gratificações e prêmios. as inscrições seguem abertas até 5 de novembro de 2026, sob organização da fundação fafipa, com provas objetivas em dezembro. pgm-curitiba-pr-procurador procuradorias noticias.meupreparatorio.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">NOTICIAS.MEUPREPARATORIO.COM.BR</span>
+                <h2><a href="https://noticias.meupreparatorio.com.br/concursos/concurso-prefeitura-de-curitiba-pr-348-vagas-inscricoes-ate-5-de-novembro" target="_blank" rel="noopener noreferrer">Concurso Prefeitura de Curitiba (PR): 348 vagas e inscrições até 5 de novembro</a></h2>
+                <p class="reason">Edital publicado pela Prefeitura de Curitiba (PR) ofertando 5 vagas imediatas para o cargo de Procurador do Município, com exigência de graduação em Direito e registro na OAB. A remuneração inicial alcança R$ 38.087,99, englobando vencimento, gratificações e prêmios. As inscrições seguem abertas até 5 de novembro de 2026, sob organização da Fundação FAFIPA, com provas objetivas em dezembro.</p>
+                <a href="https://noticias.meupreparatorio.com.br/concursos/concurso-prefeitura-de-curitiba-pr-348-vagas-inscricoes-ate-5-de-novembro" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="segunda etapa do concurso dos cartórios será realizada neste fim de semana - novidades mt o tribunal de justiça de mato grosso (tjmt) realiza a segunda etapa, composta por provas escritas e práticas, do concurso público para outorga de delegações de notas e registro do foro extrajudicial. o certame é executado pelo cebraspe e regido pelo edital específico da corte estadual, com divulgação do resultado provisório prevista para 27 de novembro de 2026. tjmt-mt-cartorios cartorios novidadesmt.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B008B;">Cartórios</span><span class="site-tag">NOVIDADESMT.COM.BR</span>
+                <h2><a href="https://novidadesmt.com.br/mato-grosso/segunda-etapa-do-concurso-dos-cartorios-sera-realizada-neste-fim-de-semana/" target="_blank" rel="noopener noreferrer">Segunda etapa do concurso dos cartórios será realizada neste fim de semana - NOVIDADES MT</a></h2>
+                <p class="reason">O Tribunal de Justiça de Mato Grosso (TJMT) realiza a segunda etapa, composta por provas escritas e práticas, do Concurso Público para Outorga de Delegações de Notas e Registro do Foro Extrajudicial. O certame é executado pelo Cebraspe e regido pelo edital específico da corte estadual, com divulgação do resultado provisório prevista para 27 de novembro de 2026.</p>
+                <a href="https://novidadesmt.com.br/mato-grosso/segunda-etapa-do-concurso-dos-cartorios-sera-realizada-neste-fim-de-semana/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="resultado preliminar pgm manaus 2026: notas e aprovados divulgado o resultado preliminar das provas objetivas do concurso da pgm manaus/am, organizado pela fundação carlos chagas (fcc). o certame oferece 6 vagas imediatas para procurador de 3ª classe, com exigência de nível superior em direito e jornada de 20 horas semanais. a remuneração inicial é de r$ 29.009,10. o processo registrou 2.204 inscritos e o período de recursos contra as notas preliminares já está aberto. pgm-manaus-am-procurador procuradorias fiibrasil.com">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">FIIBRASIL.COM</span>
+                <h2><a href="https://fiibrasil.com/concursos/concurso-pgm-manaus-2026-resultado-preliminar/" target="_blank" rel="noopener noreferrer">Resultado preliminar PGM Manaus 2026: Notas e Aprovados</a></h2>
+                <p class="reason">Divulgado o resultado preliminar das provas objetivas do concurso da PGM Manaus/AM, organizado pela Fundação Carlos Chagas (FCC). O certame oferece 6 vagas imediatas para Procurador de 3ª Classe, com exigência de nível superior em Direito e jornada de 20 horas semanais. A remuneração inicial é de R$ 29.009,10. O processo registrou 2.204 inscritos e o período de recursos contra as notas preliminares já está aberto.</p>
+                <a href="https://fiibrasil.com/concursos/concurso-pgm-manaus-2026-resultado-preliminar/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso tce sp 2026: vagas, especialidades e provas o concurso do tce-sp oferece 50 vagas para auditor de controle externo, com especialidade em direito. o edital está publicado e sob organização da vunesp, com remuneração inicial de r$ 20.940,20 para jornada de 40 horas semanais. as inscrições foram encerradas após prorrogação, e as provas objetiva e escrita estão confirmadas para o dia 11 de outubro de 2026, na cidade de são paulo. tcesp-sp-auditor-direito administrativo ceisc.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">CEISC.COM.BR</span>
+                <h2><a href="https://ceisc.com.br/blog/post/concurso-tce-sp" target="_blank" rel="noopener noreferrer">Concurso TCE SP 2026: vagas, especialidades e provas</a></h2>
+                <p class="reason">O concurso do TCE-SP oferece 50 vagas para Auditor de Controle Externo, com especialidade em Direito. O edital está publicado e sob organização da Vunesp, com remuneração inicial de R$ 20.940,20 para jornada de 40 horas semanais. As inscrições foram encerradas após prorrogação, e as provas objetiva e escrita estão confirmadas para o dia 11 de outubro de 2026, na cidade de São Paulo.</p>
+                <a href="https://ceisc.com.br/blog/post/concurso-tce-sp" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de monteiro lobato abre concurso público com vagas para diferentes níveis de escolaridade - notícias são josé dos campos | @noticias.sjcampos a prefeitura de monteiro lobato/sp abriu concurso público (edital nº 01/2026) que contempla o cargo de procurador jurídico, exigindo nível superior em direito. as inscrições seguem abertas até 23 de novembro de 2026, sob organização do instituto aplicativa. a taxa de inscrição para cargos de nível superior é de r$ 60,00, com prova objetiva agendada para o dia 13 de dezembro de 2026. prefeitura-monteiro-lobato-sp-procurador procuradorias noticiassjc.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">NOTICIASSJC.COM.BR</span>
+                <h2><a href="https://noticiassjc.com.br/concurso-prefeitura-monteiro-lobato-2026-edital-01-inscricoes-23-novembro/" target="_blank" rel="noopener noreferrer">Prefeitura de Monteiro Lobato abre concurso público com vagas para diferentes níveis de escolaridade - Notícias São José dos Campos | @noticias.sjcampos</a></h2>
+                <p class="reason">A Prefeitura de Monteiro Lobato/SP abriu concurso público (Edital nº 01/2026) que contempla o cargo de Procurador Jurídico, exigindo nível superior em Direito. As inscrições seguem abertas até 23 de novembro de 2026, sob organização do Instituto Aplicativa. A taxa de inscrição para cargos de nível superior é de R$ 60,00, com prova objetiva agendada para o dia 13 de dezembro de 2026.</p>
+                <a href="https://noticiassjc.com.br/concurso-prefeitura-monteiro-lobato-2026-edital-01-inscricoes-23-novembro/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="rádio capinzal - concurso da câmara de capinzal tem cerca de 200 inscritos; prazo termina nesta quarta-feira edital publicado pela câmara de vereadores de capinzal/sc com 1 vaga para advogado. o cargo exige graduação em direito e oferece remuneração inicial de r$ 4.534,82 com jornada de 10 horas semanais, acrescida de vale-alimentação. as inscrições seguem abertas até 28 de outubro de 2026, sob organização da banca furb. a prova objetiva está agendada para 22 de novembro de 2026. camara-capinzal-sc-advogado procuradorias capinzalfm.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">CAPINZALFM.COM.BR</span>
+                <h2><a href="https://capinzalfm.com.br/noticia/concurso-da-camara-de-capinzal-tem-cerca-de-200-inscritos-prazo-termina-nesta-quarta-feira" target="_blank" rel="noopener noreferrer">Rádio Capinzal - Concurso da Câmara de Capinzal tem cerca de 200 inscritos; prazo termina nesta quarta-feira</a></h2>
+                <p class="reason">Edital publicado pela Câmara de Vereadores de Capinzal/SC com 1 vaga para Advogado. O cargo exige graduação em Direito e oferece remuneração inicial de R$ 4.534,82 com jornada de 10 horas semanais, acrescida de vale-alimentação. As inscrições seguem abertas até 28 de outubro de 2026, sob organização da banca FURB. A prova objetiva está agendada para 22 de novembro de 2026.</p>
+                <a href="https://capinzalfm.com.br/noticia/concurso-da-camara-de-capinzal-tem-cerca-de-200-inscritos-prazo-termina-nesta-quarta-feira" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="tribunal de justiça sp abre concurso para oficial de justiça e escrevente: salários de r$ 9.856 - jornal da franca editais publicados pelo tribunal de justiça de são paulo (tjsp) sob organização da vunesp, ofertando 132 vagas e cadastro de reserva para oficial de justiça, além de cadastro de reserva para escrevente técnico judiciário. as remunerações iniciais chegam a r$ 9.856,95 para oficial e r$ 6.782,54 para escrevente, ambos com jornada de 40h semanais. inscrições abertas de 28/10 a 10/12/2026, com provas aplicadas em 14/03/2027. tjsp-sp-oficial-de-justica tribunais jornaldafranca.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">JORNALDAFRANCA.COM.BR</span>
+                <h2><a href="https://www.jornaldafranca.com.br/tribunal-de-justica-sp-abre-concurso-para-oficial-de-justica-e-escrevente-salarios-de-r-9-856/" target="_blank" rel="noopener noreferrer">Tribunal de Justiça SP abre concurso para Oficial de Justiça e Escrevente: salários de R$ 9.856 - Jornal da Franca</a></h2>
+                <p class="reason">Editais publicados pelo Tribunal de Justiça de São Paulo (TJSP) sob organização da Vunesp, ofertando 132 vagas e cadastro de reserva para Oficial de Justiça, além de cadastro de reserva para Escrevente Técnico Judiciário. As remunerações iniciais chegam a R$ 9.856,95 para Oficial e R$ 6.782,54 para Escrevente, ambos com jornada de 40h semanais. Inscrições abertas de 28/10 a 10/12/2026, com provas aplicadas em 14/03/2027.</p>
+                <a href="https://www.jornaldafranca.com.br/tribunal-de-justica-sp-abre-concurso-para-oficial-de-justica-e-escrevente-salarios-de-r-9-856/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso pc ac 2026: idecan é banca para 139 vagas | notícias focus concursos a polícia civil do acre (pc ac) definiu o idecan como banca organizadora de seu novo concurso público por meio de dispensa de licitação. o certame ofertará 139 vagas para cargos de nível superior, contemplando as carreiras de delegado de polícia, oficial investigador e perito. a publicação do edital está prevista para o decorre de 2026, restando definir o cronograma de inscrições e a data das provas. pcac-ac-delegado policiais noticias.focusconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#2F4F4F;">Carreiras Policiais</span><span class="site-tag">NOTICIAS.FOCUSCONCURSOS.COM.BR</span>
+                <h2><a href="https://noticias.focusconcursos.com.br/noticias/pc-ac-idecan-e-escolhida-como-banca-organizadora-para-139-vagas" target="_blank" rel="noopener noreferrer">Concurso PC AC 2026: Idecan é banca para 139 vagas | Notícias Focus Concursos</a></h2>
+                <p class="reason">A Polícia Civil do Acre (PC AC) definiu o Idecan como banca organizadora de seu novo concurso público por meio de dispensa de licitação. O certame ofertará 139 vagas para cargos de nível superior, contemplando as carreiras de delegado de polícia, oficial investigador e perito. A publicação do edital está prevista para o decorre de 2026, restando definir o cronograma de inscrições e a data das provas.</p>
+                <a href="https://noticias.focusconcursos.com.br/noticias/pc-ac-idecan-e-escolhida-como-banca-organizadora-para-139-vagas" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="tjrs abre seleção para estágio de graduação e pós-graduação; veja como fazer a inscrição gratuitamente - seguinte o tribunal de justiça do rio grande do sul (tjrs) abriu inscrições gratuitas para formação de cadastro reserva em processos seletivos de estágio nas modalidades de graduação e pós-graduação em direito. as oportunidades contemplam atuação nas áreas cível, penal e público do poder judiciário estadual. as inscrições seguem abertas até as 18h do dia 4 de novembro de 2026 por meio do portal eletrônico oficial do órgão. tjrs-rs-estagio estagio seguinte.inf.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">SEGUINTE.INF.BR</span>
+                <h2><a href="https://seguinte.inf.br/tjrs-abre-selecao-para-estagio-de-graduacao-e-pos-graduacao-veja-como-fazer-a-inscricao-gratuitamente/" target="_blank" rel="noopener noreferrer">TJRS abre seleção para estágio de graduação e pós-graduação; veja como fazer a inscrição gratuitamente - Seguinte</a></h2>
+                <p class="reason">O Tribunal de Justiça do Rio Grande do Sul (TJRS) abriu inscrições gratuitas para formação de cadastro reserva em processos seletivos de estágio nas modalidades de graduação e pós-graduação em Direito. As oportunidades contemplam atuação nas áreas cível, penal e público do Poder Judiciário estadual. As inscrições seguem abertas até as 18h do dia 4 de novembro de 2026 por meio do portal eletrônico oficial do órgão.</p>
+                <a href="https://seguinte.inf.br/tjrs-abre-selecao-para-estagio-de-graduacao-e-pos-graduacao-veja-como-fazer-a-inscricao-gratuitamente/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="tre-ce abre seleção de estágio para graduação e pós-graduação em direito da unifor seleção aberta para estágio de pós-graduação e graduação em direito no tre-ce, em parceria com a universidade de fortaleza. são oferecidas 3 vagas imediatas mais cadastro reserva, com bolsas de r$ 1.302,00 para graduação e r$ 2.343,25 para pós-graduação, acrescidas de auxílio-transporte. inscrições até 23/11/2026. tre-ce-fortaleza-ce-estagio estagio unifor.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">UNIFOR.BR</span>
+                <h2><a href="https://unifor.br/-/estagio-no-tre-ce-para-graduacao-e-pos-graduacao-em-direito" target="_blank" rel="noopener noreferrer">TRE-CE abre seleção de estágio para graduação e pós-graduação em Direito da Unifor</a></h2>
+                <p class="reason">Seleção aberta para estágio de pós-graduação e graduação em Direito no TRE-CE, em parceria com a Universidade de Fortaleza. São oferecidas 3 vagas imediatas mais cadastro reserva, com bolsas de R$ 1.302,00 para graduação e R$ 2.343,25 para pós-graduação, acrescidas de auxílio-transporte. Inscrições até 23/11/2026.</p>
+                <a href="https://unifor.br/-/estagio-no-tre-ce-para-graduacao-e-pos-graduacao-em-direito" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso da dpdf oferece 707 vagas com salários de até r$ 13,2 mil - o hoje edital publicado pela defensoria pública do distrito federal oferecendo 707 vagas, sendo 7 imediatas e 700 em cadastro reserva para analista de apoio à assistência judiciária na especialidade de direito e legislação. a remuneração inicial é de r$ 11.514,95, podendo chegar a r$ 13.216,36 com o auxílio-alimentação. as inscrições ocorrem de 03/12/2026 a 07/01/2027 pelo site do instituto access, com taxa de r$ 110. as provas objetivas e discursivas estão aplicadas em 21/02/2027. dpdf-df-analista-juridico defensoria ohoje.com">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">OHOJE.COM</span>
+                <h2><a href="https://ohoje.com/2026/10/27/concurso-da-dpdf-oferece-707-vagas-com-salarios-de-ate-r-132-mil/" target="_blank" rel="noopener noreferrer">Concurso da DPDF oferece 707 vagas com salários de até R$ 13,2 mil - O Hoje</a></h2>
+                <p class="reason">Edital publicado pela Defensoria Pública do Distrito Federal oferecendo 707 vagas, sendo 7 imediatas e 700 em cadastro reserva para Analista de Apoio à Assistência Judiciária na especialidade de Direito e Legislação. A remuneração inicial é de R$ 11.514,95, podendo chegar a R$ 13.216,36 com o auxílio-alimentação. As inscrições ocorrem de 03/12/2026 a 07/01/2027 pelo site do Instituto Access, com taxa de R$ 110. As provas objetivas e discursivas estão aplicadas em 21/02/2027.</p>
+                <a href="https://ohoje.com/2026/10/27/concurso-da-dpdf-oferece-707-vagas-com-salarios-de-ate-r-132-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="pjm brasília/df retifica resultado final do processo público de seleção de residência jurídica – ministério público militar divulgada a retificação do resultado final do processo público de seleção para residência jurídica da procuradoria de justiça militar em brasília/df, conforme a portaria nº 13/pjm/df, consolidando a lista de classificação dos candidatos bacharéis em direito aprovados no certame regido pelo edital de maio de 2026. mpm-brasilia-df-residencia-juridica estagio mpm.mp.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">MPM.MP.BR</span>
+                <h2><a href="https://www.mpm.mp.br/arquivos/74367" target="_blank" rel="noopener noreferrer">PJM Brasília/DF retifica resultado final do Processo Público de Seleção de Residência Jurídica – MINISTÉRIO PÚBLICO MILITAR</a></h2>
+                <p class="reason">Divulgada a retificação do resultado final do Processo Público de Seleção para Residência Jurídica da Procuradoria de Justiça Militar em Brasília/DF, conforme a Portaria nº 13/PJM/DF, consolidando a lista de classificação dos candidatos bacharéis em Direito aprovados no certame regido pelo edital de maio de 2026.</p>
+                <a href="https://www.mpm.mp.br/arquivos/74367" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="começam as inscrições para o concurso público da câmara de vereadores; veja como se inscrever - jornal de pomerode a câmara de pomerode/sc lançou o concurso público nº 001/2026 com vagas efetivas, incluindo o cargo de analista administrativo, que admite bacharéis em direito, além de administração, ciências contábeis e economia. as inscrições seguem abertas até 24/11/2026 no site da banca furb, com taxa de r$ 170,00 para nível superior. a seleção envolverá prova objetiva e avaliação psicológica na data provável de 13/12/2026. camara-pomerode-sc-analista-administrativo administrativo jornaldepomerode.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">JORNALDEPOMERODE.COM.BR</span>
+                <h2><a href="https://www.jornaldepomerode.com.br/comecam-as-inscricoes-para-o-concurso-publico-da-camara-de-vereadores-veja-como-se-inscrever/" target="_blank" rel="noopener noreferrer">Começam as inscrições para o Concurso Público da Câmara de Vereadores; veja como se inscrever - Jornal de Pomerode</a></h2>
+                <p class="reason">A Câmara de Pomerode/SC lançou o Concurso Público nº 001/2026 com vagas efetivas, incluindo o cargo de Analista Administrativo, que admite bacharéis em Direito, além de Administração, Ciências Contábeis e Economia. As inscrições seguem abertas até 24/11/2026 no site da banca FURB, com taxa de R$ 170,00 para nível superior. A seleção envolverá prova objetiva e avaliação psicológica na data provável de 13/12/2026.</p>
+                <a href="https://www.jornaldepomerode.com.br/comecam-as-inscricoes-para-o-concurso-publico-da-camara-de-vereadores-veja-como-se-inscrever/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        
+    </div>
+    <footer>Gerado automaticamente · CuradorIA de Carreiras Jurídicas · Todos os créditos reservados aos respectivos autores dos artigos encontrados.</footer>
+    <script>
+    // Tema (dark mode) / Theme (dark mode)
+    (function () {
+        var saved = localStorage.getItem('curadoria-theme');
+        if (saved === 'dark' || saved === 'light') {
+            document.documentElement.setAttribute('data-theme', saved);
+        }
+    })();
+
+    function toggleTheme() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme');
+        if (!current) {
+            current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('curadoria-theme', next);
+        var btn = document.getElementById('theme-toggle');
+        if (btn) btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('theme-toggle');
+        if (btn) {
+            var current = document.documentElement.getAttribute('data-theme') ||
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            btn.textContent = current === 'dark' ? '☀️' : '🌙';
+            btn.addEventListener('click', toggleTheme);
+        }
+
+        // Carrossel / Carousel
+        document.querySelectorAll('.group-card').forEach(function (card) {
+            var slidesEl = card.querySelector('.slides');
+            if (!slidesEl) return;
+            var total = slidesEl.children.length;
+            var current = 0;
+            var leftArrow = card.querySelector('.arrow-left');
+            var rightArrow = card.querySelector('.arrow-right');
+            var indicators = card.querySelectorAll('.indicator');
+
+            function update() {
+                slidesEl.style.transform = 'translateX(-' + (current * 100) + '%)';
+                indicators.forEach(function (ind, i) { ind.classList.toggle('active', i === current); });
+                if (leftArrow) leftArrow.disabled = current === 0;
+                if (rightArrow) rightArrow.disabled = current === total - 1;
+            }
+            if (leftArrow) leftArrow.addEventListener('click', function () {
+                if (current > 0) { current--; update(); }
+            });
+            if (rightArrow) rightArrow.addEventListener('click', function () {
+                if (current < total - 1) { current++; update(); }
+            });
+            update();
+        });
+
+        // Busca / Search
+        var searchInput = document.getElementById('search');
+        var filterInfo = document.getElementById('filter-info');
+        var allCards = document.querySelectorAll('.group-card');
+
+        function applyFilter() {
+            var q = (searchInput.value || '').trim().toLowerCase();
+            var visible = 0;
+            allCards.forEach(function (card) {
+                var blob = card.getAttribute('data-search') || '';
+                var match = !q || blob.indexOf(q) !== -1;
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+            if (filterInfo) {
+                if (!q) filterInfo.textContent = '';
+                else filterInfo.textContent = visible + ' de ' + allCards.length + ' certames correspondem a "' + q + '"';
+            }
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', applyFilter);
+            searchInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { searchInput.value = ''; applyFilter(); }
+            });
+        }
+    });
+</script>
+</body>
+</html>
