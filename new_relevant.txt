@@ -1,191 +1,287 @@
-Verificação: 2026-10-29T10:41:30.862629+00:00
-Links analisados: 164
-Links relevantes: 31
+Verificação: 2026-10-30T10:41:23.921145+00:00
+Links analisados: 175
+Links relevantes: 47
 ============================================================
 
-Title:   Câmara de Cristalina-GO abre concurso para todos os níveis; até R$ 8,3 mil
-URL:     https://www.acheconcursos.com.br/concursos-goias/go-camara-de-cristalina-concurso-para-todos-os-niveis-93672
+Title:   INB abre concurso público para cadastro de reserva em diversas áreas de atuação
+URL:     https://www.pciconcursos.com.br/noticias/inb-abre-concurso-publico-para-cadastro-de-reserva-em-diversas-areas-de-atuacao
+Career:   procuradorias
+Group:   inb-nacional-advogado
+Reason:  Edital publicado pelas Indústrias Nucleares do Brasil (INB) para formação de cadastro de reserva no cargo de Advogado. A remuneração inicial atinge até R$ 8.374,00 para jornadas de até 40 horas semanais. As inscrições seguem abertas pelo site da banca FGV entre 13/10/2026 e 11/11/2026, com taxa de R$ 125,00. As provas objetivas estão agendadas para o dia 10 de janeiro de 2027 nas cidades de lotação previstas.
+
+Title:   Prefeitura de São Caetano - PE abre concurso público com salários de até R$ 3.242,00
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-sao-caetano-pe-abre-concurso-publico-com-salarios-de-ate-3242
+Career:   procuradorias
+Group:   prefeitura-sao-caetano-pe-procurador
+Reason:  A Prefeitura de São Caetano (PE) publicou edital de concurso público oferecendo 2 vagas imediatas para o cargo de Procurador do Município. O salário base chega a R$ 3.242,00 em jornada de até 40 horas semanais. Inscrições de 30/10/2026 a 10/12/2026 pelo site do Instituto Igeduc, com taxa de R$ 120,00. A seleção contará com prova objetiva, discursiva, avaliação de títulos e de experiência, previstas para 31/01/2027.
+
+Title:   SEAP - MA abre seleções para cadastro de reserva em várias unidades prisionais
+URL:     https://www.pciconcursos.com.br/noticias/seap-ma-abre-selecoes-para-cadastro-de-reserva-em-varias-unidades-prisionais
 Career:   administrativo
-Group:   camara-cristalina-go-analista-recursos-humanos
-Reason:  Edital publicado pela Câmara Municipal de Cristalina/GO com 1 vaga imediata e cadastro de reserva para o cargo de Analista de Recursos Humanos, que contempla bacharéis em Direito. O salário inicial é de R$ 8.383,20 para jornada de 40 horas semanais, acrescido de auxílio-alimentação. Inscrições abertas de 29/10 a 18/11/2026 pelo site do Instituto Consulplan, com provas objetiva e discursiva agendadas para 20/12/2026.
+Group:   seap-ma-especialista-penitenciario-direito
+Reason:  A Secretaria de Estado de Administração Penitenciária do Maranhão (SEAP MA) abriu processo seletivo simplificado para formação de cadastro de reserva na função de Especialista Penitenciário em Direito, com lotação em diversos municípios. A remuneração chega a R$ 3.952,58 para regime de 40 horas semanais. Inscrições de 03/11/2026 a 17/11/2026 via site oficial, mediante doação de livro. A seleção ocorre por análise curricular.
 
-Title:   Câmara de São Francisco do Sul - SC abre concurso público com salários de até R$ 10.924,72
-URL:     https://www.pciconcursos.com.br/noticias/camara-de-sao-francisco-do-sul-sc-abre-concurso-publico-com-salarios-de-ate-10924
+Title:   SEAD - AP abre concursos para assistentes administrativos e analistas
+URL:     https://www.pciconcursos.com.br/noticias/sead-ap-abre-concursos-para-assistentes-administrativos-e-analistas
+Career:   administrativo
+Group:   sead-ap-analista-juridico
+Reason:  Edital publicado pela Secretaria de Estado da Administração do Amapá (SEAD/AP) oferecendo 25 vagas em cadastro de reserva para Analista Jurídico. O cargo exige nível superior em Direito, com remuneração inicial de R$ 8.331,35 para jornada de 40 horas semanais. Inscrições abertas de 8 a 29 de outubro de 2026 pelo site da banca IDCAP, com prova objetiva e discursiva prevista para 29 de novembro de 2026.
+
+Title:   Edital São Caetano-PE 2026: Prefeitura abre concurso para 46 vagas
+URL:     https://www.acheconcursos.com.br/concursos-pernambuco/edital-sao-caetano-pe-2026-prefeitura-abre-concurso-para-46-vagas-94303
 Career:   procuradorias
-Group:   camara-sao-francisco-do-sul-sc-advogado
-Reason:  Concurso público aberto pela Câmara Municipal de São Francisco do Sul/SC oferecendo 1 vaga imediata para o cargo de Advogado, além de vagas para Controlador e Analista Legislativo que exigem nível superior. Os vencimentos chegam a R$ 10.924,72 para jornada de 30 horas semanais. Inscrições de 06/11 a 07/12/2026 pelo site da banca FURB. Prova objetiva prevista para 24/01/2027.
+Group:   prefeitura-sao-caetano-pe-procurador
+Reason:  Prefeitura de São Caetano (PE) publicou edital para preenchimento de 2 vagas imediatas no cargo de Procurador do Municipal. O cargo exige graduação em Direito e registro na OAB, com salário-base de R$ 3.200,00 para 40 horas semanais. As inscrições seguem abertas de 30 de outubro a 10 de dezembro de 2026 pelo site do Instituto IGEDUC. A seleção inclui prova objetiva e avaliação discursiva.
 
-Title:   Prefeitura de Realeza - PR abre concurso público para Controlador Interno e Procurador Jurídico
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-realeza-pr-abre-concurso-publico-para-controlador-interno-e-procurador-juridico
+Title:   Prefeitura de Realeza-PR lança concurso público para dois cargos; veja edital
+URL:     https://www.acheconcursos.com.br/concursos-parana/prefeitura-de-realeza-pr-lanca-concurso-dois-cargos-edital-94281
 Career:   procuradorias
 Group:   prefeitura-realeza-pr-procurador-juridico
-Reason:  Edital publicado pela Prefeitura de Realeza (PR) ofertando 1 vaga imediata para Procurador Jurídico, exigindo graduação em Direito. A remuneração inicial é de R$ 5.564,91 para 20 horas semanais, acrescida de auxílio-alimentação. Inscrições abertas de 03/11/2026 a 03/12/2026 no site da Fundação FAFIPA. Provas objetiva e discursiva previstas para 17/01/2027.
+Reason:  Concurso público lançado pela Prefeitura de Realeza (PR) contempla 1 vaga imediata e cadastro de reserva para Procurador Jurídico, exigindo graduação em Direito e OAB, com vencimento de R$ 5.564,91 para 20 horas semanais. As inscrições ficam abertas de 3 de novembro a 3 de dezembro de 2026 pelo portal da Fundação FAFIPA. O certame avalia os candidatos por meio de provas objetiva, discursiva e de títulos.
 
-Title:   Prefeitura de São Julião - PI abre concurso público para diversos cargos
-URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-sao-juliao-pi-abre-concurso-publico-para-diversos-cargos
+Title:   Câmara de Unaí-MG abre concurso público para 3 cargos com salário de R$ 9,1 mil
+URL:     https://www.acheconcursos.com.br/concursos-minas-gerais/camara-de-unai-mg-abre-concurso-publico-para-3-cargos-92861
+Career:   procuradorias
+Group:   camara-unai-mg-consultor-juridico
+Reason:  Edital publicado pela Câmara de Unaí/MG oferecendo cadastro reserva para o cargo de Consultor Jurídico, exigindo graduação em Direito e registro na OAB. A remuneração inicial é de R$ 9.193,89 acrescida de auxílio-alimentação de R$ 1.200,00 para 30 horas semanais. Inscrições de 30/10 a 01/12/2026 pelo site do Instituto Consulplan, com provas objetiva e discursiva previstas para 10/01/2027.
+
+Title:   IPAM de Porto Velho - RO abre concurso público com salários de até R$ 5.000,00
+URL:     https://www.pciconcursos.com.br/noticias/ipam-de-porto-velho-ro-abre-concurso-publico-com-salarios-de-ate-5000
+Career:   administrativo
+Group:   ipam-porto-velho-ro-analista-juridico
+Reason:  Publicado edital de concurso público pelo IPAM de Porto Velho/RO com 5 vagas imediatas para Analista Autárquico na especialidade de Direito. O cargo exige nível superior em Direito e oferece vencimento básico inicial de R$ 5.000,00 para jornada de 40 horas semanais. Inscrições abertas de 03/11 a 07/12/2026 pelo site da banca IBADE, com aplicação de provas objetiva, discursiva e de títulos em fevereiro de 2027.
+
+Title:   Prefeitura de São Julião - PI suspende concurso público
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-sao-juliao-pi-suspende-concurso-publico
 Career:   procuradorias
 Group:   prefeitura-sao-juliao-pi-assessor-juridico
-Reason:  Prefeitura Municipal de São Julião (PI) publicou edital de concurso público contendo 2 vagas para Assessor Jurídico, cargo de nível superior exclusivo para bacharéis em Direito. As inscrições ocorrem entre 05/11/2026 e 07/12/2026 pelo site do IBED, com taxa de R$ 110,00. A aplicação da prova objetiva está agendada para o dia 17/01/2027.
+Reason:  Concurso público da Prefeitura de São Julião/PI está suspenso preventivamente para revisão jurídica da Lei Municipal nº 585/2025. O edital contemplava 2 vagas imediatas para o cargo de Assessor Jurídico. A retomada do certame e a reabertura do cronograma dependem da conclusão da análise pelo IBED e pela Promotoria de Justiça de Fronteiras.
 
-Title:   Edital São Francisco do Sul-SC 2026: Câmara abre concurso de até R$ 10.924
-URL:     https://www.acheconcursos.com.br/concursos-santa-catarina/edital-sao-francisco-do-sul-sc-2026-camara-abre-concurso-10-924-94271
+Title:   Município de Teutônia - RS abre concurso público com salários de até R$ 13.844,56
+URL:     https://www.pciconcursos.com.br/noticias/municipio-de-teutonia-rs-abre-concurso-publico-com-salarios-de-ate-13844
 Career:   procuradorias
-Group:   camara-sao-francisco-do-sul-sc-advogado
-Reason:  Câmara Municipal de São Francisco do Sul (SC) lançou edital com vagas para Advogado (R$ 10.924,72), Analista Legislativo e Controlador, todos exigindo graduação em Direito. A jornada é de 30 horas semanais. Inscrições de 06/11/2026 a 07/12/2026 no portal da FURB, mediante taxa de R$ 150,00 para nível superior. Prova objetiva marcada para 24/01/2027.
+Group:   pgm-teutonia-rs-procurador
+Reason:  O Município de Teutônia/RS abriu concurso público com vagas e cadastro reserva, contemplando o cargo de Procurador sob regime estatutário. As inscrições seguem abertas até 18 de novembro de 2026 pelo site do Instituto Objetiva, com taxa de até R$ 190,00. A remuneração global chega a R$ 13.844,56 e a prova objetiva está agendada para 13 de dezembro de 2026.
 
-Title:   Câmara de São Francisco do Sul (SC) abre concurso público com salários de até R$ 10,9 mil
-URL:     https://concursossc.com.br/camara-de-sao-francisco-do-sul-sc-abre-concurso-publico-com-salarios-de-ate-r-109-mil/
+Title:   Prefeitura de Cerro Negro - SC abre concurso público com salários de até R$ 7.660,98
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-cerro-negro-sc-abre-concurso-publico-com-salarios-de-ate-7660
 Career:   procuradorias
-Group:   camara-sao-francisco-do-sul-sc-advogado
-Reason:  Edital publicado pela Câmara Municipal de São Francisco do Sul (SC) com 1 vaga imediata para Advogado sob regime estatutário. A remuneração inicial chega a R$ 10.924,72 para jornada de 30 horas semanais. As inscrições ocorrem de 06/11 a 07/12/2026 pelo site da banca FURB, com taxa de R$ 150,00. A prova objetiva está aplicada prevista para 24/01/2027.
+Group:   prefeitura-cerro-negro-sc-assessor-juridico
+Reason:  A Prefeitura de Cerro Negro/SC lançou edital de concurso público com formação de cadastro reserva para Assessor Jurídico, exigindo nível superior em Direito. As inscrições ficam abertas de 30 de outubro a 19 de novembro de 2026, com taxa de R$ 120,00 aplicada para a função. A remuneração inicial alcança até R$ 7.660,98 e a prova objetiva será aplicada em 29 de novembro de 2026.
 
-Title:   TJAC convoca estagiários de graduação e pós-graduação no Acre
-URL:     https://ac24horas.com/2026/10/28/tjac-convoca-estagiarios-de-graduacao-e-pos-graduacao-no-acre/amp/
-Career:   estagio
-Group:   tjac-ac-estagio
-Reason:  O Tribunal de Justiça do Acre (TJAC) publicou editais de convocação para estagiários de graduação e pós-graduação em Direito nas comarcas de Rio Branco e Cruzeiro do Sul. Os convocados devem enviar a documentação exigida em formato PDF para o e-mail da subsecretaria de gestão de servidores no prazo de cinco dias úteis, sob pena de perda da vaga.
-
-Title:   Cubatão abre inscrições para concurso público nesta quinta-feira - Jornal da Orla
-URL:     https://jornaldaorla.com.br/noticias/cubatao-abre-inscricoes-para-concursos-publicos-a-partir-desta-quinta-feira/
+Title:   Prefeitura de Leme - SP abre concurso público com salários de até R$ 13.359,44
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-leme-sp-abre-concurso-publico-com-salarios-de-ate-13359
 Career:   procuradorias
-Group:   prefeitura-cubatao-sp-procurador-juridico
-Reason:  A Prefeitura de Cubatão (SP) abriu concurso público por meio do Edital nº 003/2026 com 1 vaga para Procurador Jurídico, exigindo graduação em Direito e registro na OAB. O vencimento inicial é de R$ 5.565,00, acrescido de benefícios municipais. As inscrições seguem abertas até 03/12/2026 no site da banca IBAM, com taxa de R$ 118,00.
+Group:   prefeitura-leme-sp-advogado-suas
+Reason:  Edital publicado pela Prefeitura de Leme/SP com 1 vaga imediata para Advogado do SUAS, exigindo graduação em Direito e registro profissional. O salário inicial é composto por vencimento acrescido de vale-alimentação de R$ 417,04. As inscrições ocorrem de 30 de outubro a 30 de novembro de 2026 pelo site do INDEPAC, com taxa de R$ 80,00 e provas objetivas agendadas para 20 de dezembro de 2026.
 
-Title:   Prefeitura de São Julião PI abre concurso com 112 vagas e salários de até R$ 6.000 | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/prefeitura-de-sao-juliao-pi-abre-concurso-com-112-vagas-e-salarios-de-ate-r-6-000
+Title:   Edital Teutônia-RS: Prefeitura abre vagas de até R$ 13.844
+URL:     https://www.acheconcursos.com.br/concursos-rio-grande-do-sul/edital-teutonia-rs-prefeitura-abre-vagas-ate-13-844-94299
 Career:   procuradorias
-Group:   prefeitura-sao-juliao-pi-assessor-juridico
-Reason:  Edital publicado pela Prefeitura de São Julião/PI com vagas para assessor jurídico e controlador interno, exigindo graduação em Direito. O certame é organizado pelo IBED, oferecendo remunerações de até R$ 6.000,00. As inscrições seguem abertas de 5 de novembro a 7 de dezembro de 2026, com taxa de R$ 110,00 para nível superior e provas aplicadas em 17 de janeiro de 2027.
+Group:   pgm-teutonia-rs-procurador
+Reason:  Publicado edital nº 001/2026 pela Prefeitura de Teutônia/RS com formação de cadastro reserva para o cargo de Procurador. O cargo exige ensino superior em Direito, inscrição na OAB e ao menos dois anos de prática forense, oferecendo remuneração inicial de R$ 12.924,77. A organização do certame está a cargo do Instituto Objetiva, com aplicação da prova objetiva prevista para o dia 13 de dezembro.
 
-Title:   Cidade entre as mais seguras do Brasil abre processo seletivo com salários de até R$ 15,6 mil
-URL:     https://ndmais.com.br/empregos-e-concursos/jaragua-do-sul-selecao-vagas/
+Title:   Edital Cerro Negro-SC 2026: Prefeitura abre concurso com vagas de até R$ 7,6 mil
+URL:     https://www.acheconcursos.com.br/concursos-santa-catarina/edital-cerro-negro-sc-2026-prefeitura-concurso-7-6-mil-94288
 Career:   procuradorias
-Group:   prefeitura-jaragua-do-sul-sc-advogado
-Reason:  Processo seletivo aberto pela Prefeitura de Jaraguá do Sul/SC oferecendo 1 vaga imediata para Advogado do CREAS/SUAS. O cargo exige graduação em Direito e inscrição na OAB, com remuneração inicial de R$ 5.856,24 para jornada de 40 horas semanais. As inscrições ficam abertas até 12 de novembro de 2026 pelo site do Instituto Tupy, com taxa de R$ 90,00 e prova objetiva agendada para 29 de novembro.
+Group:   prefeitura-cerro-negro-sc-assessor-juridico
+Reason:  A Prefeitura de Cerro Negro/SC lançou edital de concurso público nº 01/2026 ofertando cadastro reserva para o cargo de Assessor Jurídico. A função exige nível superior em Direito e registro ativo na OAB/SC, com remuneração inicial de R$ 7.660,98 já inclusos auxílio-alimentação. Inscrições abertas de 30 de outubro até 19 de novembro de 2026 pela banca Fênix Instituto, com taxa de R$ 120,00 e provas em 29 de novembro.
 
-Title:   Concurso da DPE-PB abre inscrições para 20 vagas com salários de até R$ 5,1 mil - Portal Correio – Notícias da Paraíba e do Brasil
-URL:     https://portalcorreio.com.br/concurso-da-dpe-pb-abre-inscricoes-para-20-vagas-com-salarios-de-ate-r-51-mil/
+Title:   Banca Definida: FCC - PGM/TO - Procurador do Município - Meu site jurídico
+URL:     https://meusitejuridico.editorajuspodivm.com.br/2026/10/29/banca-definida-fcc-pgm-to-procurador-do-municipio/
+Career:   procuradorias
+Group:   pgm-palmas-to-procurador
+Reason:  Definida a Fundação Carlos Chagas (FCC) como banca organizadora do novo concurso para Procurador do Município de Palmas (TO). O contrato administrativo foi formalizado por dispensa de licitação e publicado no Diário Oficial. O edital com quantitativo de vagas, remuneração e cronograma está em fase final de elaboração, com previsão de publicação nos próximos meses.
+
+Title:   Concurso da DPE-PB oferece 20 vagas com salários de até R$ 5,1 mil; inscrições vão até novembro | Paraíba Dia a Dia | Você em dia com a informação
+URL:     https://paraibadiaadia.com.br/concurso-da-dpe-pb-oferece-20-vagas-com-salarios-de-ate-r-51-mil-inscricoes-vao-ate-novembro/
 Career:   defensoria
 Group:   dpe-pb-analista-juridico
-Reason:  Edital publicado pela Defensoria Pública do Estado da Paraíba (DPE-PB) com 20 vagas para níveis médio e superior, sob organização da Fundação Carlos Chagas. A seleção contempla o cargo de Analista na especialidade de Assistente Jurídico (exige Direito) e Auditor Interno (aceita Direito), com vencimentos de R$ 5.197,50. Inscrições até 13 de novembro de 2026 e provas objetiva e discursiva previstas para 28 de fevereiro de 2027.
+Reason:  Edital publicado pela Defensoria Pública do Estado da Paraíba (DPE-PB) ofertando 20 vagas para níveis médio e superior, com remunerações entre R$ 4.042,50 e R$ 5.197,50. Há oportunidades para Analista na especialidade de Assistente Jurídico (exige graduação em Direito). Inscrições abertas até 13/11/2026 pelo site da FCC, com taxa de R$ 123. Provas objetivas e discursivas agendadas para 28/02/2027.
 
-Title:   Defensoria Pública da Paraíba abre concurso com salários de até R$ 5,1 mil - Grupo Portal de Notícias
-URL:     https://grupoportaldenoticias.com.br/defensoria-publica-da-paraiba-abre-concurso-com-salarios-de-ate-r-51-mil/
-Career:   defensoria
-Group:   dpe-pb-analista-juridico
-Reason:  Edital publicado pela DPE-PB com 20 vagas e cadastro reserva para níveis médio e superior, sob organização da FCC. O cargo de Analista na especialidade de Assistência Jurídica exige graduação em Direito, com remuneração inicial de R$ 5.197,50. Inscrições abertas até 13/11 e provas objetiva e discursiva previstas para 28/02/2027.
+Title:   Prefeitura de Palmas contrata Fundação Carlos Chagas por R$ 566 mil para concurso da PGM - Jornal Opção | Tocantins
+URL:     https://tocantins.jornalopcao.com.br/noticias/prefeitura-de-palmas-contrata-fundacao-carlos-chagas-por-r-566-mil-para-concurso-da-pgm-603605/
+Career:   procuradorias
+Group:   pgm-palmas-to-procurador
+Reason:  Formalizada a contratação da Fundação Carlos Chagas (FCC) por R$ 566.058,00 para planejar e executar o concurso público da Procuradoria-Geral do Município de Palmas (TO). O certame visa ao provimento do cargo de Procurador do Municipal. A vigência contratual é de 12 meses e a expectativa da Secretaria de Planejamento é realizar as provas no primeiro semestre de 2027.
 
-Title:   Tribunal de Justiça do Acre convoca aprovados em seleções de estágio para Rio Branco e Cruzeiro do Sul | Acre Jornal
-URL:     https://acrejornal.com.br/tribunal-de-justica-do-acre-convoca-aprovados-em-selecoes-de-estagio-para-rio-branco-e-cruzeiro-do-sul/
+Title:   PS Câmara de Portel: 27 vagas com salários de até R$ 4,7 mil | G1
+URL:     https://g1.globo.com/pa/para/noticia/2026/10/29/camara-de-portel-no-marajo-abre-concurso-com-salarios-de-ate-r-47-mil.ghtml
+Career:   procuradorias
+Group:   camara-portel-pa-advogado-legislativo
+Reason:  Edital publicado pela Câmara Municipal de Portel/PA com 1 vaga imediata e cadastro de reserva para Advogado Legislativo, além de Controlador Interno com exigência de Direito. A remuneração inicial é de R$ 4.723,31 para 30h semanais. Inscrições abertas até 15/11/2026 pelo Instituto Vicente Nelson. Provas objetivas previstas para 29/11/2026.
+
+Title:   Câmara de Portel abre concurso público com 27 vagas e salários de até R$ 4,7 mil
+URL:     https://www.oliberal.com/concurso/camara-de-portel-abre-concurso-publico-com-27-vagas-e-salarios-de-ate-r-4-7-mil-1.1188442
+Career:   procuradorias
+Group:   camara-portel-pa-advogado-legislativo
+Reason:  Concurso público da Câmara Municipal de Portel/PA com edital publicado oferecendo vaga para Advogado Legislativo (salário de R$ 4.723,31) e Controlador Interno com opção em Direito. Organização a cargo do Instituto Vicente Nelson, com inscrições até 15/11/2026 e taxa de R$ 100. Prova objetiva e avaliação de títulos agendadas para 29/11/2026.
+
+Title:   Concurso PGM Palmas TO: FCC é a banca; veja mais!
+URL:     https://blog.grancursosonline.com.br/concurso-pgm-palmas-to-banca-definida-2026/
+Career:   procuradorias
+Group:   pgm-palmas-to-procurador
+Reason:  A Prefeitura de Palmas/TO definiu a Fundação Carlos Chagas (FCC) como banca organizadora do próximo concurso para o cargo de Procurador do Município - Nível I. O certame encontra-se em fase de preparação com comissão formada. Quantidade de vagas, remuneração e cronograma de inscrições e provas ainda serão divulgados.
+
+Title:   Concurso Gestão AP tem último dia de inscrição para 358 vagas | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/concurso-gestao-ap-inscricoes-2026
+Career:   administrativo
+Group:   sead-ap-analista-juridico
+Reason:  Edital publicado pela Secretaria de Estado da Administração do Amapá (Gestão AP) ofertando 25 vagas imediatas e em cadastro reserva para analista jurídico, com exigência de nível superior em Direito. A remuneração inicial é de R$ 8.331,35 para jornada de 40 horas semanais. Prova objetiva e discursiva (estudo de caso) agendadas para o dia 29 de novembro.
+
+Title:   Cubatão abre inscrições para concursos com salários de até R$ 5,5 mil | G1
+URL:     https://g1.globo.com/sp/santos-regiao/noticia/2026/10/29/cubatao-abre-inscricoes-para-concursos-publicos-com-salarios-de-ate-r-55-mil.ghtml
+Career:   procuradorias
+Group:   pgm-cubatao-sp-procurador
+Reason:  Publicado edital nº 003/2026 pela Prefeitura de Cubatão/SP com 1 vaga imediata para o cargo de procurador jurídico. O certame exige graduação em Direito e inscrição na OAB, oferecendo remuneração inicial de R$ 5.565,00 acrescida de benefícios. Inscrições abertas até 3 de dezembro de 2026 pelo site do Ibam, com provas objetivas previstas para 17 de janeiro de 2027.
+
+Title:   PJM Brasília abre seleção para estagiários de Administração e Direito – MINISTÉRIO PÚBLICO MILITAR
+URL:     https://www.mpm.mp.br/arquivos/74401
 Career:   estagio
-Group:   tjac-ac-estagio
-Reason:  Processo seletivo em andamento no Tribunal de Justiça do Acre para convocação de estagiários de graduação e pós-graduação em Direito. As oportunidades contemplam preenchimento imediato e cadastro de reserva nas comarcas de Rio Branco e Cruzeiro do Sul, com envio de documentação digital exigida em até cinco dias úteis após a chamada.
+Group:   mpm-brasilia-df-estagio
+Reason:  A Procuradoria de Justiça Militar em Brasília (PJM/DF) publicou edital de processo seletivo para contratação e formação de cadastro de reserva de estagiários de nível superior em Direito. Pré-inscrições devem ser realizadas entre 3 e 17 de novembro de 2026, com envio da documentação comprobatória até 19 de novembro para o e-mail institucional indicado no certame.
 
-Title:   Justiça obriga Seplag a aceitar candidata barrada em seletivo para bacharéis em Direito | Fatos de Mato Grosso
-URL:     https://www.fatosdematogrosso.com.br/sem-rotulo/justica-obriga-seplag-a-aceitar-candidata-barrada-em-seletivo-para-bachareis-em-direito/18060
-Career:   procuradorias
-Group:   seplag-mt-analista-juridico
-Reason:  Processo seletivo simplificado da Seplag/MT para formação de cadastro de reserva no cargo temporário de Analista de Desenvolvimento Econômico e Social, perfil jurídico para bacharéis em Direito. O certame, regido pelo Edital 003/2026, teve movimentação recente em sede judicial para regularização de inscrições na comarca de Cuiabá.
-
-Title:   Concurso Público: 5 editais para ganhar até R$ 32 mil
-URL:     https://magistrarcursos.com.br/blog/concurso-publico-5-editais-para-ganhar-ate-r-3-mil/
-Career:   tribunais
-Group:   trt8-pa-ap-analista-e-tecnico
-Reason:  Edital publicado pelo TRT 8 (PA/AP) com vagas em cadastro de reserva para Analista e Técnico Judiciário. A remuneração inicial atinge R$ 16.040,88 para Analista e R$ 9.776,71 para Técnico, podendo chegar a R$ 11.202,48 para Agente da Polícia Judicial. Inscrições abertas até 05/11/2026 pela banca FCC. Provas previstas para 17/01/2027.
-
-Title:   Concurso Cetesb: edital com 107 vagas é anunciado para novembro | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-cetesb-2026-edital-novembro
-Career:   procuradorias
-Group:   cetesb-sp-advogado
-Reason:  Anúncio oficial da Cetesb (SP) confirma novo edital para novembro de 2026 com 107 vagas imediatas e cadastro de reserva para níveis médio e superior. O certame, organizado pela banca FCC, inclui vagas expressas para o cargo de Advogado, além de Analista e Técnico Ambiental, com previsão de início das contratações a partir de julho de 2027.
-
-Title:   Defensoria lanÃ§a concurso para Analista de Apoio Ã  AssistÃªncia JudiciÃ¡ria
-URL:     https://www.correiobraziliense.com.br/cidades-df/2026/10/7529574-defensoria-lanca-concurso-para-analista-de-apoio-a-assistencia-judiciaria.html
-Career:   defensoria
-Group:   dpdf-df-analista-juridico
-Reason:  Edital lançado pela DPDF para o cargo de Analista de Apoio à Assistência Judiciária, contemplando a especialidade em Direito e Legislação. O salário inicial é de R$ 11.514,95 acrescido de auxílio-alimentação de até R$ 1.701,41 para jornada de 35 horas semanais. Inscrições de 03/12/2026 a 07/01/2027 via Instituto Access. Provas objetiva, discursiva e títulos.
-
-Title:   Cubatão abre inscrições para concursos públicos a partir desta quinta-feira (29) – Prefeitura de Cubatão
-URL:     https://cubatao.sp.gov.br/cubatao-abre-inscricoes-para-concursos-publicos-a-partir-desta-quinta-feira-29/
-Career:   procuradorias
-Group:   prefeitura-cubatao-sp-procurador-juridico
-Reason:  Edital publicado pela Prefeitura de Cubatão/SP com 1 vaga imediata para Procurador Jurídico, exigindo graduação em Direito e inscrição na OAB. A remuneração inicial é de R$ 5.565,00 acrescida de benefícios municipais. Inscrições abertas até 03/12/2026 pelo site do IBAM, com taxa de R$ 118,00.
-
-Title:   Prefeitura de Campo Grande do Piauí (PI) abre 90 vagas em concurso
-URL:     https://concursosnobrasil.com/concursos/pi/2026/10/28/prefeitura-de-campo-grande-do-piaui-pi-abre-90-vagas-em-concurso/
-Career:   procuradorias
-Group:   prefeitura-campo-grande-do-piaui-pi-analista-juridico
-Reason:  Prefeitura de Campo Grande do Piauí/PI publicou edital de concurso público contemplando vaga para Analista Jurídico de nível superior em Direito. O certame é organizado pelo IBED, com inscrições de 30/10 a 25/11/2026 e remuneração que alcança até R$ 8.257,00. As provas objetivas estão agendadas para 13/12/2026.
-
-Title:   Processo seletivo Prefeitura de Urussanga (SC): 20 vagas e salários até R$ 19,5 mil
-URL:     https://noticias.meupreparatorio.com.br/concursos/processo-seletivo-prefeitura-de-urussanga-sc-20-vagas-e-cadastro-reserva
-Career:   procuradorias
-Group:   prefeitura-urussanga-sc-advogado
-Reason:  Processo seletivo aberto na Prefeitura de Urussanga/SC oferece 1 vaga imediata e cadastro reserva para o cargo de Advogado. A seleção é organizada pela SC Treinamentos, com inscrições prorrogadas até 08/11/2026 e taxa de R$ 130,00 para nível superior. A remuneração inicial é de R$ 3.555,37 para jornada parcial, com provas em 29/11/2026.
-
-Title:   Município de Realeza PR abre concurso com 2 vagas de nível superior | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/municipio-de-realeza-pr-abre-concurso-com-2-vagas-de-nivel-superior
-Career:   procuradorias
-Group:   prefeitura-realeza-pr-procurador-juridico
-Reason:  O Município de Realeza (PR) publicou edital de concurso público estatutário ofertando 1 vaga para Procurador Jurídico, exigindo graduação em Direito e inscrição na OAB. A remuneração é de R$ 5.564,91 para jornada de 20 horas semanais, acrescida de vale-alimentação. As inscrições ocorrem de 3 de novembro a 3 de dezembro de 2026, sob organização da Fundação Fafipa, com taxa de R$ 130. As provas objetiva e discursiva estão aplicadas em 17 de janeiro de 2027.
-
-Title:   Concurso Prefeitura de Realeza (PR): edital para Controlador Interno e Procurador Jurídico
-URL:     https://noticias.meupreparatorio.com.br/concursos/concurso-prefeitura-de-realeza-pr-controlador-interno-e-procurador-juridico
-Career:   procuradorias
-Group:   prefeitura-realeza-pr-procurador-juridico
-Reason:  Publicado edital de concurso público na Prefeitura de Realeza (PR) com vaga para Procurador Jurídico, cargo que exige nível superior em Direito e registro na OAB. O vencimento inicial é de R$ 5.564,91 para carga horária de 20 horas semanais, mais auxílio-alimentação. O período de inscrições estende-se de 03/11 a 03/12/2026, via banca Fundação Fafipa, ao custo de R$ 130,00. A realização das provas objetivas e discursivas está programada para 17/01/2027.
-
-Title:   TJAC convoca estagiários de graduação e pós-graduação - Na Hora da Notícia
-URL:     https://nahoradanoticia.com.br/rio-branco/tjac-convoca-estagiarios-de-graduacao-e-pos-graduacao/
+Title:   PJM Boa Vista/RR divulga Edital de convocação  do processo público para residência jurídica – MINISTÉRIO PÚBLICO MILITAR
+URL:     https://www.mpm.mp.br/arquivos/74393
 Career:   estagio
-Group:   tjac-ac-estagio
-Reason:  O Tribunal de Justiça do Acre (TJAC) convocou estudantes aprovados em processo seletivo de estágio de graduação e pós-graduação em Direito para as comarcas de Rio Branco e Cruzeiro do Sul. Os convocados devem encaminhar a documentação comprobatória exigida em arquivo único em formato PDF para o e-mail institucional da subsecretaria responsável no prazo improrrogável de cinco dias úteis, sob pena de desclassificação e perda da vaga.
+Group:   mpm-boa-vista-rr-residencia-juridica
+Reason:  A Procuradoria de Justiça Militar em Boa Vista/RR publicou edital de convocação do processo público de seleção para residência jurídica, visando ao preenchimento de vaga decorrente de homologação de resultado definitivo. A seleção destina-se a bacharéis em Direito para atuação no âmbito do Ministério Público Militar, conforme as diretrizes do respectivo regulamento do programa.
 
-Title:   Concurso ALEPA: inscrições terminam em 4 de novembro; veja como participar • DOL
-URL:     https://dol.com.br/concursos/municipais/966779/concurso-alepa-inscricoes-terminam-em-4-de-novembro-veja-como-participar
-Career:   procuradorias
-Group:   alepa-pa-procurador-legislativo
-Reason:  Edital publicado pela Assembleia Legislativa do Estado do Pará com vaga para Procurador Legislativo, exigindo graduação em Direito e inscrição na OAB. A remuneração inicial chega a R$ 10.353,64. Inscrições abertas até 4 de novembro de 2026 pelo site da Fundação CETAP, com taxa de R$ 118. As provas objetivas estão agendadas para 13 de dezembro de 2026.
-
-Title:   Câmara Municipal de São Francisco do Sul SC publica concurso com 17 vagas | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/camara-municipal-de-sao-francisco-do-sul-sc-publica-concurso-com-17-vagas
-Career:   procuradorias
-Group:   camara-sao-francisco-do-sul-sc-advogado
-Reason:  Publicado edital de concurso público pela Câmara Municipal de São Francisco do Sul/SC, contemplando 1 vaga para o cargo de Advogado, que exige nível superior em Direito e registro na OAB. A remuneração inicial é de até R$ 10.924,72 para jornada de 30 horas semanais. Inscrições de 6 de novembro a 7 de dezembro de 2026 no site da FURB, com taxa de R$ 150. Provas objetivas marcadas para 24 de janeiro de 2027.
-
-Title:   Concurso TJ SP é aberto; veja passo a passo para inscrição! | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-tj-sp-inscricoes-abertas-2026
-Career:   tribunais
-Group:   tjsp-sp-oficial-de-justica
-Reason:  O Tribunal de Justiça de São Paulo publicou edital ofertando 132 vagas imediatas para Oficial de Justiça, cargo de nível superior, e cadastro reserva para Escrevente Técnico Judiciário, de nível médio. As remunerações iniciais variam de R$ 6.782,54 a R$ 9.856,95. As inscrições seguem abertas até 10 de dezembro de 2026, com taxa de R$ 81 ou R$ 96, e as provas objetivas e discursivas estão aplicadas para 14 de março de 2027.
-
-Title:   Concurso PC PE: veja quanto ganha o agente, delegado e escrivão | Folha Dirigida
-URL:     https://folha.qconcursos.com/n/concurso-pc-pernambuco-salarios-beneficios
-Career:   policiais
-Group:   pcpe-pe-delegado
-Reason:  A Polícia Civil de Pernambuco mantém edital aberto com 1.315 vagas para os cargos de Agente, Escrivão e Delegado. A função de Delegado exige graduação em Direito e três anos de atividade jurídica, oferecendo subsídio inicial de R$ 13.560,00. As inscrições encerram-se em 16 de dezembro de 2026, mediante taxa de R$ 350 para Delegado, e as provas objetivas estão agendadas para os dias 7 e 14 de março de 2027.
-
-Title:   TJAC convoca estagiários de graduação e pós-graduação no Acre - Ecos da Noticia
-URL:     https://ecosdanoticia.net/2026/10/tjac-convoca-estagiarios-de-graduacao-e-pos-graduacao-no-acre/?amp=1
+Title:   Concurso Público: 9 editais publicados nesta quinta-feira (29/10)
+URL:     https://blog.grancursosonline.com.br/concurso-publico-29-outubro-2026/amp/
 Career:   estagio
-Group:   tjac-ac-estagio
-Reason:  O Tribunal de Justiça do Acre convocou estudantes de graduação e pós-graduação em Direito aprovados em processo seletivo para formação de cadastro de reserva em comarcas como Rio Branco e Cruzeiro do Sul. Os convocados devem encaminhar a documentação exigida por meio digital à Subsecretaria de Gestão e Desenvolvimento de Servidores no prazo improrrogável de cinco dias úteis sob pena de desclassificação.
+Group:   pgerj-rj-residencia-juridica
+Reason:  A Procuradoria-Geral do Estado do Rio de Janeiro publicou edital de Residência Jurídica ofertando 420 vagas para bacharéis em Direito. As inscrições ocorrem de 26 de outubro a 23 de novembro de 2026, com taxa de R$ 130,00 e remuneração inicial fixada em R$ 3.276,00. A seleção é organizada por banca própria da instituição.
 
-Title:   Concurso Prefeitura de Realeza (PR) disponibiliza vagas de até R$ 8,8 mil por mês
-URL:     https://concursosnobrasil.com/concursos/pr/2026/10/28/concurso-prefeitura-de-realeza-pr-disponibiliza-vagas-de-ate-r-88-mil-por-mes/
+Title:   Concurso Prefeitura de Cerro Negro (SC): 11 vagas, salários até R$ 7,6 mil e prova em 29/11
+URL:     https://noticias.meupreparatorio.com.br/concursos/concurso-prefeitura-de-cerro-negro-sc-edital-11-vagas-salarios-ate-r-7-6-mil
 Career:   procuradorias
-Group:   prefeitura-realeza-pr-procurador-juridico
-Reason:  Edital publicado pela Prefeitura de Realeza/PR sob organização da Fundação FAFIPA, ofertando vagas para Procurador Jurídico (exige OAB e graduação em Direito; vencimento de R$ 5.564,91 para 20h semanais) e Controlador Interno (exige Direito ou Contábeis; salário de R$ 8.800,00 para 40h). Inscrições de 03/11 a 03/12/2026, com taxa de R$ 130,00. Provas objetiva e discursiva agendadas para 17/01/2027.
+Group:   prefeitura-cerro-negro-sc-assessor-juridico
+Reason:  Edital publicado pela Prefeitura de Cerro Negro (SC) com formação de cadastro reserva para o cargo de Assessor Jurídico. A remuneração inicial é de R$ 7.660,98 para jornada de 20 horas semanais. As inscrições seguem abertas de 30/10 a 19/11/2026 pelo site do Fênix Instituto, com taxa de R$ 120,00 e provas objetivas agendadas para 29/11/2026.
 
-Title:   Instagram
-URL:     https://querenciaonline.com/noticia/63849/abertas-inscricoes-para-processos-seletivos-de-estagio-de-graduacao-e-pos-graduacao-no-judiciario-gaucho
+Title:   Concurso Público: 9 editais publicados nesta quinta-feira (29/10)
+URL:     https://blog.grancursosonline.com.br/concurso-publico-29-outubro-2026/
+Career:   estagio
+Group:   pgerj-rj-residencia-juridica
+Reason:  Publicado o edital de Residência Jurídica da Procuradoria-Geral do Estado do Rio de Janeiro (PGE RJ) ofertando 420 vagas para bacharéis em Direito. As inscrições permanecem abertas até 23/11/2026 mediante o pagamento de taxa no valor de R$ 130,00. A bolsa auxílio ofertada é de R$ 3.276,00 e a seleção conta com banca própria.
+
+Title:   Procuradoria Regional de Mafra abre seleção para estágio em Direito; veja edital - Riomafra Mix® | Orgulho de ser Riomafrense!
+URL:     https://www.riomaframix.com.br/noticia/procuradoria-regional-de-mafra-abre-selecao-para-estagio-em-direito-veja-edital/120451
+Career:   estagio
+Group:   pge-mafra-sc-estagio-direito
+Reason:  Processo seletivo aberto pela Procuradoria Regional de Mafra (SC) para o preenchimento de duas vagas de estágio em Direito, destinadas a estudantes entre o 5º e 9º período. A bolsa mensal é de R$ 1.340,00 acrescida de auxílio-transporte de R$ 5,00 por dia para jornada de 4 horas diárias. As inscrições são realizadas diretamente pelo portal institucional da PGE.
+
+Title:   Concurso para procurador de Palmas terá banca da Fundação Carlos Chagas | Tocantins
+URL:     https://www.jornaldotocantins.com.br/economia/concurso-e-empregos/concurso-para-procurador-de-palmas-tera-banca-da-fundac-o-carlos-chagas-1.3474698
+Career:   procuradorias
+Group:   pgm-palmas-to-procurador
+Reason:  A Prefeitura de Palmas (TO) contratou formalmente a Fundação Carlos Chagas (FCC) por meio de ato de contratação direta para organizar o próximo concurso público para o cargo de Procurador do Município, nível I. O contrato tem vigência de 12 meses e prevê a realização de todas as etapas da seleção, incluindo elaboração de provas e avaliação de títulos.
+
+Title:   IPREJUN abre concurso público para cargos de níveis médio e superior; inscrições começam em 16 de novembro | Notícias
+URL:     https://jundiai.sp.gov.br/noticias/2026/10/29/iprejun-abre-concurso-publico-para-cargos-de-niveis-medio-e-superior-inscricoes-comecam-em-16-de-novembro/
+Career:   administrativo
+Group:   iprejun-jundiai-sp-analista
+Reason:  O Instituto de Previdência do Município de Jundiaí (IPREJUN) publicou edital de concurso público sob organização da Fundação Vunesp. O certame oferta 1 vaga para Analista de Planejamento, Gestão e Orçamento na especialidade de Direito, com exigência de graduação na área e seis meses de experiência. A remuneração inicial é de R$ 15.123,99 para 40 horas semanais, acrescida de auxílio-alimentação de R$ 1.300,00 e auxílio-transporte de R$ 492,00. Inscrições de 16/11 a 15/12/2026, com provas objetivas previstas para 21/02/2027.
+
+Title:   Concurso Prefeitura de Cerro Negro (SC) oferta salários de até R$ 7,6 mil
+URL:     https://concursosnobrasil.com/concursos/sc/2026/10/29/concurso-prefeitura-de-cerro-negro-sc-oferta-salarios-de-ate-r-76-mil/
+Career:   procuradorias
+Group:   prefeitura-cerro-negro-sc-assessor-juridico
+Reason:  A Prefeitura de Cerro Negro (SC) divulgou edital de concurso público n.º 01/2026 executado pelo Fênix Instituto, contemplando vaga para Assessor Jurídico de nível superior. A remuneração mensal chega a R$ 7.660,98 para regime estatutário. As inscrições seguem abertas até 19/11/2026, mediante taxa de até R$ 120,00. As avaliações objetivas estão agendadas para o dia 29/11/2026.
+
+Title:   Processo seletivo do Ministério Público oferece vaga de estágio em Direito em Toledo; prova será no dia 6 de novembro | Toledo News
+URL:     https://www.toledonews.com.br/noticia/processo-seletivo-do-ministerio-publico-oferece-vaga-de-estagio-em-direito-em-toledo-prova-sera-no-dia-6-de-novembro
+Career:   estagio
+Group:   mppr-toledo-pr-estagio
+Reason:  Processo seletivo aberto pelo Ministério Público do Paraná (MPPR) para estágio de graduação em Direito na Comarca de Toledo. O edital oferece 1 vaga imediata mais cadastro reserva, com bolsa-auxílio de R$ 1.500,00 acrescida de auxílio-transporte de R$ 264,00 para jornada de 4 horas diárias. Inscrições até 04/11/2026 por e-mail, com prova discursiva prevista para 06/11/2026.
+
+Title:   Órgãos Públicos abrem vagas de estágio para estudantes de Direito e pós-graduação
+URL:     https://ceisc.com.br/blog/post/judiciario-vagas-estagio-estudantes-direito-pos-graduacao
 Career:   estagio
 Group:   tjrs-rs-estagio
-Reason:  Processos seletivos abertos para formação de cadastro reserva de estágio de graduação e pós-graduação no Poder Judiciário do Rio Grande do Sul (TJ/RS). As oportunidades de pós-graduação contemplam especificamente o Direito nas áreas Cível, Penal e Público. Inscrições gratuitas podem ser realizadas exclusivamente pela internet até as 18h do dia 04 de novembro de 2026.
+Reason:  Processos seletivos abertos para estágio de graduação e pós-graduação em Direito em múltiplos órgãos gaúchos, incluindo TJ-RS, TRF-4 e PGE-RS. As oportunidades oferecem bolsas-auxílio que variam por hora ou valor fixo, acrescidas de benefícios como auxílio-refeição e vale-transporte, com jornadas de 15 a 30 horas semanais. As inscrições ocorrem de forma gratuita diretamente nos canais institucionais de cada entidade.
 
-Title:   Concurso da Defensoria Pública da Paraíba oferece oportunidades para níveis médio e superior - Repórter PB
-URL:     https://www.reporterpb.com.br/noticia/paraiba/2026/10/28/concurso-da-defensoria-publica-da-paraiba-oferece-oportunidades-para-niveis-medio-e-superior/193900.html
-Career:   defensoria
-Group:   dpe-pb-analista-juridico
-Reason:  Edital publicado pela Defensoria Pública da Paraíba (DPE-PB) com 20 vagas imediatas para níveis médio e superior, sob organização da FCC. O cargo de Analista na especialidade de Assistente Jurídico exige graduação em Direito, enquanto Auditor Interno aceita Direito entre outras formações; inicial de R$ 5.197,50. Inscrições abertas até 13/11/2026, com taxa de R$ 123,00 para nível superior. Provas aplicadas em João Pessoa no dia 28/02/2027.
+Title:   Câmara de Fraiburgo tem vagas para diferentes níveis de escolaridade e salários de até R$ 6,7 mil
+URL:     https://www.oestemais.com.br/policia/2026/10/29/camara-de-fraiburgo-tem-vagas-para-diferentes-niveis-de-escolaridade-e-salarios-de-ate-r-67-mil/
+Career:   procuradorias
+Group:   camara-de-fraiburgo-sc-assessor-juridico
+Reason:  Concurso público publicado pela Câmara de Fraiburgo/SC traz vagas imediatas e formação de cadastro de reserva para cargos de nível superior, contemplando a carreira jurídica de assessor jurídico com salário de R$ 5.421,77 para 20 horas semanais, além de analista administrativo com exigência de Direito. Inscrições abertas até 05/11 pelo site do Ibam, com taxa de R$ 130 e provas objetivas agendadas para 29/11.
+
+Title:   Prefeitura de Cerro Negro SC publica concurso com 11 vagas e cadastro de reserva | Folha Dirigida
+URL:     https://folha.qconcursos.com/n/prefeitura-de-cerro-negro-sc-publica-concurso-com-11-vagas-e-cadastro-de-reserva
+Career:   procuradorias
+Group:   prefeitura-cerro-negro-sc-assessor-juridico
+Reason:  A Prefeitura de Cerro Negro/SC publicou edital de concurso público oferecendo cadastro de reserva para o cargo de assessor jurídico, exigindo graduação em Direito. A remuneração inicial chega a até R$ 7.660,98, já inclusos auxílios. As inscrições seguem abertas até 19/11 no portal do Fênix Instituto, com taxa de R$ 120, e a aplicação da prova objetiva está fixada para o dia 29 de novembro de 2026.
+
+Title:   Edital Publicado: Residente Jurídico - PGE/RJ - Meu site jurídico
+URL:     https://meusitejuridico.editorajuspodivm.com.br/2026/10/29/edital-publicado-residente-juridico-pge-rj/
+Career:   estagio
+Group:   pgerj-rj-residencia-juridica
+Reason:  Edital publicado pela Procuradoria-Geral do Estado do Rio de Janeiro (PGE/RJ) para o 18º Exame de Seleção de Residência Jurídica, oferecendo 420 vagas. A bolsa-auxílio é de R$ 3.276,00 mensais acrescida de auxílio-transporte para jornada de 30 horas semanais. As inscrições seguem abertas de 26 de outubro até 23 de novembro de 2026 no portal da instituição, exigindo graduação em Direito.
+
+Title:   O que faz um Procurador aprovado no Concurso Curitiba PR?
+URL:     https://blog.grancursosonline.com.br/concurso-curitiba-pr-procurador/
+Career:   procuradorias
+Group:   pgm-curitiba-pr-procurador
+Reason:  Edital publicado para o concurso da Procuradoria-Geral do Município de Curitiba (PGM Curitiba/PR) com oferta de 5 vagas imediatas mais cadastro reserva para Procurador Municipal. O cargo exige graduação em Direito e inscrição na OAB, com remuneração inicial de R$ 38.087,99 para 40 horas semanais. Inscrições até 5 de novembro de 2026 e prova objetiva marcada para 13 de dezembro de 2026, sob organização da banca FAFIPA.
+
+Title:   Prefeitura de Cerro Negro (SC) abre concurso público com salários de até R$ 7,6 mil
+URL:     https://concursossc.com.br/prefeitura-de-cerro-negro-sc-abre-concurso-publico-com-salarios-de-ate-r-76-mil/
+Career:   administrativo
+Group:   prefeitura-cerro-negro-sc-assessor-juridico
+Reason:  Concurso público aberto na Prefeitura de Cerro Negro/SC com vaga em cadastro de reserva para Assessor Jurídico, exigindo graduação em Direito. A remuneração inicial chega a R$ 7.660,98, com auxílio-alimentação incluído. Inscrições de 30/10 a 19/11/2026 pelo site do Fênix Instituto. Prova objetiva agendada para 29/11/2026.
+
+Title:   Concurso Prefeitura de São Julião (PI) está com 114 vagas imediatas
+URL:     https://concursosnobrasil.com/concursos/pi/2026/10/29/concurso-prefeitura-de-sao-juliao-pi-esta-com-114-vagas-imediatas/
+Career:   administrativo
+Group:   prefeitura-sao-juliao-pi-assessor-juridico
+Reason:  Edital publicado pela Prefeitura de São Julião/PI oferecendo vaga para Assessor Jurídico e Controlador Interno, exigindo nível superior em Direito. Os vencimentos chegam a R$ 6.000,00 mensais para jornada regulamentada. As inscrições ocorrem de 05/11 a 07/12/2026 no site da banca IBED. Prova objetiva prevista para 17/01/2027.
+
+Title:   Prefeitura de Teutônia (RS) abre concurso público com salários de até R$ 13,8 mil
+URL:     https://concursossc.com.br/prefeitura-de-teutonia-rs-abre-concurso-publico-com-salarios-de-ate-r-138-mil/
+Career:   procuradorias
+Group:   pgm-teutonia-rs-procurador
+Reason:  Publicado o edital nº 001/2026 da Prefeitura de Teutônia/RS com oportunidade para o cargo de Procurador, exigindo graduação em Direito e inscrição na OAB. A remuneração inicial atinge até R$ 13.844,56 acrescida de vale-alimentação. Inscrições abertas de 30/10 a 18/11/2026 pelo Instituto Objetiva. Prova objetiva marcada para 13/12/2026.
+
+Title:   Cremerj abre concurso com salários de até R$ 18 mil para níveis médio e superior - Enfoco
+URL:     https://enfoco.com.br/colunas/flavio-oliveira-saiba-como-fazer/cremerj-abre-concurso-publico/
+Career:   procuradorias
+Group:   cremerj-rj-advogado
+Reason:  O Cremerj publicou edital de concurso público sob organização do Instituto Consulplan, ofertando vagas para o cargo de Advogado, com vencimento básico de R$ 7.718,45 para jornada de 30 horas semanais, exigindo bacharelado em Direito, OAB e experiência. Há também vagas para Analista Jurídico. Inscrições prorrogadas até 6 de novembro, com provas objetiva e discursiva previstas para 13 de dezembro de 2026.
+
+Title:   Concurso IPAM Porto Velho (RO) abre 71 vagas com salário até R$ 5 mil
+URL:     https://concursosnobrasil.com/concursos/ro/2026/10/29/concurso-ipam-porto-velho-ro-abre-71-vagas-com-salario-ate-r-5-mil/
+Career:   administrativo
+Group:   ipam-porto-velho-ro-analista-juridico
+Reason:  O Instituto de Previdência e Assistência dos Servidores do Município de Porto Velho (IPAM) lançou edital com 71 vagas imediatas e cadastro reserva, organizado pelo IBADE. O cargo de Analista Autárquico na especialidade de Direito oferece salário de R$ 5.000,00. As inscrições seguem abertas de 3 de novembro a 7 de dezembro de 2026, com provas objetiva e discursiva agendadas para 28 de fevereiro de 2027.
+
+Title:   IPAM de Porto Velho abre concurso com mais de 70 vagas e salários de até R$ 5 mil | Rádio Itatiaia
+URL:     https://www.itatiaia.com.br/emprego-e-concursos/ipam-de-porto-velho-abre-concurso-com-mais-de-70-vagas-e-salarios-de-ate-r-5-mil/
+Career:   administrativo
+Group:   ipam-porto-velho-ro-analista-juridico
+Reason:  Publicado o edital do concurso público do IPAM de Porto Velho (RO) ofertando vagas de nível superior, incluindo a função de Analista Autárquico - Direito, com remuneração inicial de R$ 5.000,00. As inscrições podem ser feitas de 3 de novembro a 7 de dezembro de 2026 no site da banca IBADE. A seleção compreenderá provas objetiva e discursiva no dia 28 de fevereiro de 2027.
+
+Title:   Concurso TRT 4 (RS) conheça os cargos e vagas do novo edital!
+URL:     https://blog.grancursosonline.com.br/concurso-trt-rs-cargos-e-vagas/
+Career:   tribunais
+Group:   trt4-rs-analista-e-tecnico
+Reason:  Edital publicado pelo TRT da 4ª Região (RS) com vagas em cadastro de reserva para Analista e Técnico Judiciário. A organização está a cargo da FCC, com remunerações iniciais de R$ 9.776,71 a R$ 16.040,88. As inscrições seguem abertas até 25/11/2026, com aplicação das provas objetivas e discursivas prevista para 31/01/2027.
+
+Title:   Concurso em Belém do Piauí oferece 49 vagas e salários de até R$ 12 mil; veja edital
+URL:     https://piauihoje.com/noticias/concursos/concurso-em-belem-do-piaui-oferece-49-vagas-e-salarios-de-ate-r-12-mil-veja-edital-469664.html
+Career:   administrativo
+Group:   prefeitura-belem-do-piaui-pi-agente-de-controle-interno
+Reason:  Prefeitura de Belém do Piauí (PI) publicou edital com 49 vagas imediatas e cadastro reserva para diversos níveis. Para bacharéis em Direito, contempla o cargo de Agente de Controle Interno com exigência de superior em Direito, Administração ou Ciências Contábeis e remuneração inicial de R$ 4.214,60. Inscrições abertas até 25/11/2026.
+
+Title:   Concurso Ipam Porto Velho 2026: confira edital com 71 vagas e R$ 5 mil | G1
+URL:     https://g1.globo.com/ro/rondonia/noticia/2026/10/29/edital-concurso-do-ipam-porto-velho.ghtml
+Career:   administrativo
+Group:   ipam-porto-velho-ro-analista-juridico
+Reason:  IPAM de Porto Velho (RO) publicou edital com 71 vagas para níveis médio e superior. Para a área jurídica, oferta 5 vagas para o cargo de Analista Autárquico na especialidade de Direito, com remuneração inicial de R$ 5.000,00. As inscrições ocorrem de 03/11 a 07/12/2026, sob organização do Ibade, com provas em 28/02/2027.
+
+Title:   Concurso TRF 3: quem pode participar?
+URL:     https://blog.grancursosonline.com.br/concurso-trf-3-requisitos/
+Career:   tribunais
+Group:   trf3-sp-ms-analista-e-tecnico
+Reason:  O Tribunal Regional Federal da 3ª Região, abrangendo São Paulo e Mato Grosso do Sul, está com edital publicado sob organização da Fundação Vunesp. O certame oferta 11 vagas imediatas e cadastro de reserva para os cargos de Técnico e Analista Judiciário, incluindo oportunidades para bacharéis em Direito nas funções de Oficial de Justiça Avaliador Federal e Analista Judiciário na área Judiciária. As remunerações iniciais variam de R$ 9.776,73 a R$ 20.013,11.
 
