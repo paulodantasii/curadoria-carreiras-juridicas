@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuradorIA de Carreiras Jurídicas</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    <style>
+    :root {
+        --bg: #f0f2f5; --card-bg: #ffffff; --text: #1a1a2e; --text-muted: #666;
+        --header-bg-from: #1a1a2e; --header-bg-to: #16213e; --header-text: #ffffff;
+        --accent: #e94560; --shadow: rgba(0,0,0,0.07);
+        --border: #f0f2f5; --input-bg: #ffffff; --input-border: #d8dde3;
+        --site-tag-bg: #f0f2f5; --site-tag-text: #555; --controls-bg: #fafbfc;
+        --arrow-bg: #ffffff; --arrow-border: #ddd; --indicator: #ccc;
+    }
+    [data-theme="dark"] {
+        --bg: #0f1419; --card-bg: #1a1f2e; --text: #e1e6f0; --text-muted: #8a93a6;
+        --header-bg-from: #0a0e1a; --header-bg-to: #14192a; --header-text: #e1e6f0;
+        --accent: #f25575; --shadow: rgba(0,0,0,0.4);
+        --border: #2a3142; --input-bg: #14192a; --input-border: #2a3142;
+        --site-tag-bg: #2a3142; --site-tag-text: #b3bccf; --controls-bg: #14192a;
+        --arrow-bg: #2a3142; --arrow-border: #2a3142; --indicator: #3a4356;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+            --bg: #0f1419; --card-bg: #1a1f2e; --text: #e1e6f0; --text-muted: #8a93a6;
+            --header-bg-from: #0a0e1a; --header-bg-to: #14192a; --header-text: #e1e6f0;
+            --accent: #f25575; --shadow: rgba(0,0,0,0.4);
+            --border: #2a3142; --input-bg: #14192a; --input-border: #2a3142;
+            --site-tag-bg: #2a3142; --site-tag-text: #b3bccf; --controls-bg: #14192a;
+            --arrow-bg: #2a3142; --arrow-border: #2a3142; --indicator: #3a4356;
+        }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+           background: var(--bg); color: var(--text); min-height: 100vh; transition: background 0.2s, color 0.2s; }
+    header { background: linear-gradient(135deg, var(--header-bg-from) 0%, var(--header-bg-to) 100%);
+             color: var(--header-text); padding: 2rem 1.5rem 1.5rem; text-align: center; position: relative; }
+    header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }
+    header p { font-size: 0.85rem; opacity: 0.75; }
+    header .meta { font-size: 0.72rem; opacity: 0.55; margin-top: 0.4rem; }
+    .badge { display: inline-block; background: var(--accent); color: white; font-size: 0.8rem; font-weight: 600;
+             padding: 0.3rem 0.8rem; border-radius: 20px; margin-top: 0.8rem; }
+    .theme-toggle { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.12);
+                    border: 1px solid rgba(255,255,255,0.2); color: var(--header-text); width: 36px; height: 36px;
+                    border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center;
+                    justify-content: center; transition: background 0.2s; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.2); }
+    .container { max-width: 680px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .search-bar { margin-bottom: 1rem; position: relative; }
+    .search-bar input { width: 100%; padding: 0.6rem 0.9rem 0.6rem 2.2rem; border-radius: 10px;
+                        border: 1px solid var(--input-border); background: var(--input-bg); color: var(--text);
+                        font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+    .search-bar input:focus { border-color: var(--accent); }
+    .search-bar::before { content: '🔎'; position: absolute; left: 0.7rem; top: 50%;
+                          transform: translateY(-50%); font-size: 0.9rem; opacity: 0.6; pointer-events: none; }
+    .filter-info { font-size: 0.78rem; color: var(--text-muted); margin: 0.5rem 0 1rem; min-height: 1em; }
+    .group-card { background: var(--card-bg); border-radius: 12px; margin-bottom: 1rem;
+                  box-shadow: 0 2px 8px var(--shadow); border-left: 4px solid var(--accent);
+                  overflow: hidden; position: relative; transition: background 0.2s; }
+    .group-card.highlight { border-left-width: 6px; }
+    .sources-badge { position: absolute; top: 0.8rem; right: 0.8rem; background: var(--header-bg-from);
+                     color: white; font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.55rem;
+                     border-radius: 12px; z-index: 2; }
+    .carousel { position: relative; overflow: hidden; }
+    .slides { display: flex; transition: transform 0.35s ease; }
+    .slide { min-width: 100%; padding: 1.2rem 1.3rem 0.5rem; }
+    .status-tag { display: inline-block; color: white; font-size: 0.7rem; font-weight: 600;
+                  padding: 0.2rem 0.55rem; border-radius: 6px; margin-bottom: 0.5rem; }
+    .site-tag { display: inline-block; background: var(--site-tag-bg); color: var(--site-tag-text);
+                font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 6px;
+                margin-bottom: 0.5rem; margin-left: 0.4rem; }
+    .slide h2 { font-size: 1rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.5rem; color: var(--text); }
+    .slide h2 a { color: inherit; text-decoration: none; }
+    .slide h2 a:hover { color: var(--accent); }
+    .reason { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.9rem; }
+    .btn { display: inline-block; background: var(--header-bg-from); color: white; font-size: 0.82rem;
+           font-weight: 600; padding: 0.45rem 1rem; border-radius: 8px; text-decoration: none;
+           transition: background 0.2s; }
+    .btn:hover { background: var(--accent); }
+    .controls { display: flex; justify-content: space-between; align-items: center;
+                padding: 0.6rem 1rem 1rem; border-top: 1px solid var(--border); background: var(--controls-bg); }
+    .arrow { background: var(--arrow-bg); border: 1px solid var(--arrow-border); color: var(--text);
+             width: 32px; height: 32px; border-radius: 50%; font-size: 1rem; cursor: pointer;
+             display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .arrow:disabled { opacity: 0.3; cursor: default; }
+    .arrow:not(:disabled):hover { background: var(--header-bg-from); color: white; }
+    .indicators { display: flex; gap: 0.4rem; }
+    .indicator { width: 8px; height: 8px; border-radius: 50%; background: var(--indicator); }
+    .indicator.active { background: var(--accent); }
+    .empty { text-align: center; color: var(--text-muted); padding: 3rem 1rem; font-size: 0.95rem; }
+    .archive-banner { background: var(--accent); color: white; padding: 0.8rem 1rem; border-radius: 8px;
+                      margin-bottom: 1rem; font-size: 0.9rem; display: flex; align-items: center;
+                      flex-wrap: wrap; gap: 0.5rem; }
+    .archive-banner a { color: white; text-decoration: underline; font-weight: 600; }
+    .history-section { background: var(--card-bg); border-radius: 12px; padding: 1rem 1.2rem;
+                       margin-top: 2rem; box-shadow: 0 2px 8px var(--shadow); }
+    .history-section summary { cursor: pointer; font-weight: 600; color: var(--text);
+                               font-size: 0.9rem; padding: 0.2rem 0; }
+    .history-section summary:hover { color: var(--accent); }
+    .history-list { list-style: none; padding: 0; margin: 1rem 0 0; max-height: 400px; overflow-y: auto; }
+    .history-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+    .history-list li:last-child { border-bottom: none; }
+    .history-list li.current { color: var(--accent); font-weight: 600; }
+    .history-list a { color: var(--text-muted); text-decoration: none; display: block; }
+    .history-list a:hover { color: var(--accent); }
+    footer { text-align: center; padding: 1.5rem; font-size: 0.78rem; color: var(--text-muted); }
+</style>
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
+        <h1>CuradorIA de Carreiras Jurídicas</h1>
+        <p>Foram analisados 88 artigos na última verificação.</p>
+        <div class="badge">Encontrados 21 artigos relevantes sobre 14 certames.</div>
+        <p class="meta">Última verificação: 01/11/2026 às 07h59 · Tempo de execução: 3min 4s</p>
+    </header>
+    <div class="container">
+        
+        <div class="archive-banner">
+            Você está vendo a edição de<strong>01/11/2026 às 07h59</strong>·
+            <a href="../report.html">Ver versão mais recente</a>
+        </div>
+    
+        
+        <div class="search-bar">
+            <input id="search" type="search" placeholder="Buscar por órgão, cargo, carreira..." aria-label="Buscar">
+        </div>
+        <div class="filter-info" id="filter-info"></div>
+    
+        
+        <div class="group-card highlight" data-search="defensoria pública do amazonas lança concurso público com salários de até r$ 8 mil edital publicado pela dpe-am sob organização da fundação carlos chagas, oferecendo vagas imediatas e cadastro de reserva para analista jurídico, exigindo graduação em direito. as inscrições ocorrem de 30/11/2026 a 04/01/2027, com taxa de r$ 125,00. as remunerações iniciais chegam a r$ 8.006,38 e as provas objetivas estão agendadas para 07/03/2027. dpe-am-am-analista-juridico defensoria marioadolfo.com edital dpe am: saiu! r$ 8 mil e prova em março de 2027! publicado edital de concurso público pela defensoria pública do estado do amazonas (dpe am), organizado pela fcc, ofertando vagas imediatas e cadastro de reserva. entre os cargos contemplados está o de analista jurídico de defensoria, que exige nível superior em ciência jurídica e oferece remuneração inicial de r$ 8.006,38. inscrições de 30/11/2026 a 04/01/2027, com prova em 07/03/2027. dpe-am-am-analista-juridico defensoria blog.grancursosonline.com.br concurso da defensoria pública do amazonas oferece salários de até r$ 8 mil; confira a defensoria pública do estado do amazonas (dpe-am) publicou edital com 5 vagas imediatas e formação de cadastro reserva para níveis médio e superior. o destaque para a área jurídica é o cargo de analista jurídico, com remuneração inicial entre r$ 4.713,02 e r$ 8.006,38. inscrições de 30 de novembro de 2026 a 4 de janeiro de 2027 pela banca fcc, com taxa de r$ 125,00 para nível superior. provas objetivas previstas para 7 de março de 2027. dpe-am-am-analista-juridico defensoria redeondadigital.com.br defensoria pública do amazonas abre concurso com salários de até r$ 8 mil divulgado o edital do 6º concurso público da defensoria pública do amazonas (dpe-am) com vagas imediatas e cadastro de reserva para níveis médio e superior. o cargo de analista jurídico (exclusivo para bacharéis em direito) oferece remuneração inicial de até r$ 8.006,38. inscrições de 30/11/2026 a 04/01/2027 pela fcc, com provas objetivas previstas para 07/03/2027. dpe-am-am-analista-juridico defensoria portaltucuma.com.br defensoria divulga edital do 6º concurso para servidores que atuarão em 13 cidades do estado - defensoria pública do estado do amazonas edital publicado pela dpe am organizado pela fundação carlos chagas com vagas e cadastro de reserva para analista jurídico (exige direito). a remuneração inicial é de r$ 8.006,38. inscrições de 30/11/2026 a 04/01/2027, com taxa de r$ 125,00. provas objetivas agendadas para o dia 07/03/2027 aplicadas em diversos municípios do estado. dpe-am-am-analista-juridico defensoria defensoria.am.def.br">
+            <div class="sources-badge">5 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">MARIOADOLFO.COM</span>
+                <h2><a href="https://marioadolfo.com/defensoria-publica-do-amazonas-lanca-concurso-publico-com-salarios-de-ate-r-8-mil/" target="_blank" rel="noopener noreferrer">Defensoria Pública do Amazonas lança concurso público com salários de até R$ 8 mil</a></h2>
+                <p class="reason">Edital publicado pela DPE-AM sob organização da Fundação Carlos Chagas, oferecendo vagas imediatas e cadastro de reserva para Analista Jurídico, exigindo graduação em Direito. As inscrições ocorrem de 30/11/2026 a 04/01/2027, com taxa de R$ 125,00. As remunerações iniciais chegam a R$ 8.006,38 e as provas objetivas estão agendadas para 07/03/2027.</p>
+                <a href="https://marioadolfo.com/defensoria-publica-do-amazonas-lanca-concurso-publico-com-salarios-de-ate-r-8-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">BLOG.GRANCURSOSONLINE.COM.BR</span>
+                <h2><a href="https://blog.grancursosonline.com.br/concurso-dpe-am-edital-publicado-2026/" target="_blank" rel="noopener noreferrer">Edital DPE AM: SAIU! R$ 8 mil e prova em março de 2027!</a></h2>
+                <p class="reason">Publicado edital de concurso público pela Defensoria Pública do Estado do Amazonas (DPE AM), organizado pela FCC, ofertando vagas imediatas e cadastro de reserva. Entre os cargos contemplados está o de Analista Jurídico de Defensoria, que exige nível superior em Ciência Jurídica e oferece remuneração inicial de R$ 8.006,38. Inscrições de 30/11/2026 a 04/01/2027, com prova em 07/03/2027.</p>
+                <a href="https://blog.grancursosonline.com.br/concurso-dpe-am-edital-publicado-2026/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">REDEONDADIGITAL.COM.BR</span>
+                <h2><a href="https://redeondadigital.com.br/amazonas/concurso-defensoria-publica-amazonas-oferece-salarios" target="_blank" rel="noopener noreferrer">Concurso da Defensoria Pública do Amazonas oferece salários de até R$ 8 mil; confira</a></h2>
+                <p class="reason">A Defensoria Pública do Estado do Amazonas (DPE-AM) publicou edital com 5 vagas imediatas e formação de cadastro reserva para níveis médio e superior. O destaque para a área jurídica é o cargo de Analista Jurídico, com remuneração inicial entre R$ 4.713,02 e R$ 8.006,38. Inscrições de 30 de novembro de 2026 a 4 de janeiro de 2027 pela banca FCC, com taxa de R$ 125,00 para nível superior. Provas objetivas previstas para 7 de março de 2027.</p>
+                <a href="https://redeondadigital.com.br/amazonas/concurso-defensoria-publica-amazonas-oferece-salarios" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">PORTALTUCUMA.COM.BR</span>
+                <h2><a href="https://portaltucuma.com.br/defensoria-publica-do-amazonas-abre-concurso-com-salarios-de-ate-r-8-mil/" target="_blank" rel="noopener noreferrer">Defensoria Pública do Amazonas abre concurso com salários de até R$ 8 mil</a></h2>
+                <p class="reason">Divulgado o edital do 6º Concurso Público da Defensoria Pública do Amazonas (DPE-AM) com vagas imediatas e cadastro de reserva para níveis médio e superior. O cargo de Analista Jurídico (exclusivo para bacharéis em Direito) oferece remuneração inicial de até R$ 8.006,38. Inscrições de 30/11/2026 a 04/01/2027 pela FCC, com provas objetivas previstas para 07/03/2027.</p>
+                <a href="https://portaltucuma.com.br/defensoria-publica-do-amazonas-abre-concurso-com-salarios-de-ate-r-8-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">DEFENSORIA.AM.DEF.BR</span>
+                <h2><a href="https://defensoria.am.def.br/2026/10/31/defensoria-do-amazonas-divulga-edital-do-6o-concurso-para-servidores-que-atuarao-em-13-cidades-do-estado/" target="_blank" rel="noopener noreferrer">Defensoria divulga edital do 6º concurso para servidores que atuarão em 13 cidades do estado - Defensoria Pública do Estado do Amazonas</a></h2>
+                <p class="reason">Edital publicado pela DPE AM organizado pela Fundação Carlos Chagas com vagas e cadastro de reserva para Analista Jurídico (exige Direito). A remuneração inicial é de R$ 8.006,38. Inscrições de 30/11/2026 a 04/01/2027, com taxa de R$ 125,00. Provas objetivas agendadas para o dia 07/03/2027 aplicadas em diversos municípios do estado.</p>
+                <a href="https://defensoria.am.def.br/2026/10/31/defensoria-do-amazonas-divulga-edital-do-6o-concurso-para-servidores-que-atuarao-em-13-cidades-do-estado/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="prefeitura de pirapozinho abre concurso público com 36 cargos e salários de até r$ 6,4 mil - diário de prudente a prefeitura de pirapozinho/sp publicou edital de concurso público contemplando o cargo de procurador jurídico municipal, com exigência de bacharelado em direito e inscrição na oab. o certame oferece remuneração de até r$ 6.464,59 para jornadas de até 40 horas semanais. inscrições abertas de 09/11 a 23/11/2026 pela banca instituto evo, com taxa de r$ 100,00 para nível superior. a seleção inclui provas objetiva, prática e de títulos, com aplicação prevista para 13/12/2026. prefeitura-pirapozinho-sp-procurador-juridico procuradorias diariodeprudente.com prefeitura de pirapozinho abre concurso com salários de até r$ 6,4 mil edital publicado pela prefeitura de pirapozinho/sp para o cargo de procurador jurídico municipal, oferecendo cadastro reserva com remuneração inicial de até r$ 6.464,59. as inscrições ocorrem de 9 de novembro a 23 de novembro de 2026 no site da banca organizadora, mediante taxa de r$ 100,00. a prova objetiva está agendada para 13 de dezembro de 2026, havendo também provas práticas e de títulos para os candidatos aprovados. prefeitura-pirapozinho-sp-procurador-juridico procuradorias diariodamidia.com.br prefeitura pirapozinho sp abre concurso público cadastro reserva edital publicado pela prefeitura de pirapozinho/sp oferecendo vaga e cadastro de reserva para procurador jurídico municipal. o certame exige graduação em direito e inscrição na oab, contando com prova prática de peça prático-profissional e prova de títulos. as inscrições ocorrem entre 9 e 23 de novembro de 2026, com taxa de r$ 100,00 e provas aplicadas em 13 de dezembro de 2026. prefeitura-pirapozinho-sp-procurador-juridico procuradorias souenfermagem.com.br">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">DIARIODEPRUDENTE.COM</span>
+                <h2><a href="https://www.diariodeprudente.com/prefeitura-de-pirapozinho-abre-concurso-publico-com-36-cargos-e-salarios-de-ate-r-64-mil/" target="_blank" rel="noopener noreferrer">Prefeitura de Pirapozinho abre concurso público com 36 cargos e salários de até R$ 6,4 mil - Diário de Prudente</a></h2>
+                <p class="reason">A Prefeitura de Pirapozinho/SP publicou edital de concurso público contemplando o cargo de Procurador Jurídico Municipal, com exigência de bacharelado em Direito e inscrição na OAB. O certame oferece remuneração de até R$ 6.464,59 para jornadas de até 40 horas semanais. Inscrições abertas de 09/11 a 23/11/2026 pela banca Instituto Evo, com taxa de R$ 100,00 para nível superior. A seleção inclui provas objetiva, prática e de títulos, com aplicação prevista para 13/12/2026.</p>
+                <a href="https://www.diariodeprudente.com/prefeitura-de-pirapozinho-abre-concurso-publico-com-36-cargos-e-salarios-de-ate-r-64-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">DIARIODAMIDIA.COM.BR</span>
+                <h2><a href="https://diariodamidia.com.br/prefeitura-de-pirapozinho-abre-concurso-com-salarios-de-ate-r-64-mil" target="_blank" rel="noopener noreferrer">Prefeitura de Pirapozinho abre concurso com salários de até R$ 6,4 mil</a></h2>
+                <p class="reason">Edital publicado pela Prefeitura de Pirapozinho/SP para o cargo de Procurador Jurídico Municipal, oferecendo cadastro reserva com remuneração inicial de até R$ 6.464,59. As inscrições ocorrem de 9 de novembro a 23 de novembro de 2026 no site da banca organizadora, mediante taxa de R$ 100,00. A prova objetiva está agendada para 13 de dezembro de 2026, havendo também provas práticas e de títulos para os candidatos aprovados.</p>
+                <a href="https://diariodamidia.com.br/prefeitura-de-pirapozinho-abre-concurso-com-salarios-de-ate-r-64-mil" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">SOUENFERMAGEM.COM.BR</span>
+                <h2><a href="https://www.souenfermagem.com.br/noticias/prefeitura-pirapozinho-sp-abre-concurso-publico-cadastro-reserva/" target="_blank" rel="noopener noreferrer">Prefeitura Pirapozinho SP abre concurso público cadastro reserva</a></h2>
+                <p class="reason">Edital publicado pela Prefeitura de Pirapozinho/SP oferecendo vaga e cadastro de reserva para Procurador Jurídico Municipal. O certame exige graduação em Direito e inscrição na OAB, contando com prova prática de peça prático-profissional e prova de títulos. As inscrições ocorrem entre 9 e 23 de novembro de 2026, com taxa de R$ 100,00 e provas aplicadas em 13 de dezembro de 2026.</p>
+                <a href="https://www.souenfermagem.com.br/noticias/prefeitura-pirapozinho-sp-abre-concurso-publico-cadastro-reserva/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="concurso câmara de camocim (ce): 11 vagas e salários até r$ 3,8 mil edital publicado pela câmara municipal de camocim (ce) oferecendo 2 vagas imediatas mais 2 em cadastro de reserva para técnico legislativo, cargo que exige graduação em direito. a remuneração inicial é de r$ 3.800,00 para carga horária de 40 horas semanais. inscrições abertas até 12/11/2026 no site da banca organizadora inbrasp. prova objetiva agendada para 06/12/2026. camara-camocim-ce-tecnico-legislativo administrativo noticias.meupreparatorio.com.br câmara de camocim abre concurso com 22 vagas e salários de até r$3,8 mil a câmara municipal de camocim/ce publicou o edital 001/2026 ofertando 22 vagas, entre imediatas e cadastro de reserva, contemplando o cargo de técnico legislativo, que exige graduação em direito. os salários chegam a r$ 3.800,00 para jornadas de 30 ou 40 horas semanais. inscrições abertas de 30 de outubro a 12 de novembro de 2026, com taxa de r$ 145,00 para nível superior. provas objetivas marcadas para 6 de dezembro de 2026. camara-camocim-ce-tecnico-legislativo procuradorias diariodamidia.com.br">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">NOTICIAS.MEUPREPARATORIO.COM.BR</span>
+                <h2><a href="https://noticias.meupreparatorio.com.br/concursos/concurso-camara-de-camocim-ce-2026-11-vagas-inbrasp" target="_blank" rel="noopener noreferrer">Concurso Câmara de Camocim (CE): 11 vagas e salários até R$ 3,8 mil</a></h2>
+                <p class="reason">Edital publicado pela Câmara Municipal de Camocim (CE) oferecendo 2 vagas imediatas mais 2 em cadastro de reserva para Técnico Legislativo, cargo que exige graduação em Direito. A remuneração inicial é de R$ 3.800,00 para carga horária de 40 horas semanais. Inscrições abertas até 12/11/2026 no site da banca organizadora INBRASP. Prova objetiva agendada para 06/12/2026.</p>
+                <a href="https://noticias.meupreparatorio.com.br/concursos/concurso-camara-de-camocim-ce-2026-11-vagas-inbrasp" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">DIARIODAMIDIA.COM.BR</span>
+                <h2><a href="https://diariodamidia.com.br/camara-de-camocim-abre-concurso-com-22-vagas-e-salarios-de-ate-r38-mil" target="_blank" rel="noopener noreferrer">Câmara de Camocim abre concurso com 22 vagas e salários de até R$3,8 mil</a></h2>
+                <p class="reason">A Câmara Municipal de Camocim/CE publicou o edital 001/2026 ofertando 22 vagas, entre imediatas e cadastro de reserva, contemplando o cargo de Técnico Legislativo, que exige graduação em Direito. Os salários chegam a R$ 3.800,00 para jornadas de 30 ou 40 horas semanais. Inscrições abertas de 30 de outubro a 12 de novembro de 2026, com taxa de R$ 145,00 para nível superior. Provas objetivas marcadas para 6 de dezembro de 2026.</p>
+                <a href="https://diariodamidia.com.br/camara-de-camocim-abre-concurso-com-22-vagas-e-salarios-de-ate-r38-mil" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="trt4 - rs abre concurso público para analistas e técnicos judiciários o tribunal regional do trabalho da 4ª região publicou edital de concurso para formação de cadastro de reserva em cargos de nível superior. as oportunidades incluem analista judiciário na área judiciária e na especialidade de oficial de justiça avaliador federal, com remuneração inicial de r$ 16.040,88, além de vagas para técnico judiciário. as inscrições ocorrem de 26 de outubro a 25 de novembro de 2026, com provas objetivas e discursivas aplicadas em 31 de janeiro de 2027. trt4-rs-analista-e-tecnico tribunais pciconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/trt4-rs-abre-concurso-publico-para-analistas-e-tecnicos-judiciarios" target="_blank" rel="noopener noreferrer">TRT4 - RS abre concurso público para analistas e técnicos judiciários</a></h2>
+                <p class="reason">O Tribunal Regional do Trabalho da 4ª Região publicou edital de concurso para formação de cadastro de reserva em cargos de nível superior. As oportunidades incluem Analista Judiciário na Área Judiciária e na especialidade de Oficial de Justiça Avaliador Federal, com remuneração inicial de R$ 16.040,88, além de vagas para Técnico Judiciário. As inscrições ocorrem de 26 de outubro a 25 de novembro de 2026, com provas objetivas e discursivas aplicadas em 31 de janeiro de 2027.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/trt4-rs-abre-concurso-publico-para-analistas-e-tecnicos-judiciarios" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="ipsm de são josé dos campos - sp abre concurso para diversos cargos de nível superior o instituto de previdência do servidor municipal de são josé dos campos publicou edital visando o provimento efetivo de cargos de nível superior. há oferta de 2 vagas imediatas mais cadastro reserva para analista previdenciário na especialidade de direito, com remuneração inicial de até r$ 5.185,46, acrescida de benefícios. as inscrições seguem abertas até 30 de outubro de 2026 e a prova objetiva está agendada para 13 de dezembro de 2026. ipsm-sao-jose-dos-campos-sp-analista-previdenciario-direito procuradorias pciconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/ipsm-de-sao-jose-dos-campos-sp-abre-concurso-para-diversos-cargos-de-nivel-superior" target="_blank" rel="noopener noreferrer">IPSM de São José dos Campos - SP abre concurso para diversos cargos de nível superior</a></h2>
+                <p class="reason">O Instituto de Previdência do Servidor Municipal de São José dos Campos publicou edital visando o provimento efetivo de cargos de nível superior. Há oferta de 2 vagas imediatas mais cadastro reserva para Analista Previdenciário na especialidade de Direito, com remuneração inicial de até R$ 5.185,46, acrescida de benefícios. As inscrições seguem abertas até 30 de outubro de 2026 e a prova objetiva está agendada para 13 de dezembro de 2026.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/ipsm-de-sao-jose-dos-campos-sp-abre-concurso-para-diversos-cargos-de-nivel-superior" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de cubatão-sp lança dois editais e paga até r$ 5.565 a prefeitura de cubatão lançou editais de concurso público sob organização do ibam para provimento estatutário. o cargo de procurador jurídico oferece 1 vaga imediata, exigindo graduação em direito e inscrição na oab, com remuneração de até r$ 5.565,00 mais benefícios. as inscrições podem ser feitas de 29 de outubro a 3 de dezembro de 2026, com prova objetiva prevista para 17 de janeiro de 2027 e etapa prático-profissional. prefeitura-cubatao-sp-procurador-juridico procuradorias acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-sao-paulo/prefeitura-de-cubatao-sp-lanca-dois-editais-e-paga-ate-r-5-565-94345" target="_blank" rel="noopener noreferrer">Prefeitura de Cubatão-SP lança dois editais e paga até R$ 5.565</a></h2>
+                <p class="reason">A Prefeitura de Cubatão lançou editais de concurso público sob organização do IBAM para provimento estatutário. O cargo de Procurador Jurídico oferece 1 vaga imediata, exigindo graduação em Direito e inscrição na OAB, com remuneração de até R$ 5.565,00 mais benefícios. As inscrições podem ser feitas de 29 de outubro a 3 de dezembro de 2026, com prova objetiva prevista para 17 de janeiro de 2027 e etapa prático-profissional.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-sao-paulo/prefeitura-de-cubatao-sp-lanca-dois-editais-e-paga-ate-r-5-565-94345" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso prefeitura de matão (sp): 28 vagas e salários até r$ 9,7 mil edital publicado pela prefeitura de matão/sp sob organização do ibam, oferecendo 1 vaga imediata para procurador jurídico, exigindo graduação em direito e inscrição na oab. a remuneração inicial é de r$ 9.717,96 para jornada de 30 horas semanais. inscrições abertas até 18/11/2026, com taxa de r$ 119,00. o certame conta com provas objetiva e prático-profissional. prefeitura-matao-sp-procurador-juridico procuradorias noticias.meupreparatorio.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">NOTICIAS.MEUPREPARATORIO.COM.BR</span>
+                <h2><a href="https://noticias.meupreparatorio.com.br/concursos/concurso-prefeitura-de-matao-sp-02-2026-28-vagas-ibam" target="_blank" rel="noopener noreferrer">Concurso Prefeitura de Matão (SP): 28 vagas e salários até R$ 9,7 mil</a></h2>
+                <p class="reason">Edital publicado pela Prefeitura de Matão/SP sob organização do IBAM, oferecendo 1 vaga imediata para Procurador Jurídico, exigindo graduação em Direito e inscrição na OAB. A remuneração inicial é de R$ 9.717,96 para jornada de 30 horas semanais. Inscrições abertas até 18/11/2026, com taxa de R$ 119,00. O certame conta com provas objetiva e prático-profissional.</p>
+                <a href="https://noticias.meupreparatorio.com.br/concursos/concurso-prefeitura-de-matao-sp-02-2026-28-vagas-ibam" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="tjrn abre 9 vagas de estágio em direito com bolsas de até r$ 2.315,00. - concursos rn o tribunal de justiça do rio grande do norte (tjrn) abriu múltiplos processos seletivos para estágio remunerado de pós-graduação em direito, totalizando 9 vagas imediatas e formação de cadastro de reserva em comarcas como natal, parnamirim e ceará-mirim. as bolsas chegam a r$ 2.315,00 acrescidas de auxílio-transporte, com jornadas de 30 horas semanais. os prazos de inscrição encerram-se de forma escalonada entre 3 e 13 de novembro de 2026. tjrn-rn-estagio-pos-direito estagio concursosrn.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">CONCURSOSRN.COM.BR</span>
+                <h2><a href="https://concursosrn.com.br/tjrn-abre-9-vagas-de-estagio-em-direito-com-bolsas-de-ate-r-2-31500/" target="_blank" rel="noopener noreferrer">TJRN abre 9 vagas de estágio em Direito com bolsas de até R$ 2.315,00. - Concursos RN</a></h2>
+                <p class="reason">O Tribunal de Justiça do Rio Grande do Norte (TJRN) abriu múltiplos processos seletivos para estágio remunerado de pós-graduação em Direito, totalizando 9 vagas imediatas e formação de cadastro de reserva em comarcas como Natal, Parnamirim e Ceará-Mirim. As bolsas chegam a R$ 2.315,00 acrescidas de auxílio-transporte, com jornadas de 30 horas semanais. Os prazos de inscrição encerram-se de forma escalonada entre 3 e 13 de novembro de 2026.</p>
+                <a href="https://concursosrn.com.br/tjrn-abre-9-vagas-de-estagio-em-direito-com-bolsas-de-ate-r-2-31500/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de mirassol d’oeste abre seletivo com salários de até r$ 27,6 mil | repórtermt - notícias de mato grosso e cuiabá hoje processo seletivo simplificado aberto pela prefeitura de mirassol d&#x27;oeste (mt) com vagas para contratação temporária de advogado. as remunerações variam de r$ 2.353,89 a r$ 27.645,05 conforme o cargo. as inscrições seguem abertas de 6 a 16 de novembro de 2026 exclusivamente pelo site da banca organizadora. a aplicação das provas objetivas está prevista para o dia 13 de dezembro de 2026. prefeitura-mirassol-doeste-mt-advogado procuradorias reportermt.com">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">REPORTERMT.COM</span>
+                <h2><a href="https://www.reportermt.com/cidades/prefeitura-de-mirassol-doeste-abre-seletivo-com-salarios-de-ate-r-276-mil/245989" target="_blank" rel="noopener noreferrer">Prefeitura de Mirassol d’Oeste abre seletivo com salários de até R$ 27,6 mil | RepórterMT - Notícias de Mato Grosso e Cuiabá Hoje</a></h2>
+                <p class="reason">Processo seletivo simplificado aberto pela Prefeitura de Mirassol d&#x27;Oeste (MT) com vagas para contratação temporária de advogado. As remunerações variam de R$ 2.353,89 a R$ 27.645,05 conforme o cargo. As inscrições seguem abertas de 6 a 16 de novembro de 2026 exclusivamente pelo site da banca organizadora. A aplicação das provas objetivas está prevista para o dia 13 de dezembro de 2026.</p>
+                <a href="https://www.reportermt.com/cidades/prefeitura-de-mirassol-doeste-abre-seletivo-com-salarios-de-ate-r-276-mil/245989" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="defensoria pública da paraíba abre concurso com salários de até r$ 5,1 mil  – blog do amarildo concurso público aberto pela defensoria pública do estado da paraíba (dpe-pb) com 20 vagas e formação de cadastro reserva para níveis médio e superior, sob organização da fundação carlos chagas (fcc). a remuneração inicial para analista na especialidade de assistente jurídico (graduação em direito) é de r$ 5.197,50. inscrições até 13/11/2026, com taxa de r$ 123 e provas aplicadas em 28/02/2027. dpe-pb-pb-assistente-juridico defensoria blogdoamarildo.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">BLOGDOAMARILDO.COM.BR</span>
+                <h2><a href="https://blogdoamarildo.com.br/defensoria-publica-da-paraiba-abre-concurso-com-salarios-de-ate-r-51-mil-2/" target="_blank" rel="noopener noreferrer">Defensoria Pública da Paraíba abre concurso com salários de até R$ 5,1 mil  – Blog do Amarildo</a></h2>
+                <p class="reason">Concurso público aberto pela Defensoria Pública do Estado da Paraíba (DPE-PB) com 20 vagas e formação de cadastro reserva para níveis médio e superior, sob organização da Fundação Carlos Chagas (FCC). A remuneração inicial para Analista na especialidade de Assistente Jurídico (graduação em Direito) é de R$ 5.197,50. Inscrições até 13/11/2026, com taxa de R$ 123 e provas aplicadas em 28/02/2027.</p>
+                <a href="https://blogdoamarildo.com.br/defensoria-publica-da-paraiba-abre-concurso-com-salarios-de-ate-r-51-mil-2/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso do trf da 3ª região com salários r$ 20 mil vai abrir inscrições na quarta (4) - portal de prefeitura edital publicado pelo trf da 3ª região com 11 vagas imediatas e cadastro de reserva para analista e técnico judiciário. destaca-se o cargo de analista judiciário - oficial de justiça avaliador federal, que exige formação em direito e remuneração inicial de r$ 20.013,11. as inscrições seguem abertas de 4 a 23 de novembro de 2026 no site da vunesp, com taxas entre r$ 100 e r$ 110. trf3-regional-analista-judiciario-oficial-de-justica tribunais portaldeprefeitura.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">PORTALDEPREFEITURA.COM.BR</span>
+                <h2><a href="https://portaldeprefeitura.com.br/oportunidades/concurso-do-trf-da-3a-regiao-vai-abrir-inscricoes-quarta/635303/" target="_blank" rel="noopener noreferrer">Concurso do TRF da 3ª Região com salários R$ 20 mil vai abrir inscrições na quarta (4) - Portal de Prefeitura</a></h2>
+                <p class="reason">Edital publicado pelo TRF da 3ª Região com 11 vagas imediatas e cadastro de reserva para analista e técnico judiciário. Destaca-se o cargo de Analista Judiciário - Oficial de Justiça Avaliador Federal, que exige formação em Direito e remuneração inicial de R$ 20.013,11. As inscrições seguem abertas de 4 a 23 de novembro de 2026 no site da Vunesp, com taxas entre R$ 100 e R$ 110.</p>
+                <a href="https://portaldeprefeitura.com.br/oportunidades/concurso-do-trf-da-3a-regiao-vai-abrir-inscricoes-quarta/635303/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="iprejun abre concurso público; inscrições começam em 16 de novembro | novo dia notícias o instituto de previdência do município de jundiaí (iprejun) publicou edital com 1 vaga imediata para analista de planejamento, gestão e orçamento na especialidade de direito. o cargo exige graduação e seis meses de experiência, oferecendo remuneração inicial de r$ 15.123,99 mais auxílios para jornada de 40 horas semanais. as inscrições ocorrem de 16 de novembro a 15 de dezembro de 2026 pelo site da vunesp, com provas aplicadas em 21 de fevereiro de 2027. iprejun-jundiai-sp-analista-juridico administrativo novodianoticias.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">NOVODIANOTICIAS.COM.BR</span>
+                <h2><a href="https://novodianoticias.com.br/2026/10/iprejun-abre-concurso-publico-inscricoes-comecam-em-16-de-novembro/" target="_blank" rel="noopener noreferrer">Iprejun abre concurso público; inscrições começam em 16 de novembro | Novo Dia Notícias</a></h2>
+                <p class="reason">O Instituto de Previdência do Município de Jundiaí (Iprejun) publicou edital com 1 vaga imediata para Analista de Planejamento, Gestão e Orçamento na especialidade de Direito. O cargo exige graduação e seis meses de experiência, oferecendo remuneração inicial de R$ 15.123,99 mais auxílios para jornada de 40 horas semanais. As inscrições ocorrem de 16 de novembro a 15 de dezembro de 2026 pelo site da Vunesp, com provas aplicadas em 21 de fevereiro de 2027.</p>
+                <a href="https://novodianoticias.com.br/2026/10/iprejun-abre-concurso-publico-inscricoes-comecam-em-16-de-novembro/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso câmara de trindade 2026: gabarito e resultados a câmara municipal de trindade aplicou as provas objetivas do edital 02/2026, com gabarito preliminar previsto para 02 de novembro. o certame oferta 17 vagas imediatas em diversos níveis de escolaridade, destacando-se o cargo de analista legislativo – técnico jurídico, que exige nível superior em direito e oferece vencimento inicial de r$ 7.500,00. a seleção é organizada pelo instituto idecan e o resultado preliminar é esperado para o final de novembro. camara-trindade-go-analista-legislativo administrativo fiibrasil.com">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">FIIBRASIL.COM</span>
+                <h2><a href="https://fiibrasil.com/concursos/gabarito-concurso-camara-de-trindade-2026-edital-02/" target="_blank" rel="noopener noreferrer">Concurso Câmara de Trindade 2026: Gabarito e Resultados</a></h2>
+                <p class="reason">A Câmara Municipal de Trindade aplicou as provas objetivas do edital 02/2026, com gabarito preliminar previsto para 02 de novembro. O certame oferta 17 vagas imediatas em diversos níveis de escolaridade, destacando-se o cargo de Analista Legislativo – Técnico Jurídico, que exige nível superior em Direito e oferece vencimento inicial de R$ 7.500,00. A seleção é organizada pelo Instituto IDECAN e o resultado preliminar é esperado para o final de novembro.</p>
+                <a href="https://fiibrasil.com/concursos/gabarito-concurso-camara-de-trindade-2026-edital-02/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso de prefeitura em pernambuco oferece 33 vagas na saúde com salários de até r$ 3,2 mil - portal de prefeitura a prefeitura de são caetano, em pernambuco, está com concurso público aberto contemplando vagas na procuradoria municipal, além de outras secretarias. as inscrições seguem abertas até 10 de dezembro de 2026 no portal do instituto igeduc, com taxa de r$ 120 para nível superior. o cargo de procurador municipal contará com prova objetiva, discursiva e avaliação de experiência, com a aplicação da avaliação principal agendada para o dia 31 de janeiro de 2027. prefeitura-sao-caetano-pe-procurador procuradorias portaldeprefeitura.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PORTALDEPREFEITURA.COM.BR</span>
+                <h2><a href="https://portaldeprefeitura.com.br/oportunidades/concurso-de-prefeitura-sao-caetano-pernambuco-oferece-33-vagas/635283/" target="_blank" rel="noopener noreferrer">Concurso de prefeitura em Pernambuco oferece 33 vagas na Saúde com salários de até R$ 3,2 mil - Portal de Prefeitura</a></h2>
+                <p class="reason">A Prefeitura de São Caetano, em Pernambuco, está com concurso público aberto contemplando vagas na Procuradoria Municipal, além de outras secretarias. As inscrições seguem abertas até 10 de dezembro de 2026 no portal do Instituto Igeduc, com taxa de R$ 120 para nível superior. O cargo de Procurador Municipal contará com prova objetiva, discursiva e avaliação de experiência, com a aplicação da avaliação principal agendada para o dia 31 de janeiro de 2027.</p>
+                <a href="https://portaldeprefeitura.com.br/oportunidades/concurso-de-prefeitura-sao-caetano-pernambuco-oferece-33-vagas/635283/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        
+    </div>
+    <footer>Gerado automaticamente · CuradorIA de Carreiras Jurídicas · Todos os créditos reservados aos respectivos autores dos artigos encontrados.</footer>
+    <script>
+    // Tema (dark mode) / Theme (dark mode)
+    (function () {
+        var saved = localStorage.getItem('curadoria-theme');
+        if (saved === 'dark' || saved === 'light') {
+            document.documentElement.setAttribute('data-theme', saved);
+        }
+    })();
+
+    function toggleTheme() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme');
+        if (!current) {
+            current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('curadoria-theme', next);
+        var btn = document.getElementById('theme-toggle');
+        if (btn) btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('theme-toggle');
+        if (btn) {
+            var current = document.documentElement.getAttribute('data-theme') ||
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            btn.textContent = current === 'dark' ? '☀️' : '🌙';
+            btn.addEventListener('click', toggleTheme);
+        }
+
+        // Carrossel / Carousel
+        document.querySelectorAll('.group-card').forEach(function (card) {
+            var slidesEl = card.querySelector('.slides');
+            if (!slidesEl) return;
+            var total = slidesEl.children.length;
+            var current = 0;
+            var leftArrow = card.querySelector('.arrow-left');
+            var rightArrow = card.querySelector('.arrow-right');
+            var indicators = card.querySelectorAll('.indicator');
+
+            function update() {
+                slidesEl.style.transform = 'translateX(-' + (current * 100) + '%)';
+                indicators.forEach(function (ind, i) { ind.classList.toggle('active', i === current); });
+                if (leftArrow) leftArrow.disabled = current === 0;
+                if (rightArrow) rightArrow.disabled = current === total - 1;
+            }
+            if (leftArrow) leftArrow.addEventListener('click', function () {
+                if (current > 0) { current--; update(); }
+            });
+            if (rightArrow) rightArrow.addEventListener('click', function () {
+                if (current < total - 1) { current++; update(); }
+            });
+            update();
+        });
+
+        // Busca / Search
+        var searchInput = document.getElementById('search');
+        var filterInfo = document.getElementById('filter-info');
+        var allCards = document.querySelectorAll('.group-card');
+
+        function applyFilter() {
+            var q = (searchInput.value || '').trim().toLowerCase();
+            var visible = 0;
+            allCards.forEach(function (card) {
+                var blob = card.getAttribute('data-search') || '';
+                var match = !q || blob.indexOf(q) !== -1;
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+            if (filterInfo) {
+                if (!q) filterInfo.textContent = '';
+                else filterInfo.textContent = visible + ' de ' + allCards.length + ' certames correspondem a "' + q + '"';
+            }
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', applyFilter);
+            searchInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { searchInput.value = ''; applyFilter(); }
+            });
+        }
+    });
+</script>
+</body>
+</html>
