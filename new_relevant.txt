@@ -1,131 +1,101 @@
-Verificação: 2026-11-01T10:59:42.342447+00:00
-Links analisados: 88
-Links relevantes: 21
+Verificação: 2026-11-02T11:57:54.452835+00:00
+Links analisados: 63
+Links relevantes: 16
 ============================================================
 
-Title:   TRT4 - RS abre concurso público para analistas e técnicos judiciários
-URL:     https://www.pciconcursos.com.br/noticias/trt4-rs-abre-concurso-publico-para-analistas-e-tecnicos-judiciarios
+Title:   Última Chance Para Se Inscrever No Concurso Da Alepa Com Salários De Até R$ 10 Mil
+URL:     https://portalgurupi.com.br/concurso-alepa-inscricoes-ultimos-dias/
+Career:   procuradorias
+Group:   alepa-pa-procurador
+Reason:  Edital publicado para a Assembleia Legislativa do Pará (Alepa) com 5 vagas para Procurador Legislativo, exigindo graduação em Direito e registro profissional. A remuneração inicial pode atingir R$ 10.353,64 com gratificações para carga horária de 30 horas semanais. Inscrições abertas até 04/11/2026 pela Fundação CETAP com taxa de R$ 118,00. Provas objetiva, discursiva e de títulos previstas para 13/12/2026.
+
+Title:   Inscrições para concurso da Alepa terminam nesta quarta-feira (4); salários chegam a R$ 10 mil | Roma News
+URL:     https://www.romanews.com.br/cidades/inscricoes-para-concurso-da-alepa-terminam-nesta-quarta-feira-4-salarios-chegam-a-r-10-mil-1126
+Career:   procuradorias
+Group:   alepa-pa-procurador
+Reason:  Edital publicado para a Assembleia Legislativa do Pará (Alepa) com 5 vagas para Procurador Legislativo, exigindo graduação em Direito e registro profissional. A remuneração inicial pode atingir R$ 10.353,64 com gratificações para carga horária de 30 horas semanais. Inscrições abertas até 04/11/2026 pela Fundação CETAP com taxa de R$ 118,00. Provas objetiva, discursiva e de títulos previstas para 13/12/2026.
+
+Title:   Concurso da Alepa com 135 vagas encerra inscrições nesta quarta-feira (4); veja como participar
+URL:     https://parawebnews.com/concurso-da-alepa-com-135-vagas-encerra-inscricoes-nesta-quarta-feira-4-veja-como-participar/
+Career:   procuradorias
+Group:   alepa-pa-procurador
+Reason:  Edital publicado para a Assembleia Legislativa do Pará (Alepa) com 5 vagas para Procurador Legislativo, exigindo graduação em Direito e registro profissional. A remuneração inicial pode atingir R$ 10.353,64 com gratificações para carga horária de 30 horas semanais. Inscrições abertas até 04/11/2026 pela Fundação CETAP com taxa de R$ 118,00. Provas objetiva, discursiva e de títulos previstas para 13/12/2026.
+
+Title:   Concurso da Defensoria Pública da Paraíba tem 20 vagas e salários de até R$ 5,1 mil; veja como se inscrever - Notícias | Relata Bahia
+URL:     https://www.relatabahia.com.br/noticias/concurso-dpe-pb-2026-inscricoes-vagas-salarios
+Career:   defensoria
+Group:   dpe-pb-pb-analista-juridico
+Reason:  Edital publicado pela DPE-PB com 20 vagas imediatas e cadastro de reserva. O cargo de Analista - Assistente Jurídico exige graduação em Direito. Remuneração inicial de R$ 5.197,50. Inscrições abertas até 13/11/2026 via site da banca FCC. Provas objetivas agendadas para 28/02/2027 em João Pessoa/PB.
+
+Title:   Paraíba tem cerca de 550 vagas abertas em concursos e seleção no mês de novembro - G1 PB - Repórter PB
+URL:     https://www.reporterpb.com.br/noticia-extra/2026/11/01/paraiba-tem-cerca-de-550-vagas-abertas-em-concursos-e-selecao-no-mes-de-novembro/137822.html
 Career:   tribunais
-Group:   trt4-rs-analista-e-tecnico
-Reason:  O Tribunal Regional do Trabalho da 4ª Região publicou edital de concurso para formação de cadastro de reserva em cargos de nível superior. As oportunidades incluem Analista Judiciário na Área Judiciária e na especialidade de Oficial de Justiça Avaliador Federal, com remuneração inicial de R$ 16.040,88, além de vagas para Técnico Judiciário. As inscrições ocorrem de 26 de outubro a 25 de novembro de 2026, com provas objetivas e discursivas aplicadas em 31 de janeiro de 2027.
+Group:   tjpb-pb-analista-judiciario
+Reason:  Edital publicado para o Tribunal de Justiça da Paraíba (TJPB) com 50 vagas para o cargo de Analista Judiciário, que exige nível superior. A remuneração inicial é de R$ 7.526,14. Inscrições abertas de 20/10 a 18/11/2026, sob organização da banca FGV. A aplicação das provas objetivas está prevista para o dia 24/01/2027.
 
-Title:   IPSM de São José dos Campos - SP abre concurso para diversos cargos de nível superior
-URL:     https://www.pciconcursos.com.br/noticias/ipsm-de-sao-jose-dos-campos-sp-abre-concurso-para-diversos-cargos-de-nivel-superior
-Career:   procuradorias
-Group:   ipsm-sao-jose-dos-campos-sp-analista-previdenciario-direito
-Reason:  O Instituto de Previdência do Servidor Municipal de São José dos Campos publicou edital visando o provimento efetivo de cargos de nível superior. Há oferta de 2 vagas imediatas mais cadastro reserva para Analista Previdenciário na especialidade de Direito, com remuneração inicial de até R$ 5.185,46, acrescida de benefícios. As inscrições seguem abertas até 30 de outubro de 2026 e a prova objetiva está agendada para 13 de dezembro de 2026.
-
-Title:   Prefeitura de Cubatão-SP lança dois editais e paga até R$ 5.565
-URL:     https://www.acheconcursos.com.br/concursos-sao-paulo/prefeitura-de-cubatao-sp-lanca-dois-editais-e-paga-ate-r-5-565-94345
-Career:   procuradorias
-Group:   prefeitura-cubatao-sp-procurador-juridico
-Reason:  A Prefeitura de Cubatão lançou editais de concurso público sob organização do IBAM para provimento estatutário. O cargo de Procurador Jurídico oferece 1 vaga imediata, exigindo graduação em Direito e inscrição na OAB, com remuneração de até R$ 5.565,00 mais benefícios. As inscrições podem ser feitas de 29 de outubro a 3 de dezembro de 2026, com prova objetiva prevista para 17 de janeiro de 2027 e etapa prático-profissional.
-
-Title:   Defensoria Pública do Amazonas lança concurso público com salários de até R$ 8 mil
-URL:     https://marioadolfo.com/defensoria-publica-do-amazonas-lanca-concurso-publico-com-salarios-de-ate-r-8-mil/
+Title:   Concurso da Defensoria do Amazonas paga até R$ 8 mil; veja cargos | TV Sim Brasil
+URL:     https://tvsimbrasil.com.br/am/amazonas/concursos/noticia/2026/10/31/concurso-defensoria-amazonas-paga-ate-8-mil-veja-cargos
 Career:   defensoria
 Group:   dpe-am-am-analista-juridico
-Reason:  Edital publicado pela DPE-AM sob organização da Fundação Carlos Chagas, oferecendo vagas imediatas e cadastro de reserva para Analista Jurídico, exigindo graduação em Direito. As inscrições ocorrem de 30/11/2026 a 04/01/2027, com taxa de R$ 125,00. As remunerações iniciais chegam a R$ 8.006,38 e as provas objetivas estão agendadas para 07/03/2027.
+Reason:  Edital publicado pela DPE-AM com 5 vagas imediatas e cadastro de reserva para 18 especialidades. O cargo de Analista Jurídico oferece remuneração inicial de R$ 8.006,38. Inscrições ocorrem de 30/11/2026 a 04/01/2027 pelo site da banca FCC. Provas objetivas marcadas para 07/03/2027 em 13 cidades credenciadas no estado.
 
-Title:   Prefeitura de Pirapozinho abre concurso público com 36 cargos e salários de até R$ 6,4 mil - Diário de Prudente
-URL:     https://www.diariodeprudente.com/prefeitura-de-pirapozinho-abre-concurso-publico-com-36-cargos-e-salarios-de-ate-r-64-mil/
+Title:   Concurso Prefeitura de Louveira (SP): 19 vagas e salários até R$ 8,7 mil
+URL:     https://noticias.meupreparatorio.com.br/concursos/concurso-prefeitura-de-louveira-sp-19-vagas-salarios-ate-r-8-7-mil
+Career:   administrativo
+Group:   prefeitura-louveira-sp-assistente-juridico
+Reason:  Edital publicado pela Prefeitura de Louveira/SP, sob organização do Instituto Avança SP, ofertando 1 vaga imediata para Assistente Jurídico (nível superior em Direito). A remuneração inicial é de R$ 4.771,00 para jornada de 40 horas semanais. Inscrições abertas até 16/11/2026, com taxa de R$ 95,00. A prova objetiva, composta por 50 questões, está agendada para o dia 17/01/2027.
+
+Title:   SP: inscrições abertas para 273 vagas em concursos do TJ, TRF, Defensoria e Sefaz
+URL:     https://noticiasdemogi.com.br/sp-inscricoes-abertas-para-273-vagas-em-concursos-do-tj-trf-defensoria-e-sefaz/
+Career:   tribunais
+Group:   tj-trf-dpe-sp-varios
+Reason:  O TJ-SP abriu concurso para 132 vagas de Oficial de Justiça (nível superior) com salário de R$ 9.856,95. O TRF-3 também publicou edital para cargos de Analista e Técnico, com salários de até R$ 20.013,11, com inscrições de 04/11 a 23/11/2026. Adicionalmente, a DPE-SP está com inscrições abertas até 11/11/2026 para 70 vagas de Defensor Público, exigindo bacharelado em Direito e 3 anos de atividade jurídica, com remuneração inicial de R$ 29.716,00.
+
+Title:   ÚLTIMA HORA: Inscrições Do Concurso Alepa Acabam Hoje!
+URL:     https://portalgurupi.com.br/concurso-alepa-inscricoes-encerram-quarta/
 Career:   procuradorias
-Group:   prefeitura-pirapozinho-sp-procurador-juridico
-Reason:  A Prefeitura de Pirapozinho/SP publicou edital de concurso público contemplando o cargo de Procurador Jurídico Municipal, com exigência de bacharelado em Direito e inscrição na OAB. O certame oferece remuneração de até R$ 6.464,59 para jornadas de até 40 horas semanais. Inscrições abertas de 09/11 a 23/11/2026 pela banca Instituto Evo, com taxa de R$ 100,00 para nível superior. A seleção inclui provas objetiva, prática e de títulos, com aplicação prevista para 13/12/2026.
+Group:   alepa-pa-procurador
+Reason:  Concurso da Assembleia Legislativa do Pará (Alepa) com 5 vagas para Procurador Legislativo, exigindo graduação em Direito e registro na OAB. A remuneração chega a R$ 10.353,64 para jornada de 30 horas semanais. O certame é organizado pela Fundação CETAP, com inscrições encerrando em 04/11/2026. A seleção compreende provas objetiva, discursiva e avaliação de títulos, com aplicação prevista para 13/12/2026.
 
-Title:   Concurso Prefeitura de Matão (SP): 28 vagas e salários até R$ 9,7 mil
-URL:     https://noticias.meupreparatorio.com.br/concursos/concurso-prefeitura-de-matao-sp-02-2026-28-vagas-ibam
+Title:   Concursos na Paraíba: vagas abertas no mês de novembro | G1
+URL:     https://g1.globo.com/google/amp/pb/paraiba/noticia/2026/11/01/vagas-abertas-em-concursos-na-paraiba-novembro-2026.ghtml
+Career:   tribunais
+Group:   tjpb-pb-analista-judiciario
+Reason:  O Tribunal de Justiça da Paraíba (TJPB) publicou edital com 50 vagas para Analista Judiciário, cargo de nível superior que abrange bacharéis em Direito. O salário inicial é de R$ 7.526,14. As inscrições seguem abertas até 18 de novembro, sob organização da FGV, com aplicação das provas objetivas prevista para 24 de janeiro de 2027.
+
+Title:   Concurso público: melhores oportunidades para Analista em novembro; até R$ 32 mil! - Blog Magistrar Educacional
+URL:     https://magistrarcursos.com.br/blog/concurso-publico-melhores-oportunidades-para-analista-em-novembro/
 Career:   procuradorias
-Group:   prefeitura-matao-sp-procurador-juridico
-Reason:  Edital publicado pela Prefeitura de Matão/SP sob organização do IBAM, oferecendo 1 vaga imediata para Procurador Jurídico, exigindo graduação em Direito e inscrição na OAB. A remuneração inicial é de R$ 9.717,96 para jornada de 30 horas semanais. Inscrições abertas até 18/11/2026, com taxa de R$ 119,00. O certame conta com provas objetiva e prático-profissional.
+Group:   camara-dos-deputados-federal-analista-legislativo
+Reason:  A Câmara dos Deputados está com edital aberto para o cargo de Analista Legislativo, oferecendo 66 vagas imediatas mais 118 em cadastro de reserva. A remuneração inicial atinge expressivos R$ 32.070,88. As inscrições vão até 17 de novembro, com a banca Cebraspe organizando o certame, e provas aplicadas em 17 de janeiro de 2027.
 
-Title:   Edital DPE AM: SAIU! R$ 8 mil e prova em março de 2027!
-URL:     https://blog.grancursosonline.com.br/concurso-dpe-am-edital-publicado-2026/
-Career:   defensoria
-Group:   dpe-am-am-analista-juridico
-Reason:  Publicado edital de concurso público pela Defensoria Pública do Estado do Amazonas (DPE AM), organizado pela FCC, ofertando vagas imediatas e cadastro de reserva. Entre os cargos contemplados está o de Analista Jurídico de Defensoria, que exige nível superior em Ciência Jurídica e oferece remuneração inicial de R$ 8.006,38. Inscrições de 30/11/2026 a 04/01/2027, com prova em 07/03/2027.
+Title:   Publicado Edital Do Concurso Para Servidor Do TRT-RS
+URL:     https://istoearacaju.com.br/publicado-edital-do-concurso-para-servidor-do-trt-rs/
+Career:   tribunais
+Group:   trt4-rs-analista-judiciario
+Reason:  O TRT da 4ª Região (RS) abriu concurso público para formação de cadastro de reserva em cargos de Analista Judiciário e Técnico Judiciário. A remuneração inicial chega a R$ 16.040,88 para analistas. As inscrições encerram-se em 25 de novembro de 2026 pelo site da FCC. As provas objetivas e discursivas ocorrem em 31 de janeiro de 2027.
 
-Title:   TJRN abre 9 vagas de estágio em Direito com bolsas de até R$ 2.315,00. - Concursos RN
-URL:     https://concursosrn.com.br/tjrn-abre-9-vagas-de-estagio-em-direito-com-bolsas-de-ate-r-2-31500/
+Title:   Concurso Prefeitura de Jundiaí: Gabarito e Lista de Aprovados
+URL:     https://fiibrasil.com/noticia/concurso-prefeitura-jundiai-2026-gabarito/
+Career:   procuradorias
+Group:   pgm-jundiai-sp-procurador
+Reason:  O concurso da Prefeitura de Jundiaí/SP, regido pelo edital 301/2026, está aguardando a publicação do gabarito preliminar da prova objetiva realizada em 01/11/2026. O certame oferta 1 vaga imediata para Procurador do Município, exigindo nível superior em Direito, com remuneração inicial de R$ 16.590,03. A seleção registrou 3.058 inscritos e a banca organizadora é a Vunesp.
+
+Title:   Prefeitura de União da Vitória lança PSS para estagiário para o ano de 2027
+URL:     https://uniaodavitoria.portaldacidade.com/noticias/cidade/prefeitura-de-uniao-da-vitoria-lanca-pss-para-estagiario-para-o-ano-de-2027-2300
 Career:   estagio
-Group:   tjrn-rn-estagio-pos-direito
-Reason:  O Tribunal de Justiça do Rio Grande do Norte (TJRN) abriu múltiplos processos seletivos para estágio remunerado de pós-graduação em Direito, totalizando 9 vagas imediatas e formação de cadastro de reserva em comarcas como Natal, Parnamirim e Ceará-Mirim. As bolsas chegam a R$ 2.315,00 acrescidas de auxílio-transporte, com jornadas de 30 horas semanais. Os prazos de inscrição encerram-se de forma escalonada entre 3 e 13 de novembro de 2026.
+Group:   prefeitura-uniao-da-vitoria-pr-estagio-direito
+Reason:  A Prefeitura de União da Vitória/PR lançou Processo Seletivo Simplificado para estagiários com vagas para o curso de Direito, entre outras áreas. As inscrições seguem abertas até 16/11/2026 e a prova online será aplicada em 19/11/2026. A bolsa-auxílio varia entre R$ 777,50 e R$ 1.165,75 para jornadas de 20 a 40 horas semanais, acrescida de auxílio-transportes.
 
-Title:   Concurso Câmara de Camocim (CE): 11 vagas e salários até R$ 3,8 mil
-URL:     https://noticias.meupreparatorio.com.br/concursos/concurso-camara-de-camocim-ce-2026-11-vagas-inbrasp
-Career:   administrativo
-Group:   camara-camocim-ce-tecnico-legislativo
-Reason:  Edital publicado pela Câmara Municipal de Camocim (CE) oferecendo 2 vagas imediatas mais 2 em cadastro de reserva para Técnico Legislativo, cargo que exige graduação em Direito. A remuneração inicial é de R$ 3.800,00 para carga horária de 40 horas semanais. Inscrições abertas até 12/11/2026 no site da banca organizadora INBRASP. Prova objetiva agendada para 06/12/2026.
-
-Title:   Prefeitura de Mirassol d’Oeste abre seletivo com salários de até R$ 27,6 mil | RepórterMT - Notícias de Mato Grosso e Cuiabá Hoje
-URL:     https://www.reportermt.com/cidades/prefeitura-de-mirassol-doeste-abre-seletivo-com-salarios-de-ate-r-276-mil/245989
-Career:   procuradorias
-Group:   prefeitura-mirassol-doeste-mt-advogado
-Reason:  Processo seletivo simplificado aberto pela Prefeitura de Mirassol d'Oeste (MT) com vagas para contratação temporária de advogado. As remunerações variam de R$ 2.353,89 a R$ 27.645,05 conforme o cargo. As inscrições seguem abertas de 6 a 16 de novembro de 2026 exclusivamente pelo site da banca organizadora. A aplicação das provas objetivas está prevista para o dia 13 de dezembro de 2026.
-
-Title:   Defensoria Pública da Paraíba abre concurso com salários de até R$ 5,1 mil  – Blog do Amarildo
-URL:     https://blogdoamarildo.com.br/defensoria-publica-da-paraiba-abre-concurso-com-salarios-de-ate-r-51-mil-2/
-Career:   defensoria
-Group:   dpe-pb-pb-assistente-juridico
-Reason:  Concurso público aberto pela Defensoria Pública do Estado da Paraíba (DPE-PB) com 20 vagas e formação de cadastro reserva para níveis médio e superior, sob organização da Fundação Carlos Chagas (FCC). A remuneração inicial para Analista na especialidade de Assistente Jurídico (graduação em Direito) é de R$ 5.197,50. Inscrições até 13/11/2026, com taxa de R$ 123 e provas aplicadas em 28/02/2027.
-
-Title:   Prefeitura de Pirapozinho abre concurso com salários de até R$ 6,4 mil
-URL:     https://diariodamidia.com.br/prefeitura-de-pirapozinho-abre-concurso-com-salarios-de-ate-r-64-mil
-Career:   procuradorias
-Group:   prefeitura-pirapozinho-sp-procurador-juridico
-Reason:  Edital publicado pela Prefeitura de Pirapozinho/SP para o cargo de Procurador Jurídico Municipal, oferecendo cadastro reserva com remuneração inicial de até R$ 6.464,59. As inscrições ocorrem de 9 de novembro a 23 de novembro de 2026 no site da banca organizadora, mediante taxa de R$ 100,00. A prova objetiva está agendada para 13 de dezembro de 2026, havendo também provas práticas e de títulos para os candidatos aprovados.
-
-Title:   Câmara de Camocim abre concurso com 22 vagas e salários de até R$3,8 mil
-URL:     https://diariodamidia.com.br/camara-de-camocim-abre-concurso-com-22-vagas-e-salarios-de-ate-r38-mil
-Career:   procuradorias
-Group:   camara-camocim-ce-tecnico-legislativo
-Reason:  A Câmara Municipal de Camocim/CE publicou o edital 001/2026 ofertando 22 vagas, entre imediatas e cadastro de reserva, contemplando o cargo de Técnico Legislativo, que exige graduação em Direito. Os salários chegam a R$ 3.800,00 para jornadas de 30 ou 40 horas semanais. Inscrições abertas de 30 de outubro a 12 de novembro de 2026, com taxa de R$ 145,00 para nível superior. Provas objetivas marcadas para 6 de dezembro de 2026.
-
-Title:   Concurso da Defensoria Pública do Amazonas oferece salários de até R$ 8 mil; confira
-URL:     https://redeondadigital.com.br/amazonas/concurso-defensoria-publica-amazonas-oferece-salarios
-Career:   defensoria
-Group:   dpe-am-am-analista-juridico
-Reason:  A Defensoria Pública do Estado do Amazonas (DPE-AM) publicou edital com 5 vagas imediatas e formação de cadastro reserva para níveis médio e superior. O destaque para a área jurídica é o cargo de Analista Jurídico, com remuneração inicial entre R$ 4.713,02 e R$ 8.006,38. Inscrições de 30 de novembro de 2026 a 4 de janeiro de 2027 pela banca FCC, com taxa de R$ 125,00 para nível superior. Provas objetivas previstas para 7 de março de 2027.
-
-Title:   Prefeitura Pirapozinho SP abre concurso público cadastro reserva
-URL:     https://www.souenfermagem.com.br/noticias/prefeitura-pirapozinho-sp-abre-concurso-publico-cadastro-reserva/
-Career:   procuradorias
-Group:   prefeitura-pirapozinho-sp-procurador-juridico
-Reason:  Edital publicado pela Prefeitura de Pirapozinho/SP oferecendo vaga e cadastro de reserva para Procurador Jurídico Municipal. O certame exige graduação em Direito e inscrição na OAB, contando com prova prática de peça prático-profissional e prova de títulos. As inscrições ocorrem entre 9 e 23 de novembro de 2026, com taxa de R$ 100,00 e provas aplicadas em 13 de dezembro de 2026.
-
-Title:   Concurso do TRF da 3ª Região com salários R$ 20 mil vai abrir inscrições na quarta (4) - Portal de Prefeitura
-URL:     https://portaldeprefeitura.com.br/oportunidades/concurso-do-trf-da-3a-regiao-vai-abrir-inscricoes-quarta/635303/
+Title:   7 concursos públicos abertos em SP com salários de até R$ 20 mil - ACidade ON Ribeirão Preto
+URL:     https://www.acidadeon.com/ribeiraopreto/economia/7-concursos-publicos-abertos-em-sp-com-salarios-de-ate-r-20-mil/
 Career:   tribunais
-Group:   trf3-regional-analista-judiciario-oficial-de-justica
-Reason:  Edital publicado pelo TRF da 3ª Região com 11 vagas imediatas e cadastro de reserva para analista e técnico judiciário. Destaca-se o cargo de Analista Judiciário - Oficial de Justiça Avaliador Federal, que exige formação em Direito e remuneração inicial de R$ 20.013,11. As inscrições seguem abertas de 4 a 23 de novembro de 2026 no site da Vunesp, com taxas entre R$ 100 e R$ 110.
+Group:   tjsp-sp-varios-cargos
+Reason:  O Tribunal de Justiça de São Paulo (TJSP) recebe inscrições até 10/12/2026 para os cargos de Oficial de Justiça (132 vagas, inicial de R$ 9.856,95) e Escrevente Técnico Judiciário, ambos exigindo nível superior ou médio conforme o cargo, com atuação em diversas regiões do estado. Paralelamente, o TRF da 3ª Região abriu seleções para Técnico e Analista Judiciário com iniciais de até R$ 20.013,11 e provas em janeiro de 2027.
 
-Title:   Defensoria Pública do Amazonas abre concurso com salários de até R$ 8 mil
-URL:     https://portaltucuma.com.br/defensoria-publica-do-amazonas-abre-concurso-com-salarios-de-ate-r-8-mil/
-Career:   defensoria
-Group:   dpe-am-am-analista-juridico
-Reason:  Divulgado o edital do 6º Concurso Público da Defensoria Pública do Amazonas (DPE-AM) com vagas imediatas e cadastro de reserva para níveis médio e superior. O cargo de Analista Jurídico (exclusivo para bacharéis em Direito) oferece remuneração inicial de até R$ 8.006,38. Inscrições de 30/11/2026 a 04/01/2027 pela FCC, com provas objetivas previstas para 07/03/2027.
-
-Title:   Iprejun abre concurso público; inscrições começam em 16 de novembro | Novo Dia Notícias
-URL:     https://novodianoticias.com.br/2026/10/iprejun-abre-concurso-publico-inscricoes-comecam-em-16-de-novembro/
-Career:   administrativo
-Group:   iprejun-jundiai-sp-analista-juridico
-Reason:  O Instituto de Previdência do Município de Jundiaí (Iprejun) publicou edital com 1 vaga imediata para Analista de Planejamento, Gestão e Orçamento na especialidade de Direito. O cargo exige graduação e seis meses de experiência, oferecendo remuneração inicial de R$ 15.123,99 mais auxílios para jornada de 40 horas semanais. As inscrições ocorrem de 16 de novembro a 15 de dezembro de 2026 pelo site da Vunesp, com provas aplicadas em 21 de fevereiro de 2027.
-
-Title:   Concurso Câmara de Trindade 2026: Gabarito e Resultados
-URL:     https://fiibrasil.com/concursos/gabarito-concurso-camara-de-trindade-2026-edital-02/
-Career:   administrativo
-Group:   camara-trindade-go-analista-legislativo
-Reason:  A Câmara Municipal de Trindade aplicou as provas objetivas do edital 02/2026, com gabarito preliminar previsto para 02 de novembro. O certame oferta 17 vagas imediatas em diversos níveis de escolaridade, destacando-se o cargo de Analista Legislativo – Técnico Jurídico, que exige nível superior em Direito e oferece vencimento inicial de R$ 7.500,00. A seleção é organizada pelo Instituto IDECAN e o resultado preliminar é esperado para o final de novembro.
-
-Title:   Concurso de prefeitura em Pernambuco oferece 33 vagas na Saúde com salários de até R$ 3,2 mil - Portal de Prefeitura
-URL:     https://portaldeprefeitura.com.br/oportunidades/concurso-de-prefeitura-sao-caetano-pernambuco-oferece-33-vagas/635283/
+Title:   Concurso da Alepa: inscrições terminam na quarta (04/10); remuneração de até R$ 10 mil • DOL
+URL:     https://dol.com.br/noticias/cursos--empregos/967077/concurso-da-alepa-inscricoes-terminam-na-quarta-0410-remuneracao-de-ate-r-10-mil
 Career:   procuradorias
-Group:   prefeitura-sao-caetano-pe-procurador
-Reason:  A Prefeitura de São Caetano, em Pernambuco, está com concurso público aberto contemplando vagas na Procuradoria Municipal, além de outras secretarias. As inscrições seguem abertas até 10 de dezembro de 2026 no portal do Instituto Igeduc, com taxa de R$ 120 para nível superior. O cargo de Procurador Municipal contará com prova objetiva, discursiva e avaliação de experiência, com a aplicação da avaliação principal agendada para o dia 31 de janeiro de 2027.
-
-Title:   Defensoria divulga edital do 6º concurso para servidores que atuarão em 13 cidades do estado - Defensoria Pública do Estado do Amazonas
-URL:     https://defensoria.am.def.br/2026/10/31/defensoria-do-amazonas-divulga-edital-do-6o-concurso-para-servidores-que-atuarao-em-13-cidades-do-estado/
-Career:   defensoria
-Group:   dpe-am-am-analista-juridico
-Reason:  Edital publicado pela DPE AM organizado pela Fundação Carlos Chagas com vagas e cadastro de reserva para Analista Jurídico (exige Direito). A remuneração inicial é de R$ 8.006,38. Inscrições de 30/11/2026 a 04/01/2027, com taxa de R$ 125,00. Provas objetivas agendadas para o dia 07/03/2027 aplicadas em diversos municípios do estado.
+Group:   alepa-pa-procurador
+Reason:  Edital publicado pela Assembleia Legislativa do Pará (Alepa) com 5 vagas para Procurador Legislativo, exigindo graduação em Direito e registro na OAB. A remuneração pode alcançar até R$ 10.353,64 para carga horária de 30 horas semanais. Inscrições abertas até 04/11/2026 no site da banca CETAP, com taxa de R$ 118,00. Provas objetiva, discursiva e de títulos previstas para 13/12/2026.
 
