@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuradorIA de Carreiras Jurídicas</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    <style>
+    :root {
+        --bg: #f0f2f5; --card-bg: #ffffff; --text: #1a1a2e; --text-muted: #666;
+        --header-bg-from: #1a1a2e; --header-bg-to: #16213e; --header-text: #ffffff;
+        --accent: #e94560; --shadow: rgba(0,0,0,0.07);
+        --border: #f0f2f5; --input-bg: #ffffff; --input-border: #d8dde3;
+        --site-tag-bg: #f0f2f5; --site-tag-text: #555; --controls-bg: #fafbfc;
+        --arrow-bg: #ffffff; --arrow-border: #ddd; --indicator: #ccc;
+    }
+    [data-theme="dark"] {
+        --bg: #0f1419; --card-bg: #1a1f2e; --text: #e1e6f0; --text-muted: #8a93a6;
+        --header-bg-from: #0a0e1a; --header-bg-to: #14192a; --header-text: #e1e6f0;
+        --accent: #f25575; --shadow: rgba(0,0,0,0.4);
+        --border: #2a3142; --input-bg: #14192a; --input-border: #2a3142;
+        --site-tag-bg: #2a3142; --site-tag-text: #b3bccf; --controls-bg: #14192a;
+        --arrow-bg: #2a3142; --arrow-border: #2a3142; --indicator: #3a4356;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+            --bg: #0f1419; --card-bg: #1a1f2e; --text: #e1e6f0; --text-muted: #8a93a6;
+            --header-bg-from: #0a0e1a; --header-bg-to: #14192a; --header-text: #e1e6f0;
+            --accent: #f25575; --shadow: rgba(0,0,0,0.4);
+            --border: #2a3142; --input-bg: #14192a; --input-border: #2a3142;
+            --site-tag-bg: #2a3142; --site-tag-text: #b3bccf; --controls-bg: #14192a;
+            --arrow-bg: #2a3142; --arrow-border: #2a3142; --indicator: #3a4356;
+        }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+           background: var(--bg); color: var(--text); min-height: 100vh; transition: background 0.2s, color 0.2s; }
+    header { background: linear-gradient(135deg, var(--header-bg-from) 0%, var(--header-bg-to) 100%);
+             color: var(--header-text); padding: 2rem 1.5rem 1.5rem; text-align: center; position: relative; }
+    header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }
+    header p { font-size: 0.85rem; opacity: 0.75; }
+    header .meta { font-size: 0.72rem; opacity: 0.55; margin-top: 0.4rem; }
+    .badge { display: inline-block; background: var(--accent); color: white; font-size: 0.8rem; font-weight: 600;
+             padding: 0.3rem 0.8rem; border-radius: 20px; margin-top: 0.8rem; }
+    .theme-toggle { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.12);
+                    border: 1px solid rgba(255,255,255,0.2); color: var(--header-text); width: 36px; height: 36px;
+                    border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center;
+                    justify-content: center; transition: background 0.2s; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.2); }
+    .container { max-width: 680px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .search-bar { margin-bottom: 1rem; position: relative; }
+    .search-bar input { width: 100%; padding: 0.6rem 0.9rem 0.6rem 2.2rem; border-radius: 10px;
+                        border: 1px solid var(--input-border); background: var(--input-bg); color: var(--text);
+                        font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+    .search-bar input:focus { border-color: var(--accent); }
+    .search-bar::before { content: '🔎'; position: absolute; left: 0.7rem; top: 50%;
+                          transform: translateY(-50%); font-size: 0.9rem; opacity: 0.6; pointer-events: none; }
+    .filter-info { font-size: 0.78rem; color: var(--text-muted); margin: 0.5rem 0 1rem; min-height: 1em; }
+    .group-card { background: var(--card-bg); border-radius: 12px; margin-bottom: 1rem;
+                  box-shadow: 0 2px 8px var(--shadow); border-left: 4px solid var(--accent);
+                  overflow: hidden; position: relative; transition: background 0.2s; }
+    .group-card.highlight { border-left-width: 6px; }
+    .sources-badge { position: absolute; top: 0.8rem; right: 0.8rem; background: var(--header-bg-from);
+                     color: white; font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.55rem;
+                     border-radius: 12px; z-index: 2; }
+    .carousel { position: relative; overflow: hidden; }
+    .slides { display: flex; transition: transform 0.35s ease; }
+    .slide { min-width: 100%; padding: 1.2rem 1.3rem 0.5rem; }
+    .status-tag { display: inline-block; color: white; font-size: 0.7rem; font-weight: 600;
+                  padding: 0.2rem 0.55rem; border-radius: 6px; margin-bottom: 0.5rem; }
+    .site-tag { display: inline-block; background: var(--site-tag-bg); color: var(--site-tag-text);
+                font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 6px;
+                margin-bottom: 0.5rem; margin-left: 0.4rem; }
+    .slide h2 { font-size: 1rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.5rem; color: var(--text); }
+    .slide h2 a { color: inherit; text-decoration: none; }
+    .slide h2 a:hover { color: var(--accent); }
+    .reason { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.9rem; }
+    .btn { display: inline-block; background: var(--header-bg-from); color: white; font-size: 0.82rem;
+           font-weight: 600; padding: 0.45rem 1rem; border-radius: 8px; text-decoration: none;
+           transition: background 0.2s; }
+    .btn:hover { background: var(--accent); }
+    .controls { display: flex; justify-content: space-between; align-items: center;
+                padding: 0.6rem 1rem 1rem; border-top: 1px solid var(--border); background: var(--controls-bg); }
+    .arrow { background: var(--arrow-bg); border: 1px solid var(--arrow-border); color: var(--text);
+             width: 32px; height: 32px; border-radius: 50%; font-size: 1rem; cursor: pointer;
+             display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .arrow:disabled { opacity: 0.3; cursor: default; }
+    .arrow:not(:disabled):hover { background: var(--header-bg-from); color: white; }
+    .indicators { display: flex; gap: 0.4rem; }
+    .indicator { width: 8px; height: 8px; border-radius: 50%; background: var(--indicator); }
+    .indicator.active { background: var(--accent); }
+    .empty { text-align: center; color: var(--text-muted); padding: 3rem 1rem; font-size: 0.95rem; }
+    .archive-banner { background: var(--accent); color: white; padding: 0.8rem 1rem; border-radius: 8px;
+                      margin-bottom: 1rem; font-size: 0.9rem; display: flex; align-items: center;
+                      flex-wrap: wrap; gap: 0.5rem; }
+    .archive-banner a { color: white; text-decoration: underline; font-weight: 600; }
+    .history-section { background: var(--card-bg); border-radius: 12px; padding: 1rem 1.2rem;
+                       margin-top: 2rem; box-shadow: 0 2px 8px var(--shadow); }
+    .history-section summary { cursor: pointer; font-weight: 600; color: var(--text);
+                               font-size: 0.9rem; padding: 0.2rem 0; }
+    .history-section summary:hover { color: var(--accent); }
+    .history-list { list-style: none; padding: 0; margin: 1rem 0 0; max-height: 400px; overflow-y: auto; }
+    .history-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+    .history-list li:last-child { border-bottom: none; }
+    .history-list li.current { color: var(--accent); font-weight: 600; }
+    .history-list a { color: var(--text-muted); text-decoration: none; display: block; }
+    .history-list a:hover { color: var(--accent); }
+    footer { text-align: center; padding: 1.5rem; font-size: 0.78rem; color: var(--text-muted); }
+</style>
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
+        <h1>CuradorIA de Carreiras Jurídicas</h1>
+        <p>Foram analisados 399 artigos na última verificação.</p>
+        <div class="badge">Encontrados 40 artigos relevantes sobre 21 certames.</div>
+        <p class="meta">Última verificação: 07/11/2026 às 07h51 · Tempo de execução: 9min 30s</p>
+    </header>
+    <div class="container">
+        
+        <div class="archive-banner">
+            Você está vendo a edição de<strong>07/11/2026 às 07h51</strong>·
+            <a href="../report.html">Ver versão mais recente</a>
+        </div>
+    
+        
+        <div class="search-bar">
+            <input id="search" type="search" placeholder="Buscar por órgão, cargo, carreira..." aria-label="Buscar">
+        </div>
+        <div class="filter-info" id="filter-info"></div>
+    
+        
+        <div class="group-card highlight" data-search="câmara de petrolina - pe abre concurso público com salários de até r$ 8.561,42 edital publicado pela câmara municipal de petrolina/pe traz 1 vaga para procurador e oportunidades para analista legislativo. os vencimentos chegam a r$ 8.561,42 para jornada de 30 horas semanais. inscrições abertas de 06/11 a 05/12/2026 pelo site da banca idecan, com taxa de r$ 140,00 e provas previstas para 17/01/2027. camara-petrolina-pe-procurador procuradorias pciconcursos.com.br concurso câmara de petrolina (pe): edital com 17 vagas e salários até r$ 8,5 mil edital publicado pela câmara municipal de petrolina/pe, organizado pelo idecan, ofertando 1 vaga imediata e 3 em cadastro de reserva para procurador. o cargo exige graduação em direito e inscrição na oab, com vencimento básico de r$ 8.561,42 para 30 horas semanais. inscrições abertas até 05/12/2026 e provas objetivas previstas para 17/01/2027. camara-petrolina-pe-procurador procuradorias noticias.meupreparatorio.com.br câmara municipal de petrolina (pe) lança edital de concurso público para níveis médio e superior – blog do waldiney passos concurso público da câmara municipal de petrolina/pe com edital aberto sob organização do idecan, oferecendo vaga para procurador (exige direito e oab) com remuneração inicial de r$ 8.561,42 para jornada de 30 horas semanais. prazo de inscrições até 05 de dezembro de 2026, com taxa de r$ 140,00 e etapa de provas objetiva e de títulos agendada para janeiro de 2027. camara-petrolina-pe-procurador procuradorias waldineypassos.com.br câmara municipal em pernambuco abre concurso para níveis médio e superior com salários de até r$ 8,5 mil; veja cargos - portal de prefeitura publicado edital de concurso público pela câmara municipal de petrolina (pe) contemplando o cargo de procurador municipal, que exige graduação em direito e inscrição na oab. a seleção oferece vagas imediatas e formação de cadastro reserva com remuneração inicial de até r$ 8.561,42 para jornada de 30 horas semanais. inscrições abertas de 6 de novembro a 5 de dezembro de 2026 no site da banca idecan. provas objetivas agendadas para janeiro de 2027. camara-petrolina-pe-procurador procuradorias portaldeprefeitura.com.br concurso câmara de petrolina abre 17 vagas; veja como se inscrever | g1 a câmara municipal de petrolina (pe) abriu inscrições para concurso público com vagas para o cargo de procurador, exigindo nível superior em direito. o certame é organizado pelo idecan, com período de inscrições estendido até 5 de dezembro de 2026. a seleção compreende prova objetiva para todos os cargos e avaliação de títulos para o nível superior, com aplicação programada para 17 de janeiro de 2027 e conclusão do certame em abril. camara-petrolina-pe-procurador procuradorias g1.globo.com câmara de petrolina abre concurso público com 17 vagas e cadastro de reserva a câmara municipal de petrolina/pe publicou edital de concurso público organizado pelo idecan, oferecendo 1 vaga para o cargo de procurador, além de oportunidades para analista legislativo. as inscrições seguem abertas até 5 de dezembro e as provas objetivas estão aplicadas previstas para 17 de janeiro de 2027. camara-petrolina-pe-procurador procuradorias br104.com.br câmara municipal em pernambuco abre concurso para níveis médio e superior com salários de até r$ 8,5 mil; veja cargos edital publicado pela câmara municipal de petrolina/pe com 1 vaga imediata para procurador, exigindo graduação em direito. o salário inicial é de r$ 8.561,42 para jornada de 30 horas semanais. as inscrições seguem abertas até 05/12 pelo site da banca idecan, com taxa de r$ 140. as provas objetivas estão previstas para 17/01/2027. camara-petrolina-pe-procurador procuradorias terra.com.br câmara municipal de petrolina abre concurso com 17 vagas imediatas e cadastro de reserva - divulga petrolina concurso público lançado pela câmara municipal de petrolina/pe oferece 1 vaga imediata mais cadastro de reserva para procurador legislativo, exigindo nível superior em direito. o vencimento inicial é de r$ 8.561,42 para jornada de 30 horas semanais. as inscrições seguem abertas até 5 de dezembro de 2026 pelo site do idecan, com taxa de r$ 140,00 e provas objetivas previstas para 17 de janeiro de 2027. camara-petrolina-pe-procurador procuradorias divulgapetrolina.com câmara de petrolina - pe divulga concurso público com salários de até r$ 8.561,42. - concursos rn edital publicado pela câmara municipal de petrolina/pe com 1 vaga para procurador. a remuneração inicial é de r$ 8.561,42 para jornada de 30 horas semanais. as inscrições ocorrem de 6 de novembro a 5 de dezembro de 2026, com organização da banca idecan. a taxa de inscrição é de r$ 140,00 e as provas objetivas estão previstas para 17 de janeiro de 2027. camara-petrolina-pe-procurador procuradorias concursosrn.com.br">
+            <div class="sources-badge">9 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/camara-de-petrolina-pe-abre-concurso-publico-com-salarios-de-ate-8561" target="_blank" rel="noopener noreferrer">Câmara de Petrolina - PE abre concurso público com salários de até R$ 8.561,42</a></h2>
+                <p class="reason">Edital publicado pela Câmara Municipal de Petrolina/PE traz 1 vaga para Procurador e oportunidades para Analista Legislativo. Os vencimentos chegam a R$ 8.561,42 para jornada de 30 horas semanais. Inscrições abertas de 06/11 a 05/12/2026 pelo site da banca IDECAN, com taxa de R$ 140,00 e provas previstas para 17/01/2027.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/camara-de-petrolina-pe-abre-concurso-publico-com-salarios-de-ate-8561" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">NOTICIAS.MEUPREPARATORIO.COM.BR</span>
+                <h2><a href="https://noticias.meupreparatorio.com.br/concursos/concurso-camara-petrolina-pe-edital-2026" target="_blank" rel="noopener noreferrer">Concurso Câmara de Petrolina (PE): edital com 17 vagas e salários até R$ 8,5 mil</a></h2>
+                <p class="reason">Edital publicado pela Câmara Municipal de Petrolina/PE, organizado pelo IDECAN, ofertando 1 vaga imediata e 3 em cadastro de reserva para Procurador. O cargo exige graduação em Direito e inscrição na OAB, com vencimento básico de R$ 8.561,42 para 30 horas semanais. Inscrições abertas até 05/12/2026 e provas objetivas previstas para 17/01/2027.</p>
+                <a href="https://noticias.meupreparatorio.com.br/concursos/concurso-camara-petrolina-pe-edital-2026" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">WALDINEYPASSOS.COM.BR</span>
+                <h2><a href="https://waldineypassos.com.br/camara-municipal-de-petrolina-pe-lanca-edital-de-concurso-publico-para-niveis-medio-e-superior/" target="_blank" rel="noopener noreferrer">Câmara Municipal de Petrolina (PE) lança edital de concurso público para níveis médio e superior – Blog do Waldiney Passos</a></h2>
+                <p class="reason">Concurso público da Câmara Municipal de Petrolina/PE com edital aberto sob organização do IDECAN, oferecendo vaga para Procurador (exige Direito e OAB) com remuneração inicial de R$ 8.561,42 para jornada de 30 horas semanais. Prazo de inscrições até 05 de dezembro de 2026, com taxa de R$ 140,00 e etapa de provas objetiva e de títulos agendada para janeiro de 2027.</p>
+                <a href="https://waldineypassos.com.br/camara-municipal-de-petrolina-pe-lanca-edital-de-concurso-publico-para-niveis-medio-e-superior/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PORTALDEPREFEITURA.COM.BR</span>
+                <h2><a href="https://portaldeprefeitura.com.br/oportunidades/camara-municipal-petrolina-pernambuco-abre-concurso/635567/" target="_blank" rel="noopener noreferrer">Câmara Municipal em Pernambuco abre concurso para níveis médio e superior com salários de até R$ 8,5 mil; veja cargos - Portal de Prefeitura</a></h2>
+                <p class="reason">Publicado edital de concurso público pela Câmara Municipal de Petrolina (PE) contemplando o cargo de Procurador Municipal, que exige graduação em Direito e inscrição na OAB. A seleção oferece vagas imediatas e formação de cadastro reserva com remuneração inicial de até R$ 8.561,42 para jornada de 30 horas semanais. Inscrições abertas de 6 de novembro a 5 de dezembro de 2026 no site da banca IDECAN. Provas objetivas agendadas para janeiro de 2027.</p>
+                <a href="https://portaldeprefeitura.com.br/oportunidades/camara-municipal-petrolina-pernambuco-abre-concurso/635567/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">G1.GLOBO.COM</span>
+                <h2><a href="https://g1.globo.com/pe/petrolina-regiao/noticia/2026/11/06/camara-municipal-de-petrolina-abre-concurso-com-17-vagas-imediatas-e-cadastro-de-reserva.ghtml" target="_blank" rel="noopener noreferrer">Concurso Câmara de Petrolina abre 17 vagas; veja como se inscrever</a></h2>
+                <p class="reason">A Câmara Municipal de Petrolina (PE) abriu inscrições para concurso público com vagas para o cargo de Procurador, exigindo nível superior em Direito. O certame é organizado pelo IDECAN, com período de inscrições estendido até 5 de dezembro de 2026. A seleção compreende prova objetiva para todos os cargos e avaliação de títulos para o nível superior, com aplicação programada para 17 de janeiro de 2027 e conclusão do certame em abril.</p>
+                <a href="https://g1.globo.com/pe/petrolina-regiao/noticia/2026/11/06/camara-municipal-de-petrolina-abre-concurso-com-17-vagas-imediatas-e-cadastro-de-reserva.ghtml" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">BR104.COM.BR</span>
+                <h2><a href="https://www.br104.com.br/pernambuco/concurso-publico/concurso-camara-petrolina-17-vagas/" target="_blank" rel="noopener noreferrer">Câmara de Petrolina abre concurso público com 17 vagas e cadastro de reserva</a></h2>
+                <p class="reason">A Câmara Municipal de Petrolina/PE publicou edital de concurso público organizado pelo Idecan, oferecendo 1 vaga para o cargo de Procurador, além de oportunidades para Analista Legislativo. As inscrições seguem abertas até 5 de dezembro e as provas objetivas estão aplicadas previstas para 17 de janeiro de 2027.</p>
+                <a href="https://www.br104.com.br/pernambuco/concurso-publico/concurso-camara-petrolina-17-vagas/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">TERRA.COM.BR</span>
+                <h2><a href="https://www.terra.com.br/noticias/educacao/carreira/camara-municipal-em-pernambuco-abre-concurso-para-niveis-medio-e-superior-com-salarios-de-ate-r-85-mil-veja-cargos,f59afb89ca35bcd4f8368da921a068c46tlsxcp2.html" target="_blank" rel="noopener noreferrer">Câmara Municipal em Pernambuco abre concurso para níveis médio e superior com salários de até R$ 8,5 mil; veja cargos</a></h2>
+                <p class="reason">Edital publicado pela Câmara Municipal de Petrolina/PE com 1 vaga imediata para Procurador, exigindo graduação em Direito. O salário inicial é de R$ 8.561,42 para jornada de 30 horas semanais. As inscrições seguem abertas até 05/12 pelo site da banca IDECAN, com taxa de R$ 140. As provas objetivas estão previstas para 17/01/2027.</p>
+                <a href="https://www.terra.com.br/noticias/educacao/carreira/camara-municipal-em-pernambuco-abre-concurso-para-niveis-medio-e-superior-com-salarios-de-ate-r-85-mil-veja-cargos,f59afb89ca35bcd4f8368da921a068c46tlsxcp2.html" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">DIVULGAPETROLINA.COM</span>
+                <h2><a href="https://www.divulgapetrolina.com/2026/11/camara-municipal-de-petrolina-abre-concurso-com-17-vagas-imediatas-e-cadastro-de-reserva/" target="_blank" rel="noopener noreferrer">Câmara Municipal de Petrolina abre concurso com 17 vagas imediatas e cadastro de reserva - DIVULGA PETROLINA</a></h2>
+                <p class="reason">Concurso público lançado pela Câmara Municipal de Petrolina/PE oferece 1 vaga imediata mais cadastro de reserva para Procurador Legislativo, exigindo nível superior em Direito. O vencimento inicial é de R$ 8.561,42 para jornada de 30 horas semanais. As inscrições seguem abertas até 5 de dezembro de 2026 pelo site do IDECAN, com taxa de R$ 140,00 e provas objetivas previstas para 17 de janeiro de 2027.</p>
+                <a href="https://www.divulgapetrolina.com/2026/11/camara-municipal-de-petrolina-abre-concurso-com-17-vagas-imediatas-e-cadastro-de-reserva/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">CONCURSOSRN.COM.BR</span>
+                <h2><a href="https://concursosrn.com.br/camara-de-petrolina-pe-divulga-concurso-publico-com-salarios-de-ate-r-8-56142/" target="_blank" rel="noopener noreferrer">Câmara de Petrolina - PE divulga concurso público com salários de até R$ 8.561,42. - Concursos RN</a></h2>
+                <p class="reason">Edital publicado pela Câmara Municipal de Petrolina/PE com 1 vaga para Procurador. A remuneração inicial é de R$ 8.561,42 para jornada de 30 horas semanais. As inscrições ocorrem de 6 de novembro a 5 de dezembro de 2026, com organização da banca IDECAN. A taxa de inscrição é de R$ 140,00 e as provas objetivas estão previstas para 17 de janeiro de 2027.</p>
+                <a href="https://concursosrn.com.br/camara-de-petrolina-pe-divulga-concurso-publico-com-salarios-de-ate-r-8-56142/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span><span class="indicator"></span><span class="indicator"></span><span class="indicator"></span><span class="indicator"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="prefeitura de mirassol d&#x27;oeste - mt abre processo seletivo com salários de até r$ 27.645,05 processo seletivo simplificado da prefeitura de mirassol d&#x27;oeste/mt com 1 vaga imediata para advogado. o certame oferece contratação temporária sob regime administrativo especial. inscrições ocorrem de 6 a 16 de novembro de 2026, com taxa de r$ 100,00. a seleção compreende prova objetiva, prevista para 13 de dezembro de 2026, e avaliação de títulos. o prazo de vigência do contrato é determinado pela necessidade da administração, respeitando o limite legal de dois anos. prefeitura-mirassol-doeste-mt-advogado administrativo pciconcursos.com.br prefeitura de mirassol d’oeste-mt lança edital com quase 200 vagas processo seletivo simplificado da prefeitura de mirassol d&#x27;oeste/mt com 1 vaga imediata para advogado. o certame oferece contratação temporária sob regime administrativo especial. inscrições ocorrem de 6 a 16 de novembro de 2026, com taxa de r$ 100,00. a seleção compreende prova objetiva, prevista para 13 de dezembro de 2026, e avaliação de títulos. o prazo de vigência do contrato é determinado pela necessidade da administração, respeitando o limite legal de dois anos. prefeitura-mirassol-doeste-mt-advogado administrativo acheconcursos.com.br prefeitura de mirassol d’oeste mt abre processo seletivo com 205 vagas | folha dirigida a prefeitura de mirassol d’oeste/mt publicou processo seletivo temporário com 1 vaga imediata para advogado, com jornada de 20 horas semanais e remuneração prevista conforme o edital. as inscrições ocorrem de 6 a 16 de novembro, com prova objetiva marcada para 13 de dezembro. prefeitura-mirassol-doeste-mt-advogado procuradorias folha.qconcursos.com">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-mirassol-doeste-mt-abre-processo-seletivo-com-salarios-de-ate-27645" target="_blank" rel="noopener noreferrer">Prefeitura de Mirassol d&#x27;Oeste - MT abre processo seletivo com salários de até R$ 27.645,05</a></h2>
+                <p class="reason">Processo seletivo simplificado da Prefeitura de Mirassol d&#x27;Oeste/MT com 1 vaga imediata para Advogado. O certame oferece contratação temporária sob regime administrativo especial. Inscrições ocorrem de 6 a 16 de novembro de 2026, com taxa de R$ 100,00. A seleção compreende prova objetiva, prevista para 13 de dezembro de 2026, e avaliação de títulos. O prazo de vigência do contrato é determinado pela necessidade da administração, respeitando o limite legal de dois anos.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-mirassol-doeste-mt-abre-processo-seletivo-com-salarios-de-ate-27645" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-mato-grosso/prefeitura-de-mirassol-d-oeste-mt-lanca-edital-com-205-vagas-94461" target="_blank" rel="noopener noreferrer">Prefeitura de Mirassol d’Oeste-MT lança edital com quase 200 vagas</a></h2>
+                <p class="reason">Processo seletivo simplificado da Prefeitura de Mirassol d&#x27;Oeste/MT com 1 vaga imediata para Advogado. O certame oferece contratação temporária sob regime administrativo especial. Inscrições ocorrem de 6 a 16 de novembro de 2026, com taxa de R$ 100,00. A seleção compreende prova objetiva, prevista para 13 de dezembro de 2026, e avaliação de títulos. O prazo de vigência do contrato é determinado pela necessidade da administração, respeitando o limite legal de dois anos.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-mato-grosso/prefeitura-de-mirassol-d-oeste-mt-lanca-edital-com-205-vagas-94461" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">FOLHA.QCONCURSOS.COM</span>
+                <h2><a href="https://folha.qconcursos.com/n/prefeitura-de-mirassol-d-oeste-mt-abre-processo-seletivo-com-205-vagas" target="_blank" rel="noopener noreferrer">Prefeitura de Mirassol d’Oeste MT abre processo seletivo com 205 vagas</a></h2>
+                <p class="reason">A Prefeitura de Mirassol d’Oeste/MT publicou processo seletivo temporário com 1 vaga imediata para Advogado, com jornada de 20 horas semanais e remuneração prevista conforme o edital. As inscrições ocorrem de 6 a 16 de novembro, com prova objetiva marcada para 13 de dezembro.</p>
+                <a href="https://folha.qconcursos.com/n/prefeitura-de-mirassol-d-oeste-mt-abre-processo-seletivo-com-205-vagas" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="concurso dpe-sp 2026: inscrições abertas, vagas e edital o concurso dpe-sp 2026 está com edital publicado oferecendo 70 vagas para o cargo de defensor público. a remuneração inicial chega a r$ 29.716,00. as inscrições seguem abertas até 11/11/2026, sob organização da banca fundação carlos chagas (fcc). dpesp-sp-defensor defensoria acheconcursos.com.br concursos públicos: brasil tem mais de 38 mil vagas abertas e previstas • dol concurso da defensoria pública de são paulo (dpe sp) com 70 vagas para o cargo de defensor público. exige bacharelado em direito e requisitos específicos de atividade jurídica. a remuneração inicial é de aproximadamente r$ 29,7 mil. o prazo de inscrição encerra-se em 11 de novembro de 2026. dpesp-sp-defensor defensoria dol.com.br defensoria abre concurso com 70 vagas e salário de r$ 29,7 mil a defensoria pública de são paulo está com inscrições abertas até 11/11/2026 para o cargo de defensor público, ofertando 70 vagas com remuneração inicial de r$ 29.716,00. o certame é organizado pela fundação carlos chagas (fcc) e exige três anos de atividade jurídica. dpesp-sp-defensor defensoria sampi.net.br">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concurso-dpe-sp" target="_blank" rel="noopener noreferrer">Concurso DPE-SP 2026: inscrições abertas, vagas e edital</a></h2>
+                <p class="reason">O concurso DPE-SP 2026 está com edital publicado oferecendo 70 vagas para o cargo de Defensor Público. A remuneração inicial chega a R$ 29.716,00. As inscrições seguem abertas até 11/11/2026, sob organização da banca Fundação Carlos Chagas (FCC).</p>
+                <a href="https://www.acheconcursos.com.br/concurso-dpe-sp" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">DOL.COM.BR</span>
+                <h2><a href="https://dol.com.br/concursos/federais/967557/concursos-publicos-brasil-tem-mais-de-38-mil-vagas-abertas-e-previstas" target="_blank" rel="noopener noreferrer">Concursos públicos: Brasil tem mais de 38 mil vagas abertas e previstas • DOL</a></h2>
+                <p class="reason">Concurso da Defensoria Pública de São Paulo (DPE SP) com 70 vagas para o cargo de Defensor Público. Exige bacharelado em Direito e requisitos específicos de atividade jurídica. A remuneração inicial é de aproximadamente R$ 29,7 mil. O prazo de inscrição encerra-se em 11 de novembro de 2026.</p>
+                <a href="https://dol.com.br/concursos/federais/967557/concursos-publicos-brasil-tem-mais-de-38-mil-vagas-abertas-e-previstas" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">SAMPI.NET.BR</span>
+                <h2><a href="https://sampi.net.br/franca/noticias/3016946/franca-e-regiao/2026/11/defensoria-abre-concurso-com-70-vagas-e-salario-de-r-297-mil" target="_blank" rel="noopener noreferrer">Defensoria abre concurso com 70 vagas e salário de R$ 29,7 mil</a></h2>
+                <p class="reason">A Defensoria Pública de São Paulo está com inscrições abertas até 11/11/2026 para o cargo de Defensor Público, ofertando 70 vagas com remuneração inicial de R$ 29.716,00. O certame é organizado pela Fundação Carlos Chagas (FCC) e exige três anos de atividade jurídica.</p>
+                <a href="https://sampi.net.br/franca/noticias/3016946/franca-e-regiao/2026/11/defensoria-abre-concurso-com-70-vagas-e-salario-de-r-297-mil" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="concurso tj-pb 2026: inscrições abertas, vagas e edital publicado edital do tribunal de justiça da paraíba com 50 vagas para o cargo de analista judiciário. o certame é organizado pela fundação getulio vargas (fgv) e conta com remunerações iniciais de até r$ 7.526,14. as inscrições podem ser realizadas entre os dias 20/10 e 18/11/2026. tjpb-pb-analista-judiciario tribunais acheconcursos.com.br concurso tj pb traz vagas em 9 especialidades; veja quais! | folha dirigida edital publicado pelo tribunal de justiça da paraíba (tj pb) com 50 vagas imediatas para analista judiciário, incluindo vagas específicas para bacharéis em direito na área judiciária. remuneração inicial de r$ 7.526,14 acrescida de auxílio-alimentação de r$ 2.200,00 e auxílio-saúde de r$ 1.800,00, totalizando r$ 11.526,14 para 30 horas semanais. inscrições abertas até 18 de novembro de 2026 pelo site da fgv. provas previstas para 24 de janeiro de 2027. tjpb-pb-analista-judiciario tribunais folha.qconcursos.com concurso tj pb: o que faz um analista judiciário? veja! o tribunal de justiça da paraíba (tj-pb) realiza concurso público sob organização da fundação getulio vargas (fgv), ofertando 50 vagas e cadastro reserva para analista judiciário, incluindo a especialidade da área judiciária (exclusiva para bacharéis em direito). as inscrições encerram às 16h de 18 de novembro. tjpb-pb-analista-judiciario tribunais blog.grancursosonline.com.br">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concurso-tj-pb" target="_blank" rel="noopener noreferrer">Concurso TJ-PB 2026: inscrições abertas, vagas e edital</a></h2>
+                <p class="reason">Publicado edital do Tribunal de Justiça da Paraíba com 50 vagas para o cargo de Analista Judiciário. O certame é organizado pela Fundação Getulio Vargas (FGV) e conta com remunerações iniciais de até R$ 7.526,14. As inscrições podem ser realizadas entre os dias 20/10 e 18/11/2026.</p>
+                <a href="https://www.acheconcursos.com.br/concurso-tj-pb" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">FOLHA.QCONCURSOS.COM</span>
+                <h2><a href="https://folha.qconcursos.com/n/concurso-tj-pb-vagas-por-especialidades" target="_blank" rel="noopener noreferrer">Concurso TJ PB traz vagas em 9 especialidades; veja quais!</a></h2>
+                <p class="reason">Edital publicado pelo Tribunal de Justiça da Paraíba (TJ PB) com 50 vagas imediatas para Analista Judiciário, incluindo vagas específicas para bacharéis em Direito na Área Judiciária. Remuneração inicial de R$ 7.526,14 acrescida de auxílio-alimentação de R$ 2.200,00 e auxílio-saúde de R$ 1.800,00, totalizando R$ 11.526,14 para 30 horas semanais. Inscrições abertas até 18 de novembro de 2026 pelo site da FGV. Provas previstas para 24 de janeiro de 2027.</p>
+                <a href="https://folha.qconcursos.com/n/concurso-tj-pb-vagas-por-especialidades" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">BLOG.GRANCURSOSONLINE.COM.BR</span>
+                <h2><a href="https://blog.grancursosonline.com.br/concurso-tj-pb-atribuicoes/amp/" target="_blank" rel="noopener noreferrer">Concurso TJ PB: o que faz um analista judiciário? Veja!</a></h2>
+                <p class="reason">O Tribunal de Justiça da Paraíba (TJ-PB) realiza concurso público sob organização da Fundação Getulio Vargas (FGV), ofertando 50 vagas e cadastro reserva para Analista Judiciário, incluindo a especialidade da área Judiciária (exclusiva para bacharéis em Direito). As inscrições encerram às 16h de 18 de novembro.</p>
+                <a href="https://blog.grancursosonline.com.br/concurso-tj-pb-atribuicoes/amp/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="concurso pc ac: sai edital com 139 vagas de nível superior | folha dirigida edital publicado para a polícia civil do acre (pc ac) com 139 vagas de nível superior. o destaque é o cargo de delegado, que exige bacharelado em direito e 3 anos de atividade jurídica/policial, com remuneração inicial de r$ 19.505,66. inscrições ocorrem de 11/11 a 14/12 pelo site da banca idecan. as provas objetiva e discursiva estão agendadas para 24/01/2027. pcac-ac-delegado policiais folha.qconcursos.com edital publicado: delegado de polícia - pc ac - meu site jurídico edital publicado para o cargo de delegado de polícia da pc ac, ofertando 8 vagas imediatas com remuneração inicial de r$ 19.505,66. o certame exige bacharelado em direito e 3 anos de atividade jurídica ou policial. inscrições abertas até 14/12/2026 via banca idecan. o processo seletivo compreende oito etapas, incluindo provas objetiva, discursiva, oral e teste de aptidão física, com aplicação das provas escritas prevista para 24/01/2027. pcac-ac-delegado policiais meusitejuridico.editorajuspodivm.com.br governo do acre anuncia concurso de 139 vagas e salários que ultrapassam r$ 19 mil para a polícia civil - portal acre edital publicado pela polícia civil do acre (pcac) ofertando 8 vagas para delegado de polícia, cargo que exige bacharelado em direito e no mínimo três anos de prática jurídica ou policial. a remuneração inicial é de r$ 19.505,66. a seleção é organizada pelo idecan e inclui provas objetivas, discursivas, oral, testes físicos, avaliações psicológicas e investigação social. pcac-ac-delegado policiais portalacre.com.br">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#2F4F4F;">Carreiras Policiais</span><span class="site-tag">FOLHA.QCONCURSOS.COM</span>
+                <h2><a href="https://folha.qconcursos.com/n/concurso-pc-ac-edital-2026" target="_blank" rel="noopener noreferrer">Concurso PC AC: sai edital com 139 vagas de nível superior</a></h2>
+                <p class="reason">Edital publicado para a Polícia Civil do Acre (PC AC) com 139 vagas de nível superior. O destaque é o cargo de Delegado, que exige bacharelado em Direito e 3 anos de atividade jurídica/policial, com remuneração inicial de R$ 19.505,66. Inscrições ocorrem de 11/11 a 14/12 pelo site da banca Idecan. As provas objetiva e discursiva estão agendadas para 24/01/2027.</p>
+                <a href="https://folha.qconcursos.com/n/concurso-pc-ac-edital-2026" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#2F4F4F;">Carreiras Policiais</span><span class="site-tag">MEUSITEJURIDICO.EDITORAJUSPODIVM.COM.BR</span>
+                <h2><a href="https://meusitejuridico.editorajuspodivm.com.br/2026/11/06/edital-publicado-delegado-de-policia-pc-ac/" target="_blank" rel="noopener noreferrer">Edital Publicado: Delegado de Polícia - PC AC - Meu site jurídico</a></h2>
+                <p class="reason">Edital publicado para o cargo de Delegado de Polícia da PC AC, ofertando 8 vagas imediatas com remuneração inicial de R$ 19.505,66. O certame exige bacharelado em Direito e 3 anos de atividade jurídica ou policial. Inscrições abertas até 14/12/2026 via banca Idecan. O processo seletivo compreende oito etapas, incluindo provas objetiva, discursiva, oral e teste de aptidão física, com aplicação das provas escritas prevista para 24/01/2027.</p>
+                <a href="https://meusitejuridico.editorajuspodivm.com.br/2026/11/06/edital-publicado-delegado-de-policia-pc-ac/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#2F4F4F;">Carreiras Policiais</span><span class="site-tag">PORTALACRE.COM.BR</span>
+                <h2><a href="https://portalacre.com.br/2026/11/governo-do-acre-anuncia-concurso-de-139-vagas-e-salarios-que-ultrapassam-r-19-mil-para-a-policia-civil/" target="_blank" rel="noopener noreferrer">Governo do Acre anuncia concurso de 139 vagas e salários que ultrapassam R$ 19 mil para a Polícia Civil - Portal Acre</a></h2>
+                <p class="reason">Edital publicado pela Polícia Civil do Acre (PCAC) ofertando 8 vagas para Delegado de Polícia, cargo que exige bacharelado em Direito e no mínimo três anos de prática jurídica ou policial. A remuneração inicial é de R$ 19.505,66. A seleção é organizada pelo IDECAN e inclui provas objetivas, discursivas, oral, testes físicos, avaliações psicológicas e investigação social.</p>
+                <a href="https://portalacre.com.br/2026/11/governo-do-acre-anuncia-concurso-de-139-vagas-e-salarios-que-ultrapassam-r-19-mil-para-a-policia-civil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="inb retifica concurso público para cadastro de reserva em diversas áreas de atuação as indústrias nucleares do brasil (inb) divulgaram edital retificado para formação de cadastro de reserva para o cargo de advogado, regido pela clt. a remuneração base varia de r$ 3.452,00 a r$ 8.374,00 para jornadas de 20 a 40 horas semanais. inscrições abertas de 13 de outubro a 11 de novembro de 2026 pelo site da fgv. provas objetivas agendadas para 10 de janeiro de 2027. inb-nacional-advogado procuradorias pciconcursos.com.br inb abre concurso público com cadastro de reserva e salários de até r$ 8,3 mil em caetité - fala você notícias as indústrias nucleares do brasil (inb) abriram concurso público com cadastro de reserva para diversos cargos de nível superior, incluindo a função de advogado. os salários chegam a r$ 8.374,00 para jornadas de até 40 horas semanais. as inscrições seguem abertas até 11 de novembro pela fgv, com provas em janeiro de 2027. inb-nacional-advogado procuradorias falavoce.com.br">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/inb-retifica-concurso-publico-para-cadastro-de-reserva-em-diversas-areas-de-atuacao" target="_blank" rel="noopener noreferrer">INB retifica concurso público para cadastro de reserva em diversas áreas de atuação</a></h2>
+                <p class="reason">As Indústrias Nucleares do Brasil (INB) divulgaram edital retificado para formação de cadastro de reserva para o cargo de Advogado, regido pela CLT. A remuneração base varia de R$ 3.452,00 a R$ 8.374,00 para jornadas de 20 a 40 horas semanais. Inscrições abertas de 13 de outubro a 11 de novembro de 2026 pelo site da FGV. Provas objetivas agendadas para 10 de janeiro de 2027.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/inb-retifica-concurso-publico-para-cadastro-de-reserva-em-diversas-areas-de-atuacao" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">FALAVOCE.COM.BR</span>
+                <h2><a href="https://www.falavoce.com.br/noticias/10739-2026/11/06/inb-abre-concurso-publico-com-cadastro-de-reserva-e-salarios-de-ate-r-8-3-mil-em-caetite" target="_blank" rel="noopener noreferrer">INB abre concurso público com cadastro de reserva e salários de até R$ 8,3 mil em Caetité - Fala Você Notícias</a></h2>
+                <p class="reason">As Indústrias Nucleares do Brasil (INB) abriram concurso público com cadastro de reserva para diversos cargos de nível superior, incluindo a função de Advogado. Os salários chegam a R$ 8.374,00 para jornadas de até 40 horas semanais. As inscrições seguem abertas até 11 de novembro pela FGV, com provas em janeiro de 2027.</p>
+                <a href="https://www.falavoce.com.br/noticias/10739-2026/11/06/inb-abre-concurso-publico-com-cadastro-de-reserva-e-salarios-de-ate-r-8-3-mil-em-caetite" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de barra do turvo - sp abre vaga para assistente da procuradoria-geral a prefeitura de barra do turvo/sp publicou edital de processo seletivo simplificado para preenchimento de 1 vaga temporária de assistente da procuradoria-geral, exigindo graduação em direito. o salário inicial é de r$ 3.610,85 mais vale-alimentação de r$ 500,00 e adicional de 30% para inscritos na oab/sp. inscrições gratuitas de 6 a 11 de novembro de 2026 via e-mail institucional. pgm-barra-do-turvo-sp-procurador procuradorias pciconcursos.com.br prefeitura de barra do turvo (sp) abre seleção com salário de r$ 3,6 mil processo seletivo simplificado aberto pela prefeitura de barra do turvo/sp para o cargo de assistente da procuradoria-geral do municipal, exigindo graduação em direito. a remuneração inicial é de r$ 3.610,85 com auxílio-alimentação de r$ 500,00 e acréscimo de 30% para inscritos na oab/sp que atuem na assistência jurídica. inscrições gratuitas por e-mail entre 6 e 11 de novembro de 2026, com classificação pela ordem cronológica de envio. pgm-barra-do-turvo-sp-procurador procuradorias concursosnobrasil.com">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-barra-do-turvo-sp-abre-vaga-para-assistente-da-procuradoria-geral" target="_blank" rel="noopener noreferrer">Prefeitura de Barra do Turvo - SP abre vaga para Assistente da Procuradoria-Geral</a></h2>
+                <p class="reason">A Prefeitura de Barra do Turvo/SP publicou edital de processo seletivo simplificado para preenchimento de 1 vaga temporária de Assistente da Procuradoria-Geral, exigindo graduação em Direito. O salário inicial é de R$ 3.610,85 mais vale-alimentação de R$ 500,00 e adicional de 30% para inscritos na OAB/SP. Inscrições gratuitas de 6 a 11 de novembro de 2026 via e-mail institucional.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-barra-do-turvo-sp-abre-vaga-para-assistente-da-procuradoria-geral" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">CONCURSOSNOBRASIL.COM</span>
+                <h2><a href="https://concursosnobrasil.com/concursos/sp/2026/11/06/prefeitura-de-barra-do-turvo-sp-abre-selecao-com-salario-de-r-36-mil/" target="_blank" rel="noopener noreferrer">Prefeitura de Barra do Turvo (SP) abre seleção com salário de R$ 3,6 mil</a></h2>
+                <p class="reason">Processo seletivo simplificado aberto pela Prefeitura de Barra do Turvo/SP para o cargo de Assistente da Procuradoria-Geral do Municipal, exigindo graduação em Direito. A remuneração inicial é de R$ 3.610,85 com auxílio-alimentação de R$ 500,00 e acréscimo de 30% para inscritos na OAB/SP que atuem na assistência jurídica. Inscrições gratuitas por e-mail entre 6 e 11 de novembro de 2026, com classificação pela ordem cronológica de envio.</p>
+                <a href="https://concursosnobrasil.com/concursos/sp/2026/11/06/prefeitura-de-barra-do-turvo-sp-abre-selecao-com-salario-de-r-36-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="processo seletivo colatina-es: prefeitura lança edital com 78 vagas processo seletivo simplificado publicado pela prefeitura de colatina/es traz 1 vaga imediata mais cadastro reserva para a função de assistente administrativo - direito, que exige graduação em direito. a remuneração inicial é de r$ 2.669,67 com jornada semanal e auxílio-alimentação de r$ 600,00. inscrições abertas exclusivamente online até o dia 12 de novembro de 2026. prefeitura-colatina-es-assistente-juridico administrativo acheconcursos.com.br prefeitura de colatina (es) abre 78 vagas em novo edital de seletivo processo seletivo simplificado da prefeitura de colatina/es oferece 1 vaga imediata e cadastro de reserva para assistente administrativo - direito, cargo exclusivo para bacharéis em direito. a remuneração é de r$ 2.669,67 acrescida de auxílio-alimentação de r$ 600,00. as inscrições seguem abertas até 12 de novembro de 2026, com avaliação baseada em títulos e experiência profissional. prefeitura-colatina-es-assistente-juridico administrativo concursosnobrasil.com">
+            <div class="sources-badge">2 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-espirito-santo/processo-seletivo-colatina-es-prefeitura-edital-78-vagas-94466" target="_blank" rel="noopener noreferrer">Processo Seletivo Colatina-ES: Prefeitura lança edital com 78 vagas</a></h2>
+                <p class="reason">Processo seletivo simplificado publicado pela Prefeitura de Colatina/ES traz 1 vaga imediata mais cadastro reserva para a função de Assistente Administrativo - Direito, que exige graduação em Direito. A remuneração inicial é de R$ 2.669,67 com jornada semanal e auxílio-alimentação de R$ 600,00. Inscrições abertas exclusivamente online até o dia 12 de novembro de 2026.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-espirito-santo/processo-seletivo-colatina-es-prefeitura-edital-78-vagas-94466" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">CONCURSOSNOBRASIL.COM</span>
+                <h2><a href="https://concursosnobrasil.com/concursos/es/2026/11/06/prefeitura-de-colatina-es-abre-78-vagas-em-novo-edital-de-seletivo/" target="_blank" rel="noopener noreferrer">Prefeitura de Colatina (ES) abre 78 vagas em novo edital de seletivo</a></h2>
+                <p class="reason">Processo seletivo simplificado da Prefeitura de Colatina/ES oferece 1 vaga imediata e cadastro de reserva para Assistente Administrativo - Direito, cargo exclusivo para bacharéis em Direito. A remuneração é de R$ 2.669,67 acrescida de auxílio-alimentação de R$ 600,00. As inscrições seguem abertas até 12 de novembro de 2026, com avaliação baseada em títulos e experiência profissional.</p>
+                <a href="https://concursosnobrasil.com/concursos/es/2026/11/06/prefeitura-de-colatina-es-abre-78-vagas-em-novo-edital-de-seletivo/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="câmara de tupaciguara-mg 2026 abre 10 vagas de até r$ 5,6 mil concurso público da câmara de tupaciguara/mg com vagas para procurador jurídico (r$ 5.627,27), assessor jurídico parlamentar (r$ 3.552,47) e controle interno (r$ 4.602,95, aceita direito). exige oab e experiência profissional. inscrições de 7 de novembro a 7 de dezembro de 2026 via instituto iadhed. etapas incluem prova objetiva, discursiva e de títulos. provas agendadas para 27 de dezembro de 2026. validade de dois anos, prorrogável uma vez. camara-tupaciguara-mg-juridico procuradorias acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-minas-gerais/camara-de-tupaciguara-mg-2026-abre-10-vagas-5-6-mil-93152" target="_blank" rel="noopener noreferrer">Câmara de Tupaciguara-MG 2026 abre 10 vagas de até R$ 5,6 mil</a></h2>
+                <p class="reason">Concurso público da Câmara de Tupaciguara/MG com vagas para Procurador Jurídico (R$ 5.627,27), Assessor Jurídico Parlamentar (R$ 3.552,47) e Controle Interno (R$ 4.602,95, aceita Direito). Exige OAB e experiência profissional. Inscrições de 7 de novembro a 7 de dezembro de 2026 via Instituto IADHED. Etapas incluem prova objetiva, discursiva e de títulos. Provas agendadas para 27 de dezembro de 2026. Validade de dois anos, prorrogável uma vez.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-minas-gerais/camara-de-tupaciguara-mg-2026-abre-10-vagas-5-6-mil-93152" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso trf-3 (sp e ms) 2026: inscrições abertas, vagas e edital edital publicado para o trf-3 (sp e ms) com 11 vagas para os cargos de técnico e analista. a remuneração inicial chega a r$ 20.013,11. as inscrições ficam abertas no período de 04/11 a 23/11/2026, sob a organização da banca organizadora vunesp. trf3-sp-ms-analista-e-tecnico tribunais acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concurso-trf-3" target="_blank" rel="noopener noreferrer">Concurso TRF-3 (SP e MS) 2026: inscrições abertas, vagas e edital</a></h2>
+                <p class="reason">Edital publicado para o TRF-3 (SP e MS) com 11 vagas para os cargos de Técnico e Analista. A remuneração inicial chega a R$ 20.013,11. As inscrições ficam abertas no período de 04/11 a 23/11/2026, sob a organização da banca organizadora VUNESP.</p>
+                <a href="https://www.acheconcursos.com.br/concurso-trf-3" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso tj-sp 2026: inscrições abertas, vagas e edital edital publicado pelo tribunal de justiça de são paulo (tjsp) para o cargo de oficial de justiça, oferecendo 132 vagas com remuneração inicial de até r$ 9.856,95. as inscrições ficam abertas de 28/10 até 10/12/2026, conforme informações preliminares do certame. tjsp-sp-oficial-de-justica tribunais acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concurso-tj-sp" target="_blank" rel="noopener noreferrer">Concurso TJ-SP 2026: inscrições abertas, vagas e edital</a></h2>
+                <p class="reason">Edital publicado pelo Tribunal de Justiça de São Paulo (TJSP) para o cargo de Oficial de Justiça, oferecendo 132 vagas com remuneração inicial de até R$ 9.856,95. As inscrições ficam abertas de 28/10 até 10/12/2026, conforme informações preliminares do certame.</p>
+                <a href="https://www.acheconcursos.com.br/concurso-tj-sp" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso tj-sc 2026: inscrições abertas, vagas e edital edital publicado para o cargo de juiz substituto do tribunal de justiça de santa catarina (tjsc), oferecendo 15 vagas imediatas com remuneração inicial de r$ 35.874,14. as inscrições seguem abertas até 26/11/2026, sob a organização da banca fundação getulio vargas (fgv). tjsc-sc-juiz tribunais acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concurso-tj-sc" target="_blank" rel="noopener noreferrer">Concurso TJ-SC 2026: inscrições abertas, vagas e edital</a></h2>
+                <p class="reason">Edital publicado para o cargo de Juiz Substituto do Tribunal de Justiça de Santa Catarina (TJSC), oferecendo 15 vagas imediatas com remuneração inicial de R$ 35.874,14. As inscrições seguem abertas até 26/11/2026, sob a organização da banca Fundação Getulio Vargas (FGV).</p>
+                <a href="https://www.acheconcursos.com.br/concurso-tj-sc" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso dpe-pb 2026: inscrições abertas, vagas e edital edital publicado para a defensoria pública da paraíba oferecendo 20 vagas para cargos de nível superior. as inscrições seguem abertas no período de 28/09 a 13/11/2026, sob a organização da banca fundação carlos chagas (fcc). a remuneração inicial chega a até r$ 5.197,50 conforme o cargo pretendido. dpepb-pb-tecnico-analista defensoria acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#104E8B;">Defensoria Pública</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concurso-dpe-pb" target="_blank" rel="noopener noreferrer">Concurso DPE-PB 2026: inscrições abertas, vagas e edital</a></h2>
+                <p class="reason">Edital publicado para a Defensoria Pública da Paraíba oferecendo 20 vagas para cargos de nível superior. As inscrições seguem abertas no período de 28/09 a 13/11/2026, sob a organização da banca Fundação Carlos Chagas (FCC). A remuneração inicial chega a até R$ 5.197,50 conforme o cargo pretendido.</p>
+                <a href="https://www.acheconcursos.com.br/concurso-dpe-pb" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso tj-ap 2026: inscrições abertas, vagas e edital o tribunal de justiça do amapá publicou edital com 15 vagas e remuneração inicial de até r$ 35.877,27, voltado para cargos de elevada complexidade jurídica. a organização está sob a responsabilidade da banca fgv e as inscrições ficam abertas no período de 13/10 a 13/11/2026. tjap-ap-magistratura-analista tribunais acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concurso-tj-ap" target="_blank" rel="noopener noreferrer">Concurso TJ-AP 2026: inscrições abertas, vagas e edital</a></h2>
+                <p class="reason">O Tribunal de Justiça do Amapá publicou edital com 15 vagas e remuneração inicial de até R$ 35.877,27, voltado para cargos de elevada complexidade jurídica. A organização está sob a responsabilidade da banca FGV e as inscrições ficam abertas no período de 13/10 a 13/11/2026.</p>
+                <a href="https://www.acheconcursos.com.br/concurso-tj-ap" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura de jandira - sp abre três concursos públicos para diversos cargos edital publicado pela prefeitura de jandira/sp prevê 2 vagas para procurador jurídico e 3 vagas para analista técnico jurídico, ambos exigindo graduação em direito. o certame integra o concurso público nº 2/2026, com inscrições e prazos divulgados no portal oficial do município. prefeitura-jandira-sp-procurador procuradorias pciconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">PCICONCURSOS.COM.BR</span>
+                <h2><a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-jandira-sp-abre-tres-concursos-publicos-para-diversos-cargos" target="_blank" rel="noopener noreferrer">Prefeitura de Jandira - SP abre três concursos públicos para diversos cargos</a></h2>
+                <p class="reason">Edital publicado pela Prefeitura de Jandira/SP prevê 2 vagas para Procurador Jurídico e 3 vagas para Analista Técnico Jurídico, ambos exigindo graduação em Direito. O certame integra o Concurso Público nº 2/2026, com inscrições e prazos divulgados no portal oficial do município.</p>
+                <a href="https://www.pciconcursos.com.br/noticias/prefeitura-de-jandira-sp-abre-tres-concursos-publicos-para-diversos-cargos" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="câmaras de cachoeiro e piúma abrem concursos com salários de até r$ 9 mil; saiba como se inscrever a câmara municipal de cachoeiro de itapemirim/es publicou edital de concurso público estatutário ofertando vagas para procurador legislativo e analista legislativo - especialidade em direito, com remunerações que chegam a r$ 7.046,62 mais auxílio-alimentação de r$ 1.314,82 para 30h semanais. inscrições de 10 de novembro a 17 de dezembro de 2026 pelo instituto access, com provas previstas para 28 de fevereiro de 2027. camara-cachoeiro-de-itapemirim-es-procurador procuradorias irecelider.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">IRECELIDER.COM.BR</span>
+                <h2><a href="https://www.irecelider.com.br/noticias-do-mundo/i/5baef7293799f306981582369a2a8581/camaras-de-cachoeiro-e-piuma-abrem-concursos-com-salarios-de-ate-r-9-mil-saiba-como-se-inscrever" target="_blank" rel="noopener noreferrer">Câmaras de Cachoeiro e Piúma abrem concursos com salários de até R$ 9 mil; saiba como se inscrever</a></h2>
+                <p class="reason">A Câmara Municipal de Cachoeiro de Itapemirim/ES publicou edital de concurso público estatutário ofertando vagas para Procurador Legislativo e Analista Legislativo - Especialidade em Direito, com remunerações que chegam a R$ 7.046,62 mais auxílio-alimentação de R$ 1.314,82 para 30h semanais. Inscrições de 10 de novembro a 17 de dezembro de 2026 pelo Instituto Access, com provas previstas para 28 de fevereiro de 2027.</p>
+                <a href="https://www.irecelider.com.br/noticias-do-mundo/i/5baef7293799f306981582369a2a8581/camaras-de-cachoeiro-e-piuma-abrem-concursos-com-salarios-de-ate-r-9-mil-saiba-como-se-inscrever" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="tjpr abre inscrições para estágio remunerado em direito na comarca de campina da lagoa o tribunal de justiça do paraná (tjpr) abriu processo seletivo para estágio de pós-graduação em direito na comarca de campina da lagoa, conforme edital nº 6462/2026. a bolsa-auxílio é de r$ 3.198,21 acrescida de auxílio-transporte, para jornada de 30 horas semanais. inscrições gratuitas disponíveis no portal do tjpr. a seleção compreende prova escrita e entrevista. tjpr-campina-da-lagoa-pr-estagio estagio novocantu.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">NOVOCANTU.COM.BR</span>
+                <h2><a href="https://novocantu.com.br/noticia/214671/tjpr-abre-inscricoes-para-estagio-remunerado-em-direito-na-comarca-de-campina-da-lagoa/amp" target="_blank" rel="noopener noreferrer">TJPR abre inscrições para estágio remunerado em Direito na Comarca de Campina da Lagoa</a></h2>
+                <p class="reason">O Tribunal de Justiça do Paraná (TJPR) abriu processo seletivo para estágio de pós-graduação em Direito na Comarca de Campina da Lagoa, conforme Edital nº 6462/2026. A bolsa-auxílio é de R$ 3.198,21 acrescida de auxílio-transporte, para jornada de 30 horas semanais. Inscrições gratuitas disponíveis no portal do TJPR. A seleção compreende prova escrita e entrevista.</p>
+                <a href="https://novocantu.com.br/noticia/214671/tjpr-abre-inscricoes-para-estagio-remunerado-em-direito-na-comarca-de-campina-da-lagoa/amp" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso bacen: escolaridade de técnico depende de lula; edital até janeiro o novo concurso bacen prevê 170 vagas, contemplando cargos de nível superior e técnico, com destaque para a carreira de procurador, cuja remuneração inicial chega a r$ 24.967,31. a seleção de procuradores ocorrerá em conjunto com a agu. o edital é aguardado até janeiro, com provas aplicadas dois meses após a publicação. bacen-nacional-procurador procuradorias jcconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">JCCONCURSOS.COM.BR</span>
+                <h2><a href="https://jcconcursos.com.br/noticia/concursos/concurso-bacen-escolaridade-de-tecnico-depende-de-lula-edital-ate-janeiro-146418" target="_blank" rel="noopener noreferrer">Concurso Bacen: escolaridade de técnico depende de Lula; edital até janeiro</a></h2>
+                <p class="reason">O novo concurso Bacen prevê 170 vagas, contemplando cargos de nível superior e técnico, com destaque para a carreira de Procurador, cuja remuneração inicial chega a R$ 24.967,31. A seleção de procuradores ocorrerá em conjunto com a AGU. O edital é aguardado até janeiro, com provas aplicadas dois meses após a publicação.</p>
+                <a href="https://jcconcursos.com.br/noticia/concursos/concurso-bacen-escolaridade-de-tecnico-depende-de-lula-edital-ate-janeiro-146418" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso pge am indicado no ploa estadual para 2027! o projeto de lei orçamentária anual (ploa) de 2027 do amazonas prevê a ampliação do quadro de pessoal da procuradoria geral do estado (pge am). a iniciativa abre perspectivas para futuros editais destinados tanto ao cargo de procurador do estado quanto para servidores da área de apoio, como analista procuratorial. pge-am-amazonas-procurador procuradorias blog.grancursosonline.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">BLOG.GRANCURSOSONLINE.COM.BR</span>
+                <h2><a href="https://blog.grancursosonline.com.br/concurso-pge-am-ploa-2027/" target="_blank" rel="noopener noreferrer">Concurso PGE AM indicado no PLOA estadual para 2027!</a></h2>
+                <p class="reason">O Projeto de Lei Orçamentária Anual (PLOA) de 2027 do Amazonas prevê a ampliação do quadro de pessoal da Procuradoria Geral do Estado (PGE AM). A iniciativa abre perspectivas para futuros editais destinados tanto ao cargo de Procurador do Estado quanto para servidores da área de apoio, como Analista Procuratorial.</p>
+                <a href="https://blog.grancursosonline.com.br/concurso-pge-am-ploa-2027/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="boa viagem (ce) lança concurso com 3.003 vagas e salários de até r$ 14,7 mil a prefeitura de boa viagem/ce lançou edital com vagas para advogado e analista de controle interno, com remunerações atrativas. as inscrições seguem abertas até 07/12/2026 pelo portal da fundação cetrede, com a aplicação da prova objetiva agendada para o dia 10 de janeiro de 2027. prefeitura-boa-viagem-ce-advogado administrativo concursosnobrasil.com">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">CONCURSOSNOBRASIL.COM</span>
+                <h2><a href="https://concursosnobrasil.com/concursos/ce/2026/11/06/boa-viagem-ce-lanca-concurso-com-3-003-vagas-e-salarios-de-ate-r-147-mil/" target="_blank" rel="noopener noreferrer">Boa Viagem (CE) lança concurso com 3.003 vagas e salários de até R$ 14,7 mil</a></h2>
+                <p class="reason">A Prefeitura de Boa Viagem/CE lançou edital com vagas para Advogado e Analista de Controle Interno, com remunerações atrativas. As inscrições seguem abertas até 07/12/2026 pelo portal da Fundação CETREDE, com a aplicação da prova objetiva agendada para o dia 10 de janeiro de 2027.</p>
+                <a href="https://concursosnobrasil.com/concursos/ce/2026/11/06/boa-viagem-ce-lanca-concurso-com-3-003-vagas-e-salarios-de-ate-r-147-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="câmara de aracruz abre concurso com salários de até r$ 6,6 mil edital publicado pela câmara municipal de aracruz/es com vagas para analista administrativo e legislativo, cargo que exige graduação em direito entre outras opções. o vencimento inicial é de r$ 6.014,69 acrescido de auxílio-alimentação de r$ 1.280,00 para 30 horas semanais. inscrições de 16 a 30 de novembro pelo site do instituto referência, com provas objetiva e discursiva previstas para 20 de dezembro. camara-aracruz-es-analista-administrativo-legislativo administrativo folhavitoria.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">FOLHAVITORIA.COM.BR</span>
+                <h2><a href="https://www.folhavitoria.com.br/trabalho/concursos/camara-de-aracruz-vai-abrir-concurso-com-salarios-de-ate-r-66-mil/" target="_blank" rel="noopener noreferrer">Câmara de Aracruz abre concurso com salários de até R$ 6,6 mil</a></h2>
+                <p class="reason">Edital publicado pela Câmara Municipal de Aracruz/ES com vagas para Analista Administrativo e Legislativo, cargo que exige graduação em Direito entre outras opções. O vencimento inicial é de R$ 6.014,69 acrescido de auxílio-alimentação de R$ 1.280,00 para 30 horas semanais. Inscrições de 16 a 30 de novembro pelo site do Instituto Referência, com provas objetiva e discursiva previstas para 20 de dezembro.</p>
+                <a href="https://www.folhavitoria.com.br/trabalho/concursos/camara-de-aracruz-vai-abrir-concurso-com-salarios-de-ate-r-66-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        
+    </div>
+    <footer>Gerado automaticamente · CuradorIA de Carreiras Jurídicas · Todos os créditos reservados aos respectivos autores dos artigos encontrados.</footer>
+    <script>
+    // Tema (dark mode) / Theme (dark mode)
+    (function () {
+        var saved = localStorage.getItem('curadoria-theme');
+        if (saved === 'dark' || saved === 'light') {
+            document.documentElement.setAttribute('data-theme', saved);
+        }
+    })();
+
+    function toggleTheme() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme');
+        if (!current) {
+            current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('curadoria-theme', next);
+        var btn = document.getElementById('theme-toggle');
+        if (btn) btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('theme-toggle');
+        if (btn) {
+            var current = document.documentElement.getAttribute('data-theme') ||
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            btn.textContent = current === 'dark' ? '☀️' : '🌙';
+            btn.addEventListener('click', toggleTheme);
+        }
+
+        // Carrossel / Carousel
+        document.querySelectorAll('.group-card').forEach(function (card) {
+            var slidesEl = card.querySelector('.slides');
+            if (!slidesEl) return;
+            var total = slidesEl.children.length;
+            var current = 0;
+            var leftArrow = card.querySelector('.arrow-left');
+            var rightArrow = card.querySelector('.arrow-right');
+            var indicators = card.querySelectorAll('.indicator');
+
+            function update() {
+                slidesEl.style.transform = 'translateX(-' + (current * 100) + '%)';
+                indicators.forEach(function (ind, i) { ind.classList.toggle('active', i === current); });
+                if (leftArrow) leftArrow.disabled = current === 0;
+                if (rightArrow) rightArrow.disabled = current === total - 1;
+            }
+            if (leftArrow) leftArrow.addEventListener('click', function () {
+                if (current > 0) { current--; update(); }
+            });
+            if (rightArrow) rightArrow.addEventListener('click', function () {
+                if (current < total - 1) { current++; update(); }
+            });
+            update();
+        });
+
+        // Busca / Search
+        var searchInput = document.getElementById('search');
+        var filterInfo = document.getElementById('filter-info');
+        var allCards = document.querySelectorAll('.group-card');
+
+        function applyFilter() {
+            var q = (searchInput.value || '').trim().toLowerCase();
+            var visible = 0;
+            allCards.forEach(function (card) {
+                var blob = card.getAttribute('data-search') || '';
+                var match = !q || blob.indexOf(q) !== -1;
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+            if (filterInfo) {
+                if (!q) filterInfo.textContent = '';
+                else filterInfo.textContent = visible + ' de ' + allCards.length + ' certames correspondem a "' + q + '"';
+            }
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', applyFilter);
+            searchInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { searchInput.value = ''; applyFilter(); }
+            });
+        }
+    });
+</script>
+</body>
+</html>
