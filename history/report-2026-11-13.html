@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuradorIA de Carreiras Jurídicas</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    <style>
+    :root {
+        --bg: #f0f2f5; --card-bg: #ffffff; --text: #1a1a2e; --text-muted: #666;
+        --header-bg-from: #1a1a2e; --header-bg-to: #16213e; --header-text: #ffffff;
+        --accent: #e94560; --shadow: rgba(0,0,0,0.07);
+        --border: #f0f2f5; --input-bg: #ffffff; --input-border: #d8dde3;
+        --site-tag-bg: #f0f2f5; --site-tag-text: #555; --controls-bg: #fafbfc;
+        --arrow-bg: #ffffff; --arrow-border: #ddd; --indicator: #ccc;
+    }
+    [data-theme="dark"] {
+        --bg: #0f1419; --card-bg: #1a1f2e; --text: #e1e6f0; --text-muted: #8a93a6;
+        --header-bg-from: #0a0e1a; --header-bg-to: #14192a; --header-text: #e1e6f0;
+        --accent: #f25575; --shadow: rgba(0,0,0,0.4);
+        --border: #2a3142; --input-bg: #14192a; --input-border: #2a3142;
+        --site-tag-bg: #2a3142; --site-tag-text: #b3bccf; --controls-bg: #14192a;
+        --arrow-bg: #2a3142; --arrow-border: #2a3142; --indicator: #3a4356;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+            --bg: #0f1419; --card-bg: #1a1f2e; --text: #e1e6f0; --text-muted: #8a93a6;
+            --header-bg-from: #0a0e1a; --header-bg-to: #14192a; --header-text: #e1e6f0;
+            --accent: #f25575; --shadow: rgba(0,0,0,0.4);
+            --border: #2a3142; --input-bg: #14192a; --input-border: #2a3142;
+            --site-tag-bg: #2a3142; --site-tag-text: #b3bccf; --controls-bg: #14192a;
+            --arrow-bg: #2a3142; --arrow-border: #2a3142; --indicator: #3a4356;
+        }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+           background: var(--bg); color: var(--text); min-height: 100vh; transition: background 0.2s, color 0.2s; }
+    header { background: linear-gradient(135deg, var(--header-bg-from) 0%, var(--header-bg-to) 100%);
+             color: var(--header-text); padding: 2rem 1.5rem 1.5rem; text-align: center; position: relative; }
+    header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }
+    header p { font-size: 0.85rem; opacity: 0.75; }
+    header .meta { font-size: 0.72rem; opacity: 0.55; margin-top: 0.4rem; }
+    .badge { display: inline-block; background: var(--accent); color: white; font-size: 0.8rem; font-weight: 600;
+             padding: 0.3rem 0.8rem; border-radius: 20px; margin-top: 0.8rem; }
+    .theme-toggle { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.12);
+                    border: 1px solid rgba(255,255,255,0.2); color: var(--header-text); width: 36px; height: 36px;
+                    border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center;
+                    justify-content: center; transition: background 0.2s; }
+    .theme-toggle:hover { background: rgba(255,255,255,0.2); }
+    .container { max-width: 680px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .search-bar { margin-bottom: 1rem; position: relative; }
+    .search-bar input { width: 100%; padding: 0.6rem 0.9rem 0.6rem 2.2rem; border-radius: 10px;
+                        border: 1px solid var(--input-border); background: var(--input-bg); color: var(--text);
+                        font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+    .search-bar input:focus { border-color: var(--accent); }
+    .search-bar::before { content: '🔎'; position: absolute; left: 0.7rem; top: 50%;
+                          transform: translateY(-50%); font-size: 0.9rem; opacity: 0.6; pointer-events: none; }
+    .filter-info { font-size: 0.78rem; color: var(--text-muted); margin: 0.5rem 0 1rem; min-height: 1em; }
+    .group-card { background: var(--card-bg); border-radius: 12px; margin-bottom: 1rem;
+                  box-shadow: 0 2px 8px var(--shadow); border-left: 4px solid var(--accent);
+                  overflow: hidden; position: relative; transition: background 0.2s; }
+    .group-card.highlight { border-left-width: 6px; }
+    .sources-badge { position: absolute; top: 0.8rem; right: 0.8rem; background: var(--header-bg-from);
+                     color: white; font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.55rem;
+                     border-radius: 12px; z-index: 2; }
+    .carousel { position: relative; overflow: hidden; }
+    .slides { display: flex; transition: transform 0.35s ease; }
+    .slide { min-width: 100%; padding: 1.2rem 1.3rem 0.5rem; }
+    .status-tag { display: inline-block; color: white; font-size: 0.7rem; font-weight: 600;
+                  padding: 0.2rem 0.55rem; border-radius: 6px; margin-bottom: 0.5rem; }
+    .site-tag { display: inline-block; background: var(--site-tag-bg); color: var(--site-tag-text);
+                font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 6px;
+                margin-bottom: 0.5rem; margin-left: 0.4rem; }
+    .slide h2 { font-size: 1rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.5rem; color: var(--text); }
+    .slide h2 a { color: inherit; text-decoration: none; }
+    .slide h2 a:hover { color: var(--accent); }
+    .reason { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.9rem; }
+    .btn { display: inline-block; background: var(--header-bg-from); color: white; font-size: 0.82rem;
+           font-weight: 600; padding: 0.45rem 1rem; border-radius: 8px; text-decoration: none;
+           transition: background 0.2s; }
+    .btn:hover { background: var(--accent); }
+    .controls { display: flex; justify-content: space-between; align-items: center;
+                padding: 0.6rem 1rem 1rem; border-top: 1px solid var(--border); background: var(--controls-bg); }
+    .arrow { background: var(--arrow-bg); border: 1px solid var(--arrow-border); color: var(--text);
+             width: 32px; height: 32px; border-radius: 50%; font-size: 1rem; cursor: pointer;
+             display: flex; align-items: center; justify-content: center; line-height: 1; }
+    .arrow:disabled { opacity: 0.3; cursor: default; }
+    .arrow:not(:disabled):hover { background: var(--header-bg-from); color: white; }
+    .indicators { display: flex; gap: 0.4rem; }
+    .indicator { width: 8px; height: 8px; border-radius: 50%; background: var(--indicator); }
+    .indicator.active { background: var(--accent); }
+    .empty { text-align: center; color: var(--text-muted); padding: 3rem 1rem; font-size: 0.95rem; }
+    .archive-banner { background: var(--accent); color: white; padding: 0.8rem 1rem; border-radius: 8px;
+                      margin-bottom: 1rem; font-size: 0.9rem; display: flex; align-items: center;
+                      flex-wrap: wrap; gap: 0.5rem; }
+    .archive-banner a { color: white; text-decoration: underline; font-weight: 600; }
+    .history-section { background: var(--card-bg); border-radius: 12px; padding: 1rem 1.2rem;
+                       margin-top: 2rem; box-shadow: 0 2px 8px var(--shadow); }
+    .history-section summary { cursor: pointer; font-weight: 600; color: var(--text);
+                               font-size: 0.9rem; padding: 0.2rem 0; }
+    .history-section summary:hover { color: var(--accent); }
+    .history-list { list-style: none; padding: 0; margin: 1rem 0 0; max-height: 400px; overflow-y: auto; }
+    .history-list li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+    .history-list li:last-child { border-bottom: none; }
+    .history-list li.current { color: var(--accent); font-weight: 600; }
+    .history-list a { color: var(--text-muted); text-decoration: none; display: block; }
+    .history-list a:hover { color: var(--accent); }
+    footer { text-align: center; padding: 1.5rem; font-size: 0.78rem; color: var(--text-muted); }
+</style>
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
+        <h1>CuradorIA de Carreiras Jurídicas</h1>
+        <p>Foram analisados 158 artigos na última verificação.</p>
+        <div class="badge">Encontrados 25 artigos relevantes sobre 16 certames.</div>
+        <p class="meta">Última verificação: 13/11/2026 às 08h49 · Tempo de execução: 2min 32s</p>
+    </header>
+    <div class="container">
+        
+        <div class="archive-banner">
+            Você está vendo a edição de<strong>13/11/2026 às 08h49</strong>·
+            <a href="../report.html">Ver versão mais recente</a>
+        </div>
+    
+        
+        <div class="search-bar">
+            <input id="search" type="search" placeholder="Buscar por órgão, cargo, carreira..." aria-label="Buscar">
+        </div>
+        <div class="filter-info" id="filter-info"></div>
+    
+        
+        <div class="group-card highlight" data-search="enap instituído! exame será exigido para inscrição na agu instituído oficialmente o exame nacional da advocacia pública (enap), exigido como habilitação prévia de caráter eliminatório para a inscrição preliminar nos concursos da agu, pgfn, pgf e procuradoria do banco central. a prova contará com no mínimo 60 questões abrangendo disciplinas jurídicas essenciais, exigindo 60% de acertos para aprovação, com validade de dois anos prorrogável por igual período. agu-nacional-procurador procuradorias cj.estrategia.com agu institui exame prévio para ingresso em carreiras jurídicas | agência brasil a advocacia-geral da união instituiu o exame nacional da advocacia pública (enap) por meio da portaria normativa agu nº 243. o exame prévio e eliminatório será requisito obrigatório para os concursos de advogado da união, procurador federal, procurador da fazenda nacional e procurador do banco central. agu-nacional-procurador procuradorias agenciabrasil.ebc.com.br concurso agu unificado: enap é oficialmente instituído! a advocacia-geral da união instituiu oficialmente o exame nacional da advocacia pública por meio da portaria normativa agu nº 243/2026. o enap funcionará como requisito de habilitação prévia obrigatória e eliminatória, com validade de dois anos, para a inscrição preliminar nos futuros concursos das carreiras de advogado da união, procurador da fazenda nacional, procurador federal e procurador do banco central. agu-nacional-procurador procuradorias blog.grancursosonline.com.br concurso agu unificado: enap é oficialmente instituído! portaria normativa agu nº 243 institui oficialmente o exame nacional da advocacia pública (enap), exigido como requisito prévio de habilitação para os concursos de ingresso nas carreiras de advogado da união, procurador da fazenda nacional, procurador federal e procurador do banco central do brasil. o exame consistirá em prova objetiva com no mínimo 60 questões de conhecimentos comuns e validade de dois anos. agu-nacional-procurador procuradorias blog.grancursosonline.com.br">
+            <div class="sources-badge">4 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">CJ.ESTRATEGIA.COM</span>
+                <h2><a href="https://cj.estrategia.com/portal/enap-instituido-inscricao-agu-unificado/" target="_blank" rel="noopener noreferrer">ENAP instituído! Exame será exigido para inscrição na AGU</a></h2>
+                <p class="reason">Instituído oficialmente o Exame Nacional da Advocacia Pública (ENAP), exigido como habilitação prévia de caráter eliminatório para a inscrição preliminar nos concursos da AGU, PGFN, PGF e Procuradoria do Banco Central. A prova contará com no mínimo 60 questões abrangendo disciplinas jurídicas essenciais, exigindo 60% de acertos para aprovação, com validade de dois anos prorrogável por igual período.</p>
+                <a href="https://cj.estrategia.com/portal/enap-instituido-inscricao-agu-unificado/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">AGENCIABRASIL.EBC.COM.BR</span>
+                <h2><a href="https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/agu-institui-exame-previo-para-ingresso-em-carreiras-juridicas" target="_blank" rel="noopener noreferrer">AGU institui exame prévio para ingresso em carreiras jurídicas | Agência Brasil</a></h2>
+                <p class="reason">A Advocacia-Geral da União instituiu o Exame Nacional da Advocacia Pública (Enap) por meio da Portaria Normativa AGU nº 243. O exame prévio e eliminatório será requisito obrigatório para os concursos de Advogado da União, Procurador Federal, Procurador da Fazenda Nacional e Procurador do Banco Central.</p>
+                <a href="https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/agu-institui-exame-previo-para-ingresso-em-carreiras-juridicas" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">BLOG.GRANCURSOSONLINE.COM.BR</span>
+                <h2><a href="https://blog.grancursosonline.com.br/concurso-agu-unificado-enap-oficialmente-instituido-2026/" target="_blank" rel="noopener noreferrer">Concurso AGU Unificado: ENAP é oficialmente instituído!</a></h2>
+                <p class="reason">A Advocacia-Geral da União instituiu oficialmente o Exame Nacional da Advocacia Pública por meio da Portaria Normativa AGU nº 243/2026. O ENAP funcionará como requisito de habilitação prévia obrigatória e eliminatória, com validade de dois anos, para a inscrição preliminar nos futuros concursos das carreiras de Advogado da União, Procurador da Fazenda Nacional, Procurador Federal e Procurador do Banco Central.</p>
+                <a href="https://blog.grancursosonline.com.br/concurso-agu-unificado-enap-oficialmente-instituido-2026/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">BLOG.GRANCURSOSONLINE.COM.BR</span>
+                <h2><a href="https://blog.grancursosonline.com.br/concurso-agu-unificado-enap-oficialmente-instituido-2026/amp/" target="_blank" rel="noopener noreferrer">Concurso AGU Unificado: ENAP é oficialmente instituído!</a></h2>
+                <p class="reason">Portaria Normativa AGU nº 243 institui oficialmente o Exame Nacional da Advocacia Pública (ENAP), exigido como requisito prévio de habilitação para os concursos de ingresso nas carreiras de Advogado da União, Procurador da Fazenda Nacional, Procurador Federal e Procurador do Banco Central do Brasil. O exame consistirá em prova objetiva com no mínimo 60 questões de conhecimentos comuns e validade de dois anos.</p>
+                <a href="https://blog.grancursosonline.com.br/concurso-agu-unificado-enap-oficialmente-instituido-2026/amp/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="concurso cetesb sp: inscrições para níveis médio, técnico e superior. até r$12.023! · central de concursos edital publicado pela cetesb/sp com oferta de 2 vagas imediatas mais cadastro reserva para o cargo de advogado, com vencimento inicial de r$ 8.971,98. as inscrições iniciam em 12 de novembro, abrangendo lotações em diversos polos regionais do estado de são paulo. cetesb-sp-advogado procuradorias centraldeconcursos.com.br concurso público da cetesb tem 107 vagas em 12 regiões do estado edital publicado pela cetesb com 2 vagas imediatas para o cargo de advogado, além de oportunidades para analistas e técnicos em diversas regiões do estado de são paulo. as inscrições seguem abertas até 14 de dezembro de 2026 pelo site da fcc, com taxa de r$ 90,00 para nível superior. a aplicação da prova objetiva está agendada para 21 de fevereiro de 2027. cetesb-sp-advogado procuradorias jornalcruzeiro.com.br cetesb lança concurso público para 107 vagas em 12 regiões do estado - concurso oferece oportunidades para profissionais de níveis médio e superior; inscrições começam nesta quinta-feira (12) edital publicado pela cetesb com 107 vagas para níveis médio e superior em 12 regiões do estado de são paulo, contemplando vagas específicas para o cargo de advogado. inscrições abertas de 12 de novembro até 14 de dezembro pela fundação carlos chagas, com provas objetivas previstas para 21 de fevereiro de 2027. cetesb-sp-advogado procuradorias batatais24h.com.br">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">CENTRALDECONCURSOS.COM.BR</span>
+                <h2><a href="https://centraldeconcursos.com.br/noticia/concurso-cetesb-sp-inscricoes-para-niveis-medio-tecnico-e-superior" target="_blank" rel="noopener noreferrer">Concurso Cetesb SP: inscrições para níveis médio, técnico e superior. Até R$12.023! · Central de Concursos</a></h2>
+                <p class="reason">Edital publicado pela Cetesb/SP com oferta de 2 vagas imediatas mais cadastro reserva para o cargo de Advogado, com vencimento inicial de R$ 8.971,98. As inscrições iniciam em 12 de novembro, abrangendo lotações em diversos polos regionais do estado de São Paulo.</p>
+                <a href="https://centraldeconcursos.com.br/noticia/concurso-cetesb-sp-inscricoes-para-niveis-medio-tecnico-e-superior" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">JORNALCRUZEIRO.COM.BR</span>
+                <h2><a href="https://www.jornalcruzeiro.com.br/sorocaba/noticias/2026/11/767712-concurso-publico-da-cetesb-tem-107-vagas-em-12-regioes-do-estado.html" target="_blank" rel="noopener noreferrer">Concurso público da Cetesb tem 107 vagas em 12 regiões do Estado</a></h2>
+                <p class="reason">Edital publicado pela Cetesb com 2 vagas imediatas para o cargo de Advogado, além de oportunidades para analistas e técnicos em diversas regiões do Estado de São Paulo. As inscrições seguem abertas até 14 de dezembro de 2026 pelo site da FCC, com taxa de R$ 90,00 para nível superior. A aplicação da prova objetiva está agendada para 21 de fevereiro de 2027.</p>
+                <a href="https://www.jornalcruzeiro.com.br/sorocaba/noticias/2026/11/767712-concurso-publico-da-cetesb-tem-107-vagas-em-12-regioes-do-estado.html" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">BATATAIS24H.COM.BR</span>
+                <h2><a href="https://batatais24h.com.br/noticia/4409/cetesb-lanca-concurso-publico-para-107-vagas-em-12-regioes-do-estado" target="_blank" rel="noopener noreferrer">Cetesb lança concurso público para 107 vagas em 12 regiões do estado - Concurso oferece oportunidades para profissionais de níveis médio e superior; inscrições começam nesta quinta-feira (12)</a></h2>
+                <p class="reason">Edital publicado pela Cetesb com 107 vagas para níveis médio e superior em 12 regiões do estado de São Paulo, contemplando vagas específicas para o cargo de Advogado. Inscrições abertas de 12 de novembro até 14 de dezembro pela Fundação Carlos Chagas, com provas objetivas previstas para 21 de fevereiro de 2027.</p>
+                <a href="https://batatais24h.com.br/noticia/4409/cetesb-lanca-concurso-publico-para-107-vagas-em-12-regioes-do-estado" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="ministério da saúde abre processo seletivo com 759 vagas e salários de até r$ 10,3 mil processo seletivo temporário do ministério saúde publicado com 300 vagas imediatas e 459 em cadastro de reserva, incluindo o perfil de analista de requisitos com exigência de graduação em direito e remuneração inicial de até r$ 10.354,29. inscrições abertas até 14 de dezembro de 2026 pelo instituto avalia, ao custo de r$ 60,00. prova objetiva prevista para 17 de janeiro de 2027 cobrando direito administrativo e constitucional. ministerio-da-saude-nacional-superior-direito administrativo concursosnobrasil.com sai edital do concurso ministério da saúde; 759 vagas temporárias | folha dirigida edital publicado pelo ministério da saúde oferecendo vagas temporárias para nível superior, incluindo cargos específicos para graduados em direito como analista de requisitos processuais e gestor. são 759 vagas no total entre imediatas e cadastro reserva, com remunerações de até r$ 10.354,29. inscrições abertas de 12 de novembro a 14 de dezembro. ministerio-da-saude-nacional-superior-direito administrativo folha.qconcursos.com ministério da saúde abre concurso com salários de até r$ 10,3 mil | g1 processo seletivo simplificado do ministério da saúde publicado com 300 vagas imediatas e 459 para cadastro reserva para cargos de nível superior, contemplando graduação em direito. os salários iniciais variam de r$ 4.740,51 a r$ 10.354,29, acrescidos de auxílio-alimentação de r$ 1.192,00. inscrições de 12/11 a 14/12/2026 pelo instituto avalia. provas em 17/01/2027. ministerio-da-saude-nacional-superior-direito administrativo g1.globo.com">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">CONCURSOSNOBRASIL.COM</span>
+                <h2><a href="https://concursosnobrasil.com/concursos/2026/11/12/ministerio-da-saude-abre-processo-seletivo-com-300-vagas-e-salarios-de-ate-r-103-mil/" target="_blank" rel="noopener noreferrer">Ministério da Saúde abre processo seletivo com 759 vagas e salários de até R$ 10,3 mil</a></h2>
+                <p class="reason">Processo seletivo temporário do Ministério Saúde publicado com 300 vagas imediatas e 459 em cadastro de reserva, incluindo o perfil de Analista de Requisitos com exigência de graduação em Direito e remuneração inicial de até R$ 10.354,29. Inscrições abertas até 14 de dezembro de 2026 pelo Instituto Avalia, ao custo de R$ 60,00. Prova objetiva prevista para 17 de janeiro de 2027 cobrando Direito Administrativo e Constitucional.</p>
+                <a href="https://concursosnobrasil.com/concursos/2026/11/12/ministerio-da-saude-abre-processo-seletivo-com-300-vagas-e-salarios-de-ate-r-103-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">FOLHA.QCONCURSOS.COM</span>
+                <h2><a href="https://folha.qconcursos.com/n/concurso-ministerio-da-saude-2026-edital-temporarios" target="_blank" rel="noopener noreferrer">Sai edital do concurso Ministério da Saúde; 759 vagas temporárias</a></h2>
+                <p class="reason">Edital publicado pelo Ministério da Saúde oferecendo vagas temporárias para nível superior, incluindo cargos específicos para graduados em Direito como Analista de Requisitos Processuais e Gestor. São 759 vagas no total entre imediatas e cadastro reserva, com remunerações de até R$ 10.354,29. Inscrições abertas de 12 de novembro a 14 de dezembro.</p>
+                <a href="https://folha.qconcursos.com/n/concurso-ministerio-da-saude-2026-edital-temporarios" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">G1.GLOBO.COM</span>
+                <h2><a href="https://g1.globo.com/trabalho-e-carreira/concursos/noticia/2026/11/12/ministerio-da-saude-processo-seletivo.ghtml" target="_blank" rel="noopener noreferrer">Ministério da Saúde abre concurso com salários de até R$ 10,3 mil</a></h2>
+                <p class="reason">Processo seletivo simplificado do Ministério da Saúde publicado com 300 vagas imediatas e 459 para cadastro reserva para cargos de nível superior, contemplando graduação em Direito. Os salários iniciais variam de R$ 4.740,51 a R$ 10.354,29, acrescidos de auxílio-alimentação de R$ 1.192,00. Inscrições de 12/11 a 14/12/2026 pelo Instituto Avalia. Provas em 17/01/2027.</p>
+                <a href="https://g1.globo.com/trabalho-e-carreira/concursos/noticia/2026/11/12/ministerio-da-saude-processo-seletivo.ghtml" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card highlight" data-search="concurso bacen: edital previsto até dezembro de 2026; técnico exigirá nível médio - blog magistrar educacional banco central do brasil confirmou a autorização de concurso público para o provimento de 170 vagas, incluindo 20 oportunidades para o cargo de procurador do banco central, que exige nível superior em direito. o edital completo deve ser publicado até 30 de dezembro de 2026, com aplicação de provas previstas em todas as capitais estaduais e no distrito federal. bacen-nacional-procurador procuradorias magistrarcursos.com.br concurso bacen: ministra confirma seleção de nível médio e superior concurso autorizado para o banco central do brasil (bacen) com previsão de edital até 30 de dezembro de 2026 e provas em 2027. o certame contempla 20 vagas imediatas para a carreira de procurador do banco central, além de cargos para auditor e técnico, com remunerações iniciais que chegam a r$ 27.624,30. bacen-nacional-procurador procuradorias blog.grancursosonline.com.br edital do concurso bacen deve sair atã© 30 de dezembro o banco central do brasil prevê publicar até 30 de dezembro de 2026 o edital de seu novo concurso público, contemplando 20 vagas para a carreira de procurador, que exige formação em direito. a seleção autorizada visa recompor o quadro institucional com provas previstas para todas as capitais e o distrito federal. até o momento, a banca organizadora, o cronograma detalhado de inscrições e a remuneração inicial exata ainda não foram divulgados oficialmente. bacen-nacional-procurador procuradorias correioweb.com.br">
+            <div class="sources-badge">3 fontes</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">MAGISTRARCURSOS.COM.BR</span>
+                <h2><a href="https://magistrarcursos.com.br/blog/concurso-bacen-edital-previsto-ate-dezembro-de-2026-tecnico-exigira-nivel-medio/" target="_blank" rel="noopener noreferrer">Concurso Bacen: edital previsto até dezembro de 2026; Técnico exigirá nível médio - Blog Magistrar Educacional</a></h2>
+                <p class="reason">Banco Central do Brasil confirmou a autorização de concurso público para o provimento de 170 vagas, incluindo 20 oportunidades para o cargo de Procurador do Banco Central, que exige nível superior em Direito. O edital completo deve ser publicado até 30 de dezembro de 2026, com aplicação de provas previstas em todas as capitais estaduais e no Distrito Federal.</p>
+                <a href="https://magistrarcursos.com.br/blog/concurso-bacen-edital-previsto-ate-dezembro-de-2026-tecnico-exigira-nivel-medio/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">BLOG.GRANCURSOSONLINE.COM.BR</span>
+                <h2><a href="https://blog.grancursosonline.com.br/concurso-bacen-ministra-confirma-edital-2027/" target="_blank" rel="noopener noreferrer">Concurso Bacen: Ministra confirma seleção de nível médio e superior</a></h2>
+                <p class="reason">Concurso autorizado para o Banco Central do Brasil (Bacen) com previsão de edital até 30 de dezembro de 2026 e provas em 2027. O certame contempla 20 vagas imediatas para a carreira de Procurador do Banco Central, além de cargos para Auditor e Técnico, com remunerações iniciais que chegam a R$ 27.624,30.</p>
+                <a href="https://blog.grancursosonline.com.br/concurso-bacen-ministra-confirma-edital-2027/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">CORREIOWEB.COM.BR</span>
+                <h2><a href="https://www.correioweb.com.br/mundo-corporativo/2026/11/7536939-edital-do-concurso-bacen-deve-sair-ate-30-de-dezembro.html" target="_blank" rel="noopener noreferrer">Edital do Concurso Bacen deve sair atÃ© 30 de dezembro</a></h2>
+                <p class="reason">O Banco Central do Brasil prevê publicar até 30 de dezembro de 2026 o edital de seu novo concurso público, contemplando 20 vagas para a carreira de Procurador, que exige formação em Direito. A seleção autorizada visa recompor o quadro institucional com provas previstas para todas as capitais e o Distrito Federal. Até o momento, a banca organizadora, o cronograma detalhado de inscrições e a remuneração inicial exata ainda não foram divulgados oficialmente.</p>
+                <a href="https://www.correioweb.com.br/mundo-corporativo/2026/11/7536939-edital-do-concurso-bacen-deve-sair-ate-30-de-dezembro.html" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="arrow arrow-left" aria-label="Anterior">‹</button>
+                <div class="indicators"><span class="indicator active"></span><span class="indicator"></span><span class="indicator"></span></div>
+                <button class="arrow arrow-right" aria-label="Próxima">›</button>
+            </div>
+        
+        </div>
+    
+        <div class="group-card" data-search="concurso prefeitura de tapiraí-sp abre vagas para 29 cargos prefeitura de tapiraí/sp publicou edital de concurso público com vagas para cadastro reserva no cargo de advogado. as inscrições seguem abertas até 14/12/2026 pelo site do instituto igecs, com taxa de r$ 90,00. a remuneração municipal chega a r$ 7.991,27 mais auxílio-alimentação de r$ 630,00. as provas objetivas e discursivas estão agendadas para 24/01/2027. prefeitura-tapirai-sp-advogado administrativo acheconcursos.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">ACHECONCURSOS.COM.BR</span>
+                <h2><a href="https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-prefeitura-de-tapirai-sp-abre-vagas-para-29-cargos-94590" target="_blank" rel="noopener noreferrer">Concurso Prefeitura de Tapiraí-SP abre vagas para 29 cargos</a></h2>
+                <p class="reason">Prefeitura de Tapiraí/SP publicou edital de concurso público com vagas para cadastro reserva no cargo de Advogado. As inscrições seguem abertas até 14/12/2026 pelo site do Instituto IGECS, com taxa de R$ 90,00. A remuneração municipal chega a R$ 7.991,27 mais auxílio-alimentação de R$ 630,00. As provas objetivas e discursivas estão agendadas para 24/01/2027.</p>
+                <a href="https://www.acheconcursos.com.br/concursos-sao-paulo/concurso-prefeitura-de-tapirai-sp-abre-vagas-para-29-cargos-94590" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso pge ac divulga resultado definitivo da prova subjetiva concurso público da pge ac para o cargo de procurador do estado (classe i) divulgou o resultado definitivo da prova subjetiva no diário oficial. o certame, organizado pela fgv, oferta 10 vagas imediatas e cadastro reserva com subsídio inicial de r$ 25.996,16. o concurso registrou 1.793 inscritos e ainda contará com provas práticas, prova oral e avaliação de títulos. pge-ac-procurador procuradorias contilnetnoticias.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">CONTILNETNOTICIAS.COM.BR</span>
+                <h2><a href="https://contilnetnoticias.com.br/editais-concursos/concurso-pge-ac-divulga-resultado-definitivo-da-prova-subjetiva/" target="_blank" rel="noopener noreferrer">Concurso PGE AC divulga resultado definitivo da prova subjetiva</a></h2>
+                <p class="reason">Concurso público da PGE AC para o cargo de Procurador do Estado (Classe I) divulgou o resultado definitivo da prova subjetiva no Diário Oficial. O certame, organizado pela FGV, oferta 10 vagas imediatas e cadastro reserva com subsídio inicial de R$ 25.996,16. O concurso registrou 1.793 inscritos e ainda contará com provas práticas, prova oral e avaliação de títulos.</p>
+                <a href="https://contilnetnoticias.com.br/editais-concursos/concurso-pge-ac-divulga-resultado-definitivo-da-prova-subjetiva/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concursos no pará: confira vagas, salários e prazos • dol edital publicado pela câmara municipal de portel/pa com oferta de 27 vagas imediatas e cadastro de reserva para diversos níveis de escolaridade, incluindo o cargo de advogado legislativo. as remunerações variam de r$ 1.621,00 a r$ 4.723,31. inscrições abertas até 29 de novembro de 2026 pelo site da banca organizadora instituto vicente nelson, com provas objetivas previstas para 20 de dezembro. camara-municipal-de-portel-pa-advogado-legislativo administrativo dol.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">DOL.COM.BR</span>
+                <h2><a href="https://dol.com.br/concursos/municipais/968119/concursos-no-para-confira-vagas-salarios-e-prazos" target="_blank" rel="noopener noreferrer">Concursos no Pará: confira vagas, salários e prazos • DOL</a></h2>
+                <p class="reason">Edital publicado pela Câmara Municipal de Portel/PA com oferta de 27 vagas imediatas e cadastro de reserva para diversos níveis de escolaridade, incluindo o cargo de Advogado Legislativo. As remunerações variam de R$ 1.621,00 a R$ 4.723,31. Inscrições abertas até 29 de novembro de 2026 pelo site da banca organizadora Instituto Vicente Nelson, com provas objetivas previstas para 20 de dezembro.</p>
+                <a href="https://dol.com.br/concursos/municipais/968119/concursos-no-para-confira-vagas-salarios-e-prazos" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="inscrições para processo seletivo do projeto gestão de conflitos territoriais rurais são prorrogadas até 16 de novembro – jornal o impacto processo seletivo simplificado prorrogado até 16 de novembro de 2026 pelo mppa, em parceria com a fundação avante social, para o projeto gestão de conflitos territoriais rurais. o certame oferta vagas para analista jurídico e assessor jurídico com lotação nos municípios de belém e santarém. a participação ocorre mediante preenchimento de formulário de análise curricular disponibilizado no portal da organizadora. mppa-pa-analista-juridico mp oimpacto.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B22222;">Ministério Público</span><span class="site-tag">OIMPACTO.COM.BR</span>
+                <h2><a href="https://oimpacto.com.br/2026/11/inscricoes-para-processo-seletivo-do-projeto-gestao-de-conflitos-territoriais-rurais-sao-prorrogadas-ate-16-de-novembro/" target="_blank" rel="noopener noreferrer">INSCRIÇÕES PARA PROCESSO SELETIVO DO PROJETO GESTÃO DE CONFLITOS TERRITORIAIS RURAIS SÃO PRORROGADAS ATÉ 16 DE NOVEMBRO – Jornal O Impacto</a></h2>
+                <p class="reason">Processo seletivo simplificado prorrogado até 16 de novembro de 2026 pelo MPPA, em parceria com a Fundação Avante Social, para o projeto Gestão de Conflitos Territoriais Rurais. O certame oferta vagas para analista jurídico e assessor jurídico com lotação nos municípios de Belém e Santarém. A participação ocorre mediante preenchimento de formulário de análise curricular disponibilizado no portal da organizadora.</p>
+                <a href="https://oimpacto.com.br/2026/11/inscricoes-para-processo-seletivo-do-projeto-gestao-de-conflitos-territoriais-rurais-sao-prorrogadas-ate-16-de-novembro/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="com vagas em ms, trf-3 está com concurso público para analistas e técnicos judiciários edital publicado pelo trf da 3ª região oferecendo cadastro de reserva para analista judiciário na área judiciária em mato grosso do sul, além de vaga imediata para oficial de justiça em são paulo. a remuneração inicial chega a r$ 20.013,11 para oficial de justiça e r$ 16.040,87 para analista. inscrições abertas até 23 de novembro no site da banca vunesp, com taxa de r$ 110,00. trf3-sp-ms-analista-judiciario tribunais enfoquems.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#4B0082;">Tribunais</span><span class="site-tag">ENFOQUEMS.COM.BR</span>
+                <h2><a href="https://www.enfoquems.com.br/com-vagas-em-ms-trf-3-esta-com-concurso-publico-para-analistas-e-tecnicos-judiciarios/?amp=" target="_blank" rel="noopener noreferrer">Com vagas em MS, TRF-3 está com concurso público para analistas e técnicos judiciários</a></h2>
+                <p class="reason">Edital publicado pelo TRF da 3ª Região oferecendo cadastro de reserva para Analista Judiciário na área Judiciária em Mato Grosso do Sul, além de vaga imediata para Oficial de Justiça em São Paulo. A remuneração inicial chega a R$ 20.013,11 para Oficial de Justiça e R$ 16.040,87 para Analista. Inscrições abertas até 23 de novembro no site da banca Vunesp, com taxa de R$ 110,00.</p>
+                <a href="https://www.enfoquems.com.br/com-vagas-em-ms-trf-3-esta-com-concurso-publico-para-analistas-e-tecnicos-judiciarios/?amp=" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="justiça federal de araguaína abre vaga de estágio em direito com bolsa de r$ 1 mil - gazeta do cerrado processo seletivo aberto pela subseção judiciária da justiça federal em araguaína/to para vaga de estágio em direito. o selecionado receberá bolsa-auxílio mensal de r$ 1.050,00 mais auxílio-transporte, com jornada flexível. os interessados devem enviar currículo e histórico acadêmico até 30 de novembro de 2026. jfes-araguaina-to-estagio estagio gazetadocerrado.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">GAZETADOCERRADO.COM.BR</span>
+                <h2><a href="https://gazetadocerrado.com.br/oportunidades/justica-federal-abre-vaga-de-estagio-em-direito-em-araguaina-com-bolsa-de-r-1-mil/" target="_blank" rel="noopener noreferrer">Justiça Federal de Araguaína abre vaga de estágio em Direito com bolsa de R$ 1 mil - Gazeta do Cerrado</a></h2>
+                <p class="reason">Processo seletivo aberto pela Subseção Judiciária da Justiça Federal em Araguaína/TO para vaga de estágio em Direito. O selecionado receberá bolsa-auxílio mensal de R$ 1.050,00 mais auxílio-transporte, com jornada flexível. Os interessados devem enviar currículo e histórico acadêmico até 30 de novembro de 2026.</p>
+                <a href="https://gazetadocerrado.com.br/oportunidades/justica-federal-abre-vaga-de-estagio-em-direito-em-araguaina-com-bolsa-de-r-1-mil/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="resultado final de concurso público do procon-rj é homologado o governo estadual homologou o resultado final do concurso público do procon-rj, que ofertou vagas imediatas e cadastro de reserva para o cargo de advogado, entre outras funções. a homologação oficializa a lista de aprovados e inicia o prazo de validade do certame. as convocações e nomeações estão condicionadas ao encerramento das vedações eleitorais e às autorizações fiscais a partir do próximo exercício. proconrj-rj-advogado procuradorias extra.globo.com">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#8B4513;">Procuradorias</span><span class="site-tag">EXTRA.GLOBO.COM</span>
+                <h2><a href="https://extra.globo.com/economia/emprego/concursos/noticia/2026/11/resultado-final-do-concurso-publico-do-procon-rj-e-homologado.ghtml" target="_blank" rel="noopener noreferrer">Resultado final de concurso público do Procon-RJ é homologado</a></h2>
+                <p class="reason">O governo estadual homologou o resultado final do concurso público do Procon-RJ, que ofertou vagas imediatas e cadastro de reserva para o cargo de Advogado, entre outras funções. A homologação oficializa a lista de aprovados e inicia o prazo de validade do certame. As convocações e nomeações estão condicionadas ao encerramento das vedações eleitorais e às autorizações fiscais a partir do próximo exercício.</p>
+                <a href="https://extra.globo.com/economia/emprego/concursos/noticia/2026/11/resultado-final-do-concurso-publico-do-procon-rj-e-homologado.ghtml" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="concurso cofen: quadrix definida e edital em preparação concurso público do conselho federal de enfermagem (cofen) com banca definida (instituto quadrix). o projeto prevê 16 vagas imediatas mais cadastro reserva para nível superior, incluindo o cargo de advogado. a remuneração inicial prevista é de r$ 18.950,52 com lotação em brasília/df. o edital passa por fase de revisão final. cofen-brasilia-df-advogado administrativo blog.grancursosonline.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#B8860B;">Administrativo e Seletivo</span><span class="site-tag">BLOG.GRANCURSOSONLINE.COM.BR</span>
+                <h2><a href="https://blog.grancursosonline.com.br/concurso-cofen-edital-em-preparacao/amp/" target="_blank" rel="noopener noreferrer">Concurso COFEN: Quadrix definida e edital em preparação</a></h2>
+                <p class="reason">Concurso público do Conselho Federal de Enfermagem (Cofen) com banca definida (Instituto Quadrix). O projeto prevê 16 vagas imediatas mais cadastro reserva para nível superior, incluindo o cargo de Advogado. A remuneração inicial prevista é de R$ 18.950,52 com lotação em Brasília/DF. O edital passa por fase de revisão final.</p>
+                <a href="https://blog.grancursosonline.com.br/concurso-cofen-edital-em-preparacao/amp/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="prefeitura abre processo seletivo para vagas de estágio — bs9 processo seletivo aberto para formação de cadastro reserva de estágio na prefeitura de cubatão/sp, contemplando estudantes do curso de direito. a bolsa-auxílio varia entre r$ 600,00 e r$ 900,00 para jornadas de 20 a 30 horas semanais, acrescida de auxílio-transporte de r$ 120,00. inscrições abertas até 20/11/2026 pelo site do ciee. prefeitura-cubatao-sp-estagio-direito estagio bs9.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">BS9.COM.BR</span>
+                <h2><a href="https://www.bs9.com.br/litoral/2026/11/12/prefeitura-abre-processo-seletivo-para-vagas-de-estagio.html" target="_blank" rel="noopener noreferrer">Prefeitura abre processo seletivo para vagas de estágio — BS9</a></h2>
+                <p class="reason">Processo seletivo aberto para formação de cadastro reserva de estágio na Prefeitura de Cubatão/SP, contemplando estudantes do curso de Direito. A bolsa-auxílio varia entre R$ 600,00 e R$ 900,00 para jornadas de 20 a 30 horas semanais, acrescida de auxílio-transporte de R$ 120,00. Inscrições abertas até 20/11/2026 pelo site do CIEE.</p>
+                <a href="https://www.bs9.com.br/litoral/2026/11/12/prefeitura-abre-processo-seletivo-para-vagas-de-estagio.html" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="mpes abre vagas de estágio para administração e direito o ministério público do espírito santo está com inscrições abertas até 15 de novembro de 2026 para processos seletivos de estágio voltados a estudantes de graduação e pós-graduação em direito na comarca de vitória. o edital spga nº 134/2026 oferece bolsa-auxílio de r$ 1.900,00 para pós-graduação e r$ 1.100,00 para graduação, acrescidas de auxílio-transporte de r$ 250,00. mpes-es-estagio estagio folhavitoria.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">FOLHAVITORIA.COM.BR</span>
+                <h2><a href="https://www.folhavitoria.com.br/trabalho/mpes-abre-vagas-de-estagio-com-bolsas-de-ate-r-19-mil-em-vitoria/" target="_blank" rel="noopener noreferrer">MPES abre vagas de estágio para Administração e Direito</a></h2>
+                <p class="reason">O Ministério Público do Espírito Santo está com inscrições abertas até 15 de novembro de 2026 para processos seletivos de estágio voltados a estudantes de graduação e pós-graduação em Direito na comarca de Vitória. O Edital SPGA nº 134/2026 oferece bolsa-auxílio de R$ 1.900,00 para pós-graduação e R$ 1.100,00 para graduação, acrescidas de auxílio-transporte de R$ 250,00.</p>
+                <a href="https://www.folhavitoria.com.br/trabalho/mpes-abre-vagas-de-estagio-com-bolsas-de-ate-r-19-mil-em-vitoria/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="tjms convoca aprovados na residência jurídica o tribunal de justiça de mato grosso do sul publicou a quinta convocação de aprovados no programa de residência jurídica, conforme o edital nº 29/2026. as matrículas devem ser realizadas presencialmente nos dias 23 e 24 de novembro de 2026 nas direções do foro das comarcas contempladas, que incluem campo grande, dourados, três lagoas, amambai e ivinhema. tjms-ms-residencia-juridica estagio acritica.net">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#228B22;">Residência e Estágio</span><span class="site-tag">ACRITICA.NET</span>
+                <h2><a href="https://acritica.net/noticias/tjms-faz-5a-convocacao-para-residencia-juridica-matricula-sera-nos-dias-23-e-24/" target="_blank" rel="noopener noreferrer">TJMS convoca aprovados na Residência Jurídica</a></h2>
+                <p class="reason">O Tribunal de Justiça de Mato Grosso do Sul publicou a quinta convocação de aprovados no Programa de Residência Jurídica, conforme o Edital nº 29/2026. As matrículas devem ser realizadas presencialmente nos dias 23 e 24 de novembro de 2026 nas Direções do Foro das comarcas contempladas, que incluem Campo Grande, Dourados, Três Lagoas, Amambai e Ivinhema.</p>
+                <a href="https://acritica.net/noticias/tjms-faz-5a-convocacao-para-residencia-juridica-matricula-sera-nos-dias-23-e-24/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="group-card" data-search="professor dá dicas para o concurso da civil: “não basta atingir nota mínima” edital publicado pela polícia civil do acre (pcac) com 139 vagas distribuídas entre diversos cargos, incluindo delegado de polícia civil, que exige graduação em direito. a remuneração inicial chega a r$ 19.505,66. as inscrições seguem abertas até 14 de dezembro de 2026, com organização do idecan e provas objetiva e discursiva previstas para 24 de janeiro de 2027. pcac-ac-delegado policiais contilnetnoticias.com.br">
+            <div class="sources-badge">1 fonte</div>
+            <div class="carousel">
+                <div class="slides">
+                    
+            <div class="slide">
+                <span class="status-tag" style="background:#2F4F4F;">Carreiras Policiais</span><span class="site-tag">CONTILNETNOTICIAS.COM.BR</span>
+                <h2><a href="https://contilnetnoticias.com.br/noticia/professor-da-dicas-para-o-concurso-da-policia-civil-nao-basta-atingir-nota-minima/" target="_blank" rel="noopener noreferrer">Professor dá dicas para o concurso da Civil: “Não basta atingir nota mínima”</a></h2>
+                <p class="reason">Edital publicado pela Polícia Civil do Acre (PCAC) com 139 vagas distribuídas entre diversos cargos, incluindo Delegado de Polícia Civil, que exige graduação em Direito. A remuneração inicial chega a R$ 19.505,66. As inscrições seguem abertas até 14 de dezembro de 2026, com organização do Idecan e provas objetiva e discursiva previstas para 24 de janeiro de 2027.</p>
+                <a href="https://contilnetnoticias.com.br/noticia/professor-da-dicas-para-o-concurso-da-policia-civil-nao-basta-atingir-nota-minima/" target="_blank" rel="noopener noreferrer" class="btn">Acessar matéria →</a>
+            </div>
+        
+                </div>
+            </div>
+            
+        </div>
+    
+        
+    </div>
+    <footer>Gerado automaticamente · CuradorIA de Carreiras Jurídicas · Todos os créditos reservados aos respectivos autores dos artigos encontrados.</footer>
+    <script>
+    // Tema (dark mode) / Theme (dark mode)
+    (function () {
+        var saved = localStorage.getItem('curadoria-theme');
+        if (saved === 'dark' || saved === 'light') {
+            document.documentElement.setAttribute('data-theme', saved);
+        }
+    })();
+
+    function toggleTheme() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme');
+        if (!current) {
+            current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('curadoria-theme', next);
+        var btn = document.getElementById('theme-toggle');
+        if (btn) btn.textContent = next === 'dark' ? '☀️' : '🌙';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('theme-toggle');
+        if (btn) {
+            var current = document.documentElement.getAttribute('data-theme') ||
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            btn.textContent = current === 'dark' ? '☀️' : '🌙';
+            btn.addEventListener('click', toggleTheme);
+        }
+
+        // Carrossel / Carousel
+        document.querySelectorAll('.group-card').forEach(function (card) {
+            var slidesEl = card.querySelector('.slides');
+            if (!slidesEl) return;
+            var total = slidesEl.children.length;
+            var current = 0;
+            var leftArrow = card.querySelector('.arrow-left');
+            var rightArrow = card.querySelector('.arrow-right');
+            var indicators = card.querySelectorAll('.indicator');
+
+            function update() {
+                slidesEl.style.transform = 'translateX(-' + (current * 100) + '%)';
+                indicators.forEach(function (ind, i) { ind.classList.toggle('active', i === current); });
+                if (leftArrow) leftArrow.disabled = current === 0;
+                if (rightArrow) rightArrow.disabled = current === total - 1;
+            }
+            if (leftArrow) leftArrow.addEventListener('click', function () {
+                if (current > 0) { current--; update(); }
+            });
+            if (rightArrow) rightArrow.addEventListener('click', function () {
+                if (current < total - 1) { current++; update(); }
+            });
+            update();
+        });
+
+        // Busca / Search
+        var searchInput = document.getElementById('search');
+        var filterInfo = document.getElementById('filter-info');
+        var allCards = document.querySelectorAll('.group-card');
+
+        function applyFilter() {
+            var q = (searchInput.value || '').trim().toLowerCase();
+            var visible = 0;
+            allCards.forEach(function (card) {
+                var blob = card.getAttribute('data-search') || '';
+                var match = !q || blob.indexOf(q) !== -1;
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+            if (filterInfo) {
+                if (!q) filterInfo.textContent = '';
+                else filterInfo.textContent = visible + ' de ' + allCards.length + ' certames correspondem a "' + q + '"';
+            }
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', applyFilter);
+            searchInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { searchInput.value = ''; applyFilter(); }
+            });
+        }
+    });
+</script>
+</body>
+</html>
