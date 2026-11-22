@@ -1,83 +1,89 @@
-Verificação: 2026-11-21T12:02:02.357173+00:00
-Links analisados: 97
-Links relevantes: 13
+Verificação: 2026-11-22T12:14:40.728283+00:00
+Links analisados: 69
+Links relevantes: 14
 ============================================================
 
-Title:   Prefeitura de Sede Nova-RS tem concurso aberto
-URL:     https://www.acheconcursos.com.br/concursos-rio-grande-do-sul/prefeitura-de-sede-nova-rs-tem-concurso-aberto-94791
+Title:   SP-Águas - SP abre concurso público com salários de até R$ 12.070,00
+URL:     https://www.pciconcursos.com.br/noticias/sp-aguas-sp-abre-concurso-publico-com-salarios-de-ate-12070
+Career:   administrativo
+Group:   sp-aguas-sp-analista-e-especialista
+Reason:  Edital publicado pela SP-Águas/SP com 21 vagas de nível superior para bacharéis em Direito nos cargos de Especialista em Regulação e Analista de Suporte. Remuneração inicial de R$ 10.366,00 a R$ 12.070,00 mais vale-refeição de R$ 55,00 por dia. Inscrições abertas de 17/11 a 17/12/2026 pela banca FGV. Provas objetivas e discursivas aplicadas em 31/01/2027.
+
+Title:   Prefeitura de Boa Viagem - CE abre concurso público com vagas para diversas áreas de atuação
+URL:     https://www.pciconcursos.com.br/noticias/prefeitura-de-boa-viagem-ce-abre-concurso-publico-com-vagas-para-diversas-areas-de-atuacao
 Career:   procuradorias
-Group:   prefeitura-sede-nova-rs-procurador-juridico
-Reason:  Edital publicado pela Prefeitura de Sede Nova/RS oferecendo 1 vaga imediata e cadastro de reserva para Procurador Jurídico, exigindo graduação em Direito. As inscrições para o certame organizado pela banca Fundatec ocorrem entre 19 de novembro e 18 de dezembro de 2026, com taxa no valor de R$ 140,00. As provas objetivas estão agendadas para serem aplicadas no dia 24 de janeiro de 2027.
+Group:   pgm-boa-viagem-ce-advogado
+Reason:  Edital publicado pela Prefeitura de Boa Viagem/CE ofertando 4 vagas imediatas para o cargo de Advogado com exigência de nível superior em Direito. A remuneração global chega a até R$ 14.718,92 conforme o edital. As inscrições seguem abertas de 06/11 a 07/12/2026 no site da banca CETREDE, com provas objetivas previstas para o dia 10 de janeiro de 2027.
 
-Title:   Concursos para Delegado: veja opções para quem quer morar perto da praia  - Blog Magistrar Educacional
-URL:     https://magistrarcursos.com.br/blog/concursos-para-delegado-veja-opcoes-para-quem-quer-morar-perto-da-praia/
-Career:   policiais
-Group:   pcrj-rj-delegado
-Reason:  O concurso para Delegado da Polícia Civil do Rio de Janeiro (PC RJ) possui banca definida com a Fundação Cesgranrio e publicação de edital iminente para 85 vagas de 3ª Classe, exigindo bacharelado em Direito e remuneração inicial de R$ 26.981,77. Já o edital da PC PE está com inscrições abertas até 16 de dezembro de 2026, oferecendo 45 vagas organizadas pelo Cebraspe com salário de R$ 13.560,00 e exigência de três anos de atividade jurídica ou policial.
-
-Title:   Câmara de Santa Rita de Cássia-BA anuncia 13 vagas e salários de até R$ 4.400
-URL:     https://www.souenfermagem.com.br/noticias/camara-de-santa-rita-de-cassia-ba-anuncia-13-vagas-e-salarios-de-ate-r-4-400/
+Title:   Concurso PGE AM Procurador: 4 vagas autorizadas
+URL:     https://blog.grancursosonline.com.br/concurso-pge-am-procurador-concurso-autorizado/
 Career:   procuradorias
-Group:   camara-santa-rita-de-cassia-ba-assessor-juridico
-Reason:  Edital retificado da Câmara Municipal de Santa Rita de Cássia/BA publicado com inclusão de 1 vaga imediata para o cargo de Assessor Jurídico, que exige graduação em Direito e inscrição na OAB. A remuneração inicial é de R$ 4.400,00 para carga horária de 20 horas semanais. As inscrições seguem abertas até 25 de novembro de 2026, mediante taxa de R$ 130,00, com provas objetivas previstas para o dia 6 de dezembro de 2026.
+Group:   pge-am-procurador
+Reason:  Concurso público para a Procuradoria Geral do Estado do Amazonas (PGE AM) foi oficialmente autorizado pelo Executivo estadual, prevendo o provimento de 4 vagas imediatas para o cargo de Procurador do Estado de 3ª Classe. O despacho foi publicado no Diário Oficial em 17/11/2026. O certame encontra-se na fase inicial, aguardando a formação da comissão e posterior contratação da banca organizadora.
 
-Title:   Defensoria Pública do Amazonas abre concurso para cargos com salários de até R$ 8 mil
-URL:     https://omaranhense.com/defensoria-publica-do-amazonas-abre-concurso-para-cargos-com-salarios-de-ate-r-8-mil/
+Title:   Concurso Câmara de Feira de Santana BA avança: são 25 vagas previstas para níveis médio e superior
+URL:     https://auxilioconcursos.com.br/concurso-camara-de-feira-de-santana-ba-avanca-sao-25-vagas-previstas-para-niveis-medio-e-superior/
+Career:   administrativo
+Group:   camara-feira-de-santana-ba-procurador-juridico
+Reason:  Câmara Municipal de Feira de Santana/BA retomou processo para contratação da banca organizadora com previsão de 25 vagas para níveis médio e superior, incluindo cadastro reserva para Procurador Jurídico. O envio de propostas pelas bancas ocorre até 01/12/2026.
+
+Title:   Inscrições para concurso da Câmara de Aral Moreira terminam domingo | Fátima News
+URL:     https://www.fatimanews.com.br/economia/inscricoes-para-concurso-da-camara-de-aral-moreira-terminam-domingo/1004078/
+Career:   procuradorias
+Group:   camara-aral-moreira-ms-controlador-interno
+Reason:  Concurso público da Câmara de Aral Moreira/MS com inscrições abertas até 22/11 oferece vaga para Controlador Interno, exigindo graduação em Direito, Administração, Ciências Contábeis ou Economia. Remuneração inicial de R$ 7.566,00 para carga horária de 30 horas semanais.
+
+Title:   Concurso Prefeitura de Cubatão SP oferece 21 vagas com salários de até R$ 5,5 mil; veja cargos e inscrições
+URL:     https://auxilioconcursos.com.br/concurso-prefeitura-de-cubatao-sp-oferece-21-vagas-com-salarios-de-ate-r-55-mil-veja-cargos-e-inscricoes/
+Career:   procuradorias
+Group:   pgm-cubatao-sp-procurador
+Reason:  Edital publicado pela Prefeitura de Cubatão/SP ofertando 1 vaga imediata para Procurador Jurídico Administrativo com remuneração inicial de R$ 5.565,00. Exige graduação em Direito e inscrição na OAB. Inscrições abertas até 03/12/2026 pelo site do IBAM. Provas objetiva e prático-profissional previstas para 17/01/2027.
+
+Title:   Concurso do TRF da 3ª Região com salários de até R$ 20 mil encerra inscrições nesta segunda (23)
+URL:     https://www.terra.com.br/noticias/educacao/carreira/concurso-do-trf-da-3-regiao-com-salarios-de-ate-r-20-mil-encerra-inscricoes-nesta-segunda-23,d4d7472453c7208715d4d5ee39d577165flyuehx.html
+Career:   tribunais
+Group:   trf3-nacional-analista-judiciario
+Reason:  Certame do TRF da 3ª Região com inscrições abertas até 23/11, oferecendo vagas imediatas e cadastro reserva em São Paulo e Mato Grosso do Sul. Inclui cargos de Analista Judiciário na Área Judiciária e Oficial de Justiça Avaliador Federal, com remunerações iniciais de R$ 16.040,87 a R$ 20.013,11. Banca Vunesp.
+
+Title:   Concurso do TRF da 3ª Região com salários de até R$ 20 mil encerra inscrições nesta segunda (23) - Portal de Prefeitura
+URL:     https://portaldeprefeitura.com.br/oportunidades/concurso-do-trf-da-3a-regiao-encerra-inscricoes-na-segunda/636339/
+Career:   tribunais
+Group:   trf3-nacional-analista-judiciario
+Reason:  Concurso público do Tribunal Regional Federal da 3ª Região com inscrições encerrando em 23/11, contemplando formação de cadastro reserva para Analista Judiciário na Área Judiciária e Oficial de Justiça Avaliador Federal. Salários iniciais chegam a R$ 20.013,11. Seleção organizada pela Fundação Vunesp com provas objetiva e discursiva.
+
+Title:   Concurso da Câmara de Aral Moreira encerra inscrições
+URL:     https://acritica.net/cidades/concurso-camara-aral-moreira-inscricoes/
+Career:   administrativo
+Group:   camara-aral-moreira-ms-controlador-interno
+Reason:  Edital publicado pela Câmara Municipal de Aral Moreira/MS com 1 vaga imediata para Controlador Interno, cargo que exige ensino superior em Direito, Administração, Ciências Contábeis ou Economia. Remuneração inicial de R$ 7.566,00 para jornada de 30 horas semanais. Inscrições abertas até 22/11/2026 pela banca Sigma Assessoria, com prova objetiva agendada para 13/12/2026.
+
+Title:   Inscrições para concurso da Câmara de Aral Moreira terminam domingo | Dourados Agora
+URL:     https://www.douradosagora.com.br/noticias/cidades/inscricoes-para-concurso-da-camara-de-aral-moreira-terminam-domingo
+Career:   administrativo
+Group:   camara-aral-moreira-ms-controlador-interno
+Reason:  Certame da Câmara Municipal de Aral Moreira/MS contempla o cargo de Controlador Interno, de nível superior com exigência de graduação em Direito. O vencimento inicial é de R$ 7.566,00 para carga horária de 30 horas semanais. O período de inscrições encerra-se neste domingo (22/11/2026) e a aplicação das provas objetivas está fixada para o dia 13 de dezembro de 2026.
+
+Title:   Jornal O candeeiro | Defensoria Pública do Amazonas abre concurso para cargos com salários de até R$ 8 mil
+URL:     https://www.jornalocandeeiro.com.br/noticia-55180-defensoriapublicadoamazonasabreconcursoparacargoscomsalariosdeater8mil
 Career:   defensoria
-Group:   dpe-am-analista-juridico
-Reason:  Edital publicado pela Defensoria Pública do Amazonas (DPE-AM) com vagas para Analista Jurídico de Defensoria (Ciência Jurídica), oferecendo remuneração inicial de R$ 8.006,38. As inscrições seguem abertas até 4 de janeiro de 2027 no site da banca FCC, com provas objetivas agendadas para 7 de março de 2027.
+Group:   dpe-am-nacional-analista-juridico
+Reason:  Edital publicado pela Defensoria Pública do Estado do Amazonas (DPE-AM) para provimento de servidores auxiliares, contemplando o cargo de Analista Jurídico de Defensoria na especialidade de Ciência Jurídica. Remuneração inicial de R$ 8.006,38. Inscrições de 30/11/2026 a 04/01/2027 pelo site da banca Fundação Carlos Chagas (FCC). Provas objetivas previstas para o dia 07 de março de 2027.
 
-Title:   Concurso da Câmara de Tibau do Sul amplia número de questões e libera consulta aos locais de prova
-URL:     https://portaln10.com.br/concursos/concurso-da-camara-de-tibau-do-sul-amplia-numero-de-questoes-e-libera-consulta-aos-locais-de-prova-358014/
-Career:   procuradorias
-Group:   camara-tibau-do-sul-rn-procurador
-Reason:  Certame da Câmara Municipal de Tibau do Sul/RN com vaga efetiva para Procurador com remuneração inicial de até R$ 3 mil para jornada de 30 horas semanais. Banca Facet Concursos publicou retificação ampliando a prova para 40 questões, com aplicação mantida para o dia 6 de dezembro de 2026.
-
-Title:   Candidatos a estágio na Defensoria do Amazonas fazem prova neste domingo em Manaus - Amazonas | Portal do Holanda
-URL:     https://www.portaldoholanda.com.br/amazonas/candidatos-a-estagio-na-defensoria-do-amazonas-fazem-prova-neste-domingo-em-manaus
+Title:   DPAM realiza prova para estágio em Direito neste domingo - Portal Você Online
+URL:     https://portalvoce.com/dpam-amazonas-realiza-prova-para-estagio-em-direito-neste-domingo/
 Career:   estagio
 Group:   dpam-am-estagio
-Reason:  Processo seletivo para formação de cadastro de reserva de estágio em Direito na Defensoria Pública do Estado do Amazonas (DPAM). Bolsa-auxílio de R$ 1.050,54 somada a auxílio-transporte de R$ 220,00 para carga horária de 20 horas semanais. Avaliação composta por prova objetiva com 50 questões e duas questões discursivas.
+Reason:  Processo seletivo de estágio em Direito na Defensoria Pública do Amazonas (DPAM) para cadastro de reserva em Manaus. A seleção oferece bolsa-auxílio mensal de R$ 1.050,54, auxílio-transporte de R$ 220 e seguro, sob jornada de 20 horas semanais. As etapas incluem provas objetiva e discursiva aplicadas neste domingo.
 
-Title:   Concurso Câmara de Jundiaí SP: edital pode sair nos próximos dias; veja cargos e salários de até R$ 15,6 mil
-URL:     https://auxilioconcursos.com.br/concurso-camara-de-jundiai-sp-edital-pode-sair-nos-proximos-dias-veja-cargos-e-salarios-de-ate-r-156-mil/
+Title:   Incra divulga processo seletivo para estudantes de Direito, Administração e outras áreas para estágio em Natal. - Concursos RN
+URL:     https://concursosrn.com.br/incra-processo-seletivo-para-estudantes-de-direito-administracao-e-outras-areas-para-estagio-em-natal/
+Career:   estagio
+Group:   incra-natal-rn-estagio
+Reason:  Seleção de estágio do Instituto Nacional de Colonização e Reforma Agrária (Incra) em Natal/RN com vagas para estudantes de Direito. A remuneração é de R$ 1.055,89 com auxílio-diário de R$ 13,40 para jornada presencial de quatro horas diárias. As inscrições ficam abertas por dez dias na plataforma Mais Estágios.
+
+Title:   Concurso Público do CAU em Florianópolis oferece salários de até R$ 12,3 mil
+URL:     https://agorafloripa.com.br/concurso-publico-do-cau-em-florianopolis-oferece-salarios-de-ate-r-123-mil/
 Career:   procuradorias
-Group:   camara-jundiai-sp-procurador-juridico
-Reason:  Câmara Municipal de Jundiaí/SP com preparativos avançados para novo concurso público. Contrato assinado com a Fundação Vunesp para seleção que contemplará cargos de ensino médio e superior, incluindo Procurador Jurídico com remuneração inicial de R$ 15.683,88. Publicação do edital iminente.
-
-Title:   SAAE de Águas de Lindóia oferece até 6 vagas em concurso público com salários de até R$ 6.112,00
-URL:     https://www.souenfermagem.com.br/noticias/saae-de-aguas-de-lindoia-oferece-ate-6-vagas-em-concurso-publico-com-salarios-de-ate-r-6-11200/
-Career:   procuradorias
-Group:   saae-aguas-de-lindoia-sp-procurador-juridico
-Reason:  Edital publicado pelo SAAE de Águas de Lindóia/SP para provimento de cadastro de reserva no cargo de Procurador Jurídico. A remuneração inicial chega a R$ 6.112,00, acrescida de cesta básica de R$ 700,00. As inscrições ocorrem de 20/11/2026 a 21/12/2026 pelo portal do CEPASF, com provas objetivas e discursivas previstas para 17/01/2027.
-
-Title:   Defensoria Pública do Amazonas abre concurso para cargos com salários de até R$ 8 mil – Blog do Amarildo
-URL:     https://blogdoamarildo.com.br/defensoria-publica-do-amazonas-abre-concurso-para-cargos-com-salarios-de-ate-r-8-mil/
-Career:   defensoria
-Group:   dpe-am-analista-juridico
-Reason:  Publicado o VI Concurso Público da DPE-AM, oferecendo vagas para Analista Jurídico de Defensoria na especialidade de Ciência Jurídica, com exigência de graduação em Direito e remuneração inicial de R$ 8.006,38. Inscrições abertas de 30/11/2026 a 04/01/2027 pelo site da FCC, com provas objetivas programadas para 07/03/2027.
-
-Title:   Provas do concurso da Câmara de Rio Branco ocorrem neste domingo com salários de até R$ 19,4 mil | Acre Jornal
-URL:     https://acrejornal.com.br/provas-do-concurso-da-camara-de-rio-branco-ocorrem-neste-domingo-com-salarios-de-ate-r-194-mil/
-Career:   procuradorias
-Group:   camara-rio-branco-ac-procurador
-Reason:  Concurso público da Câmara Municipal de Rio Branco/AC realiza provas objetivas e discursivas neste domingo. O certame oferta vagas imediatas e cadastro de reserva para o cargo de Procurador, com remunerações iniciais que alcançam até R$ 19.404,00, sob a organização do Instituto de Desenvolvimento Institucional Brasileiro.
-
-Title:   Aeroporto de Maringá abre concurso público com salários de R$ 9,9 mil e vale-alimentação de R$ 1,4 mil; veja como se inscrever - CBN Maringá - Notícias de Maringá e Região
-URL:     https://cbnmaringa.com.br/noticia/aeroporto-de-maringa-abre-concurso-publico-com-salarios-de-r-99-mil-e-vale-alimentacao-de-r-14-mil-veja-como-se-inscrever/
-Career:   procuradorias
-Group:   aeroporto-maringa-advogado
-Reason:  O edital do concurso para o Aeroporto Regional de Maringá (SBMG S.A.) contempla formação de cadastro reserva para o cargo de Advogado. O requisito é graduação em Direito, inscrição na OAB e dois anos de prática jurídica. A remuneração inicial é de R$ 7.535,50 para jornada de 20 horas semanais. As inscrições ocorrem de 24/11 a 17/12/2026, sob organização da banca Unioeste. A contratação será regida pela CLT.
-
-Title:   Concursos no Amazonas: veja vagas previstas, salários e situação dos editais para 2027
-URL:     https://redeondadigital.com.br/servicos/concursos-no-amazonas-veja-vagas-previstas-salarios-e-situacao-dos-editais-para-2027
-Career:   tribunais
-Group:   tjam-am-analista-judiciario
-Reason:  O Tribunal de Justiça do Amazonas (TJ-AM) anunciou a previsão de 400 vagas para cargos de nível médio e superior, incluindo Auxiliar, Assistente e Analista Judiciário. As remunerações variam de R$ 4.967,99 a R$ 14.240,77. Atualmente, o certame encontra-se em fase de definição de banca organizadora e cronograma, com o edital ainda pendente de publicação.
-
-Title:   Concurso Banco Central tem banca definida para mais de 100 vagas – Gláucia Lima
-URL:     https://glaucialima.com/2026/11/20/concurso-banco-central-tem-banca-definida-para-mais-de-100-vagas/
-Career:   procuradorias
-Group:   bacen-nacional-procurador
-Reason:  O Banco Central do Brasil (Bacen) confirmou a FGV como banca organizadora para 150 vagas de nível superior (Técnico e Auditor). Adicionalmente, o certame ofertará 20 vagas para Procurador do Banco Central, cargo que exige graduação em Direito, OAB e dois anos de prática forense, com remuneração inicial de R$ 27.264,30. A publicação do edital está prevista para ocorrer até o dia 30 de dezembro de 2026.
+Group:   causc-florianopolis-sc-advogado
+Reason:  Concurso público do Conselho de Arquitetura e Urbanismo de Santa Catarina (CAU-SC) com cadastro de reserva para Advogado. A remuneração inicial chega a R$ 12.383,88 para 40 horas semanais, acrescida de benefícios. Inscrições abertas até dezembro, com taxa de R$ 66 e provas objetiva e discursiva previstas para janeiro.
 
